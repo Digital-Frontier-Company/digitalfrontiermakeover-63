@@ -1,0 +1,573 @@
+
+:root {
+  /* Brand palette */
+  --df-dark-blue: #000033;
+  --df-black-blue: #000014;
+  --df-blue: #0066FF;
+  --df-bright-blue: #00BFFF;
+  --df-light-blue: #00BFFF;
+}
+
+/* ===== Layout wrappers ===== */
+.df-landing-page {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  background: var(--df-black-blue);
+  overflow-x: hidden;
+}
+
+/* ===== Header Navigation Styles ===== */
+header {
+  position: relative;
+  z-index: 100; /* Ensure header is above all content */
+}
+
+/* Navigation menu styling */
+header [data-radix-navigation-menu-viewport] {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border-color: rgba(51, 65, 85, 0.5) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+  z-index: 100;
+}
+
+header [data-radix-navigation-menu-content] {
+  z-index: 100;
+}
+
+/* Make navigation menu links more readable */
+header a {
+  position: relative;
+  z-index: 50;
+  color: #ffffff !important; /* Force white text for all links in header */
+}
+
+header a:hover {
+  color: var(--df-bright-blue) !important; /* Cyan blue color on hover */
+  transition: color 0.2s ease;
+}
+
+/* Navigation menu link styles */
+header [data-radix-navigation-menu-content] a {
+  color: #ffffff !important; /* Ensure white text in dropdown menu */
+}
+
+header [data-radix-navigation-menu-content] a:hover {
+  color: var(--df-bright-blue) !important; /* Cyan blue on hover */
+}
+
+/* Navigation menu trigger styles */
+header [data-radix-navigation-menu-trigger] {
+  color: #ffffff !important; /* White text for dropdown triggers */
+}
+
+/* Style for active/hovered navigation states */
+header [data-state="open"] {
+  color: var(--df-bright-blue) !important;
+}
+
+/* ===== New Hero Section Styles ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 40px;
+  background: var(--df-blue);
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--df-blue), var(--df-bright-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.btn-primary {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 102, 255, 0.3), 0 2px 4px -1px rgba(0, 102, 255, 0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 102, 255, 0.3), 0 4px 6px -2px rgba(0, 102, 255, 0.2);
+}
+.btn-secondary {
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== HERO ===== */
+.df-hero-section {
+  padding: 80px 0;
+  background: var(--df-black-blue);
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Lower z-index than header */
+}
+.df-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 70%; height: 100%;
+  background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, rgba(0,14,41,0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Hero Carousel Styles */
+.df-hero-carousel {
+  margin-bottom: 30px;
+}
+
+.df-hero-carousel .text-shadow-lg {
+  text-shadow: 0 0 15px rgba(0,229,255,.7);
+}
+
+.df-hero-carousel img {
+  transition: transform 7s ease-out;
+  will-change: transform;
+}
+
+.embla__slide--current img {
+  transform: scale(1.1);
+}
+
+/* ===== LOGO ===== */
+.df-logo { max-width: 200px; margin: 0 auto 30px; position: relative; display:block; }
+.df-logo-glow { position: absolute; inset: 0; filter: blur(10px); opacity:.5; z-index:-1; }
+
+/* ===== CTA BUTTONS ===== */
+.df-cta-button, .df-yellow-cta-button {
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  border: none;
+  transition: all .3s ease;
+}
+.df-cta-button {
+  background: linear-gradient(90deg, var(--df-blue) 0%, var(--df-bright-blue) 100%);
+  box-shadow: 0 0 15px rgba(0,191,255,.5);
+}
+.df-cta-button::before, .df-yellow-cta-button::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  transform: rotate(45deg);
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,.1), transparent);
+  transition: all .6s ease;
+}
+.df-cta-button:hover {
+  background: linear-gradient(90deg, var(--df-bright-blue) 0%, var(--df-light-blue) 100%);
+  box-shadow: 0 0 20px rgba(0,229,255,.7);
+  transform: translateY(-2px);
+}
+.df-cta-button:hover::before { left: 100%; }
+
+.df-yellow-cta-button {
+  background: linear-gradient(90deg, #FFEE00 0%, #FFD700 100%);
+  box-shadow: 0 0 15px rgba(255,238,0,.5);
+}
+.df-yellow-cta-button:hover {
+  background: linear-gradient(90deg, #FFD700 0%, #FFC800 100%);
+  box-shadow: 0 0 20px rgba(255,238,0,.7);
+  transform: translateY(-2px);
+}
+.df-yellow-cta-button:hover::before { left: 100%; }
+
+/* ===== TRUST BADGES ===== */
+.df-trust-badges { display:flex; justify-content:center; flex-wrap:wrap; gap:25px; margin-top:40px; }
+.df-trust-badge { display:flex; flex-direction:column; align-items:center; text-align:center; }
+.df-trust-number { font-size:36px; font-weight:700; color:#fff; margin-bottom:5px; }
+.df-trust-label { font-size:14px; color:rgba(255,255,255,.7); }
+
+/* Counter animation */
+.df-stat-counter { display:inline-block; animation:countUp 2s ease-out forwards; }
+@keyframes countUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+
+/* ===== TESTIMONIALS SECTION ===== */
+.df-testimonials-section {
+  padding: 20px 0;
+  background: linear-gradient(180deg, var(--df-black-blue) 0%, rgba(0, 6, 20, 0.95) 100%);
+  position: relative;
+}
+
+.df-stars-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.df-star-icon {
+  color: var(--df-light-blue);
+  width: 16px;
+  height: 16px;
+  margin: 0 1px;
+  filter: drop-shadow(0 0 3px rgba(0, 191, 255, 0.5));
+}
+
+.df-rating-label {
+  width: 100%;
+  margin-top: 5px;
+  color: #e0e0e0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.df-testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.df-testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 191, 255, 0.1);
+  border-radius: 6px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+.df-testimonial-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 8px rgba(0, 191, 255, 0.2);
+  border-color: rgba(0, 191, 255, 0.3);
+}
+
+.df-testimonial-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.df-testimonial-image-container {
+  flex: 0 0 24px;
+  margin-right: 8px;
+}
+
+.df-testimonial-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0, 191, 255, 0.3);
+}
+
+.df-testimonial-quote-container {
+  flex: 1;
+}
+
+.df-testimonial-quote {
+  font-size: 12px;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.df-quote-mark {
+  color: var(--df-light-blue);
+  font-size: 14px;
+  line-height: 0;
+  vertical-align: middle;
+  margin-right: 2px;
+  opacity: 0.7;
+}
+
+.df-testimonial-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.df-testimonial-name {
+  font-weight: 700;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.df-testimonial-position {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.df-certifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.df-certification-badge {
+  height: 30px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.df-certification-badge:hover {
+  opacity: 1;
+}
+
+.df-certification-badge img {
+  height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .df-testimonial-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .df-testimonial-image-container {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+  
+  .df-star-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .df-rating-label {
+    font-size: 10px;
+  }
+}
+
+/* ===== GAIN CARDS ===== */
+.df-gain-card {
+  padding: 30px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,229,255,.1);
+  border-radius: 8px;
+  height: 100%;
+  overflow: hidden;
+  transition: all .3s ease;
+  position: relative;
+}
+.df-gain-card::before {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(0,229,255,.05) 0%, transparent 100%);
+  z-index:-1;
+}
+.df-gain-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.2),
+    0 0 15px rgba(0,229,255,.2);
+  border-color: rgba(0,229,255,.3);
+}
+.df-gain-card .icon {
+  color: var(--df-light-blue);
+  font-size: 36px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0,229,255,.5);
+}
+.df-gain-card h3 { font-size:20px; margin-bottom:15px; color:#fff; }
+.df-gain-card p { color:rgba(255,255,255,.7); font-size:14px; }
+
+/* ===== SERVICE LIST ===== */
+.df-smart-marketing {
+  background: linear-gradient(180deg, var(--df-black-blue) 0%, var(--df-dark-blue) 100%);
+  padding: 80px 0;
+  position: relative;
+  color: #fff;
+}
+.df-service-list { max-width:900px; margin:0 auto; position:relative; z-index:1; }
+.df-service-item {
+  display:flex; align-items:flex-start;
+  margin-bottom:30px; padding:10px;
+  border-radius:6px; transition:all .3s ease;
+}
+.df-service-item:hover {
+  background: rgba(0,229,255,.05);
+  transform: translateX(5px);
+}
+.df-service-item .bullet, .df-service-item .service-title {
+  color: var(--df-light-blue);
+  text-shadow: 0 0 5px rgba(0,229,255,.5);
+}
+.df-service-item .bullet { font-size:24px; margin-right:15px; flex-shrink:0; }
+.df-service-item .service-title { font-weight:700; margin-right:8px; }
+
+/* Neon border utility */
+.df-neon-border { position:relative; border-radius:12px; overflow:hidden; }
+.df-neon-border::before {
+  content:''; position:absolute; inset:-2px;
+  border-radius:12px;
+  background:linear-gradient(45deg, var(--df-light-blue), var(--df-blue), var(--df-light-blue));
+  animation:border-glow 3s linear infinite;
+  z-index:-1;
+}
+@keyframes border-glow {
+  0%{background-position:0 0; opacity:.7;}
+  50%{background-position:100% 0; opacity:.9;}
+  100%{background-position:0 0; opacity:.7;}
+}
+
+/* ===== CUSTOM ABOUT SECTION ===== */
+/* Custom About Section Styles */
+.hostinger-custom-about {
+    /* Define Colors (scoped to this block) */
+    --bg-very-dark: var(--df-black-blue); /* Changed to match the site's dark blue background */
+    --bg-box-dark: rgba(0, 6, 20, 0.6); /* Semi-transparent dark background for content box */
+    --text-light: #f4f4f9; /* Light text */
+    --text-medium: #b8b8b8; /* Medium grey text */
+    --accent-blue: var(--df-bright-blue); /* Using site's bright blue */
+    --accent-blue-glow: rgba(0, 191, 255, 0.3); /* Blue for glow effect using site colors */
+
+    font-family: 'Inter', sans-serif; /* Changed to match the site font */
+    background-color: var(--bg-very-dark); /* Set section background */
+    color: var(--text-light);
+    line-height: 1.6;
+    padding: 60px 20px; /* Padding around the section */
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding the glow effect similar to other sections */
+.hostinger-custom-about::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%; height: 40%;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.1) 0%, rgba(0, 14, 41, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Reset margins/padding within the embed */
+.hostinger-custom-about *,
+.hostinger-custom-about *::before,
+.hostinger-custom-about *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.hostinger-custom-about .about-container-inner {
+    max-width: 850px; /* Adjust max-width of the content box area */
+    margin: 0 auto; /* Center the content box */
+}
+
+/* The main content box with glow */
+.hostinger-custom-about .about-content-box {
+    background-color: var(--bg-box-dark); /* Dark background for the box */
+    padding: 35px 40px; /* Inner padding for the box */
+    border-radius: 8px;
+    border: 1px solid #4a4a4e; /* Subtle border */
+    /* === The Blue Glow Effect === */
+    box-shadow: 0 0 18px 4px var(--accent-blue-glow); /* Adjusted glow */
+    text-align: left; /* Default text alignment inside the box */
+}
+
+/* Main Section Heading */
+.hostinger-custom-about .about-content-box h2 {
+    font-size: 1.9rem; /* Adjust size */
+    font-weight: bold;
+    color: var(--text-light);
+    text-align: center; /* Center the main question */
+    margin-bottom: 25px;
+}
+
+/* Subheadings within the box */
+.hostinger-custom-about .about-content-box h3 {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-top: 25px; /* Space above subheading */
+    margin-bottom: 10px; /* Space below subheading */
+    font-weight: 600; /* Make subheadings stand out */
+}
+
+/* Paragraph text */
+.hostinger-custom-about .about-content-box p {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin-bottom: 18px; /* Space between paragraphs */
+    line-height: 1.7; /* Improve readability */
+}
+
+/* Specific styling for introductory/strong paragraphs if needed */
+.hostinger-custom-about .about-content-box .intro-text {
+    font-size: 1.1rem;
+    color: var(--text-light); /* Make it slightly brighter */
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Placeholder for Button Area */
+.hostinger-custom-about .button-placeholder {
+    min-height: 50px; /* Reserve space */
+    margin-top: 30px; /* Space above button area */
+    text-align: center; /* Center the Hostinger button placed inside */
+}
+
+/* Final Tagline */
+.hostinger-custom-about .final-tagline {
+     font-weight: bold;
+     color: var(--text-light);
+     text-align: center;
+     margin-top: 20px; /* Space between button and tagline */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hostinger-custom-about {
+        padding: 40px 15px;
+    }
+    .hostinger-custom-about .about-content-box {
+        padding: 25px 25px;
+    }
+    .hostinger-custom-about .about-content-box h2 {
+        font-size: 1.7rem;
+    }
+     .hostinger-custom-about .about-content-box h3 {
+        font-size: 1.2rem;
+    }
+     .hostinger-custom-about .about-content-box p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+   .hostinger-custom-about .about-content-box {
+        padding: 20px 20px;
+    }
+     .hostinger-custom-about .about-content-box h2 {
+        font-size: 1.5rem;
+    }
+     .hostinger-custom-about .about-content-box h3 {
+        font-size: 1.1rem;
+    }
+}

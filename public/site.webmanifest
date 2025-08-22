@@ -1,0 +1,35 @@
+{
+  "name": "Digital Frontier - AI-Powered Marketing",
+  "short_name": "Digital Frontier",
+  "description": "AI-powered content marketing and SEO agency that builds scalable content engines for B2B tech companies",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "marketing", "technology", "productivity"],
+  "icons": [
+    {
+      "src": "/lovable-uploads/3b45382c-8b9c-4724-b6ed-845a2bf3de3a.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/3b45382c-8b9c-4724-b6ed-845a2bf3de3a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

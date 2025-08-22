@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "middleware.ts": {
+      "runtime": "edge"
+    }
+  },
+  "env": {
+    "PRERENDER_IO_TOKEN": "@prerender_io_token"
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
