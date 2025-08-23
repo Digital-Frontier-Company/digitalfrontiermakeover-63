@@ -178,6 +178,13 @@ export const SEOAdvanced: React.FC<SEOAdvancedProps> = ({
         </>
       )}
 
+      {/* Analytics Scripts */}
+      <script 
+        src="https://analytics.ahrefs.com/analytics.js" 
+        data-key="LmfF7XqVLmtQRUAdkdYYgQ" 
+        async 
+      />
+
       {/* Security headers */}
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="X-Frame-Options" content="DENY" />
