@@ -36,12 +36,24 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Block known bad bots
+# Allow SEO and marketing research bots
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
+
+User-agent: MozBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: DotBot
+Allow: /
+Crawl-delay: 2
+
+# Block known spam/malicious bots
 
 User-agent: MJ12bot
 Disallow: /
