@@ -4,10 +4,10 @@
  */
 
 export const SITE_CONFIG = {
-  baseUrl: 'https://thedigitalfrontier.ai',
+  baseUrl: 'https://digitalfrontier.app',
   siteName: 'Digital Frontier Company',
-  defaultTitle: 'Digital Frontier - AI-Powered Content Marketing & SEO',
-  defaultDescription: 'The Digital Frontier is an AI-powered content marketing and SEO agency that builds scalable content engines for B2B tech companies.',
+  defaultTitle: 'Memphis AI Marketing Agency | Stop Guessing, Start Growing with AI-Powered Marketing | Digital Frontier',
+  defaultDescription: 'Leading Memphis AI marketing agency specializing in Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and AI-powered content strategies for B2B companies in Collierville, Germantown, and Greater Memphis area.',
   defaultKeywords: 'AI content marketing, SEO agency, B2B marketing, answer engine optimization, content strategy',
   logoUrl: 'https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png',
   socialUrls: [
@@ -38,9 +38,9 @@ export interface RouteConfig {
 export const ROUTE_CONFIGS: RouteConfig[] = [
   {
     path: '/',
-    title: 'Digital Frontier - AI-Powered Content Marketing & SEO',
-    description: 'The Digital Frontier is an AI-powered content marketing and SEO agency that builds scalable content engines for B2B tech companies.',
-    keywords: 'AI content marketing, SEO agency, B2B marketing, answer engine optimization, content strategy',
+    title: 'Memphis AI Marketing Agency | Stop Guessing, Start Growing with AI-Powered Marketing | Digital Frontier',
+    description: 'Leading Memphis AI marketing agency specializing in Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and AI-powered content strategies for B2B companies in Collierville, Germantown, and Greater Memphis area.',
+    keywords: 'Memphis AI marketing agency, Memphis digital marketing, AI marketing Memphis, Answer Engine Optimization Memphis, AEO services, GEO services, Collierville marketing, Germantown SEO',
     priority: 1.0,
     changeFreq: 'weekly',
     pageType: 'website'
@@ -138,18 +138,18 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
   // Service Pages
   {
     path: '/answer-engine-optimization',
-    title: 'Answer Engine Optimization (AEO) Services',
-    description: 'Optimize your content for AI-powered answer engines like ChatGPT, Perplexity, and Claude. Get found in the age of AI search.',
-    keywords: 'answer engine optimization, AEO, AI search optimization, ChatGPT optimization',
+    title: 'AI Overviews Optimization | SGE Optimization | Answer Engine Optimization (AEO) Services',
+    description: 'Expert AI Overviews optimization and SGE optimization services. Get your Memphis business featured in ChatGPT, Google AI Overviews, and Perplexity AI search results with proven AEO strategies.',
+    keywords: 'AI Overviews optimization, SGE optimization, answer engine optimization, AEO, ChatGPT optimization, featured snippets optimization, FAQ schema AI, voice search SEO, people also ask optimization',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'service'
   },
   {
     path: '/generative-engine-optimization',
-    title: 'Generative Engine Optimization (GEO) Services',
-    description: 'Scale your content production with AI while maintaining expert-level quality. Generative Engine Optimization for modern businesses.',
-    keywords: 'generative engine optimization, GEO, AI content generation, automated content',
+    title: 'Optimize Content for Generative Search | RAG Content Strategy | GEO Services',
+    description: 'Expert strategies to optimize content for generative search engines. Proven RAG content strategy, SGE content briefs, and AI content workflows that get your business cited by AI.',
+    keywords: 'optimize content for generative search, RAG content strategy, SGE content briefs, generative engine optimization, GEO, AI content workflows, prompting for AI Overviews',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'service'
@@ -531,6 +531,17 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
     changeFreq: 'monthly',
     pageType: 'website',
     modifiedDate: '2025-08-19'
+  },
+  // Local SEO Pages
+  {
+    path: '/memphis-digital-marketing-agency',
+    title: 'Memphis AI Marketing Agency | Digital Marketing Services Collierville, Germantown | Digital Frontier',
+    description: 'Leading Memphis AI marketing agency serving Collierville, Germantown, and Greater Memphis area with proven AI Overviews optimization and local SEO strategies.',
+    keywords: 'Memphis AI marketing agency, Memphis digital marketing, Collierville marketing agency, Germantown SEO, Memphis AEO services, AI marketing Memphis TN',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    pageType: 'service',
+    modifiedDate: '2024-12-24'
   }
 ];
 

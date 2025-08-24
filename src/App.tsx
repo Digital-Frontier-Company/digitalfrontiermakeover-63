@@ -60,6 +60,7 @@ import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import AuthorPage from './pages/AuthorPage';
 import SearchPage from './pages/SearchPage';
+import MemphisDigitalMarketing from './pages/MemphisDigitalMarketing';
 import { Toaster } from 'react-hot-toast';
 import NotFound from '@/pages/NotFound';
 import ModernContactForm from '@/pages/ModernContactForm';
@@ -139,6 +140,7 @@ function App() {
             <Route path="/privacy-policy" element={<MainLayout><PrivacyPolicy /></MainLayout>} />
             <Route path="/authors" element={<MainLayout><AuthorPage /></MainLayout>} />
             <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
+            <Route path="/memphis-digital-marketing-agency" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
             <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

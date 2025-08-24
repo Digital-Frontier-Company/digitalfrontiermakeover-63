@@ -296,7 +296,7 @@ const Index = () => {
           duration: 1,
           delay: 0.2
         }}>
-            Stop Guessing, Start Growing with{' '}
+            Memphis AI Marketing Agency | Stop Guessing, Start Growing with{' '}
             <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent text-6xl font-extrabold animate-pulse-glow">AI-Powered Marketing</span>
           </motion.h1>
 
@@ -313,7 +313,7 @@ const Index = () => {
           duration: 0.8,
           delay: 0.4
         }} className="font-inter text-lg md:text-xl text-soft-white/80 leading-relaxed max-w-3xl mx-auto mb-12 font-semibold text-[#fafcfd]">
-            We build content engines that drive organic traffic and generate qualified leads for B2B tech companies. No guesswork—just measurable results backed by industry data showing 94% of B2B buyers research online before purchasing (Demand Gen Report, 2023).
+            Leading Memphis AI marketing agency serving Collierville, Germantown, and Greater Memphis area. We specialize in Answer Engine Optimization (AEO), AI Overviews optimization, and proven strategies that get Memphis businesses featured in ChatGPT, Google SGE, and Perplexity AI responses. No guesswork—just measurable results.
           </motion.p>
 
           {/* CTA with Hover Animation */}
