@@ -542,6 +542,46 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
     changeFreq: 'monthly',
     pageType: 'service',
     modifiedDate: '2024-12-24'
+  },
+  {
+    path: '/collierville-seo-services',
+    title: 'Collierville SEO Services | Local SEO Company Shelby County TN | Digital Frontier',
+    description: 'Leading Collierville SEO company specializing in local search optimization, AI Overviews optimization, and proven strategies for Shelby County businesses.',
+    keywords: 'Collierville SEO, Collierville SEO company, Shelby County SEO, local SEO Collierville TN, Memphis area SEO services, AI Overviews optimization Collierville',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    pageType: 'service',
+    modifiedDate: '2024-12-24'
+  },
+  {
+    path: '/germantown-digital-marketing',
+    title: 'Germantown Digital Marketing Agency | AI Marketing Services Shelby County TN | Digital Frontier',
+    description: 'Leading Germantown digital marketing agency specializing in AI marketing, local SEO, and premium digital strategies for affluent market businesses.',
+    keywords: 'Germantown digital marketing, Germantown marketing agency, luxury marketing Germantown TN, AI marketing Shelby County, premium digital marketing',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    pageType: 'service',
+    modifiedDate: '2024-12-24'
+  },
+  {
+    path: '/team-expertise',
+    title: 'Expert Team & Credentials | Memphis AI Marketing Agency Leadership | Digital Frontier',
+    description: 'Meet our certified team of Memphis AI marketing experts with proven credentials in SEO, digital marketing, and cutting-edge AI optimization strategies.',
+    keywords: 'Memphis marketing experts, certified digital marketing team, AI marketing specialists Memphis, SEO experts credentials, marketing agency team',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    pageType: 'website',
+    modifiedDate: '2024-12-24'
+  },
+  {
+    path: '/complete-aeo-guide-2025',
+    title: 'Complete Guide to Answer Engine Optimization 2025 | Memphis AEO Strategies | Digital Frontier',
+    description: 'The ultimate 10,000+ word guide to Answer Engine Optimization with proven strategies, case studies, and actionable tactics for Memphis businesses.',
+    keywords: 'Answer Engine Optimization guide, AEO strategies 2025, AI search optimization guide, ChatGPT optimization, Memphis digital marketing guide',
+    priority: 0.9,
+    changeFreq: 'monthly',
+    pageType: 'article',
+    modifiedDate: '2024-12-24'
   }
 ];
 

@@ -61,6 +61,10 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import AuthorPage from './pages/AuthorPage';
 import SearchPage from './pages/SearchPage';
 import MemphisDigitalMarketing from './pages/MemphisDigitalMarketing';
+import ColliervilleSEO from './pages/ColliervilleSEO';
+import GermantownDigitalMarketing from './pages/GermantownDigitalMarketing';
+import TeamExpertise from './pages/TeamExpertise';
+import CompleteAEOGuide from './pages/CompleteAEOGuide';
 import { Toaster } from 'react-hot-toast';
 import NotFound from '@/pages/NotFound';
 import ModernContactForm from '@/pages/ModernContactForm';
@@ -141,6 +145,10 @@ function App() {
             <Route path="/authors" element={<MainLayout><AuthorPage /></MainLayout>} />
             <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
             <Route path="/memphis-digital-marketing-agency" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
+            <Route path="/collierville-seo-services" element={<MainLayout><ColliervilleSEO /></MainLayout>} />
+            <Route path="/germantown-digital-marketing" element={<MainLayout><GermantownDigitalMarketing /></MainLayout>} />
+            <Route path="/team-expertise" element={<MainLayout><TeamExpertise /></MainLayout>} />
+            <Route path="/complete-aeo-guide-2025" element={<MainLayout><CompleteAEOGuide /></MainLayout>} />
             <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
