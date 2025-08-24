@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Users, TrendingUp, Target, Zap, Award, Building, Star, Shield } from "lucide-react";
 import { LazyImage } from "@/components/LazyImage";
 import FAQSection, { FAQItem } from "@/components/FAQSection";
+import germantownHeroBg from "@/assets/germantown-hero-bg.jpg";
 
 const GermantownDigitalMarketing = () => {
   const location = useLocation();
@@ -84,8 +85,16 @@ const GermantownDigitalMarketing = () => {
       modifiedDate="2024-12-24"
     >
       {/* Hero Section */}
-      <section className="mb-16">
-        <div className="text-center mb-12">
+      <section className="relative mb-16 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(${germantownHeroBg})`,
+            filter: 'blur(1px) brightness(0.3)'
+          }}
+        />
+        <div className="relative z-10 text-center mb-12">
           <Badge variant="secondary" className="mb-4">
             <Shield className="w-4 h-4 mr-2" />
             Premium Digital Marketing for Germantown
@@ -108,15 +117,15 @@ const GermantownDigitalMarketing = () => {
               </Badge>
             ))}
           </div>
-        </div>
 
-        <LazyImage
-          src="/lovable-uploads/77a7a6e8-ba24-4511-808d-e7ce4724f3d3.png"
-          alt="Germantown Digital Marketing Agency - Digital Frontier luxury market expertise"
-          className="w-full max-w-4xl mx-auto rounded-lg shadow-xl mb-12"
-          displayWidth={800}
-          displayHeight={400}
-        />
+          <LazyImage
+            src="/lovable-uploads/77a7a6e8-ba24-4511-808d-e7ce4724f3d3.png"
+            alt="Germantown Digital Marketing Agency - Digital Frontier luxury market expertise"
+            className="w-full max-w-4xl mx-auto rounded-lg shadow-xl"
+            displayWidth={800}
+            displayHeight={400}
+          />
+        </div>
       </section>
 
       {/* Germantown Results Stats */}
