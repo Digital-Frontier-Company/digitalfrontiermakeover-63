@@ -53,7 +53,7 @@ const caseStudies: CaseStudy[] = [
   }
 ];
 
-export default function CaseStudySlider() {
+const CaseStudySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -161,4 +161,6 @@ export default function CaseStudySlider() {
       </div>
     </section>
   );
-}
+};
+
+export default CaseStudySlider;

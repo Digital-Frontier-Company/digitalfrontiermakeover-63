@@ -41,7 +41,7 @@ const faqs: FAQItem[] = [
   }
 ];
 
-export default function FAQAccordion() {
+const FAQAccordion = () => {
   const [openItems, setOpenItems] = useState<number[]>([]);
 
   const toggleItem = (index: number) => {
@@ -113,4 +113,6 @@ export default function FAQAccordion() {
       </div>
     </section>
   );
-}
+};
+
+export default FAQAccordion;
