@@ -145,6 +145,7 @@ function App() {
             <Route path="/authors" element={<MainLayout><AuthorPage /></MainLayout>} />
             <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
             <Route path="/memphis-digital-marketing-agency" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
+            <Route path="/memphis-digital-marketing" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
             <Route path="/collierville-seo-services" element={<MainLayout><ColliervilleSEO /></MainLayout>} />
             <Route path="/germantown-digital-marketing" element={<MainLayout><GermantownDigitalMarketing /></MainLayout>} />
             <Route path="/team-expertise" element={<MainLayout><TeamExpertise /></MainLayout>} />

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Clock, Users, TrendingUp, Target, Zap, Award } from "lucide-react";
+import { MapPin, Phone, Clock, Users, TrendingUp, Target, Zap, Award, Building, Star, Music, Truck, Crown } from "lucide-react";
 import { LazyImage } from "@/components/LazyImage";
 import FAQSection, { FAQItem } from "@/components/FAQSection";
 
@@ -99,12 +99,48 @@ const MemphisDigitalMarketing = () => {
         </div>
 
         <LazyImage
-          src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
-          alt="Memphis AI Marketing Agency - Digital Frontier serving Greater Memphis area"
+          src="/lovable-uploads/e4653f71-faaf-473e-baac-648ae67fce16.png"
+          alt="Beale Street Memphis - Home of the Blues and vibrant local business district"
           className="w-full max-w-4xl mx-auto rounded-lg shadow-xl mb-12"
           displayWidth={800}
           displayHeight={400}
         />
+      </section>
+
+      {/* Memphis Heritage Section */}
+      <section className="mb-16">
+        <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-800/30">
+          <CardHeader>
+            <CardTitle className="text-2xl text-white text-center flex items-center justify-center gap-3">
+              <Music className="w-8 h-8 text-blue-400" />
+              Memphis: Where Music Meets Marketing
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="text-slate-300 mb-6 text-lg">
+              From the birthplace of rock 'n' roll to the home of the blues, Memphis has always been about making noise that matters. 
+              We bring that same energy to your digital marketing—bold, authentic, and impossible to ignore.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <Music className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Beale Street Energy</h3>
+                <p className="text-slate-400">We bring the same passion that made Memphis famous to your marketing campaigns</p>
+              </div>
+              <div className="text-center">
+                <Truck className="w-12 h-12 text-orange-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">FedEx Innovation</h3>
+                <p className="text-slate-400">Like Memphis's logistics leaders, we deliver results efficiently and reliably</p>
+              </div>
+              <div className="text-center">
+                <Crown className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Graceland Legacy</h3>
+                <p className="text-slate-400">Building legendary brands that stand the test of time, just like the King</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
       {/* Memphis Stats Section */}
