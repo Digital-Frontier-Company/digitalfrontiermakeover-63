@@ -322,6 +322,7 @@ const GermantownDigitalMarketing = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Digital Frontier Company - Germantown Digital Marketing",
+            "alternateName": "Germantown Digital Marketing Agency",
             "description": "Premier Germantown digital marketing agency specializing in luxury market AI marketing and local SEO services",
             "address": {
               "@type": "PostalAddress",
@@ -351,7 +352,56 @@ const GermantownDigitalMarketing = () => {
             "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
             "sameAs": [
               "https://www.linkedin.com/company/digital-frontier-company"
-            ]
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Germantown Digital Marketing Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Local SEO Germantown",
+                    "description": "Dominate local search results and Google My Business for Germantown"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Marketing Strategies",
+                    "description": "Get featured in AI search results and voice assistants"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Google Ads Management",
+                    "description": "Targeted PPC campaigns for Germantown and surrounding areas"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": germantownFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
           })
         }}
       />

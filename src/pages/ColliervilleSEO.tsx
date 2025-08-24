@@ -312,7 +312,8 @@ const ColliervilleSEO = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Digital Frontier Company - Collierville SEO Services",
-            "description": "Leading Collierville SEO company providing local search optimization, AI Overviews optimization, and digital marketing services",
+            "alternateName": "Collierville SEO Company",
+            "description": "Leading Collierville SEO company specializing in local search optimization, AI Overviews optimization, and proven strategies for Shelby County businesses",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Collierville",
@@ -341,7 +342,64 @@ const ColliervilleSEO = () => {
             "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
             "sameAs": [
               "https://www.linkedin.com/company/digital-frontier-company"
-            ]
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Collierville SEO Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Local SEO Collierville",
+                    "description": "Dominate Collierville Google My Business listings and local pack rankings"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Overviews Optimization",
+                    "description": "Get your Collierville business featured in Google's AI search results"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Answer Engine Optimization",
+                    "description": "Optimize to be cited by ChatGPT and AI assistants for local queries"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Website SEO Optimization",
+                    "description": "Technical SEO, content optimization, and site speed improvements"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": colliervilleFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
           })
         }}
       />

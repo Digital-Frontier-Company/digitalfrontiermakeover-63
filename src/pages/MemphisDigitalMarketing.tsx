@@ -286,8 +286,9 @@ const MemphisDigitalMarketing = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Digital Frontier Company",
-            "description": "Memphis AI Marketing Agency specializing in Answer Engine Optimization and AI Overviews optimization",
+            "name": "Digital Frontier Company - Memphis AI Marketing Agency",
+            "alternateName": "Memphis AI Marketing Agency",
+            "description": "Leading Memphis AI Marketing Agency specializing in Answer Engine Optimization, AI Overviews optimization, and local SEO services for Greater Memphis businesses",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Memphis",
@@ -299,7 +300,8 @@ const MemphisDigitalMarketing = () => {
               "Collierville, TN", 
               "Germantown, TN",
               "Bartlett, TN",
-              "Cordova, TN"
+              "Cordova, TN",
+              "East Memphis, TN"
             ],
             "serviceArea": {
               "@type": "GeoCircle",
@@ -310,13 +312,61 @@ const MemphisDigitalMarketing = () => {
               },
               "geoRadius": "50000"
             },
-            "url": "https://digitalfrontier.app/memphis-digital-marketing-agency",
-            "telephone": "+1-901-XXX-XXXX",
+            "url": "https://digitalfrontier.app/memphis-digital-marketing",
             "priceRange": "$$",
             "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
             "sameAs": [
               "https://www.linkedin.com/company/digital-frontier-company"
-            ]
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Memphis AI Marketing Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Local SEO Memphis",
+                    "description": "Dominate Memphis Google My Business listings and local search results"
+                  }
+                },
+                {
+                  "@type": "Offer", 
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Overviews Optimization",
+                    "description": "Get Memphis businesses featured in Google's AI search results"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Answer Engine Optimization",
+                    "description": "Optimize to be cited by ChatGPT and AI assistants for Memphis queries"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
+
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": memphisFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
           })
         }}
       />
