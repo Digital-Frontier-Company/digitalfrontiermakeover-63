@@ -119,6 +119,31 @@ const ColliervilleSEO = () => {
         />
       </section>
 
+      {/* Collierville Local Connection */}
+      <section className="mb-16">
+        <Card className="bg-slate-800/40 border-slate-700">
+          <CardContent className="p-8">
+            <LazyImage
+              src="/lovable-uploads/fb2060aa-aaca-4d19-979f-1a9cc9129e41.png"
+              alt="Collierville Tennessee Historic Mural - Showcasing local landmarks and community pride"
+              className="w-full max-w-5xl mx-auto rounded-lg shadow-xl mb-6"
+              displayWidth={900}
+              displayHeight={400}
+            />
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Proud to Serve Collierville, Tennessee
+              </h2>
+              <p className="text-slate-300 max-w-3xl mx-auto">
+                As a local digital marketing agency, we understand Collierville's unique character, from historic 
+                downtown landmarks to thriving business districts. Our local SEO expertise helps Collierville 
+                businesses connect with customers who appreciate our community's rich heritage and vibrant economy.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       {/* Collierville SEO Stats */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-white mb-8 text-center">
