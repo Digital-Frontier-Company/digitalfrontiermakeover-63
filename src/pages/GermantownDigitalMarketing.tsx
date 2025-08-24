@@ -84,8 +84,8 @@ const GermantownDigitalMarketing = () => {
       publishedDate="2024-12-24"
       modifiedDate="2024-12-24"
     >
-      {/* Hero Section */}
-      <section className="relative mb-16 overflow-hidden">
+      {/* Background Hero Section */}
+      <section className="relative mb-8 overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
@@ -94,7 +94,12 @@ const GermantownDigitalMarketing = () => {
             filter: 'blur(0.5px) brightness(0.5)'
           }}
         />
-        <div className="relative z-10 text-center mb-12">
+        <div className="relative z-10 h-32"></div>
+      </section>
+
+      {/* Hero Section */}
+      <section className="mb-16">
+        <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4">
             <Shield className="w-4 h-4 mr-2" />
             Premium Digital Marketing for Germantown
