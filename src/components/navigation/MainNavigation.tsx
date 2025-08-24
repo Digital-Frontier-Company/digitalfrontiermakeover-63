@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
-import { DigitalMarketingDropdown, ResourcesDropdown, CompanyDropdown } from "./NavigationDropdowns";
+import { DigitalMarketingDropdown, ResourcesDropdown, CompanyDropdown, LocalSEODropdown } from "./NavigationDropdowns";
 import { LazyImage } from "@/components/LazyImage";
 
 const MainNavigation = () => {
@@ -25,6 +25,11 @@ const MainNavigation = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110">Digital Marketing</NavigationMenuTrigger>
                   <DigitalMarketingDropdown />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110">Local SEO</NavigationMenuTrigger>
+                  <LocalSEODropdown />
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>

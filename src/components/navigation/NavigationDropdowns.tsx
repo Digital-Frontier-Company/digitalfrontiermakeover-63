@@ -223,6 +223,55 @@ export const ResourcesDropdown = () => (
   </NavigationMenuContent>
 );
 
+export const LocalSEODropdown = () => (
+  <NavigationMenuContent>
+    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-slate-900 border border-slate-700">
+      <li className="row-span-3">
+        <NavigationMenuLink asChild>
+          <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-green-500/20 to-green-600/20 p-6 no-underline outline-none focus:shadow-md text-slate-100 hover:text-white border border-green-500/20" to="/memphis-digital-marketing">
+            <div className="mb-2 mt-4 text-lg font-medium text-slate-100">
+              Memphis Digital Marketing
+            </div>
+            <p className="text-sm leading-tight text-slate-300">
+              Premier AI marketing agency serving Memphis and surrounding areas
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+      <li>
+        <NavigationMenuLink asChild>
+          <Link to="/collierville-seo" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
+            <div className="text-sm font-medium leading-none text-slate-100">Collierville SEO</div>
+            <p className="line-clamp-2 text-sm leading-snug text-slate-400">
+              Local SEO services for Collierville businesses
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+      <li>
+        <NavigationMenuLink asChild>
+          <Link to="/germantown-digital-marketing" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
+            <div className="text-sm font-medium leading-none text-slate-100">Germantown Digital Marketing</div>
+            <p className="line-clamp-2 text-sm leading-snug text-slate-400">
+              Premium digital marketing for affluent markets
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+      <li>
+        <NavigationMenuLink asChild>
+          <Link to="/team-expertise" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
+            <div className="text-sm font-medium leading-none text-slate-100">Our Team</div>
+            <p className="line-clamp-2 text-sm leading-snug text-slate-400">
+              Local SEO experts and certifications
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
+    </ul>
+  </NavigationMenuContent>
+);
+
 export const CompanyDropdown = () => (
   <NavigationMenuContent>
     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-slate-900 border border-slate-700">
