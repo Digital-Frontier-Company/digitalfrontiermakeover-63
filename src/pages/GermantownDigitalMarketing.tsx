@@ -88,10 +88,10 @@ const GermantownDigitalMarketing = () => {
       <section className="relative mb-16 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
           style={{
             backgroundImage: `url(${germantownHeroBg})`,
-            filter: 'blur(1px) brightness(0.3)'
+            filter: 'blur(0.5px) brightness(0.5)'
           }}
         />
         <div className="relative z-10 text-center mb-12">
