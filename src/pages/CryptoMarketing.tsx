@@ -6,31 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3 } from "lucide-react";
-
 const CryptoMarketing = () => {
   const location = useLocation();
-
-  const cryptoFAQs: FAQItem[] = [
-    {
-      question: "How do you guarantee ROI for crypto marketing campaigns?",
-      answer: "We provide a 90-day ROI guarantee backed by our proven frameworks. If you don't see measurable growth in user acquisition and revenue, we'll continue working until you do - or provide fee credits."
-    },
-    {
-      question: "What makes Digital Frontier different from other crypto marketing agencies?",
-      answer: "We specialize exclusively in creator economy and crypto/Web3 brands. Our AI-powered approach combines deep market knowledge with 24/7 optimization systems that most agencies can't match."
-    },
-    {
-      question: "How quickly can we expect to see results?",
-      answer: "Most clients see initial traction within 30 days, with significant growth typically occurring within 60-90 days. Our systematic approach ensures sustainable, long-term growth rather than quick wins that don't last."
-    },
-    {
-      question: "Do you work with projects in regulatory gray areas?",
-      answer: "We only work with legitimate, compliant crypto projects and creators. Our regulatory-safe frameworks ensure your marketing efforts build long-term trust and avoid compliance issues."
-    }
-  ];
-
-  return (
-    <>
+  const cryptoFAQs: FAQItem[] = [{
+    question: "How do you guarantee ROI for crypto marketing campaigns?",
+    answer: "We provide a 90-day ROI guarantee backed by our proven frameworks. If you don't see measurable growth in user acquisition and revenue, we'll continue working until you do - or provide fee credits."
+  }, {
+    question: "What makes Digital Frontier different from other crypto marketing agencies?",
+    answer: "We specialize exclusively in creator economy and crypto/Web3 brands. Our AI-powered approach combines deep market knowledge with 24/7 optimization systems that most agencies can't match."
+  }, {
+    question: "How quickly can we expect to see results?",
+    answer: "Most clients see initial traction within 30 days, with significant growth typically occurring within 60-90 days. Our systematic approach ensures sustainable, long-term growth rather than quick wins that don't last."
+  }, {
+    question: "Do you work with projects in regulatory gray areas?",
+    answer: "We only work with legitimate, compliant crypto projects and creators. Our regulatory-safe frameworks ensure your marketing efforts build long-term trust and avoid compliance issues."
+  }];
+  return <>
       <Helmet>
         <title>Digital Frontier Crypto Marketing: ROI-Guaranteed Growth | Digital Frontier</title>
         <meta name="description" content="Stop renting attention. Start owning demand. AI-first growth partner for creators & crypto pioneers. ROI guaranteed or fee credits back. 200+ success stories." />
@@ -52,12 +43,9 @@ const CryptoMarketing = () => {
       {/* Full-Screen Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: `url('/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png')`
-          }}
-        />
+        <div className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url('/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png')`
+      }} />
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/50 to-slate-900/90" />
@@ -67,16 +55,12 @@ const CryptoMarketing = () => {
           {/* Logo with Shimmer Effect */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" 
-                alt="Digital Frontier Logo" 
-                className="h-24 w-auto animate-pulse"
-              />
+              <img src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" alt="Digital Frontier Logo" className="h-24 w-auto animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+          <h1 className="text-9xl mb-6 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text my-[10px] font-extrabold md:text-8xl text-sky-400 text-center">
             Digital Frontier
           </h1>
           
@@ -90,35 +74,24 @@ const CryptoMarketing = () => {
 
           {/* Navigation Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="hover-scale border-primary/50 hover:border-primary"
-              onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="outline" size="lg" className="hover-scale border-primary/50 hover:border-primary" onClick={() => document.getElementById('expertise')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Our Expertise
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="hover-scale border-secondary/50 hover:border-secondary"
-              onClick={() => document.getElementById('service-pods')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="outline" size="lg" className="hover-scale border-secondary/50 hover:border-secondary" onClick={() => document.getElementById('service-pods')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Service Pods
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="hover-scale border-accent/50 hover:border-accent"
-              onClick={() => document.getElementById('ai-capabilities')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="outline" size="lg" className="hover-scale border-accent/50 hover:border-accent" onClick={() => document.getElementById('ai-capabilities')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               AI Capabilities
             </Button>
-            <Button 
-              size="lg"
-              className="hover-scale bg-primary hover:bg-primary/90"
-              onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button size="lg" className="hover-scale bg-primary hover:bg-primary/90" onClick={() => document.getElementById('get-started')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -163,11 +136,7 @@ const CryptoMarketing = () => {
             {/* Independent Creators */}
             <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img 
-                  src="/lovable-uploads/108a6190-a689-4e67-8494-edae10aa78d2.jpg"
-                  alt="Female Content Creator in Home Studio"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/108a6190-a689-4e67-8494-edae10aa78d2.jpg" alt="Female Content Creator in Home Studio" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-cyan-500/20 text-cyan-300 border-cyan-400">
@@ -211,11 +180,7 @@ const CryptoMarketing = () => {
             {/* Crypto Visionaries */}
             <Card className="interactive-card bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-500/30 hover:border-blue-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img 
-                  src="/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png"
-                  alt="Team Collaboration"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png" alt="Team Collaboration" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-blue-500/20 text-blue-300 border-blue-400">
@@ -259,11 +224,7 @@ const CryptoMarketing = () => {
             {/* Hybrid Crypto-Creatives */}
             <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img 
-                  src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png"
-                  alt="Digital Art Creator with Futuristic Elements"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png" alt="Digital Art Creator with Futuristic Elements" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-400">
@@ -429,12 +390,9 @@ const CryptoMarketing = () => {
       {/* AI-Powered Capabilities */}
       <section id="ai-capabilities" className="py-24 bg-slate-900 relative overflow-hidden">
         {/* Background AI Network */}
-        <div 
-          className="absolute inset-0 opacity-15 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url('/lovable-uploads/6c3d2d6e-7ff3-40e9-be46-918e6ee0996c.png')`
-          }}
-        />
+        <div className="absolute inset-0 opacity-15 bg-cover bg-center" style={{
+        backgroundImage: `url('/lovable-uploads/6c3d2d6e-7ff3-40e9-be46-918e6ee0996c.png')`
+      }} />
         
         <div className="relative z-10 container mx-auto px-6">
           <div className="text-center mb-16">
@@ -443,11 +401,7 @@ const CryptoMarketing = () => {
               Our AI systems work 24/7 to optimize your growth while you focus on creating and building.
             </p>
             <div className="flex justify-center">
-              <img 
-                src="/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png"
-                alt="AI Network Intelligence Hub"
-                className="max-w-md opacity-90"
-              />
+              <img src="/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png" alt="AI Network Intelligence Hub" className="max-w-md opacity-90" />
             </div>
           </div>
 
@@ -478,11 +432,7 @@ const CryptoMarketing = () => {
 
             <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50 overflow-hidden">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png"
-                  alt="Performance Analytics Dashboard"
-                  className="w-full h-32 object-cover opacity-30"
-                />
+                <img src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png" alt="Performance Analytics Dashboard" className="w-full h-32 object-cover opacity-30" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-800/90 to-transparent" />
               </div>
               <CardContent className="p-6 text-center relative">
@@ -545,11 +495,7 @@ const CryptoMarketing = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
-                <img 
-                  src="/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"
-                  alt="Digital Frontier Executive Team"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png" alt="Digital Frontier Executive Team" className="w-full h-full object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-white mb-2">Executive Leadership</h3>
@@ -559,11 +505,7 @@ const CryptoMarketing = () => {
 
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
-                <img 
-                  src="/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png"
-                  alt="Team Collaboration"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png" alt="Team Collaboration" className="w-full h-full object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-white mb-2">Collaborative Approach</h3>
@@ -573,11 +515,7 @@ const CryptoMarketing = () => {
 
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
-                <img 
-                  src="/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png"
-                  alt="Performance Analytics Dashboard"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png" alt="Performance Analytics Dashboard" className="w-full h-full object-cover" />
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-white mb-2">Proven ROI Results</h3>
@@ -621,22 +559,14 @@ const CryptoMarketing = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <img 
-                src="/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png"
-                alt="Artificial Intelligence Brain Network"
-                className="max-w-lg w-full"
-              />
+              <img src="/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png" alt="Artificial Intelligence Brain Network" className="max-w-lg w-full" />
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <FAQSection 
-        title="Frequently Asked Questions"
-        faqs={cryptoFAQs}
-        className="bg-slate-900"
-      />
+      <FAQSection title="Frequently Asked Questions" faqs={cryptoFAQs} className="bg-slate-900" />
 
       {/* Final CTA Section */}
       <section id="get-started" className="py-24 bg-slate-800 text-center">
@@ -652,11 +582,7 @@ const CryptoMarketing = () => {
             <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg">
               Book Free Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-slate-600 text-slate-300 hover:bg-slate-700 px-8 py-4 text-lg"
-            >
+            <Button variant="outline" size="lg" className="border-slate-600 text-slate-300 hover:bg-slate-700 px-8 py-4 text-lg">
               View Case Studies
             </Button>
           </div>
@@ -666,8 +592,6 @@ const CryptoMarketing = () => {
           </p>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default CryptoMarketing;
