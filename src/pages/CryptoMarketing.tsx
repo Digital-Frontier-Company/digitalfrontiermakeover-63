@@ -60,12 +60,12 @@ const CryptoMarketing = () => {
             </div>
           </div>
 
-          <div className="relative inline-block">
-            <h1 className="text-9xl mb-6 bg-gradient-to-r from-slate-300 via-blue-400 to-slate-200 bg-clip-text text-transparent animate-shimmer my-[10px] font-extrabold md:text-8xl text-center bg-[length:200%_auto] filter drop-shadow-[0_0_20px_rgba(30,58,138,0.9)] drop-shadow-[0_0_40px_rgba(59,130,246,0.7)] relative z-10">
+          <div className="relative w-full max-w-6xl mx-auto px-8 py-12">
+            <h1 className="text-8xl sm:text-9xl xl:text-[12rem] mb-6 bg-gradient-to-r from-slate-300 via-blue-400 to-slate-200 bg-clip-text text-transparent animate-shimmer font-extrabold text-center bg-[length:200%_auto] filter drop-shadow-[0_0_20px_rgba(30,58,138,0.9)] drop-shadow-[0_0_40px_rgba(59,130,246,0.7)] relative z-10 leading-tight">
               Digital Frontier
             </h1>
             {/* Cyan glow behind text - less blurry */}
-            <div className="absolute inset-0 text-9xl mb-6 my-[10px] font-extrabold md:text-8xl text-center text-cyan-400 filter blur-sm opacity-70 z-0">
+            <div className="absolute inset-0 flex items-center justify-center text-8xl sm:text-9xl xl:text-[12rem] font-extrabold text-cyan-400 filter blur-sm opacity-70 z-0 leading-tight">
               Digital Frontier
             </div>
             {/* Multi-angle shimmer overlay */}
