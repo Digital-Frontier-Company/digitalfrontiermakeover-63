@@ -1,641 +1,634 @@
-
 import React from "react";
-import PageLayout from "@/components/layout/PageLayout";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import FAQSection, { FAQItem } from "@/components/FAQSection";
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Bitcoin, CheckCircle, Coins, ArrowRight, Wallet, Sliders } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3 } from "lucide-react";
 
 const CryptoMarketing = () => {
   const location = useLocation();
 
   const cryptoFAQs: FAQItem[] = [
     {
-      question: "Why is specialized UX important for crypto platforms?",
-      answer: "Crypto platforms face unique challenges due to the technical complexity and the irreversible nature of transactions. Specialized UX design can reduce the 70% abandonment rate by making complex processes more intuitive and providing proper safeguards for irreversible actions."
+      question: "How do you guarantee ROI for crypto marketing campaigns?",
+      answer: "We provide a 90-day ROI guarantee backed by our proven frameworks. If you don't see measurable growth in user acquisition and revenue, we'll continue working until you do - or provide fee credits."
     },
     {
-      question: "What are the key elements of a successful crypto user experience?",
-      answer: "Successful crypto UX includes clear transaction confirmation flows, progressive disclosure of complex information, real-time feedback, familiar patterns adapted for blockchain interactions, and educational elements that build confidence while users navigate the platform."
+      question: "What makes Digital Frontier different from other crypto marketing agencies?",
+      answer: "We specialize exclusively in creator economy and crypto/Web3 brands. Our AI-powered approach combines deep market knowledge with 24/7 optimization systems that most agencies can't match."
     },
     {
-      question: "How can Digital Frontier help improve our crypto platform's conversion rate?",
-      answer: "We implement our battle-tested UX Playbook specifically designed for crypto platforms, including frictionless discovery-to-contract flows, interaction micro-enhancements, ultra-light checkout patterns, and trust-building elements that have been proven to reduce abandonment by 43% and increase retention by 37%."
+      question: "How quickly can we expect to see results?",
+      answer: "Most clients see initial traction within 30 days, with significant growth typically occurring within 60-90 days. Our systematic approach ensures sustainable, long-term growth rather than quick wins that don't last."
     },
     {
-      question: "What metrics should we track to measure UX improvements in our crypto platform?",
-      answer: "Beyond standard conversion metrics, crypto platforms should track time-to-first-transaction, wallet connection success rate, transaction completion rate, support ticket frequency by user journey stage, and user confidence ratings at key interaction points."
+      question: "Do you work with projects in regulatory gray areas?",
+      answer: "We only work with legitimate, compliant crypto projects and creators. Our regulatory-safe frameworks ensure your marketing efforts build long-term trust and avoid compliance issues."
     }
   ];
 
   return (
-    <PageLayout
-      title="Digital Frontier Marketing for Crypto"
-      subtitle="From Friction to Conversion: The UX Playbook for Crypto Success"
-      currentPath={location.pathname}
-    >
+    <>
       <Helmet>
-        <title>Digital Frontier Marketing for Crypto | Digital Frontier</title>
-        <meta name="description" content="Specialized UX solutions for crypto platforms to reduce abandonment and increase conversions. Our battle-tested approach combines growth marketing with user experience design." />
+        <title>Digital Frontier Crypto Marketing: ROI-Guaranteed Growth | Digital Frontier</title>
+        <meta name="description" content="Stop renting attention. Start owning demand. AI-first growth partner for creators & crypto pioneers. ROI guaranteed or fee credits back. 200+ success stories." />
         <link rel="canonical" href="https://digitalfrontier.app/crypto-marketing" />
         <script type="application/ld+json">
         {`
           {
             "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Why is specialized UX important for crypto platforms?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Crypto platforms face unique challenges due to the technical complexity and the irreversible nature of transactions. Specialized UX design can reduce the 70% abandonment rate by making complex processes more intuitive and providing proper safeguards for irreversible actions."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What are the key elements of a successful crypto user experience?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Successful crypto UX includes clear transaction confirmation flows, progressive disclosure of complex information, real-time feedback, familiar patterns adapted for blockchain interactions, and educational elements that build confidence while users navigate the platform."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How can Digital Frontier help improve our crypto platform's conversion rate?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We implement our battle-tested UX Playbook specifically designed for crypto platforms, including frictionless discovery-to-contract flows, interaction micro-enhancements, ultra-light checkout patterns, and trust-building elements that have been proven to reduce abandonment by 43% and increase retention by 37%."
-                }
-              },
-              {
-                "@type": "Question", 
-                "name": "What metrics should we track to measure UX improvements in our crypto platform?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Beyond standard conversion metrics, crypto platforms should track time-to-first-transaction, wallet connection success rate, transaction completion rate, support ticket frequency by user journey stage, and user confidence ratings at key interaction points."
-                }
-              }
-            ]
+            "@type": "Organization",
+            "name": "Digital Frontier",
+            "description": "AI-first growth partner for creators and crypto pioneers",
+            "url": "https://digitalfrontier.app",
+            "@id": "https://digitalfrontier.app/#organization"
           }
         `}
         </script>
       </Helmet>
 
-      {/* Hero Section with Crypto Wallet UI Mockup */}
-      <section className="mb-12">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <div className="bg-slate-800/50 p-6 rounded-xl mb-6">
-              <p className="font-medium mb-2 text-slate-300">The stark reality?</p>
-              <p className="text-3xl font-bold text-yellow-300">70% of potential users abandon crypto platforms</p>
-              <p className="mt-2 text-slate-300">before completing their first transaction - not because they don't believe in the technology, but because the experience feels unnecessarily complex.</p>
-            </div>
-            <p className="mb-4 text-slate-300">Our battle-tested approach combines growth marketing with user experience design specifically for legitimate crypto startups.</p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="#playbook" className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors">Explore the Playbook</a>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button className="border-2 border-slate-600 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 px-6 py-3 rounded-lg font-medium text-center transition-colors">Get UX Audit</button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] bg-slate-900 border-slate-700">
-                  <DialogHeader>
-                    <DialogTitle className="text-slate-100">Request UX Audit</DialogTitle>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="name" className="text-right text-slate-300">
-                        Name
-                      </Label>
-                      <Input id="name" className="col-span-3 bg-slate-800 border-slate-700 text-slate-200" />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="email" className="text-right text-slate-300">
-                        Email
-                      </Label>
-                      <Input id="email" type="email" className="col-span-3 bg-slate-800 border-slate-700 text-slate-200" />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="message" className="text-right text-slate-300">
-                        Message
-                      </Label>
-                      <textarea id="message" className="col-span-3 border rounded-md p-2 h-24 bg-slate-800 border-slate-700 text-slate-200"></textarea>
-                    </div>
-                  </div>
-                  <DialogFooter>
-                    <Button type="button" className="bg-cyan-500 hover:bg-cyan-600">
-                      Submit
-                    </Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
-          <div className="relative hidden md:block">
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-cyan-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-cyan-800/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-            <div className="relative bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden">
-              <div className="bg-slate-900 p-4 flex items-center">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <div className="ml-4 text-sm text-slate-400">crypto-ux.digitalfrontier.ai</div>
-              </div>
-              <div className="p-6 bg-slate-800">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-full bg-cyan-900/50 flex items-center justify-center">
-                    <Wallet className="h-5 w-5 text-cyan-400" />
-                  </div>
-                  <div className="ml-3">
-                    <div className="font-medium text-slate-200">Crypto Wallet</div>
-                    <div className="text-sm text-slate-400">Connect your wallet</div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-slate-700/50 rounded-lg">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-cyan-900/50 flex items-center justify-center">
-                        <Coins className="h-4 w-4 text-cyan-400" />
-                      </div>
-                      <div className="ml-3">
-                        <div className="font-medium text-slate-200">ETH</div>
-                        <div className="text-sm text-slate-400">Ethereum</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-medium text-slate-200">2.45</div>
-                      <div className="text-sm text-slate-400">≈ $4,500</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-slate-700/50 rounded-lg">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 rounded-full bg-cyan-900/50 flex items-center justify-center">
-                        <Bitcoin className="h-4 w-4 text-yellow-400" />
-                      </div>
-                      <div className="ml-3">
-                        <div className="font-medium text-slate-200">BTC</div>
-                        <div className="text-sm text-slate-400">Bitcoin</div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-medium text-slate-200">0.12</div>
-                      <div className="text-sm text-slate-400">≈ $4,800</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-lg font-medium flex items-center justify-center transition-colors">
-                    <span>Send Transaction</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Stats Section */}
-      <section id="advantage" className="mb-10">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Our Crypto Marketing Results</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="p-4 bg-slate-800/50 rounded-lg">
-            <div className="text-3xl font-bold text-cyan-400">75+</div>
-            <div className="text-slate-300 mt-1">Crypto Brands</div>
-          </div>
-          <div className="p-4 bg-slate-800/50 rounded-lg">
-            <div className="text-3xl font-bold text-cyan-400">1M+</div>
-            <div className="text-slate-300 mt-1">Users Scaled</div>
-          </div>
-          <div className="p-4 bg-slate-800/50 rounded-lg">
-            <div className="text-3xl font-bold text-cyan-400">43%</div>
-            <div className="text-slate-300 mt-1">Less Abandonment</div>
-          </div>
-          <div className="p-4 bg-slate-800/50 rounded-lg">
-            <div className="text-3xl font-bold text-cyan-400">37%</div>
-            <div className="text-slate-300 mt-1">More Retention</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Playbook Section */}
-      <section id="playbook" className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">The High-Stakes Journey: Converting Visitors to Loyal Users</h2>
-        <p className="mb-8 text-slate-300">Our battle-tested approach combines growth marketing with user experience design specifically for legitimate crypto startups.</p>
-      
-        <div className="space-y-8">
-          <div className="border border-slate-700 rounded-lg p-6 bg-slate-900/50">
-            <div className="flex items-start mb-4">
-              <div className="bg-cyan-900/50 text-cyan-400 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
-              <h3 className="text-xl font-bold text-slate-100">Frictionless Discovery-to-Contract Flow</h3>
-            </div>
-            <p className="ml-14 text-slate-300">The first interaction with your platform sets the tone for everything that follows. We prioritize above-the-fold social proof with real-time industry metrics to establish immediate credibility.</p>
-          </div>
-          
-          <div className="border border-slate-700 rounded-lg p-6 bg-slate-900/50">
-            <div className="flex items-start mb-4">
-              <div className="bg-cyan-900/50 text-cyan-400 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
-              <h3 className="text-xl font-bold text-slate-100">Interaction Micro-Enhancements That Convert</h3>
-            </div>
-            <p className="ml-14 text-slate-300">Small details make significant differences in crypto UX. Our approach combines side-sliding confirmations, pulse animations after periods of inactivity, and multi-stage button feedback to prevent user uncertainty.</p>
-          </div>
-          
-          <div className="border border-slate-700 rounded-lg p-6 bg-slate-900/50">
-            <div className="flex items-start mb-4">
-              <div className="bg-cyan-900/50 text-cyan-400 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
-              <h3 className="text-xl font-bold text-slate-100">Ultra-Light Crypto Checkout Patterns</h3>
-            </div>
-            <p className="ml-14 text-slate-300">Crypto transactions carry unique anxiety due to their irreversible nature. Our checkout patterns use progressive disclosure, visual confirmation, and familiar patterns adapted for blockchain interactions.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation Architecture */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Navigation Architecture: Bottom Tabs vs. Hamburger</h2>
-        <p className="mb-6 text-slate-300">Research shows that different crypto applications require different navigation paradigms to maximize user engagement.</p>
+      {/* Full-Screen Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url('/lovable-uploads/a53a6087-265e-449d-b32a-d0e4e80e5352.png')`
+          }}
+        />
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Bottom Tabs */}
-          <Card className="bg-slate-900/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-cyan-900/50 p-2 rounded-lg mr-3">
-                  <Wallet className="h-5 w-5 text-cyan-400" />
-                </div>
-                <h4 className="text-lg font-semibold text-slate-100">For Crypto Wallets (≤4 core screens)</h4>
-              </div>
-              <p className="text-slate-300 mb-4">Bottom tab bars outperform hamburger menus by 23% for feature discovery and daily use.</p>
-              <div className="bg-slate-800 rounded-lg p-4">
-                <div className="flex justify-between items-center bg-slate-700 rounded-lg p-2">
-                  <button className="flex flex-col items-center p-2 text-cyan-400">
-                    <Wallet className="h-4 w-4 mb-1" />
-                    <span className="text-xs">Wallet</span>
-                  </button>
-                  <button className="flex flex-col items-center p-2 text-slate-400">
-                    <Coins className="h-4 w-4 mb-1" />
-                    <span className="text-xs">Swap</span>
-                  </button>
-                  <button className="flex flex-col items-center p-2 text-slate-400">
-                    <Bitcoin className="h-4 w-4 mb-1" />
-                    <span className="text-xs">Markets</span>
-                  </button>
-                  <button className="flex flex-col items-center p-2 text-slate-400">
-                    <Sliders className="h-4 w-4 mb-1" />
-                    <span className="text-xs">Settings</span>
-                  </button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
-          {/* Hamburger Menu */}
-          <Card className="bg-slate-900/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-cyan-900/50 p-2 rounded-lg mr-3">
-                  <Sliders className="h-5 w-5 text-cyan-400" />
-                </div>
-                <h4 className="text-lg font-semibold text-slate-100">For Analytics Dashboards (10+ sections)</h4>
-              </div>
-              <p className="text-slate-300 mb-4">Hierarchical hamburger menus win for complex data platforms with multiple feature sets.</p>
-              <div className="bg-slate-800 rounded-lg p-4">
-                <div className="flex justify-between items-center bg-slate-700 rounded-lg p-3">
-                  <div className="font-medium text-slate-200">Analytics Dashboard</div>
-                  <button className="text-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                  </button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Form Fatigue Solutions */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Form Fatigue Solutions for KYC & Onboarding</h2>
-        <p className="mb-6 text-slate-300">Most crypto platforms suffer from abandonment around question 7 in lengthy forms. Our approach uses progressive disclosure and visual progress indicators.</p>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/50 to-slate-900/90" />
         
-        <Card className="bg-slate-900/50 border-slate-700 max-w-3xl mx-auto">
-          <CardContent className="p-6">
-            <div className="flex justify-between items-center mb-6">
-              <h4 className="text-xl font-semibold text-slate-100">Identity Verification (KYC)</h4>
-              <div className="text-sm text-slate-400">Step 2 of 5</div>
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+          {/* Logo with Shimmer Effect */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/6c62681e-001a-4845-979e-9213008dcbe1.png" 
+                alt="Digital Frontier Logo" 
+                className="h-24 w-auto animate-pulse"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
             </div>
-            
-            <div className="w-full bg-slate-700 rounded-full h-2 mb-6">
-              <div className="bg-cyan-500 h-2 rounded-full" style={{ width: '40%' }}></div>
-            </div>
-            
-            <div className="space-y-4">
-              <div>
-                <Label htmlFor="fullName" className="text-slate-200">Full Legal Name</Label>
-                <Input id="fullName" className="bg-slate-800 border-slate-700 text-slate-200" />
-              </div>
-              <div>
-                <Label htmlFor="dob" className="text-slate-200">Date of Birth</Label>
-                <Input id="dob" type="date" className="bg-slate-800 border-slate-700 text-slate-200" />
-              </div>
-              <div>
-                <Label htmlFor="country" className="text-slate-200">Country of Residence</Label>
-                <select id="country" className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-slate-200">
-                  <option>Select country</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                  <option>Canada</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="mt-8 flex justify-between">
-              <Button variant="outline" className="border-slate-700 text-slate-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-                Back
-              </Button>
-              <Button className="bg-cyan-500 hover:bg-cyan-600">
-                Continue
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 h-4 w-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </Button>
-            </div>
-            
-            <div className="mt-6 text-center">
-              <button className="text-sm text-cyan-400 hover:text-cyan-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1 inline h-4 w-4"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-                Save & Resume Later
-              </button>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+          </div>
 
-      {/* Strategic Gamification Elements */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Strategic Gamification Elements</h2>
-        <p className="mb-6 text-slate-300">Habit formation drives crypto platform retention. Our approach implements carefully designed gamification elements that increase user engagement.</p>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+            Digital Frontier
+          </h1>
+          
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-slate-300">
+            AI-First, ROI Guaranteed Growth Partner
+          </h2>
+          
+          <p className="text-xl md:text-2xl mb-8 text-slate-400 max-w-4xl mx-auto leading-relaxed">
+            Stop renting attention. Start owning demand. For creators and crypto pioneers ready to scale beyond algorithmic dependency.
+          </p>
 
-        <div className="bg-slate-800/50 p-6 rounded-xl">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-slate-100">User Activity</h3>
-            <div className="bg-cyan-900/30 text-cyan-300 px-3 py-1 rounded-full text-sm font-medium flex items-center">
-              <span className="mr-1">●</span> 3-day streak
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-7 gap-2 mb-6">
-            {[1, 2, 3, 4, 5, 6, 7].map((day) => (
-              <div 
-                key={day}
-                className={`h-8 rounded flex items-center justify-center ${
-                  day >= 3 && day <= 5 ? 'bg-cyan-900/30 border border-cyan-700/50' : 'bg-slate-700/50'
-                }`}
-              >
-                {day >= 3 && day <= 5 && <span className="text-cyan-400 text-xs">✓</span>}
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-sm text-slate-400 mb-6">Keep using the platform daily to build your streak and earn rewards.</p>
-          
-          <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-cyan-900/30 flex items-center justify-center mr-3">
-                  <span className="text-cyan-400">🪙</span>
-                </div>
-                <div>
-                  <div className="font-medium text-slate-200">Daily Check-in</div>
-                  <div className="text-sm text-slate-400">Earn 5 XP for logging in today</div>
-                </div>
-              </div>
-              <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-1 rounded text-sm transition-colors">
-                Claim
-              </button>
-            </div>
-            
-            <div className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-cyan-900/30 flex items-center justify-center mr-3">
-                  <span className="text-cyan-400">💱</span>
-                </div>
-                <div>
-                  <div className="font-medium text-slate-200">First Trade</div>
-                  <div className="text-sm text-slate-400">Make your first trade to earn 20 XP</div>
-                </div>
-              </div>
-              <button className="bg-slate-600 text-slate-300 px-3 py-1 rounded text-sm cursor-not-allowed">
-                Locked
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Transaction Protection */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Critical Transaction Protection</h2>
-        <p className="mb-6 text-slate-300">Balancing security with usability is essential for crypto platforms.</p>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Irreversible Operations */}
-          <Card className="bg-slate-900/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-red-900/30 p-2 rounded-lg mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-400 h-5 w-5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-                </div>
-                <h4 className="text-lg font-semibold text-slate-100">For Irreversible Operations</h4>
-              </div>
-              <p className="text-slate-300 mb-4">Confirmation dialogs with clearly differentiated action buttons.</p>
-              <div className="bg-slate-800 rounded-lg p-4">
-                <div className="text-center mb-4">
-                  <div className="w-12 h-12 bg-red-900/30 rounded-full flex items-center justify-center mx-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-400 h-6 w-6"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>
-                  </div>
-                  <h5 className="text-lg font-medium mt-2 text-slate-100">Confirm Transaction</h5>
-                  <p className="text-sm text-slate-300 mt-1">This action cannot be undone.</p>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <Button variant="outline" className="border-slate-600 text-slate-300">Cancel</Button>
-                  <Button className="bg-red-600 hover:bg-red-700">Confirm</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
-          {/* Reversible Actions */}
-          <Card className="bg-slate-900/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-cyan-900/30 p-2 rounded-lg mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400 h-5 w-5"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
-                </div>
-                <h4 className="text-lg font-semibold text-slate-100">For Reversible Actions</h4>
-              </div>
-              <p className="text-slate-300 mb-4">Immediate execution with 10-second undo functionality.</p>
-              <div className="bg-slate-800 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-cyan-900/30 rounded-full flex items-center justify-center">
-                      <CheckCircle className="h-5 w-5 text-cyan-400" />
-                    </div>
-                    <div className="ml-3">
-                      <div className="font-medium text-slate-200">Preferences Saved</div>
-                      <div className="text-sm text-slate-400">Your changes have been applied</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <button className="text-sm text-cyan-400 hover:text-cyan-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1 inline h-4 w-4"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
-                    Undo Changes
-                  </button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Advantage Section */}
-      <section className="mb-12 bg-slate-800/60 rounded-xl p-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-slate-100">The Digital Frontier Advantage</h2>
-          <p className="text-xl max-w-3xl mx-auto text-cyan-300">By implementing these UX principles, crypto platforms reduce abandonment by an average of 43% while increasing user retention by 37%.</p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50">
-            <div className="w-12 h-12 bg-cyan-900/30 rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400 h-6 w-6"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/><path d="M13 2v7h7"/></svg>
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-slate-100">Frictionless Onboarding</h3>
-            <p className="text-slate-300">Streamlined processes that guide users from discovery to action without unnecessary complexity.</p>
-          </div>
-          
-          <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50">
-            <div className="w-12 h-12 bg-cyan-900/30 rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400 h-6 w-6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m14.5 9-5 5"/><path d="m9.5 9 5 5"/></svg>
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-slate-100">Trust Through Design</h3>
-            <p className="text-slate-300">Visual cues and micro-interactions that build confidence in every transaction.</p>
-          </div>
-          
-          <div className="bg-slate-900/80 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50">
-            <div className="w-12 h-12 bg-cyan-900/30 rounded-full flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-400 h-6 w-6"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-slate-100">Data-Driven Decisions</h3>
-            <p className="text-slate-300">Continuous testing and optimization based on real user behavior and feedback.</p>
-          </div>
-        </div>
-        
-        <div className="mt-10 bg-slate-900/80 backdrop-blur-sm rounded-xl p-8 max-w-4xl mx-auto border border-slate-700/50">
-          <div className="text-center">
-            <p className="text-xl font-bold mb-6 text-slate-100">The result? Crypto projects that don't just impress developers but convert and retain the mainstream users essential for widespread adoption.</p>
-            <Button className="bg-cyan-500 hover:bg-cyan-600 px-8 py-6 rounded-lg text-lg font-medium">
-              Transform Your Platform
+          {/* Navigation Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="hover-scale border-primary/50 hover:border-primary"
+              onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Our Expertise
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="hover-scale border-secondary/50 hover:border-secondary"
+              onClick={() => document.getElementById('service-pods')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Service Pods
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="hover-scale border-accent/50 hover:border-accent"
+              onClick={() => document.getElementById('ai-capabilities')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              AI Capabilities
+            </Button>
+            <Button 
+              size="lg"
+              className="hover-scale bg-primary hover:bg-primary/90"
+              onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="mb-10">
-        <h2 className="text-2xl font-bold mb-6 text-slate-100">Contact Digital Frontier for Crypto UX Solutions</h2>
-        
-        <div className="bg-slate-800/50 p-6 rounded-xl">
-          <p className="mb-6 text-slate-300">Ready to transform your crypto platform? Contact Digital Frontier today for a comprehensive UX audit and implementation roadmap.</p>
-          
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                Request UX Audit
-              </button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px] bg-slate-900 border-slate-700">
-              <DialogHeader>
-                <DialogTitle className="text-slate-100">Contact Us</DialogTitle>
-              </DialogHeader>
-              <div className="grid gap-4 py-4">
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="name" className="text-right text-slate-300">
-                    Name
-                  </Label>
-                  <Input id="name" className="col-span-3 bg-slate-800 border-slate-700 text-slate-200" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="email" className="text-right text-slate-300">
-                    Email
-                  </Label>
-                  <Input id="email" type="email" className="col-span-3 bg-slate-800 border-slate-700 text-slate-200" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="message" className="text-right text-slate-300">
-                    Message
-                  </Label>
-                  <textarea id="message" className="col-span-3 border rounded-md p-2 h-24 bg-slate-800 border-slate-700 text-slate-200"></textarea>
-                </div>
-              </div>
-              <DialogFooter>
-                <Button type="button" className="bg-cyan-500 hover:bg-cyan-600">
-                  Submit
-                </Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
-
-          <div className="mt-6 pt-6 border-t border-slate-700">
-            <h3 className="font-bold mb-4 text-slate-100">Why Choose Digital Frontier for Crypto?</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-400">
-                    ✓
-                  </div>
-                </div>
-                <div className="ml-3">
-                  <p className="text-slate-300"><span className="font-medium text-slate-200">Crypto-Specific Expertise:</span> Deep understanding of blockchain UX challenges and opportunities.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-400">
-                    ✓
-                  </div>
-                </div>
-                <div className="ml-3">
-                  <p className="text-slate-300"><span className="font-medium text-slate-200">Proven Methodology:</span> Battle-tested framework that delivers measurable results.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-400">
-                    ✓
-                  </div>
-                </div>
-                <div className="ml-3">
-                  <p className="text-slate-300"><span className="font-medium text-slate-200">Rapid Implementation:</span> See improvements in weeks, not months.</p>
-                </div>
-              </li>
-            </ul>
+          {/* Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="interactive-card bg-slate-800/50 border-primary/20 hover:border-primary/50">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">ROI Guarantee</div>
+                <p className="text-slate-300">90-day results or fee credits back</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="interactive-card bg-slate-800/50 border-secondary/20 hover:border-secondary/50">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-secondary mb-2">24/7 AI-Powered</div>
+                <p className="text-slate-300">Never-sleeping optimization systems</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="interactive-card bg-slate-800/50 border-accent/20 hover:border-accent/50">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-accent mb-2">200+ Success Stories</div>
+                <p className="text-slate-300">Proven growth across verticals</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-      
-      <FAQSection faqs={cryptoFAQs} title="Crypto Marketing FAQs" />
-    </PageLayout>
+
+      {/* Who We Serve - Three Personas */}
+      <section id="expertise" className="py-24 bg-slate-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Who We Serve</h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Three distinct paths to sustainable growth. Each with specialized frameworks proven to work.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Independent Creators */}
+            <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
+              <div className="relative h-64">
+                <img 
+                  src="/lovable-uploads/61c29b3d-3491-48c5-86e4-4b32d43c5c16.png"
+                  alt="Content Creator with Phone"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <Badge variant="secondary" className="bg-cyan-500/20 text-cyan-300 border-cyan-400">
+                    Independent Creators
+                  </Badge>
+                </div>
+              </div>
+              
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="/lovable-uploads/c154b93c-0774-40eb-8db7-a9097c631754.png"
+                    alt="Creator Icon"
+                    className="w-8 h-8 mr-3"
+                  />
+                  <h3 className="text-xl font-bold text-cyan-300">For Independent Creators</h3>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Pain Points We Solve:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Algorithm dependency killing reach</li>
+                    <li>• Inconsistent revenue streams</li>
+                    <li>• Burnout from constant content creation</li>
+                    <li>• Difficulty monetizing loyal fans</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Our Solutions:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Profitable merch & NFT collections</li>
+                    <li>• Private fan communities & subscriptions</li>
+                    <li>• Sustainable revenue diversification</li>
+                    <li>• Authentic brand narrative development</li>
+                  </ul>
+                </div>
+                
+                <Button variant="outline" className="w-full border-cyan-500 text-cyan-300 hover:bg-cyan-500/10">
+                  Learn Creator Strategy
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Crypto Visionaries */}
+            <Card className="interactive-card bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-500/30 hover:border-blue-400/50 overflow-hidden">
+              <div className="relative h-64">
+                <img 
+                  src="/lovable-uploads/6bda5026-7c19-470f-b619-99dcbc0eef79.png"
+                  alt="Team Collaboration"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <Badge variant="secondary" className="bg-blue-500/20 text-blue-300 border-blue-400">
+                    Crypto Visionaries
+                  </Badge>
+                </div>
+              </div>
+              
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="/lovable-uploads/2190579b-0e66-42c1-952e-295c05e721f8.png"
+                    alt="Crypto Network Icon"
+                    className="w-8 h-8 mr-3"
+                  />
+                  <h3 className="text-xl font-bold text-blue-300">For Crypto Visionaries</h3>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Pain Points We Solve:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Regulatory compliance uncertainty</li>
+                    <li>• Public skepticism & trust issues</li>
+                    <li>• High customer acquisition costs</li>
+                    <li>• Complex community management</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Our Solutions:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Regulatory-safe growth frameworks</li>
+                    <li>• NFT launch playbooks & strategies</li>
+                    <li>• Web3 education hubs & content</li>
+                    <li>• Trust-building PR & thought leadership</li>
+                  </ul>
+                </div>
+                
+                <Button variant="outline" className="w-full border-blue-500 text-blue-300 hover:bg-blue-500/10">
+                  Explore Crypto Strategy
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Hybrid Crypto-Creatives */}
+            <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
+              <div className="relative h-64">
+                <img 
+                  src="/lovable-uploads/b83ad120-8c4c-4197-8e58-75295f932c86.png"
+                  alt="Creative Artist Working"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-400">
+                    Hybrid Crypto-Creatives
+                  </Badge>
+                </div>
+              </div>
+              
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src="/lovable-uploads/013e1f20-bacc-4537-a358-b4a928b45495.png"
+                    alt="Creative Digital Icon"
+                    className="w-8 h-8 mr-3"
+                  />
+                  <h3 className="text-xl font-bold text-purple-300">For Hybrid Crypto-Creatives</h3>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Pain Points We Solve:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Balancing art integrity with commerce</li>
+                    <li>• NFT market oversaturation</li>
+                    <li>• Technical barriers to Web3</li>
+                    <li>• Finding the right collector audience</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-2">Our Solutions:</h4>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li>• Curated NFT rollout strategies</li>
+                    <li>• Token-gated loyalty programs</li>
+                    <li>• Phygital art integration</li>
+                    <li>• Collector community development</li>
+                  </ul>
+                </div>
+                
+                <Button variant="outline" className="w-full border-purple-500 text-purple-300 hover:bg-purple-500/10">
+                  Discover Art+Web3 Path
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Pods */}
+      <section id="service-pods" className="py-24 bg-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Service Pods</h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Three specialized programs designed for sustainable, scalable growth in the creator economy and Web3 space.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Creator Growth Pod */}
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 hover:border-cyan-500/50">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <Users className="h-8 w-8 text-cyan-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white">Creator Growth Pod</h3>
+                </div>
+                
+                <p className="text-lg text-cyan-300 mb-6 font-semibold">Monetize your mind, grow without the grind</p>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• Revenue diversification strategy</li>
+                    <li>• Community monetization systems</li>
+                    <li>• Content multiplication frameworks</li>
+                    <li>• Brand partnership pipeline</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-8">
+                  <h4 className="font-semibold text-white mb-3">Outcomes:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• 3-7 new revenue streams</li>
+                    <li>• 40-70% less time creating</li>
+                    <li>• Sustainable 6-7 figure business</li>
+                  </ul>
+                </div>
+                
+                <Button className="w-full bg-cyan-500 hover:bg-cyan-600">
+                  Start Creator Growth <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Crypto Marketing Accelerator */}
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 hover:border-blue-500/50">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <TrendingUp className="h-8 w-8 text-blue-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white">Crypto Marketing Accelerator</h3>
+                </div>
+                
+                <p className="text-lg text-blue-300 mb-6 font-semibold">Trust, traction, tactically compliant</p>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• Regulatory-safe marketing frameworks</li>
+                    <li>• Community growth & engagement</li>
+                    <li>• Thought leadership positioning</li>
+                    <li>• Launch & adoption strategies</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-8">
+                  <h4 className="font-semibold text-white mb-3">Outcomes:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• 5-10x user acquisition</li>
+                    <li>• Compliant growth systems</li>
+                    <li>• Market leadership positioning</li>
+                  </ul>
+                </div>
+                
+                <Button className="w-full bg-blue-500 hover:bg-blue-600">
+                  Launch Crypto Strategy <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Hybrid Arts/Web3 Program */}
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 hover:border-purple-500/50">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <Target className="h-8 w-8 text-purple-400 mr-3" />
+                  <h3 className="text-2xl font-bold text-white">Hybrid Arts/Web3 Program</h3>
+                </div>
+                
+                <p className="text-lg text-purple-300 mb-6 font-semibold">Culture x Code = Commerce</p>
+                
+                <div className="mb-6">
+                  <h4 className="font-semibold text-white mb-3">What You Get:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• NFT collection strategy & launch</li>
+                    <li>• Collector community building</li>
+                    <li>• Phygital experience design</li>
+                    <li>• Royalty optimization systems</li>
+                  </ul>
+                </div>
+                
+                <div className="mb-8">
+                  <h4 className="font-semibold text-white mb-3">Outcomes:</h4>
+                  <ul className="space-y-2 text-slate-300">
+                    <li>• Premium art positioning</li>
+                    <li>• Sustainable collector base</li>
+                    <li>• Cross-platform monetization</li>
+                  </ul>
+                </div>
+                
+                <Button className="w-full bg-purple-500 hover:bg-purple-600">
+                  Explore Art+Web3 <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* AI-Powered Capabilities */}
+      <section id="ai-capabilities" className="py-24 bg-slate-900 relative overflow-hidden">
+        {/* Background Tech Image */}
+        <div 
+          className="absolute inset-0 opacity-10 bg-cover bg-center"
+          style={{ 
+            backgroundImage: `url('/lovable-uploads/7b776747-32b6-457b-a692-2e48d5e0fc01.png')`
+          }}
+        />
+        
+        <div className="relative z-10 container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">AI-Powered Capabilities</h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+              Our AI systems work 24/7 to optimize your growth while you focus on creating and building.
+            </p>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/d71a7b9c-1a82-436d-817f-a0dc30db4d2b.png"
+                alt="AI Components Diagram"
+                className="max-w-md opacity-80"
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50">
+              <CardContent className="p-6 text-center">
+                <BarChart3 className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Predictive Analytics</h3>
+                <p className="text-slate-300 text-sm">AI-driven insights for market trends and opportunity identification</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-secondary/50">
+              <CardContent className="p-6 text-center">
+                <Eye className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Audience Segmentation</h3>
+                <p className="text-slate-300 text-sm">Precision targeting for highest-value prospects and collectors</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-accent/50">
+              <CardContent className="p-6 text-center">
+                <Brain className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Content Generation</h3>
+                <p className="text-slate-300 text-sm">AI-powered creation that maintains your authentic brand voice</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50">
+              <CardContent className="p-6 text-center">
+                <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Performance Optimization</h3>
+                <p className="text-slate-300 text-sm">Real-time campaign optimization and conversion improvement</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-secondary/50">
+              <CardContent className="p-6 text-center">
+                <Shield className="h-12 w-12 text-secondary mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Privacy Compliance</h3>
+                <p className="text-slate-300 text-sm">Zero-party data strategies and regulatory compliance automation</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-accent/50">
+              <CardContent className="p-6 text-center">
+                <MessageSquare className="h-12 w-12 text-accent mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-white mb-2">Community Management</h3>
+                <p className="text-slate-300 text-sm">AI-assisted community building and engagement optimization</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories & Team */}
+      <section className="py-24 bg-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Proven Results</h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Real growth, real clients, real outcomes. Here's what we've achieved together.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div className="text-center p-6 bg-slate-900/50 rounded-lg">
+              <div className="text-4xl font-bold text-primary mb-2">$50M+</div>
+              <div className="text-slate-300">Generated Revenue</div>
+            </div>
+            <div className="text-center p-6 bg-slate-900/50 rounded-lg">
+              <div className="text-4xl font-bold text-secondary mb-2">98%</div>
+              <div className="text-slate-300">Satisfaction Rate</div>
+            </div>
+            <div className="text-center p-6 bg-slate-900/50 rounded-lg">
+              <div className="text-4xl font-bold text-accent mb-2">5+</div>
+              <div className="text-slate-300">Years Experience</div>
+            </div>
+            <div className="text-center p-6 bg-slate-900/50 rounded-lg">
+              <div className="text-4xl font-bold text-primary mb-2">200+</div>
+              <div className="text-slate-300">Success Stories</div>
+            </div>
+          </div>
+
+          {/* Team & Executive Photos */}
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
+              <div className="h-64">
+                <img 
+                  src="/lovable-uploads/fff6464e-231e-4c78-b7bb-6cdb7306ac6b.png"
+                  alt="Crypto Executive"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6 text-center">
+                <h3 className="font-bold text-white mb-2">Industry Leadership</h3>
+                <p className="text-slate-300 text-sm">Proven expertise in crypto marketing and growth strategies</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
+              <div className="h-64">
+                <img 
+                  src="/lovable-uploads/6c2b3ef2-2182-4838-91fa-2e2c9c08600d.png"
+                  alt="Team Collaboration"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6 text-center">
+                <h3 className="font-bold text-white mb-2">Collaborative Approach</h3>
+                <p className="text-slate-300 text-sm">Working closely with clients to ensure sustainable growth</p>
+              </CardContent>
+            </Card>
+
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
+              <div className="h-64">
+                <img 
+                  src="/lovable-uploads/3b42816e-8664-40f3-b717-dd44a4797b28.png"
+                  alt="Strategic Planning"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6 text-center">
+                <h3 className="font-bold text-white mb-2">Strategic Excellence</h3>
+                <p className="text-slate-300 text-sm">Data-driven strategies that deliver measurable results</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection 
+        title="Frequently Asked Questions"
+        faqs={cryptoFAQs}
+        className="bg-slate-900"
+      />
+
+      {/* Final CTA Section */}
+      <section id="get-started" className="py-24 bg-slate-800 text-center">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Ready to Stop Renting Attention?
+          </h2>
+          <p className="text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
+            Book a free strategy call and discover how our ROI-guaranteed approach can transform your creator or crypto business.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg">
+              Book Free Strategy Call <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-slate-600 text-slate-300 hover:bg-slate-700 px-8 py-4 text-lg"
+            >
+              View Case Studies
+            </Button>
+          </div>
+          
+          <p className="text-sm text-slate-500 mt-6">
+            90-day ROI guarantee • No long-term contracts • Results or fee credits back
+          </p>
+        </div>
+      </section>
+    </>
   );
 };
 
 export default CryptoMarketing;
-
