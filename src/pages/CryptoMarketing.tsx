@@ -61,15 +61,15 @@ const CryptoMarketing = () => {
           </div>
 
           <div className="relative inline-block">
-            <h1 className="text-9xl mb-6 bg-gradient-to-r from-blue-950 via-blue-600 to-blue-900 bg-clip-text text-transparent animate-shimmer my-[10px] font-extrabold md:text-8xl text-center bg-[length:200%_auto] filter drop-shadow-[0_0_30px_rgba(30,58,138,0.8)] drop-shadow-[0_0_60px_rgba(59,130,246,0.6)] relative z-10">
+            <h1 className="text-9xl mb-6 bg-gradient-to-r from-slate-300 via-blue-400 to-slate-200 bg-clip-text text-transparent animate-shimmer my-[10px] font-extrabold md:text-8xl text-center bg-[length:200%_auto] filter drop-shadow-[0_0_20px_rgba(30,58,138,0.9)] drop-shadow-[0_0_40px_rgba(59,130,246,0.7)] relative z-10">
               Digital Frontier
             </h1>
-            {/* Cyan glow behind text */}
-            <div className="absolute inset-0 text-9xl mb-6 my-[10px] font-extrabold md:text-8xl text-center text-cyan-400 filter blur-lg opacity-50 z-0">
+            {/* Cyan glow behind text - less blurry */}
+            <div className="absolute inset-0 text-9xl mb-6 my-[10px] font-extrabold md:text-8xl text-center text-cyan-400 filter blur-sm opacity-70 z-0">
               Digital Frontier
             </div>
-            {/* Shimmer overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer opacity-60 z-20 pointer-events-none bg-[length:200%_100%]"></div>
+            {/* Multi-angle shimmer overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent animate-shimmer-bounce opacity-80 z-20 pointer-events-none bg-[length:300%_300%] mix-blend-overlay"></div>
           </div>
           
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-slate-300">

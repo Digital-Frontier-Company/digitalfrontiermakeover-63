@@ -307,6 +307,30 @@
   }
 }
 
+/* Multi-angle shimmer effect */
+@keyframes shimmer-bounce {
+  0% {
+    background-position: -200% -200%;
+    transform: rotate(-5deg);
+  }
+  25% {
+    background-position: -100% -50%;
+    transform: rotate(2deg);
+  }
+  50% {
+    background-position: 0% 0%;
+    transform: rotate(-1deg);
+  }
+  75% {
+    background-position: 100% 50%;
+    transform: rotate(3deg);
+  }
+  100% {
+    background-position: 200% 200%;
+    transform: rotate(-2deg);
+  }
+}
+
 .animate-logo-strobe {
   animation: logo-strobe 2.6s ease-in-out infinite;
 }
@@ -322,5 +346,9 @@
 
 .animate-shimmer {
   animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-shimmer-bounce {
+  animation: shimmer-bounce 4s ease-in-out infinite;
 }
 
