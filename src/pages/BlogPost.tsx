@@ -6,7 +6,7 @@ import { generateOrganizationSchema, generateBreadcrumbSchema, formatDate } from
 import "../styles/blogPost.css";
 const BlogPost = () => {
   const location = useLocation();
-  const canonicalUrl = `https://www.thedigitalfrontier.ai${location.pathname}`;
+  const canonicalUrl = `https://digitalfrontier.app${location.pathname}`;
 
   // Determine which blog post based on the URL
   const isAIRiskManagement = location.pathname.includes('ai-driven-risk-management');
@@ -52,10 +52,10 @@ const BlogPost = () => {
   const organizationSchema = generateOrganizationSchema();
   const breadcrumbSchema = generateBreadcrumbSchema([{
     name: "Home",
-    url: "https://www.thedigitalfrontier.ai"
+    url: "https://digitalfrontier.app"
   }, {
     name: "Blog",
-    url: "https://www.thedigitalfrontier.ai/blog"
+    url: "https://digitalfrontier.app/blog"
   }, {
     name: postData.title,
     url: canonicalUrl
@@ -67,18 +67,18 @@ const BlogPost = () => {
     "@type": "BlogPosting",
     "headline": postData.title,
     "description": postData.description,
-    "image": `https://thedigitalfrontier.ai${postData.image}`,
+    "image": `https://digitalfrontier.app${postData.image}`,
     "author": {
       "@type": "Organization",
       "name": "Digital Frontier Company",
-      "url": "https://thedigitalfrontier.ai"
+      "url": "https://digitalfrontier.app"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Digital Frontier Company",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
+        "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
       }
     },
     "datePublished": postData.publishedDate,
@@ -102,7 +102,7 @@ const BlogPost = () => {
         {/* OpenGraph Tags */}
         <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
-        <meta property="og:image" content={`https://thedigitalfrontier.ai${postData.image}`} />
+        <meta property="og:image" content={`https://digitalfrontier.app${postData.image}`} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={postData.publishedDate} />
@@ -114,7 +114,7 @@ const BlogPost = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={postData.title} />
         <meta name="twitter:description" content={postData.description} />
-        <meta name="twitter:image" content={`https://thedigitalfrontier.ai${postData.image}`} />
+        <meta name="twitter:image" content={`https://digitalfrontier.app${postData.image}`} />
         
         {/* Organization Schema */}
         <script type="application/ld+json">

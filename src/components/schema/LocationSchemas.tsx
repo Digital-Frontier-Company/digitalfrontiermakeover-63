@@ -115,7 +115,7 @@ export default function LocationSchemas({
       "longitude": finalLng
     },
     "telephone": phoneNumber,
-    "url": `https://thedigitalfrontier.ai/${city.toLowerCase()}-digital-marketing`,
+    "url": `https://digitalfrontier.app/${city.toLowerCase()}-digital-marketing`,
     "priceRange": "$$$",
     "serviceArea": {
       "@type": "GeoCircle",

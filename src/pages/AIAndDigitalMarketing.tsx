@@ -9,7 +9,7 @@ import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/utils";
 
 const AIAndDigitalMarketing = () => {
   const location = useLocation();
-  const canonicalUrl = `https://www.thedigitalfrontier.ai${location.pathname}`;
+  const canonicalUrl = `https://digitalfrontier.app${location.pathname}`;
 
   const aiMarketingAreas = [
     {
@@ -74,14 +74,14 @@ const AIAndDigitalMarketing = () => {
     "Discover how artificial intelligence is revolutionizing digital marketing through AI-powered targeting, content creation, predictive analytics, and ethical AI implementation. Learn from Digital Frontier Company's expertise.",
     "Digital Frontier Company",
     "Digital Frontier Company",
-    "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+    "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
     "2025-01-13",
     "2025-01-13",
     canonicalUrl
   );
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://www.thedigitalfrontier.ai" },
+    { name: "Home", url: "https://digitalfrontier.app" },
     { name: "AI & Digital Marketing", url: canonicalUrl }
   ]);
 
@@ -102,13 +102,13 @@ const AIAndDigitalMarketing = () => {
         <meta property="og:description" content="Transform your marketing strategy with AI-powered solutions. Expert insights on artificial intelligence in digital marketing from Digital Frontier Company." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
+        <meta property="og:image" content="https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI & Digital Marketing Revolution | Digital Frontier" />
         <meta name="twitter:description" content="Transform your marketing strategy with AI-powered solutions. Expert insights from Digital Frontier Company." />
-        <meta name="twitter:image" content="https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
+        <meta name="twitter:image" content="https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
         
         {/* Article Schema */}
         <script type="application/ld+json">

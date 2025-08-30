@@ -82,7 +82,7 @@ const Future = () => {
       currentPath={location.pathname}
     >
       <Helmet>
-        <link rel="canonical" href="https://thedigitalfrontier.ai/future" />
+        <link rel="canonical" href="https://digitalfrontier.app/future" />
       </Helmet>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

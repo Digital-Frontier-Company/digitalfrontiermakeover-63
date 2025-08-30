@@ -61,13 +61,13 @@ export default function GTMStrategyBlueprint() {
           name="keywords" 
           content="go-to-market strategy, GTM blueprint, product launch, market entry, AI marketing strategy, customer acquisition, brand positioning" 
         />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/gtm-strategy-blueprint" />
+        <link rel="canonical" href="https://digitalfrontier.app/gtm-strategy-blueprint" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Go-to-Market Strategy Blueprint | The Digital Frontier" />
         <meta property="og:description" content="Interactive GTM framework with AI-powered tools for successful product launches and market entry strategies." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://thedigitalfrontier.ai/gtm-strategy-blueprint" />
+        <meta property="og:url" content="https://digitalfrontier.app/gtm-strategy-blueprint" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@ export default function GTMStrategyBlueprint() {
             "provider": {
               "@type": "Organization",
               "name": "The Digital Frontier",
-              "url": "https://thedigitalfrontier.ai"
+              "url": "https://digitalfrontier.app"
             },
             "serviceType": "Marketing Strategy Consulting",
             "offers": {

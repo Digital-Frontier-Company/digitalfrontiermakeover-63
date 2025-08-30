@@ -232,7 +232,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:image:alt" content={metaTags.openGraph.images[0].alt} />
       <meta name="twitter:site" content="@DigitalFro14616" />
       <meta name="twitter:creator" content="@DigitalFro14616" />
-      <meta name="twitter:domain" content="thedigitalfrontier.ai" />
+      <meta name="twitter:domain" content="digitalfrontier.app" />
       
       {/* Article-specific meta tags */}
       {pageType === 'article' && publishedDate && (

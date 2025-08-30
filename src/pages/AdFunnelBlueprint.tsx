@@ -62,7 +62,7 @@ const AdFunnelBlueprint = () => {
         currentPath={location.pathname}
       >
         <Helmet>
-          <link rel="canonical" href="https://thedigitalfrontier.ai/ad-funnel-blueprint" />
+          <link rel="canonical" href="https://digitalfrontier.app/ad-funnel-blueprint" />
         </Helmet>
         
         <div className="space-y-12 relative z-10">

@@ -74,7 +74,7 @@ const Sectors = () => {
       currentPath={location.pathname}
     >
       <Helmet>
-        <link rel="canonical" href="https://thedigitalfrontier.ai/sectors" />
+        <link rel="canonical" href="https://digitalfrontier.app/sectors" />
       </Helmet>
       
       <div className="space-y-6">

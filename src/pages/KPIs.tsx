@@ -95,12 +95,12 @@ const KPIs = () => {
               "name": "Digital Frontier Company",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
+                "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
               }
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://thedigitalfrontier.ai/kpis"
+              "@id": "https://digitalfrontier.app/kpis"
             }
           })}
         </script>

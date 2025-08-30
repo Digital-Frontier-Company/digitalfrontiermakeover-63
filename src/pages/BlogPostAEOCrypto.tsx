@@ -28,7 +28,7 @@ const BlogPostAEOCrypto: React.FC = () => {
       <Helmet>
         <title>Answer Engine Optimization in Digital Marketing for Crypto Startups | Digital Frontier</title>
         <meta name="description" content="Discover how AEO and strategic community building can help crypto startups overcome credibility challenges and build lasting trust in 2025." />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/blog/answer-engine-optimization-crypto-startups" />
+        <link rel="canonical" href="https://digitalfrontier.app/blog/answer-engine-optimization-crypto-startups" />
       </Helmet>
 
       <div className="space-y-12">

@@ -30,7 +30,7 @@ const Evolution = () => {
       currentPath={location.pathname}
     >
       <Helmet>
-        <link rel="canonical" href="https://thedigitalfrontier.ai/evolution" />
+        <link rel="canonical" href="https://digitalfrontier.app/evolution" />
       </Helmet>
       
       {/* Timeline Section */}

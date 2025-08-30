@@ -204,7 +204,7 @@ export const SEOAdvanced: React.FC<SEOAdvancedProps> = ({
           "@type": "SoftwareApplication",
           "name": "Digital Frontier AI Platform",
           "description": "AI-powered content marketing and SEO optimization platform",
-          "url": "https://thedigitalfrontier.ai",
+          "url": "https://digitalfrontier.app",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
           "offers": {
@@ -216,7 +216,7 @@ export const SEOAdvanced: React.FC<SEOAdvancedProps> = ({
           "provider": {
             "@type": "Organization",
             "name": "Digital Frontier Company",
-            "url": "https://thedigitalfrontier.ai"
+            "url": "https://digitalfrontier.app"
           }
         })}
       </script>
@@ -226,13 +226,13 @@ export const SEOAdvanced: React.FC<SEOAdvancedProps> = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "url": "https://thedigitalfrontier.ai",
+          "url": "https://digitalfrontier.app",
           "potentialAction": [
             {
               "@type": "SearchAction",
               "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://thedigitalfrontier.ai/search?q={search_term_string}"
+                "urlTemplate": "https://digitalfrontier.app/search?q={search_term_string}"
               },
               "query-input": "required name=search_term_string"
             }

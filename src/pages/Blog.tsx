@@ -9,12 +9,12 @@ import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/util
 
 const Blog = () => {
   const location = useLocation();
-  const canonicalUrl = `https://www.thedigitalfrontier.ai${location.pathname}`;
+  const canonicalUrl = `https://digitalfrontier.app${location.pathname}`;
   
   // Generate schemas
   const organizationSchema = generateOrganizationSchema();
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://www.thedigitalfrontier.ai" },
+    { name: "Home", url: "https://digitalfrontier.app" },
     { name: "Blog", url: canonicalUrl }
   ]);
 
@@ -97,20 +97,20 @@ const Blog = () => {
       "name": "Digital Frontier Company",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
+        "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
       }
     },
     "blogPost": blogPosts.map(post => ({
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
-      "url": `https://www.thedigitalfrontier.ai/blog/${post.slug}`,
+      "url": `https://digitalfrontier.app/blog/${post.slug}`,
       "datePublished": post.date,
       "author": {
         "@type": "Organization",
         "name": "Digital Frontier Company"
       },
-      "image": `https://thedigitalfrontier.ai${post.image}`
+      "image": `https://digitalfrontier.app${post.image}`
     }))
   };
 

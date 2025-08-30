@@ -52,7 +52,7 @@ const InfluencerMarketing2025 = () => {
       <Helmet>
         <title>Memphis Influencer Marketing | Digital Frontier Company</title>
         <meta name="description" content="Connect with Memphis-based influencers and content creators. Digital Frontier Company's guide to collaborating with local micro-influencers, celebrities, and community leaders." />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/influencer-marketing-2025" />
+        <link rel="canonical" href="https://digitalfrontier.app/influencer-marketing-2025" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Helmet>
 

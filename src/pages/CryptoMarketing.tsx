@@ -44,7 +44,7 @@ const CryptoMarketing = () => {
       <Helmet>
         <title>Digital Frontier Marketing for Crypto | Digital Frontier</title>
         <meta name="description" content="Specialized UX solutions for crypto platforms to reduce abandonment and increase conversions. Our battle-tested approach combines growth marketing with user experience design." />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/crypto-marketing" />
+        <link rel="canonical" href="https://digitalfrontier.app/crypto-marketing" />
         <script type="application/ld+json">
         {`
           {

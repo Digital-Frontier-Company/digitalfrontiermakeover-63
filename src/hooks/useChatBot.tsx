@@ -196,7 +196,7 @@ Book a 30-minute consultation where we'll:
 • Create a custom action plan
 
 📞 **Contact Information**
-• Website: thedigitalfrontier.ai/contact
+• Website: digitalfrontier.app/contact
 • Phone: Available during consultation booking
 • Email: Connect through our contact form
 

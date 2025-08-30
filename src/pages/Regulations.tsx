@@ -23,7 +23,7 @@ const Regulations = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950">
       <Helmet>
-        <link rel="canonical" href="https://thedigitalfrontier.ai/regulations" />
+        <link rel="canonical" href="https://digitalfrontier.app/regulations" />
       </Helmet>
       
       {/* Header */}
@@ -219,7 +219,7 @@ const Regulations = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 mb-4 md:mb-0">
-              &copy; 2025 The Digital Frontier - <a href="https://thedigitalfrontier.ai" className="text-blue-400 hover:underline">thedigitalfrontier.ai</a>
+              &copy; 2025 The Digital Frontier - <a href="https://digitalfrontier.app" className="text-blue-400 hover:underline">digitalfrontier.app</a>
             </p>
             
             <div className="flex space-x-6">

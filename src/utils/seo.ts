@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   defaultTitle: 'Memphis AI Marketing Agency | Stop Guessing, Start Growing with AI-Powered Marketing | Digital Frontier',
   defaultDescription: 'Leading Memphis AI marketing agency specializing in Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and AI-powered content strategies for B2B companies in Collierville, Germantown, and Greater Memphis area.',
   defaultKeywords: 'AI content marketing, SEO agency, B2B marketing, answer engine optimization, content strategy',
-  logoUrl: 'https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png',
+  logoUrl: 'https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png',
   socialUrls: [
     'https://www.facebook.com/profile.php?id=61572896248731',
     'https://x.com/DigitalFro14616',

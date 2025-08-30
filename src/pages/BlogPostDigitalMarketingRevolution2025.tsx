@@ -22,11 +22,11 @@ const BlogPostDigitalMarketingRevolution2025 = () => {
         <meta property="og:title" content="The Digital Marketing Revolution of July 2025: AI Overviews, Algorithm Upheavals & the Future of Search" />
         <meta property="og:description" content="July 2025 recap: Google's huge core update, AI Overviews, social-media algorithm shifts, privacy rules & winning tactics for marketers." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thedigitalfrontier.ai/blog/digital-marketing-revolution-july-2025" />
+        <meta property="og:url" content="https://digitalfrontier.app/blog/digital-marketing-revolution-july-2025" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Digital Marketing Revolution of July 2025: AI Overviews, Algorithm Upheavals & the Future of Search" />
         <meta name="twitter:description" content="July 2025 recap: Google's huge core update, AI Overviews, social-media algorithm shifts, privacy rules & winning tactics for marketers." />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/blog/digital-marketing-revolution-july-2025" />
+        <link rel="canonical" href="https://digitalfrontier.app/blog/digital-marketing-revolution-july-2025" />
         
         {/* JSON-LD Schema */}
         <script type="application/ld+json">
@@ -38,21 +38,21 @@ const BlogPostDigitalMarketingRevolution2025 = () => {
             "author": {
               "@type": "Organization",
               "name": "The Digital Frontier",
-              "url": "https://thedigitalfrontier.ai"
+              "url": "https://digitalfrontier.app"
             },
             "publisher": {
               "@type": "Organization",
               "name": "The Digital Frontier",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://thedigitalfrontier.ai/logo.png"
+                "url": "https://digitalfrontier.app/logo.png"
               }
             },
             "datePublished": publishedDate,
             "dateModified": modifiedDate,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://thedigitalfrontier.ai/blog/digital-marketing-revolution-july-2025"
+              "@id": "https://digitalfrontier.app/blog/digital-marketing-revolution-july-2025"
             },
             "keywords": ["digital marketing trends 2025", "Google algorithm update July 2025", "AI in digital marketing", "SEO trends", "social media algorithms", "AI Overviews"]
           })}
@@ -386,7 +386,7 @@ const BlogPostDigitalMarketingRevolution2025 = () => {
                   Google hints at one more core update before 2025 ends; social platforms tweak algorithms monthly. Success belongs to brands that build resilient, human-centric strategies—the kind celebrated in our free 2025 Digital Marketing Playbook.
                 </p>
                 <p className="text-lg leading-relaxed text-slate-200">
-                  Ready to boost your ROAS by 15-30%? Join the frontier—book a free consultation at <strong className="text-cyan-400">digital marketing trends 2025</strong> with <strong className="text-blue-400">AI in digital marketing</strong> and advanced <strong className="text-cyan-400">SEO trends</strong> including <strong className="text-blue-400">AI Overviews</strong> optimization at thedigitalfrontier.ai/contact.
+                  Ready to boost your ROAS by 15-30%? Join the frontier—book a free consultation at <strong className="text-cyan-400">digital marketing trends 2025</strong> with <strong className="text-blue-400">AI in digital marketing</strong> and advanced <strong className="text-cyan-400">SEO trends</strong> including <strong className="text-blue-400">AI Overviews</strong> optimization at digitalfrontier.app/contact.
                 </p>
               </div>
 

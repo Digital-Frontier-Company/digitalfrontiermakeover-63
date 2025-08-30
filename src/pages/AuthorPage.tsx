@@ -48,7 +48,7 @@ const AuthorPage = () => {
                 <a href="https://x.com/DigitalFro14616" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <TwitterIcon className="w-5 h-5" />
                 </a>
-                <a href="https://thedigitalfrontier.ai" className="text-muted-foreground hover:text-primary">
+                <a href="https://digitalfrontier.app" className="text-muted-foreground hover:text-primary">
                   <GlobeIcon className="w-5 h-5" />
                 </a>
               </div>
@@ -73,7 +73,7 @@ const AuthorPage = () => {
                 <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <LinkedinIcon className="w-5 h-5" />
                 </a>
-                <a href="https://thedigitalfrontier.ai/docs" className="text-muted-foreground hover:text-primary">
+                <a href="https://digitalfrontier.app/docs" className="text-muted-foreground hover:text-primary">
                   <GlobeIcon className="w-5 h-5" />
                 </a>
               </div>
@@ -98,7 +98,7 @@ const AuthorPage = () => {
                 <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <LinkedinIcon className="w-5 h-5" />
                 </a>
-                <a href="https://thedigitalfrontier.ai/blog" className="text-muted-foreground hover:text-primary">
+                <a href="https://digitalfrontier.app/blog" className="text-muted-foreground hover:text-primary">
                   <GlobeIcon className="w-5 h-5" />
                 </a>
               </div>

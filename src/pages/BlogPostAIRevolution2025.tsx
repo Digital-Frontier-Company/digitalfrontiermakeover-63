@@ -22,11 +22,11 @@ const BlogPostAIRevolution2025 = () => {
         <meta property="og:title" content="The AI Revolution in Digital Marketing: 5 Game-Changing Trends Reshaping 2025" />
         <meta property="og:description" content="Discover the 5 game-changing AI trends revolutionizing digital marketing in 2025. From hyper-personalization to voice search optimization and quantum computing applications." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thedigitalfrontier.ai/blog/ai-revolution-digital-marketing-2025" />
+        <meta property="og:url" content="https://digitalfrontier.app/blog/ai-revolution-digital-marketing-2025" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The AI Revolution in Digital Marketing: 5 Game-Changing Trends Reshaping 2025" />
         <meta name="twitter:description" content="Discover the 5 game-changing AI trends revolutionizing digital marketing in 2025. From hyper-personalization to voice search optimization and quantum computing applications." />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/blog/ai-revolution-digital-marketing-2025" />
+        <link rel="canonical" href="https://digitalfrontier.app/blog/ai-revolution-digital-marketing-2025" />
         
         {/* JSON-LD Schema */}
         <script type="application/ld+json">
@@ -38,21 +38,21 @@ const BlogPostAIRevolution2025 = () => {
             "author": {
               "@type": "Organization",
               "name": "The Digital Frontier",
-              "url": "https://thedigitalfrontier.ai"
+              "url": "https://digitalfrontier.app"
             },
             "publisher": {
               "@type": "Organization",
               "name": "The Digital Frontier",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://thedigitalfrontier.ai/logo.png"
+                "url": "https://digitalfrontier.app/logo.png"
               }
             },
             "datePublished": publishedDate,
             "dateModified": modifiedDate,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://thedigitalfrontier.ai/blog/ai-revolution-digital-marketing-2025"
+              "@id": "https://digitalfrontier.app/blog/ai-revolution-digital-marketing-2025"
             },
             "keywords": ["AI digital marketing 2025", "hyper-personalization", "voice search optimization", "short-form video marketing", "privacy-first marketing", "quantum computing marketing"]
           })}

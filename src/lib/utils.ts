@@ -18,8 +18,8 @@ export function formatDate(date: Date): string {
  */
 export function generateOrganizationSchema(
   name: string = "Digital Frontier Company",
-  url: string = "https://thedigitalfrontier.ai",
-  logoUrl: string = "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+  url: string = "https://digitalfrontier.app",
+  logoUrl: string = "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
   socialUrls: string[] = [
     "https://www.facebook.com/profile.php?id=61572896248731",
     "https://x.com/DigitalFro14616",
@@ -63,7 +63,7 @@ export function generateArticleSchema(
   description: string,
   authorName: string = "Digital Frontier Company",
   publisherName: string = "Digital Frontier Company",
-  publisherLogoUrl: string = "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+  publisherLogoUrl: string = "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
   datePublished: string = new Date().toISOString().split('T')[0],
   dateModified: string = new Date().toISOString().split('T')[0],
   pageUrl: string
@@ -126,7 +126,7 @@ export function generateLocalBusinessSchema(
   const schema: any = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://thedigitalfrontier.ai/#localbusiness-${city.toLowerCase()}`,
+    "@id": `https://digitalfrontier.app/#localbusiness-${city.toLowerCase()}`,
     "name": businessName,
     "address": {
       "@type": "PostalAddress",
@@ -144,7 +144,7 @@ export function generateLocalBusinessSchema(
         "name": state
       }
     ],
-    "url": "https://thedigitalfrontier.ai",
+    "url": "https://digitalfrontier.app",
     "telephone": phoneNumber || "+1-901-555-0123",
     "priceRange": priceRange || "$$$",
     "serviceArea": {
@@ -208,7 +208,7 @@ export function generateServiceSchema(
     "provider": {
       "@type": "Organization",
       "name": provider,
-      "@id": "https://thedigitalfrontier.ai/#organization"
+      "@id": "https://digitalfrontier.app/#organization"
     },
     "serviceType": serviceType,
     "areaServed": {
@@ -347,7 +347,7 @@ export function generateCaseStudySchema(
     "creator": {
       "@type": "Organization",
       "name": "Digital Frontier Company",
-      "@id": "https://thedigitalfrontier.ai/#organization"
+      "@id": "https://digitalfrontier.app/#organization"
     },
     "datePublished": datePublished || new Date().toISOString().split('T')[0],
     "measurementTechnique": results.map(result => ({
@@ -447,7 +447,7 @@ export function generateCourseSchema(
     "provider": {
       "@type": "Organization",
       "name": provider,
-      "@id": "https://thedigitalfrontier.ai/#organization"
+      "@id": "https://digitalfrontier.app/#organization"
     },
     "courseMode": courseMode,
     "educationalLevel": skillLevel || "Beginner to Advanced",

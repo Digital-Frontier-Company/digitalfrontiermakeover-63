@@ -4,13 +4,13 @@ export default function SEOSchema() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://thedigitalfrontier.ai/#organization",
+    "@id": "https://digitalfrontier.app/#organization",
     "name": "Digital Frontier Company",
     "alternateName": "Digital Frontier",
-    "url": "https://thedigitalfrontier.ai/",
+    "url": "https://digitalfrontier.app/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://thedigitalfrontier.ai/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+      "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
       "width": 512,
       "height": 512
     },
@@ -24,7 +24,7 @@ export default function SEOSchema() {
       {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "url": "https://thedigitalfrontier.ai/contact"
+        "url": "https://digitalfrontier.app/contact"
       }
     ],
     "sameAs": [
@@ -41,7 +41,7 @@ export default function SEOSchema() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "AI-Powered Content Marketing",
-    "provider": { "@id": "https://thedigitalfrontier.ai/#organization" },
+    "provider": { "@id": "https://digitalfrontier.app/#organization" },
     "description": "AI-powered content marketing and SEO services that build scalable content engines for B2B tech companies.",
     "serviceType": "Content Marketing",
     "areaServed": {
@@ -105,17 +105,17 @@ export default function SEOSchema() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://thedigitalfrontier.ai/#website",
-    "url": "https://thedigitalfrontier.ai/",
+    "@id": "https://digitalfrontier.app/#website",
+    "url": "https://digitalfrontier.app/",
     "name": "Digital Frontier Company",
     "description": "AI-powered content marketing and SEO agency",
-    "publisher": { "@id": "https://thedigitalfrontier.ai/#organization" },
+    "publisher": { "@id": "https://digitalfrontier.app/#organization" },
     "potentialAction": [
       {
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://thedigitalfrontier.ai/search?q={search_term_string}"
+          "urlTemplate": "https://digitalfrontier.app/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       }
@@ -130,7 +130,7 @@ export default function SEOSchema() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://thedigitalfrontier.ai/"
+        "item": "https://digitalfrontier.app/"
       }
     ]
   };
