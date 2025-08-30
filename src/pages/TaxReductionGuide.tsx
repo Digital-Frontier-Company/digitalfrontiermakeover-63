@@ -65,7 +65,7 @@ const TaxReductionGuide: React.FC = () => {
     "description": "Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts.",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://thedigitalfrontier.ai/blog/tax-reduction-wealth-building-guide"
+      "@id": "https://digitalfrontier.app/blog/tax-reduction-wealth-building-guide"
     }
   };
 
@@ -79,20 +79,20 @@ const TaxReductionGuide: React.FC = () => {
         <title>Tax Reduction Guide: Ultimate Wealth Building Strategies</title>
         <meta name="description" content="Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts. Complete guide for 2025." />
         <meta name="keywords" content="tax reduction strategies, wealth building, tax planning, investment strategies, financial planning, all-weather portfolio" />
-        <link rel="canonical" href="https://thedigitalfrontier.ai/blog/tax-reduction-wealth-building-guide" />
+        <link rel="canonical" href="https://digitalfrontier.app/blog/tax-reduction-wealth-building-guide" />
         
         {/* OpenGraph Tags */}
         <meta property="og:title" content="Tax Reduction Guide: Ultimate Wealth Building Strategies" />
         <meta property="og:description" content="Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts." />
-        <meta property="og:image" content="https://thedigitalfrontier.ai/lovable-uploads/3d7bf124-081a-4959-9a39-759c1e0dc150.png" />
-        <meta property="og:url" content="https://thedigitalfrontier.ai/blog/tax-reduction-wealth-building-guide" />
+        <meta property="og:image" content="https://digitalfrontier.app/lovable-uploads/3d7bf124-081a-4959-9a39-759c1e0dc150.png" />
+        <meta property="og:url" content="https://digitalfrontier.app/blog/tax-reduction-wealth-building-guide" />
         <meta property="og:type" content="article" />
         
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Tax Reduction Guide: Ultimate Wealth Building Strategies" />
         <meta name="twitter:description" content="Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts." />
-        <meta name="twitter:image" content="https://thedigitalfrontier.ai/lovable-uploads/3d7bf124-081a-4959-9a39-759c1e0dc150.png" />
+        <meta name="twitter:image" content="https://digitalfrontier.app/lovable-uploads/3d7bf124-081a-4959-9a39-759c1e0dc150.png" />
         
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}

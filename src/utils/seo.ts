@@ -1,5 +1,5 @@
 /**
- * SEO Utilities for thedigitalfrontier.ai
+ * SEO Utilities for digitalfrontier.app
  * Handles canonical URLs, sitemap generation, and SEO best practices
  */
 

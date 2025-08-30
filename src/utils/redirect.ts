@@ -34,7 +34,7 @@ export const REDIRECT_RULES: RedirectRule[] = [
   
   // Remove www subdomain if present
   {
-    from: /^https:\/\/www\.thedigitalfrontier\.ai(.*)$/,
+    from: /^https:\/\/www\.digitalfrontier\.app(.*)$/,
     to: `${SITE_CONFIG.baseUrl}$1`,
     type: 'pattern',
     reason: 'Remove www subdomain'
@@ -208,8 +208,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove www
-RewriteCond %{HTTP_HOST} ^www\\.thedigitalfrontier\\.ai [NC]
-RewriteRule ^(.*)$ https://thedigitalfrontier.ai/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\\.digitalfrontier\\.app [NC]
+RewriteRule ^(.*)$ https://digitalfrontier.app/$1 [L,R=301]
 
 # Remove trailing slashes (except for root)
 RewriteCond %{REQUEST_URI} !^/$
@@ -241,8 +241,8 @@ server {
     }
     
     # Remove www
-    if ($host = "www.thedigitalfrontier.ai") {
-        return 301 https://thedigitalfrontier.ai$request_uri;
+    if ($host = "www.digitalfrontier.app") {
+        return 301 https://digitalfrontier.app$request_uri;
     }
     
     # Remove trailing slashes

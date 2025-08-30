@@ -29,7 +29,7 @@ const Technical = () => {
       currentPath={location.pathname}
     >
       <Helmet>
-        <link rel="canonical" href="https://thedigitalfrontier.ai/technical" />
+        <link rel="canonical" href="https://digitalfrontier.app/technical" />
       </Helmet>
       
       {/* Data Crunching & Predictive Analytics */}
