@@ -96,7 +96,7 @@ const Newsletter = () => {
       </Helmet>
       <PageLayout
         title="Crypto and Macro Markets Newsletter"
-        subtitle="Stay informed with our latest insights and analysis"
+        subtitle="Expert crypto and macro market analysis delivered weekly"
         currentPath={location.pathname}
       >
         <section className="space-y-8">
