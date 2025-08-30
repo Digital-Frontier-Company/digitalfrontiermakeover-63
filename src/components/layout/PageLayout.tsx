@@ -6,6 +6,8 @@ import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 import { SEOAdvanced } from "@/components/SEOAdvanced";
+import { SEOBreadcrumbs, RelatedLinks, CTASection } from "./InternalLinkEnhancer";
+import { getRouteConfig } from "@/utils/seo";
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -26,12 +28,26 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   publishedDate,
   modifiedDate
 }) => {
-  // Get the current page name from the path
-  const pageName = currentPath.split("/").pop() || "";
-  const formattedPageName = pageName
-    .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+  // Get route config for SEO optimization
+  const routeConfig = getRouteConfig(currentPath);
+  
+  // Generate optimized H1 based on route configuration
+  const getOptimizedH1 = (path: string): string => {
+    const h1Map: Record<string, string> = {
+      '/': 'AI Marketing Solutions That Drive Real Business Growth',
+      '/about-us': 'About Digital Frontier AI Marketing Team & Expert Solutions',
+      '/contact': 'Contact Digital Frontier for Free Marketing Consultation',
+      '/answer-engine-optimization': 'Answer Engine Optimization AEO Services for Business Growth',
+      '/generative-engine-optimization': 'Generative Engine Optimization GEO Services & AI Content',
+      '/blog': 'Marketing Blog with AI Strategy Insights & Expert Analysis',
+      '/faq': 'FAQ: Digital Frontier Marketing Questions & Expert Answers',
+      '/seo-audit-dashboard': 'SEO Audit Dashboard Website Analysis & Optimization Tools'
+    };
+    
+    return h1Map[path] || routeConfig?.title?.substring(0, 60) || title;
+  };
+
+  const optimizedH1 = getOptimizedH1(currentPath);
 
   // Only handle redirects in production or for specific cases
   useEffect(() => {
@@ -92,8 +108,10 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         lcpImageUrl="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
       />
       
-      {/* Enhanced Breadcrumb Navigation */}
-      <Breadcrumbs />
+      {/* Enhanced SEO Breadcrumbs */}
+      <div className="container mx-auto px-4 pt-6">
+        <SEOBreadcrumbs currentPath={currentPath} />
+      </div>
       
       {/* Hero Section */}
       <section className="df-hero-section py-16" itemScope itemType="https://schema.org/WebPageElement">
@@ -108,7 +126,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({
               loading="eager"
               decoding="async"
             />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" itemProp="headline">{title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" itemProp="headline">
+              {optimizedH1}
+            </h1>
             {subtitle && <h2 className="text-xl text-slate-300" itemProp="description">{subtitle}</h2>}
           </div>
         </div>
@@ -136,6 +156,12 @@ const PageLayout: React.FC<PageLayoutProps> = ({
             <div className="space-y-8" itemProp="mainEntity">
               {children}
             </div>
+            
+            {/* Enhanced Internal Linking */}
+            <RelatedLinks currentPath={currentPath} />
+            
+            {/* Call-to-Action Section */}
+            <CTASection variant={pageType === 'article' ? 'blog' : 'service'} />
           </article>
         </div>
       </main>

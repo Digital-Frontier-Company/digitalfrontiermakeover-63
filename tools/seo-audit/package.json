@@ -1,0 +1,17 @@
+{
+  "name": "seo-audit-tool",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "audit": "tsx audit-cli.ts audit",
+    "fix": "tsx audit-cli.ts fix",
+    "validate": "tsx audit-cli.ts validate"
+  },
+  "dependencies": {
+    "commander": "latest",
+    "xml2js": "latest", 
+    "cheerio": "latest",
+    "node-fetch": "latest",
+    "tsx": "latest"
+  }
+}

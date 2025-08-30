@@ -38,53 +38,53 @@ export interface RouteConfig {
 export const ROUTE_CONFIGS: RouteConfig[] = [
   {
     path: '/',
-    title: 'Memphis AI Marketing Agency | Stop Guessing, Start Growing with AI-Powered Marketing | Digital Frontier',
-    description: 'Leading Memphis AI marketing agency specializing in Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and AI-powered content strategies for B2B companies in Collierville, Germantown, and Greater Memphis area.',
-    keywords: 'Memphis AI marketing agency, Memphis digital marketing, AI marketing Memphis, Answer Engine Optimization Memphis, AEO services, GEO services, Collierville marketing, Germantown SEO',
+    title: 'AI Marketing Memphis | Digital Frontier Company Solutions',
+    description: 'Memphis AI marketing agency specializing in Answer Engine Optimization (AEO) and AI-powered content strategies. Get results-driven marketing solutions today.',
+    keywords: 'AI marketing, Memphis, digital marketing, AEO, content strategy, business growth',
     priority: 1.0,
     changeFreq: 'weekly',
     pageType: 'website'
   },
   {
     path: '/about-us',
-    title: 'About Us - Digital Frontier Team',
-    description: 'Learn about Digital Frontier\'s mission to revolutionize content marketing with AI-powered solutions for B2B tech companies.',
-    keywords: 'about digital frontier, AI marketing team, content marketing experts',
+    title: 'About Digital Frontier | AI Marketing Team & Mission Story',
+    description: 'Learn about Digital Frontier\'s mission to revolutionize content marketing with AI-powered solutions for B2B tech companies. Meet our expert team today.',
+    keywords: 'about digital frontier, AI marketing team, content marketing experts, mission',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'website'
   },
   {
     path: '/contact',
-    title: 'Contact Digital Frontier - Get Your Free Consultation',
-    description: 'Ready to scale your content marketing? Contact Digital Frontier for a free consultation on AI-powered content strategies.',
-    keywords: 'contact digital frontier, free consultation, content marketing contact',
+    title: 'Contact Digital Frontier | Free Marketing Consultation Call',
+    description: 'Ready to scale your content marketing? Contact Digital Frontier for a free consultation on AI-powered content strategies. Schedule your call today.',
+    keywords: 'contact digital frontier, free consultation, content marketing contact, schedule',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'website'
   },
   {
-    path: '/pricing',
-    title: 'Pricing - Digital Frontier Content Marketing Services',
-    description: 'Transparent pricing for AI-powered content marketing services. Choose the plan that fits your B2B tech company\'s growth goals.',
-    keywords: 'content marketing pricing, AI marketing costs, B2B marketing packages',
+    path: '/answer-engine-optimization-and-digital-marketing-services',
+    title: 'AEO Services | Answer Engine Optimization Digital Frontier',
+    description: 'Expert Answer Engine Optimization services that get your business featured in AI search results. Proven AEO strategies for Memphis companies. Start today.',
+    keywords: 'AEO services, answer engine optimization, AI search, digital marketing',
     priority: 0.8,
     changeFreq: 'monthly',
-    pageType: 'website'
+    pageType: 'service'
   },
   {
     path: '/blog',
-    title: 'Blog - Digital Marketing Insights & Strategies',
-    description: 'Expert insights on AI-powered content marketing, SEO strategies, and digital marketing trends for B2B tech companies.',
-    keywords: 'digital marketing blog, content marketing insights, SEO strategies, AI marketing',
+    title: 'Marketing Blog | AI Strategy Insights Digital Frontier Co',
+    description: 'Expert insights on AI-powered content marketing, SEO strategies, and digital marketing trends for B2B tech companies. Read our latest posts now.',
+    keywords: 'digital marketing blog, content marketing insights, SEO strategies, AI',
     priority: 0.9,
     changeFreq: 'weekly',
     pageType: 'website'
   },
   {
     path: '/faq',
-    title: 'FAQ - Digital Frontier Content Marketing Questions',
-    description: 'Frequently asked questions about Digital Frontier\'s AI-powered content marketing services and strategies.',
+    title: 'FAQ | Digital Frontier Marketing Questions & Expert Answers',
+    description: 'Frequently asked questions about Digital Frontier\'s AI-powered content marketing services and strategies. Get answers to your questions today.',
     keywords: 'content marketing FAQ, AI marketing questions, digital frontier help',
     priority: 0.7,
     changeFreq: 'monthly',
@@ -101,8 +101,8 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
   },
   {
     path: '/newsletter',
-    title: 'Newsletter - Stay Updated on AI Marketing Trends',
-    description: 'Subscribe to Digital Frontier\'s newsletter for the latest AI marketing insights, content strategies, and industry trends.',
+    title: 'Marketing Newsletter | AI Trends Digital Frontier Updates',
+    description: 'Subscribe to Digital Frontier\'s newsletter for the latest AI marketing insights, content strategies, and industry trends. Join thousands of subscribers.',
     keywords: 'marketing newsletter, AI content updates, digital marketing insights',
     priority: 0.6,
     changeFreq: 'monthly',
@@ -138,27 +138,27 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
   // Service Pages
   {
     path: '/answer-engine-optimization',
-    title: 'AI Overviews Optimization | SGE Optimization | Answer Engine Optimization (AEO) Services',
-    description: 'Expert AI Overviews optimization and SGE optimization services. Get your Memphis business featured in ChatGPT, Google AI Overviews, and Perplexity AI search results with proven AEO strategies.',
-    keywords: 'AI Overviews optimization, SGE optimization, answer engine optimization, AEO, ChatGPT optimization, featured snippets optimization, FAQ schema AI, voice search SEO, people also ask optimization',
+    title: 'Answer Engine Optimization | AEO Services Digital Frontier',
+    description: 'Expert Answer Engine Optimization services that get your business featured in AI search results. Proven AEO strategies for Memphis companies. Start today.',
+    keywords: 'answer engine optimization, AEO, AI overviews, SGE optimization',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'service'
   },
   {
     path: '/generative-engine-optimization',
-    title: 'Optimize Content for Generative Search | RAG Content Strategy | GEO Services',
-    description: 'Expert strategies to optimize content for generative search engines. Proven RAG content strategy, SGE content briefs, and AI content workflows that get your business cited by AI.',
-    keywords: 'optimize content for generative search, RAG content strategy, SGE content briefs, generative engine optimization, GEO, AI content workflows, prompting for AI Overviews',
+    title: 'Generative Engine Optimization | GEO Services & AI Content',
+    description: 'Expert strategies to optimize content for generative search engines. Proven RAG content strategy and AI workflows that get your business cited by AI.',
+    keywords: 'generative engine optimization, GEO, RAG content strategy, AI content',
     priority: 0.8,
     changeFreq: 'monthly',
     pageType: 'service'
   },
   {
     path: '/search-engine-optimization',
-    title: 'SEO Services - Search Engine Optimization',
-    description: 'Data-driven SEO strategies that drive organic traffic and qualified leads for B2B tech companies.',
-    keywords: 'SEO services, search engine optimization, organic traffic, B2B SEO',
+    title: 'SEO Services Memphis | Search Engine Optimization Company',
+    description: 'Data-driven SEO strategies that drive organic traffic and qualified leads for B2B tech companies in Memphis. Get proven SEO results today.',
+    keywords: 'SEO services, search engine optimization, organic traffic, Memphis SEO',
     priority: 0.7,
     changeFreq: 'monthly',
     pageType: 'service'
@@ -358,13 +358,13 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
   },
   {
     path: '/seo-audit-dashboard',
-    title: 'SEO Audit Dashboard - Complete Website Ranking Diagnosis Tool',
-    description: 'Comprehensive SEO analysis & optimization recommendations with real-time audit tools.',
-    keywords: 'SEO audit, website analysis, SEO tools, ranking diagnosis, SEO dashboard',
+    title: 'SEO Audit Dashboard | Website Analysis Digital Frontier',
+    description: 'Comprehensive SEO analysis & optimization recommendations with real-time audit tools. Get complete website ranking diagnosis and fixes today.',
+    keywords: 'SEO audit, website analysis, SEO tools, ranking diagnosis',
     priority: 0.8,
     changeFreq: 'weekly',
     pageType: 'service',
-    modifiedDate: '2025-08-18'
+    modifiedDate: '2025-08-30'
   },
   {
     path: '/kpis',
