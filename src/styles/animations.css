@@ -297,6 +297,16 @@
   }
 }
 
+/* Shimmer animation for text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
 .animate-logo-strobe {
   animation: logo-strobe 2.6s ease-in-out infinite;
 }
@@ -308,5 +318,9 @@
 
 .logo-interactive:hover {
   transform: scale(1.04);
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
 }
 
