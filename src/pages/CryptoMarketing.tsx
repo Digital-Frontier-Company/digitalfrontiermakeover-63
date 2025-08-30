@@ -48,29 +48,21 @@ const CryptoMarketing = () => {
       }} />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/50 to-slate-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/50 to-slate-900/90 rounded-none bg-gray-950" />
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           {/* Logo with Shimmer Effect */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex justify-center bg-sky-950 rounded-full">
             <div className="relative">
               <img src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" alt="Digital Frontier Logo" className="h-24 w-auto animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
             </div>
           </div>
 
-          <div className="relative w-full max-w-6xl mx-auto px-8 py-12">
-            <h1 className="text-8xl sm:text-9xl xl:text-[12rem] mb-6 bg-gradient-to-r from-slate-300 via-blue-400 to-slate-200 bg-clip-text text-transparent animate-shimmer font-extrabold text-center bg-[length:200%_auto] filter drop-shadow-[0_0_20px_rgba(30,58,138,0.9)] drop-shadow-[0_0_40px_rgba(59,130,246,0.7)] relative z-10 leading-tight">
-              Digital Frontier
-            </h1>
-            {/* Cyan glow behind text - less blurry */}
-            <div className="absolute inset-0 flex items-center justify-center text-8xl sm:text-9xl xl:text-[12rem] font-extrabold text-cyan-400 filter blur-sm opacity-70 z-0 leading-tight">
-              Digital Frontier
-            </div>
-            {/* Multi-angle shimmer overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent animate-shimmer-bounce opacity-80 z-20 pointer-events-none bg-[length:300%_300%] mix-blend-overlay"></div>
-          </div>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+            Digital Frontier
+          </h1>
           
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-slate-300">
             AI-First, ROI Guaranteed Growth Partner
