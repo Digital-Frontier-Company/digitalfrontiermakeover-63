@@ -48,7 +48,7 @@ const CryptoMarketing = () => {
       }} />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/50 to-slate-900/90 rounded-none bg-gray-950" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-800/30 to-slate-900/60" />
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
