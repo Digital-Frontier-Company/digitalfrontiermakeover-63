@@ -53,7 +53,7 @@ const CryptoMarketing = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
           style={{ 
             backgroundImage: `url('/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png')`
           }}
