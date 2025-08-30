@@ -148,10 +148,10 @@ const CompleteAEOGuide = () => {
             <BookOpen className="w-4 h-4 mr-2" />
             Ultimate AEO Authority Guide
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Complete Guide to Answer Engine Optimization
             <span className="block text-blue-400">Master AEO in 2025</span>
-          </h1>
+          </h2>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto mb-8">
             The definitive 10,000+ word guide to Answer Engine Optimization. Learn how to get your Memphis business 
             featured in ChatGPT responses, Google AI Overviews, and voice search results with proven strategies 

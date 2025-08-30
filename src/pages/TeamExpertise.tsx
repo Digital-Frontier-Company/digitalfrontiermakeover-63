@@ -129,10 +129,10 @@ const TeamExpertise = () => {
             <Award className="w-4 h-4 mr-2" />
             Certified Marketing Experts
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Meet Our Expert Team
             <span className="block text-blue-400">Proven Credentials & Memphis Expertise</span>
-          </h1>
+          </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Our certified team combines deep Memphis market knowledge with cutting-edge AI marketing expertise. 
             Every team member holds industry certifications and has proven success helping Mid-South businesses grow.

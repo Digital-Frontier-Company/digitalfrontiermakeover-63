@@ -90,10 +90,10 @@ const ColliervilleSEO = () => {
             <Building className="w-4 h-4 mr-2" />
             Proudly Serving Collierville, Tennessee
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Collierville SEO Services
             <span className="block text-blue-400">Dominate Local Search Results</span>
-          </h1>
+          </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
             Digital Frontier is the leading SEO company serving Collierville, TN. We specialize in local SEO, 
             AI Overviews optimization, and Answer Engine Optimization to help Collierville businesses rank #1 

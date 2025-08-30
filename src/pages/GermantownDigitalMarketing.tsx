@@ -104,10 +104,10 @@ const GermantownDigitalMarketing = () => {
             <Shield className="w-4 h-4 mr-2" />
             Premium Digital Marketing for Germantown
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Germantown Digital Marketing
             <span className="block text-blue-400">Luxury Market Expertise</span>
-          </h1>
+          </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
             Digital Frontier is the premier digital marketing agency serving Germantown, TN. We specialize in 
             sophisticated marketing strategies for affluent markets, including AI Overviews optimization, luxury brand 

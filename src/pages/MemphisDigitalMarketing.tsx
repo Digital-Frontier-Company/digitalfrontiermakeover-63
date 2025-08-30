@@ -105,10 +105,10 @@ const MemphisDigitalMarketing = () => {
             <MapPin className="w-4 h-4 mr-2" />
             Serving Greater Memphis Area
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Memphis AI Marketing Agency
             <span className="block text-blue-400">Stop Guessing, Start Growing</span>
-          </h1>
+          </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
             We're the only Memphis marketing agency specializing in AI Overviews optimization and Answer Engine Optimization (AEO). 
             Get your Collierville, Germantown, or Memphis business featured in ChatGPT responses and Google AI search results.
