@@ -53,7 +53,7 @@ const CryptoMarketing = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           {/* Logo with Shimmer Effect */}
-          <div className="mb-8 flex justify-center bg-sky-950 rounded-full">
+          <div className="mb-8 flex justify-center">
             <div className="relative">
               <img src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" alt="Digital Frontier Logo" className="h-24 w-auto animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
