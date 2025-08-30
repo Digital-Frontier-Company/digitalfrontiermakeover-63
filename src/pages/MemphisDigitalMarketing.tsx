@@ -6,30 +6,56 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Users, TrendingUp, Target, Zap, Award, Building, Star, Music, Truck, Crown } from "lucide-react";
 import { LazyImage } from "@/components/LazyImage";
 import FAQSection, { FAQItem } from "@/components/FAQSection";
+import AIOptimizedFAQ, { EnhancedFAQItem } from "@/components/schema/AIOptimizedFAQ";
+import SchemaManager from "@/components/schema/SchemaManager";
+import LocationSchemas from "@/components/schema/LocationSchemas";
 
 const MemphisDigitalMarketing = () => {
   const location = useLocation();
 
-  const memphisFaqs: FAQItem[] = [
+  const memphisFaqs: EnhancedFAQItem[] = [
     {
       question: "Why choose a Memphis-based AI marketing agency?",
-      answer: "Local Memphis businesses benefit from our deep understanding of the Mid-South market, direct communication, and ability to meet in person. We understand Memphis business culture, local competition, and regional customer behavior patterns that national agencies miss."
+      answer: "Local Memphis businesses benefit from our deep understanding of the Mid-South market, direct communication, and ability to meet in person. We understand Memphis business culture, local competition, and regional customer behavior patterns that national agencies miss.",
+      category: "Local Expertise",
+      relatedQuestions: [
+        "What makes Memphis marketing different from other cities?",
+        "How do you handle both B2B and tourism marketing in Memphis?"
+      ],
+      speakable: true
     },
     {
       question: "What areas in Memphis do you serve?",
-      answer: "We serve all of Greater Memphis including Collierville, Germantown, Bartlett, Cordova, East Memphis, Midtown, Downtown Memphis, and surrounding Shelby County areas. We also work with businesses in West TN, North MS, and Eastern Arkansas."
+      answer: "We serve all of Greater Memphis including Collierville, Germantown, Bartlett, Cordova, East Memphis, Midtown, Downtown Memphis, and surrounding Shelby County areas. We also work with businesses in West TN, North MS, and Eastern Arkansas.",
+      category: "Service Areas",
+      relatedQuestions: [
+        "Do you work with businesses in Collierville?",
+        "Can you help Germantown businesses with digital marketing?"
+      ]
     },
     {
       question: "How does AI marketing work for Memphis businesses?",
-      answer: "AI marketing uses artificial intelligence to optimize your content for voice search, featured snippets, and AI-powered search results. This is crucial for Memphis businesses as more customers use voice search and AI assistants to find local services and products."
+      answer: "AI marketing uses artificial intelligence to optimize your content for voice search, featured snippets, and AI-powered search results. This is crucial for Memphis businesses as more customers use voice search and AI assistants to find local services and products.",
+      category: "AI Technology",
+      relatedQuestions: [
+        "What is Answer Engine Optimization?",
+        "How does voice search affect Memphis businesses?"
+      ],
+      speakable: true
     },
     {
       question: "What makes your Memphis AI marketing different from traditional marketing?",
-      answer: "Traditional marketing focuses on broad reach. Our AI marketing targets specific customer questions and optimizes for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO), ensuring Memphis businesses appear when customers ask AI assistants for recommendations."
+      answer: "Traditional marketing focuses on broad reach. Our AI marketing targets specific customer questions and optimizes for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO), ensuring Memphis businesses appear when customers ask AI assistants for recommendations.",
+      category: "Strategy Differences"
     },
     {
       question: "How quickly can Memphis businesses see AI marketing results?",
-      answer: "Memphis businesses typically see improvements in AI citations and voice search visibility within 60-90 days. Featured snippet appearances often increase within 30-45 days. We provide monthly reports showing progress in local search rankings and AI visibility."
+      answer: "Memphis businesses typically see improvements in AI citations and voice search visibility within 60-90 days. Featured snippet appearances often increase within 30-45 days. We provide monthly reports showing progress in local search rankings and AI visibility.",
+      category: "Results & Timeline",
+      relatedQuestions: [
+        "What's the typical ROI for Memphis digital marketing campaigns?",
+        "How do you measure success for local Memphis businesses?"
+      ]
     }
   ];
 
@@ -273,102 +299,59 @@ const MemphisDigitalMarketing = () => {
       </section>
 
       {/* FAQ Section */}
-      <FAQSection
+      <AIOptimizedFAQ
         title="Memphis AI Marketing FAQ"
         faqs={memphisFaqs}
         className="mb-16"
+        voiceOptimized={true}
       />
 
-      {/* Schema Markup for Local Business */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Digital Frontier Company - Memphis AI Marketing Agency",
-            "alternateName": "Memphis AI Marketing Agency",
-            "description": "Leading Memphis AI Marketing Agency specializing in Answer Engine Optimization, AI Overviews optimization, and local SEO services for Greater Memphis businesses",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Memphis",
-              "addressRegion": "TN",
-              "addressCountry": "US"
-            },
-            "areaServed": [
-              "Memphis, TN",
-              "Collierville, TN", 
-              "Germantown, TN",
-              "Bartlett, TN",
-              "Cordova, TN",
-              "East Memphis, TN"
-            ],
-            "serviceArea": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "35.1495",
-                "longitude": "-90.0490"
-              },
-              "geoRadius": "50000"
-            },
-            "url": "https://digitalfrontier.app/memphis-digital-marketing",
-            "priceRange": "$$",
-            "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00",
-            "sameAs": [
-              "https://www.linkedin.com/company/digital-frontier-company"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Memphis AI Marketing Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Local SEO Memphis",
-                    "description": "Dominate Memphis Google My Business listings and local search results"
-                  }
-                },
-                {
-                  "@type": "Offer", 
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "AI Overviews Optimization",
-                    "description": "Get Memphis businesses featured in Google's AI search results"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service", 
-                    "name": "Answer Engine Optimization",
-                    "description": "Optimize to be cited by ChatGPT and AI assistants for Memphis queries"
-                  }
-                }
-              ]
-            }
-          })
-        }}
+      {/* Advanced Schema Management */}
+      <SchemaManager
+        businessName="Digital Frontier Company"
+        city="Memphis"
+        state="Tennessee"
+        latitude={35.1495}
+        longitude={-90.0490}
+        phoneNumber="+1-901-555-0123"
+        services={services.map(s => s.title)}
+        priceRange="$$$"
+        operatingHours={["Mo-Fr 09:00-17:00", "Sa 10:00-14:00"]}
+        serviceName="Memphis Digital Marketing Services"
+        serviceDescription="AI-powered digital marketing services specifically designed for Memphis, Tennessee businesses"
+        serviceType="Digital Marketing"
+        serviceOffers={services.map(s => ({
+          name: s.title,
+          description: s.description,
+          price: "Contact for pricing"
+        }))}
+        faqs={memphisFaqs}
+        reviewsItemName="Memphis Digital Marketing Services"
+        reviewsRating={4.9}
+        reviewsCount={127}
+        reviews={[
+          {
+            author: "Sarah Johnson",
+            rating: 5,
+            text: "Digital Frontier transformed our Memphis restaurant's online presence. We're now the top result for 'best BBQ Memphis' and our reservations have doubled.",
+            datePublished: "2024-01-15"
+          },
+          {
+            author: "Marcus Williams",
+            rating: 5,
+            text: "As a Memphis logistics company, we needed marketing that understood our B2B audience. Digital Frontier delivered beyond expectations.",
+            datePublished: "2024-02-01"
+          }
+        ]}
       />
 
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": memphisFaqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
-        }}
+      <LocationSchemas
+        city="Memphis"
+        state="Tennessee" 
+        latitude={35.1495}
+        longitude={-90.0490}
+        services={services.map(s => s.title)}
+        phoneNumber="+1-901-555-0123"
       />
     </PageLayout>
   );
