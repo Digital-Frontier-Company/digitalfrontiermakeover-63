@@ -164,8 +164,8 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/7cb44db8-2a71-4927-bc07-e05c54261377.png"
-                  alt="Content Creator"
+                  src="/lovable-uploads/a86c3ccb-39fb-438f-8714-c02615cbbd1e.png"
+                  alt="Female Content Creator in Home Studio"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
@@ -260,8 +260,8 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png"
-                  alt="Creative Artist Working"
+                  src="/lovable-uploads/799496a5-8fc2-4a88-95c8-078f77b6c7ef.png"
+                  alt="Digital Art Creator with Futuristic Elements"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
@@ -428,11 +428,11 @@ const CryptoMarketing = () => {
 
       {/* AI-Powered Capabilities */}
       <section id="ai-capabilities" className="py-24 bg-slate-900 relative overflow-hidden">
-        {/* Background Tech Image */}
+        {/* Background AI Network */}
         <div 
-          className="absolute inset-0 opacity-10 bg-cover bg-center"
+          className="absolute inset-0 opacity-15 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/6c3d2d6e-7ff3-40e9-be46-918e6ee0996c.png')`
+            backgroundImage: `url('/lovable-uploads/8c517ed0-1143-4b21-8414-1e9c5cb0db4e.png')`
           }}
         />
         
@@ -444,9 +444,9 @@ const CryptoMarketing = () => {
             </p>
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png"
-                alt="AI Components Diagram"
-                className="max-w-md opacity-80"
+                src="/lovable-uploads/8c517ed0-1143-4b21-8414-1e9c5cb0db4e.png"
+                alt="AI Network Intelligence Hub"
+                className="max-w-md opacity-90"
               />
             </div>
           </div>
@@ -476,8 +476,16 @@ const CryptoMarketing = () => {
               </CardContent>
             </Card>
 
-            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50">
-              <CardContent className="p-6 text-center">
+            <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50 overflow-hidden">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/61a5e7f7-7477-4bfa-bc74-a4fbb3254e00.png"
+                  alt="Performance Analytics Dashboard"
+                  className="w-full h-32 object-cover opacity-30"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/90 to-transparent" />
+              </div>
+              <CardContent className="p-6 text-center relative">
                 <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-lg font-bold text-white mb-2">Performance Optimization</h3>
                 <p className="text-slate-300 text-sm">Real-time campaign optimization and conversion improvement</p>
@@ -538,13 +546,13 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"
-                  alt="Industry Leadership"
+                  src="/lovable-uploads/f7841bf8-ae76-4156-8f39-bd9fad2dbc9c.png"
+                  alt="Digital Frontier Executive Team"
                   className="w-full h-full object-cover"
                 />
               </div>
               <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-white mb-2">Industry Leadership</h3>
+                <h3 className="font-bold text-white mb-2">Executive Leadership</h3>
                 <p className="text-slate-300 text-sm">Proven expertise in crypto marketing and growth strategies</p>
               </CardContent>
             </Card>
@@ -566,16 +574,59 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/0d2360a9-25e2-44f5-be84-ff6da9ee399d.png"
-                  alt="Strategic Planning"
+                  src="/lovable-uploads/e0b7cfe7-336c-41e6-85ff-678faab614a1.png"
+                  alt="Performance Analytics Dashboard"
                   className="w-full h-full object-cover"
                 />
               </div>
               <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-white mb-2">Strategic Excellence</h3>
-                <p className="text-slate-300 text-sm">Data-driven strategies that deliver measurable results</p>
+                <h3 className="font-bold text-white mb-2">Proven ROI Results</h3>
+                <p className="text-slate-300 text-sm">Real performance data showing measurable growth and success</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Definition & Education Section */}
+      <section className="py-24 bg-slate-950">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Why AI-First Marketing Works
+              </h2>
+              <p className="text-xl text-slate-400 mb-6">
+                While others guess, we know. Our AI systems process millions of data points to identify patterns, predict trends, and optimize performance in real-time.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-slate-300">
+                    <span className="font-semibold text-white">Predictive Intelligence:</span> Anticipate market changes before they happen
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-slate-300">
+                    <span className="font-semibold text-white">Continuous Optimization:</span> 24/7 performance improvements without human intervention
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-slate-300">
+                    <span className="font-semibold text-white">Scalable Personalization:</span> Deliver the right message to the right audience at the perfect moment
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/lovable-uploads/39745d42-b3ea-471d-8da9-af0d9b3a318e.png"
+                alt="Artificial Intelligence Brain Network"
+                className="max-w-lg w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
