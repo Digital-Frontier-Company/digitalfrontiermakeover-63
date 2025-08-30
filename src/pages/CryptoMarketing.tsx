@@ -59,7 +59,7 @@ const CryptoMarketing = () => {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent" style={{textShadow: '2px 2px 0px #3b82f6, 4px 4px 0px #000000, 6px 6px 0px #84cc16, 8px 8px 15px rgba(0,0,0,0.5)'}}>
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-300 via-blue-200 to-lime-300 bg-clip-text text-transparent" style={{textShadow: '2px 2px 0px #3b82f6, 4px 4px 0px #000000, 6px 6px 0px #84cc16, 8px 8px 15px rgba(0,0,0,0.5)'}}>
             Digital Frontier
           </h1>
           
