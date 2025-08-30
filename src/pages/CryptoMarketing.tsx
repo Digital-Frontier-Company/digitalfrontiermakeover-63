@@ -55,7 +55,7 @@ const CryptoMarketing = () => {
         <div 
           className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/ee38718a-95d4-48fd-9ffb-203acff704f0.jpg')`
+            backgroundImage: `url('/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png')`
           }}
         />
         
