@@ -164,7 +164,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/a86c3ccb-39fb-438f-8714-c02615cbbd1e.png"
+                  src="/lovable-uploads/108a6190-a689-4e67-8494-edae10aa78d2.jpg"
                   alt="Female Content Creator in Home Studio"
                   className="w-full h-full object-cover"
                 />
@@ -260,7 +260,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/799496a5-8fc2-4a88-95c8-078f77b6c7ef.png"
+                  src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png"
                   alt="Digital Art Creator with Futuristic Elements"
                   className="w-full h-full object-cover"
                 />
@@ -432,7 +432,7 @@ const CryptoMarketing = () => {
         <div 
           className="absolute inset-0 opacity-15 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/8c517ed0-1143-4b21-8414-1e9c5cb0db4e.png')`
+            backgroundImage: `url('/lovable-uploads/6c3d2d6e-7ff3-40e9-be46-918e6ee0996c.png')`
           }}
         />
         
@@ -444,7 +444,7 @@ const CryptoMarketing = () => {
             </p>
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/8c517ed0-1143-4b21-8414-1e9c5cb0db4e.png"
+                src="/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png"
                 alt="AI Network Intelligence Hub"
                 className="max-w-md opacity-90"
               />
@@ -479,7 +479,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-800/50 border-slate-700 hover:border-primary/50 overflow-hidden">
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/61a5e7f7-7477-4bfa-bc74-a4fbb3254e00.png"
+                  src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png"
                   alt="Performance Analytics Dashboard"
                   className="w-full h-32 object-cover opacity-30"
                 />
@@ -546,7 +546,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/f7841bf8-ae76-4156-8f39-bd9fad2dbc9c.png"
+                  src="/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"
                   alt="Digital Frontier Executive Team"
                   className="w-full h-full object-cover"
                 />
@@ -574,7 +574,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/e0b7cfe7-336c-41e6-85ff-678faab614a1.png"
+                  src="/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png"
                   alt="Performance Analytics Dashboard"
                   className="w-full h-full object-cover"
                 />
@@ -622,7 +622,7 @@ const CryptoMarketing = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/39745d42-b3ea-471d-8da9-af0d9b3a318e.png"
+                src="/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png"
                 alt="Artificial Intelligence Brain Network"
                 className="max-w-lg w-full"
               />
