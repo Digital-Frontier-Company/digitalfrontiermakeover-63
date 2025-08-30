@@ -55,7 +55,7 @@ const CryptoMarketing = () => {
           {/* Logo with Shimmer Effect */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <img src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" alt="Digital Frontier Logo" className="h-24 w-auto animate-pulse" />
+              <img src="/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png" alt="Digital Frontier Logo" className="h-24 w-auto animate-pulse" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
             </div>
           </div>
