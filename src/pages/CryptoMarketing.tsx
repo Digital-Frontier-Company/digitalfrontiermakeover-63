@@ -55,7 +55,7 @@ const CryptoMarketing = () => {
         <div 
           className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/a53a6087-265e-449d-b32a-d0e4e80e5352.png')`
+            backgroundImage: `url('/lovable-uploads/ee38718a-95d4-48fd-9ffb-203acff704f0.jpg')`
           }}
         />
         
@@ -68,7 +68,7 @@ const CryptoMarketing = () => {
           <div className="mb-8 flex justify-center">
             <div className="relative">
               <img 
-                src="/lovable-uploads/6c62681e-001a-4845-979e-9213008dcbe1.png" 
+                src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" 
                 alt="Digital Frontier Logo" 
                 className="h-24 w-auto animate-pulse"
               />
@@ -164,8 +164,8 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/61c29b3d-3491-48c5-86e4-4b32d43c5c16.png"
-                  alt="Content Creator with Phone"
+                  src="/lovable-uploads/7cb44db8-2a71-4927-bc07-e05c54261377.png"
+                  alt="Content Creator"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
@@ -178,11 +178,7 @@ const CryptoMarketing = () => {
               
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="/lovable-uploads/c154b93c-0774-40eb-8db7-a9097c631754.png"
-                    alt="Creator Icon"
-                    className="w-8 h-8 mr-3"
-                  />
+                  <Users className="w-8 h-8 mr-3 text-cyan-400" />
                   <h3 className="text-xl font-bold text-cyan-300">For Independent Creators</h3>
                 </div>
                 
@@ -216,7 +212,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-500/30 hover:border-blue-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/6bda5026-7c19-470f-b619-99dcbc0eef79.png"
+                  src="/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png"
                   alt="Team Collaboration"
                   className="w-full h-full object-cover"
                 />
@@ -230,11 +226,7 @@ const CryptoMarketing = () => {
               
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="/lovable-uploads/2190579b-0e66-42c1-952e-295c05e721f8.png"
-                    alt="Crypto Network Icon"
-                    className="w-8 h-8 mr-3"
-                  />
+                  <TrendingUp className="w-8 h-8 mr-3 text-blue-400" />
                   <h3 className="text-xl font-bold text-blue-300">For Crypto Visionaries</h3>
                 </div>
                 
@@ -268,7 +260,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="/lovable-uploads/b83ad120-8c4c-4197-8e58-75295f932c86.png"
+                  src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png"
                   alt="Creative Artist Working"
                   className="w-full h-full object-cover"
                 />
@@ -282,11 +274,7 @@ const CryptoMarketing = () => {
               
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <img 
-                    src="/lovable-uploads/013e1f20-bacc-4537-a358-b4a928b45495.png"
-                    alt="Creative Digital Icon"
-                    className="w-8 h-8 mr-3"
-                  />
+                  <Target className="w-8 h-8 mr-3 text-purple-400" />
                   <h3 className="text-xl font-bold text-purple-300">For Hybrid Crypto-Creatives</h3>
                 </div>
                 
@@ -444,7 +432,7 @@ const CryptoMarketing = () => {
         <div 
           className="absolute inset-0 opacity-10 bg-cover bg-center"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/7b776747-32b6-457b-a692-2e48d5e0fc01.png')`
+            backgroundImage: `url('/lovable-uploads/6c3d2d6e-7ff3-40e9-be46-918e6ee0996c.png')`
           }}
         />
         
@@ -456,7 +444,7 @@ const CryptoMarketing = () => {
             </p>
             <div className="flex justify-center">
               <img 
-                src="/lovable-uploads/d71a7b9c-1a82-436d-817f-a0dc30db4d2b.png"
+                src="/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png"
                 alt="AI Components Diagram"
                 className="max-w-md opacity-80"
               />
@@ -550,8 +538,8 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/fff6464e-231e-4c78-b7bb-6cdb7306ac6b.png"
-                  alt="Crypto Executive"
+                  src="/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"
+                  alt="Industry Leadership"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -564,7 +552,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/6c2b3ef2-2182-4838-91fa-2e2c9c08600d.png"
+                  src="/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png"
                   alt="Team Collaboration"
                   className="w-full h-full object-cover"
                 />
@@ -578,7 +566,7 @@ const CryptoMarketing = () => {
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
               <div className="h-64">
                 <img 
-                  src="/lovable-uploads/3b42816e-8664-40f3-b717-dd44a4797b28.png"
+                  src="/lovable-uploads/0d2360a9-25e2-44f5-be84-ff6da9ee399d.png"
                   alt="Strategic Planning"
                   className="w-full h-full object-cover"
                 />
