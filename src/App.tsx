@@ -24,6 +24,7 @@ const ContentCreationAgent = lazy(() => import('@/pages/ContentCreationAgent'));
 const AIHumanizerAgent = lazy(() => import('@/pages/AIHumanizerAgent'));
 const PredictiveAnalyticsAgent = lazy(() => import('@/pages/PredictiveAnalyticsAgent'));
 const AIImplementationConsulting = lazy(() => import('@/pages/AIImplementationConsulting'));
+const AIVoiceAssistants = lazy(() => import('@/pages/AIVoiceAssistants'));
 const DigitalMarketingStrategy = lazy(() => import('@/pages/DigitalMarketingStrategy'));
 const PsychologicalDigitalMarketingInsights = lazy(() => import('@/pages/PsychologicalDigitalMarketingInsights'));
 const Technical = lazy(() => import('@/pages/Technical'));
@@ -150,6 +151,7 @@ function App() {
             <Route path="/germantown-digital-marketing" element={<MainLayout><GermantownDigitalMarketing /></MainLayout>} />
             <Route path="/team-expertise" element={<MainLayout><TeamExpertise /></MainLayout>} />
             <Route path="/complete-aeo-guide-2025" element={<MainLayout><CompleteAEOGuide /></MainLayout>} />
+            <Route path="/ai-voice-assistants" element={<MainLayout><Suspense fallback={<PageLoader />}><AIVoiceAssistants /></Suspense></MainLayout>} />
             <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
