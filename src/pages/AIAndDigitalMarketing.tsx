@@ -5,7 +5,12 @@ import PageLayout from "../components/layout/PageLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Target, Zap, TrendingUp, Users, Shield, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/utils";
+import { 
+  generateArticleSchema, 
+  generateBreadcrumbSchema, 
+  generateEnhancedFAQSchema,
+  generateOrganizationSchema
+} from "@/lib/utils";
 
 const AIAndDigitalMarketing = () => {
   const location = useLocation();
@@ -69,21 +74,69 @@ const AIAndDigitalMarketing = () => {
   ];
 
   // Generate structured data
-  const articleSchema = generateArticleSchema(
-    "AI & Digital Marketing Revolution - Transform Your Marketing Strategy",
-    "Discover how artificial intelligence is revolutionizing digital marketing through AI-powered targeting, content creation, predictive analytics, and ethical AI implementation. Learn from Digital Frontier Company's expertise.",
-    "Digital Frontier Company",
-    "Digital Frontier Company",
-    "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
-    "2025-01-13",
-    "2025-01-13",
-    canonicalUrl
-  );
+  const articleSchema = {
+    ...generateArticleSchema(
+      "AI & Digital Marketing Revolution - Transform Your Marketing Strategy",
+      "Discover how artificial intelligence is revolutionizing digital marketing through AI-powered targeting, content creation, predictive analytics, and ethical AI implementation. Learn from Digital Frontier Company's expertise.",
+      "Digital Frontier Company",
+      "Digital Frontier Company",
+      "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+      "2025-01-13",
+      "2025-01-13",
+      canonicalUrl
+    ),
+    wordCount: 850,
+    inLanguage: "en-US",
+    image: [
+      "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
+    ]
+  };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "https://digitalfrontier.app" },
     { name: "AI & Digital Marketing", url: canonicalUrl }
   ]);
+
+  const faqSchema = generateEnhancedFAQSchema([
+    {
+      question: "What is AI-powered digital marketing?",
+      answer: "AI-powered digital marketing uses artificial intelligence and machine learning to automate and optimize marketing processes, including targeting, content creation, predictive analytics, and personalization to improve campaign performance and customer engagement.",
+      category: "AI Marketing Basics"
+    },
+    {
+      question: "How can AI improve marketing ROI?",
+      answer: "AI improves marketing ROI through precision targeting (up to 40% conversion improvement), automated content creation (70% time reduction), predictive analytics (25% retention increase), and real-time optimization (30% efficiency improvement).",
+      category: "ROI & Performance"
+    },
+    {
+      question: "What are recommender systems in digital marketing?",
+      answer: "Recommender systems are AI algorithms that analyze user behavior and preferences to suggest personalized content, products, or services, significantly improving user engagement and conversion rates in digital marketing campaigns.",
+      category: "AI Technology"
+    }
+  ]);
+
+  const organizationSchema = generateOrganizationSchema();
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+    url: canonicalUrl,
+    name: "AI & Digital Marketing Revolution | Digital Frontier",
+    description: "Transform your marketing strategy with AI-powered solutions. Expert insights on artificial intelligence in digital marketing from Digital Frontier Company.",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": "https://digitalfrontier.app/#website"
+    },
+    about: {
+      "@type": "Thing",
+      name: "AI Digital Marketing"
+    },
+    mainEntity: {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`
+    }
+  };
 
   return (
     <PageLayout 
@@ -121,36 +174,17 @@ const AIAndDigitalMarketing = () => {
 
         {/* FAQ Schema */}
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is AI-powered digital marketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "AI-powered digital marketing uses artificial intelligence and machine learning to automate and optimize marketing processes, including targeting, content creation, predictive analytics, and personalization to improve campaign performance and customer engagement."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How can AI improve marketing ROI?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "AI improves marketing ROI through precision targeting (up to 40% conversion improvement), automated content creation (70% time reduction), predictive analytics (25% retention increase), and real-time optimization (30% efficiency improvement)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What are recommender systems in digital marketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Recommender systems are AI algorithms that analyze user behavior and preferences to suggest personalized content, products, or services, significantly improving user engagement and conversion rates in digital marketing campaigns."
-                }
-              }
-            ]
-          })}
+          {JSON.stringify(faqSchema)}
+        </script>
+
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+
+        {/* WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(webPageSchema)}
         </script>
       </Helmet>
       
