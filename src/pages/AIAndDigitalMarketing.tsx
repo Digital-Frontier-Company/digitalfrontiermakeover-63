@@ -267,6 +267,15 @@ const AIAndDigitalMarketing = () => {
           <Link to="/resources/content-creation-agent" className="px-4 py-2 bg-green-600/30 hover:bg-green-600/50 rounded-md text-green-300 transition-colors">
             Content Creation Tools
           </Link>
+          <Link to="/psychological-digital-marketing-insights" className="px-4 py-2 bg-orange-600/30 hover:bg-orange-600/50 rounded-md text-orange-300 transition-colors">
+            Psychology Insights
+          </Link>
+          <Link to="/emotional-marketing-playbook" className="px-4 py-2 bg-red-600/30 hover:bg-red-600/50 rounded-md text-red-300 transition-colors">
+            Emotional Marketing
+          </Link>
+          <Link to="/memphis-digital-marketing" className="px-4 py-2 bg-cyan-600/30 hover:bg-cyan-600/50 rounded-md text-cyan-300 transition-colors">
+            Memphis Services
+          </Link>
         </div>
       </div>
     </PageLayout>

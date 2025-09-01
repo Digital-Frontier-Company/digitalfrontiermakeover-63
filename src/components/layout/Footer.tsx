@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 border-t border-slate-800 mt-16">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <LazyImage
@@ -64,21 +64,35 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/search-engine-optimization" className="text-slate-400 hover:text-white transition-colors">SEO</Link></li>
+              <li><Link to="/search-engine-optimization" className="text-slate-400 hover:text-white transition-colors">SEO Services</Link></li>
               <li><Link to="/generative-engine-optimization" className="text-slate-400 hover:text-white transition-colors">GEO</Link></li>
               <li><Link to="/answer-engine-optimization" className="text-slate-400 hover:text-white transition-colors">AEO</Link></li>
               <li><Link to="/crypto-marketing" className="text-slate-400 hover:text-white transition-colors">Crypto Marketing</Link></li>
               <li><Link to="/influencer-marketing-2025" className="text-slate-400 hover:text-white transition-colors">Influencer Marketing</Link></li>
+              <li><Link to="/ad-funnel-blueprint" className="text-slate-400 hover:text-white transition-colors">Ad Funnel Blueprint</Link></li>
+              <li><Link to="/ai-and-digital-marketing" className="text-slate-400 hover:text-white transition-colors">AI Marketing</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <h3 className="text-white font-semibold mb-4">Locations</h3>
             <ul className="space-y-2">
-              <li><Link to="/about-us" className="text-slate-400 hover:text-white transition-colors">About</Link></li>
-              <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link to="/site-map" className="text-slate-400 hover:text-white transition-colors">Site Map</Link></li>
+              <li><Link to="/memphis-digital-marketing" className="text-slate-400 hover:text-white transition-colors">Memphis Marketing</Link></li>
+              <li><Link to="/collierville-seo-services" className="text-slate-400 hover:text-white transition-colors">Collierville SEO</Link></li>
+              <li><Link to="/germantown-digital-marketing" className="text-slate-400 hover:text-white transition-colors">Germantown Marketing</Link></li>
+              <li><Link to="/team-expertise" className="text-slate-400 hover:text-white transition-colors">Our Team</Link></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li><Link to="/insights" className="text-slate-400 hover:text-white transition-colors">Insights Hub</Link></li>
+              <li><Link to="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/ai-prompt-templates" className="text-slate-400 hover:text-white transition-colors">AI Prompts</Link></li>
+              <li><Link to="/psychological-digital-marketing-insights" className="text-slate-400 hover:text-white transition-colors">Psychology Insights</Link></li>
+              <li><Link to="/emotional-marketing-playbook" className="text-slate-400 hover:text-white transition-colors">Emotional Marketing</Link></li>
+              <li><Link to="/ai-bias-in-advertising" className="text-slate-400 hover:text-white transition-colors">AI Bias Guide</Link></li>
             </ul>
           </div>
         </div>
@@ -88,8 +102,10 @@ const Footer = () => {
             © 2024 Digital Frontier Company. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-slate-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-slate-400 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-slate-400 hover:text-white text-sm transition-colors">Terms of Service</Link>
+            <Link to="/digital-frontier-services" className="text-slate-400 hover:text-white text-sm transition-colors">Services</Link>
+            <Link to="/faq" className="text-slate-400 hover:text-white text-sm transition-colors">FAQ</Link>
           </div>
         </div>
       </div>

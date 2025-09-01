@@ -901,32 +901,37 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-slate-100 mb-8">Explore Digital Frontier</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Key Services - Simplified structure */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Key Services - Enhanced with more internal links */}
             <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
               <h3 className="text-xl font-bold text-blue-400 mb-4">AI Marketing Solutions</h3>
               <div className="space-y-3 text-slate-300">
                 <Link to="/ad-funnel-blueprint" className="block hover:text-blue-400 transition-colors">Ad Funnel Blueprint</Link>
                 <Link to="/answer-engine-optimization" className="block hover:text-blue-400 transition-colors">Answer Engine Optimization</Link>
                 <Link to="/generative-engine-optimization" className="block hover:text-blue-400 transition-colors">Generative Engine Optimization</Link>
+                <Link to="/ai-and-digital-marketing" className="block hover:text-blue-400 transition-colors">AI Marketing Guide</Link>
+                <Link to="/psychological-digital-marketing-insights" className="block hover:text-blue-400 transition-colors">Psychology Insights</Link>
               </div>
             </div>
             
             <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
-              <h3 className="text-xl font-bold text-blue-400 mb-4">Resources</h3>
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Local Services</h3>
               <div className="space-y-3 text-slate-300">
-                <Link to="/technical" className="block hover:text-blue-400 transition-colors">Technical Breakdown</Link>
-                <Link to="/evolution" className="block hover:text-blue-400 transition-colors">Evolution of AI Marketing</Link>
-                <Link to="/future" className="block hover:text-blue-400 transition-colors">Future Trends</Link>
+                <Link to="/memphis-digital-marketing" className="block hover:text-blue-400 transition-colors">Memphis Marketing</Link>
+                <Link to="/collierville-seo-services" className="block hover:text-blue-400 transition-colors">Collierville SEO</Link>
+                <Link to="/germantown-digital-marketing" className="block hover:text-blue-400 transition-colors">Germantown Marketing</Link>
+                <Link to="/team-expertise" className="block hover:text-blue-400 transition-colors">Our Team</Link>
               </div>
             </div>
             
             <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
-              <h3 className="text-xl font-bold text-blue-400 mb-4">Company</h3>
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Resources & Tools</h3>
               <div className="space-y-3 text-slate-300">
-                <Link to="/about-us" className="block hover:text-blue-400 transition-colors">About Us</Link>
-                <Link to="/sectors" className="block hover:text-blue-400 transition-colors">Industries</Link>
-                <Link to="/modern-contact-form" className="block hover:text-blue-400 transition-colors">Contact</Link>
+                <Link to="/ai-prompt-templates" className="block hover:text-blue-400 transition-colors">AI Prompt Templates</Link>
+                <Link to="/user-experience-prompts" className="block hover:text-blue-400 transition-colors">UX Prompts</Link>
+                <Link to="/emotional-marketing-playbook" className="block hover:text-blue-400 transition-colors">Emotional Marketing</Link>
+                <Link to="/ai-bias-in-advertising" className="block hover:text-blue-400 transition-colors">AI Bias Guide</Link>
+                <Link to="/blog" className="block hover:text-blue-400 transition-colors">Marketing Blog</Link>
               </div>
             </div>
           </div>
