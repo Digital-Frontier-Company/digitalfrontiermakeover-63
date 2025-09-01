@@ -74,7 +74,6 @@ const AIBias = () => {
     >
       <Helmet>
         <title>AI Bias in Advertising | Ethical Marketing Solutions | Digital Frontier</title>
-        <meta name="description" content="Learn about AI bias in advertising and discover ethical solutions. Understanding and addressing bias in AI-powered marketing technologies for better outcomes." />
         <meta name="keywords" content="AI bias, ethical marketing, demographic bias, AI ethics, digital marketing ethics, inclusive marketing, fair advertising" />
         
         {/* Article Schema */}

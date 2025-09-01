@@ -17,7 +17,6 @@ const DigitalMarketingStrategy = () => {
     >
       <Helmet>
         <title>Digital Marketing Strategy - AI-Enhanced Growth | Digital Frontier</title>
-        <meta name="description" content="Comprehensive AI-enhanced marketing strategies for businesses seeking growth and market domination. Data-driven strategies with competitive advantage and measurable ROI." />
         <meta name="keywords" content="digital marketing strategy, AI marketing, marketing consulting, growth strategy, digital transformation" />
       </Helmet>
 

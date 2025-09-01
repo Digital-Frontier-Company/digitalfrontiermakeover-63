@@ -77,7 +77,6 @@ const TaxReductionGuide: React.FC = () => {
     >
       <Helmet>
         <title>Tax Reduction Guide: Ultimate Wealth Building Strategies</title>
-        <meta name="description" content="Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts. Complete guide for 2025." />
         <meta name="keywords" content="tax reduction strategies, wealth building, tax planning, investment strategies, financial planning, all-weather portfolio" />
         <link rel="canonical" href="https://digitalfrontier.app/blog/tax-reduction-wealth-building-guide" />
         

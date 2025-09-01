@@ -17,7 +17,6 @@ const AIImplementationConsulting = () => {
     >
       <Helmet>
         <title>AI Implementation Consulting - Expert AI Integration | Digital Frontier</title>
-        <meta name="description" content="Expert guidance on integrating AI solutions into your business operations for maximum efficiency and competitive edge. Custom AI roadmaps and technical expertise." />
         <meta name="keywords" content="AI implementation, AI consulting, business AI integration, AI strategy, artificial intelligence consulting" />
       </Helmet>
 

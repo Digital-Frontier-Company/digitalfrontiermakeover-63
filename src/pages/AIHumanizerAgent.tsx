@@ -17,7 +17,6 @@ const AIHumanizerAgent = () => {
     >
       <Helmet>
         <title>AI Humanizer Agent - Transform AI Content | Digital Frontier</title>
-        <meta name="description" content="Transform machine-generated content into natural human language with our AI Humanizer Agent. Perfect for content creators who need to humanize AI outputs." />
         <meta name="keywords" content="AI humanizer, content transformation, natural language, AI content, humanize AI text" />
       </Helmet>
 

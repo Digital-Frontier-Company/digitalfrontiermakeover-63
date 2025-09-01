@@ -53,7 +53,6 @@ const SiteMap = () => {
     >
       <Helmet>
         <title>Site Map | Digital Frontier</title>
-        <meta name="description" content="Navigate through all pages on the Digital Frontier website - from our services to resources, blog posts and more." />
         <link rel="canonical" href="https://digitalfrontier.app/site-map" />
         <meta name="robots" content="index, follow" />
       </Helmet>

@@ -76,7 +76,6 @@ const KPIs = () => {
     >
       <Helmet>
         <title>AI Marketing KPIs | Performance Metrics | Digital Frontier</title>
-        <meta name="description" content="Learn about essential KPIs for ethical AI marketing. Discover how to measure both business and ethical performance in your digital marketing strategy." />
         <meta name="keywords" content="AI marketing KPIs, digital marketing metrics, ethical AI, marketing performance, data privacy metrics, AI ethics" />
         
         {/* Article Schema */}

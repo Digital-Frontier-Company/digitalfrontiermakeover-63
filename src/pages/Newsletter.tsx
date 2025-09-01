@@ -92,7 +92,6 @@ const Newsletter = () => {
     <>
       <Helmet>
         <title>Crypto and Macro Markets Newsletter | Digital Frontier</title>
-        <meta name="description" content="Subscribe to our Crypto and Macro Markets Newsletter for the latest insights and analysis." />
       </Helmet>
       <PageLayout
         title="Crypto and Macro Markets Newsletter"

@@ -17,7 +17,6 @@ const PredictiveAnalyticsAgent = () => {
     >
       <Helmet>
         <title>Predictive Analytics Agent - AI-Powered Forecasting | Digital Frontier</title>
-        <meta name="description" content="Harness the power of predictive AI to forecast market trends, customer behavior, and business opportunities with our advanced analytics agent." />
         <meta name="keywords" content="predictive analytics, AI forecasting, market trends, business intelligence, data analytics" />
       </Helmet>
 

@@ -93,7 +93,6 @@ const AIAndDigitalMarketing = () => {
     >
       <Helmet>
         <title>AI & Digital Marketing Revolution | AI-Powered Marketing Solutions | Digital Frontier</title>
-        <meta name="description" content="Discover how AI is revolutionizing digital marketing. Learn about AI-powered targeting, content creation, predictive analytics, recommender systems, and ethical AI implementation from Digital Frontier Company." />
         <meta name="keywords" content="AI marketing, artificial intelligence digital marketing, machine learning marketing, AI advertising, marketing automation, predictive analytics, recommender systems, Digital Frontier Company" />
         <link rel="canonical" href={canonicalUrl} />
         

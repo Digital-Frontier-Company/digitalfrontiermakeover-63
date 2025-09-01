@@ -76,7 +76,6 @@ const RecommenderSystemGeneralization = () => {
     >
       <Helmet>
         <title>Recommender System Generalization & Prediction | Digital Frontier Company</title>
-        <meta name="description" content="Explore recommender system generalization, prediction, data efficiency, ML automation, fairness, and Answer Engine Optimization with Digital Frontier Company. Insights for AI researchers, marketers, and founders." />
         <meta name="keywords" content="recommender system, generalization, prediction, AI research, digital marketing, startup, data-efficient training, machine learning automation, automated model tuning, neural network design, fairness, transparency, collaborative filtering, content-based, deep learning, evaluation metrics, cold start problem, Digital Frontier Company, Digital Frontier, Answer Engine Optimization, AEO" />
         <link rel="canonical" href={canonicalUrl} />
         
