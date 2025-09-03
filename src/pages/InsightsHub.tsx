@@ -8,57 +8,93 @@ const InsightsHub = () => {
   const articles = [
     {
       id: 1,
-      title: "How AI Humanizers Are Changing Content Creation",
-      description: "The rise of AI humanizer tools is transforming how businesses create content, making machine-generated text indistinguishable from human writing.",
+      title: "AI Humanizer Agent: Transform AI Content to Human Language",
+      description: "Convert machine-generated content into natural, engaging human language that resonates with your audience and passes AI detection systems.",
       category: "AI TECHNOLOGY",
-      author: "Sarah Johnson",
-      date: "May 28, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/9aa3e2b939-6c8a2503549f453ec183.png"
+      author: "Digital Frontier Team",
+      date: "Dec 18, 2024",
+      image: "/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png",
+      link: "/services/ai-humanizer-agent"
     },
     {
       id: 2,
       title: "Answer Engine Optimization: Beyond Traditional SEO",
-      description: "As AI-powered search engines evolve, marketers need new strategies to ensure their content appears in answer boxes and voice search results.",
+      description: "Master AEO strategies to ensure your content appears in AI-powered search engines, voice assistants, and answer boxes for maximum visibility.",
       category: "MARKETING",
-      author: "James Wilson",
-      date: "June 2, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/29737a3a51-8f7460bbecd283c5c0cd.png"
+      author: "SEO Specialists",
+      date: "Dec 15, 2024",
+      image: "/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+      link: "/answer-engine-optimization"
     },
     {
       id: 3,
-      title: "Implementing AI in Your Business: A Consultant's Guide",
-      description: "A step-by-step approach to integrating artificial intelligence solutions into your business operations with minimal disruption and maximum ROI.",
+      title: "AI Implementation Consulting: Your AI Crew Chief",
+      description: "Get proven AI solutions that actually work for small businesses. We've tested $50K+ worth of tools so you don't have to waste money on hype.",
       category: "CONSULTING",
-      author: "Robert Chang",
-      date: "June 10, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/7cd85d26fc-338a3161ddfc23fe0c9e.png"
+      author: "AI Consultants",
+      date: "Dec 10, 2024",
+      image: "/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png",
+      link: "/services/ai-implementation-consulting"
     },
     {
       id: 4,
-      title: "Predictive Analytics: Forecasting Market Trends with AI",
-      description: "How businesses are leveraging AI-powered predictive analytics to anticipate market shifts and gain competitive advantages in uncertain economic conditions.",
+      title: "Predictive Analytics Agent: AI-Powered Business Forecasting",
+      description: "Transform your decision-making with AI-powered predictive analytics that forecast market trends, customer behavior, and identify untapped opportunities.",
       category: "AI TECHNOLOGY",
-      author: "Emma Rodriguez",
-      date: "May 22, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b5541c8e85-b5789b701844d82cca37.png"
+      author: "Data Scientists",
+      date: "Dec 8, 2024",
+      image: "/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png",
+      link: "/services/predictive-analytics-agent"
     },
     {
       id: 5,
-      title: "Multi-Format Content Creation with AI Agents",
-      description: "Discover how AI content creation tools can help you produce consistent, high-quality content across blogs, social media, email campaigns, and more.",
+      title: "Content Creation Agent: AI-Powered Writing Tools",
+      description: "Master AI content creation with proven writing tools, expert SEO strategies, and techniques for generating high-converting marketing copy.",
       category: "MARKETING",
-      author: "David Park",
-      date: "June 5, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/d494d0df61-f19f008f4cf3e8f14c2b.png"
+      author: "Content Specialists",
+      date: "Dec 5, 2024",
+      image: "/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png",
+      link: "/resources/content-creation-agent"
     },
     {
       id: 6,
-      title: "Ethical Considerations in AI Marketing",
-      description: "As AI marketing tools become more prevalent, businesses must navigate complex ethical issues around data privacy, transparency, and algorithmic bias.",
+      title: "AI Prompt Templates: 500+ ChatGPT Marketing Prompts",
+      description: "Access our comprehensive library of AI prompts for marketing, content creation, SEO, and business optimization. Ready-to-use templates for instant results.",
+      category: "AI TECHNOLOGY",
+      author: "Prompt Engineers",
+      date: "Dec 3, 2024",
+      image: "/lovable-uploads/3b21fa11-2a1d-4153-98dd-07178e0da505.png",
+      link: "/ai-prompt-templates"
+    },
+    {
+      id: 7,
+      title: "GTM Strategy Blueprint: Complete Go-to-Market Framework",
+      description: "Launch your products successfully with our comprehensive GTM strategy framework, including market analysis, customer segmentation, and launch planning.",
       category: "CONSULTING",
-      author: "Alicia Martinez",
-      date: "May 30, 2023",
-      image: "https://storage.googleapis.com/uxpilot-auth.appspot.com/b42795e28f-4a3287b29e2b9b6cf2be.png"
+      author: "Strategy Experts",
+      date: "Dec 1, 2024",
+      image: "/lovable-uploads/c735c494-8f65-49b4-89b6-d6a1040a6168.png",
+      link: "/gtm-strategy-blueprint"
+    },
+    {
+      id: 8,
+      title: "AI Voice Assistants: Advanced Conversational AI Solutions",
+      description: "Implement sophisticated AI voice assistants and conversational interfaces to enhance customer experience and automate support interactions.",
+      category: "AI TECHNOLOGY",
+      author: "Voice AI Team",
+      date: "Nov 28, 2024",
+      image: "/lovable-uploads/36f6d997-5da6-4119-aaba-d7390e04fde2.png",
+      link: "/ai-voice-assistants"
+    },
+    {
+      id: 9,
+      title: "Generative Engine Optimization: AI Content Strategy",
+      description: "Optimize your content for AI-powered generative engines and large language models to maximize visibility in the new AI-driven search landscape.",
+      category: "MARKETING",
+      author: "GEO Specialists",
+      date: "Nov 25, 2024",
+      image: "/lovable-uploads/eb7443f0-3f7a-4b83-9d12-c669af95a5d8.png",
+      link: "/generative-engine-optimization"
     }
   ];
 
@@ -229,19 +265,20 @@ const InsightsHub = () => {
                       FEATURED
                     </span>
                     <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--df-bright-blue)' }}>
-                      The Future of AI in Digital Marketing: 2024 Trends
+                      AI Crew Chief: We Tested $50K+ in AI Tools So You Don't Have To
                     </h2>
                     <p className="text-gray-300 mb-6">
-                      Explore how artificial intelligence is revolutionizing digital marketing strategies, from personalized customer experiences to predictive analytics that drive conversion rates.
+                      Stop wasting money on hyped AI tools that don't work. Our AI Implementation Consulting provides only verified solutions that actually drive results for small businesses. Get proven AI strategies backed by real testing and implementation experience.
                     </p>
                     <div className="flex items-center mb-6">
                       <div className="w-10 h-10 rounded-full mr-3 bg-cyan-500"></div>
                       <div>
-                        <p className="font-medium" style={{ color: 'var(--df-bright-blue)' }}>Dr. Michael Chen</p>
-                        <p className="text-gray-400 text-sm">AI Research Director • June 15, 2023</p>
+                        <p className="font-medium" style={{ color: 'var(--df-bright-blue)' }}>Digital Frontier AI Team</p>
+                        <p className="text-gray-400 text-sm">AI Implementation Experts • Dec 18, 2024</p>
                       </div>
                     </div>
-                    <button 
+                    <Link 
+                      to="/services/ai-implementation-consulting"
                       className="py-2 px-6 rounded-lg transition-all inline-block w-max border"
                       style={{ 
                         borderColor: 'var(--df-cyan)',
@@ -254,8 +291,8 @@ const InsightsHub = () => {
                         (e.target as HTMLElement).style.backgroundColor = 'transparent';
                       }}
                     >
-                      Read Article
-                    </button>
+                      Learn More About AI Crew Chief
+                    </Link>
                   </div>
                   <div className="h-[400px] relative">
                     <img 
@@ -278,7 +315,7 @@ const InsightsHub = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {filteredArticles.map((article) => (
-                  <div key={article.id} className="glass-card rounded-xl p-6 transition-all duration-300">
+                  <Link key={article.id} to={article.link} className="glass-card rounded-xl p-6 transition-all duration-300 hover:transform hover:scale-105 block">
                     <div className="mb-4 h-48 rounded-lg overflow-hidden relative">
                       <img className="w-full h-full object-cover" src={article.image} alt={article.title} />
                       <span 
@@ -307,7 +344,7 @@ const InsightsHub = () => {
                     >
                       Read More <i className="fa-solid fa-arrow-right ml-1"></i>
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
               
