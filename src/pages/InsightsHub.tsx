@@ -83,7 +83,7 @@ const InsightsHub = () => {
       category: "MARKETING",
       author: "GEO Specialists",
       date: "Nov 25, 2024",
-      image: "/lovable-uploads/eb7443f0-3f7a-4b83-9d12-c669af95a5d8.png",
+      image: "/lovable-uploads/acc93008-7a64-4d92-ab4d-2db95cec27a0.png",
       link: "/generative-engine-optimization"
     }
   ];
