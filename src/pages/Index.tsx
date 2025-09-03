@@ -8,16 +8,20 @@ import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 
-// TypewriterText component
+// TypewriterText component with line break support
 const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
+    // Split text by | for line breaks
+    const lines = text.split('|');
+    const fullText = lines.join('\n');
+    
     let i = 0;
     const timer = setInterval(() => {
-      if (i < text.length) {
-        setDisplayedText(text.slice(0, i + 1));
+      if (i < fullText.length) {
+        setDisplayedText(fullText.slice(0, i + 1));
         i++;
       } else {
         clearInterval(timer);
@@ -30,7 +34,11 @@ const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) 
 
   return (
     <div className="text-center">
-      {displayedText}
+      {displayedText.split('\n').map((line, index) => (
+        <div key={index} className="block">
+          {line}
+        </div>
+      ))}
       {showCursor && <span className="typewriter-cursor">|</span>}
     </div>
   );
@@ -213,172 +221,117 @@ const Index = () => {
       <SEOSchema />
       
       
-      {/* PRESIDENTIAL-LEVEL HERO SECTION with Parallax - LCP Optimized */}
+      {/* HERO SECTION - AI Crew Chief Style */}
       <motion.section 
-        className="relative isolate overflow-hidden min-h-screen bg-deep-navy" 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url('/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png'), var(--gradient-hero)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundBlendMode: 'overlay',
-          y: heroY
+          background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #2d3748 50%, #1a202c 100%)'
         }}
-        data-lcp-element="true"
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 1.2 }}
       >
-        {/* Subtle Floating Orbs - Reduced count */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {Array.from({
-          length: 2
-        }, (_, i) => <div key={i} className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
-          width: `${60 + i * 20}px`,
-          height: `${60 + i * 20}px`,
-          left: `${20 + i * 30}%`,
-          top: `${20 + i * 25}%`,
-          animation: `float ${4 + i * 2}s ease-in-out infinite`,
-          animationDelay: `${i * 1.5}s`,
-          filter: 'blur(1px)'
-        }} />)}
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4EE2EC]/10 to-transparent"></div>
+          <div className="absolute inset-0">
+            <div 
+              className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-20 blur-3xl"
+              style={{ background: 'radial-gradient(circle, #4EE2EC 0%, transparent 70%)' }}
+            ></div>
+            <div 
+              className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-15 blur-3xl"
+              style={{ background: 'radial-gradient(circle, #8FB31D 0%, transparent 70%)' }}
+            ></div>
+          </div>
         </div>
 
-        {/* Interactive Clickable Bubbles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {bubbles.map(bubble => <div key={bubble.id} className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" style={{
-          width: `${bubble.size}px`,
-          height: `${bubble.size}px`,
-          left: `${bubble.x}%`,
-          top: `${bubble.y}%`,
-          opacity: bubble.opacity,
-          filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.4))',
-          animation: `float ${3 + bubble.id % 3}s ease-in-out infinite`,
-          animationDelay: `${bubble.id * 0.5}s`
-        }} onClick={() => handleBubblePop(bubble.id)} />)}
+        {/* Floating Particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 rounded-full opacity-60"
+              style={{
+                left: `${(i + 1) * 8}%`,
+                background: i % 2 === 0 ? '#4EE2EC' : '#8FB31D',
+                boxShadow: `0 0 10px ${i % 2 === 0 ? '#4EE2EC' : '#8FB31D'}`,
+                animation: `floatUp 10s infinite linear ${-i * 2}s`
+              }}
+            />
+          ))}
         </div>
 
-        {/* Animated Grid Pattern Background */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0" style={{
-          backgroundImage: `
-              linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
-            `,
-          backgroundSize: '50px 50px',
-          animation: 'grid-move 20s linear infinite',
-          filter: 'drop-shadow(0 0 2px cyan)'
-        }}></div>
-        </div>
-        
-        {/* Subtle gradient overlay for depth */}
-        <motion.div animate={{
-        background: ['linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(151,80,255,0.05) 100%)', 'linear-gradient(135deg, rgba(151,80,255,0.05) 0%, transparent 50%, rgba(47,128,255,0.05) 100%)', 'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(151,80,255,0.05) 100%)']
-      }} transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }} className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]"></motion.div>
-        
-        {/* Main Content */}
-        <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen">
-          
-          {/* Logo with Scale Animation */}
-          <motion.div className="relative flex justify-center mb-12" style={{
-          scale: logoScale
-        }} initial={{
-          opacity: 0,
-          y: -20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }}>
-            {/* Simplified geometric frame around logo */}
-            <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
-              {/* Single animated border */}
-              <div className="absolute inset-0 border border-cyan-400/50 animate-pulse rounded-full"></div>
-            </div>
-            
-            {/* Main logo - optimized with responsive sizing */}
-            <LazyImage
-              src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png"
-              alt="Digital Frontier Company - Leading Memphis Digital Marketing Agency"
-              className="h-80 w-auto relative z-10 object-cover logo-interactive animate-logo-strobe"
-              displayWidth={480}
-              displayHeight={320}
-              optimization={{ priority: true }}
+        <div className="container mx-auto px-4 text-center relative z-10">
+          {/* Main Headline */}
+          <motion.h1 
+            className="text-5xl md:text-7xl font-black mb-12"
+            style={{
+              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+              backgroundSize: '300% 300%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'gradientShift 4s ease-in-out infinite'
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Feeling Lost in AI?
+          </motion.h1>
+
+          {/* Typewriter Animation */}
+          <motion.div 
+            className="text-2xl md:text-4xl text-white mb-16 leading-relaxed font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <TypewriterText 
+              text="We spent $50K+|testing 100+ AI tools|so you don't have to" 
+              delay={60}
             />
           </motion.div>
 
-          {/* Presidential Headline with Fade-in */}
-          <motion.h1 className="font-poppins font-semibold text-soft-white mb-8" style={{
-          fontSize: 'clamp(40px, 6vw, 64px)',
-          lineHeight: '1.2',
-          letterSpacing: '-0.01em',
-          maxWidth: '70ch'
-        }} initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 1,
-          delay: 0.2
-        }}>
-            Stop guessing which <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">AI tools</span> work. We invested <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">$50K+</span> in testing to separate <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">Gold</span> from garbage for you.
-          </motion.h1>
-
-          {/* Subheadline with Staggered Animation */}
-          <motion.p style={{
-          lineHeight: '1.55'
-        }} initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }} className="font-inter text-lg md:text-xl text-soft-white/80 leading-relaxed max-w-3xl mx-auto mb-12 font-semibold text-[#fafcfd]">
-            <TypewriterText text="Overwhelmed by AI? The pace is accelerating daily. We've invested $50K+ over 2 years testing every tool and model to find what actually works for small businesses. No more guessing, no more wasted money. Get only proven AI solutions that save 15+ hours/week and boost revenue 25%." />
-          </motion.p>
-
-          {/* CTA with Hover Animation */}
-          <motion.div className="mb-16" initial={{
-          opacity: 0,
-          scale: 0.9
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.6,
-          delay: 0.6
-        }}>
-            <motion.div whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }}>
-              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-soft-white bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 rounded-lg transition-all duration-300 hover:shadow-xl" style={{
-              boxShadow: '0 0 80px 10px hsl(var(--electric-azure) / 0.9), 0 0 160px 30px hsl(var(--electric-azure) / 0.65)',
-              filter: 'drop-shadow(0 0 30px hsl(var(--electric-azure) / 0.9))',
-              letterSpacing: '0.5px'
-            }}>
-                Book a Strategy Call →
-              </Link>
-            </motion.div>
+          {/* Box Containers */}
+          <motion.div 
+            className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="credibility-box relative overflow-hidden">
+              <div className="credibility-number">$50,000+</div>
+              <div className="credibility-text">Invested in testing AI tools over 2 years</div>
+            </div>
+            <div className="credibility-box relative overflow-hidden">
+              <div className="credibility-number">100+</div>
+              <div className="credibility-text">AI tools tested and filtered</div>
+            </div>
+            <div className="credibility-box relative overflow-hidden">
+              <div className="credibility-number">25%</div>
+              <div className="credibility-text">Average revenue boost for clients</div>
+            </div>
           </motion.div>
 
-          {/* Trust indicators with Final Fade-in */}
-          <motion.div className="text-soft-white/60 text-sm" initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 1
-        }} transition={{
-          duration: 0.6,
-          delay: 0.8
-        }}>
-            <p className="text-white font-semibold">Trusted by 200+ B2B companies • Average 38% increase in SQLs • 84% client retention rate (verified by independent audit)</p>
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+          >
+            <Link 
+              to="/ai-implementation-consulting"
+              className="ai-crew-cta inline-block px-12 py-6 text-xl font-bold rounded-full transition-all duration-300 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                color: '#0f1629',
+                boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
+              }}
+            >
+              Get only proven AI solutions that actually work for small businesses—not just hype.
+            </Link>
           </motion.div>
         </div>
       </motion.section>

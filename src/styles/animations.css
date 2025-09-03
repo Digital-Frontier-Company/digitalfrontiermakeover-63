@@ -363,6 +363,103 @@
   animation: shimmer-bounce 4s ease-in-out infinite;
 }
 
+/* AI Crew Chief Hero Styles */
+.credibility-box {
+  background: rgba(78, 226, 236, 0.12);
+  border: 2px solid #4EE2EC;
+  border-radius: 25px;
+  padding: 35px;
+  text-align: center;
+  animation: badgePulse 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.credibility-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(78, 226, 236, 0.3), transparent, rgba(143, 179, 29, 0.2), transparent);
+  animation: spin 8s linear infinite;
+}
+
+.credibility-box::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: rgba(15, 22, 41, 0.9);
+  border-radius: 23px;
+  z-index: 1;
+}
+
+.credibility-number {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.credibility-text {
+  font-size: 18px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes badgePulse {
+  0%, 100% { 
+    box-shadow: 0 0 30px rgba(78, 226, 236, 0.5);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 50px rgba(78, 226, 236, 0.8), 0 0 80px rgba(143, 179, 29, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(-10vh) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20vh) scale(0);
+  }
+}
+
+.ai-crew-cta:hover {
+  box-shadow: 0 0 50px rgba(78, 226, 236, 0.8) !important;
+}
+
 /* Typewriter effect */
 .typewriter {
   display: inline-block;
@@ -377,7 +474,7 @@
 
 .typewriter-cursor {
   display: inline;
-  color: hsl(var(--electric-azure));
+  color: #4EE2EC;
   font-weight: bold;
   animation: blink-caret 1s step-end infinite;
 }
