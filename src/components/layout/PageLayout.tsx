@@ -136,7 +136,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       
       {/* Main Content with Semantic HTML */}
       <main className="container mx-auto py-8 px-4 mt-4" role="main">
-        <div className="max-w-4xl mx-auto bg-slate-900/60 backdrop-blur-sm p-6 md:p-10 rounded-2xl border border-slate-800 shadow-lg">
+        <div className="max-w-6xl mx-auto bg-slate-900/60 backdrop-blur-sm p-6 md:p-10 rounded-2xl border border-slate-800 shadow-lg">
           <article itemScope itemType={pageType === 'article' ? "https://schema.org/Article" : "https://schema.org/WebPage"}>
             {pageType === 'article' && (
               <header className="mb-8">
