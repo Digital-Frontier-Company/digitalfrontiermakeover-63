@@ -63,7 +63,7 @@ const InsightsHub = () => {
       category: "AI TECHNOLOGY",
       author: "Prompt Engineers",
       date: "Dec 3, 2024",
-      image: "/lovable-uploads/3b21fa11-2a1d-4153-98dd-07178e0da505.png",
+      image: "/lovable-uploads/82b3b6d7-dc1f-457e-ac95-1926f6af656b.png",
       link: "/ai-prompt-templates"
     },
     {
