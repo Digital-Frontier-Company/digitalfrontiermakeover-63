@@ -13,7 +13,7 @@ const InsightsHub = () => {
       category: "MARKETING",
       author: "SEO Specialists",
       date: "Dec 15, 2024",
-      image: "/lovable-uploads/e224f597-8c00-4713-a1a6-82a84ad3bf9e.png",
+      image: "/lovable-uploads/8cb803e0-51b1-4180-af4a-83583369c6d9.png",
       link: "/answer-engine-optimization"
     },
     {
@@ -63,7 +63,7 @@ const InsightsHub = () => {
       category: "CONSULTING",
       author: "Strategy Experts",
       date: "Dec 1, 2024",
-      image: "/lovable-uploads/c735c494-8f65-49b4-89b6-d6a1040a6168.png",
+      image: "/lovable-uploads/e224f597-8c00-4713-a1a6-82a84ad3bf9e.png",
       link: "/gtm-strategy-blueprint"
     },
     {
