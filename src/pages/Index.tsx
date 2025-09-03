@@ -8,6 +8,34 @@ import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 
+// TypewriterText component
+const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayedText(text.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(timer);
+        setTimeout(() => setShowCursor(false), 2000);
+      }
+    }, delay);
+
+    return () => clearInterval(timer);
+  }, [text, delay]);
+
+  return (
+    <div className="text-center">
+      {displayedText}
+      {showCursor && <span className="typewriter-cursor">|</span>}
+    </div>
+  );
+};
+
 // Lazy load below-the-fold components for performance
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
@@ -312,9 +340,7 @@ const Index = () => {
           duration: 0.8,
           delay: 0.4
         }} className="font-inter text-lg md:text-xl text-soft-white/80 leading-relaxed max-w-3xl mx-auto mb-12 font-semibold text-[#fafcfd]">
-            <div className="typewriter text-center">
-              Overwhelmed by AI? The pace is accelerating daily. We've invested $50K+ over 2 years testing every tool and model to find what actually works for small businesses. No more guessing, no more wasted money. Get only proven AI solutions that save 15+ hours/week and boost revenue 25%.
-            </div>
+            <TypewriterText text="Overwhelmed by AI? The pace is accelerating daily. We've invested $50K+ over 2 years testing every tool and model to find what actually works for small businesses. No more guessing, no more wasted money. Get only proven AI solutions that save 15+ hours/week and boost revenue 25%." />
           </motion.p>
 
           {/* CTA with Hover Animation */}

@@ -307,6 +307,17 @@
   }
 }
 
+/* Typewriter animation */
+@keyframes typewriter {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: hsl(var(--electric-azure)) }
+}
+
 /* Multi-angle shimmer effect */
 @keyframes shimmer-bounce {
   0% {
@@ -350,5 +361,24 @@
 
 .animate-shimmer-bounce {
   animation: shimmer-bounce 4s ease-in-out infinite;
+}
+
+/* Typewriter effect */
+.typewriter {
+  display: inline-block;
+  border-right: 3px solid hsl(var(--electric-azure));
+  animation: blink-caret 1s step-end infinite;
+  min-height: 1.2em;
+}
+
+.typewriter-no-caret {
+  border-right: none;
+}
+
+.typewriter-cursor {
+  display: inline;
+  color: hsl(var(--electric-azure));
+  font-weight: bold;
+  animation: blink-caret 1s step-end infinite;
 }
 
