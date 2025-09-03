@@ -75,20 +75,6 @@ const Index = () => {
     direction: Math.random() * 360,
     opacity: 0.3 + Math.random() * 0.4
   })));
-  const carouselSlides = ["The Secret Weapon you aren't using", "but Elite Companies are", "and will never share with you or your SMB", "Ready to get actual real results?", "Meet The Digital Frontier Company"];
-
-  // Bubble movement animation
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBubbles(prevBubbles => prevBubbles.map(bubble => ({
-        ...bubble,
-        x: (bubble.x + Math.cos(bubble.direction) * bubble.speed + 100) % 100,
-        y: (bubble.y + Math.sin(bubble.direction) * bubble.speed + 100) % 100
-      })));
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
-
   // Handle bubble pop
   const handleBubblePop = (id: number) => {
     setBubbles(prevBubbles => prevBubbles.map(bubble => bubble.id === id ? {
@@ -101,6 +87,18 @@ const Index = () => {
       opacity: 0.3 + Math.random() * 0.4
     } : bubble));
   };
+
+  // Bubble movement animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBubbles(prevBubbles => prevBubbles.map(bubble => ({
+        ...bubble,
+        x: (bubble.x + Math.cos(bubble.direction) * bubble.speed + 100) % 100,
+        y: (bubble.y + Math.sin(bubble.direction) * bubble.speed + 100) % 100
+      })));
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
 
   // Track mouse movement for interactive effects - Optimized for performance
   useEffect(() => {
@@ -132,14 +130,6 @@ const Index = () => {
       }
     };
   }, []);
-
-  // Carousel rotation effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % carouselSlides.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [carouselSlides.length]);
 
   // Intersection observer for animations - Optimized
   useEffect(() => {
@@ -221,51 +211,124 @@ const Index = () => {
       <SEOSchema />
       
       
-      {/* HERO SECTION - AI Crew Chief Style */}
+      {/* HERO SECTION - Original Style with New Copy */}
       <motion.section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative isolate overflow-hidden min-h-screen bg-deep-navy" 
         style={{
-          background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #2d3748 50%, #1a202c 100%)'
+          backgroundImage: `url('/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png'), linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay',
+          y: heroY
         }}
+        data-lcp-element="true"
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1.2 }}
       >
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4EE2EC]/10 to-transparent"></div>
-          <div className="absolute inset-0">
+        {/* Subtle Floating Orbs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {Array.from({ length: 2 }, (_, i) => (
             <div 
-              className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full opacity-20 blur-3xl"
-              style={{ background: 'radial-gradient(circle, #4EE2EC 0%, transparent 70%)' }}
-            ></div>
-            <div 
-              className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full opacity-15 blur-3xl"
-              style={{ background: 'radial-gradient(circle, #8FB31D 0%, transparent 70%)' }}
-            ></div>
-          </div>
-        </div>
-
-        {/* Floating Particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 rounded-full opacity-60"
+              key={i} 
+              className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" 
               style={{
-                left: `${(i + 1) * 8}%`,
-                background: i % 2 === 0 ? '#4EE2EC' : '#8FB31D',
-                boxShadow: `0 0 10px ${i % 2 === 0 ? '#4EE2EC' : '#8FB31D'}`,
-                animation: `floatUp 10s infinite linear ${-i * 2}s`
-              }}
+                width: `${60 + i * 20}px`,
+                height: `${60 + i * 20}px`,
+                left: `${20 + i * 30}%`,
+                top: `${20 + i * 25}%`,
+                animation: `float ${4 + i * 2}s ease-in-out infinite`,
+                animationDelay: `${i * 1.5}s`,
+                filter: 'blur(1px)'
+              }} 
             />
           ))}
         </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Main Headline */}
+        {/* Interactive Clickable Bubbles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {bubbles.map(bubble => (
+            <div 
+              key={bubble.id} 
+              className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" 
+              style={{
+                width: `${bubble.size}px`,
+                height: `${bubble.size}px`,
+                left: `${bubble.x}%`,
+                top: `${bubble.y}%`,
+                opacity: bubble.opacity,
+                filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.4))',
+                animation: `float ${3 + bubble.id % 3}s ease-in-out infinite`,
+                animationDelay: `${bubble.id * 0.5}s`
+              }} 
+              onClick={() => handleBubblePop(bubble.id)} 
+            />
+          ))}
+        </div>
+
+        {/* Animated Grid Pattern Background */}
+        <div className="absolute inset-0 opacity-30">
+          <div 
+            className="absolute inset-0" 
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
+              `,
+              backgroundSize: '50px 50px',
+              animation: 'grid-move 20s linear infinite',
+              filter: 'drop-shadow(0 0 2px cyan)'
+            }}
+          />
+        </div>
+        
+        {/* Subtle gradient overlay for depth */}
+        <motion.div 
+          animate={{
+            background: [
+              'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)', 
+              'linear-gradient(135deg, rgba(143,179,29,0.05) 0%, transparent 50%, rgba(47,128,255,0.05) 100%)', 
+              'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)'
+            ]
+          }} 
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }} 
+          className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]"
+        />
+        
+        {/* Main Content */}
+        <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen">
+          
+          {/* Logo with Scale Animation */}
+          <motion.div 
+            className="relative flex justify-center mb-12" 
+            style={{ scale: logoScale }} 
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+          >
+            {/* Simplified geometric frame around logo */}
+            <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
+              <div className="absolute inset-0 border border-cyan-400/50 animate-pulse rounded-full"></div>
+            </div>
+            
+            {/* Main logo */}
+            <LazyImage
+              src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png"
+              alt="Digital Frontier Company - Leading Memphis Digital Marketing Agency"
+              className="h-80 w-auto relative z-10 object-cover logo-interactive animate-logo-strobe"
+              displayWidth={480}
+              displayHeight={320}
+              optimization={{ priority: true }}
+            />
+          </motion.div>
+
+          {/* New Headlines */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-black mb-12"
+            className="text-5xl md:text-7xl font-black mb-8"
             style={{
               background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
               backgroundSize: '300% 300%',
@@ -283,55 +346,73 @@ const Index = () => {
 
           {/* Typewriter Animation */}
           <motion.div 
-            className="text-2xl md:text-4xl text-white mb-16 leading-relaxed font-bold"
+            className="text-2xl md:text-3xl text-white mb-8 leading-relaxed font-semibold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <TypewriterText 
-              text="We spent $50K+|testing 100+ AI tools|so you don't have to" 
+              text="We spent $50K+ testing 100+ AI tools so you don't have to" 
               delay={60}
             />
           </motion.div>
 
-          {/* Box Containers */}
+          {/* Subtitle */}
+          <motion.p 
+            className="text-lg text-soft-white/80 mb-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Get only proven AI solutions that actually work for small businesses—not just hype.
+          </motion.p>
+
+          {/* Stats Containers */}
           <motion.div 
-            className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto"
+            className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="credibility-box relative overflow-hidden">
-              <div className="credibility-number">$50,000+</div>
-              <div className="credibility-text">Invested in testing AI tools over 2 years</div>
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
+              <div className="text-4xl mb-3">💰</div>
+              <div className="text-3xl font-bold mb-2" style={{ color: '#4EE2EC' }}>$50,000+</div>
+              <div className="text-sm text-slate-300">Invested in AI testing</div>
             </div>
-            <div className="credibility-box relative overflow-hidden">
-              <div className="credibility-number">100+</div>
-              <div className="credibility-text">AI tools tested and filtered</div>
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
+              <div className="text-4xl mb-3">⚡</div>
+              <div className="text-3xl font-bold mb-2" style={{ color: '#8FB31D' }}>15+ Hours</div>
+              <div className="text-sm text-slate-300">Saved weekly</div>
             </div>
-            <div className="credibility-box relative overflow-hidden">
-              <div className="credibility-number">25%</div>
-              <div className="credibility-text">Average revenue boost for clients</div>
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
+              <div className="text-4xl mb-3">📈</div>
+              <div className="text-3xl font-bold mb-2 text-purple-400">25%</div>
+              <div className="text-sm text-slate-300">Average revenue boost</div>
             </div>
           </motion.div>
 
           {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+          <motion.div 
+            className="mb-16" 
+            initial={{ opacity: 0, scale: 0.9 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.6, delay: 1.0 }}
           >
-            <Link 
-              to="/ai-implementation-consulting"
-              className="ai-crew-cta inline-block px-12 py-6 text-xl font-bold rounded-full transition-all duration-300 hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-                color: '#0f1629',
-                boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
-              }}
-            >
-              Get only proven AI solutions that actually work for small businesses—not just hype.
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                to="/ai-implementation-consulting" 
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl"
+                style={{
+                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                  boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
+                }}
+              >
+                Get Your AI Crew Chief →
+              </Link>
+            </motion.div>
+            <div className="mt-4 text-sm text-slate-400">
+              Free 30-minute strategy session • No sales pitch
+            </div>
           </motion.div>
         </div>
       </motion.section>
