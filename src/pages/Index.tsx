@@ -316,7 +316,31 @@ const Index = () => {
             Leading Memphis AI marketing agency serving Collierville, Germantown, and Greater Memphis area. We specialize in Answer Engine Optimization (AEO), AI Overviews optimization, and proven strategies that get Memphis businesses featured in ChatGPT, Google SGE, and Perplexity AI responses. No guesswork—just measurable results.
           </motion.p>
 
-          {/* Removed CTA button - moved below the fold */}
+          {/* CTA with Hover Animation */}
+          <motion.div className="mb-16" initial={{
+          opacity: 0,
+          scale: 0.9
+        }} animate={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.6,
+          delay: 0.6
+        }}>
+            <motion.div whileHover={{
+            scale: 1.05
+          }} whileTap={{
+            scale: 0.95
+          }}>
+              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-soft-white bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 rounded-lg transition-all duration-300 hover:shadow-xl" style={{
+              boxShadow: '0 0 80px 10px hsl(var(--electric-azure) / 0.9), 0 0 160px 30px hsl(var(--electric-azure) / 0.65)',
+              filter: 'drop-shadow(0 0 30px hsl(var(--electric-azure) / 0.9))',
+              letterSpacing: '0.5px'
+            }}>
+                Book a Strategy Call →
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Trust indicators with Final Fade-in */}
           <motion.div className="text-soft-white/60 text-sm" initial={{
