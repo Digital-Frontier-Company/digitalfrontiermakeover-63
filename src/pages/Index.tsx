@@ -402,7 +402,7 @@ const Index = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link 
-                to="/ai-implementation-consulting" 
+                to="/modern-contact-form" 
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl"
                 style={{
                   background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
