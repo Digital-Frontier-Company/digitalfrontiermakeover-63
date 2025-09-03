@@ -427,17 +427,6 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
     publishedDate: '2025-01-01',
     modifiedDate: '2025-08-18'
   },
-  // Service Pages
-  {
-    path: '/ai-humanizer-agent',
-    title: 'AI Humanizer Agent | Natural Content Creation Digital Pro',
-    description: 'Advanced AI humanizer for creating natural, human-like content that passes AI detection. Create authentic content with professional tools today.',
-    keywords: 'AI humanizer, content humanization, natural AI content, AI detection bypass',
-    priority: 0.6,
-    changeFreq: 'monthly',
-    pageType: 'service',
-    modifiedDate: '2025-08-18'
-  },
   {
     path: '/predictive-analytics-agent',
     title: 'Predictive Analytics Agent | Marketing Intelligence Solutions',

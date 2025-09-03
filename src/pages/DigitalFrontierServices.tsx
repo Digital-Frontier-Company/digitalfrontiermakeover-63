@@ -8,16 +8,6 @@ const DigitalFrontierServices = () => {
   const services = [
     {
       id: 1,
-      title: "AI Humanizer Agent",
-      description: "Transform machine-generated content into natural human language. Perfect for content creators who need to humanize AI outputs.",
-      features: ["Natural language patterns", "Emotional intelligence integration", "Contextual awareness"],
-      icon: "fa-solid fa-robot",
-      category: "ai",
-      badge: "AI AGENT",
-      link: "/services/ai-humanizer-agent"
-    },
-    {
-      id: 2,
       title: "Content Creation Agent",
       description: "Automated content generation for blogs, social media, and marketing materials with your brand voice and style.",
       features: ["Brand voice consistency", "SEO optimization", "Multi-format outputs"],

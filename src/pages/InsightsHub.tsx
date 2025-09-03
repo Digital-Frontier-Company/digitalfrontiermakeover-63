@@ -8,16 +8,6 @@ const InsightsHub = () => {
   const articles = [
     {
       id: 1,
-      title: "AI Humanizer Agent: Transform AI Content to Human Language",
-      description: "Convert machine-generated content into natural, engaging human language that resonates with your audience and passes AI detection systems.",
-      category: "AI TECHNOLOGY",
-      author: "Digital Frontier Team",
-      date: "Dec 18, 2024",
-      image: "/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png",
-      link: "/services/ai-humanizer-agent"
-    },
-    {
-      id: 2,
       title: "Answer Engine Optimization: Beyond Traditional SEO",
       description: "Master AEO strategies to ensure your content appears in AI-powered search engines, voice assistants, and answer boxes for maximum visibility.",
       category: "MARKETING",
@@ -27,7 +17,7 @@ const InsightsHub = () => {
       link: "/answer-engine-optimization"
     },
     {
-      id: 3,
+      id: 2,
       title: "AI Implementation Consulting: Your AI Crew Chief",
       description: "Get proven AI solutions that actually work for small businesses. We've tested $50K+ worth of tools so you don't have to waste money on hype.",
       category: "CONSULTING",
@@ -37,7 +27,7 @@ const InsightsHub = () => {
       link: "/services/ai-implementation-consulting"
     },
     {
-      id: 4,
+      id: 3,
       title: "Predictive Analytics Agent: AI-Powered Business Forecasting",
       description: "Transform your decision-making with AI-powered predictive analytics that forecast market trends, customer behavior, and identify untapped opportunities.",
       category: "AI TECHNOLOGY",
@@ -47,7 +37,7 @@ const InsightsHub = () => {
       link: "/services/predictive-analytics-agent"
     },
     {
-      id: 5,
+      id: 4,
       title: "Content Creation Agent: AI-Powered Writing Tools",
       description: "Master AI content creation with proven writing tools, expert SEO strategies, and techniques for generating high-converting marketing copy.",
       category: "MARKETING",
@@ -57,7 +47,7 @@ const InsightsHub = () => {
       link: "/resources/content-creation-agent"
     },
     {
-      id: 6,
+      id: 5,
       title: "AI Prompt Templates: 500+ ChatGPT Marketing Prompts",
       description: "Access our comprehensive library of AI prompts for marketing, content creation, SEO, and business optimization. Ready-to-use templates for instant results.",
       category: "AI TECHNOLOGY",
@@ -67,7 +57,7 @@ const InsightsHub = () => {
       link: "/ai-prompt-templates"
     },
     {
-      id: 7,
+      id: 6,
       title: "GTM Strategy Blueprint: Complete Go-to-Market Framework",
       description: "Launch your products successfully with our comprehensive GTM strategy framework, including market analysis, customer segmentation, and launch planning.",
       category: "CONSULTING",
@@ -77,7 +67,7 @@ const InsightsHub = () => {
       link: "/gtm-strategy-blueprint"
     },
     {
-      id: 8,
+      id: 7,
       title: "AI Voice Assistants: Advanced Conversational AI Solutions",
       description: "Implement sophisticated AI voice assistants and conversational interfaces to enhance customer experience and automate support interactions.",
       category: "AI TECHNOLOGY",
@@ -87,7 +77,7 @@ const InsightsHub = () => {
       link: "/ai-voice-assistants"
     },
     {
-      id: 9,
+      id: 8,
       title: "Generative Engine Optimization: AI Content Strategy",
       description: "Optimize your content for AI-powered generative engines and large language models to maximize visibility in the new AI-driven search landscape.",
       category: "MARKETING",

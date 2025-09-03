@@ -21,7 +21,6 @@ const SiteMap = lazy(() => import('@/pages/SiteMap'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const BlogPost = lazy(() => import('@/pages/BlogPost'));
 const ContentCreationAgent = lazy(() => import('@/pages/ContentCreationAgent'));
-const AIHumanizerAgent = lazy(() => import('@/pages/AIHumanizerAgent'));
 const PredictiveAnalyticsAgent = lazy(() => import('@/pages/PredictiveAnalyticsAgent'));
 const AIImplementationConsulting = lazy(() => import('@/pages/AIImplementationConsulting'));
 const AIVoiceAssistants = lazy(() => import('@/pages/AIVoiceAssistants'));
@@ -113,7 +112,6 @@ function App() {
             <Route path="/blog/mastering-digital-marketing" element={<MainLayout><Suspense fallback={<PageLoader />}><BlogPost /></Suspense></MainLayout>} />
             <Route path="/blog/aeo-crypto-marketing" element={<MainLayout><BlogPostAEOCrypto /></MainLayout>} />
             <Route path="/resources/content-creation-agent" element={<MainLayout><Suspense fallback={<PageLoader />}><ContentCreationAgent /></Suspense></MainLayout>} />
-            <Route path="/services/ai-humanizer-agent" element={<MainLayout><Suspense fallback={<PageLoader />}><AIHumanizerAgent /></Suspense></MainLayout>} />
             <Route path="/services/predictive-analytics-agent" element={<MainLayout><Suspense fallback={<PageLoader />}><PredictiveAnalyticsAgent /></Suspense></MainLayout>} />
             <Route path="/services/ai-implementation-consulting" element={<MainLayout><Suspense fallback={<PageLoader />}><AIImplementationConsulting /></Suspense></MainLayout>} />
             <Route path="/services/digital-marketing-strategy" element={<MainLayout><Suspense fallback={<PageLoader />}><DigitalMarketingStrategy /></Suspense></MainLayout>} />
