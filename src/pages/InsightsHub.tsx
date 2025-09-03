@@ -83,7 +83,7 @@ const InsightsHub = () => {
       category: "AI TECHNOLOGY",
       author: "Voice AI Team",
       date: "Nov 28, 2024",
-      image: "/lovable-uploads/36f6d997-5da6-4119-aaba-d7390e04fde2.png",
+      image: "/lovable-uploads/2fbf45e6-0519-43ce-acbd-c1e281d4e990.png",
       link: "/ai-voice-assistants"
     },
     {
