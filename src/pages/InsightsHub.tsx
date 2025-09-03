@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 import "../styles/digitalFrontierServices.css";
 
 const InsightsHub = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const articles = [
     {
@@ -88,7 +92,56 @@ const InsightsHub = () => {
     }
   ];
 
-  const filteredArticles = activeFilter === 'all' 
+  // Handle newsletter subscription
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: '',
+          email: email,
+          message: 'Newsletter subscription from Insights Hub',
+          form_type: 'Newsletter Subscription - Insights Hub'
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing to our newsletter!",
+        });
+        setEmail('');
+      } else {
+        throw new Error('Failed to submit newsletter subscription');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const filteredArticles = activeFilter === 'all'
     ? articles 
     : articles.filter(article => 
         article.category.toLowerCase().includes(activeFilter === 'ai' ? 'technology' : activeFilter)
@@ -397,10 +450,13 @@ const InsightsHub = () => {
                   Get the latest insights on AI marketing and consulting delivered directly to your inbox. No spam, just valuable content to keep you ahead of the curve.
                 </p>
                 
-                <form className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
                   <input 
                     type="email" 
                     placeholder="Your email address" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                     className="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 border"
                     style={{ 
                       backgroundColor: 'var(--df-glass-bg)',
@@ -410,10 +466,11 @@ const InsightsHub = () => {
                   />
                   <button 
                     type="submit" 
-                    className="px-6 py-3 rounded-lg text-white font-medium transition-all hover:bg-opacity-80"
+                    disabled={isSubmitting}
+                    className="px-6 py-3 rounded-lg text-white font-medium transition-all hover:bg-opacity-80 disabled:opacity-50"
                     style={{ backgroundColor: 'var(--df-bright-blue)' }}
                   >
-                    Subscribe Now
+                    {isSubmitting ? 'Subscribing...' : 'Subscribe Now'}
                   </button>
                 </form>
               </div>
