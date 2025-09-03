@@ -287,8 +287,8 @@ const InsightsHub = () => {
                   <div className="h-[400px] relative">
                     <img 
                       className="absolute inset-0 w-full h-full object-cover" 
-                      src="https://storage.googleapis.com/uxpilot-auth.appspot.com/97e0f85297-2bd79f50b758256d0594.png" 
-                      alt="futuristic AI marketing visualization with glowing blue networks and data points on dark background"
+                      src="/lovable-uploads/9dacc93a-c522-4265-915c-d671659c64a3.png" 
+                      alt="AI optimization workflow diagram showing content creation, citation management, audit processes, and optimization strategies with colorful data visualization elements"
                     />
                   </div>
                 </div>
