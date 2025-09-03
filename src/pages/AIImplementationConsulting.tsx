@@ -125,7 +125,7 @@ const AIImplementationConsulting = () => {
           <div className="cta-section">
             <h2 className="cta-headline">Ready for Your AI Crew Chief?</h2>
             <p className="cta-subtext">Get a free 30-minute strategy session where we'll show you exactly which AI tools your business needs (and which ones to avoid)</p>
-            <Link to="/contact" className="cta-button">Get Your Free AI Crew Chief Strategy</Link>
+            <Link to="/modern-contact-form" className="cta-button">Get Your Free AI Crew Chief Strategy</Link>
             <div className="risk-reversal">
               ✅ No sales pitch - just actionable insights<br/>
               ✅ Custom AI roadmap for your specific business<br/>

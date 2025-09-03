@@ -896,6 +896,67 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AI CREW CHIEF PROMOTION SECTION */}
+      <section className="py-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(78,226,236,0.1)_0%,rgba(143,179,29,0.1)_100%)]"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center bg-gradient-to-r from-cyan-500/20 to-green-500/20 px-6 py-2 rounded-full border border-cyan-500/30 mb-6">
+                <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">🚀 New Launch</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
+                Feeling Lost in AI?
+              </h2>
+              <p className="text-xl text-slate-300 mb-4">
+                We spent $50K+ testing 100+ AI tools so you don't have to
+              </p>
+              <p className="text-lg text-slate-400 mb-8">
+                Get only proven AI solutions that actually work for small businesses—not just hype.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/20">
+                <div className="text-3xl mb-3">💰</div>
+                <div className="text-2xl font-bold text-cyan-400">$50,000+</div>
+                <p className="text-sm text-slate-300">Invested in AI testing</p>
+              </div>
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/20">
+                <div className="text-3xl mb-3">⚡</div>
+                <div className="text-2xl font-bold text-green-400">15+ Hours</div>
+                <p className="text-sm text-slate-300">Saved weekly</p>
+              </div>
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/20">
+                <div className="text-3xl mb-3">📈</div>
+                <div className="text-2xl font-bold text-purple-400">25%</div>
+                <p className="text-sm text-slate-300">Average revenue boost</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link 
+                to="/services/ai-implementation-consulting" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+              >
+                <span>Get Your AI Crew Chief</span>
+                <span className="ml-2">→</span>
+              </Link>
+              <p className="text-sm text-slate-400">
+                Free 30-minute strategy session • No sales pitch
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Floating particles for visual appeal */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-green-400 rounded-full animate-pulse opacity-40"></div>
+          <div className="absolute bottom-1/4 left-2/3 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-50"></div>
+        </div>
+      </section>
+
       {/* LEARN MORE SECTION */}
       <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
         <div className="container mx-auto px-4">

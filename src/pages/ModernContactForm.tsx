@@ -287,6 +287,7 @@ const ModernContactForm = () => {
                         <option value="full stack marketing plan ( need to perform a review to price )">Full service we do it all</option>
                         <option value="$89 / Hour">Hourly Basis (mostly for smaller individual type tasks)</option>
                         <option value="Pricing starts At $899" selected>Specific Task i.e Web design, SEO, Local SEO, AI</option>
+                        <option value="AI Crew Chief Package">AI Crew Chief Package - Proven AI Solutions</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                         <i className="fas fa-chevron-down text-cyan-400"></i>
