@@ -328,14 +328,16 @@ const Index = () => {
 
           {/* New Headlines */}
           <motion.h1 
-            className="text-5xl md:text-7xl font-black mb-8"
+            className="text-5xl md:text-7xl font-black mb-8 leading-tight"
             style={{
               background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
               backgroundSize: '300% 300%',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              animation: 'gradientShift 4s ease-in-out infinite'
+              animation: 'gradientShift 4s ease-in-out infinite',
+              lineHeight: '1.2',
+              paddingBottom: '0.1em'
             }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
