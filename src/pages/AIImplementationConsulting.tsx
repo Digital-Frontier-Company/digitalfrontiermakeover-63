@@ -121,6 +121,151 @@ const AIImplementationConsulting = () => {
             </div>
           </div>
           
+          {/* Pricing Section */}
+          <div className="pricing-section">
+            <div className="section-header pricing-header">
+              <div className="eyebrow">Strategic Pricing</div>
+              <h2 className="main-headline">AI Crew Chief Package Pricing Structure</h2>
+              <p className="sub-headline">Based on market data and proven ROI - positioned below enterprise consultants but above basic automation</p>
+            </div>
+            
+            <div className="pricing-grid">
+              {/* Starter Package */}
+              <div className="pricing-card starter-card">
+                <div className="package-badge">🥉 STARTER</div>
+                <h3 className="package-name">AI Crew Chief Reconnaissance</h3>
+                <div className="package-price">
+                  <div className="price-main">$2,997</div>
+                  <div className="price-sub">one-time</div>
+                  <div className="price-recurring">+ $497/month</div>
+                </div>
+                <div className="package-target">Target: $100K-$500K revenue businesses</div>
+                
+                <ul className="package-features">
+                  <li>AI audit & strategy (normally $5K value)</li>
+                  <li>2-3 AI tool implementations</li>
+                  <li>Basic automation setup</li>
+                  <li>Monthly optimization & monitoring</li>
+                </ul>
+                
+                <Link to="/modern-contact-form" className="package-cta">Start Reconnaissance</Link>
+              </div>
+              
+              {/* Growth Package */}
+              <div className="pricing-card growth-card featured-package">
+                <div className="package-badge">🥈 GROWTH</div>
+                <h3 className="package-name">AI Crew Chief Command</h3>
+                <div className="package-price">
+                  <div className="price-main">$7,997</div>
+                  <div className="price-sub">one-time</div>
+                  <div className="price-recurring">+ $1,497/month</div>
+                </div>
+                <div className="package-target">Target: $500K-$2M revenue businesses</div>
+                
+                <ul className="package-features">
+                  <li>Everything in Starter</li>
+                  <li>5-7 AI tool implementations</li>
+                  <li>Advanced automation workflows</li>
+                  <li>Custom integrations</li>
+                  <li>Bi-weekly strategy sessions</li>
+                </ul>
+                
+                <Link to="/modern-contact-form" className="package-cta">Take Command</Link>
+              </div>
+              
+              {/* Elite Package */}
+              <div className="pricing-card elite-card">
+                <div className="package-badge">🥇 ELITE</div>
+                <h3 className="package-name">AI Crew Chief Dominance</h3>
+                <div className="package-price">
+                  <div className="price-main">$19,997</div>
+                  <div className="price-sub">one-time</div>
+                  <div className="price-recurring">+ $2,997/month</div>
+                </div>
+                <div className="package-target">Target: $2M+ revenue businesses</div>
+                
+                <ul className="package-features">
+                  <li>Everything in Growth</li>
+                  <li>Custom AI development</li>
+                  <li>Enterprise-level integrations</li>
+                  <li>Weekly strategy sessions</li>
+                  <li>Priority support & implementation</li>
+                </ul>
+                
+                <Link to="/modern-contact-form" className="package-cta">Achieve Dominance</Link>
+              </div>
+            </div>
+            
+            {/* Value Justification */}
+            <div className="value-justification">
+              <h3 className="value-title">🔥 Why This Pricing Works</h3>
+              
+              <div className="justification-grid">
+                <div className="justification-card">
+                  <h4>Market Positioning</h4>
+                  <ul>
+                    <li>Below enterprise consultants ($300+/hour)</li>
+                    <li>Above basic automation ($99/month)</li>
+                    <li>$50K testing story justifies premium positioning</li>
+                    <li>"Crew Chief" military precision commands authority</li>
+                  </ul>
+                </div>
+                
+                <div className="justification-card">
+                  <h4>Value Justification</h4>
+                  <ul>
+                    <li><strong>ROI Data:</strong> 5-15% profitability increases with AI</li>
+                    <li><strong>Time Savings:</strong> 15+ hours/week = $3,900/month value</li>
+                    <li><strong>Revenue Boost:</strong> 25% average increase justifies $1,500+/month</li>
+                  </ul>
+                </div>
+                
+                <div className="justification-card">
+                  <h4>Competitive Advantage</h4>
+                  <ul>
+                    <li><strong>Vs. DIY Tools:</strong> Better results than $100-5K/month tools</li>
+                    <li><strong>Vs. Big Consultants:</strong> 50-70% less than enterprise firms</li>
+                    <li><strong>Vs. Agencies:</strong> More specialized than general digital agencies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            {/* Implementation Strategy */}
+            <div className="implementation-strategy">
+              <h3 className="strategy-title">📈 Implementation Strategy</h3>
+              
+              <div className="strategy-phases">
+                <div className="phase-card">
+                  <h4>Phase 1 - Launch (Months 1-3)</h4>
+                  <ul>
+                    <li>Start with Growth Package as flagship</li>
+                    <li>Offer "Founder's Pricing" - 50% off first 3 months</li>
+                    <li>Focus on 5-10 ideal clients for case studies</li>
+                  </ul>
+                </div>
+                
+                <div className="phase-card">
+                  <h4>Phase 2 - Scale (Months 4-12)</h4>
+                  <ul>
+                    <li>Add Starter for smaller clients</li>
+                    <li>Elite for enterprise prospects</li>
+                    <li>Raise prices 20-30% as credibility builds</li>
+                  </ul>
+                </div>
+                
+                <div className="phase-card">
+                  <h4>Phase 3 - Dominate (Year 2+)</h4>
+                  <ul>
+                    <li>Premium positioning with waiting lists</li>
+                    <li>Industry-specific packages (legal, medical, etc.)</li>
+                    <li>Franchise/white-label opportunities</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           {/* CTA Section */}
           <div className="cta-section">
             <h2 className="cta-headline">Ready for Your AI Crew Chief?</h2>
