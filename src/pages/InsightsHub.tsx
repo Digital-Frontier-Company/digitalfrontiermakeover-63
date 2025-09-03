@@ -23,7 +23,7 @@ const InsightsHub = () => {
       category: "MARKETING",
       author: "SEO Specialists",
       date: "Dec 15, 2024",
-      image: "/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+      image: "/lovable-uploads/e224f597-8c00-4713-a1a6-82a84ad3bf9e.png",
       link: "/answer-engine-optimization"
     },
     {
