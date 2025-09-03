@@ -296,7 +296,7 @@ const Index = () => {
           duration: 1,
           delay: 0.2
         }}>
-            Stop guessing which <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold">AI tools</span> work. We invested <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold">$50K+</span> in testing to separate <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold">gold</span> from garbage for you.
+            Stop guessing which <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">AI tools</span> work. We invested <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">$50K+</span> in testing to separate <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">gold</span> from garbage for you.
           </motion.h1>
 
           {/* Subheadline with Staggered Animation */}
