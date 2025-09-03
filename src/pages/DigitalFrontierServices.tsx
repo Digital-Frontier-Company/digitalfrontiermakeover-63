@@ -65,6 +65,16 @@ const DigitalFrontierServices = () => {
       category: "consulting",
       badge: "CONSULTING",
       link: "/services/ai-implementation-consulting"
+    },
+    {
+      id: 7,
+      title: "AI Voice Assistants",
+      description: "Voice Assistant Capable of Making Calls. Transform customer experience with AI that talks like a human, learns continuously, and closes deals 24/7.",
+      features: ["24/7 customer support", "Natural conversation flow", "Lead conversion optimization"],
+      icon: "fa-solid fa-microphone",
+      category: "ai",
+      badge: "AI AGENT",
+      link: "/ai-voice-assistants"
     }
   ];
 
@@ -378,6 +388,421 @@ const DigitalFrontierServices = () => {
                 <div className="p-6">
                   <div className="text-4xl font-bold mb-2" style={{ color: 'var(--df-cyan)' }}>24/7</div>
                   <p className="text-gray-300">Support & Assistance</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* AI Integration Section */}
+          <section className="ai-integration-section" style={{
+            background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #2d3748 50%, #1a202c 100%)',
+            color: 'white',
+            padding: '80px 20px',
+            position: 'relative',
+            overflow: 'hidden',
+            minHeight: '100vh'
+          }}>
+            {/* Background Animation */}
+            <div 
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: `
+                  radial-gradient(circle at 20% 20%, rgba(78, 226, 236, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(143, 179, 29, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 60% 40%, rgba(78, 226, 236, 0.08) 0%, transparent 50%)
+                `,
+                animation: 'backgroundFloat 12s ease-in-out infinite'
+              }}
+            />
+            
+            {/* Floating Particles */}
+            <div 
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 1
+              }}
+            >
+              {[...Array(9)].map((_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    position: 'absolute',
+                    width: '6px',
+                    height: '6px',
+                    background: i % 2 === 0 ? '#4EE2EC' : '#8FB31D',
+                    borderRadius: '50%',
+                    left: `${(i + 1) * 10}%`,
+                    animation: `floatUp 10s infinite linear`,
+                    animationDelay: `${-i * 2}s`,
+                    opacity: 0,
+                    boxShadow: i % 2 === 0 ? '0 0 10px #4EE2EC' : '0 0 10px #8FB31D'
+                  }}
+                />
+              ))}
+            </div>
+            
+            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+              {/* Header */}
+              <div style={{ textAlign: 'center', marginBottom: '80px', animation: 'fadeInUp 1.5s ease-out' }}>
+                {/* Company Logo */}
+                <div style={{
+                  width: '140px',
+                  height: '140px',
+                  margin: '0 auto 40px',
+                  animation: 'logoFloat 4s ease-in-out infinite',
+                  filter: 'drop-shadow(0 0 25px rgba(78, 226, 236, 0.7)) drop-shadow(0 0 50px rgba(143, 179, 29, 0.4))'
+                }}>
+                  <svg 
+                    viewBox="0 0 200 200" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ width: '100%', height: '100%', animation: 'logoGlow 3s ease-in-out infinite alternate' }}
+                  >
+                    <defs>
+                      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{stopColor:'#4EE2EC',stopOpacity:1}} />
+                        <stop offset="50%" style={{stopColor:'#8FB31D',stopOpacity:1}} />
+                        <stop offset="100%" style={{stopColor:'#4EE2EC',stopOpacity:1}} />
+                      </linearGradient>
+                      <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{stopColor:'#8FB31D',stopOpacity:1}} />
+                        <stop offset="100%" style={{stopColor:'#4EE2EC',stopOpacity:1}} />
+                      </linearGradient>
+                      <linearGradient id="peakGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style={{stopColor:'#4EE2EC',stopOpacity:0.9}} />
+                        <stop offset="50%" style={{stopColor:'#8FB31D',stopOpacity:0.7}} />
+                        <stop offset="100%" style={{stopColor:'#4EE2EC',stopOpacity:0.5}} />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="url(#logoGradient)" strokeWidth="4" opacity="0.9"/>
+                    <circle cx="100" cy="100" r="88" fill="none" stroke="url(#secondaryGradient)" strokeWidth="3" opacity="0.7"/>
+                    <polygon points="100,35 135,100 65,100" fill="url(#peakGradient)" stroke="url(#logoGradient)" strokeWidth="3"/>
+                    <polygon points="65,55 95,100 45,100" fill="url(#peakGradient)" opacity="0.8" stroke="url(#secondaryGradient)" strokeWidth="2.5"/>
+                    <polygon points="135,55 155,100 105,100" fill="url(#peakGradient)" opacity="0.8" stroke="url(#secondaryGradient)" strokeWidth="2.5"/>
+                    <path d="M 20,120 L 40,100 L 60,120 L 80,100 L 100,120 L 120,100 L 140,120 L 160,100 L 180,120" 
+                          fill="none" stroke="url(#logoGradient)" strokeWidth="2.5" opacity="0.8"/>
+                    <path d="M 25,130 L 45,110 L 65,130 L 85,110 L 105,130 L 125,110 L 145,130 L 165,110 L 175,120" 
+                          fill="none" stroke="url(#secondaryGradient)" strokeWidth="2" opacity="0.6"/>
+                    <path d="M 30,140 L 50,120 L 70,140 L 90,120 L 110,140 L 130,120 L 150,140 L 170,125" 
+                          fill="none" stroke="url(#logoGradient)" strokeWidth="1.5" opacity="0.4"/>
+                  </svg>
+                </div>
+                
+                <div style={{
+                  fontSize: '16px',
+                  color: '#8FB31D',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  letterSpacing: '3px',
+                  marginBottom: '25px',
+                  animation: 'textGlow 2.5s ease-in-out infinite alternate'
+                }}>
+                  AI Crew Chief Command Center
+                </div>
+                
+                <h2 style={{
+                  fontSize: 'clamp(38px, 6vw, 56px)',
+                  fontWeight: 900,
+                  lineHeight: 1.1,
+                  marginBottom: '30px',
+                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+                  backgroundSize: '300% 300%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  animation: 'gradientShift 4s ease-in-out infinite'
+                }}>
+                  Feeling Lost in AI? We Spent $50K+ Testing So You Don't Have To
+                </h2>
+                
+                <p style={{
+                  fontSize: '22px',
+                  color: '#e2e8f0',
+                  lineHeight: 1.5,
+                  maxWidth: '800px',
+                  margin: '0 auto',
+                  textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
+                }}>
+                  The AI landscape changes monthly. We've tested 100+ tools to find what actually works for small businesses—not what's just hyped.
+                </p>
+              </div>
+              
+              {/* Main Content Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : '1fr 1fr',
+                gap: '80px',
+                alignItems: 'center',
+                margin: '100px 0',
+                animation: 'fadeInUp 1.5s ease-out 0.5s both'
+              }}>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  {/* Credibility Badge */}
+                  <div style={{
+                    background: 'rgba(78, 226, 236, 0.12)',
+                    border: '2px solid #4EE2EC',
+                    borderRadius: '25px',
+                    padding: '35px',
+                    marginBottom: '40px',
+                    textAlign: 'center',
+                    animation: 'badgePulse 3s ease-in-out infinite',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(20px)'
+                  }}>
+                    <div style={{
+                      fontSize: '48px',
+                      fontWeight: 900,
+                      background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      marginBottom: '15px',
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      $50,000+
+                    </div>
+                    <div style={{
+                      fontSize: '18px',
+                      color: '#cbd5e1',
+                      lineHeight: 1.6,
+                      position: 'relative',
+                      zIndex: 2
+                    }}>
+                      Invested in testing AI tools, models, and systems over 2 years so you get only proven solutions
+                    </div>
+                  </div>
+                  
+                  {/* Pain Points */}
+                  <ul style={{ listStyle: 'none', marginBottom: '35px' }}>
+                    {[
+                      "Drowning in AI tool recommendations that don't fit your business",
+                      "Wasting money on \"game-changing\" AI that sits unused",
+                      "Falling behind while competitors get more efficient daily",
+                      "No time to test every new AI tool that launches weekly"
+                    ].map((point, i) => (
+                      <li key={i} style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '18px',
+                        fontSize: '17px',
+                        lineHeight: 1.6,
+                        animation: `slideInLeft 0.8s ease-out both`,
+                        animationDelay: `${1 + i * 0.2}s`
+                      }}>
+                        <span style={{
+                          marginRight: '15px',
+                          fontSize: '20px',
+                          flexShrink: 0,
+                          animation: 'bounce 2s ease-in-out infinite'
+                        }}>⚠️</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Solution Preview */}
+                <div style={{
+                  background: 'rgba(78, 226, 236, 0.1)',
+                  borderRadius: '25px',
+                  padding: '40px',
+                  backdropFilter: 'blur(20px)',
+                  border: '2px solid rgba(78, 226, 236, 0.25)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  animation: 'slideInRight 1.5s ease-out 0.8s both'
+                }}>
+                  <h3 style={{
+                    fontSize: '28px',
+                    fontWeight: 900,
+                    marginBottom: '25px',
+                    background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    Your AI Crew Chief Package
+                  </h3>
+                  
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    marginBottom: '25px',
+                    position: 'relative',
+                    zIndex: 1
+                  }}>
+                    {[
+                      { icon: '🚀', text: 'Only verified tools that passed our rigorous testing' },
+                      { icon: '⚡', text: 'Save 15+ hours weekly with the right AI automation' },
+                      { icon: '🚀', text: '25% average revenue boost from improved efficiency' },
+                      { icon: '⚡', text: 'Zero tech headaches - we handle all implementation' },
+                      { icon: '🚀', text: 'Avoid costly mistakes we\'ve already made for you' }
+                    ].map((benefit, i) => (
+                      <li key={i} style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        marginBottom: '18px',
+                        fontSize: '17px',
+                        lineHeight: 1.5,
+                        animation: 'fadeInUp 0.8s ease-out both',
+                        animationDelay: `${1.2 + i * 0.2}s`
+                      }}>
+                        <span style={{
+                          marginRight: '15px',
+                          fontSize: '18px',
+                          flexShrink: 0,
+                          animation: 'rocketBounce 2s ease-in-out infinite'
+                        }}>
+                          {benefit.icon}
+                        </span>
+                        <strong>{benefit.text}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Social Proof */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(3, 1fr)',
+                gap: '40px',
+                margin: '60px 0',
+                animation: 'fadeInUp 1.5s ease-out 1s both'
+              }}>
+                {[
+                  { number: '200+', text: 'Small businesses transformed', delay: 0 },
+                  { number: '100+', text: 'AI tools tested & filtered', delay: 1 },
+                  { number: '30 Days', text: 'Average implementation time', delay: 2 }
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    textAlign: 'center',
+                    padding: '30px',
+                    background: i === 1 ? 'rgba(78, 226, 236, 0.08)' : 'rgba(143, 179, 29, 0.1)',
+                    borderRadius: '20px',
+                    border: i === 1 ? '2px solid rgba(78, 226, 236, 0.2)' : '2px solid rgba(143, 179, 29, 0.3)',
+                    transition: 'all 0.4s ease',
+                    animation: 'float 4s ease-in-out infinite',
+                    animationDelay: `${item.delay}s`,
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backdropFilter: 'blur(15px)'
+                  }}>
+                    <div style={{
+                      fontSize: '42px',
+                      fontWeight: 900,
+                      background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      marginBottom: '15px',
+                      animation: 'numberGlow 2s ease-in-out infinite alternate'
+                    }}>
+                      {item.number}
+                    </div>
+                    <div style={{
+                      fontSize: '16px',
+                      color: '#cbd5e1',
+                      fontWeight: 500
+                    }}>
+                      {item.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* CTA Section */}
+              <div style={{
+                textAlign: 'center',
+                marginTop: '80px',
+                padding: '60px',
+                background: 'rgba(78, 226, 236, 0.1)',
+                borderRadius: '30px',
+                backdropFilter: 'blur(25px)',
+                border: '2px solid rgba(78, 226, 236, 0.25)',
+                animation: 'fadeInUp 1.5s ease-out 1.5s both',
+                position: 'relative',
+                overflow: 'hidden'
+              }}>
+                <h3 style={{
+                  fontSize: '36px',
+                  fontWeight: 900,
+                  marginBottom: '20px',
+                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+                  backgroundSize: '200% 200%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  position: 'relative',
+                  zIndex: 1,
+                  animation: 'gradientShift 3s ease-in-out infinite'
+                }}>
+                  Ready for Your AI Crew Chief?
+                </h3>
+                
+                <p style={{
+                  fontSize: '20px',
+                  color: '#e2e8f0',
+                  marginBottom: '40px',
+                  lineHeight: 1.6,
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Get a free 30-minute strategy session where we'll show you exactly which AI tools your business needs (and which ones to avoid)
+                </p>
+                
+                <Link
+                  to="/contact"
+                  style={{
+                    display: 'inline-block',
+                    background: 'linear-gradient(135deg, #8FB31D 0%, #4EE2EC 50%, #8FB31D 100%)',
+                    backgroundSize: '200% 200%',
+                    color: '#0a0f1c',
+                    padding: '25px 50px',
+                    fontSize: '20px',
+                    fontWeight: 900,
+                    textDecoration: 'none',
+                    borderRadius: '50px',
+                    transition: 'all 0.4s ease',
+                    boxShadow: '0 15px 35px rgba(143, 179, 29, 0.4), 0 5px 15px rgba(78, 226, 236, 0.3)',
+                    marginBottom: '30px',
+                    position: 'relative',
+                    zIndex: 1,
+                    overflow: 'hidden',
+                    animation: 'buttonPulse 3s ease-in-out infinite'
+                  }}
+                >
+                  Get Your Free AI Crew Chief Strategy
+                </Link>
+                
+                <div style={{
+                  fontSize: '16px',
+                  color: '#94a3b8',
+                  marginTop: '25px',
+                  position: 'relative',
+                  zIndex: 1,
+                  lineHeight: 1.8
+                }}>
+                  <span style={{
+                    display: 'block',
+                    fontSize: '24px',
+                    marginBottom: '15px',
+                    animation: 'shieldPulse 2s ease-in-out infinite'
+                  }}>🛡️</span>
+                  ✅ No sales pitch - just actionable insights<br/>
+                  ✅ Custom AI roadmap for your specific business<br/>
+                  ✅ Learn what $50K+ of testing revealed
                 </div>
               </div>
             </div>
