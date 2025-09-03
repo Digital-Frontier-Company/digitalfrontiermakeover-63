@@ -296,7 +296,7 @@ const Index = () => {
           duration: 1,
           delay: 0.2
         }}>
-            Stop guessing which <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">AI tools</span> work. We invested <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">$50K+</span> in testing to separate <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">gold</span> from garbage for you.
+            Stop guessing which <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">AI tools</span> work. We invested <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">$50K+</span> in testing to separate <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent font-extrabold text-6xl">Gold</span> from garbage for you.
           </motion.h1>
 
           {/* Subheadline with Staggered Animation */}
@@ -354,6 +354,24 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Typewriter Animation Section */}
+      <section className="py-16 bg-gradient-to-r from-[#040b29] via-[#0a1442] to-[#040b29]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="text-xl md:text-2xl text-white/90 leading-relaxed">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="typewriter text-center"
+              >
+                Overwhelmed by AI? The pace is accelerating daily. We've invested $50K+ over 2 years testing every tool and model to find what actually works for small businesses. No more guessing, no more wasted money. Get only proven AI solutions that save 15+ hours/week and boost revenue 25%.
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
           {/* TRUST BAR - 6-logo auto-grid */}
       <section className="-bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl">
