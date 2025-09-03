@@ -296,8 +296,7 @@ const Index = () => {
           duration: 1,
           delay: 0.2
         }}>
-            Memphis AI Marketing Agency | Stop Guessing, Start Growing with{' '}
-            <span className="bg-gradient-to-r from-electric-azure via-blue-400 to-cyan-400 bg-clip-text text-transparent text-6xl font-extrabold animate-pulse-glow">AI-Powered Marketing</span>
+            Stop guessing which AI tools work. We invested $50K+ in testing to separate gold from garbage for you.
           </motion.h1>
 
           {/* Subheadline with Staggered Animation */}
