@@ -307,7 +307,7 @@ const InsightsHub = () => {
                 {filteredArticles.map((article) => (
                   <Link key={article.id} to={article.link} className="glass-card rounded-xl p-6 transition-all duration-300 hover:transform hover:scale-105 block">
                     <div className="mb-4 h-48 rounded-lg overflow-hidden relative">
-                      <img className="w-full h-full object-cover" src={article.image} alt={article.title} />
+                      <img className="w-full h-full object-contain" src={article.image} alt={article.title} />
                       <span 
                         className="absolute top-3 left-3 text-xs px-3 py-1 rounded-full"
                         style={{ 
