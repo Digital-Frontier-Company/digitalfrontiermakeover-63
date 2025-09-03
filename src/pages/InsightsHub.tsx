@@ -43,7 +43,7 @@ const InsightsHub = () => {
       category: "AI TECHNOLOGY",
       author: "Data Scientists",
       date: "Dec 8, 2024",
-      image: "/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png",
+      image: "/lovable-uploads/b2bdb5c4-9f93-4494-bf40-989afa09d6a5.png",
       link: "/services/predictive-analytics-agent"
     },
     {
