@@ -43,7 +43,7 @@ const InsightsHub = () => {
       category: "MARKETING",
       author: "Content Specialists",
       date: "Dec 5, 2024",
-      image: "/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png",
+      image: "/lovable-uploads/4de436ae-e779-4610-9ed3-7a0000c1890d.png",
       link: "/resources/content-creation-agent"
     },
     {
