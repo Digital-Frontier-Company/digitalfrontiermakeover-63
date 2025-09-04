@@ -83,6 +83,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 10;
+  padding: 0 20px;
 }
 
 .section-header {
@@ -180,10 +181,11 @@
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 120px;
   align-items: center;
   margin: 100px 0;
   animation: fadeInUp 1.5s ease-out 0.5s both;
+  max-width: none;
 }
 
 .left-content {
@@ -397,9 +399,10 @@
 .social-proof {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin: 60px 0;
+  gap: 80px;
+  margin: 80px 0;
   animation: fadeInUp 1.5s ease-out 1s both;
+  padding: 0 40px;
 }
 
 .proof-item {
@@ -473,8 +476,9 @@
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 60px;
+  gap: 60px;
+  margin-bottom: 80px;
+  padding: 0 40px;
 }
 
 .pricing-card {
@@ -667,7 +671,7 @@
 }
 
 .value-justification {
-  margin: 80px 0;
+  margin: 80px 40px;
   padding: 50px;
   background: rgba(143, 179, 29, 0.08);
   border: 2px solid rgba(143, 179, 29, 0.25);
@@ -690,7 +694,8 @@
 .justification-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 80px;
+  padding: 0 40px;
 }
 
 .justification-card {
@@ -748,7 +753,8 @@
 .strategy-phases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 60px;
+  padding: 0 40px;
 }
 
 .phase-card {
