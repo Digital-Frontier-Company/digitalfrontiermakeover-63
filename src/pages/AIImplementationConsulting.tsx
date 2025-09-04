@@ -442,7 +442,7 @@ const AIImplementationConsulting = () => {
             </div>
 
             {/* FAQ Section using proper component */}
-            <div className="social-proof" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="flex justify-center">
               <div className="proof-item">
                 <div className="proof-number">❓</div>
                 <div className="proof-text">Frequently Asked Questions</div>
