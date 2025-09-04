@@ -196,57 +196,68 @@ const AIImplementationConsulting = () => {
               </div>
             </div>
             
-            {/* The Hidden Cost Section */}
-            <div className="value-justification">
-              <h3 className="value-title">⚠️ The Hidden Cost of Ignoring AI Integration</h3>
-              <p className="value-subtitle">You're seeing competitors move faster. Customers expect instant responses. Manual processes eat profit margins.</p>
-              <p className="value-question"><strong>What breaks first when inefficiency slows growth?</strong></p>
-              
-              <div className="justification-grid">
-                <div className="justification-card">
-                  <h4>McKinsey's 2024 AI Report</h4>
-                  <ul>
-                    <li>Small businesses using AI see <strong>23% faster growth</strong></li>
-                    <li><strong>19% cost reduction</strong> within the first year</li>
-                    <li>But 73% of AI projects fail because they try to do everything at once</li>
-                  </ul>
+            {/* Hidden Cost Warning */}
+            <div className="content-grid">
+              <div className="left-content">
+                <div className="credibility-badge">
+                  <div className="credibility-number">⚠️</div>
+                  <div className="credibility-text">The Hidden Cost of Ignoring AI Integration</div>
                 </div>
                 
-                <div className="justification-card">
-                  <h4>The Real Question</h4>
-                  <p>What happens to your market position if you're still doing manually what competitors automate?</p>
-                </div>
+                <ul className="pain-points">
+                  <li>You're seeing competitors move faster while you're stuck in manual processes</li>
+                  <li>Customers expect instant responses that you can't deliver efficiently</li>
+                  <li>Manual processes are eating your profit margins daily</li>
+                  <li>What breaks first when inefficiency slows growth?</li>
+                </ul>
+              </div>
+              
+              <div className="solution-preview">
+                <h2 className="solution-title">McKinsey's 2024 AI Report Reveals</h2>
+                <ul className="benefits-list">
+                  <li><strong>23% faster growth</strong> for small businesses using AI</li>
+                  <li><strong>19% cost reduction</strong> within the first year</li>
+                  <li><strong>73% of AI projects fail</strong> because they try everything at once</li>
+                  <li><strong>The real question:</strong> What happens to your market position if you're still doing manually what competitors automate?</li>
+                </ul>
               </div>
             </div>
 
-            {/* Why AI Projects Fail */}
-            <div className="implementation-strategy">
-              <h3 className="strategy-title">🚫 Why Most AI Integration Projects Fail (And How We Fix It)</h3>
+            {/* Why Projects Fail */}
+            <div className="value-justification">
+              <h3 className="value-title">🚫 Why Most AI Integration Projects Fail (And How We Fix It)</h3>
               
-              <div className="strategy-phases">
-                <div className="phase-card">
+              <div className="justification-grid">
+                <div className="justification-card">
                   <h4>The Problem</h4>
                   <p>Companies treat AI like magic. They expect to flip a switch and transform overnight.</p>
                 </div>
                 
-                <div className="phase-card">
+                <div className="justification-card">
                   <h4>The Reality</h4>
                   <p>AI integration works when you solve specific problems with proven tools, not when you chase shiny objects.</p>
                 </div>
                 
-                <div className="phase-card">
+                <div className="justification-card">
                   <h4>Our Difference</h4>
                   <p>We start with your biggest pain point, prove ROI in 30 days, then expand systematically.</p>
                 </div>
               </div>
             </div>
 
-            {/* Real Results Section */}
-            <div className="case-studies-section">
-              <h3 className="strategy-title">📊 Proof: Real Results from Real Businesses</h3>
+            {/* Real Results */}
+            <div className="social-proof">
+              <div className="proof-item">
+                <div className="proof-number">📊</div>
+                <div className="proof-text">Proof: Real Results from Real Businesses</div>
+              </div>
+            </div>
+
+            <div className="implementation-strategy">
+              <h3 className="strategy-title">Case Studies from Our AI Crew Chief Implementations</h3>
               
-              <div className="case-studies-grid">
-                <div className="case-study-card">
+              <div className="strategy-phases">
+                <div className="phase-card">
                   <h4>Memphis Earth Movers - Construction Equipment Rental</h4>
                   <div className="case-details">
                     <p><strong>Challenge:</strong> Manual time tracking costing 8 hours/week</p>
@@ -256,7 +267,7 @@ const AIImplementationConsulting = () => {
                   </div>
                 </div>
 
-                <div className="case-study-card">
+                <div className="phase-card">
                   <h4>Valley Legal Group - Law Practice</h4>
                   <div className="case-details">
                     <p><strong>Challenge:</strong> Document review taking 12+ hours per case</p>
@@ -266,7 +277,7 @@ const AIImplementationConsulting = () => {
                   </div>
                 </div>
 
-                <div className="case-study-card">
+                <div className="phase-card">
                   <h4>Precision Manufacturing Co - Metal Fabrication</h4>
                   <div className="case-details">
                     <p><strong>Challenge:</strong> Quality control requiring full-time inspector</p>
@@ -278,13 +289,33 @@ const AIImplementationConsulting = () => {
               </div>
             </div>
 
-            {/* Integration Method */}
-            <div className="integration-method-section">
-              <h3 className="strategy-title">⚙️ The Digital Frontier Integration Method</h3>
-              <p className="method-subtitle">Unlike consultants who disappear after planning, we stay until you're profitable.</p>
+            {/* Digital Frontier Method */}
+            <div className="content-grid">
+              <div className="left-content">
+                <div className="credibility-badge">
+                  <div className="credibility-number">⚙️</div>
+                  <div className="credibility-text">The Digital Frontier Integration Method</div>
+                </div>
+                
+                <p className="method-subtitle">Unlike consultants who disappear after planning, we stay until you're profitable.</p>
+              </div>
               
-              <div className="method-phases">
-                <div className="method-phase">
+              <div className="solution-preview">
+                <h2 className="solution-title">Our 3-Phase Battle-Tested Process</h2>
+                <ul className="benefits-list">
+                  <li><strong>Phase 1:</strong> Foundation & Quick Wins (Weeks 1-2)</li>
+                  <li><strong>Phase 2:</strong> Core Integration (Weeks 3-8)</li>
+                  <li><strong>Phase 3:</strong> Scale & Optimize (Weeks 9-12)</li>
+                  <li><strong>Result:</strong> Complete AI-powered business system for your specific needs</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="value-justification">
+              <h3 className="value-title">📋 Detailed Implementation Phases</h3>
+              
+              <div className="justification-grid">
+                <div className="justification-card">
                   <h4>Phase 1: Foundation & Quick Wins (Weeks 1-2)</h4>
                   <ul>
                     <li>Complete AI readiness assessment of your current systems</li>
@@ -294,7 +325,7 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="method-phase">
+                <div className="justification-card">
                   <h4>Phase 2: Core Integration (Weeks 3-8)</h4>
                   <ul>
                     <li>Deploy primary AI solutions for your biggest bottlenecks</li>
@@ -304,7 +335,7 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="method-phase">
+                <div className="justification-card">
                   <h4>Phase 3: Scale & Optimize (Weeks 9-12)</h4>
                   <ul>
                     <li>Expand AI capabilities to additional departments</li>
@@ -314,19 +345,22 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
               </div>
-              
-              <div className="method-result">
-                <strong>Result:</strong> A complete AI-powered business system that works for your specific needs, not generic cookie-cutter solutions.
-              </div>
             </div>
 
             {/* Industry Solutions */}
-            <div className="industry-solutions-section">
-              <h3 className="strategy-title">🏭 Industry-Specific AI Integration Solutions</h3>
+            <div className="social-proof">
+              <div className="proof-item">
+                <div className="proof-number">🏭</div>
+                <div className="proof-text">Industry-Specific AI Integration Solutions</div>
+              </div>
+            </div>
+
+            <div className="value-justification">
+              <h3 className="value-title">Proven Solutions by Industry</h3>
               
-              <div className="industry-grid">
-                <div className="industry-card">
-                  <h4>For Manufacturing & Production</h4>
+              <div className="justification-grid">
+                <div className="justification-card">
+                  <h4>Manufacturing & Production</h4>
                   <ul>
                     <li>Predictive maintenance reducing equipment downtime by 35-50%</li>
                     <li>Quality control automation catching defects before shipping</li>
@@ -335,8 +369,8 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="industry-card">
-                  <h4>For Professional Services</h4>
+                <div className="justification-card">
+                  <h4>Professional Services</h4>
                   <ul>
                     <li>Document automation eliminating repetitive paperwork</li>
                     <li>Client communication with AI-powered chatbots and scheduling</li>
@@ -345,8 +379,8 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="industry-card">
-                  <h4>For Retail & E-commerce</h4>
+                <div className="justification-card">
+                  <h4>Retail & E-commerce</h4>
                   <ul>
                     <li>Inventory forecasting preventing stockouts during peak seasons</li>
                     <li>Customer service automation handling 80% of routine inquiries</li>
@@ -358,12 +392,31 @@ const AIImplementationConsulting = () => {
             </div>
 
             {/* What's Included */}
-            <div className="whats-included-section">
-              <h3 className="strategy-title">📦 What's Included in Every AI Integration Project</h3>
+            <div className="content-grid">
+              <div className="left-content">
+                <div className="credibility-badge">
+                  <div className="credibility-number">📦</div>
+                  <div className="credibility-text">What's Included in Every AI Crew Chief Package</div>
+                </div>
+              </div>
               
-              <div className="included-grid">
-                <div className="included-category">
-                  <h4>Technical Implementation:</h4>
+              <div className="solution-preview">
+                <h2 className="solution-title">Complete Implementation & Support</h2>
+                <ul className="benefits-list">
+                  <li><strong>Technical Implementation:</strong> Custom AI solutions & system integrations</li>
+                  <li><strong>Business Support:</strong> Team training & change management</li>
+                  <li><strong>Risk Elimination:</strong> Performance guarantees & rollback procedures</li>
+                  <li><strong>90-day post-launch support</strong> and adjustments included</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="value-justification">
+              <h3 className="value-title">Complete Service Breakdown</h3>
+              
+              <div className="justification-grid">
+                <div className="justification-card">
+                  <h4>Technical Implementation</h4>
                   <ul>
                     <li>✓ Custom AI solution design and development</li>
                     <li>✓ Integration with existing business systems</li>
@@ -372,8 +425,8 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="included-category">
-                  <h4>Business Support:</h4>
+                <div className="justification-card">
+                  <h4>Business Support</h4>
                   <ul>
                     <li>✓ Team training and change management</li>
                     <li>✓ Process documentation and SOPs</li>
@@ -382,8 +435,8 @@ const AIImplementationConsulting = () => {
                   </ul>
                 </div>
                 
-                <div className="included-category">
-                  <h4>Risk Elimination:</h4>
+                <div className="justification-card">
+                  <h4>Risk Elimination</h4>
                   <ul>
                     <li>✓ Phased implementation reducing disruption</li>
                     <li>✓ Rollback procedures if systems don't perform</li>
@@ -394,32 +447,43 @@ const AIImplementationConsulting = () => {
               </div>
             </div>
 
-            {/* FAQ Section */}
-            <div className="faq-section">
-              <h3 className="strategy-title">❓ Frequently Asked Questions</h3>
+            {/* FAQ Section using proper component */}
+            <div className="social-proof">
+              <div className="proof-item">
+                <div className="proof-number">❓</div>
+                <div className="proof-text">Frequently Asked Questions</div>
+              </div>
+            </div>
+
+            <div className="value-justification">
+              <h3 className="value-title">Common Questions About AI Integration</h3>
               
-              <div className="faq-grid">
-                <div className="faq-item">
+              <div className="justification-grid">
+                <div className="justification-card">
                   <h4>Q: How long does AI integration take for small business?</h4>
                   <p>A: Most projects complete in 30-90 days using our phased approach. Quick wins start in week 1, with full systems operational by week 12. Timeline depends on complexity and existing system integration needs.</p>
                 </div>
                 
-                <div className="faq-item">
+                <div className="justification-card">
                   <h4>Q: What if the AI doesn't work as promised?</h4>
                   <p>A: Every project includes performance guarantees tied to specific metrics. If agreed-upon results aren't achieved within 90 days, we continue working at no additional cost until targets are met or provide a full refund.</p>
                 </div>
                 
-                <div className="faq-item">
+                <div className="justification-card">
                   <h4>Q: Do we need technical staff to maintain AI systems?</h4>
                   <p>A: No. We design systems for business users, not programmers. Training includes everything your team needs to operate and maintain AI tools without technical expertise. We also provide ongoing support.</p>
                 </div>
-                
-                <div className="faq-item">
+              </div>
+            </div>
+
+            <div className="value-justification">
+              <div className="justification-grid">
+                <div className="justification-card">
                   <h4>Q: Can AI integrate with our existing software?</h4>
                   <p>A: Yes. We specialize in connecting AI to existing CRM, accounting, project management, and industry-specific software. Most integrations work through standard APIs without replacing current systems.</p>
                 </div>
                 
-                <div className="faq-item">
+                <div className="justification-card">
                   <h4>Q: What's the real ROI of AI integration?</h4>
                   <p>A: Our clients typically see 3-5x ROI within the first year through cost savings and efficiency gains. Common benefits include 40-60% time savings on routine tasks, 25-35% faster customer response times, and 15-30% reduction in operational costs.</p>
                 </div>
@@ -427,24 +491,43 @@ const AIImplementationConsulting = () => {
             </div>
 
             {/* Final Investment Info */}
-            <div className="investment-info-section">
-              <h3 className="strategy-title">💰 Ready to Stop Watching Competitors Pull Ahead?</h3>
-              <p className="investment-subtitle">The cost of waiting is your market position.</p>
-              <p>Every month you delay AI integration, competitors get further ahead. Customer expectations rise. Manual processes become more expensive relative to automated alternatives.</p>
+            <div className="content-grid">
+              <div className="left-content">
+                <div className="credibility-badge">
+                  <div className="credibility-number">💰</div>
+                  <div className="credibility-text">Ready to Stop Watching Competitors Pull Ahead?</div>
+                </div>
+                
+                <ul className="pain-points">
+                  <li>The cost of waiting is your market position</li>
+                  <li>Every month you delay, competitors get further ahead</li>
+                  <li>Customer expectations rise while you're stuck in manual processes</li>
+                  <li>Manual processes become more expensive relative to automated alternatives</li>
+                </ul>
+              </div>
               
-              <div className="next-steps">
-                <h4>Here's what happens next:</h4>
-                <ul>
+              <div className="solution-preview">
+                <h2 className="solution-title">Here's What Happens Next</h2>
+                <ul className="benefits-list">
                   <li><strong>Free 30-Minute AI Strategy Call</strong> - We audit your current systems and identify the 3 highest-impact AI opportunities</li>
                   <li><strong>Custom Implementation Roadmap</strong> - Get a detailed plan with timelines, costs, and expected ROI</li>
                   <li><strong>Pilot Project Proposal</strong> - Start with one high-value automation to prove ROI before larger investment</li>
                 </ul>
-                
-                <div className="investment-details">
-                  <p>Investment starts at $5,000 for pilot implementation.</p>
-                  <p>Full integration typically ranges $15,000-$25,000.</p>
-                  <p><strong>Average client sees positive ROI within 60 days.</strong></p>
-                </div>
+              </div>
+            </div>
+
+            <div className="social-proof">
+              <div className="proof-item">
+                <div className="proof-number">$5,000</div>
+                <div className="proof-text">Investment starts for pilot implementation</div>
+              </div>
+              <div className="proof-item">
+                <div className="proof-number">$15K-$25K</div>
+                <div className="proof-text">Full integration range</div>
+              </div>
+              <div className="proof-item">
+                <div className="proof-number">60 Days</div>
+                <div className="proof-text">Average positive ROI timeline</div>
               </div>
             </div>
           </div>
