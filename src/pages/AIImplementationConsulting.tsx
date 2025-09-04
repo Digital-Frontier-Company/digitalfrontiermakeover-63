@@ -259,32 +259,26 @@ const AIImplementationConsulting = () => {
               <div className="strategy-phases">
                 <div className="phase-card">
                   <h4>Memphis Earth Movers - Construction Equipment Rental</h4>
-                  <div className="case-details">
-                    <p><strong>Challenge:</strong> Manual time tracking costing 8 hours/week</p>
-                    <p><strong>Solution:</strong> Automated timesheet system with AI validation</p>
-                    <p><strong>Result:</strong> 86% time savings, $4,200/month recovered productivity</p>
-                    <p><strong>Timeline:</strong> 3 weeks to full deployment</p>
-                  </div>
+                  <p><strong>Challenge:</strong> Manual time tracking costing 8 hours/week</p>
+                  <p><strong>Solution:</strong> Automated timesheet system with AI validation</p>
+                  <p><strong>Result:</strong> 86% time savings, $4,200/month recovered productivity</p>
+                  <p><strong>Timeline:</strong> 3 weeks to full deployment</p>
                 </div>
 
                 <div className="phase-card">
                   <h4>Valley Legal Group - Law Practice</h4>
-                  <div className="case-details">
-                    <p><strong>Challenge:</strong> Document review taking 12+ hours per case</p>
-                    <p><strong>Solution:</strong> AI-powered contract analysis and summarization</p>
-                    <p><strong>Result:</strong> 67% faster document processing, 2.3x case throughput</p>
-                    <p><strong>Timeline:</strong> 6 weeks including training</p>
-                  </div>
+                  <p><strong>Challenge:</strong> Document review taking 12+ hours per case</p>
+                  <p><strong>Solution:</strong> AI-powered contract analysis and summarization</p>
+                  <p><strong>Result:</strong> 67% faster document processing, 2.3x case throughput</p>
+                  <p><strong>Timeline:</strong> 6 weeks including training</p>
                 </div>
 
                 <div className="phase-card">
                   <h4>Precision Manufacturing Co - Metal Fabrication</h4>
-                  <div className="case-details">
-                    <p><strong>Challenge:</strong> Quality control requiring full-time inspector</p>
-                    <p><strong>Solution:</strong> Computer vision for defect detection</p>
-                    <p><strong>Result:</strong> 94% accuracy improvement, $78K annual savings</p>
-                    <p><strong>Timeline:</strong> 8 weeks from concept to production</p>
-                  </div>
+                  <p><strong>Challenge:</strong> Quality control requiring full-time inspector</p>
+                  <p><strong>Solution:</strong> Computer vision for defect detection</p>
+                  <p><strong>Result:</strong> 94% accuracy improvement, $78K annual savings</p>
+                  <p><strong>Timeline:</strong> 8 weeks from concept to production</p>
                 </div>
               </div>
             </div>
