@@ -25,7 +25,7 @@ const AIImplementationConsulting = () => {
           ))}
         </div>
         
-        <div className="ai-container">
+        <div className="ai-container" style={{ maxWidth: '1400px', width: '95%' }}>
           {/* Header */}
           <div className="section-header">
             {/* Company Logo */}
