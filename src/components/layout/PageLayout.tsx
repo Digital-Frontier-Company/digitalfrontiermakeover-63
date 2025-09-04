@@ -109,13 +109,13 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       />
       
       {/* Enhanced SEO Breadcrumbs */}
-      <div className="container mx-auto px-4 pt-6">
+      <div className="w-full px-4 pt-6">
         <SEOBreadcrumbs currentPath={currentPath} />
       </div>
       
       {/* Hero Section */}
       <section className="df-hero-section py-16" itemScope itemType="https://schema.org/WebPageElement">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4">
           <div className="text-center">
             <img 
               src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png" 
@@ -135,7 +135,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       </section>
       
       {/* Main Content with Semantic HTML */}
-      <main className="container mx-auto py-8 px-4 mt-4" role="main">
+      <main className="w-full py-8 px-4 mt-4" role="main">
         <div className="w-full mx-auto bg-slate-900/60 backdrop-blur-sm p-6 md:p-10 rounded-2xl border border-slate-800 shadow-lg">
           <article itemScope itemType={pageType === 'article' ? "https://schema.org/Article" : "https://schema.org/WebPage"}>
             {pageType === 'article' && (
