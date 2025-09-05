@@ -19,14 +19,15 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "The AI Revolution in Digital Marketing: 5 Game-Changing Trends Reshaping 2025",
-      excerpt: "Discover the 5 game-changing AI trends revolutionizing digital marketing in 2025. From hyper-personalization to voice search optimization and quantum computing applications.",
-      category: "AI Trends",
+      title: "The AI Truth Gap: What Happens When You Ask 5 Different AIs for Today's Narrative",
+      excerpt: "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
+      category: "AI Investigation",
       readTime: "12 min read",
-      date: "2025-01-16",
-      slug: "ai-revolution-digital-marketing-2025",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-      badge: "AI TRENDS"
+      date: "2025-09-04",
+      slug: "ai-truth-gap",
+      image: "/lovable-uploads/dfb97795-57a3-4a27-941a-302022ec095e.png",
+      badge: "INVESTIGATION",
+      featured: true
     },
     {
       id: 2,
@@ -52,14 +53,14 @@ const Blog = () => {
     },
     {
       id: 4,
-      title: "Mastering Digital Marketing in 2024",
-      excerpt: "Discover the latest strategies and trends that are shaping the digital marketing landscape this year.",
-      category: "Digital Marketing",
-      readTime: "8 min read",
-      date: "2024-12-15",
-      slug: "mastering-digital-marketing",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      badge: "MARKETING"
+      title: "The AI Revolution in Digital Marketing: 5 Game-Changing Trends Reshaping 2025",
+      excerpt: "Discover the 5 game-changing AI trends revolutionizing digital marketing in 2025. From hyper-personalization to voice search optimization and quantum computing applications.",
+      category: "AI Trends",
+      readTime: "12 min read",
+      date: "2025-01-16",
+      slug: "ai-revolution-digital-marketing-2025",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+      badge: "AI TRENDS"
     },
     {
       id: 5,
@@ -74,17 +75,6 @@ const Blog = () => {
     },
     {
       id: 6,
-      title: "The AI Truth Gap: What Happens When You Ask 5 Different AIs for Today's Narrative",
-      excerpt: "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
-      category: "AI Investigation",
-      readTime: "12 min read",
-      date: "2025-09-04",
-      slug: "ai-truth-gap",
-      image: "/lovable-uploads/dfb97795-57a3-4a27-941a-302022ec095e.png",
-      badge: "INVESTIGATION"
-    },
-    {
-      id: 7,
       title: "Answer Engine Optimization for Crypto Startups",
       excerpt: "Deep dive into AEO strategies specifically designed for cryptocurrency and blockchain startups to dominate AI-powered search results.",
       category: "AEO Strategy",
@@ -93,6 +83,17 @@ const Blog = () => {
       slug: "aeo-crypto-marketing",
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
       badge: "AEO"
+    },
+    {
+      id: 7,
+      title: "Mastering Digital Marketing in 2024",
+      excerpt: "Discover the latest strategies and trends that are shaping the digital marketing landscape this year.",
+      category: "Digital Marketing",
+      readTime: "8 min read",
+      date: "2024-12-15",
+      slug: "mastering-digital-marketing",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      badge: "MARKETING"
     }
   ];
 
@@ -394,11 +395,97 @@ const Blog = () => {
             </div>
           </section>
 
-          {/* Blog Posts Grid */}
+          {/* Featured Post */}
+          <section className="px-4 md:px-12 pb-12">
+            <div className="container mx-auto">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--df-bright-blue)' }}>
+                  Latest Investigation
+                </h2>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 transition-all duration-300 cursor-pointer mb-16">
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                  <div className="order-2 lg:order-1">
+                    <div className="flex items-center mb-4">
+                      <div className="p-3 rounded-full mr-4" style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)' }}>
+                        <i className="fa-solid fa-exclamation-triangle text-xl text-red-400"></i>
+                      </div>
+                      <span 
+                        className="text-xs px-4 py-2 rounded-full font-bold animate-pulse"
+                        style={{ 
+                          backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                          color: '#f87171'
+                        }}
+                      >
+                        🚨 BREAKING INVESTIGATION
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--df-bright-blue)' }}>
+                      {blogPosts[0].title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-6 text-lg leading-relaxed">{blogPosts[0].excerpt}</p>
+                    
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
+                      <span className="flex items-center gap-2">
+                        <i className="fa-solid fa-clock"></i>
+                        {blogPosts[0].readTime}
+                      </span>
+                      <span className="flex items-center gap-2">
+                        <i className="fa-solid fa-calendar"></i>
+                        {new Date(blogPosts[0].date).toLocaleDateString()}
+                      </span>
+                    </div>
+                    
+                    <Link 
+                      to={`/blog/${blogPosts[0].slug}`}
+                      className="py-3 px-8 rounded-lg transition-all border inline-flex items-center gap-2 text-lg font-semibold"
+                      style={{ 
+                        borderColor: 'var(--df-cyan)',
+                        color: 'var(--df-cyan)'
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.target as HTMLElement).style.backgroundColor = 'rgba(0, 238, 255, 0.1)';
+                        (e.target as HTMLElement).style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                        (e.target as HTMLElement).style.transform = 'translateY(0)';
+                      }}
+                    >
+                      Read Full Investigation
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                  
+                  <div className="order-1 lg:order-2">
+                    <div className="relative group overflow-hidden rounded-xl">
+                      <img 
+                        src={blogPosts[0].image} 
+                        alt={blogPosts[0].title} 
+                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Other Posts Grid */}
           <section className="px-4 md:px-12 pb-24">
             <div className="container mx-auto">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--df-bright-blue)' }}>
+                  More Insights
+                </h2>
+              </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredPosts.map((post) => (
+                {filteredPosts.slice(1).map((post) => (
                   <div key={post.id} className="glass-card rounded-xl p-6 transition-all duration-300 cursor-pointer">
                     <div className="flex items-center mb-4">
                       <div className="p-3 rounded-full mr-4" style={{ backgroundColor: 'rgba(0, 238, 255, 0.2)' }}>
