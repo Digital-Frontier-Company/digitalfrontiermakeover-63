@@ -113,7 +113,7 @@ const GenerativeSearchProSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {/* Video Placeholder - Ready for when video is provided */}
+            {/* Video Demo */}
             <div className="mb-8 bg-slate-800/50 rounded-2xl p-8 border border-slate-600/30">
               <div className="flex items-center justify-center mb-4">
                 <LazyImage
@@ -125,12 +125,15 @@ const GenerativeSearchProSection = () => {
                 />
               </div>
               <p className="text-slate-400 text-lg mb-4">Watch the Demo</p>
-              <div className="w-full h-64 bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl flex items-center justify-center border border-slate-600/20">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
-                  </div>
-                  <p className="text-slate-300">Video Coming Soon</p>
+              <div className="w-full max-w-2xl mx-auto">
+                <div className="relative aspect-[9/16] md:aspect-video rounded-xl overflow-hidden border border-slate-600/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/WA1WD5YHcqc"
+                    title="GenerativeSearch.pro Demo"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
                 </div>
               </div>
             </div>
