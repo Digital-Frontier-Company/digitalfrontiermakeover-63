@@ -2,6 +2,7 @@
 /* Fonts loaded asynchronously via HTML */
 
 @import './styles/animations.css';
+@import './styles/digitalFrontier.css';
 
 @tailwind base;
 @tailwind components;
@@ -465,13 +466,29 @@
 }
 
 /* FAQ Section */
-.df-faq-section, .df-revenue-engine, .df-final-cta { 
+.df-faq-section, .df-revenue-engine, .df-what-youll-gain, .df-final-cta { 
   background:#000014; 
   color:#fff; 
   position:relative; 
 }
 .df-faq-section { 
   padding:60px 0; 
+}
+
+/* What You'll Gain Section */
+.df-what-youll-gain { 
+  padding:80px 0; 
+}
+.df-what-youll-gain::before {
+  content:''; 
+  position:absolute; 
+  top:0; 
+  left:0;
+  width:30%; 
+  height:50%;
+  background:radial-gradient(circle, rgba(0,149,255,.1) 0%, rgba(0,14,41,0) 70%);
+  pointer-events:none; 
+  z-index:0; 
 }
 .df-faq-section::before {
   content:''; 
@@ -517,6 +534,22 @@
   display:none; 
   text-align:center; 
   color:rgba(255,255,255,.8); 
+}
+
+/* Revenue Engine Section */
+.df-revenue-engine { 
+  padding:80px 0; 
+}
+.df-revenue-engine::before {
+  content:''; 
+  position:absolute; 
+  top:0; 
+  right:0;
+  width:40%; 
+  height:60%;
+  background:radial-gradient(circle, rgba(0,149,255,.08) 0%, rgba(0,14,41,0) 70%);
+  pointer-events:none; 
+  z-index:0; 
 }
 
 /* Final CTA */
