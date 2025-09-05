@@ -128,7 +128,7 @@ const GenerativeSearchProSection = () => {
               <div className="w-full max-w-2xl mx-auto">
                 <div className="relative aspect-[9/16] md:aspect-video rounded-xl overflow-hidden border border-slate-600/20">
                   <iframe
-                    src="https://www.youtube.com/embed/WA1WD5YHcqc"
+                    src="https://www.youtube.com/embed/WA1WD5YHcqc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=WA1WD5YHcqc"
                     title="GenerativeSearch.pro Demo"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
