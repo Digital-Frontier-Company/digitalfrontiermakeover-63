@@ -62,7 +62,8 @@ export function getOptimizedBackgroundSize(
 export function generateResponsiveSrcSet(
   originalSrc: string,
   baseWidth: number,
-  baseHeight?: number
+  baseHeight?: number,
+  format: 'webp' | 'avif' | 'png' | 'jpg' = 'webp'
 ): string {
   const sizes = [
     { width: Math.round(baseWidth * 0.5), density: '1x' },
@@ -73,7 +74,7 @@ export function generateResponsiveSrcSet(
   return sizes
     .map(({ width, density }) => {
       const height = baseHeight ? Math.round((baseHeight * width) / baseWidth) : undefined;
-      const url = getOptimizedImageUrl(originalSrc, width, height);
+      const url = getOptimizedImageUrl(originalSrc, width, height, format);
       return `${url} ${density}`;
     })
     .join(', ');
