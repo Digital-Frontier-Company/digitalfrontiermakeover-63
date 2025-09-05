@@ -244,27 +244,39 @@ const BlogPostAITruthGap = () => {
             </CardContent>
           </Card>
 
-          {/* The Deeper Problem */}
+          {/* The Core Problem */}
           <Card className="border-destructive/20 bg-gradient-to-br from-destructive/5 to-transparent">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <Shield className="w-6 h-6 text-destructive" />
-                The Deeper Problem: When AI Becomes a Weapon
+                The Core Problem: Why the AI Truth Gap is Widening
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-3">
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-destructive">1. The Citation Crisis</h4>
-                  <p className="text-sm">Systems without citation requirements can confidently present fiction as fact.</p>
+            <CardContent className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                Our investigation reveals three critical forces driving the AI truth gap:
+              </p>
+              
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-destructive text-lg">The Citation Crisis</h4>
+                  <p className="text-muted-foreground">
+                    An AI without a strict citation requirement is functionally a black box. It can state falsehoods with the same level of confidence as truths, leaving the user with no way to verify its claims. This is the single biggest threat to information integrity today.
+                  </p>
                 </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-destructive">2. The Amplification Effect</h4>
-                  <p className="text-sm">Clinical AI tone makes outlandish theories seem plausible.</p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-destructive text-lg">The Amplification Effect</h4>
+                  <p className="text-muted-foreground">
+                    The calm, clinical, and authoritative tone of an AI has a powerful psychological effect. It can make even the most outlandish claims seem plausible, bypassing the natural skepticism a human might apply to information read on a fringe website.
+                  </p>
                 </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-destructive">3. The Responsibility Gap</h4>
-                  <p className="text-sm">"Uncensored" AIs peddle falsehoods under the guise of truth-telling.</p>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-destructive text-lg">The Responsibility Gap</h4>
+                  <p className="text-muted-foreground">
+                    So-called "uncensored" AI models are often marketed as brave truth-tellers. In reality, they are abdicating all intellectual and ethical responsibility, prioritizing engagement through outrage over a commitment to factual accuracy.
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -273,21 +285,21 @@ const BlogPostAITruthGap = () => {
           {/* FAQ Section */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">What This Means for You: Navigating AI Reliability</CardTitle>
+              <CardTitle className="text-2xl">FAQ: Your Guide to Navigating the AI Information Maze</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-primary mb-2">Q: What is the "AI Truth Gap"?</h4>
-                  <p className="text-sm text-muted-foreground">A: The significant difference in accuracy, sourcing, and reliability between AI models. Some provide cited analysis, others generate convincing misinformation.</p>
+                  <p className="text-muted-foreground">A: The AI Truth Gap is the widening chasm in reliability between AI models. Some are built on a foundation of verifiable, cited facts, while others are designed to generate engaging—but often completely false—content, creating a dangerous information ecosystem.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Q: How can I spot trustworthy AI?</h4>
-                  <p className="text-sm text-muted-foreground">A: Look for specific citations with dates, acknowledgment of uncertainty, and clear methodology explanations.</p>
+                  <h4 className="font-semibold text-primary mb-2">Q: Isn't "uncensored" AI better for finding hidden truths?</h4>
+                  <p className="text-muted-foreground">A: Our research shows the opposite is true. Instead of revealing hidden truths, these models often construct elaborate falsehoods by mixing conspiracy with fragments of reality. True insight comes from verifiable data, not unsourced claims.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Q: What are red flags of dangerous AI misinformation?</h4>
-                  <p className="text-sm text-muted-foreground">A: Dramatic claims without sources, conspiracy language, medical misinformation, and demographic fear-mongering.</p>
+                  <h4 className="font-semibold text-primary mb-2">Q: What is the most important factor in choosing an AI for research?</h4>
+                  <p className="text-muted-foreground">A: The non-negotiable factor is a mandatory citation requirement. If an AI cannot tell you where it got its information, its output should be treated as fiction until proven otherwise.</p>
                 </div>
               </div>
             </CardContent>
@@ -298,44 +310,111 @@ const BlogPostAITruthGap = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <TrendingUp className="w-6 h-6 text-primary" />
-                Business Implications: Protecting Your Organization
+                The Business Imperative: A Framework for Corporate Defense
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                For any organization using AI for market analysis, R&D, or strategic planning, navigating the AI truth gap is a mission-critical function.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-primary text-lg">Drill Down on Vendor Vetting</h4>
+                  <p className="text-muted-foreground">
+                    When evaluating an AI provider, ask pointed questions: What are your data sources? How do you handle conflicting information? Can your model produce citations for every claim it makes? The answers will reveal their commitment to reliability.
+                  </p>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-primary text-lg">Establish Clear Internal AI Policies</h4>
+                  <p className="text-muted-foreground">
+                    Your "Acceptable Use" policy must be updated for the AI era. Specify which AI models are approved for professional work and explicitly forbid the use of unvetted, uncensored models for any business-related research.
+                  </p>
+                </div>
+                
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-primary text-lg">Implement a Human-in-the-Loop Workflow</h4>
+                  <p className="text-muted-foreground">
+                    AI is a powerful accelerator, not an oracle. For any high-stakes decision, the AI-generated output is the first step, not the last. Our Three-Layer Verification Model is essential.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Three-Layer Verification Model */}
+          <Card className="bg-gradient-to-br from-accent/10 to-primary/5">
+            <CardHeader>
+              <CardTitle className="text-2xl">
+                The Digital Frontier Three-Layer Verification Model
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs font-bold text-primary">1</span>
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold text-primary">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Layer 1: Source Requirement</h4>
-                    <p className="text-sm text-muted-foreground">Only use AI systems that provide traceable citations.</p>
+                    <h4 className="font-semibold text-lg">Layer 1: Source Requirement</h4>
+                    <p className="text-muted-foreground">Mandate that all AI-generated reports begin with traceable citations. Reject any analysis that cannot be sourced.</p>
                   </div>
                 </div>
+                
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs font-bold text-primary">2</span>
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold text-primary">2</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Layer 2: Cross-Reference Check</h4>
-                    <p className="text-sm text-muted-foreground">Verify key claims across multiple, reputable AI systems.</p>
+                    <h4 className="font-semibold text-lg">Layer 2: Cross-Reference Check</h4>
+                    <p className="text-muted-foreground">Take the key data points from one AI's report and verify them using a second, independent, high-quality AI model. Look for consensus.</p>
                   </div>
                 </div>
+                
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs font-bold text-primary">3</span>
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-sm font-bold text-primary">3</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Layer 3: Human Expert Review</h4>
-                    <p className="text-sm text-muted-foreground">Ensure domain experts validate all critical AI findings before action.</p>
+                    <h4 className="font-semibold text-lg">Layer 3: Human Expert Review</h4>
+                    <p className="text-muted-foreground">Before any strategic action is taken, a domain expert within your organization must review and validate the AI's findings against their own knowledge and experience.</p>
                   </div>
                 </div>
               </div>
               
               <div className="bg-card p-6 rounded-lg border">
-                <p className="text-lg font-medium">
-                  The bottom line: In a world where AI can instantly generate compelling narratives, the ability to demand and evaluate evidence isn't just important—<strong>it's existential.</strong>
+                <p className="text-lg font-medium leading-relaxed">
+                  In the emerging AI-powered economy, trust is your most valuable asset. The ability to distinguish between high-integrity intelligence and sophisticated fiction will define the next generation of successful leaders. The choices you make today about which AI to trust will determine the future of your organization.
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* About the Author */}
+          <Card className="bg-gradient-to-br from-muted/20 to-transparent">
+            <CardHeader>
+              <CardTitle className="text-xl">About the Author</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground">
+                This investigation was conducted by <strong>Digital Frontier Company</strong>, a leading firm in emerging technology analysis and digital transformation strategy. We help organizations navigate technological disruption with clarity and confidence.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 text-sm">
+                <a 
+                  href="mailto:David@digitalfrontier.app" 
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  Contact: David@digitalfrontier.app
+                </a>
+                <a 
+                  href="https://Digitalfrontier.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors"
+                >
+                  Website: https://Digitalfrontier.app
+                </a>
               </div>
             </CardContent>
           </Card>
