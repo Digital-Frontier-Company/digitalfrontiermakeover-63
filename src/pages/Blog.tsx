@@ -71,6 +71,16 @@ const Blog = () => {
     },
     {
       id: 6,
+      title: "The AI Truth Gap: What Happens When You Ask 5 Different AIs for Today's Narrative",
+      excerpt: "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
+      category: "AI Investigation",
+      readTime: "12 min read",
+      date: "2025-09-04",
+      slug: "ai-truth-gap",
+      image: "/lovable-uploads/8e567e5d-af72-458f-82da-c1ec76f30f20.png"
+    },
+    {
+      id: 7,
       title: "Answer Engine Optimization for Crypto Startups",
       excerpt: "Deep dive into AEO strategies specifically designed for cryptocurrency and blockchain startups to dominate AI-powered search results.",
       category: "AEO Strategy",
