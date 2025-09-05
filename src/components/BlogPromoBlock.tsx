@@ -8,10 +8,10 @@ const BlogPromoBlock = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const images = [
-    "/lovable-uploads/0c145136-0069-47e6-b799-655b514f21bf.png",
-    "/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png", 
-    "/lovable-uploads/54e3ff42-70e3-485e-8ade-21a31ebdde42.png",
-    "/lovable-uploads/a38a8603-b878-43e1-9987-4ffe706d510f.png"
+    "/lovable-uploads/ai-truth-gap-promo-1.png",
+    "/lovable-uploads/ai-truth-gap-promo-2.png", 
+    "/lovable-uploads/ai-truth-gap-promo-3.png",
+    "/lovable-uploads/ai-truth-gap-promo-4.png"
   ];
 
   const stats = [
