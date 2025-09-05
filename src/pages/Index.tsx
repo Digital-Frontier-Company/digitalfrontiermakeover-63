@@ -7,6 +7,7 @@ import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
+import BlogPromoBlock from "@/components/BlogPromoBlock";
 
 // TypewriterText component with line break support
 const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) => {
@@ -464,6 +465,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* BLOG PROMOTION BLOCK */}
+      <BlogPromoBlock />
 
       {/* BLUEPRINT SECTION - Enhanced with flashy animations */}
       <section className="py-20 relative overflow-hidden" aria-labelledby="blueprint-heading">
