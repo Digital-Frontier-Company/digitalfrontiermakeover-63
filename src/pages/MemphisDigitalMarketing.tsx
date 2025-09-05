@@ -306,7 +306,7 @@ const MemphisDigitalMarketing = () => {
         voiceOptimized={true}
       />
 
-      {/* Advanced Schema Management */}
+      {/* Advanced Schema Management - excluding FAQ to avoid duplication */}
       <SchemaManager
         businessName="Digital Frontier Company"
         city="Memphis"
@@ -325,7 +325,6 @@ const MemphisDigitalMarketing = () => {
           description: s.description,
           price: "Contact for pricing"
         }))}
-        faqs={memphisFaqs}
         reviewsItemName="Memphis Digital Marketing Services"
         reviewsRating={4.9}
         reviewsCount={127}

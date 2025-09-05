@@ -387,24 +387,6 @@ const GermantownDigitalMarketing = () => {
         }}
       />
 
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": germantownFaqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
-        }}
-      />
     </PageLayout>
   );
 };
