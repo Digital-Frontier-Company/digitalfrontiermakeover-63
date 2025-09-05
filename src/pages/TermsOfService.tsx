@@ -83,6 +83,13 @@ const TermsOfService = () => {
             </p>
           </section>
         </div>
+        
+        {/* Termly Terms of Service Embed */}
+        <div 
+          dangerouslySetInnerHTML={{
+            __html: '<div name="termly-embed" data-id="7629c0aa-cb69-42e4-b58b-9d74375b9541"></div>'
+          }}
+        />
       </div>
     </PageLayout>
   );
