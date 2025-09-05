@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/utils";
-import MainLayout from "@/components/layout/MainLayout";
 import "../styles/digitalFrontierServices.css";
 
 const Blog = () => {
@@ -182,7 +181,7 @@ const Blog = () => {
   };
 
   return (
-    <MainLayout>
+    <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" />
@@ -465,7 +464,7 @@ const Blog = () => {
         </main>
 
       </div>
-    </MainLayout>
+    </>
   );
 };
 
