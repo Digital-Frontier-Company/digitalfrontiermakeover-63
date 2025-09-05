@@ -77,7 +77,7 @@ const Blog = () => {
       readTime: "12 min read",
       date: "2025-09-04",
       slug: "ai-truth-gap",
-      image: "/lovable-uploads/8e567e5d-af72-458f-82da-c1ec76f30f20.png"
+      image: "/lovable-uploads/dfb97795-57a3-4a27-941a-302022ec095e.png"
     },
     {
       id: 7,
