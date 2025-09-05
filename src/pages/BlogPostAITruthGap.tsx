@@ -4,10 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, CheckCircle, XCircle, Eye, Users, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const BlogPostAITruthGap = () => {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>The AI Truth Gap: Investigation into AI Reliability & Misinformation | Digital Frontier</title>
         <meta name="description" content="Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications." />
@@ -29,32 +27,32 @@ const BlogPostAITruthGap = () => {
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "The AI Truth Gap: Investigation into AI Reliability & Misinformation",
-            "description": "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier Company",
-              "url": "https://digitalfrontier.ai"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.ai/logo.png"
-              }
-            },
-            "datePublished": "2025-09-04",
-            "dateModified": "2025-09-04",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.ai/blog/ai-truth-gap"
-            },
-            "articleSection": "AI Research",
-            "keywords": ["AI reliability", "AI misinformation", "AI fact-checking", "artificial intelligence safety"]
-          })}
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "The AI Truth Gap: Investigation into AI Reliability & Misinformation",
+          "description": "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
+          "author": {
+            "@type": "Organization",
+            "name": "Digital Frontier Company",
+            "url": "https://digitalfrontier.ai"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Digital Frontier",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://digitalfrontier.ai/logo.png"
+            }
+          },
+          "datePublished": "2025-09-04",
+          "dateModified": "2025-09-04",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://digitalfrontier.ai/blog/ai-truth-gap"
+          },
+          "articleSection": "AI Research",
+          "keywords": ["AI reliability", "AI misinformation", "AI fact-checking", "artificial intelligence safety"]
+        })}
         </script>
       </Helmet>
 
@@ -146,8 +144,8 @@ const BlogPostAITruthGap = () => {
                   <div className="text-sm font-semibold text-green-600">HIGH RELIABILITY</div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div><strong>Approach:</strong> Over 40 citations from Moody's, Deloitte, Stanford</div>
-                  <div><strong>Narratives:</strong> Economic recession concerns, AI as "cultural technology"</div>
+                  <div className="bg-[#0e6b04]"><strong>Approach:</strong> Over 40 citations from Moody's, Deloitte, Stanford</div>
+                  <div className="bg-[#0e6e04]"><strong>Narratives:</strong> Economic recession concerns, AI as "cultural technology"</div>
                   <div className="text-sm text-green-600 font-medium">✅ Every claim traceable to named experts</div>
                 </CardContent>
               </Card>
@@ -161,8 +159,8 @@ const BlogPostAITruthGap = () => {
                   <div className="text-sm font-semibold text-blue-600">MODERATE-HIGH RELIABILITY</div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div><strong>Approach:</strong> Thematic analysis, major publications</div>
-                  <div><strong>Narratives:</strong> Multi-polar world, populist disruption</div>
+                  <div className="bg-[#04086e]"><strong>Approach:</strong> Thematic analysis, major publications</div>
+                  <div className="rounded bg-[#000479]"><strong>Narratives:</strong> Multi-polar world, populist disruption</div>
                   <div className="text-sm text-blue-600 font-medium">✅ Credible source categories</div>
                 </CardContent>
               </Card>
@@ -176,8 +174,8 @@ const BlogPostAITruthGap = () => {
                   <div className="text-sm font-semibold text-yellow-600">MODERATE RELIABILITY</div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div><strong>Approach:</strong> Real-time political drama from X/Twitter</div>
-                  <div><strong>Narrative:</strong> RFK Jr.'s contentious nomination chaos</div>
+                  <div className="bg-[#5d5d03]"><strong>Approach:</strong> Real-time political drama from X/Twitter</div>
+                  <div className="bg-[#666603]"><strong>Narrative:</strong> RFK Jr.'s contentious nomination chaos</div>
                   <div className="text-sm text-yellow-600 font-medium">⚠️ Lacked deeper context</div>
                 </CardContent>
               </Card>
@@ -191,8 +189,8 @@ const BlogPostAITruthGap = () => {
                   <div className="text-sm font-semibold text-red-600">DANGEROUS</div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div><strong>Approach:</strong> Zero citations, maximum drama</div>
-                  <div><strong>Claims:</strong> Biological warfare, "300% interest rates"</div>
+                  <div className="bg-[#a62f0f]"><strong>Approach:</strong> Zero citations, maximum drama</div>
+                  <div className="bg-[#b23512]"><strong>Claims:</strong> Biological warfare, "300% interest rates"</div>
                   <div className="text-sm text-red-600 font-medium">🚨 Harmful fabrications & racist theories</div>
                 </CardContent>
               </Card>
@@ -360,8 +358,6 @@ const BlogPostAITruthGap = () => {
           </Card>
         </article>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default BlogPostAITruthGap;
