@@ -92,6 +92,13 @@ const PrivacyPolicy = () => {
             </p>
           </section>
         </div>
+        
+        {/* Termly Privacy Policy Embed */}
+        <div 
+          dangerouslySetInnerHTML={{
+            __html: '<div name="termly-embed" data-id="b7db07fd-6a1e-40ed-883b-8fad9da6caea"></div>'
+          }}
+        />
       </div>
     </PageLayout>
   );
