@@ -79,13 +79,13 @@ export const LazyImage: React.FC<LazyImageProps> = ({
     setHasError(true);
   };
 
-  // Generate optimized image sources
+  // Generate optimized image sources with enhanced format support
   const getOptimizedSources = () => {
     if (hasError || !src.includes('lovable-uploads')) {
       return { src: hasError ? fallbackSrc : src };
     }
 
-    // Determine best format based on browser support
+    // Determine best format based on browser support and image type
     const preferredFormat = browserSupport.avif ? 'avif' : browserSupport.webp ? 'webp' : 'png';
     
     const optimizedSrc = getOptimizedImageUrl(
@@ -101,7 +101,9 @@ export const LazyImage: React.FC<LazyImageProps> = ({
     return {
       src: optimizedSrc,
       srcSet,
-      sizes
+      sizes,
+      avifSrcSet: browserSupport.avif ? generateResponsiveSrcSet(src, finalWidth, finalHeight, 'avif') : null,
+      webpSrcSet: browserSupport.webp ? generateResponsiveSrcSet(src, finalWidth, finalHeight, 'webp') : null
     };
   };
 
@@ -144,18 +146,18 @@ export const LazyImage: React.FC<LazyImageProps> = ({
       {shouldLoad && (
         <picture>
           {/* AVIF source for modern browsers */}
-          {browserSupport.avif && src.includes('lovable-uploads') && (
+          {imageProps.avifSrcSet && (
             <source
-              srcSet={generateResponsiveSrcSet(src, finalWidth, finalHeight)}
+              srcSet={imageProps.avifSrcSet}
               sizes={imageProps.sizes}
               type="image/avif"
             />
           )}
           
           {/* WebP source for supported browsers */}
-          {browserSupport.webp && src.includes('lovable-uploads') && (
+          {imageProps.webpSrcSet && (
             <source
-              srcSet={generateResponsiveSrcSet(src, finalWidth, finalHeight)}
+              srcSet={imageProps.webpSrcSet}
               sizes={imageProps.sizes}
               type="image/webp"
             />
@@ -174,6 +176,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
             onError={handleError}
             loading={optimization.priority ? "eager" : "lazy"}
             decoding="async"
+            fetchPriority={optimization.priority ? "high" : "auto"}
             className={cn(
               "w-full h-full object-cover transition-opacity duration-300",
               isLoaded ? "opacity-100" : "opacity-0"

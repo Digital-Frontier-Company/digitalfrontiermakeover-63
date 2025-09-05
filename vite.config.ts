@@ -10,12 +10,35 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   build: {
+    target: 'esnext',
+    minify: 'terser',
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', 'lucide-react'],
+          utils: ['clsx', 'class-variance-authority', 'tailwind-merge'],
+          animations: ['framer-motion'],
         },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name?.split('.') || ['', 'unknown'];
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/.test(ext)) {
+            return `fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+      },
+    },
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
       },
     },
   },
