@@ -1,10 +1,11 @@
 
 /* Fonts loaded asynchronously via HTML */
 
+@import './styles/animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './styles/animations.css';
 
 /* Line clamp utilities for text truncation */
 .line-clamp-2 {

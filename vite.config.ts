@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'esnext',
-    minify: 'terser',
+    minify: mode === 'production',
     cssMinify: true,
     rollupOptions: {
       output: {
@@ -33,12 +33,6 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-      },
-    },
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
       },
     },
   },
