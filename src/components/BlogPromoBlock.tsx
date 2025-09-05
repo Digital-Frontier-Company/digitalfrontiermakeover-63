@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, Eye, Clock, TrendingUp } from "lucide-react";
 
 const BlogPromoBlock = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-
-  const images = [
-    "/lovable-uploads/ai-truth-gap-promo-1.png",
-    "/lovable-uploads/ai-truth-gap-promo-2.png", 
-    "/lovable-uploads/ai-truth-gap-promo-3.png",
-    "/lovable-uploads/ai-truth-gap-promo-4.png"
-  ];
 
   const stats = [
     { icon: Eye, label: "Investigation", value: "5 AIs Tested" },
@@ -20,13 +12,6 @@ const BlogPromoBlock = () => {
     { icon: TrendingUp, label: "Reliability", value: "Truth Gap" }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, isHovered ? 5000 : 3000);
-
-    return () => clearInterval(interval);
-  }, [isHovered, images.length]);
 
   return (
     <section className="py-16 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
@@ -60,33 +45,16 @@ const BlogPromoBlock = () => {
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative h-64 lg:h-80 overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentImageIndex}
-                    src={images[currentImageIndex]}
-                    alt="AI Truth Gap Investigation"
-                    className="w-full h-full object-cover"
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                </AnimatePresence>
+                <motion.img
+                  src="/lovable-uploads/bd40b452-dfa6-4ca0-93aa-74a728f09759.png"
+                  alt="AI Truth Gap Investigation - Neural Network Visualization"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                />
                 
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
-                {/* Image Indicators */}
-                <div className="absolute bottom-4 left-4 flex gap-2">
-                  {images.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex ? 'bg-red-500' : 'bg-white/40'
-                      }`}
-                    />
-                  ))}
-                </div>
               </div>
 
               {/* Content Section */}
