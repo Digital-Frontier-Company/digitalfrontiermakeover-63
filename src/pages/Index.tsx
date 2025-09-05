@@ -51,6 +51,7 @@ const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
 const PricingToggle = lazy(() => import("@/components/PricingToggle"));
 const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
+const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
 const Index = () => {
   // Use the FAQ toggle hook
   useFaqToggle();
@@ -726,6 +727,11 @@ const Index = () => {
         {/* Progress bar */}
         <div className="absolute bottom-0 left-0 h-1 bg-signal-lime w-1/3 transition-all duration-300"></div>
       </div>
+
+      {/* GENERATIVE SEARCH PRO SECTION */}
+      <Suspense fallback={<div className="py-20 bg-slate-900/50 animate-pulse"></div>}>
+        <GenerativeSearchProSection />
+      </Suspense>
 
       {/* CASE STUDY SLIDER - KPI-driven showcase */}
       <Suspense fallback={<div className="py-20 bg-slate-900/50 animate-pulse"></div>}>
