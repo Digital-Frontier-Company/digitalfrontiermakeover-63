@@ -248,6 +248,7 @@
   }
   100% {
     transform: translateX(50px) translateY(50px);
+  }
 }
 
 /* Falling specs animation */
