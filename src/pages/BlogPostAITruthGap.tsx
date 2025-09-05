@@ -94,6 +94,28 @@ const BlogPostAITruthGap = () => {
 
         {/* Article Content */}
         <article className="container mx-auto max-w-4xl px-4 py-16 space-y-12">
+          {/* Featured Image */}
+          <div className="relative group cursor-pointer overflow-hidden rounded-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent z-10" />
+            
+            <img
+              src="/lovable-uploads/dfb97795-57a3-4a27-941a-302022ec095e.png"
+              alt="AI Neural Network Visualization - The Truth Gap Investigation"
+              className="w-full h-64 md:h-80 lg:h-96 object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+            />
+            
+            {/* Interactive Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+              <div className="bg-background/90 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <span className="text-sm font-medium text-primary">AI Information Networks</span>
+              </div>
+            </div>
+            
+            {/* Animated Border */}
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-2xl transition-all duration-500 animate-pulse" />
+          </div>
+
           {/* Introduction */}
           <Card className="border-0 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm">
             <CardContent className="p-8">
