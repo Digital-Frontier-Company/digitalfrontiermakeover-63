@@ -11,11 +11,11 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <LazyImage
-                src="/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
+                src="/lovable-uploads/6a6a7a60-bc25-4bd4-af32-b53f83a8c0a4.png"
                 alt="Digital Frontier Company"
-                className="h-8 w-auto"
-                displayWidth={32}
-                displayHeight={32}
+                className="h-12 w-auto"
+                displayWidth={48}
+                displayHeight={48}
               />
             </div>
             <p className="text-slate-400 mb-4">

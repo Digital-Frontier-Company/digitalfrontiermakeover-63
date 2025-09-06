@@ -143,6 +143,20 @@ const AIPlansLanding = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
+                {/* Company Logo */}
+                <motion.div 
+                  className="mb-8 flex justify-center md:justify-start"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                >
+                  <img 
+                    src="/lovable-uploads/6a6a7a60-bc25-4bd4-af32-b53f83a8c0a4.png" 
+                    alt="Digital Frontier Company Logo" 
+                    className="w-64 h-auto max-w-sm"
+                  />
+                </motion.div>
+
                 <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
                   AI That Works Both Ways
                 </h1>
