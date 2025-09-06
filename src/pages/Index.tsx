@@ -470,7 +470,7 @@ const Index = () => {
       {/* BLOG PROMOTION BLOCK */}
       <BlogPromoBlock />
 
-      {/* BLUEPRINT SECTION - Enhanced with flashy animations */}
+      {/* DIGITAL FRONTIER BLUEPRINT - Restructured with wireframe approach */}
       <section className="py-20 relative overflow-hidden" aria-labelledby="blueprint-heading">
         {/* Animated background with gradient waves */}
         <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-purple-900/20 to-electric-azure/10">
@@ -481,240 +481,213 @@ const Index = () => {
         </div>
 
         <div className="mx-auto max-w-6xl px-6 relative z-10">
-          <motion.div className="text-center mb-16" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <motion.h2 id="blueprint-heading" className="font-poppins font-bold text-soft-white mb-4 bg-gradient-to-r from-electric-azure via-soft-white to-ultraviolet bg-clip-text text-transparent" style={{
-            fontSize: 'clamp(32px, 5vw, 48px)'
-          }} initial={{
-            scale: 0.9
-          }} whileInView={{
-            scale: 1
-          }} transition={{
-            duration: 0.6,
-            delay: 0.2
-          }} viewport={{
-            once: true
-          }}>
-              The Digital Frontier Blueprint
+          {/* Answer-First Boxes */}
+          <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
+            <motion.h2 id="blueprint-heading" className="font-poppins font-bold text-soft-white mb-4 bg-gradient-to-r from-electric-azure via-soft-white to-ultraviolet bg-clip-text text-transparent" style={{ fontSize: 'clamp(32px, 5vw, 48px)' }}>
+              AI That Works Both Ways
             </motion.h2>
-            <motion.p className="font-inter text-xl text-soft-white/80 max-w-2xl mx-auto" initial={{
-            opacity: 0
-          }} whileInView={{
-            opacity: 1
-          }} transition={{
-            duration: 0.6,
-            delay: 0.4
-          }} viewport={{
-            once: true
-          }}>
-              Three pillars that transform B2B marketing from guesswork to science. Based on analysis of 10,000+ campaigns and validated by McKinsey's 2024 Digital Marketing Research.
+            <motion.p className="font-inter text-xl text-soft-white/80 max-w-2xl mx-auto mb-12">
+              Get found online. Run smarter inside. Digital Frontier delivers visibility + efficiency with AI systems built for growth.
             </motion.p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[{
-            title: "AI-Powered Lead Generation",
-            description: "Your AI bloodhound sniffs out hot-money prospects before they even blink—then drags them straight into a funnel that rewrites itself on the fly. Studies show AI-powered lead scoring improves conversion rates by 59% (Salesforce Research, 2024).",
-            icon: "/lovable-uploads/4ccc7a08-05c5-4500-9fba-149c0ec813cd.png",
-            gradient: "from-cyan-400/20 to-blue-600/20",
-            glowColor: "shadow-cyan-400/30"
-          }, {
-            title: "Data-Driven Insights",
-            description: "What gets measured gets mastered—and monetized. Companies using data-driven marketing achieve 5-8x ROI compared to traditional methods (HubSpot, 2024).",
-            icon: "/lovable-uploads/ac9d962e-7efe-4768-9ec0-774cd30f2d5d.png",
-            gradient: "from-purple-400/20 to-pink-600/20",
-            glowColor: "shadow-purple-400/30"
-          }, {
-            title: "Answer Engine Optimization (AEO)",
-            description: "The old SEO is dying. The new game? Own the answers. AEO-optimized content gets cited 73% more often in AI responses (BrightEdge, 2024).",
-            icon: "/lovable-uploads/183a006c-d7ab-43aa-b457-8d5284912ab6.png",
-            gradient: "from-emerald-400/20 to-teal-600/20",
-            glowColor: "shadow-emerald-400/30"
-          }].map((card, index) => <motion.div key={index} className={`group relative bg-card/80 backdrop-blur-sm border border-border/50 p-8 rounded-2xl transition-all duration-500 hover:border-electric-azure/50 hover:bg-card/90 hover:scale-105 hover:shadow-2xl ${card.glowColor}`} initial={{
-            opacity: 0,
-            y: 50,
-            scale: 0.9
-          }} whileInView={{
-            opacity: 1,
-            y: 0,
-            scale: 1
-          }} transition={{
-            duration: 0.6,
-            delay: index * 0.2,
-            type: "spring",
-            stiffness: 100
-          }} viewport={{
-            once: true
-          }} whileHover={{
-            y: -10,
-            transition: {
-              duration: 0.3
-            }
-          }}>
-                {/* Animated background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                
-                {/* Animated border effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-electric-azure/50 via-transparent to-ultraviolet/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
-              background: 'linear-gradient(45deg, transparent 30%, rgba(47,128,255,0.3) 50%, transparent 70%)'
-            }}></div>
-                
-                <div className="relative z-10">
-                  <motion.div className="mb-6 filter drop-shadow-lg flex justify-center items-center h-32" whileHover={{
-                scale: 1.2,
-                rotate: [0, -10, 10, 0],
-                transition: {
-                  duration: 0.5
-                }
-              }}>
-                    {typeof card.icon === 'string' && card.icon.startsWith('/') ? <img src={card.icon} alt={card.title} className={`h-28 w-28 object-contain ${index === 1 ? 'brightness-0 saturate-100' : ''}`} style={index === 1 ? {
-                  filter: 'brightness(0) saturate(100%) invert(32%) sepia(77%) saturate(4574%) hue-rotate(270deg) brightness(97%) contrast(91%)'
-                } : {}} /> : <span className="text-7xl">{card.icon}</span>}
-                  </motion.div>
-                  
-                  <motion.h3 className="font-poppins font-semibold text-xl text-soft-white mb-4 group-hover:text-electric-azure transition-colors duration-300" whileHover={{
-                x: 5
-              }}>
-                    {index === 0 && <>
-                        <span className="bg-gradient-to-r from-signal-lime to-electric-azure bg-clip-text text-transparent font-extrabold">Predict. Persuade. Profit.</span>
-                      </>}
-                    {index === 1 && <>
-                        <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent font-extrabold">Data-Driven Insights</span>
-                      </>}
-                    {index === 2 && <>
-                        <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent font-extrabold">Answer Engine Optimization</span> <span className="text-soft-white">(AEO)</span>
-                      </>}
-                  </motion.h3>
-                  
-                   <motion.p className="font-inter text-soft-white/70 leading-relaxed group-hover:text-soft-white/90 transition-colors duration-300 mb-6" whileHover={{
-                x: 5
-              }}>
-                     {card.description}
-                   </motion.p>
-                   
-                   {/* Special content for first card */}
-                   {index === 0 && <div className="space-y-4">
-                       <ul className="space-y-3 text-soft-white/80">
-                         <li className="flex items-start">
-                           <span className="text-signal-lime mr-2">⚡</span>
-                           <span className="text-sm">Live intent signals—no more finger-in-the-wind guessing</span>
-                         </li>
-                         <li className="flex items-start">
-                           <span className="text-ultraviolet mr-2">🧠</span>
-                           <span className="text-sm">Auto-personalized outreach that feels hand-typed (because it basically is)</span>
-                         </li>
-                         <li className="flex items-start">
-                           <span className="text-electric-azure mr-2">📈</span>
-                           <span className="text-sm">Real-time funnel tuning—watch those green arrows climb while you sip coffee</span>
-                         </li>
-                       </ul>
-                       
-                        <div className="mt-6 text-center">
-                         <motion.button className="bg-gradient-to-r from-signal-lime to-electric-azure text-deep-navy px-5 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform duration-200" whileHover={{
-                    scale: 1.05
-                  }} whileTap={{
-                    scale: 0.95
-                  }}>
-                           See It Hunt →
-                         </motion.button>
-                         <p className="text-xs text-soft-white/60 mt-3">
-                           Beta seats vanish fast—grab yours before your competitors wake up.
-                         </p>
-                       </div>
-                     </div>}
-                    
-                    {/* Special content for second card */}
-                    {index === 1 && <div className="space-y-4">
-                        <ul className="space-y-3 text-soft-white/80">
-                          <li className="flex items-start">
-                            <span className="text-electric-azure mr-3 text-lg">📊</span>
-                            <span className="text-sm">Predictive analytics that show you who's buying next (before they even click)</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-ultraviolet mr-3 text-lg">🛰️</span>
-                            <span className="text-sm">Performance forecasting so sharp, it's practically time travel</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-signal-lime mr-3 text-lg">⚙️</span>
-                            <span className="text-sm">Actionable intelligence from your raw chaos of spreadsheets and dashboards</span>
-                          </li>
-                        </ul>
-                        
-                         <div className="mt-6 text-center">
-                          <motion.button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform duration-200" whileHover={{
-                    scale: 1.05
-                  }} whileTap={{
-                    scale: 0.95
-                  }}>
-                            See The Future →
-                          </motion.button>
-                          <p className="text-xs text-soft-white/60 mt-3">
-                            Your gut's good. This makes it lethal.
-                          </p>
-                        </div>
-                      </div>}
-                     
-                     {/* Special content for third card (AEO) */}
-                     {index === 2 && <div className="space-y-4">
-                         <ul className="space-y-3 text-soft-white/80">
-                           <li className="flex items-start">
-                             <span className="text-electric-azure mr-3 text-lg">🎯</span>
-                             <span className="text-sm">Voice search ready – show up when they ask, "Hey Siri…" or bark at Alexa</span>
-                           </li>
-                           <li className="flex items-start">
-                             <span className="text-ultraviolet mr-3 text-lg">🤖</span>
-                             <span className="text-sm">AI-powered ranking – trained to make bots love you, and humans trust you</span>
-                           </li>
-                           <li className="flex items-start">
-                             <span className="text-signal-lime mr-3 text-lg">🛠️</span>
-                             <span className="text-sm">Proprietary methodology – built in the trenches, not from some guru's course</span>
-                           </li>
-                         </ul>
-                         
-                         <div className="mt-6 text-center">
-                           <motion.button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform duration-200" whileHover={{
-                    scale: 1.05
-                  }} whileTap={{
-                    scale: 0.95
-                  }}>
-                             Own The Answer Box →
-                           </motion.button>
-                           <p className="text-xs text-soft-white/60 mt-3">
-                             Because whoever answers first... wins.
-                           </p>
-                         </div>
-                       </div>}
-                   
-                   {/* Pulse effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-electric-azure/10 opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-500"></div>
-                </div>
-              </motion.div>)}
+
+          {/* Answer-First Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {[
+              {
+                title: "What is it?",
+                answer: "A digital strategy firm helping businesses grow in the AI era.",
+                icon: "🚀"
+              },
+              {
+                title: "Who is it for?",
+                answer: "Companies that want both more customers and better efficiency.",
+                icon: "🎯"
+              },
+              {
+                title: "How it works:",
+                answer: "• AI visibility: dominate generative + search results\n• AI backend: streamline operations with automation\n• End-to-end: visibility + efficiency in one system",
+                icon: "⚙️"
+              },
+              {
+                title: "Cost:",
+                answer: "Pilots start from $2,500–$7,500 depending on scope.",
+                icon: "💰"
+              }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 rounded-2xl hover:border-electric-azure/50 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-semibold text-electric-azure mb-2">{item.title}</h3>
+                <p className="text-soft-white/80 text-sm whitespace-pre-line">{item.answer}</p>
+              </motion.div>
+            ))}
           </div>
-          
+
+          {/* Pain → Agitate → Solution Section */}
+          <motion.div 
+            className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border border-red-800/30 p-8 rounded-2xl mb-20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-soft-white mb-6 text-center">The Internet Changed. Most Businesses Didn't.</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-red-400 mb-3">The Pain</h3>
+                <p className="text-soft-white/80">Customers now ask ChatGPT and Google AI for answers—not just search engines. If you're not showing up, you don't exist.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-orange-400 mb-3">The Reality</h3>
+                <p className="text-soft-white/80">Meanwhile, competitors are using AI to automate their backend, cutting costs and scaling faster while you stay stuck.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-signal-lime mb-3">The Solution</h3>
+                <p className="text-soft-white/80">Digital Frontier builds end-to-end AI systems so you win on both fronts—visible outside, efficient inside.</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Proof Section */}
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Proven Results</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { metric: "32% lower", description: "ad costs with AI-optimized funnels", icon: "📉" },
+                { metric: "3x more", description: "leads from GEO visibility strategies", icon: "📈" },
+                { metric: "15 hours/week", description: "saved with backend AI automation", icon: "⏰" }
+              ].map((proof, index) => (
+                <motion.div 
+                  key={index}
+                  className="text-center bg-card/60 p-6 rounded-2xl border border-electric-azure/30"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-4xl mb-3">{proof.icon}</div>
+                  <div className="text-2xl font-bold text-signal-lime mb-2">{proof.metric}</div>
+                  <p className="text-soft-white/80">{proof.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Mechanism Section (How It Works) */}
+          <motion.div 
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Our Two-Sided AI Framework</h2>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-800/30 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-6">Visibility (Front-End)</h3>
+                <ul className="space-y-4 text-soft-white/80">
+                  <li className="flex items-start">
+                    <span className="text-cyan-400 mr-3">•</span>
+                    Generative Engine Optimization (GEO)
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-400 mr-3">•</span>
+                    Answer Engine Optimization (AEO)
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cyan-400 mr-3">•</span>
+                    Conversion funnels + omnichannel campaigns
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/40 border border-purple-800/30 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-purple-400 mb-6">Efficiency (Backend)</h3>
+                <ul className="space-y-4 text-soft-white/80">
+                  <li className="flex items-start">
+                    <span className="text-purple-400 mr-3">•</span>
+                    AI workflows & automation
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-purple-400 mr-3">•</span>
+                    Data-driven ops intelligence
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-purple-400 mr-3">•</span>
+                    Cost-cutting + scaling systems
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Offer Section */}
+          <motion.div 
+            className="bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/50 p-8 rounded-2xl mb-20 text-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold text-soft-white mb-4">One Partner. Two Wins.</h2>
+            <p className="text-xl text-soft-white/80 mb-8 max-w-2xl mx-auto">
+              Most agencies give you ads or SEO. We build systems. Visibility + efficiency, wrapped into one growth engine.
+            </p>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                to="/modern-contact-form" 
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-deep-navy bg-gradient-to-r from-signal-lime to-electric-azure rounded-full transition-all duration-300 hover:shadow-xl"
+              >
+                Launch AI Visibility + Efficiency Today →
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Risk Reversal / Trust Section */}
+          <motion.div 
+            className="bg-card/60 border border-border/50 p-8 rounded-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-4xl mb-4">🛡️</div>
+            <p className="text-lg text-soft-white/90 italic">
+              "No AI hype. Just measurable outcomes. If we don't deliver visible results in 90 days, we'll continue working at no extra cost until we do."
+            </p>
+          </motion.div>
+
           {/* Simplified floating particles */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({
-            length: 2
-          }).map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-electric-azure/40 rounded-full" style={{
-            left: `${30 + i * 40}%`,
-            top: `${30 + i * 40}%`
-          }} animate={{
-            y: [-20, -100, -20],
-            opacity: [0, 1, 0]
-          }} transition={{
-            duration: 6,
-            repeat: Infinity,
-            delay: i * 3
-          }} />)}
+            {Array.from({ length: 3 }).map((_, i) => (
+              <motion.div 
+                key={i}
+                className="absolute w-2 h-2 bg-electric-azure/40 rounded-full" 
+                style={{
+                  left: `${20 + i * 30}%`,
+                  top: `${20 + i * 25}%`
+                }}
+                animate={{
+                  y: [-20, -100, -20],
+                  opacity: [0, 1, 0]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: i * 2
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>
