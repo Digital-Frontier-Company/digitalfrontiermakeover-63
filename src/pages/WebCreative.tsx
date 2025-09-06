@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import OnboardingForm from "@/components/OnboardingForm";
 
 const WebCreative = () => {
   return (
@@ -183,6 +184,17 @@ const WebCreative = () => {
                 </p>
               </div>
             </div>
+          </section>
+
+          {/* Onboarding Form Section */}
+          <section className="mt-16 pt-16 border-t border-gray-600">
+            <h3 className="text-3xl font-bold text-center mb-8" style={{ color: '#07e2fa' }}>
+              Ready to Get Started?
+            </h3>
+            <p className="text-center mb-8 max-w-2xl mx-auto" style={{ color: '#07f07f' }}>
+              Complete our comprehensive onboarding form to begin your digital transformation journey with Digital Frontier Company.
+            </p>
+            <OnboardingForm />
           </section>
         </div>
       </div>
