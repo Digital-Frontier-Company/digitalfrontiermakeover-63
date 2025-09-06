@@ -158,9 +158,9 @@ const AIPlansLanding = () => {
                 </button>
               </motion.div>
 
-              <div className="hero-visual relative h-[500px]">
+              <div className="hero-visual relative h-[600px] md:h-[500px]">
                 <motion.div 
-                  className="floating-card absolute top-5 left-5 w-70 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-8 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
+                  className="floating-card absolute top-0 left-0 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -174,7 +174,7 @@ const AIPlansLanding = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="floating-card absolute top-30 right-10 w-65 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-8 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
+                  className="floating-card absolute top-20 right-0 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -188,7 +188,7 @@ const AIPlansLanding = () => {
                 </motion.div>
 
                 <motion.div 
-                  className="floating-card absolute bottom-10 left-15 w-60 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-8 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
+                  className="floating-card absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 hover:-translate-x-1/2 transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
