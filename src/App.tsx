@@ -18,6 +18,7 @@ const Pricing = lazy(() => import('@/pages/Pricing'));
 const FAQ = lazy(() => import('@/pages/FAQ'));
 const Newsletter = lazy(() => import('@/pages/Newsletter'));
 const SiteMap = lazy(() => import('@/pages/SiteMap'));
+const AIPlansLanding = lazy(() => import('@/pages/AIPlansLanding'));
 const Blog = lazy(() => import('@/pages/Blog'));
 const BlogPost = lazy(() => import('@/pages/BlogPost'));
 const ContentCreationAgent = lazy(() => import('@/pages/ContentCreationAgent'));
@@ -153,8 +154,9 @@ function App() {
             <Route path="/team-expertise" element={<MainLayout><TeamExpertise /></MainLayout>} />
             <Route path="/complete-aeo-guide-2025" element={<MainLayout><CompleteAEOGuide /></MainLayout>} />
             <Route path="/ai-voice-assistants" element={<MainLayout><Suspense fallback={<PageLoader />}><AIVoiceAssistants /></Suspense></MainLayout>} />
-            <Route path="/web-creative" element={<MainLayout><WebCreative /></MainLayout>} />
-            <Route path="/modern-contact-form" element={<ModernContactForm />} />
+             <Route path="/web-creative" element={<MainLayout><WebCreative /></MainLayout>} />
+             <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
+             <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
