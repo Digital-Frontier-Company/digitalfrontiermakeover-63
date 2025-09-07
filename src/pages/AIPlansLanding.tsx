@@ -336,7 +336,7 @@ const AIPlansLanding = () => {
                   }}
                 >
                   <div className="flex items-center mb-2">
-                    <Target className="h-5 w-5 text-violet-400 mr-2" />
+                    <img src="/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png" alt="GEO Optimization" className="h-8 w-8 mr-3" />
                     <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
                       GEO Optimization
                     </h3>
@@ -357,7 +357,7 @@ const AIPlansLanding = () => {
                   }}
                 >
                   <div className="flex items-center mb-2">
-                    <Bot className="h-5 w-5 text-cyan-400 mr-2" />
+                    <img src="/lovable-uploads/84025ece-8b25-4377-a42a-96d97dc442c4.png" alt="AI Agents" className="h-8 w-8 mr-3" />
                     <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
                       AI Agents
                     </h3>
@@ -378,7 +378,7 @@ const AIPlansLanding = () => {
                   }}
                 >
                   <div className="flex items-center mb-2">
-                    <TrendingUp className="h-5 w-5 text-green-400 mr-2" />
+                    <img src="/lovable-uploads/55736146-dcd3-4e52-a771-2aaaff50545f.png" alt="AEO Strategy" className="h-8 w-8 mr-3" />
                     <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
                       AEO Strategy
                     </h3>
@@ -411,12 +411,12 @@ const AIPlansLanding = () => {
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 {[
-                  { Icon: TrendingUp, title: "KPI Framework", desc: "Track what matters in GEO" },
-                  { Icon: Target, title: "Content Strategy", desc: "Win AI recommendation engines" },
-                  { Icon: Zap, title: "Implementation", desc: "90-day action plan included" }
+                  { icon: "/lovable-uploads/84025ece-8b25-4377-a42a-96d97dc442c4.png", title: "KPI Framework", desc: "Track what matters in GEO" },
+                  { icon: "/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png", title: "Content Strategy", desc: "Win AI recommendation engines" },
+                  { icon: "/lovable-uploads/55736146-dcd3-4e52-a771-2aaaff50545f.png", title: "Implementation", desc: "90-day action plan included" }
                 ].map((benefit, index) => (
                   <div key={index} className="bg-white/5 p-8 rounded-2xl border border-violet-500/20">
-                    <benefit.Icon className="h-10 w-10 text-violet-400 mb-4" />
+                    <img src={benefit.icon} alt={benefit.title} className="h-16 w-16 mb-4 mx-auto" />
                     <h4 className="font-bold text-white mb-2">{benefit.title}</h4>
                     <p className="text-slate-300">{benefit.desc}</p>
                   </div>
@@ -449,7 +449,7 @@ const AIPlansLanding = () => {
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {[
                 {
-                  Icon: Target,
+                  icon: "/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png",
                   title: "Generative Engine Optimization (GEO)",
                   description: "Own ChatGPT, Perplexity, and Google AI results. Our proven GEO strategies get your business recommended by AI engines.",
                   features: [
@@ -460,7 +460,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  Icon: Bot,
+                  icon: "/lovable-uploads/84025ece-8b25-4377-a42a-96d97dc442c4.png",
                   title: "AI Agent Packages",
                   description: "Custom AI assistants that work 24/7. From Basic to Enterprise - we have an AI solution for every business need.",
                   features: [
@@ -471,7 +471,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  icon: "🎙️",
+                  icon: "/lovable-uploads/b1196f95-2bb3-4bc0-84c0-600c14144107.png",
                   title: "AI Voice Assistants",
                   description: "Human-like voice technology that learns and sells. Transform customer experience with cutting-edge voice AI.",
                   features: [
@@ -482,7 +482,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  Icon: Search,
+                  icon: "/lovable-uploads/5d8b2f67-144c-4aca-93ea-ebdad916cb35.png",
                   title: "Answer Engine Optimization (AEO)",
                   description: "Capture voice search and featured snippets. Optimize for how people actually search in the AI era.",
                   features: [
@@ -493,7 +493,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  Icon: Zap,
+                  icon: "/lovable-uploads/55736146-dcd3-4e52-a771-2aaaff50545f.png",
                   title: "AI Marketing Automation",
                   description: "Complete marketing automation powered by AI. Predictive analytics, personalization, and intelligent campaigns.",
                   features: [
@@ -504,7 +504,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  icon: "🏢",
+                  icon: "/lovable-uploads/a4e6279b-bb9d-49f3-b9c3-030e567619e2.png",
                   title: "Enterprise AI Solutions",
                   description: "Complete digital transformation for B2B, finance, real estate, and crypto sectors. Custom AI systems that scale.",
                   features: [
@@ -525,14 +525,14 @@ const AIPlansLanding = () => {
                 >
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-t-3xl"></div>
                   
-                  <span className="text-5xl mb-6 block">{service.icon}</span>
+                  <img src={service.icon} alt={service.title} className="h-16 w-16 mb-6 mx-auto" />
                   <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-slate-300 mb-8 leading-relaxed">{service.description}</p>
                   
                   <ul className="space-y-2 mb-8">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="text-slate-300 relative pl-6">
-                        <span className="absolute left-0 text-emerald-400 font-bold">✓</span>
+                        <CheckCircle className="absolute left-0 h-4 w-4 text-emerald-400" />
                         {feature}
                       </li>
                     ))}
