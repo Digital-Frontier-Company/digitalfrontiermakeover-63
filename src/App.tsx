@@ -73,6 +73,7 @@ import ModernContactForm from '@/pages/ModernContactForm';
 import { Analytics } from '@vercel/analytics/react';
 import WebCreative from './pages/WebCreative';
 import DigitalMarketing from './pages/DigitalMarketing';
+import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
 
 // Loading component for lazy routes
 const PageLoader = () => (
@@ -157,6 +158,7 @@ function App() {
             <Route path="/ai-voice-assistants" element={<MainLayout><Suspense fallback={<PageLoader />}><AIVoiceAssistants /></Suspense></MainLayout>} />
              <Route path="/web-creative" element={<MainLayout><WebCreative /></MainLayout>} />
              <Route path="/digital-marketing" element={<MainLayout><DigitalMarketing /></MainLayout>} />
+             <Route path="/contact-for-digital-marketing" element={<ContactForDigitalMarketing />} />
              <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
              <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
