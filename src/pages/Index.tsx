@@ -5,7 +5,7 @@ import SEOSchema from "@/components/SEOSchema";
 import { LazyImage } from "@/components/LazyImage";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
-import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check } from 'lucide-react';
+import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 
@@ -340,21 +340,27 @@ const Index = () => {
           delay: 0.8
         }}>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
-              <div className="text-4xl mb-3">💰</div>
+              <div className="flex justify-center mb-3">
+                <DollarSign className="w-8 h-8 text-[#4EE2EC]" />
+              </div>
               <div className="text-3xl font-bold mb-2" style={{
               color: '#4EE2EC'
             }}>$50,000+</div>
               <div className="text-sm text-slate-300">Invested in AI testing</div>
             </div>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
-              <div className="text-4xl mb-3">⚡</div>
+              <div className="flex justify-center mb-3">
+                <Zap className="w-8 h-8 text-[#8FB31D]" />
+              </div>
               <div className="text-3xl font-bold mb-2" style={{
               color: '#8FB31D'
             }}>15+ Hours</div>
               <div className="text-sm text-slate-300">Saved weekly</div>
             </div>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
-              <div className="text-4xl mb-3">📈</div>
+              <div className="flex justify-center mb-3">
+                <TrendingUp className="w-8 h-8 text-purple-400" />
+              </div>
               <div className="text-3xl font-bold mb-2 text-purple-400">25%</div>
               <div className="text-sm text-slate-300">Average revenue boost</div>
             </div>
@@ -435,7 +441,9 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-              <div className="text-5xl mb-4">🌱</div>
+              <div className="flex justify-center mb-4">
+                <Sprout className="w-12 h-12 text-green-400" />
+              </div>
               <h3 className="text-2xl font-bold text-green-400 mb-4">From Seed to Giant Oak</h3>
               <p className="text-slate-300 leading-relaxed">
                 Your business AI transformation starts as a small seed. With the right conditions—proper tools, 
@@ -456,7 +464,9 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-              <div className="text-5xl mb-4">🚀</div>
+              <div className="flex justify-center mb-4">
+                <Rocket className="w-12 h-12 text-cyan-400" />
+              </div>
               <h3 className="text-2xl font-bold text-cyan-400 mb-4">Breaking Free from Gravity</h3>
               <p className="text-slate-300 leading-relaxed">
                 Traditional marketing feels heavy, expensive, and limiting—like Earth's gravity holding you down. 
@@ -477,7 +487,9 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-              <div className="text-5xl mb-4">🔄</div>
+              <div className="flex justify-center mb-4">
+                <RotateCcw className="w-12 h-12 text-blue-400" />
+              </div>
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Natural Growth Cycles</h3>
               <p className="text-slate-300 leading-relaxed">
                 Like seasons that bring renewal, AI creates cycles of optimization. Each iteration harvests better 
@@ -499,7 +511,9 @@ const Index = () => {
         }} viewport={{
           once: true
         }}>
-            <div className="text-6xl mb-6">💎</div>
+            <div className="flex justify-center mb-6">
+              <Gem className="w-16 h-16 text-yellow-400" />
+            </div>
             <h3 className="text-3xl font-bold mb-6">
               <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
                 From Coal to Diamond
@@ -608,19 +622,19 @@ const Index = () => {
             {[{
             title: "What is it?",
             answer: "A digital strategy firm helping businesses grow in the AI era.",
-            icon: "🚀"
+            icon: <Rocket className="w-8 h-8" />
           }, {
             title: "Who is it for?",
             answer: "Companies that want both more customers and better efficiency.",
-            icon: "🎯"
+            icon: <Target className="w-8 h-8" />
           }, {
             title: "How it works:",
             answer: "• AI visibility: dominate generative + search results\n• AI backend: streamline operations with automation\n• End-to-end: visibility + efficiency in one system",
-            icon: "⚙️"
+            icon: <Settings className="w-8 h-8" />
           }, {
             title: "Cost:",
             answer: "Pilots start from $2,500–$7,500 depending on scope.",
-            icon: "💰"
+            icon: <DollarSign className="w-8 h-8" />
           }].map((item, index) => <motion.div key={index} className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 rounded-2xl hover:border-electric-azure/50 transition-all duration-300" initial={{
             opacity: 0,
             y: 20
@@ -633,7 +647,7 @@ const Index = () => {
           }} viewport={{
             once: true
           }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="flex justify-center mb-3 text-electric-azure">{item.icon}</div>
                 <h3 className="font-semibold text-electric-azure mb-2">{item.title}</h3>
                 <p className="text-soft-white/80 text-sm whitespace-pre-line">{item.answer}</p>
               </motion.div>)}
@@ -685,22 +699,22 @@ const Index = () => {
               {[{
               metric: "32% lower",
               description: "ad costs with AI-optimized funnels",
-              icon: "📉"
+              icon: <TrendingDown className="w-10 h-10" />
             }, {
               metric: "3x more",
               description: "leads from GEO visibility strategies",
-              icon: "📈"
+              icon: <BarChart3 className="w-10 h-10" />
             }, {
               metric: "15 hours/week",
               description: "saved with backend AI automation",
-              icon: "⏰"
+              icon: <Clock className="w-10 h-10" />
             }].map((proof, index) => <motion.div key={index} className="text-center bg-card/60 p-6 rounded-2xl border border-electric-azure/30" whileHover={{
               scale: 1.05,
               y: -5
             }} transition={{
               duration: 0.3
             }}>
-                  <div className="text-4xl mb-3">{proof.icon}</div>
+                  <div className="flex justify-center mb-3 text-signal-lime">{proof.icon}</div>
                   <div className="text-2xl font-bold text-signal-lime mb-2">{proof.metric}</div>
                   <p className="text-soft-white/80">{proof.description}</p>
                 </motion.div>)}
@@ -797,7 +811,9 @@ const Index = () => {
         }} viewport={{
           once: true
         }}>
-            <div className="text-4xl mb-4">🛡️</div>
+            <div className="flex justify-center mb-4">
+              <Shield className="w-10 h-10 text-blue-400" />
+            </div>
             <p className="text-lg text-soft-white/90 italic">
               "No AI hype. Just measurable outcomes. If we don't deliver visible results in 90 days, we'll continue working at no extra cost until we do."
             </p>
@@ -1010,7 +1026,10 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="inline-flex items-center bg-gradient-to-r from-cyan-500/20 to-green-500/20 px-6 py-2 rounded-full border border-cyan-500/30 mb-6">
-                <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider">🚀 New Launch</span>
+                <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider flex items-center gap-2">
+                  <Rocket className="w-4 h-4" />
+                  New Launch
+                </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
                 Feeling Lost in AI?
@@ -1025,17 +1044,23 @@ const Index = () => {
             
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/20">
-                <div className="text-3xl mb-3">💰</div>
+                <div className="flex justify-center mb-3">
+                  <DollarSign className="w-8 h-8 text-cyan-400" />
+                </div>
                 <div className="text-2xl font-bold text-cyan-400">$50,000+</div>
                 <p className="text-sm text-slate-300">Invested in AI testing</p>
               </div>
               <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/20">
-                <div className="text-3xl mb-3">⚡</div>
+                <div className="flex justify-center mb-3">
+                  <Zap className="w-8 h-8 text-green-400" />
+                </div>
                 <div className="text-2xl font-bold text-green-400">15+ Hours</div>
                 <p className="text-sm text-slate-300">Saved weekly</p>
               </div>
               <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/20">
-                <div className="text-3xl mb-3">📈</div>
+                <div className="flex justify-center mb-3">
+                  <TrendingUp className="w-8 h-8 text-purple-400" />
+                </div>
                 <div className="text-2xl font-bold text-purple-400">25%</div>
                 <p className="text-sm text-slate-300">Average revenue boost</p>
               </div>
