@@ -179,7 +179,7 @@ const AIPlansLanding = () => {
                 <li><a href="#pricing" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">Pricing</a></li>
                 <li><a href="tel:901-657-5007" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">901-657-5007</a></li>
               </ul>
-              <a href="#contact" className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-6 py-3 rounded-full font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 no-underline">
+              <a href="/modern-contact-form" className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-6 py-3 rounded-full font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 no-underline">
                 Free Strategy Call
               </a>
             </div>
@@ -269,7 +269,7 @@ const AIPlansLanding = () => {
                 </div>
                 
                 <div className="flex flex-wrap gap-4 md:flex-nowrap">
-                  <a href="#contact" className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 relative overflow-hidden group no-underline flex-1 md:flex-none">
+                  <a href="/modern-contact-form" className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 relative overflow-hidden group no-underline flex-1 md:flex-none">
                     <span className="relative z-10">Free Strategy Session</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                   </a>
@@ -487,7 +487,7 @@ const AIPlansLanding = () => {
                       </li>)}
                   </ul>
                   
-                  <a href="#contact" className="inline-block bg-violet-500/20 text-violet-400 px-6 py-3 rounded-full border border-violet-500/30 font-semibold transition-all hover:bg-violet-500/30 hover:-translate-y-1 no-underline">
+                  <a href="/modern-contact-form" className="inline-block bg-violet-500/20 text-violet-400 px-6 py-3 rounded-full border border-violet-500/30 font-semibold transition-all hover:bg-violet-500/30 hover:-translate-y-1 no-underline">
                     Learn More →
                   </a>
                 </motion.div>)}
