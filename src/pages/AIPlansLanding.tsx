@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { submitToHubSpot } from "@/utils/hubspot";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
+import { Target, Bot, TrendingUp, Search, Zap, Shield, CheckCircle, Star, Users, Award, ArrowRight, Calendar, Phone, Mail } from "lucide-react";
 
 const AIPlansLanding = () => {
   const [particles, setParticles] = useState<Array<{ id: number; left: string; top: string; delay: string; duration: string }>>([]);
@@ -334,9 +335,12 @@ const AIPlansLanding = () => {
                     animation: 'floatCard1 4s ease-in-out infinite'
                   }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    🎯 GEO Optimization
-                  </h3>
+                  <div className="flex items-center mb-2">
+                    <Target className="h-5 w-5 text-violet-400 mr-2" />
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+                      GEO Optimization
+                    </h3>
+                  </div>
                   <p className="text-slate-300 text-sm leading-relaxed">
                     Dominate ChatGPT, Perplexity & Google AI results with our proven Generative Engine Optimization strategies
                   </p>
@@ -352,9 +356,12 @@ const AIPlansLanding = () => {
                     animation: 'floatCard2 4s ease-in-out infinite 1s'
                   }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    🤖 AI Agents
-                  </h3>
+                  <div className="flex items-center mb-2">
+                    <Bot className="h-5 w-5 text-cyan-400 mr-2" />
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+                      AI Agents
+                    </h3>
+                  </div>
                   <p className="text-slate-300 text-sm leading-relaxed">
                     Custom AI assistants that handle customer service, content creation, and business processes 24/7
                   </p>
@@ -370,9 +377,12 @@ const AIPlansLanding = () => {
                     animation: 'floatCard3 4s ease-in-out infinite 2s'
                   }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    📈 AEO Strategy
-                  </h3>
+                  <div className="flex items-center mb-2">
+                    <TrendingUp className="h-5 w-5 text-green-400 mr-2" />
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+                      AEO Strategy
+                    </h3>
+                  </div>
                   <p className="text-slate-300 text-sm leading-relaxed">
                     Answer Engine Optimization to capture voice search and featured snippet traffic
                   </p>
@@ -401,12 +411,12 @@ const AIPlansLanding = () => {
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 {[
-                  { icon: "📊", title: "KPI Framework", desc: "Track what matters in GEO" },
-                  { icon: "🎯", title: "Content Strategy", desc: "Win AI recommendation engines" },
-                  { icon: "🚀", title: "Implementation", desc: "90-day action plan included" }
+                  { Icon: TrendingUp, title: "KPI Framework", desc: "Track what matters in GEO" },
+                  { Icon: Target, title: "Content Strategy", desc: "Win AI recommendation engines" },
+                  { Icon: Zap, title: "Implementation", desc: "90-day action plan included" }
                 ].map((benefit, index) => (
                   <div key={index} className="bg-white/5 p-8 rounded-2xl border border-violet-500/20">
-                    <span className="text-4xl mb-4 block">{benefit.icon}</span>
+                    <benefit.Icon className="h-10 w-10 text-violet-400 mb-4" />
                     <h4 className="font-bold text-white mb-2">{benefit.title}</h4>
                     <p className="text-slate-300">{benefit.desc}</p>
                   </div>
@@ -439,7 +449,7 @@ const AIPlansLanding = () => {
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {[
                 {
-                  icon: "🎯",
+                  Icon: Target,
                   title: "Generative Engine Optimization (GEO)",
                   description: "Own ChatGPT, Perplexity, and Google AI results. Our proven GEO strategies get your business recommended by AI engines.",
                   features: [
@@ -450,7 +460,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  icon: "🤖",
+                  Icon: Bot,
                   title: "AI Agent Packages",
                   description: "Custom AI assistants that work 24/7. From Basic to Enterprise - we have an AI solution for every business need.",
                   features: [
@@ -472,7 +482,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  icon: "📈",
+                  Icon: Search,
                   title: "Answer Engine Optimization (AEO)",
                   description: "Capture voice search and featured snippets. Optimize for how people actually search in the AI era.",
                   features: [
@@ -483,7 +493,7 @@ const AIPlansLanding = () => {
                   ]
                 },
                 {
-                  icon: "⚡",
+                  Icon: Zap,
                   title: "AI Marketing Automation",
                   description: "Complete marketing automation powered by AI. Predictive analytics, personalization, and intelligent campaigns.",
                   features: [
@@ -807,9 +817,15 @@ const AIPlansLanding = () => {
                 </button>
               </form>
               
-              <div className="text-center mt-8 text-slate-400">
-                <p>📞 Prefer to call? <a href="tel:901-657-5007" className="text-violet-400 no-underline">901-657-5007</a></p>
-                <p>✉️ Quick question? <a href="mailto:info@digitalfrontier.app" className="text-violet-400 no-underline">info@digitalfrontier.app</a></p>
+              <div className="text-center mt-8 text-slate-400 space-y-2">
+                <p className="flex items-center justify-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Prefer to call? <a href="tel:901-657-5007" className="text-violet-400 no-underline">901-657-5007</a>
+                </p>
+                <p className="flex items-center justify-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  Quick question? <a href="mailto:info@digitalfrontier.app" className="text-violet-400 no-underline">info@digitalfrontier.app</a>
+                </p>
               </div>
             </motion.div>
           </div>
