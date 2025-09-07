@@ -10,15 +10,19 @@ import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 
 // TypewriterText component with line break support
-const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) => {
+const TypewriterText = ({
+  text,
+  delay = 50
+}: {
+  text: string;
+  delay?: number;
+}) => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-
   useEffect(() => {
     // Split text by | for line breaks
     const lines = text.split('|');
     const fullText = lines.join('\n');
-    
     let i = 0;
     const timer = setInterval(() => {
       if (i < fullText.length) {
@@ -29,20 +33,14 @@ const TypewriterText = ({ text, delay = 50 }: { text: string; delay?: number }) 
         setTimeout(() => setShowCursor(false), 2000);
       }
     }, delay);
-
     return () => clearInterval(timer);
   }, [text, delay]);
-
-  return (
-    <div className="text-center">
-      {displayedText.split('\n').map((line, index) => (
-        <div key={index} className="block">
+  return <div className="text-center">
+      {displayedText.split('\n').map((line, index) => <div key={index} className="block">
           {line}
-        </div>
-      ))}
+        </div>)}
       {showCursor && <span className="typewriter-cursor">|</span>}
-    </div>
-  );
+    </div>;
 };
 
 // Lazy load below-the-fold components for performance
@@ -106,16 +104,13 @@ const Index = () => {
   useEffect(() => {
     let rafId: number;
     let lastTime = 0;
-    
     const handleMouseMove = (e: MouseEvent) => {
       const now = performance.now();
       if (now - lastTime < 16) return; // Throttle to ~60fps
       lastTime = now;
-      
       if (rafId) {
         cancelAnimationFrame(rafId);
       }
-      
       rafId = requestAnimationFrame(() => {
         setMousePosition({
           x: e.clientX,
@@ -123,8 +118,9 @@ const Index = () => {
         });
       });
     };
-    
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, {
+      passive: true
+    });
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       if (rafId) {
@@ -135,23 +131,18 @@ const Index = () => {
 
   // Intersection observer for animations - Optimized
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px'
-      }
-    );
-    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
     const sections = document.querySelectorAll('.animate-on-scroll');
     sections.forEach(section => observer.observe(section));
-    
     return () => {
       sections.forEach(section => observer.unobserve(section));
     };
@@ -178,214 +169,188 @@ const Index = () => {
   } = useScroll();
   const heroY = useTransform(scrollY, [0, 500], [0, -150]);
   const logoScale = useTransform(scrollY, [0, 300], [1, 1.1]);
-
   const marqueeControls = useAnimation();
-  const trustedLogos = [
-    "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
-    "/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png",
-    "/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png",
-    "/lovable-uploads/dd9a50a2-11ff-45a3-bdef-97597bd967b7.png",
-    "/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png",
-    "/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png"
-  ];
-  const extraTrustedImages = [
-    "/lovable-uploads/3c96b100-6325-4881-925d-941fa1d28582.png",
-    "/lovable-uploads/a8a47af6-c1fb-4ef5-9186-0149566a84ae.png",
-    "/lovable-uploads/605b3988-ccd7-4c5d-9c40-fe5ea991729b.png",
-    "/lovable-uploads/06143896-3705-4777-8c31-5f139371be88.png",
-    "/lovable-uploads/eb7443f0-3f7a-4b83-9d12-c669af95a5d8.png",
-    "/lovable-uploads/51cb98d5-156b-4bca-8c82-34d3ec317ca3.png"
-  ];
-  const marqueeItems = [
-    ...trustedLogos,
-    "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png",
-    ...extraTrustedImages
-  ];
-
+  const trustedLogos = ["/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png", "/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png", "/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png", "/lovable-uploads/dd9a50a2-11ff-45a3-bdef-97597bd967b7.png", "/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png", "/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png"];
+  const extraTrustedImages = ["/lovable-uploads/3c96b100-6325-4881-925d-941fa1d28582.png", "/lovable-uploads/a8a47af6-c1fb-4ef5-9186-0149566a84ae.png", "/lovable-uploads/605b3988-ccd7-4c5d-9c40-fe5ea991729b.png", "/lovable-uploads/06143896-3705-4777-8c31-5f139371be88.png", "/lovable-uploads/eb7443f0-3f7a-4b83-9d12-c669af95a5d8.png", "/lovable-uploads/51cb98d5-156b-4bca-8c82-34d3ec317ca3.png"];
+  const marqueeItems = [...trustedLogos, "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png", ...extraTrustedImages];
   useEffect(() => {
     marqueeControls.start({
       x: ["0%", "-50%"],
-      transition: { duration: 30, ease: "linear", repeat: Infinity }
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity
+      }
     });
   }, [marqueeControls]);
-
   return <>
       <SEOSchema />
       
       
       {/* HERO SECTION - Original Style with New Copy */}
-      <motion.section 
-        className="relative isolate overflow-hidden min-h-screen bg-deep-navy" 
-        style={{
-          backgroundImage: `url('/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png'), linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundBlendMode: 'overlay',
-          y: heroY
-        }}
-        data-lcp-element="true"
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        transition={{ duration: 1.2 }}
-      >
+      <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
+      backgroundImage: `url('/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png'), linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundBlendMode: 'overlay',
+      y: heroY
+    }} data-lcp-element="true" initial={{
+      opacity: 0
+    }} animate={{
+      opacity: 1
+    }} transition={{
+      duration: 1.2
+    }}>
         {/* Subtle Floating Orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {Array.from({ length: 2 }, (_, i) => (
-            <div 
-              key={i} 
-              className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" 
-              style={{
-                width: `${60 + i * 20}px`,
-                height: `${60 + i * 20}px`,
-                left: `${20 + i * 30}%`,
-                top: `${20 + i * 25}%`,
-                animation: `float ${4 + i * 2}s ease-in-out infinite`,
-                animationDelay: `${i * 1.5}s`,
-                filter: 'blur(1px)'
-              }} 
-            />
-          ))}
+          {Array.from({
+          length: 2
+        }, (_, i) => <div key={i} className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
+          width: `${60 + i * 20}px`,
+          height: `${60 + i * 20}px`,
+          left: `${20 + i * 30}%`,
+          top: `${20 + i * 25}%`,
+          animation: `float ${4 + i * 2}s ease-in-out infinite`,
+          animationDelay: `${i * 1.5}s`,
+          filter: 'blur(1px)'
+        }} />)}
         </div>
 
         {/* Interactive Clickable Bubbles */}
         <div className="absolute inset-0 overflow-hidden">
-          {bubbles.map(bubble => (
-            <div 
-              key={bubble.id} 
-              className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" 
-              style={{
-                width: `${bubble.size}px`,
-                height: `${bubble.size}px`,
-                left: `${bubble.x}%`,
-                top: `${bubble.y}%`,
-                opacity: bubble.opacity,
-                filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.4))',
-                animation: `float ${3 + bubble.id % 3}s ease-in-out infinite`,
-                animationDelay: `${bubble.id * 0.5}s`
-              }} 
-              onClick={() => handleBubblePop(bubble.id)} 
-            />
-          ))}
+          {bubbles.map(bubble => <div key={bubble.id} className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" style={{
+          width: `${bubble.size}px`,
+          height: `${bubble.size}px`,
+          left: `${bubble.x}%`,
+          top: `${bubble.y}%`,
+          opacity: bubble.opacity,
+          filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.4))',
+          animation: `float ${3 + bubble.id % 3}s ease-in-out infinite`,
+          animationDelay: `${bubble.id * 0.5}s`
+        }} onClick={() => handleBubblePop(bubble.id)} />)}
         </div>
 
         {/* Animated Grid Pattern Background */}
         <div className="absolute inset-0 opacity-30">
-          <div 
-            className="absolute inset-0" 
-            style={{
-              backgroundImage: `
+          <div className="absolute inset-0" style={{
+          backgroundImage: `
                 linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
               `,
-              backgroundSize: '50px 50px',
-              animation: 'grid-move 20s linear infinite',
-              filter: 'drop-shadow(0 0 2px cyan)'
-            }}
-          />
+          backgroundSize: '50px 50px',
+          animation: 'grid-move 20s linear infinite',
+          filter: 'drop-shadow(0 0 2px cyan)'
+        }} />
         </div>
         
         {/* Subtle gradient overlay for depth */}
-        <motion.div 
-          animate={{
-            background: [
-              'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)', 
-              'linear-gradient(135deg, rgba(143,179,29,0.05) 0%, transparent 50%, rgba(47,128,255,0.05) 100%)', 
-              'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)'
-            ]
-          }} 
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }} 
-          className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]"
-        />
+        <motion.div animate={{
+        background: ['linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)', 'linear-gradient(135deg, rgba(143,179,29,0.05) 0%, transparent 50%, rgba(47,128,255,0.05) 100%)', 'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)']
+      }} transition={{
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }} className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]" />
         
         {/* Main Content */}
         <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen">
           
           {/* Logo with Scale Animation */}
-          <motion.div 
-            className="relative flex justify-center mb-12" 
-            style={{ scale: logoScale }} 
-            initial={{ opacity: 0, y: -20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div className="relative flex justify-center mb-12" style={{
+          scale: logoScale
+        }} initial={{
+          opacity: 0,
+          y: -20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             {/* Simplified geometric frame around logo */}
             <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
               <div className="absolute inset-0 border border-cyan-400/50 animate-pulse rounded-full"></div>
             </div>
             
             {/* Main logo */}
-            <LazyImage
-              src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png"
-              alt="Digital Frontier Company - Leading Memphis Digital Marketing Agency"
-              className="h-80 w-auto relative z-10 object-cover logo-interactive animate-logo-strobe"
-              displayWidth={480}
-              displayHeight={320}
-              optimization={{ priority: true }}
-            />
+            <LazyImage src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png" alt="Digital Frontier Company - Leading Memphis Digital Marketing Agency" className="h-80 w-auto relative z-10 object-cover logo-interactive animate-logo-strobe" displayWidth={480} displayHeight={320} optimization={{
+            priority: true
+          }} />
           </motion.div>
 
           {/* New Headlines */}
-          <motion.h1 
-            className="text-5xl md:text-7xl font-black mb-8 leading-tight"
-            style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
-              backgroundSize: '300% 300%',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'gradientShift 4s ease-in-out infinite',
-              lineHeight: '1.2',
-              paddingBottom: '0.1em'
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
+          background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+          backgroundSize: '300% 300%',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          animation: 'gradientShift 4s ease-in-out infinite',
+          lineHeight: '1.2',
+          paddingBottom: '0.1em'
+        }} initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }}>
             Feeling Lost in AI?
           </motion.h1>
 
           {/* Typewriter Animation */}
-          <motion.div 
-            className="text-2xl md:text-3xl text-white mb-8 leading-relaxed font-semibold"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <TypewriterText 
-              text="We spent $50K+ testing 100+ AI tools so you don't have to" 
-              delay={60}
-            />
+          <motion.div className="text-2xl md:text-3xl text-white mb-8 leading-relaxed font-semibold" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.4
+        }}>
+            <TypewriterText text="We spent $50K+ testing 100+ AI tools so you don't have to" delay={60} />
           </motion.div>
 
           {/* Subtitle */}
-          <motion.p 
-            className="text-lg text-soft-white/80 mb-12 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <motion.p className="text-lg text-soft-white/80 mb-12 max-w-4xl mx-auto" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.6
+        }}>
             Get only proven AI solutions that actually work for small businesses—not just hype.
           </motion.p>
 
           {/* Stats Containers */}
-          <motion.div 
-            className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
+          <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto" initial={{
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.8
+        }}>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
               <div className="text-4xl mb-3">💰</div>
-              <div className="text-3xl font-bold mb-2" style={{ color: '#4EE2EC' }}>$50,000+</div>
+              <div className="text-3xl font-bold mb-2" style={{
+              color: '#4EE2EC'
+            }}>$50,000+</div>
               <div className="text-sm text-slate-300">Invested in AI testing</div>
             </div>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
               <div className="text-4xl mb-3">⚡</div>
-              <div className="text-3xl font-bold mb-2" style={{ color: '#8FB31D' }}>15+ Hours</div>
+              <div className="text-3xl font-bold mb-2" style={{
+              color: '#8FB31D'
+            }}>15+ Hours</div>
               <div className="text-sm text-slate-300">Saved weekly</div>
             </div>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
@@ -396,21 +361,25 @@ const Index = () => {
           </motion.div>
 
           {/* CTA Button */}
-          <motion.div 
-            className="mb-16" 
-            initial={{ opacity: 0, scale: 0.9 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 0.6, delay: 1.0 }}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                to="/modern-contact-form" 
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl"
-                style={{
-                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-                  boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
-                }}
-              >
+          <motion.div className="mb-16" initial={{
+          opacity: 0,
+          scale: 0.9
+        }} animate={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.6,
+          delay: 1.0
+        }}>
+            <motion.div whileHover={{
+            scale: 1.05
+          }} whileTap={{
+            scale: 0.95
+          }}>
+              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl" style={{
+              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+              boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
+            }}>
                 Get Your AI Crew Chief →
               </Link>
             </motion.div>
@@ -430,13 +399,17 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
                 AI Evolution Follows Nature's Laws
@@ -450,13 +423,18 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Seed to Tree */}
-            <motion.div 
-              className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-green-400/50 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-green-400/50 transition-all duration-300" initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.1
+          }} viewport={{
+            once: true
+          }}>
               <div className="text-5xl mb-4">🌱</div>
               <h3 className="text-2xl font-bold text-green-400 mb-4">From Seed to Giant Oak</h3>
               <p className="text-slate-300 leading-relaxed">
@@ -466,13 +444,18 @@ const Index = () => {
             </motion.div>
 
             {/* Rocket Escaping Gravity */}
-            <motion.div 
-              className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-cyan-400/50 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-cyan-400/50 transition-all duration-300" initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.2
+          }} viewport={{
+            once: true
+          }}>
               <div className="text-5xl mb-4">🚀</div>
               <h3 className="text-2xl font-bold text-cyan-400 mb-4">Breaking Free from Gravity</h3>
               <p className="text-slate-300 leading-relaxed">
@@ -482,13 +465,18 @@ const Index = () => {
             </motion.div>
 
             {/* Seasons of Growth */}
-            <motion.div 
-              className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-blue-400/50 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-blue-400/50 transition-all duration-300" initial={{
+            opacity: 0,
+            y: 30
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.3
+          }} viewport={{
+            once: true
+          }}>
               <div className="text-5xl mb-4">🔄</div>
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Natural Growth Cycles</h3>
               <p className="text-slate-300 leading-relaxed">
@@ -499,13 +487,18 @@ const Index = () => {
           </div>
 
           {/* Central Metaphor */}
-          <motion.div 
-            className="bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-sm border border-slate-600/50 rounded-3xl p-12 text-center mb-12"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-sm border border-slate-600/50 rounded-3xl p-12 text-center mb-12" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.8,
+          delay: 0.4
+        }} viewport={{
+          once: true
+        }}>
             <div className="text-6xl mb-6">💎</div>
             <h3 className="text-3xl font-bold mb-6">
               <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
@@ -523,27 +516,28 @@ const Index = () => {
           </motion.div>
 
           {/* Call to Action */}
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8,
+          delay: 0.5
+        }} viewport={{
+          once: true
+        }}>
             <h3 className="text-2xl font-bold text-white mb-6">
               Ready to Harness These Natural Laws for Your Business?
             </h3>
             <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               Discover the proven AI strategies that follow nature's patterns for sustainable, organic growth.
             </p>
-            <Link 
-              to="/ai-plans" 
-              className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-                boxShadow: '0 0 30px rgba(78, 226, 236, 0.3)'
-              }}
-            >
+            <Link to="/ai-plans" className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105" style={{
+            background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+            boxShadow: '0 0 30px rgba(78, 226, 236, 0.3)'
+          }}>
               Explore AI Evolution Plans →
             </Link>
           </motion.div>
@@ -554,43 +548,20 @@ const Index = () => {
       <section className="-bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center mb-12 text-cyan-300 font-extrabold text-base">Trusted by Industry Leaders</h2>
-          <div
-            className="relative overflow-hidden"
-            onMouseEnter={() => marqueeControls.stop()}
-            onMouseLeave={() =>
-              marqueeControls.start({
-                x: ["0%", "-50%"],
-                transition: { duration: 30, ease: "linear", repeat: Infinity },
-              })
-            }
-          >
-            <motion.div
-              className="flex items-center gap-12 whitespace-nowrap will-change-transform"
-              animate={marqueeControls}
-            >
-              {marqueeItems.slice(0, 6).map((src, index) => (
-                <div key={index} className="opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-                  {src === "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png" ? (
-                    <a href="https://makementors.com" target="_blank" rel="noopener noreferrer">
-                      <LazyImage
-                        src={src}
-                        alt="MakeMentors logo"
-                        className="h-24 w-auto"
-                        displayWidth={96}
-                        displayHeight={96}
-                      />
-                    </a>
-                  ) : (
-                    <LazyImage
-                      src={src}
-                      alt={`Trusted brand ${index + 1}`}
-                      className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      displayWidth={144}
-                      displayHeight={96}
-                    />
-                  )}
-                </div>
-              ))}
+          <div className="relative overflow-hidden" onMouseEnter={() => marqueeControls.stop()} onMouseLeave={() => marqueeControls.start({
+          x: ["0%", "-50%"],
+          transition: {
+            duration: 30,
+            ease: "linear",
+            repeat: Infinity
+          }
+        })}>
+            <motion.div className="flex items-center gap-12 whitespace-nowrap will-change-transform" animate={marqueeControls}>
+              {marqueeItems.slice(0, 6).map((src, index) => <div key={index} className="opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
+                  {src === "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png" ? <a href="https://makementors.com" target="_blank" rel="noopener noreferrer">
+                      <LazyImage src={src} alt="MakeMentors logo" className="h-24 w-auto" displayWidth={96} displayHeight={96} />
+                    </a> : <LazyImage src={src} alt={`Trusted brand ${index + 1}`} className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" displayWidth={144} displayHeight={96} />}
+                </div>)}
             </motion.div>
           </div>
         </div>
@@ -611,8 +582,20 @@ const Index = () => {
 
         <div className="mx-auto max-w-6xl px-6 relative z-10">
           {/* Answer-First Boxes */}
-          <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-            <motion.h2 id="blueprint-heading" className="font-poppins font-bold text-soft-white mb-4 bg-gradient-to-r from-electric-azure via-soft-white to-ultraviolet bg-clip-text text-transparent" style={{ fontSize: 'clamp(32px, 5vw, 48px)' }}>
+          <motion.div className="text-center mb-16" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
+            <motion.h2 id="blueprint-heading" className="font-poppins font-bold text-soft-white mb-4 bg-gradient-to-r from-electric-azure via-soft-white to-ultraviolet bg-clip-text text-transparent" style={{
+            fontSize: 'clamp(32px, 5vw, 48px)'
+          }}>
               AI That Works Both Ways
             </motion.h2>
             <motion.p className="font-inter text-xl text-soft-white/80 max-w-2xl mx-auto mb-12">
@@ -622,51 +605,52 @@ const Index = () => {
 
           {/* Answer-First Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {[
-              {
-                title: "What is it?",
-                answer: "A digital strategy firm helping businesses grow in the AI era.",
-                icon: "🚀"
-              },
-              {
-                title: "Who is it for?",
-                answer: "Companies that want both more customers and better efficiency.",
-                icon: "🎯"
-              },
-              {
-                title: "How it works:",
-                answer: "• AI visibility: dominate generative + search results\n• AI backend: streamline operations with automation\n• End-to-end: visibility + efficiency in one system",
-                icon: "⚙️"
-              },
-              {
-                title: "Cost:",
-                answer: "Pilots start from $2,500–$7,500 depending on scope.",
-                icon: "💰"
-              }
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 rounded-2xl hover:border-electric-azure/50 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+            {[{
+            title: "What is it?",
+            answer: "A digital strategy firm helping businesses grow in the AI era.",
+            icon: "🚀"
+          }, {
+            title: "Who is it for?",
+            answer: "Companies that want both more customers and better efficiency.",
+            icon: "🎯"
+          }, {
+            title: "How it works:",
+            answer: "• AI visibility: dominate generative + search results\n• AI backend: streamline operations with automation\n• End-to-end: visibility + efficiency in one system",
+            icon: "⚙️"
+          }, {
+            title: "Cost:",
+            answer: "Pilots start from $2,500–$7,500 depending on scope.",
+            icon: "💰"
+          }].map((item, index) => <motion.div key={index} className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 rounded-2xl hover:border-electric-azure/50 transition-all duration-300" initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.6,
+            delay: index * 0.1
+          }} viewport={{
+            once: true
+          }}>
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-semibold text-electric-azure mb-2">{item.title}</h3>
                 <p className="text-soft-white/80 text-sm whitespace-pre-line">{item.answer}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
 
           {/* Pain → Agitate → Solution Section */}
-          <motion.div 
-            className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border border-red-800/30 p-8 rounded-2xl mb-20"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border border-red-800/30 p-8 rounded-2xl mb-20" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl font-bold text-soft-white mb-6 text-center">The Internet Changed. Most Businesses Didn't.</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
@@ -685,42 +669,56 @@ const Index = () => {
           </motion.div>
 
           {/* Proof Section */}
-          <motion.div 
-            className="mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="mb-20" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Proven Results</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { metric: "32% lower", description: "ad costs with AI-optimized funnels", icon: "📉" },
-                { metric: "3x more", description: "leads from GEO visibility strategies", icon: "📈" },
-                { metric: "15 hours/week", description: "saved with backend AI automation", icon: "⏰" }
-              ].map((proof, index) => (
-                <motion.div 
-                  key={index}
-                  className="text-center bg-card/60 p-6 rounded-2xl border border-electric-azure/30"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
+              {[{
+              metric: "32% lower",
+              description: "ad costs with AI-optimized funnels",
+              icon: "📉"
+            }, {
+              metric: "3x more",
+              description: "leads from GEO visibility strategies",
+              icon: "📈"
+            }, {
+              metric: "15 hours/week",
+              description: "saved with backend AI automation",
+              icon: "⏰"
+            }].map((proof, index) => <motion.div key={index} className="text-center bg-card/60 p-6 rounded-2xl border border-electric-azure/30" whileHover={{
+              scale: 1.05,
+              y: -5
+            }} transition={{
+              duration: 0.3
+            }}>
                   <div className="text-4xl mb-3">{proof.icon}</div>
                   <div className="text-2xl font-bold text-signal-lime mb-2">{proof.metric}</div>
                   <p className="text-soft-white/80">{proof.description}</p>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </motion.div>
 
           {/* Mechanism Section (How It Works) */}
-          <motion.div 
-            className="mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="mb-20" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Our Two-Sided AI Framework</h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-800/30 p-8 rounded-2xl">
@@ -761,35 +759,44 @@ const Index = () => {
           </motion.div>
 
           {/* Offer Section */}
-          <motion.div 
-            className="bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/50 p-8 rounded-2xl mb-20 text-center"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/50 p-8 rounded-2xl mb-20 text-center" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <h2 className="text-3xl font-bold text-soft-white mb-4">One Partner. Two Wins.</h2>
             <p className="text-xl text-soft-white/80 mb-8 max-w-2xl mx-auto">
               Most agencies give you ads or SEO. We build systems. Visibility + efficiency, wrapped into one growth engine.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link 
-                to="/modern-contact-form" 
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-deep-navy bg-gradient-to-r from-signal-lime to-electric-azure rounded-full transition-all duration-300 hover:shadow-xl"
-              >
+            <motion.div whileHover={{
+            scale: 1.05
+          }} whileTap={{
+            scale: 0.95
+          }}>
+              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-deep-navy bg-gradient-to-r from-signal-lime to-electric-azure rounded-full transition-all duration-300 hover:shadow-xl">
                 Launch AI Visibility + Efficiency Today →
               </Link>
             </motion.div>
           </motion.div>
 
           {/* Risk Reversal / Trust Section */}
-          <motion.div 
-            className="bg-card/60 border border-border/50 p-8 rounded-2xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="bg-card/60 border border-border/50 p-8 rounded-2xl text-center" initial={{
+          opacity: 0,
+          y: 20
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <div className="text-4xl mb-4">🛡️</div>
             <p className="text-lg text-soft-white/90 italic">
               "No AI hype. Just measurable outcomes. If we don't deliver visible results in 90 days, we'll continue working at no extra cost until we do."
@@ -798,25 +805,19 @@ const Index = () => {
 
           {/* Simplified floating particles */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <motion.div 
-                key={i}
-                className="absolute w-2 h-2 bg-electric-azure/40 rounded-full" 
-                style={{
-                  left: `${20 + i * 30}%`,
-                  top: `${20 + i * 25}%`
-                }}
-                animate={{
-                  y: [-20, -100, -20],
-                  opacity: [0, 1, 0]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  delay: i * 2
-                }}
-              />
-            ))}
+            {Array.from({
+            length: 3
+          }).map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-electric-azure/40 rounded-full" style={{
+            left: `${20 + i * 30}%`,
+            top: `${20 + i * 25}%`
+          }} animate={{
+            y: [-20, -100, -20],
+            opacity: [0, 1, 0]
+          }} transition={{
+            duration: 6,
+            repeat: Infinity,
+            delay: i * 2
+          }} />)}
           </div>
         </div>
       </section>
@@ -857,33 +858,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient-x"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <LazyImage
-              src="/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png"
-              alt="Digital Frontier Company Icon - Generative Search Pro"
-              displayWidth={60}
-              displayHeight={60}
-              className="mx-auto mb-6"
-            />
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Generative Search Pro
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Turn every prompt into a spotlight. Generative + Answer Engine Optimization unlocked in a single tap. Try it free.
-            </p>
-          </div>
+          
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* AI-Powered Marketing Card */}
             <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
               <div className="mb-6">
-                <LazyImage
-                  src="/lovable-uploads/e54d0fa9-0841-4307-be48-9729f84a20b3.png"
-                  alt="AI-Powered Marketing"
-                  className="w-full h-48 object-cover rounded-lg"
-                  displayWidth={307}
-                  displayHeight={192}
-                />
+                <LazyImage src="/lovable-uploads/e54d0fa9-0841-4307-be48-9729f84a20b3.png" alt="AI-Powered Marketing" className="w-full h-48 object-cover rounded-lg" displayWidth={307} displayHeight={192} />
               </div>
               <h3 className="mb-4 transition-colors font-extrabold text-xl text-cyan-300 text-center">
                 AI-Powered Marketing
@@ -906,13 +887,7 @@ const Index = () => {
             <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
               <div className="mb-6">
                 <a href="https://generativesearch.pro" target="_blank" rel="dofollow" className="block">
-                  <LazyImage
-                    src="/lovable-uploads/46440d18-7e50-459a-9423-09e65df49121.png"
-                    alt="Generative Engine Optimization"
-                    className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity"
-                    displayWidth={283}
-                    displayHeight={283}
-                  />
+                  <LazyImage src="/lovable-uploads/46440d18-7e50-459a-9423-09e65df49121.png" alt="Generative Engine Optimization" className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity" displayWidth={283} displayHeight={283} />
                 </a>
               </div>
               <h3 className="mb-4 transition-colors font-extrabold text-cyan-300 text-xl text-center">
@@ -1004,47 +979,7 @@ const Index = () => {
       </section>
 
       {/* WHAT YOU'LL GAIN SECTION */}
-      <section className="df-what-youll-gain animate-on-scroll">
-        <div className="container">
-          <div className="text-center mb-5">
-            <img src="/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png" alt="Digital Frontier Company Logo - What You'll Gain" width="40" height="40" className="mb-4" loading="lazy" />
-            <h2 className="section-title" style={{
-            fontSize: "32px",
-            fontWeight: 700,
-            marginBottom: "15px"
-          }}>What You'll <span>Gain</span></h2>
-            <p className="section-subtitle" style={{
-            fontSize: "16px",
-            color: "#e0e0e0",
-            maxWidth: "700px",
-            margin: "0 auto"
-          }}>Our comprehensive website analysis delivers actionable insights to help you outperform your competition.</p>
-          </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-              <div className="df-gain-card text-center">
-                <div className="text-3xl mb-3">🔍</div>
-                <h3 className="text-lg font-semibold mb-2">SEO Analysis</h3>
-                <p className="text-sm text-slate-300">Detailed optimization recommendations</p>
-              </div>
-              <div className="df-gain-card text-center">
-                <div className="text-3xl mb-3">📈</div>
-                <h3 className="text-lg font-semibold mb-2">Conversion Insights</h3>
-                <p className="text-sm text-slate-300">Expert funnel optimization</p>
-              </div>
-              <div className="df-gain-card text-center">
-                <div className="text-3xl mb-3">🔄</div>
-                <h3 className="text-lg font-semibold mb-2">Competitor Analysis</h3>
-                <p className="text-sm text-slate-300">Market positioning insights</p>
-              </div>
-              <div className="df-gain-card text-center">
-                <div className="text-3xl mb-3">📋</div>
-                <h3 className="text-lg font-semibold mb-2">Action Plan</h3>
-                <p className="text-sm text-slate-300">Prioritized improvement steps</p>
-              </div>
-            </div>
-        </div>
-      </section>
+      
 
       {/* PRICING TOGGLE - Project/Retainer choice */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
@@ -1110,10 +1045,7 @@ const Index = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                to="/services/ai-implementation-consulting" 
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-              >
+              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
                 <span>Get Your AI Crew Chief</span>
                 <span className="ml-2">→</span>
               </Link>
