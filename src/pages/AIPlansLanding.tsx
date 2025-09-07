@@ -241,6 +241,42 @@ const AIPlansLanding = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
+                {/* Animated Logo - Above Copy */}
+                <motion.div 
+                  className="flex justify-center mb-8"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.2, delay: 0.3, type: "spring", bounce: 0.3 }}
+                >
+                  <div className="relative">
+                    <motion.img 
+                      src="/lovable-uploads/58631511-c231-437e-a70b-e41404dade2d.png"
+                      alt="Digital Frontier Company Logo"
+                      className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+                      animate={{ 
+                        rotateY: [0, 360],
+                        scale: [1, 1.05, 1]
+                      }}
+                      transition={{ 
+                        rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
+                        scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-400/20 rounded-full blur-xl"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.6, 0.3]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                    />
+                  </div>
+                </motion.div>
+
                 <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
                   AI That Works Both Ways
                 </h1>
@@ -287,39 +323,6 @@ const AIPlansLanding = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
               >
-                {/* Animated Logo - Center */}
-                <motion.div 
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1.2, delay: 0.5, type: "spring", bounce: 0.3 }}
-                >
-                  <motion.img 
-                    src="/lovable-uploads/58631511-c231-437e-a70b-e41404dade2d.png"
-                    alt="Digital Frontier Company Logo"
-                    className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
-                    animate={{ 
-                      rotateY: [0, 360],
-                      scale: [1, 1.05, 1]
-                    }}
-                    transition={{ 
-                      rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
-                      scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                  />
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-400/20 rounded-full blur-xl"
-                    animate={{ 
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 0.6, 0.3]
-                    }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  />
-                </motion.div>
 
                 {/* Card 1 - Top Left */}
                 <motion.div 
