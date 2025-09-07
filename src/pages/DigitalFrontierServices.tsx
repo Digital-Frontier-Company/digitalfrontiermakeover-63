@@ -65,6 +65,16 @@ const DigitalFrontierServices = () => {
       category: "ai",
       badge: "AI AGENT",
       link: "/ai-voice-assistants"
+    },
+    {
+      id: 8,
+      title: "Total AI Takeover",
+      description: "Complete AI transformation package. Get found online with GEO optimization while running smarter inside with custom AI agents and automation.",
+      features: ["GEO & AEO optimization", "Custom AI agents", "Marketing automation", "24/7 AI assistance"],
+      icon: "fa-solid fa-rocket",
+      category: "ai",
+      badge: "PREMIUM",
+      link: "/ai-plans"
     }
   ];
 
