@@ -74,6 +74,7 @@ import { Analytics } from '@vercel/analytics/react';
 import WebCreative from './pages/WebCreative';
 import DigitalMarketing from './pages/DigitalMarketing';
 import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
+import SaaSAIAgentPackages from './pages/SaaSAIAgentPackages';
 
 // Loading component for lazy routes
 const PageLoader = () => (
@@ -159,6 +160,7 @@ function App() {
              <Route path="/web-creative" element={<MainLayout><WebCreative /></MainLayout>} />
              <Route path="/digital-marketing" element={<MainLayout><DigitalMarketing /></MainLayout>} />
              <Route path="/contact-for-digital-marketing" element={<ContactForDigitalMarketing />} />
+             <Route path="/saas-ai-agent-packages" element={<SaaSAIAgentPackages />} />
              <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
              <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
