@@ -264,24 +264,63 @@ const AIPlansLanding = () => {
                   </div>
                 </div>
                 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 md:flex-nowrap">
                   <a 
                     href="#contact" 
-                    className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 relative overflow-hidden group no-underline"
+                    className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 relative overflow-hidden group no-underline flex-1 md:flex-none"
                   >
                     <span className="relative z-10">Free Strategy Session</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
                   </a>
                   <button 
                     onClick={() => setShowLeadPopup(true)}
-                    className="bg-white/10 backdrop-blur-sm border border-violet-500/30 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 hover:bg-white/20"
+                    className="bg-white/10 backdrop-blur-sm border border-violet-500/30 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 hover:bg-white/20 flex-1 md:flex-none"
                   >
                     Get Free GEO Guide
                   </button>
                 </div>
               </motion.div>
 
-              <div className="relative h-[600px] w-full">
+              <motion.div 
+                className="relative h-[600px] w-full"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
+              >
+                {/* Animated Logo - Center */}
+                <motion.div 
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.2, delay: 0.5, type: "spring", bounce: 0.3 }}
+                >
+                  <motion.img 
+                    src="/lovable-uploads/58631511-c231-437e-a70b-e41404dade2d.png"
+                    alt="Digital Frontier Company Logo"
+                    className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+                    animate={{ 
+                      rotateY: [0, 360],
+                      scale: [1, 1.05, 1]
+                    }}
+                    transition={{ 
+                      rotateY: { duration: 8, repeat: Infinity, ease: "linear" },
+                      scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                  />
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-400/20 rounded-full blur-xl"
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.6, 0.3]
+                    }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      ease: "easeInOut" 
+                    }}
+                  />
+                </motion.div>
+
                 {/* Card 1 - Top Left */}
                 <motion.div 
                   className="absolute top-0 left-0 w-72 max-w-[280px] bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
@@ -335,7 +374,7 @@ const AIPlansLanding = () => {
                     Answer Engine Optimization to capture voice search and featured snippet traffic
                   </p>
                 </motion.div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
