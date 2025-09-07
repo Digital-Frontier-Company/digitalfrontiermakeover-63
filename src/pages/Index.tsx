@@ -978,9 +978,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WHAT YOU'LL GAIN SECTION */}
-      
-
       {/* PRICING TOGGLE - Project/Retainer choice */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
         <PricingToggle />
