@@ -224,9 +224,17 @@ const AIPlansLanding = () => {
         </nav>
 
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center relative pt-24">
-          <div className="container mx-auto px-5">
-            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <section className="min-h-screen flex items-center relative pt-24 overflow-hidden">
+          {/* Animated background with central light */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/15 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          </div>
+
+          <div className="container mx-auto px-5 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div 
                 className="space-y-8"
                 initial={{ opacity: 0, y: 50 }}
@@ -273,12 +281,16 @@ const AIPlansLanding = () => {
                 </div>
               </motion.div>
 
-              <div className="relative h-[500px]">
+              <div className="relative h-[600px] w-full">
+                {/* Card 1 - Top Left */}
                 <motion.div 
-                  className="absolute top-5 left-5 w-70 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  className="absolute top-0 left-0 w-72 max-w-[280px] bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
+                  style={{
+                    animation: 'floatCard1 4s ease-in-out infinite'
+                  }}
                 >
                   <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
                     🎯 GEO Optimization
@@ -288,11 +300,15 @@ const AIPlansLanding = () => {
                   </p>
                 </motion.div>
 
+                {/* Card 2 - Top Right */}
                 <motion.div 
-                  className="absolute top-30 right-10 w-65 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  className="absolute top-20 right-0 w-72 max-w-[260px] bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
+                  style={{
+                    animation: 'floatCard2 4s ease-in-out infinite 1s'
+                  }}
                 >
                   <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
                     🤖 AI Agents
@@ -302,11 +318,15 @@ const AIPlansLanding = () => {
                   </p>
                 </motion.div>
 
+                {/* Card 3 - Bottom Center */}
                 <motion.div 
-                  className="absolute bottom-10 left-15 w-60 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 max-w-[240px] bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-6 shadow-2xl hover:transform hover:-translate-y-3 hover:-translate-x-1/2 transition-all duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
+                  style={{
+                    animation: 'floatCard3 4s ease-in-out infinite 2s'
+                  }}
                 >
                   <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
                     📈 AEO Strategy
