@@ -1,70 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import '../styles/ai-plans-landing.css';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { SEOHead } from "@/components/SEOHead";
 
 const AIPlansLanding = () => {
-  const [visibleElements, setVisibleElements] = useState<Set<string>>(new Set());
+  const [particles, setParticles] = useState<Array<{ id: number; left: string; top: string; delay: string; duration: string }>>([]);
+  const [showLeadPopup, setShowLeadPopup] = useState(false);
 
   useEffect(() => {
-    // Create floating particles
-    const createParticles = () => {
-      const particlesContainer = document.getElementById('particles');
-      if (!particlesContainer) return;
-      
-      const particleCount = 50;
-      particlesContainer.innerHTML = '';
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (6 + Math.random() * 4) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    };
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setVisibleElements(prev => new Set([...prev, entry.target.id]));
-        }
+    // Create particles
+    const particleArray = [];
+    for (let i = 0; i < 50; i++) {
+      particleArray.push({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 6}s`,
+        duration: `${6 + Math.random() * 4}s`
       });
-    }, observerOptions);
+    }
+    setParticles(particleArray);
 
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
+    // Show popup after 30 seconds
+    const timer = setTimeout(() => {
+      setShowLeadPopup(true);
+    }, 30000);
 
-    createParticles();
-
-    // Add navbar background on scroll
-    const handleScroll = () => {
-      const nav = document.querySelector('nav');
-      if (nav) {
-        if (window.scrollY > 50) {
-          nav.style.background = 'rgba(10, 10, 15, 0.95)';
-        } else {
-          nav.style.background = 'rgba(10, 10, 15, 0.8)';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   const toggleFAQ = (element: HTMLElement) => {
@@ -86,275 +47,360 @@ const AIPlansLanding = () => {
     }
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const target = document.getElementById(sectionId);
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Thank you! We'll contact you within 24 hours to schedule your free strategy session.");
   };
 
   return (
     <>
-      <Helmet>
-        <title>Digital Frontier - AI That Works Both Ways | Visibility + Efficiency</title>
-        <meta name="description" content="Get found online. Run smarter inside. Digital Frontier delivers visibility + efficiency with AI systems built for growth. Dominate generative search and automate operations." />
-        <meta name="keywords" content="AI marketing, digital transformation, generative engine optimization, business automation, AI visibility, efficiency systems" />
-        <link rel="canonical" href="/ai-plans" />
-      </Helmet>
+      <SEOHead 
+        title="Digital Frontier - AI That Works Both Ways | GEO, AEO & AI Agents"
+        description="Transform your business with AI-powered marketing, Generative Engine Optimization (GEO), and intelligent automation. Get found online, run smarter inside."
+        path="/ai-plans"
+      />
+      
+      {/* Animated Background */}
+      <div className="fixed inset-0 bg-gradient-radial from-indigo-900/20 via-slate-900 to-slate-950 -z-20"></div>
+      
+      {/* Floating Particles */}
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="particle absolute w-0.5 h-0.5 bg-violet-500 rounded-full opacity-60"
+            style={{
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration,
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="ai-plans-landing">
-        {/* Animated Background */}
-        <div className="background-animation fixed top-0 left-0 w-full h-full bg-gradient-radial from-indigo-900/20 via-slate-950 to-slate-950 -z-20"></div>
-        <div className="floating-particles fixed top-0 left-0 w-full h-full pointer-events-none -z-10" id="particles"></div>
+      {/* Lead Magnet Popup */}
+      {showLeadPopup && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-slate-900/95 backdrop-blur-xl border border-violet-500/30 rounded-3xl p-12 max-w-lg w-full text-center relative">
+            <button 
+              className="absolute top-4 right-6 text-white text-2xl hover:text-violet-400"
+              onClick={() => setShowLeadPopup(false)}
+            >
+              ×
+            </button>
+            <h3 className="text-2xl font-extrabold mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+              Free GEO Strategy Guide
+            </h3>
+            <p className="mb-8 text-slate-300">
+              Get our step-by-step playbook to dominate ChatGPT, Perplexity & Google AI search results
+            </p>
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <input 
+                type="email" 
+                placeholder="Enter your business email" 
+                required 
+                className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400"
+              />
+              <input 
+                type="text" 
+                placeholder="Company name" 
+                required 
+                className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400"
+              />
+              <button 
+                type="submit" 
+                className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all"
+              >
+                Download Free Guide
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
+      <div className="min-h-screen">
         {/* Navigation */}
-        <nav className="fixed top-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-violet-500/20 z-50 py-4 transition-all duration-300">
+        <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-xl border-b border-violet-500/20 z-40 py-4">
           <div className="container mx-auto px-5">
             <div className="flex justify-between items-center">
-              <div className="text-2xl font-black bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              <div className="text-2xl font-extrabold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
                 Digital Frontier
               </div>
-              <ul className="hidden md:flex gap-8 text-slate-300">
-                <li><button onClick={() => scrollToSection('services')} className="font-medium hover:text-violet-400 transition-colors">Services</button></li>
-                <li><button onClick={() => scrollToSection('features')} className="font-medium hover:text-violet-400 transition-colors">Features</button></li>
-                <li><button onClick={() => scrollToSection('offer')} className="font-medium hover:text-violet-400 transition-colors">Pricing</button></li>
-                <li><button onClick={() => scrollToSection('contact')} className="font-medium hover:text-violet-400 transition-colors">About</button></li>
+              <ul className="hidden md:flex gap-8 list-none">
+                <li><a href="#services" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">Services</a></li>
+                <li><a href="#case-studies" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">Results</a></li>
+                <li><a href="#pricing" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">Pricing</a></li>
+                <li><a href="tel:901-657-5007" className="text-slate-300 hover:text-violet-500 font-medium transition-colors">901-657-5007</a></li>
               </ul>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300"
-              >
-                Get Started
-              </button>
+              <a href="#contact" className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-6 py-3 rounded-full font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 no-underline">
+                Free Strategy Call
+              </a>
             </div>
           </div>
         </nav>
 
         {/* Hero Section */}
-        <section className="hero min-h-screen flex items-center relative pt-24">
+        <section className="min-h-screen flex items-center relative pt-24">
           <div className="container mx-auto px-5">
-            <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <motion.div 
-                className="hero-text"
-                initial={{ opacity: 0, y: 30 }}
+                className="space-y-8"
+                initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                {/* Company Logo */}
-                <motion.div 
-                  className="mb-8 flex justify-center md:justify-start"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                >
-                  <img 
-                    src="/lovable-uploads/6a6a7a60-bc25-4bd4-af32-b53f83a8c0a4.png" 
-                    alt="Digital Frontier Company Logo" 
-                    className="w-64 h-auto max-w-sm"
-                  />
-                </motion.div>
-
                 <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
                   AI That Works Both Ways
                 </h1>
-                <p className="text-xl mb-10 text-slate-400 leading-relaxed font-light">
+                
+                <p className="text-xl text-slate-400 leading-relaxed font-normal mb-8">
                   Get found online. Run smarter inside. Digital Frontier delivers visibility + efficiency with AI systems built for growth.
                 </p>
-                <button 
-                  onClick={() => scrollToSection('offer')}
-                  className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white px-10 py-5 rounded-full text-lg font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 relative overflow-hidden group"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
-                  Start Building to Dominate
-                </button>
+                
+                <div className="flex gap-8 mb-10">
+                  <div className="text-center">
+                    <span className="block text-2xl font-extrabold text-cyan-400">3x</span>
+                    <span className="text-sm text-slate-400">More AI Traffic</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block text-2xl font-extrabold text-cyan-400">32%</span>
+                    <span className="text-sm text-slate-400">Lower Costs</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block text-2xl font-extrabold text-cyan-400">15h</span>
+                    <span className="text-sm text-slate-400">Weekly Savings</span>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="#contact" 
+                    className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 relative overflow-hidden group no-underline"
+                  >
+                    <span className="relative z-10">Free Strategy Session</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+                  </a>
+                  <button 
+                    onClick={() => setShowLeadPopup(true)}
+                    className="bg-white/10 backdrop-blur-sm border border-violet-500/30 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 hover:bg-white/20"
+                  >
+                    Get Free GEO Guide
+                  </button>
+                </div>
               </motion.div>
 
-              <div className="hero-visual relative h-[600px] md:h-[500px]">
+              <div className="relative h-[500px]">
                 <motion.div 
-                  className="floating-card absolute top-0 left-0 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="absolute top-5 left-5 w-70 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    AI Visibility Engine
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    🎯 GEO Optimization
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed">
-                    Dominate generative search results and AI-powered discovery across all platforms
+                    Dominate ChatGPT, Perplexity & Google AI results with our proven Generative Engine Optimization strategies
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className="floating-card absolute top-20 right-0 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="absolute top-30 right-10 w-65 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    Smart Automation
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    🤖 AI Agents
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed">
-                    Streamline operations with intelligent workflows and data-driven insights
+                    Custom AI assistants that handle customer service, content creation, and business processes 24/7
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className="floating-card absolute bottom-20 left-1/2 transform -translate-x-1/2 w-72 max-w-xs bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-6 shadow-2xl hover:transform hover:-translate-y-3 hover:-translate-x-1/2 transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="absolute bottom-10 left-15 w-60 bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-xl p-8 shadow-2xl floating-card"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    Growth Analytics
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    📈 AEO Strategy
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed">
-                    Real-time metrics and predictive analytics for continuous optimization
+                    Answer Engine Optimization to capture voice search and featured snippet traffic
                   </p>
                 </motion.div>
               </div>
             </div>
           </div>
-
-          {/* Glowing orb effect */}
-          <div className="absolute top-1/5 right-1/10 w-75 h-75 bg-violet-500/30 rounded-full filter blur-3xl animate-pulse"></div>
         </section>
 
-        {/* Answer-First Boxes */}
-        <section className="answer-boxes py-32 relative" id="services">
+        {/* Lead Magnet Section */}
+        <section className="py-24 bg-gradient-to-r from-violet-500/10 to-cyan-400/10 text-center">
           <div className="container mx-auto px-5">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div 
-                className="answer-box bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-10 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden group"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-                  What is it?
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  A digital strategy firm helping businesses grow in the AI era through advanced visibility and efficiency systems.
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className="answer-box bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-10 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden group"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-                  Who is it for?
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Companies that want both more customers and better efficiency - from startups to enterprise organizations.
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className="answer-box bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-10 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden group"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-                  How it works
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  • AI visibility: dominate generative + search results<br/>
-                  • AI backend: streamline operations with automation<br/>
-                  • End-to-end: visibility + efficiency in one system
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className="answer-box bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-10 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden group"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h3 className="text-xl font-bold bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-                  Investment
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Pilots start from $5,000–$15,000 depending on scope. Full implementations scale with your growth.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pain → Agitate → Solution Section */}
-        <section className="pain-section py-32 relative">
-          <div className="absolute top-0 left-1/2 w-150 h-150 bg-red-500/10 rounded-full filter blur-3xl transform -translate-x-1/2"></div>
-          <div className="container mx-auto px-5">
-            <div className="pain-content text-center max-w-4xl mx-auto relative z-10">
-              <motion.h2 
-                className="text-4xl md:text-6xl font-black mb-12 bg-gradient-to-r from-white via-red-400 to-violet-400 bg-clip-text text-transparent leading-tight"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                The Internet Changed. Most Businesses Didn't.
-              </motion.h2>
+            <motion.div 
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-white to-violet-500 bg-clip-text text-transparent">
+                Free: GEO Strategy Playbook
+              </h2>
+              <p className="text-xl mb-8 text-slate-300">
+                The step-by-step guide to owning AI search results (valued at $497)
+              </p>
               
-              <div className="grid md:grid-cols-3 gap-8 mt-16">
-                <motion.div 
-                  className="pain-point bg-white/3 backdrop-blur-xl border border-red-500/30 rounded-2xl p-10 relative hover:transform hover:-translate-y-3 hover:shadow-xl hover:shadow-red-500/20 transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-violet-500 rounded-t-2xl"></div>
-                  <h3 className="text-xl font-bold text-red-400 mb-4">The Invisible Problem</h3>
-                  <p className="text-slate-300 leading-relaxed">
-                    Customers now ask ChatGPT and Google AI for answers—not just search engines. If you're not showing up in AI results, you don't exist to your future customers.
-                  </p>
-                </motion.div>
-
-                <motion.div 
-                  className="pain-point bg-white/3 backdrop-blur-xl border border-red-500/30 rounded-2xl p-10 relative hover:transform hover:-translate-y-3 hover:shadow-xl hover:shadow-red-500/20 transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-violet-500 rounded-t-2xl"></div>
-                  <h3 className="text-xl font-bold text-red-400 mb-4">The Efficiency Gap</h3>
-                  <p className="text-slate-300 leading-relaxed">
-                    Meanwhile, competitors are using AI to automate their backend, cutting costs and scaling faster while you stay stuck with manual processes.
-                  </p>
-                </motion.div>
-
-                <motion.div 
-                  className="pain-point bg-white/3 backdrop-blur-xl border border-red-500/30 rounded-2xl p-10 relative hover:transform hover:-translate-y-3 hover:shadow-xl hover:shadow-red-500/20 transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-violet-500 rounded-t-2xl"></div>
-                  <h3 className="text-xl font-bold text-red-400 mb-4">The Complete Solution</h3>
-                  <p className="text-slate-300 leading-relaxed">
-                    Digital Frontier builds end-to-end AI systems so you win on both fronts—visible outside, efficient inside. No more choosing between growth and optimization.
-                  </p>
-                </motion.div>
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                {[
+                  { icon: "📊", title: "KPI Framework", desc: "Track what matters in GEO" },
+                  { icon: "🎯", title: "Content Strategy", desc: "Win AI recommendation engines" },
+                  { icon: "🚀", title: "Implementation", desc: "90-day action plan included" }
+                ].map((benefit, index) => (
+                  <div key={index} className="bg-white/5 p-8 rounded-2xl border border-violet-500/20">
+                    <span className="text-4xl mb-4 block">{benefit.icon}</span>
+                    <h4 className="font-bold text-white mb-2">{benefit.title}</h4>
+                    <p className="text-slate-300">{benefit.desc}</p>
+                  </div>
+                ))}
               </div>
+              
+              <button 
+                onClick={() => setShowLeadPopup(true)}
+                className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40"
+              >
+                Download Free Guide Now
+              </button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="py-32">
+          <div className="container mx-auto px-5">
+            <motion.h2 
+              className="text-center text-3xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Complete AI Marketing Suite
+            </motion.h2>
+            
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "🎯",
+                  title: "Generative Engine Optimization (GEO)",
+                  description: "Own ChatGPT, Perplexity, and Google AI results. Our proven GEO strategies get your business recommended by AI engines.",
+                  features: [
+                    "AI-first content optimization",
+                    "Prompt engineering for visibility", 
+                    "Cross-platform AI presence",
+                    "Performance tracking & analytics"
+                  ]
+                },
+                {
+                  icon: "🤖",
+                  title: "AI Agent Packages",
+                  description: "Custom AI assistants that work 24/7. From Basic to Enterprise - we have an AI solution for every business need.",
+                  features: [
+                    "Customer service automation",
+                    "Content creation & marketing",
+                    "Lead qualification & nurturing",
+                    "Industry-specific training"
+                  ]
+                },
+                {
+                  icon: "🎙️",
+                  title: "AI Voice Assistants",
+                  description: "Human-like voice technology that learns and sells. Transform customer experience with cutting-edge voice AI.",
+                  features: [
+                    "Natural conversation flow",
+                    "Sales & support automation",
+                    "Multi-language support",
+                    "CRM integration"
+                  ]
+                },
+                {
+                  icon: "📈",
+                  title: "Answer Engine Optimization (AEO)",
+                  description: "Capture voice search and featured snippets. Optimize for how people actually search in the AI era.",
+                  features: [
+                    "Voice search optimization",
+                    "Featured snippet targeting",
+                    "FAQ optimization",
+                    "Local AI search presence"
+                  ]
+                },
+                {
+                  icon: "⚡",
+                  title: "AI Marketing Automation",
+                  description: "Complete marketing automation powered by AI. Predictive analytics, personalization, and intelligent campaigns.",
+                  features: [
+                    "Predictive lead scoring",
+                    "Automated content creation",
+                    "Dynamic personalization",
+                    "ROI optimization"
+                  ]
+                },
+                {
+                  icon: "🏢",
+                  title: "Enterprise AI Solutions",
+                  description: "Complete digital transformation for B2B, finance, real estate, and crypto sectors. Custom AI systems that scale.",
+                  features: [
+                    "Custom AI development",
+                    "Integration & training",
+                    "Ongoing optimization",
+                    "Dedicated support team"
+                  ]
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-8 transition-all hover:-translate-y-4 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/20 relative overflow-hidden"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-t-3xl"></div>
+                  
+                  <span className="text-5xl mb-6 block">{service.icon}</span>
+                  <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-slate-300 mb-8 leading-relaxed">{service.description}</p>
+                  
+                  <ul className="space-y-2 mb-8">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="text-slate-300 relative pl-6">
+                        <span className="absolute left-0 text-emerald-400 font-bold">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href="#contact" 
+                    className="inline-block bg-violet-500/20 text-violet-400 px-6 py-3 rounded-full border border-violet-500/30 font-semibold transition-all hover:bg-violet-500/30 hover:-translate-y-1 no-underline"
+                  >
+                    Learn More →
+                  </a>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Proof Section */}
-        <section className="proof-section py-32 relative" id="features">
+        <section className="py-32 bg-slate-900/50">
           <div className="container mx-auto px-5">
             <motion.h2 
-              className="text-center text-4xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-400 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-center text-3xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -363,195 +409,106 @@ const AIPlansLanding = () => {
             </motion.h2>
             
             <div className="grid md:grid-cols-3 gap-12">
-              <motion.div 
-                className="proof-card text-center bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 relative hover:transform hover:-translate-y-4 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 overflow-hidden group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="text-6xl font-black mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent relative z-10">
-                  32%
-                </div>
-                <p className="text-slate-300 text-lg font-medium relative z-10">
-                  Lower acquisition costs with AI-optimized funnels and precision targeting
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className="proof-card text-center bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 relative hover:transform hover:-translate-y-4 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 overflow-hidden group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="text-6xl font-black mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent relative z-10">
-                  3x
-                </div>
-                <p className="text-slate-300 text-lg font-medium relative z-10">
-                  More qualified leads from GEO visibility strategies and AI discovery
-                </p>
-              </motion.div>
-
-              <motion.div 
-                className="proof-card text-center bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 relative hover:transform hover:-translate-y-4 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300 overflow-hidden group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="text-6xl font-black mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent relative z-10">
-                  15h
-                </div>
-                <p className="text-slate-300 text-lg font-medium relative z-10">
-                  Per week saved for operations teams through intelligent automation
-                </p>
-              </motion.div>
+              {[
+                {
+                  metric: "112%",
+                  description: "Increase in booked appointments for local plumbing company"
+                },
+                {
+                  metric: "34%", 
+                  description: "Higher average job value through AI optimization"
+                },
+                {
+                  metric: "87%",
+                  description: "Boost in Google Business profile engagement"
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 transition-all hover:-translate-y-6 hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-500/30"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="text-6xl font-black mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+                    {item.metric}
+                  </div>
+                  <p className="text-slate-300 text-lg font-medium">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Mechanism Section */}
-        <section className="mechanism-section py-32 relative">
+        {/* Case Studies */}
+        <section id="case-studies" className="py-32">
           <div className="container mx-auto px-5">
             <motion.h2 
-              className="text-center text-4xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-400 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-center text-3xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Our Two-Sided AI Framework
+              Real Client Success Stories
             </motion.h2>
             
-            <div className="grid md:grid-cols-2 gap-12 mt-16">
-              <motion.div 
-                className="framework-column bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-0.75 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-t-3xl"></div>
-                <h3 className="text-3xl font-black mb-8 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                  Visibility Engine
-                </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Generative Engine Optimization (GEO)
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Answer Engine Optimization (AEO)
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    AI-powered content strategy
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Omnichannel conversion funnels
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Search dominance across all platforms
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Predictive visibility analytics
-                  </li>
-                </ul>
-              </motion.div>
-
-              <motion.div 
-                className="framework-column bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12 hover:transform hover:-translate-y-3 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 relative overflow-hidden"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute top-0 left-0 right-0 h-0.75 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-t-3xl"></div>
-                <h3 className="text-3xl font-black mb-8 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-                  Efficiency Engine
-                </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Intelligent workflow automation
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Data-driven operations intelligence
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Cost optimization & scaling systems
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Predictive analytics & insights
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative border-b border-violet-500/10 pb-4">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Process optimization algorithms
-                  </li>
-                  <li className="flex items-start text-slate-300 font-medium pl-8 relative">
-                    <span className="absolute left-0 text-green-400 font-bold text-lg">✓</span>
-                    Performance monitoring & alerts
-                  </li>
-                </ul>
-              </motion.div>
+            <div className="space-y-12">
+              {[
+                {
+                  title: "BrightHome Realty - Real Estate Agency",
+                  description: "Mid-sized real estate agency transforms with AI Agent Package Pro",
+                  results: [
+                    { number: "67%", label: "Faster Lead Response" },
+                    { number: "43%", label: "More Qualified Leads" },
+                    { number: "89%", label: "Client Satisfaction" }
+                  ]
+                },
+                {
+                  title: "TechFlow B2B Company - Predictive Analytics", 
+                  description: "B2B company implements predictive marketing with 40% sales efficiency increase",
+                  results: [
+                    { number: "40%", label: "Sales Efficiency" },
+                    { number: "156%", label: "Lead Quality Improvement" },
+                    { number: "28%", label: "Conversion Rate Lift" }
+                  ]
+                }
+              ].map((caseStudy, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-12"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-2xl font-bold text-violet-400 mb-4">{caseStudy.title}</h3>
+                  <p className="text-slate-300 mb-8">{caseStudy.description}</p>
+                  
+                  <div className="grid md:grid-cols-3 gap-8">
+                    {caseStudy.results.map((result, resultIndex) => (
+                      <div key={resultIndex} className="text-center">
+                        <span className="block text-4xl font-extrabold text-cyan-400 mb-2">{result.number}</span>
+                        <span className="text-slate-400">{result.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div>
-        </section>
-
-        {/* Offer Section */}
-        <section className="offer-section py-32 text-center relative" id="offer">
-          <div className="absolute top-0 left-1/2 w-200 h-100 bg-violet-500/20 rounded-full filter blur-3xl transform -translate-x-1/2"></div>
-          <div className="container mx-auto px-5">
-            <motion.h2 
-              className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent relative z-10"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              One Partner. Two Wins.
-            </motion.h2>
-            <motion.p 
-              className="text-xl mb-12 text-slate-300 max-w-3xl mx-auto relative z-10"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Most agencies give you ads or SEO. We build systems. Visibility + efficiency, wrapped into one growth engine that evolves with AI technology.
-            </motion.p>
-            <motion.button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white px-10 py-5 rounded-full text-lg font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 relative overflow-hidden group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
-              Launch AI Visibility + Efficiency Today
-            </motion.button>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="faq-section py-32">
+        <section className="py-32 bg-slate-900/30">
           <div className="container mx-auto px-5">
             <div className="max-w-4xl mx-auto">
               <motion.h2 
-                className="text-center text-4xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-400 bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 30 }}
+                className="text-center text-3xl md:text-5xl font-black mb-16 bg-gradient-to-r from-white to-violet-500 bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
@@ -562,42 +519,42 @@ const AIPlansLanding = () => {
               <div className="space-y-4">
                 {[
                   {
-                    question: "What makes Digital Frontier different from other agencies?",
-                    answer: "We focus on both ends of AI—front-end visibility and back-end efficiency—so you grow smarter, not just bigger. Most agencies optimize one or the other; we optimize the entire system."
+                    question: "What is Generative Engine Optimization (GEO) and why do I need it?",
+                    answer: "GEO is the process of optimizing your content to appear in AI-generated responses from ChatGPT, Perplexity, Google AI Overviews, and other AI engines. It's crucial because customers increasingly ask AI for recommendations instead of traditional search."
                   },
                   {
-                    question: "How soon can I see measurable results?",
-                    answer: "Clients usually see visibility improvements in 6–12 weeks and backend efficiency gains immediately after implementation. Full system optimization typically shows ROI within 90 days."
+                    question: "How quickly can I see results from your AI marketing services?",
+                    answer: "AI Agent implementations show immediate efficiency gains. GEO and AEO typically show visibility improvements in 6-12 weeks. Full system optimization usually demonstrates ROI within 90 days."
                   },
                   {
-                    question: "Do I need a massive technology budget to get started?",
-                    answer: "Not at all. Our pilot programs are designed for practical rollout, starting at $5,000. We scale investment with your results and growth trajectory."
+                    question: "What's included in your AI Agent packages?",
+                    answer: "We offer Basic, Pro, and Enterprise packages. All include custom AI training, integration setup, ongoing optimization, and support. Pro and Enterprise add advanced features like voice capabilities and custom integrations."
                   },
                   {
-                    question: "Will AI automation replace my existing team?",
-                    answer: "Never. AI is a force multiplier—your team stays in control while AI handles repetitive tasks, freeing them for strategic, creative, and relationship-building work."
+                    question: "Do you work with my industry specifically?",
+                    answer: "Yes! We specialize in B2B, real estate, finance, crypto, and tech sectors. Our AI solutions are customized for industry-specific workflows, terminology, and compliance requirements."
                   },
                   {
-                    question: "What industries and company sizes do you work with?",
-                    answer: "We work with construction, trucking, finance, retail, SaaS, and service businesses—anywhere visibility + efficiency drive growth. From startups to enterprise organizations."
+                    question: "What makes Digital Frontier different from other AI marketing agencies?",
+                    answer: "We focus on both visibility (GEO/AEO) AND efficiency (AI automation) in one integrated system. Most agencies do one or the other. We also provide ongoing optimization, not just setup-and-forget services."
                   }
                 ].map((faq, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
-                    className="faq-item bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl overflow-hidden hover:border-violet-500/50 transition-all duration-300"
-                    initial={{ opacity: 0, y: 20 }}
+                    className="mb-4 bg-white/3 backdrop-blur-xl border border-violet-500/20 rounded-2xl overflow-hidden transition-all hover:border-violet-500/50 faq-item"
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
                     <div 
-                      className="faq-question p-8 cursor-pointer font-semibold text-lg text-white hover:bg-violet-500/10 transition-all duration-300 relative"
+                      className="p-8 cursor-pointer font-semibold text-lg text-white transition-all hover:bg-violet-500/10 relative faq-question"
                       onClick={(e) => toggleFAQ(e.currentTarget)}
                     >
                       {faq.question}
-                      <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-2xl text-violet-400 transition-transform duration-300">+</span>
+                      <span className="absolute right-8 top-1/2 -translate-y-1/2 text-2xl text-violet-500 transition-transform">+</span>
                     </div>
-                    <div className="faq-answer px-8 pb-8 text-slate-300 leading-relaxed hidden">
+                    <div className="px-8 pb-8 text-slate-300 leading-relaxed hidden faq-answer">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -607,41 +564,110 @@ const AIPlansLanding = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="final-cta py-32 text-center relative" id="contact">
-          <div className="absolute top-0 left-1/2 w-250 h-125 bg-violet-500/30 rounded-full filter blur-3xl transform -translate-x-1/2"></div>
-          <div className="container mx-auto px-5">
-            <motion.h2 
-              className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent relative z-10"
+        {/* Contact/Final CTA Section */}
+        <section id="contact" className="py-32 text-center relative">
+          <div className="absolute top-0 left-1/2 w-[1000px] h-[500px] bg-gradient-radial from-violet-500/30 to-transparent -translate-x-1/2 rounded-full blur-[100px]"></div>
+          
+          <div className="container mx-auto px-5 relative z-10">
+            <motion.div 
+              className="inline-block bg-red-500/10 border border-red-500/30 px-8 py-4 rounded-full mb-8 text-red-400 font-semibold"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Stay Visible. Stay Efficient. Stay Ahead.
-            </motion.h2>
-            <motion.p 
-              className="text-xl mb-12 text-slate-300 relative z-10"
-              initial={{ opacity: 0, y: 30 }}
+              ⚠️ AI adoption is accelerating - don't get left behind
+            </motion.div>
+            
+            <motion.h2 
+              className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-violet-500 to-cyan-400 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              AI is rewriting the rules of business. We make sure you win on both sides of the equation.
-            </motion.p>
-            <motion.button 
-              className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white px-10 py-5 rounded-full text-lg font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 transition-all duration-300 relative overflow-hidden group"
-              initial={{ opacity: 0, y: 30 }}
+              Ready to Dominate AI Search Results?
+            </motion.h2>
+            
+            <motion.p 
+              className="text-xl mb-12 text-slate-300"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></span>
-              Book Your Free AI Strategy Session
-            </motion.button>
+              Book your free 30-minute strategy session. We'll analyze your current AI visibility and show you exactly how to get found by AI engines.
+            </motion.p>
+            
+            <motion.div 
+              className="bg-white/5 backdrop-blur-xl border border-violet-500/30 rounded-3xl p-12 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-center mb-8 text-violet-400 text-2xl font-bold">Free Strategy Session</h3>
+              
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Business Email*</label>
+                  <input type="email" required placeholder="your@company.com" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                </div>
+                
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Company Name*</label>
+                  <input type="text" required placeholder="Your Company" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                </div>
+                
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Phone Number*</label>
+                  <input type="tel" required placeholder="(901) 657-5007" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                </div>
+                
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Primary Interest*</label>
+                  <select required className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
+                    <option value="">Select Service</option>
+                    <option value="geo">Generative Engine Optimization (GEO)</option>
+                    <option value="ai-agents">AI Agent Packages</option>
+                    <option value="voice">AI Voice Assistants</option>
+                    <option value="aeo">Answer Engine Optimization (AEO)</option>
+                    <option value="automation">Marketing Automation</option>
+                    <option value="enterprise">Enterprise Solutions</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Monthly Marketing Budget</label>
+                  <select className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
+                    <option value="">Select Budget</option>
+                    <option value="5k-15k">$5,000 - $15,000</option>
+                    <option value="15k-50k">$15,000 - $50,000</option>
+                    <option value="50k-100k">$50,000 - $100,000</option>
+                    <option value="100k+">$100,000+</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block mb-2 text-slate-300 font-medium">Biggest Challenge</label>
+                  <textarea placeholder="What's your biggest challenge with AI marketing or getting found online?" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400 h-32"></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all"
+                >
+                  Book My Free Strategy Session
+                </button>
+              </form>
+              
+              <div className="text-center mt-8 text-slate-400">
+                <p>📞 Prefer to call? <a href="tel:901-657-5007" className="text-violet-400 no-underline">901-657-5007</a></p>
+                <p>✉️ Quick question? <a href="mailto:info@digitalfrontier.app" className="text-violet-400 no-underline">info@digitalfrontier.app</a></p>
+              </div>
+            </motion.div>
           </div>
         </section>
-
       </div>
     </>
   );
