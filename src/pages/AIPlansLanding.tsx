@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { SEOHead } from "@/components/SEOHead";
+import { submitToHubSpot } from "@/utils/hubspot";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const AIPlansLanding = () => {
   const [particles, setParticles] = useState<Array<{ id: number; left: string; top: string; delay: string; duration: string }>>([]);
   const [showLeadPopup, setShowLeadPopup] = useState(false);
+  const [isLeadFormLoading, setIsLeadFormLoading] = useState(false);
+  const [isContactFormLoading, setIsContactFormLoading] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     // Create particles
@@ -47,9 +53,83 @@ const AIPlansLanding = () => {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleLeadFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("Thank you! We'll contact you within 24 hours to schedule your free strategy session.");
+    setIsLeadFormLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+
+    try {
+      await submitToHubSpot({
+        email,
+        company,
+        lead_source: 'GEO Strategy Guide',
+        form_name: 'Free GEO Strategy Guide',
+        page_url: window.location.href
+      });
+
+      toast({
+        title: "Success!",
+        description: "Thank you! Your free GEO Strategy Guide will be sent to your email shortly.",
+      });
+
+      setShowLeadPopup(false);
+    } catch (error) {
+      console.error('Error submitting lead form:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLeadFormLoading(false);
+    }
+  };
+
+  const handleContactFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsContactFormLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const phone = formData.get('phone') as string;
+    const interest = formData.get('interest') as string;
+    const budget = formData.get('budget') as string;
+    const challenge = formData.get('challenge') as string;
+
+    try {
+      await submitToHubSpot({
+        email,
+        company,
+        phone,
+        primary_interest: interest,
+        monthly_budget: budget,
+        biggest_challenge: challenge,
+        lead_source: 'AI Plans Landing Page',
+        form_name: 'Free Strategy Session',
+        page_url: window.location.href
+      });
+
+      toast({
+        title: "Success!",
+        description: "Thank you! We'll contact you within 24 hours to schedule your free strategy session.",
+      });
+
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsContactFormLoading(false);
+    }
   };
 
   return (
@@ -95,24 +175,27 @@ const AIPlansLanding = () => {
             <p className="mb-8 text-slate-300">
               Get our step-by-step playbook to dominate ChatGPT, Perplexity & Google AI search results
             </p>
-            <form onSubmit={handleFormSubmit} className="space-y-4">
+            <form onSubmit={handleLeadFormSubmit} className="space-y-4">
               <input 
                 type="email" 
+                name="email"
                 placeholder="Enter your business email" 
                 required 
                 className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400"
               />
               <input 
                 type="text" 
+                name="company"
                 placeholder="Company name" 
                 required 
                 className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400"
               />
               <button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all"
+                disabled={isLeadFormLoading}
+                className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Download Free Guide
+                {isLeadFormLoading ? "Submitting..." : "Download Free Guide"}
               </button>
             </form>
           </div>
@@ -608,25 +691,25 @@ const AIPlansLanding = () => {
             >
               <h3 className="text-center mb-8 text-violet-400 text-2xl font-bold">Free Strategy Session</h3>
               
-              <form onSubmit={handleFormSubmit} className="space-y-6">
+              <form onSubmit={handleContactFormSubmit} className="space-y-6">
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Business Email*</label>
-                  <input type="email" required placeholder="your@company.com" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                  <input type="email" name="email" required placeholder="your@company.com" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
                 </div>
                 
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Company Name*</label>
-                  <input type="text" required placeholder="Your Company" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                  <input type="text" name="company" required placeholder="Your Company" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
                 </div>
                 
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Phone Number*</label>
-                  <input type="tel" required placeholder="(901) 657-5007" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
+                  <input type="tel" name="phone" required placeholder="(901) 657-5007" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400" />
                 </div>
                 
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Primary Interest*</label>
-                  <select required className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
+                  <select name="interest" required className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
                     <option value="">Select Service</option>
                     <option value="geo">Generative Engine Optimization (GEO)</option>
                     <option value="ai-agents">AI Agent Packages</option>
@@ -639,7 +722,7 @@ const AIPlansLanding = () => {
                 
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Monthly Marketing Budget</label>
-                  <select className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
+                  <select name="budget" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white">
                     <option value="">Select Budget</option>
                     <option value="5k-15k">$5,000 - $15,000</option>
                     <option value="15k-50k">$15,000 - $50,000</option>
@@ -650,14 +733,15 @@ const AIPlansLanding = () => {
                 
                 <div>
                   <label className="block mb-2 text-slate-300 font-medium">Biggest Challenge</label>
-                  <textarea placeholder="What's your biggest challenge with AI marketing or getting found online?" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400 h-32"></textarea>
+                  <textarea name="challenge" placeholder="What's your biggest challenge with AI marketing or getting found online?" className="w-full p-4 border border-violet-500/30 rounded-xl bg-white/5 text-white placeholder-slate-400 h-32"></textarea>
                 </div>
                 
                 <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all"
+                  disabled={isContactFormLoading}
+                  className="w-full bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-8 py-4 rounded-full font-semibold hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Book My Free Strategy Session
+                  {isContactFormLoading ? "Submitting..." : "Book My Free Strategy Session"}
                 </button>
               </form>
               
@@ -669,6 +753,7 @@ const AIPlansLanding = () => {
           </div>
         </section>
       </div>
+      <Toaster />
     </>
   );
 };
