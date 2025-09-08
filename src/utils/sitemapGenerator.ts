@@ -1,4 +1,4 @@
-import { OPTIMIZED_ROUTE_CONFIGS } from './seo-optimized';
+import { ROUTE_CONFIGS } from './seo';
 
 export interface SitemapEntry {
   loc: string;
@@ -26,7 +26,7 @@ export const generateSitemapEntries = (config: Partial<SitemapConfig> = {}): Sit
   const finalConfig = { ...DEFAULT_CONFIG, ...config };
   const now = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
 
-  const entries: SitemapEntry[] = OPTIMIZED_ROUTE_CONFIGS.map(route => ({
+  const entries: SitemapEntry[] = ROUTE_CONFIGS.map(route => ({
     loc: `${finalConfig.baseUrl}${route.path}`,
     lastmod: now,
     changefreq: route.changeFreq || finalConfig.defaultChangefreq,

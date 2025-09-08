@@ -569,6 +569,37 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
     changeFreq: 'monthly',
     pageType: 'article',
     modifiedDate: '2024-12-24'
+  },
+  // Newly Added Pages
+  {
+    path: '/contact-for-digital-marketing',
+    title: 'Contact Digital Marketing Experts | Free Strategy Consultation',
+    description: 'Contact our digital marketing experts for a free strategy consultation. Get custom AI-powered marketing solutions tailored to your business growth needs.',
+    keywords: 'contact digital marketing, marketing consultation, digital marketing experts, strategy consultation',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    pageType: 'website',
+    modifiedDate: '2025-09-08'
+  },
+  {
+    path: '/saas-ai-agent-packages',
+    title: 'SaaS AI Agent Packages | Complete Marketing Automation Solutions',
+    description: 'Comprehensive SaaS AI agent packages for complete marketing automation. Transform your business with intelligent AI-powered marketing systems and workflows.',
+    keywords: 'SaaS AI agents, marketing automation, AI marketing packages, SaaS marketing solutions',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    pageType: 'service',
+    modifiedDate: '2025-09-08'
+  },
+  {
+    path: '/digital-frontier-where-crypto-ai-and-marketing-collide',
+    title: 'Crypto AI Marketing Convergence | Digital Frontier Innovation Hub',
+    description: 'Where cryptocurrency, artificial intelligence, and marketing innovation converge. Revolutionary AI-driven marketing strategies for crypto and blockchain businesses.',
+    keywords: 'crypto AI marketing, blockchain marketing innovation, cryptocurrency digital marketing, AI crypto strategies',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    pageType: 'service',
+    modifiedDate: '2025-09-08'
   }
 ];
 
