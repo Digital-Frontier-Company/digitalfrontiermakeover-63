@@ -588,41 +588,41 @@ const Index = () => {
         <div className="mx-auto max-w-6xl px-6 relative z-10">
           <h2 className="text-center mb-12 text-cyan-300 font-extrabold text-base">Trusted by Industry Leaders</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
+            <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
               <LazyImage 
                 src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" 
                 alt="Beat AI Search - Advanced AI Search Optimization" 
-                className="h-20 w-auto object-contain" 
-                displayWidth={160} 
-                displayHeight={80} 
+                className="h-32 w-auto object-contain font-bold" 
+                displayWidth={240} 
+                displayHeight={128} 
               />
             </div>
             
-            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+            <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
               <LazyImage 
                 src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" 
                 alt="Lindy Certified Partner - AI Automation Excellence" 
-                className="h-20 w-auto object-contain" 
-                displayWidth={160} 
-                displayHeight={80} 
+                className="h-32 w-auto object-contain font-bold" 
+                displayWidth={240} 
+                displayHeight={128} 
               />
             </div>
             
-            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+            <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
               <LazyImage 
                 src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" 
                 alt="AI Creative Technology - Digital Innovation" 
-                className="h-20 w-auto object-contain" 
-                displayWidth={160} 
-                displayHeight={80} 
+                className="h-32 w-auto object-contain font-bold" 
+                displayWidth={240} 
+                displayHeight={128} 
               />
             </div>
             
-            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+            <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
               <LazyImage 
                 src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" 
-                alt="60% Zero Clicks Analytics - Search Performance Data" 
+                alt="60% Zero Clicks Analytics - Search Performance Data"
                 className="h-20 w-auto object-contain" 
                 displayWidth={160} 
                 displayHeight={80} 
@@ -1134,6 +1134,34 @@ const Index = () => {
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
           <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-green-400 rounded-full animate-pulse opacity-40"></div>
           <div className="absolute bottom-1/4 left-2/3 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-50"></div>
+        </div>
+      </section>
+
+      {/* COMPANY LOGOS MARQUEE SECTION */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-center mb-12 text-slate-400 font-medium text-sm uppercase tracking-wider">Our Partners & Platforms</h2>
+          
+          {/* Scrolling Marquee */}
+          <div className="relative">
+            <motion.div 
+              className="flex gap-12 items-center"
+              animate={marqueeControls}
+              style={{ width: "200%" }}
+            >
+              {marqueeItems.map((logo, index) => (
+                <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                  <LazyImage 
+                    src={logo} 
+                    alt={`Partner company logo ${index + 1}`}
+                    className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" 
+                    displayWidth={120} 
+                    displayHeight={48} 
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
