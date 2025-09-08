@@ -416,8 +416,8 @@ const Index = () => {
         }} viewport={{
           once: true
         }}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl mb-6 md:text-xl font-extrabold">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent text-3xl">
                 AI Evolution Follows Nature's Laws
               </span>
             </h2>
