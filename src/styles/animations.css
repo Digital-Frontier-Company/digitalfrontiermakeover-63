@@ -480,3 +480,38 @@
   animation: blink-caret 1s step-end infinite;
 }
 
+/* Particle network animations */
+@keyframes particleFloat {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateX(-10px) translateY(-5px) scale(1.05);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(5px) translateY(-10px) scale(0.95);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateX(8px) translateY(5px) scale(1.02);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes networkPulse {
+  0%, 100% {
+    opacity: 0.1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.3;
+    filter: brightness(1.5);
+  }
+}
+

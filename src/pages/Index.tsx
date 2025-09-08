@@ -558,25 +558,76 @@ const Index = () => {
         </div>
       </section>
 
-          {/* TRUST BAR - 6-logo auto-grid */}
-      <section className="-bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl">
-        <div className="mx-auto max-w-6xl px-6">
+          {/* TRUST BAR - Animated Particle Background */}
+      <section className="relative -bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
+        {/* Animated Particle Network Background */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `url('/lovable-uploads/058e28c2-a5a3-4668-97f4-3e1867fb94df.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'particleFloat 20s linear infinite'
+          }}
+        />
+        
+        {/* Animated connecting lines overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" 
+               style={{
+                 backgroundImage: `
+                   linear-gradient(rgba(78, 226, 236, 0.4) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(78, 226, 236, 0.4) 1px, transparent 1px)
+                 `,
+                 backgroundSize: '60px 60px',
+                 animation: 'networkPulse 8s ease-in-out infinite',
+               }} 
+          />
+        </div>
+
+        <div className="mx-auto max-w-6xl px-6 relative z-10">
           <h2 className="text-center mb-12 text-cyan-300 font-extrabold text-base">Trusted by Industry Leaders</h2>
-          <div className="relative overflow-hidden" onMouseEnter={() => marqueeControls.stop()} onMouseLeave={() => marqueeControls.start({
-          x: ["0%", "-50%"],
-          transition: {
-            duration: 30,
-            ease: "linear",
-            repeat: Infinity
-          }
-        })}>
-            <motion.div className="flex items-center gap-12 whitespace-nowrap will-change-transform" animate={marqueeControls}>
-              {marqueeItems.slice(0, 6).map((src, index) => <div key={index} className="opacity-60 hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-                  {src === "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png" ? <a href="https://makementors.com" target="_blank" rel="noopener noreferrer">
-                      <LazyImage src={src} alt="MakeMentors logo" className="h-24 w-auto" displayWidth={96} displayHeight={96} />
-                    </a> : <LazyImage src={src} alt={`Trusted brand ${index + 1}`} className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" displayWidth={144} displayHeight={96} />}
-                </div>)}
-            </motion.div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+              <LazyImage 
+                src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" 
+                alt="Beat AI Search - Advanced AI Search Optimization" 
+                className="h-20 w-auto object-contain" 
+                displayWidth={160} 
+                displayHeight={80} 
+              />
+            </div>
+            
+            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+              <LazyImage 
+                src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" 
+                alt="Lindy Certified Partner - AI Automation Excellence" 
+                className="h-20 w-auto object-contain" 
+                displayWidth={160} 
+                displayHeight={80} 
+              />
+            </div>
+            
+            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+              <LazyImage 
+                src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" 
+                alt="AI Creative Technology - Digital Innovation" 
+                className="h-20 w-auto object-contain" 
+                displayWidth={160} 
+                displayHeight={80} 
+              />
+            </div>
+            
+            <div className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+              <LazyImage 
+                src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" 
+                alt="60% Zero Clicks Analytics - Search Performance Data" 
+                className="h-20 w-auto object-contain" 
+                displayWidth={160} 
+                displayHeight={80} 
+              />
+            </div>
           </div>
         </div>
       </section>
