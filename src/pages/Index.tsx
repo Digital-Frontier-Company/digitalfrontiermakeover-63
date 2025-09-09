@@ -1112,9 +1112,9 @@ const Index = () => {
       </section>
 
       {/* COMPANY LOGOS MARQUEE SECTION */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow rounded-lg">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center mb-12 text-slate-400 font-medium text-sm uppercase tracking-wider">Our Partners & Platforms</h2>
+          <h2 className="text-center mb-12 font-medium uppercase tracking-wider text-lime-300 text-xl">Our Partners & Platforms</h2>
           
           {/* Scrolling Marquee */}
           <div className="relative">
