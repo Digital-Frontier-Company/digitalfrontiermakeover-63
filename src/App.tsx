@@ -76,6 +76,7 @@ import DigitalMarketing from './pages/DigitalMarketing';
 import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
 import SaaSAIAgentPackages from './pages/SaaSAIAgentPackages';
 import DigitalFrontierCryptoAIMarketing from './pages/DigitalFrontierCryptoAIMarketing';
+import RealEstateDemo from './pages/RealEstateDemo';
 
 // Loading component for lazy routes
 const PageLoader = () => (
@@ -163,6 +164,7 @@ function App() {
              <Route path="/contact-for-digital-marketing" element={<ContactForDigitalMarketing />} />
              <Route path="/saas-ai-agent-packages" element={<SaaSAIAgentPackages />} />
              <Route path="/digital-frontier-where-crypto-ai-and-marketing-collide" element={<DigitalFrontierCryptoAIMarketing />} />
+             <Route path="/real-estate-demo" element={<MainLayout><RealEstateDemo /></MainLayout>} />
              <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
              <Route path="/modern-contact-form" element={<ModernContactForm />} />
             <Route path="*" element={<NotFound />} />
