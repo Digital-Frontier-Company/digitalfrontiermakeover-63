@@ -1118,9 +1118,9 @@ const Index = () => {
           
           {/* Scrolling Marquee */}
           <div className="relative">
-            <motion.div className="flex gap-12 items-center" animate={marqueeControls} style={{
+            <motion.div animate={marqueeControls} style={{
             width: "200%"
-          }}>
+          }} className="flex gap-x-16 gap-x-14 rounded-lg">
               {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
                   <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="max-h-20 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
                 </div>)}
