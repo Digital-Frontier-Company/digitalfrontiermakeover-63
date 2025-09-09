@@ -585,7 +585,7 @@ const Index = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" alt="Beat AI Search - Advanced AI Search Optimization" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
+              <LazyImage src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" alt="Beat AI Search - Advanced AI Search Optimization" displayWidth={240} displayHeight={128} className="h-32 w-auto object-fill font-bold" />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
