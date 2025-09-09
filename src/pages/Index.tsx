@@ -836,7 +836,7 @@ const Index = () => {
             <div className="flex justify-center items-center gap-6 mb-4">
               <Shield className="w-10 h-10 text-blue-400" />
               <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" className="h-12 w-auto object-contain" displayWidth={120} displayHeight={48} />
+                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" displayWidth={120} displayHeight={48} className="h-12 w-auto object-fill " />
               </a>
             </div>
             <p className="text-lg text-soft-white/90 italic">
