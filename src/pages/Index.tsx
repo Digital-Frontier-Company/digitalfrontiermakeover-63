@@ -580,8 +580,8 @@ const Index = () => {
         }} />
         </div>
 
-        <div className="flex-grow gap-x-16 6xl px-6 ">
-          <h2 className="text-center mb-12 text-cyan-300 text-xl font-extrabold">Trusted by Industry Leaders</h2>
+        <div className="mx-auto max-w-6xl px-6 relative z-10">
+          <h2 className="text-center mb-12 text-cyan-300 font-extrabold text-base">Trusted by Industry Leaders</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
@@ -597,7 +597,7 @@ const Index = () => {
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" alt="60% Zero Clicks Analytics - Search Performance Data" displayWidth={160} displayHeight={80} className="flex gap-x-20 w-auto object-fill" />
+              <LazyImage src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" alt="60% Zero Clicks Analytics - Search Performance Data" displayWidth={160} displayHeight={80} className="h-20 w-auto object-fill" />
             </div>
           </div>
         </div>
