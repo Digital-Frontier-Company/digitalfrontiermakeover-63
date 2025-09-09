@@ -1122,7 +1122,7 @@ const Index = () => {
             width: "200%"
           }}>
               {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="h-12 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
+                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="max-h-20 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
                 </div>)}
             </motion.div>
           </div>
