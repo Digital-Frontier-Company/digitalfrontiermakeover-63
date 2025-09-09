@@ -589,15 +589,15 @@ const Index = () => {
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
+              <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-auto object-fill font-bold" />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
+              <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" displayWidth={240} displayHeight={128} className="h-32 w-auto object-fill font-bold" />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" alt="60% Zero Clicks Analytics - Search Performance Data" className="h-20 w-auto object-contain" displayWidth={160} displayHeight={80} />
+              <LazyImage src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" alt="60% Zero Clicks Analytics - Search Performance Data" displayWidth={160} displayHeight={80} className="h-20 w-auto object-fill" />
             </div>
           </div>
         </div>
