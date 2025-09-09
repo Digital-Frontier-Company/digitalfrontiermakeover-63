@@ -561,28 +561,23 @@ const Index = () => {
           {/* TRUST BAR - Animated Particle Background */}
       <section className="relative -bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
         {/* Animated Particle Network Background */}
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `url('/lovable-uploads/058e28c2-a5a3-4668-97f4-3e1867fb94df.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            animation: 'particleFloat 20s linear infinite'
-          }}
-        />
+        <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `url('/lovable-uploads/058e28c2-a5a3-4668-97f4-3e1867fb94df.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        animation: 'particleFloat 20s linear infinite'
+      }} />
         
         {/* Animated connecting lines overlay */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" 
-               style={{
-                 backgroundImage: `
+          <div className="absolute inset-0" style={{
+          backgroundImage: `
                    linear-gradient(rgba(78, 226, 236, 0.4) 1px, transparent 1px),
                    linear-gradient(90deg, rgba(78, 226, 236, 0.4) 1px, transparent 1px)
                  `,
-                 backgroundSize: '60px 60px',
-                 animation: 'networkPulse 8s ease-in-out infinite',
-               }} 
-          />
+          backgroundSize: '60px 60px',
+          animation: 'networkPulse 8s ease-in-out infinite'
+        }} />
         </div>
 
         <div className="mx-auto max-w-6xl px-6 relative z-10">
@@ -590,43 +585,19 @@ const Index = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage 
-                src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" 
-                alt="Beat AI Search - Advanced AI Search Optimization" 
-                className="h-32 w-auto object-contain font-bold" 
-                displayWidth={240} 
-                displayHeight={128} 
-              />
+              <LazyImage src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" alt="Beat AI Search - Advanced AI Search Optimization" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage 
-                src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" 
-                alt="Lindy Certified Partner - AI Automation Excellence" 
-                className="h-32 w-auto object-contain font-bold" 
-                displayWidth={240} 
-                displayHeight={128} 
-              />
+              <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage 
-                src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" 
-                alt="AI Creative Technology - Digital Innovation" 
-                className="h-32 w-auto object-contain font-bold" 
-                displayWidth={240} 
-                displayHeight={128} 
-              />
+              <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" className="h-32 w-auto object-contain font-bold" displayWidth={240} displayHeight={128} />
             </div>
             
             <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform">
-              <LazyImage 
-                src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" 
-                alt="60% Zero Clicks Analytics - Search Performance Data"
-                className="h-20 w-auto object-contain" 
-                displayWidth={160} 
-                displayHeight={80} 
-              />
+              <LazyImage src="/lovable-uploads/f24efd7d-f980-480c-90cb-33a4edf18eee.png" alt="60% Zero Clicks Analytics - Search Performance Data" className="h-20 w-auto object-contain" displayWidth={160} displayHeight={80} />
             </div>
           </div>
         </div>
@@ -864,19 +835,8 @@ const Index = () => {
         }}>
             <div className="flex justify-center items-center gap-6 mb-4">
               <Shield className="w-10 h-10 text-blue-400" />
-              <a 
-                href="https://digitalpioneers.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105"
-              >
-                <LazyImage 
-                  src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png"
-                  alt="Digital Pioneer Collective Partner"
-                  className="h-12 w-auto object-contain"
-                  displayWidth={120}
-                  displayHeight={48}
-                />
+              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
+                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" className="h-12 w-auto object-contain" displayWidth={120} displayHeight={48} />
               </a>
             </div>
             <p className="text-lg text-soft-white/90 italic">
@@ -1158,22 +1118,12 @@ const Index = () => {
           
           {/* Scrolling Marquee */}
           <div className="relative">
-            <motion.div 
-              className="flex gap-12 items-center"
-              animate={marqueeControls}
-              style={{ width: "200%" }}
-            >
-              {marqueeItems.map((logo, index) => (
-                <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                  <LazyImage 
-                    src={logo} 
-                    alt={`Partner company logo ${index + 1}`}
-                    className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" 
-                    displayWidth={120} 
-                    displayHeight={48} 
-                  />
-                </div>
-              ))}
+            <motion.div className="flex gap-12 items-center" animate={marqueeControls} style={{
+            width: "200%"
+          }}>
+              {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="h-12 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
+                </div>)}
             </motion.div>
           </div>
         </div>
