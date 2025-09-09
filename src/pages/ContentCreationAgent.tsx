@@ -104,29 +104,26 @@ const ContentCreationAgent = () => {
       <Helmet>
         <script type="text/javascript">
           {`
-            (function (d, t) {
-              const v = d.createElement(t);
-              const s = d.getElementsByTagName(t)[0];
-
-              v.src   = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-              v.type  = "text/javascript";
-              v.async = true;
-
-              v.onload = function () {
-                window.voiceflow.chat.load({
-                  verify:   { projectID: "6719217d6b47c6d69c6218a0" },
-                  url:      "https://general-runtime.voiceflow.com",
-                  versionID:"6719217d6b47c6d69c6218a1",
-                  voice:    { url: "https://runtime-api.voiceflow.com" },
-                  render:   {
-                    mode:   "embedded",
-                    target: document.getElementById("vf-chat")
-                  }
-                });
-              };
-
-              s.parentNode.insertBefore(v, s);
-            })(document, "script");
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '6719217d6b47c6d69c6218a0' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    voice: {
+                      url: "https://runtime-api.voiceflow.com"
+                    },
+                    render: {
+                      mode: "embedded",
+                      target: document.getElementById("vf-chat")
+                    }
+                  });
+                }
+                v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+                v.type = "text/javascript"; 
+                s.parentNode.insertBefore(v, s);
+            })(document, 'script');
           `}
         </script>
       </Helmet>
