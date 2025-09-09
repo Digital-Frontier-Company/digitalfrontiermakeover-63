@@ -46,6 +46,7 @@ const ConversationManager: React.FC = () => {
       {window.innerWidth >= 768 && (
         <VoiceInterface
           onTranscript={handleVoiceTranscript}
+          autoSpeak={true}
           className="fixed top-20 right-6 w-72 z-30"
         />
       )}

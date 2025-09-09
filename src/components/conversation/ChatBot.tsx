@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Mic, MicOff, Bot, User, Loader2 } from 'lucide-react';
-import { useChatBot } from '@/hooks/useChatBot';
+import { useVoiceflowChat } from '@/hooks/useVoiceflowChat';
 import { useVoiceInterface } from '@/hooks/useVoiceInterface';
 
 interface Message {
@@ -30,8 +30,9 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onToggle }) => {
     messages, 
     isLoading, 
     sendMessage, 
-    quickActions 
-  } = useChatBot();
+    quickActions,
+    isConnected
+  } = useVoiceflowChat();
 
   const {
     isListening,

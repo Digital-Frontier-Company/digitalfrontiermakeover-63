@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Mic, MicOff, Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import { useVoiceInterface } from '@/hooks/useVoiceInterface';
 import { useTextToSpeech } from '@/hooks/useTextToSpeech';
+import { useVoiceflowVoice } from '@/hooks/useVoiceflowVoice';
 
 interface VoiceInterfaceProps {
   onTranscript?: (text: string) => void;
@@ -37,11 +38,35 @@ const VoiceInterface: React.FC<VoiceInterfaceProps> = ({
     setSelectedVoice
   } = useTextToSpeech();
 
+  const {
+    sendVoiceMessage,
+    isLoading: voiceflowLoading,
+    isConnected: voiceflowConnected
+  } = useVoiceflowVoice();
+
   useEffect(() => {
     if (transcript && onTranscript) {
       onTranscript(transcript);
     }
   }, [transcript, onTranscript]);
+
+  // Handle voice conversation with Voiceflow
+  useEffect(() => {
+    const handleVoiceConversation = async () => {
+      if (transcript && voiceflowConnected && !voiceflowLoading) {
+        try {
+          const response = await sendVoiceMessage(transcript);
+          if (response && autoSpeak) {
+            speak(response);
+          }
+        } catch (error) {
+          console.error('Voice conversation error:', error);
+        }
+      }
+    };
+
+    handleVoiceConversation();
+  }, [transcript, voiceflowConnected, voiceflowLoading, sendVoiceMessage, speak, autoSpeak]);
 
   const handleVoiceToggle = () => {
     if (isListening) {
