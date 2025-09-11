@@ -46,6 +46,7 @@ const TypewriterText = ({
 // Lazy load below-the-fold components for performance
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
+const PricingToggle = lazy(() => import("@/components/PricingToggle"));
 const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
 const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
@@ -584,17 +585,13 @@ const Index = () => {
           
           {/* Scrolling marquee container */}
           <div className="overflow-hidden relative">
-            <motion.div 
-              className="flex items-center justify-center gap-20 whitespace-nowrap"
-              animate={{ 
-                x: [0, -1000] 
-              }}
-              transition={{
-                duration: 25,
-                ease: "linear",
-                repeat: Infinity
-              }}
-            >
+            <motion.div className="flex items-center justify-center gap-20 whitespace-nowrap" animate={{
+            x: [0, -1000]
+          }} transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity
+          }}>
               {/* First set of logos */}
               <a href="https://beataisearch.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" alt="Beat AI Search - Advanced AI Search Optimization" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
@@ -608,7 +605,7 @@ const Index = () => {
                 <img src="https://partners.emergent.sh/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjE2Mzg1LCJwdXIiOiJibG9iX2lkIn19--0f3aae9526a2806001160fcad87f7d0948101bcf/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOiI1MDB4MTAwIn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--256f0f4b9ef45e03ba47082c4138ac93b62e3184/logo_square.png" alt="Emergent AI - Advanced AI Platform" className="h-32 w-48 object-contain" />
               </a>
               
-              <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+              <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:fill-max transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
               </a>
               
@@ -1057,6 +1054,10 @@ const Index = () => {
         </div>
       </section>
 
+      {/* PRICING TOGGLE - Project/Retainer choice */}
+      <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
+        <PricingToggle />
+      </Suspense>
 
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
@@ -1145,6 +1146,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* COMPANY LOGOS MARQUEE SECTION */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow rounded-lg">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-center mb-12 font-medium uppercase tracking-wider text-lime-300 text-xl">Our Partners & Platforms</h2>
+          
+          {/* Scrolling Marquee */}
+          <div className="relative">
+            <motion.div animate={marqueeControls} style={{
+            width: "200%"
+          }} className="flex gap-x-16 gap-x-14 rounded-lg">
+              {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="max-h-20 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
+                </div>)}
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* LEARN MORE SECTION */}
       <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
