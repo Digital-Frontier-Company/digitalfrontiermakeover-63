@@ -19,6 +19,18 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
+      title: "Why Marketing Agencies Are Essential for Business Growth in 2025",
+      excerpt: "Businesses working with marketing agencies see an average return of $5 for every $1 invested in digital marketing. Discover why professional marketing support is crucial in today's competitive landscape.",
+      category: "Marketing Strategy",
+      readTime: "15 min read",
+      date: "2025-09-11",
+      slug: "marketing-agencies-essential-business-growth-2025",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      badge: "MARKETING",
+      featured: true
+    },
+    {
+      id: 2,
       title: "The AI Truth Gap: What Happens When You Ask 5 Different AIs for Today's Narrative",
       excerpt: "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
       category: "AI Investigation",
@@ -27,10 +39,10 @@ const Blog = () => {
       slug: "ai-truth-gap",
       image: "/lovable-uploads/dfb97795-57a3-4a27-941a-302022ec095e.png",
       badge: "INVESTIGATION",
-      featured: true
+      featured: false
     },
     {
-      id: 2,
+      id: 3,
       title: "The Digital Marketing Revolution of July 2025: AI Overviews, Algorithm Upheavals & the Future of Search",
       excerpt: "July 2025 recap: Google's huge core update, AI Overviews, social-media algorithm shifts, privacy rules & winning tactics for marketers.",
       category: "Digital Marketing Trends",

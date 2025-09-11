@@ -53,6 +53,7 @@ import BlogPostDigitalMarketingRevolution2025 from './pages/BlogPostDigitalMarke
 import BlogPostAEOCrypto from './pages/BlogPostAEOCrypto';
 import BlogPostAIRevolution2025 from './pages/BlogPostAIRevolution2025';
 import BlogPostAITruthGap from './pages/BlogPostAITruthGap';
+import BlogPostMarketingAgencies2025 from './pages/BlogPostMarketingAgencies2025';
 import EmotionalMarketingPlaybook from './pages/EmotionalMarketingPlaybook';
 import KPIs from './pages/KPIs';
 import RecommenderSystem from './pages/RecommenderSystem';
@@ -143,6 +144,7 @@ function App() {
             <Route path="/blog/digital-marketing-revolution-july-2025" element={<MainLayout><BlogPostDigitalMarketingRevolution2025 /></MainLayout>} />
             <Route path="/blog/ai-revolution-digital-marketing-2025" element={<MainLayout><BlogPostAIRevolution2025 /></MainLayout>} />
             <Route path="/blog/ai-truth-gap" element={<MainLayout><BlogPostAITruthGap /></MainLayout>} />
+            <Route path="/blog/marketing-agencies-essential-business-growth-2025" element={<MainLayout><BlogPostMarketingAgencies2025 /></MainLayout>} />
             <Route path="/emotional-marketing-playbook" element={<MainLayout><EmotionalMarketingPlaybook /></MainLayout>} />
             <Route path="/kpis" element={<MainLayout><KPIs /></MainLayout>} />
             <Route path="/recommender-system" element={<MainLayout><RecommenderSystem /></MainLayout>} />
