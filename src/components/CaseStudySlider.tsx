@@ -26,73 +26,73 @@ interface CaseStudy {
 }
 const caseStudies: CaseStudy[] = [{
   id: 1,
-  client: "Memphis Coffee Co.",
-  industry: "Local Business",
-  image: "/lovable-uploads/5c0de3ce-56aa-4bfa-875d-da66db91d1b0.png",
+  client: "TechCorp Solutions",
+  industry: "B2B SaaS",
+  image: "/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png",
   metrics: {
     kpi1: {
-      label: "Traffic Growth",
-      value: "+120%",
+      label: "SQL Increase",
+      value: "+247%",
       icon: TrendingUp
     },
     kpi2: {
-      label: "Qualified Leads",
-      value: "2x",
+      label: "Lead Quality",
+      value: "+189%",
       icon: Target
     },
     kpi3: {
-      label: "Online Presence",
-      value: "+300%",
+      label: "Conversion Rate",
+      value: "+156%",
       icon: Users
     }
   },
-  description: "Transformed their online presence with digital marketing strategies that doubled qualified leads in three months."
+  description: "Transformed their demand generation with AI-powered content marketing and AEO optimization."
 }, {
   id: 2,
-  client: "Patriot Plunges",
-  industry: "Local Services", 
-  image: "/lovable-uploads/cdbb5e53-2796-4c33-95db-6f79c692958b.png",
+  client: "DataFlow Analytics",
+  industry: "Enterprise Software",
+  image: "/lovable-uploads/0d2360a9-25e2-44f5-be84-ff6da9ee399d.png",
   metrics: {
     kpi1: {
-      label: "Local Search",
-      value: "#1 Ranking",
+      label: "Pipeline Value",
+      value: "+$2.4M",
       icon: TrendingUp
     },
     kpi2: {
-      label: "Phone Calls",
-      value: "+400%",
+      label: "CAC Reduction",
+      value: "-43%",
       icon: Target
     },
     kpi3: {
-      label: "Customer Base",
-      value: "+250%",
+      label: "Sales Velocity",
+      value: "+67%",
       icon: Users
     }
   },
-  description: "Dialed in their local search optimization and their phone hasn't stopped ringing with new customers."
+  description: "Revolutionized their go-to-market strategy with predictive analytics and automated nurturing."
 }, {
   id: 3,
-  client: "Memphis Earth Movers",
-  industry: "Construction",
-  image: "/lovable-uploads/5e7e88e1-49a1-4ebc-a098-0f23603a69e8.png",
+  client: "CloudScale Inc",
+  industry: "Cloud Infrastructure",
+  image: "/lovable-uploads/bc4175bf-e990-48ba-b6c6-bf010230dd00.png",
   metrics: {
     kpi1: {
-      label: "Project Bids",
-      value: "2x",
+      label: "Organic Traffic",
+      value: "+312%",
       icon: TrendingUp
     },
     kpi2: {
-      label: "AEO Results",
-      value: "+180%",
+      label: "Market Share",
+      value: "+28%",
       icon: Target
     },
     kpi3: {
-      label: "Market Position",
-      value: "Industry Leader",
+      label: "Brand Authority",
+      value: "+198%",
       icon: Users
     }
   },
-  description: "Project bids doubled after implementing our Answer Engine Optimization roadmap for heavy equipment services."
+  description: "Dominated their category with strategic Answer Engine Optimization and thought leadership."
 }];
 const CaseStudySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -115,25 +115,17 @@ const CaseStudySlider = () => {
   const currentCase = caseStudies[currentSlide];
   return <div className="relative w-full bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl overflow-hidden">
       {/* Main Content */}
-      <div className="grid md:grid-cols-2 gap-8 p-8 relative">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-center opacity-55 rounded-2xl"
-          style={{ 
-            backgroundImage: 'url(/lovable-uploads/e2736a71-e8bc-41fe-90a7-2be50512ed78.png)',
-            backgroundSize: '100% 100%'
-          }}
-        ></div>
+      <div className="grid md:grid-cols-2 gap-8 p-8 px-[33px] py-[62px] mx-0">
         {/* Image Section */}
-        <div className="relative flex items-center justify-center z-10">
-          <img src={currentCase.image} alt={`${currentCase.client} case study`} className="w-80 h-72 object-cover rounded-xl shadow-lg" />
+        <div className="relative">
+          <img src={currentCase.image} alt={`${currentCase.client} case study`} className="max-w-fit max-h object-cover rounded-tl-xl shadow-lg" />
           <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-sm font-medium text-primary">{currentCase.industry}</span>
           </div>
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col justify-center space-y-6 relative z-10">
+        <div className="flex flex-col justify-center space-y-6">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-2">{currentCase.client}</h3>
             <p className="text-muted-foreground">{currentCase.description}</p>
