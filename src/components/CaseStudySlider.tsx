@@ -118,8 +118,11 @@ const CaseStudySlider = () => {
       <div className="grid md:grid-cols-2 gap-8 p-8 relative">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-55 rounded-2xl"
-          style={{ backgroundImage: 'url(/lovable-uploads/e2736a71-e8bc-41fe-90a7-2be50512ed78.png)' }}
+          className="absolute inset-0 bg-center opacity-55 rounded-2xl"
+          style={{ 
+            backgroundImage: 'url(/lovable-uploads/e2736a71-e8bc-41fe-90a7-2be50512ed78.png)',
+            backgroundSize: '100% 100%'
+          }}
         ></div>
         {/* Image Section */}
         <div className="relative flex items-center justify-center z-10">
