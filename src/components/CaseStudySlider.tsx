@@ -118,7 +118,7 @@ const CaseStudySlider = () => {
       <div className="grid md:grid-cols-2 gap-8 p-8">
         {/* Image Section */}
         <div className="relative flex items-center justify-center">
-          <img src={currentCase.image} alt={`${currentCase.client} case study`} className="w-80 h-72 object-cover rounded-tl-xl shadow-lg" />
+          <img src={currentCase.image} alt={`${currentCase.client} case study`} className="w-80 h-72 object-cover rounded-xl shadow-lg" />
           <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-sm font-medium text-primary">{currentCase.industry}</span>
           </div>
