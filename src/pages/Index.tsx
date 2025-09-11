@@ -46,7 +46,6 @@ const TypewriterText = ({
 // Lazy load below-the-fold components for performance
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
-const PricingToggle = lazy(() => import("@/components/PricingToggle"));
 const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
 const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
@@ -397,7 +396,7 @@ const Index = () => {
       </motion.section>
 
       {/* NATURAL LAW METAPHORS SECTION */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden">
+      <section className="py-12 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-400/30 to-transparent rounded-full blur-3xl"></div>
@@ -887,7 +886,7 @@ const Index = () => {
             <div className="flex justify-center items-center gap-6 mb-4">
               <Shield className="w-10 h-10 text-blue-400" />
               <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" displayWidth={120} displayHeight={48} className="h-12 w-auto object-fill " />
+                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" displayWidth={120} displayHeight={48} className="h-12 w-32 object-fill " />
               </a>
             </div>
             <p className="text-lg text-soft-white/90 italic">
@@ -1070,10 +1069,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PRICING TOGGLE - Project/Retainer choice */}
-      <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
-        <PricingToggle />
-      </Suspense>
 
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
@@ -1096,7 +1091,7 @@ const Index = () => {
       </section>
 
       {/* AI CREW CHIEF PROMOTION SECTION */}
-      <section className="py-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(78,226,236,0.1)_0%,rgba(143,179,29,0.1)_100%)]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -1162,26 +1157,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* COMPANY LOGOS MARQUEE SECTION */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow rounded-lg">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center mb-12 font-medium uppercase tracking-wider text-lime-300 text-xl">Our Partners & Platforms</h2>
-          
-          {/* Scrolling Marquee */}
-          <div className="relative">
-            <motion.div animate={marqueeControls} style={{
-            width: "200%"
-          }} className="flex gap-x-16 gap-x-14 rounded-lg">
-              {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
-                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="max-h-20 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
-                </div>)}
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* LEARN MORE SECTION */}
-      <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
+      <section className="py-8 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-slate-100 mb-8">Explore Digital Frontier</h2>
           
@@ -1225,7 +1203,7 @@ const Index = () => {
 
 
       {/* MODERN CONTACT FORM SECTION */}
-      <section className="relative py-16 bg-deep-navy border-t border-border">
+      <section className="relative py-12 bg-deep-navy border-t border-border">
         <div className="mx-auto max-w-4xl px-6 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-poppins font-medium text-soft-white mb-4" style={{
