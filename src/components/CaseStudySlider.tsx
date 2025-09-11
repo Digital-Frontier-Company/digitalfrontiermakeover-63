@@ -26,73 +26,73 @@ interface CaseStudy {
 }
 const caseStudies: CaseStudy[] = [{
   id: 1,
-  client: "TechCorp Solutions",
-  industry: "B2B SaaS",
-  image: "/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png",
+  client: "Memphis Coffee Co.",
+  industry: "Local Business",
+  image: "/lovable-uploads/5c0de3ce-56aa-4bfa-875d-da66db91d1b0.png",
   metrics: {
     kpi1: {
-      label: "SQL Increase",
-      value: "+247%",
+      label: "Traffic Growth",
+      value: "+120%",
       icon: TrendingUp
     },
     kpi2: {
-      label: "Lead Quality",
-      value: "+189%",
+      label: "Qualified Leads",
+      value: "2x",
       icon: Target
     },
     kpi3: {
-      label: "Conversion Rate",
-      value: "+156%",
+      label: "Online Presence",
+      value: "+300%",
       icon: Users
     }
   },
-  description: "Transformed their demand generation with AI-powered content marketing and AEO optimization."
+  description: "Transformed their online presence with digital marketing strategies that doubled qualified leads in three months."
 }, {
   id: 2,
-  client: "DataFlow Analytics",
-  industry: "Enterprise Software",
-  image: "/lovable-uploads/0d2360a9-25e2-44f5-be84-ff6da9ee399d.png",
+  client: "Patriot Plunges",
+  industry: "Local Services", 
+  image: "/lovable-uploads/cdbb5e53-2796-4c33-95db-6f79c692958b.png",
   metrics: {
     kpi1: {
-      label: "Pipeline Value",
-      value: "+$2.4M",
+      label: "Local Search",
+      value: "#1 Ranking",
       icon: TrendingUp
     },
     kpi2: {
-      label: "CAC Reduction",
-      value: "-43%",
+      label: "Phone Calls",
+      value: "+400%",
       icon: Target
     },
     kpi3: {
-      label: "Sales Velocity",
-      value: "+67%",
+      label: "Customer Base",
+      value: "+250%",
       icon: Users
     }
   },
-  description: "Revolutionized their go-to-market strategy with predictive analytics and automated nurturing."
+  description: "Dialed in their local search optimization and their phone hasn't stopped ringing with new customers."
 }, {
   id: 3,
-  client: "CloudScale Inc",
-  industry: "Cloud Infrastructure",
-  image: "/lovable-uploads/bc4175bf-e990-48ba-b6c6-bf010230dd00.png",
+  client: "Memphis Earth Movers",
+  industry: "Construction",
+  image: "/lovable-uploads/5e7e88e1-49a1-4ebc-a098-0f23603a69e8.png",
   metrics: {
     kpi1: {
-      label: "Organic Traffic",
-      value: "+312%",
+      label: "Project Bids",
+      value: "2x",
       icon: TrendingUp
     },
     kpi2: {
-      label: "Market Share",
-      value: "+28%",
+      label: "AEO Results",
+      value: "+180%",
       icon: Target
     },
     kpi3: {
-      label: "Brand Authority",
-      value: "+198%",
+      label: "Market Position",
+      value: "Industry Leader",
       icon: Users
     }
   },
-  description: "Dominated their category with strategic Answer Engine Optimization and thought leadership."
+  description: "Project bids doubled after implementing our Answer Engine Optimization roadmap for heavy equipment services."
 }];
 const CaseStudySlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
