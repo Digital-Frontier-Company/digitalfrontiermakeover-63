@@ -601,12 +601,20 @@ const Index = () => {
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
               </a>
               
-              <a href="https://app.emergent.sh/?via=digital-frontier" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                
+              <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+              </div>
+              
+              <a href="https://makementors.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/a4d4b0f1-79a6-4e7c-a6f2-5da73456b7e3.png" alt="MakeMentors.io - Professional Mentoring Platform" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
               </a>
               
-              <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:fill-max transform flex-shrink-0">
-                
+              <a href="https://generativesearch.pro" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/0f428751-35c5-4551-99a6-3eaf9cda8d4d.png" alt="GenerativeSearch.pro - Generative Engine Optimization" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+              </a>
+              
+              <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-auto object-contain" />
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
@@ -622,12 +630,20 @@ const Index = () => {
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
               </a>
               
-              <a href="https://app.emergent.sh/?via=digital-frontier" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                
+              <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+              </div>
+              
+              <a href="https://makementors.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/a4d4b0f1-79a6-4e7c-a6f2-5da73456b7e3.png" alt="MakeMentors.io - Professional Mentoring Platform" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
               </a>
               
-              <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                
+              <a href="https://generativesearch.pro" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/0f428751-35c5-4551-99a6-3eaf9cda8d4d.png" alt="GenerativeSearch.pro - Generative Engine Optimization" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+              </a>
+              
+              <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-auto object-contain" />
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
