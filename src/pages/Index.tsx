@@ -602,11 +602,11 @@ const Index = () => {
               </a>
               
               <a href="https://app.emergent.sh/?via=digital-frontier" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src="https://partners.emergent.sh/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjE2Mzg1LCJwdXIiOiJibG9iX2lkIn19--0f3aae9526a2806001160fcad87f7d0948101bcf/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOiI1MDB4MTAwIn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--256f0f4b9ef45e03ba47082c4138ac93b62e3184/logo_square.png" alt="Emergent AI - Advanced AI Platform" className="h-32 w-48 object-contain" />
+                
               </a>
               
               <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:fill-max transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+                
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
@@ -623,11 +623,11 @@ const Index = () => {
               </a>
               
               <a href="https://app.emergent.sh/?via=digital-frontier" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src="https://partners.emergent.sh/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MjE2Mzg1LCJwdXIiOiJibG9iX2lkIn19--0f3aae9526a2806001160fcad87f7d0948101bcf/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJwbmciLCJyZXNpemUiOiI1MDB4MTAwIn0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--256f0f4b9ef45e03ba47082c4138ac93b62e3184/logo_square.png" alt="Emergent AI - Advanced AI Platform" className="h-32 w-48 object-contain" />
+                
               </a>
               
               <a href="https://aircreative.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/66c33d12-771c-472a-8fd2-c769b506e627.png" alt="AI Creative Technology - Digital Innovation" displayWidth={240} displayHeight={128} className="h-32 w-48 object-contain" />
+                
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
