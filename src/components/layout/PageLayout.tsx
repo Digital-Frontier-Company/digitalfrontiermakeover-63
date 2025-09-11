@@ -1,7 +1,8 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { SEOHead } from "@/components/SEOHead";
+import { SEOOptimizer } from "@/components/seo/SEOOptimizer";
+import { InternalLinkOptimizer } from "@/components/seo/InternalLinkOptimizer";
 import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
@@ -14,7 +15,7 @@ type PageLayoutProps = {
   title: string;
   subtitle?: string;
   currentPath: string;
-  pageType?: 'article' | 'page';
+  pageType?: 'article' | 'page' | 'service';
   publishedDate?: string;
   modifiedDate?: string;
 };
@@ -90,15 +91,20 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     };
   }, []);
 
+  // Generate breadcrumbs for better navigation and SEO
+  const breadcrumbs = generateBreadcrumbs(currentPath, title);
+
   return (
     <>
-      <SEOHead 
+      <SEOOptimizer 
         path={currentPath}
         title={title}
-        description={subtitle}
-        pageType={pageType === 'article' ? 'article' : 'website'}
+        description={subtitle || routeConfig?.description || ''}
+        keywords={routeConfig?.keywords}
+        pageType={routeConfig?.pageType || (pageType === 'article' ? 'article' : pageType === 'service' ? 'service' : 'website')}
         publishedDate={publishedDate}
         modifiedDate={modifiedDate}
+        breadcrumbs={breadcrumbs}
       />
       <SEOAdvanced 
         enableWebVitals={true}
@@ -157,8 +163,13 @@ const PageLayout: React.FC<PageLayoutProps> = ({
               {children}
             </div>
             
-            {/* Enhanced Internal Linking */}
-            <RelatedLinks currentPath={currentPath} />
+            {/* Enhanced Internal Linking - SEO Optimized */}
+            <InternalLinkOptimizer 
+              currentPath={currentPath} 
+              variant="grid"
+              showTitle={true}
+              maxLinks={6}
+            />
             
             {/* Call-to-Action Section */}
             <CTASection variant={pageType === 'article' ? 'blog' : 'service'} />
@@ -171,5 +182,43 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     </>
   );
 };
+
+/**
+ * Generate breadcrumbs for SEO and navigation
+ */
+function generateBreadcrumbs(path: string, title: string): Array<{ name: string; url: string }> {
+  const breadcrumbs = [{ name: 'Home', url: 'https://digitalfrontier.app/' }];
+  
+  const pathSegments = path.split('/').filter(Boolean);
+  let currentPath = '';
+  
+  // Map of path segments to readable names
+  const segmentNames: Record<string, string> = {
+    'answer-engine-optimization': 'Answer Engine Optimization',
+    'generative-engine-optimization': 'Generative Engine Optimization',
+    'search-engine-optimization': 'SEO Services',
+    'seo-audit-dashboard': 'SEO Audit Dashboard',
+    'gtm-strategy-blueprint': 'GTM Strategy',
+    'ai-prompt-templates': 'AI Prompt Templates',
+    'blog': 'Blog',
+    'about-us': 'About',
+    'contact': 'Contact'
+  };
+  
+  pathSegments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    const name = segmentNames[segment] || 
+                 segment.split('-').map(word => 
+                   word.charAt(0).toUpperCase() + word.slice(1)
+                 ).join(' ');
+    
+    breadcrumbs.push({
+      name,
+      url: `https://digitalfrontier.app${currentPath}`
+    });
+  });
+  
+  return breadcrumbs;
+}
 
 export default PageLayout;
