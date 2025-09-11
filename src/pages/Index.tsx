@@ -614,7 +614,7 @@ const Index = () => {
               </a>
               
               <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-auto object-fill" />
+                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-32 object-fill" />
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
@@ -643,7 +643,7 @@ const Index = () => {
               </a>
               
               <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-auto object-fill" />
+                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-32 object-fill" />
               </a>
               
               <a href="https://zeroclick.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
