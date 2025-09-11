@@ -46,7 +46,6 @@ const TypewriterText = ({
 // Lazy load below-the-fold components for performance
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
-const PricingToggle = lazy(() => import("@/components/PricingToggle"));
 const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
 const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
@@ -1058,10 +1057,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PRICING TOGGLE - Project/Retainer choice */}
-      <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
-        <PricingToggle />
-      </Suspense>
 
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
