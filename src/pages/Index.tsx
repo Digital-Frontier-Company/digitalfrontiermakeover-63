@@ -1145,6 +1145,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* COMPANY LOGOS MARQUEE SECTION */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow rounded-lg">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-center mb-12 font-medium uppercase tracking-wider text-lime-300 text-xl">Our Partners & Platforms</h2>
+          
+          {/* Scrolling Marquee */}
+          <div className="relative">
+            <motion.div animate={marqueeControls} style={{
+            width: "200%"
+          }} className="flex gap-x-16 gap-x-14 rounded-lg">
+              {marqueeItems.map((logo, index) => <div key={index} className="flex-shrink-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                  <LazyImage src={logo} alt={`Partner company logo ${index + 1}`} displayWidth={120} displayHeight={48} className="max-h-20 w-auto object-fill grayscale hover:grayscale-0 transition-all duration-300" />
+                </div>)}
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* LEARN MORE SECTION */}
       <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
