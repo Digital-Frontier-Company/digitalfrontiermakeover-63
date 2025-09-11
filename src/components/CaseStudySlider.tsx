@@ -115,9 +115,14 @@ const CaseStudySlider = () => {
   const currentCase = caseStudies[currentSlide];
   return <div className="relative w-full bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl overflow-hidden">
       {/* Main Content */}
-      <div className="grid md:grid-cols-2 gap-8 p-8">
+      <div className="grid md:grid-cols-2 gap-8 p-8 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-55 rounded-2xl"
+          style={{ backgroundImage: 'url(/lovable-uploads/e2736a71-e8bc-41fe-90a7-2be50512ed78.png)' }}
+        ></div>
         {/* Image Section */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center z-10">
           <img src={currentCase.image} alt={`${currentCase.client} case study`} className="w-80 h-72 object-cover rounded-xl shadow-lg" />
           <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-sm font-medium text-primary">{currentCase.industry}</span>
@@ -125,7 +130,7 @@ const CaseStudySlider = () => {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col justify-center space-y-6">
+        <div className="flex flex-col justify-center space-y-6 relative z-10">
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-2">{currentCase.client}</h3>
             <p className="text-muted-foreground">{currentCase.description}</p>
