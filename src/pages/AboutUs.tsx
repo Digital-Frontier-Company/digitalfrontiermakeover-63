@@ -31,99 +31,108 @@ const AboutUs = () => {
           </h2>
           
           <div className="mb-6">
-            <p className="mb-4"><strong className="text-blue-400">David Thompson, CEO / Founder's Story</strong> – Growing up in Memphis, Tennessee,
-              David cultivated a deep appreciation for discipline, innovation, and the transformative power of technology...</p>
+            <h3 className="text-xl font-bold mb-3 text-blue-400">David Thompson: CEO & Founder's Story</h3>
             
-            <p className="mb-4">With a background in computer science and digital marketing, David founded Digital Frontier in 2025 with a vision to 
-              bridge the gap between cutting-edge AI technology and practical business applications. His journey from coding enthusiast to 
-              digital marketing pioneer reflects the company's commitment to staying ahead of technological trends while remaining firmly 
-              grounded in delivering measurable results for clients.</p>
-
-            <p className="mb-4">Today, under David's leadership, Digital Frontier stands at the forefront of Answer Engine Optimization and 
-              AI-driven marketing solutions, helping businesses across various sectors navigate the rapidly evolving digital landscape.</p>
+            <p className="mb-4">David Thompson grew up in Memphis, Tennessee, where he developed a strong sense of discipline, creativity, and a real passion for technology. His path took a major turn between 2009 and 2015 during his time in the U.S. Air Force. Those years shaped his mindset—teaching him resilience, precision, and the kind of strategic thinking that would later become the foundation of his business journey.</p>
+            
+            <p className="mb-4">After the military, David dove into industries like logistics, trucking, earthmoving, and cryptocurrency. These experiences didn't just broaden his skills—they taught him how to adapt and innovate in fast-moving environments.</p>
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-3 text-blue-400 flex items-center">
-              <span className="mr-2 bg-slate-800/60 p-2 rounded-full"><BarChart size={20} className="text-blue-400" /></span>
-              Data-Driven Insights
-            </h3>
-            <p className="mb-4 pl-10">Utilizing analytics to guide decisions, ensuring smart moves that maximize your marketing efforts.</p>
+            <h3 className="text-xl font-bold mb-3 text-blue-400">The Birth of Digital Frontier</h3>
+            <p className="mb-4">Digital Frontier is the result of David's diverse journey. It's a company built to merge cutting-edge technology with purpose-driven marketing. But it's not just about the latest tools or flashy campaigns—it's about building trust, delivering on promises, and creating meaningful connections in a space that's too often clouded by hype and hollow claims.</p>
             
-            <h3 className="text-xl font-bold mb-3 text-blue-400 flex items-center">
-              <span className="mr-2 bg-slate-800/60 p-2 rounded-full"><Target size={20} className="text-blue-400" /></span>
-              Enhanced Strategies
-            </h3>
-            <p className="mb-4 pl-10">We provide tailored strategies that elevate your brand presence and engagement in a competitive market.</p>
+            <p className="mb-4">In a world overflowing with new AI startups and sketchy players, Digital Frontier was founded to be different—to be the one you can actually count on.</p>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-xl font-bold mb-3 text-blue-400">Our Motto: Respect, Ethical Business, and Above All—Love People</h3>
+            <p className="mb-4">At Digital Frontier, success starts with our people. Our team is made up of strategists, digital experts, and forward-thinkers who believe in what we're building. We don't just work together—we grow together. Every employee has ownership in our mission, and every client becomes a valued partner. We're here to create tech-driven solutions that are actually built around people.</p>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-xl font-bold mb-3 text-blue-400">The Problem We Saw</h3>
+            <p className="mb-4">As tech continued to evolve, something started to feel off. The tools were getting smarter, but businesses were still struggling to apply them in real, meaningful ways. There was this growing gap between human potential and what tech was actually delivering.</p>
+            
+            <p className="mb-4">David noticed this disconnect especially in social media and marketing—too much trend-chasing, not enough strategy or soul. That's what sparked the creation of Digital Frontier: to bridge that gap and help businesses harness innovation in ways that truly matter.</p>
           </div>
 
           <div className="bg-slate-900/40 p-6 rounded-xl mb-8 border border-slate-700/50">
-            <h3 className="text-xl font-bold mb-4 text-center text-blue-400">Digital Frontier's Solution</h3>
-            <p className="mb-4">Our expertise spans:</p>
+            <h3 className="text-xl font-bold mb-4 text-center text-blue-400">Our Solution</h3>
+            <p className="mb-4">Digital Frontier brings together powerful technology and smart, data-driven marketing. Here's how we help:</p>
             
             <div className="space-y-4 pl-4">
               <div className="flex items-start">
-                <span className="mr-3 mt-1 text-blue-400"><Code size={18} /></span>
+                <span className="mr-3 mt-1 text-blue-400"><Brain size={18} /></span>
                 <div>
                   <p className="font-semibold text-blue-300">AI Integration</p>
-                  <p className="text-slate-300">Deploying intelligent tools to streamline processes in real estate, finance, and cryptocurrency.</p>
+                  <p className="text-slate-300">We build intelligent systems that simplify work in industries like real estate, finance, and crypto.</p>
                 </div>
               </div>
               
               <div className="flex items-start">
                 <span className="mr-3 mt-1 text-blue-400"><Globe size={18} /></span>
                 <div>
-                  <p className="font-semibold text-blue-300">Digital Marketing and Social Media</p>
-                  <p className="text-slate-300">Crafting campaigns that resonate, leveraging platforms like Facebook, Instagram, and LinkedIn to build authentic connections and measurable results.</p>
+                  <p className="font-semibold text-blue-300">Digital Marketing & Social Media</p>
+                  <p className="text-slate-300">We create campaigns that feel real and actually resonate. Think Facebook, LinkedIn, Instagram—but with purpose and measurable results.</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <span className="mr-3 mt-1 text-blue-400"><BarChart2 size={18} /></span>
+                <span className="mr-3 mt-1 text-blue-400"><Target size={18} /></span>
                 <div>
-                  <p className="font-semibold text-blue-300">Portfolio Optimization in CryptoCurrency Markets</p>
-                  <p className="text-slate-300">Using Post-Modern Portfolio Theory (PMPT) to help clients balance risk and reward while considering psychological comfort.</p>
+                  <p className="font-semibold text-blue-300">Portfolio Optimization</p>
+                  <p className="text-slate-300">We use Post-Modern Portfolio Theory (PMPT) to help clients balance returns with peace of mind.</p>
+                </div>
+              </div>
+            </div>
+            
+            <p className="mt-4">Right now, we're doubling down on real estate and our AEO software because it's a space where we can make an immediate difference. But long-term, our mission spans across all industries. Wherever there's potential, we're ready to help unlock it.</p>
+          </div>
+          
+          <div className="bg-gradient-to-b from-slate-800/40 to-slate-900/40 rounded-xl p-6 border border-slate-700/50 mb-8">
+            <h3 className="text-xl font-bold mb-3 text-center text-blue-400 flex items-center justify-center">
+              <Rocket size={20} className="mr-2" /> Where We're Headed
+            </h3>
+            <p className="mb-4">We're not just building a tech company—we're setting a new standard for how businesses use innovation. Our vision is rooted in humanity. Before we launch a campaign or develop a new tool, we ask one simple question: "How can we bring your vision to life?"</p>
+            
+            <p className="mb-4">That mindset fuels everything we do.</p>
+            
+            <p className="mb-4">From David's roots in Memphis to helping businesses worldwide, Digital Frontier is leading the charge in human-centered tech and marketing. Our foundation in social media strategy, advanced analytics, and ethical business practices sets us apart—and always will.</p>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-xl font-bold mb-3 text-blue-400">How We Help You Stay Ahead</h3>
+            
+            <div className="space-y-4 pl-4 mb-6">
+              <div className="flex items-start">
+                <span className="mr-3 mt-1 text-blue-400"><Brain size={18} /></span>
+                <div>
+                  <p className="font-semibold text-blue-300">AI Strategy Development</p>
+                  <p className="text-slate-300">Work with our expert team to build AI strategies that fit your business and anticipate what's next.</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <span className="mr-3 mt-1 text-blue-400"><Rocket size={18} /></span>
+                <div>
+                  <p className="font-semibold text-blue-300">Accelerate AI Model Design & Build</p>
+                  <p className="text-slate-300">Tap into top-tier ML experts to fast-track your AI projects—from refining problems to training high-performing models.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mb-8">
-            <p className="mb-4">Our ultimate ambition is to serve businesses across all industries, offering consultation and tailored solutions for any market. To maximize our impact and deepen our understanding of audience needs, we are focusing initially on the real estate sector and our AEO Software. These areas represents a unique opportunity to create meaningful change, applying our expertise to help real estate professionals unlock new possibilities and achieve their goals.</p>
-            
-            <p className="mb-4">Digital Frontier's mission is to lead a new paradigm in technology and marketing. While we aim to expand across all sectors, our initial focus on real estate allows us to refine our approach, ensuring we deliver unmatched value. As we grow, our vision remains steadfast: to empower businesses with tools and strategies that balance innovation with humanity.</p>
-            
-            <p className="mb-4">Our approach is grounded in listening and understanding. Whether through a social media campaign, a digital ad strategy, or an AI-driven solution, we start every project by asking: "How can we amplify your vision?" This commitment to partnership ensures that our clients' goals become the core of our innovations.</p>
-          </div>
-          
-          <div className="bg-gradient-to-b from-slate-800/40 to-slate-900/40 rounded-xl p-6 border border-slate-700/50 mb-8">
-            <h3 className="text-xl font-bold mb-3 text-center text-blue-400 flex items-center justify-center">
-              <Globe size={20} className="mr-2" /> What is Our Vision for the Future?
-            </h3>
-            <p className="mb-4">From Memphis to the global digital landscape, Digital Frontier is at the forefront of technological transformation. With a strong foundation in social media strategy, digital marketing, and advanced analytics, we've built a company that understands both the art and science of business success.</p>
-          </div>
-
-          <div className="df-gain-card mb-6">
-            <div className="icon">🧠</div>
-            <h3>AI Strategy Development</h3>
-            <p>Collaborate with our visionary team to craft a forward-looking AI strategy tailored to your unique business needs. We analyze your current operations, identify opportunities for AI integration, and develop a comprehensive roadmap that ensures seamless adoption and maximum ROI. Our strategic approach balances innovation with practicality, ensuring AI solutions that deliver real business value.</p>
-          </div>
-
-          <div className="df-gain-card mb-6">
-            <div className="icon">🚀</div>
-            <h3>Accelerate AI Model Design & Build</h3>
-            <p>Leverage our world-class machine-learning specialists to supercharge your AI journey. Whether you're starting from scratch or optimizing existing models, our team brings the technical expertise and creative problem-solving skills needed to develop sophisticated AI solutions. From natural language processing to computer vision, we build custom AI models that drive meaningful business outcomes.</p>
-          </div>
-
-          <div className="df-gain-card mb-6">
-            <div className="icon">💡</div>
-            <h3>Our Value Proposition</h3>
-            <p>At Digital Frontier, personalized partnerships are at the heart of everything we do. We don't just implement technology; we build relationships based on trust, transparency, and shared success. Our collaborative approach ensures that we understand your unique challenges and objectives, allowing us to deliver tailored solutions that address your specific needs. With Digital Frontier, you gain more than a service provider – you gain a dedicated partner committed to your long-term success.</p>
+          <div className="bg-slate-900/40 p-6 rounded-xl mb-8 border border-slate-700/50">
+            <h3 className="text-xl font-bold mb-4 text-center text-blue-400">What Makes Us Different</h3>
+            <p className="mb-4">Our value lies in our partnerships. We're not just vendors—we're collaborators. Everything we do is tailored to your goals, your market, and your mission. That's how we drive long-term growth, boost efficiency, and help you lead your industry.</p>
           </div>
 
           <div className="mt-8">
-            <h3 className="text-xl font-bold mb-2 text-slate-100">Ready to Unlock Your Potential?</h3>
-            <p>Contact <Link to="/" className="text-blue-400 hover:underline">Digital Frontier</Link> today and discover how our transformative solutions can guide you to success in the digital age.</p>
+            <h3 className="text-xl font-bold mb-3 text-blue-400">Let's Build Something Incredible</h3>
+            <p className="mb-4">Whether you're a startup looking for traction or an established brand needing a digital edge, we're here to help. Contact Digital Frontier today and claim your free SEO audit—a perfect first step toward greater visibility and impact.</p>
+            
+            <p className="mb-4">Because at the end of the day, Digital Frontier isn't just a company. It's a movement. One rooted in discipline, built on innovation, and driven by a passion for people.</p>
             
             <div className="mt-6 flex justify-center">
               <Link to="/modern-contact-form" className="df-cta-button">Get in Touch</Link>
