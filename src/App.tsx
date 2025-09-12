@@ -110,7 +110,7 @@ function App() {
             <Route path="/about-us" element={<MainLayout><Suspense fallback={<PageLoader />}><AboutUs /></Suspense></MainLayout>} />
             <Route path="/contact" element={<MainLayout><Suspense fallback={<PageLoader />}><Contact /></Suspense></MainLayout>} />
             <Route path="/docs" element={<MainLayout><Docs /></MainLayout>} />
-            <Route path="/digital-frontier-services" element={<DigitalFrontierServices />} />
+            <Route path="/digital-frontier-services" element={<MainLayout><DigitalFrontierServices /></MainLayout>} />
             <Route path="/pricing" element={<MainLayout><Suspense fallback={<PageLoader />}><Pricing /></Suspense></MainLayout>} />
             <Route path="/faq" element={<MainLayout><Suspense fallback={<PageLoader />}><FAQ /></Suspense></MainLayout>} />
             <Route path="/newsletter" element={<MainLayout><Suspense fallback={<PageLoader />}><Newsletter /></Suspense></MainLayout>} />
@@ -125,7 +125,7 @@ function App() {
             <Route path="/services/ai-implementation-consulting" element={<MainLayout><Suspense fallback={<PageLoader />}><AIImplementationConsulting /></Suspense></MainLayout>} />
             <Route path="/services/digital-marketing-strategy" element={<MainLayout><Suspense fallback={<PageLoader />}><DigitalMarketingStrategy /></Suspense></MainLayout>} />
             <Route path="/psychological-digital-marketing-insights" element={<MainLayout><Suspense fallback={<PageLoader />}><PsychologicalDigitalMarketingInsights /></Suspense></MainLayout>} />
-            <Route path="/blog/tax-reduction-wealth-building-guide" element={<TaxReductionGuide />} />
+            <Route path="/blog/tax-reduction-wealth-building-guide" element={<MainLayout><TaxReductionGuide /></MainLayout>} />
             <Route path="/technical" element={<MainLayout><Suspense fallback={<PageLoader />}><Technical /></Suspense></MainLayout>} />
             <Route path="/evolution" element={<MainLayout><Suspense fallback={<PageLoader />}><Evolution /></Suspense></MainLayout>} />
             <Route path="/regulations" element={<MainLayout><Suspense fallback={<PageLoader />}><Regulations /></Suspense></MainLayout>} />
@@ -139,7 +139,7 @@ function App() {
             <Route path="/information-architecture-prompts" element={<MainLayout><InformationArchitecturePrompts /></MainLayout>} />
             <Route path="/user-experience-prompts" element={<MainLayout><UserExperiencePrompts /></MainLayout>} />
             <Route path="/seo-vs-aeo-vs-geo" element={<MainLayout><SEOvsAEOvsGEO /></MainLayout>} />
-            <Route path="/insights" element={<InsightsHub />} />
+            <Route path="/insights" element={<MainLayout><InsightsHub /></MainLayout>} />
             <Route path="/browse-playbooks" element={<MainLayout><div className="pt-16"><BrowsePlaybooks /></div></MainLayout>} />
             <Route path="/blog/digital-marketing-revolution-july-2025" element={<MainLayout><BlogPostDigitalMarketingRevolution2025 /></MainLayout>} />
             <Route path="/blog/ai-revolution-digital-marketing-2025" element={<MainLayout><BlogPostAIRevolution2025 /></MainLayout>} />
@@ -163,13 +163,13 @@ function App() {
             <Route path="/ai-voice-assistants" element={<MainLayout><Suspense fallback={<PageLoader />}><AIVoiceAssistants /></Suspense></MainLayout>} />
              <Route path="/web-creative" element={<MainLayout><WebCreative /></MainLayout>} />
              <Route path="/digital-marketing" element={<MainLayout><DigitalMarketing /></MainLayout>} />
-             <Route path="/contact-for-digital-marketing" element={<ContactForDigitalMarketing />} />
-             <Route path="/saas-ai-agent-packages" element={<SaaSAIAgentPackages />} />
-             <Route path="/digital-frontier-where-crypto-ai-and-marketing-collide" element={<DigitalFrontierCryptoAIMarketing />} />
+             <Route path="/contact-for-digital-marketing" element={<MainLayout><ContactForDigitalMarketing /></MainLayout>} />
+             <Route path="/saas-ai-agent-packages" element={<MainLayout><SaaSAIAgentPackages /></MainLayout>} />
+             <Route path="/digital-frontier-where-crypto-ai-and-marketing-collide" element={<MainLayout><DigitalFrontierCryptoAIMarketing /></MainLayout>} />
              <Route path="/real-estate-demo" element={<MainLayout><RealEstateDemo /></MainLayout>} />
              <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
-             <Route path="/modern-contact-form" element={<ModernContactForm />} />
-            <Route path="*" element={<NotFound />} />
+             <Route path="/modern-contact-form" element={<MainLayout><ModernContactForm /></MainLayout>} />
+            <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
           </Routes>
         </Router>
       </QueryClientProvider>
