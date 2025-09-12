@@ -16,21 +16,42 @@ const MainLayout = ({
     
     // Check if script is already loaded
     const existingScript = document.querySelector(`script[src*="${hubspotId}"]`);
-    if (existingScript) return;
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.id = 'hs-script-loader';
+      script.async = true;
+      script.defer = true;
+      script.src = `//js.hs-scripts.com/${hubspotId}.js`;
+      document.head.appendChild(script);
+    }
+
+    // Load Ahrefs Site Audit deployment script
+    // Replace 'YOUR_AHREFS_SCRIPT_URL' with the actual URL provided by Ahrefs
+    const ahrefsScriptUrl = 'YOUR_AHREFS_SCRIPT_URL'; // Update this with your Ahrefs snippet URL
     
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.id = 'hs-script-loader';
-    script.async = true;
-    script.defer = true;
-    script.src = `//js.hs-scripts.com/${hubspotId}.js`;
-    document.head.appendChild(script);
+    if (ahrefsScriptUrl !== 'YOUR_AHREFS_SCRIPT_URL') {
+      const existingAhrefsScript = document.querySelector(`script[src*="ahrefs"]`);
+      if (!existingAhrefsScript) {
+        const ahrefsScript = document.createElement('script');
+        ahrefsScript.type = 'text/javascript';
+        ahrefsScript.id = 'ahrefs-site-audit';
+        ahrefsScript.async = true;
+        ahrefsScript.src = ahrefsScriptUrl;
+        document.head.appendChild(ahrefsScript);
+      }
+    }
     
     return () => {
-      // Cleanup script on unmount
-      const scriptToRemove = document.querySelector(`script[src*="${hubspotId}"]`);
-      if (scriptToRemove) {
-        scriptToRemove.remove();
+      // Cleanup scripts on unmount
+      const hubspotScript = document.querySelector(`script[src*="${hubspotId}"]`);
+      if (hubspotScript) {
+        hubspotScript.remove();
+      }
+      
+      const ahrefsScript = document.querySelector(`script[src*="ahrefs"]`);
+      if (ahrefsScript) {
+        ahrefsScript.remove();
       }
     };
   }, []);
