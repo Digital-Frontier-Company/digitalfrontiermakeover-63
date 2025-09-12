@@ -27,10 +27,9 @@ const MainLayout = ({
     }
 
     // Load Ahrefs Site Audit deployment script
-    // Replace 'YOUR_AHREFS_SCRIPT_URL' with the actual URL provided by Ahrefs
-    const ahrefsScriptUrl = 'YOUR_AHREFS_SCRIPT_URL'; // Update this with your Ahrefs snippet URL
+    const ahrefsScriptUrl = 'https://patches.ahrefs.com/09283fba-9a17-4582-9f74-b360df2ef63d.js';
     
-    if (ahrefsScriptUrl !== 'YOUR_AHREFS_SCRIPT_URL') {
+    if (ahrefsScriptUrl) {
       const existingAhrefsScript = document.querySelector(`script[src*="ahrefs"]`);
       if (!existingAhrefsScript) {
         const ahrefsScript = document.createElement('script');
