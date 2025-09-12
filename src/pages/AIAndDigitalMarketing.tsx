@@ -80,7 +80,7 @@ const AIAndDigitalMarketing = () => {
       "Discover how artificial intelligence is revolutionizing digital marketing through AI-powered targeting, content creation, predictive analytics, and ethical AI implementation. Learn from Digital Frontier Company's expertise.",
       "Digital Frontier Company",
       "Digital Frontier Company",
-      "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+      "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
       "2025-01-13",
       "2025-01-13",
       canonicalUrl

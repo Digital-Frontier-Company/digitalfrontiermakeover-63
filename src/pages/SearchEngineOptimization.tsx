@@ -154,7 +154,7 @@ const SearchEngineOptimization: React.FC = () => {
               "name": "Digital Frontier Company",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://digitalfrontier.app/lovable-uploads/c9d38052-a83f-47d4-ab89-a00c237a6ff9.png"
+                "url": "/lovable-uploads/c9d38052-a83f-47d4-ab89-a00c237a6ff9.png"
               }
             },
             "datePublished": "2025-05-03T12:00:00+00:00"

@@ -19,7 +19,7 @@ export function formatDate(date: Date): string {
 export function generateOrganizationSchema(
   name: string = "Digital Frontier Company",
   url: string = "https://digitalfrontier.app",
-  logoUrl: string = "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+  logoUrl: string = "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
   socialUrls: string[] = [
     "https://www.facebook.com/profile.php?id=61572896248731",
     "https://x.com/DigitalFro14616",
@@ -63,7 +63,7 @@ export function generateArticleSchema(
   description: string,
   authorName: string = "Digital Frontier Company",
   publisherName: string = "Digital Frontier Company",
-  publisherLogoUrl: string = "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+  publisherLogoUrl: string = "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
   datePublished: string = new Date().toISOString().split('T')[0],
   dateModified: string = new Date().toISOString().split('T')[0],
   pageUrl: string

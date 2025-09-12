@@ -78,7 +78,7 @@ const BlogPost = () => {
       "name": "Digital Frontier Company",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
+        "url": "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png"
       }
     },
     "datePublished": postData.publishedDate,

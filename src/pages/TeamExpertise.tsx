@@ -322,7 +322,7 @@ const TeamExpertise = () => {
             "name": "Digital Frontier Company",
             "description": "Certified Memphis AI marketing agency team with proven expertise in SEO, digital marketing, and AI optimization",
             "url": "https://digitalfrontier.app/team-expertise",
-            "logo": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+            "logo": "/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Memphis",

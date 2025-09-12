@@ -194,7 +194,7 @@ const ModernContactForm = () => {
                 <div className="text-center mb-10">
                   <div className="flex justify-center mb-4">
                     <img 
-                      src="https://digitalfrontier.app/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" 
+                      src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" 
                       alt="Digital Frontier Logo"
                       className="h-24 w-auto pulse"
                     />

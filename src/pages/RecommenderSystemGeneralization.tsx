@@ -17,7 +17,7 @@ const RecommenderSystemGeneralization = () => {
     "Explore advanced recommender system generalization, prediction, data efficiency, ML automation, fairness, and Answer Engine Optimization with Digital Frontier Company. Expert insights for AI researchers, marketers, and founders.",
     "Digital Frontier Company",
     "Digital Frontier Company",
-    "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+    "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
     "2025-01-13",
     "2025-01-13",
     canonicalUrl

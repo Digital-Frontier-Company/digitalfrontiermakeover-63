@@ -407,7 +407,7 @@ const CompleteAEOGuide = () => {
               "name": "Digital Frontier Company",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
+                "url": "/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
               }
             },
             "datePublished": "2024-12-24",

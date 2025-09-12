@@ -10,7 +10,7 @@ export default function SEOSchema() {
     "url": "https://digitalfrontier.app/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
+      "url": "/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png",
       "width": 512,
       "height": 512
     },
