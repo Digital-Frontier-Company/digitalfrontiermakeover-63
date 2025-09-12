@@ -52,6 +52,31 @@ User-agent: DotBot
 Allow: /
 Crawl-delay: 2
 
+# Allow AI training and research bots
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 2
+
 # Block known spam/malicious bots
 
 User-agent: MJ12bot
