@@ -1,5 +1,20 @@
 User-agent: *
 Allow: /
+# Explicitly allow critical resources for rendering
+Allow: /assets/
+Allow: /lovable-uploads/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /site.webmanifest
+Allow: /sitemap.xml
+Allow: /6cpbp6aehtedmpa2rxcg5t2vugg5hkse.txt
 Disallow: /admin/
 Disallow: /api/
 Disallow: /*.pdf$
