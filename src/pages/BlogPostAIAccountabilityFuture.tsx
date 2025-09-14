@@ -1,64 +1,25 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Eye, Scale, Shield, Zap, TrendingUp, Users, Globe, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import MainLayout from "@/components/layout/MainLayout";
+import { PageWrapper } from "@/components/PageWrapper";
 
 const BlogPostAIAccountabilityFuture = () => {
   return (
-    <>
-      <Helmet>
-        <title>The Future of AI Accountability and Fact-Checking | Digital Frontier</title>
-        <meta name="description" content="Explore the future of AI accountability, emerging fact-checking technologies, and regulatory frameworks shaping responsible AI development." />
-        <meta name="keywords" content="AI accountability, AI fact-checking, AI regulation, AI governance, artificial intelligence ethics, AI transparency" />
-        <meta property="og:title" content="The Future of AI Accountability and Fact-Checking" />
-        <meta property="og:description" content="Explore the future of AI accountability, emerging fact-checking technologies, and regulatory frameworks." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://digitalfrontier.ai/blog/ai-accountability-future" />
-        <meta property="article:author" content="Digital Frontier Company" />
-        <meta property="article:published_time" content="2025-09-05T00:00:00Z" />
-        <meta property="article:section" content="AI Future" />
-        <meta property="article:tag" content="AI Accountability" />
-        <meta property="article:tag" content="AI Regulation" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The Future of AI Accountability and Fact-Checking" />
-        <meta name="twitter:description" content="Explore the future of AI accountability and emerging fact-checking technologies." />
-        <link rel="canonical" href="https://digitalfrontier.ai/blog/ai-accountability-future" />
-        
-        {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "The Future of AI Accountability and Fact-Checking",
-            "description": "Explore the future of AI accountability, emerging fact-checking technologies, and regulatory frameworks shaping responsible AI development.",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier Company",
-              "url": "https://digitalfrontier.ai"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.ai/logo.png"
-              }
-            },
-            "datePublished": "2025-09-05",
-            "dateModified": "2025-09-05",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.ai/blog/ai-accountability-future"
-            },
-            "articleSection": "AI Future",
-            "keywords": ["AI accountability", "AI fact-checking", "AI regulation", "AI governance"]
-          })}
-        </script>
-      </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <MainLayout>
+      <PageWrapper 
+        seo={{
+          title: "The Future of AI Accountability",
+          description: "Explore the future of AI accountability, emerging fact-checking technologies, and regulatory frameworks shaping responsible AI development.",
+          keywords: "AI accountability, fact-checking technology, AI regulation, responsible AI, AI ethics",
+          pageType: "article",
+          publishedDate: "2025-09-05T00:00:00Z",
+          customCanonical: "https://digitalfrontier.app/blog/ai-accountability-future",
+          imageUrl: "https://digitalfrontier.app/lovable-uploads/06143896-3705-4777-8c31-5f139371be88.png"
+        }}
+      >
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/5 py-24 px-4">
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
@@ -499,8 +460,8 @@ const BlogPostAIAccountabilityFuture = () => {
             </CardContent>
           </Card>
         </article>
-      </div>
-    </>
+      </PageWrapper>
+    </MainLayout>
   );
 };
 

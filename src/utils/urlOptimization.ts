@@ -117,36 +117,44 @@ export function auditPageURLs(urls: string[]): URLAuditResult[] {
 }
 
 /**
- * Generates optimized image URLs with proper formatting
+ * Generates optimized image URLs with proper formatting and CDN optimization
  */
 export function optimizeImageURL(originalUrl: string): string {
-  // Convert absolute URLs to relative
+  // Convert absolute URLs to relative for consistent serving
   if (originalUrl.includes('digitalfrontier.app/lovable-uploads/')) {
     return originalUrl.replace(/https?:\/\/(www\.)?digitalfrontier\.app/, '');
   }
 
-  // Convert S3 URLs to lovable-uploads
+  // Convert deprecated S3 URLs to lovable-uploads
   if (originalUrl.includes('cm4-production-assets.s3.amazonaws.com')) {
     const filename = originalUrl.split('/').pop();
     return `/lovable-uploads/${filename}`;
+  }
+
+  // Fix domain inconsistencies - always use digitalfrontier.app
+  if (originalUrl.includes('digitalfrontier.ai')) {
+    return originalUrl.replace('digitalfrontier.ai', 'digitalfrontier.app');
   }
 
   return originalUrl;
 }
 
 /**
- * Generates SEO-optimized URLs
+ * Generates SEO-optimized URLs with consistent domain usage
  */
 export function optimizePageURL(originalUrl: string): string {
   let optimized = originalUrl;
 
+  // Fix domain inconsistencies - always use digitalfrontier.app
+  optimized = optimized.replace(/digitalfrontier\.ai/g, 'digitalfrontier.app');
+  
   // Remove www
   optimized = optimized.replace(/https?:\/\/www\./, 'https://');
 
   // Ensure HTTPS
   optimized = optimized.replace(/^http:\/\//, 'https://');
 
-  // Remove trailing slash
+  // Remove trailing slash for consistency
   if (optimized.endsWith('/') && optimized.length > 1) {
     optimized = optimized.slice(0, -1);
   }
@@ -200,16 +208,16 @@ export function batchOptimizeURLs(content: string): string {
     '/lovable-uploads/'
   );
 
-  // Fix S3 URLs
+  // Fix S3 URLs to lovable-uploads
   optimized = optimized.replace(
     /https?:\/\/cm4-production-assets\.s3\.amazonaws\.com\/[^\/]*\//g,
     '/lovable-uploads/'
   );
 
-  // Fix www URLs
+  // Fix domain inconsistencies - always use digitalfrontier.app
   optimized = optimized.replace(
-    /https?:\/\/www\.digitalfrontier\.app/g,
-    'https://digitalfrontier.app'
+    /digitalfrontier\.ai/g,
+    'digitalfrontier.app'
   );
 
   return optimized;

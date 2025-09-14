@@ -1,22 +1,24 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { PhoneCall, Clock, DollarSign, MessageCircle, CheckCircle, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import InternalLinkEnhancer from '@/components/layout/InternalLinkEnhancer';
+import MainLayout from '@/components/layout/MainLayout';
+import { PageWrapper } from '@/components/PageWrapper';
 
 const AIVoiceAssistants = () => {
   return (
-    <>
-      <Helmet>
-        <title>AI Voice Assistants - Custom Voice AI That Converts Leads | Digital Frontier</title>
-        <meta name="description" content="Deploy AI voice assistants that make calls, answer 24/7, slash support costs, and convert more leads. Your brand with a voice that sells." />
-        <meta name="keywords" content="AI voice assistants, voice AI, automated calling, lead conversion, customer support AI, voice technology" />
-        <link rel="canonical" href="https://digitalfrontier.ai/ai-voice-assistants" />
-      </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/5">
+    <MainLayout>
+      <PageWrapper 
+        seo={{
+          title: "AI Voice Assistants - Custom Voice AI That Converts Leads",
+          description: "Deploy AI voice assistants that make calls, answer 24/7, slash support costs, and convert more leads. Your brand with a voice that sells.",
+          keywords: "AI voice assistants, voice AI, automated calling, lead conversion, customer support AI, voice technology",
+          pageType: "service",
+          customCanonical: "https://digitalfrontier.app/ai-voice-assistants"
+        }}
+      >
         {/* Hero Section */}
         <section className="pt-20 pb-16 px-4 relative overflow-hidden">
           <div className="container mx-auto max-w-6xl text-center relative z-10">
@@ -182,8 +184,8 @@ const AIVoiceAssistants = () => {
             }
           ]}
         />
-      </div>
-    </>
+      </PageWrapper>
+    </MainLayout>
   );
 };
 
