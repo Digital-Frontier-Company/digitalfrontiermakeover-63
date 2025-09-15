@@ -31,60 +31,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 }) => {
   // Get route config for SEO optimization
   const routeConfig = getRouteConfig(currentPath);
-  
-  // Generate optimized H1 based on route configuration
-  const getOptimizedH1 = (path: string): string => {
-    const h1Map: Record<string, string> = {
-      '/': 'AI Marketing Solutions That Drive Real Business Growth',
-      '/digital-marketing': 'Digital Marketing Services & Strategy Solutions',
-      '/memphis-digital-marketing': 'Memphis AI Marketing Agency & Digital Services',
-      '/blog': 'Marketing Blog with AI Strategy Insights & Expert Analysis',
-      '/about-us': 'About Digital Frontier AI Marketing Team & Expert Solutions',
-      '/ai-and-digital-marketing': 'AI-Powered Digital Marketing Solutions & Strategy',
-      '/terms-of-service': 'Terms of Service & User Agreement',
-      '/pricing': 'Digital Marketing Pricing & Service Packages',
-      '/germantown-digital-marketing': 'Germantown Digital Marketing Agency & SEO Services',
-      '/answer-engine-optimization': 'Answer Engine Optimization AEO Services for Business Growth',
-      '/collierville-seo-services': 'Collierville SEO Services & Local Digital Marketing',
-      '/ai-plans': 'AI Marketing Plans & Implementation Services',
-      '/team-expertise': 'Expert Marketing Team & Digital Strategy Specialists',
-      '/privacy-policy': 'Privacy Policy & Data Protection Information',
-      '/search-engine-optimization': 'SEO Services & Search Engine Optimization Strategy',
-      '/kpis': 'Marketing KPIs & Performance Measurement Tools',
-      '/future': 'Future of Digital Marketing & AI Trends',
-      '/regulations': 'AI Marketing Regulations & Compliance Guidelines',
-      '/sectors': 'Industry Sectors & Specialized Marketing Solutions',
-      '/evolution': 'Digital Marketing Evolution & AI Transformation',
-      '/ai-prompt-templates': 'AI Prompt Templates & Marketing Automation Tools',
-      '/crypto-marketing': 'Cryptocurrency Marketing & Blockchain Digital Strategy',
-      '/ai-voice-assistants': 'AI Voice Assistant Marketing & Voice Search Optimization',
-      '/services/predictive-analytics-agent': 'Predictive Analytics AI Agent & Marketing Automation',
-      '/services/ai-implementation-consulting': 'AI Implementation Consulting & Business Integration',
-      '/services/digital-marketing-strategy': 'Digital Marketing Strategy & Business Growth Solutions',
-      '/recommender-system-generalization': 'AI Recommender Systems & Personalization Solutions',
-      '/ad-funnel-blueprint': 'Ad Funnel Blueprint & Conversion Optimization Strategy',
-      '/technical': 'Technical Marketing Solutions & Implementation Guide',
-      '/psychological-digital-marketing-insights': 'Psychology-Based Digital Marketing & Consumer Insights',
-      '/emotional-marketing-playbook': 'Emotional Marketing Playbook & Customer Engagement',
-      '/ai-bias-in-advertising': 'AI Bias Prevention & Ethical Advertising Solutions',
-      '/blog/mastering-digital-marketing': 'Master Digital Marketing Strategy & Best Practices',
-      '/blog/marketing-agencies-essential-business-growth-2025': 'Marketing Agencies Essential for Business Growth 2025',
-      '/blog/ai-revolution-digital-marketing-2025': 'AI Revolution in Digital Marketing 2025 Trends',
-      '/resources/content-creation-agent': 'AI Content Creation Agent & Automated Writing Tools',
-      '/blog/ai-driven-risk-management-business-resilience': 'AI-Driven Risk Management & Business Resilience',
-      '/blog/digital-marketing-revolution-july-2025': 'Digital Marketing Revolution July 2025 Updates',
-      '/blog/tax-reduction-wealth-building-guide': 'Tax Reduction & Wealth Building Strategy Guide',
-      '/gtm-strategy-blueprint': 'Go-to-Market Strategy Blueprint & Launch Planning',
-      '/contact': 'Contact Digital Frontier for Free Marketing Consultation',
-      '/generative-engine-optimization': 'Generative Engine Optimization GEO Services & AI Content',
-      '/faq': 'FAQ: Digital Frontier Marketing Questions & Expert Answers',
-      '/seo-audit-dashboard': 'SEO Audit Dashboard Website Analysis & Optimization Tools'
-    };
-    
-    return h1Map[path] || routeConfig?.title?.substring(0, 60) || title;
-  };
-
-  const optimizedH1 = getOptimizedH1(currentPath);
 
   // Only handle redirects in production or for specific cases
   useEffect(() => {
@@ -168,9 +114,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
               loading="eager"
               decoding="async"
             />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" itemProp="headline">
-              {optimizedH1}
-            </h1>
             {subtitle && <h2 className="text-xl text-slate-300" itemProp="description">{subtitle}</h2>}
           </div>
         </div>
