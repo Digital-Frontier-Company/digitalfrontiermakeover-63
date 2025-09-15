@@ -1,17 +1,18 @@
 
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Home, ArrowLeft, Search } from 'lucide-react';
-import { SEOHead } from '@/components/SEOHead';
+import { SEOManager } from '@/components/SEOManager';
 
 const NotFound = () => {
   return (
     <>
-      <SEOHead 
-        path="/404"
+      <SEOManager 
         title="Page Not Found - Digital Frontier"
         description="The page you're looking for doesn't exist. Return to Digital Frontier's homepage or browse our AI-powered content marketing services."
         keywords="404, page not found, digital frontier"
+        noIndex={true}
       />
       
       <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center">

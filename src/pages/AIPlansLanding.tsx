@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { SEOHead } from "@/components/SEOHead";
+import { SEOManager } from "@/components/SEOManager";
 import { submitToHubSpot } from "@/utils/hubspot";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
@@ -128,7 +128,7 @@ const AIPlansLanding = () => {
     }
   };
   return <>
-      <SEOHead title="Digital Frontier - AI That Works Both Ways | GEO, AEO & AI Agents" description="Transform your business with AI-powered marketing, Generative Engine Optimization (GEO), and intelligent automation. Get found online, run smarter inside." path="/ai-plans" />
+      <SEOManager title="Digital Frontier - AI That Works Both Ways | GEO, AEO & AI Agents" description="Transform your business with AI-powered marketing, Generative Engine Optimization (GEO), and intelligent automation. Get found online, run smarter inside." />
       
       {/* Animated Background */}
       <div className="fixed inset-0 bg-gradient-radial from-indigo-900/20 via-slate-900 to-slate-950 -z-20"></div>

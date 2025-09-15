@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SEOHead } from '@/components/SEOHead';
+import { SEOManager } from '@/components/SEOManager';
 import MainLayout from '@/components/layout/MainLayout';
 
 const RealEstateDemo: React.FC = () => {
@@ -37,8 +37,7 @@ const RealEstateDemo: React.FC = () => {
 
   return (
     <MainLayout>
-      <SEOHead 
-        path="/real-estate-demo"
+      <SEOManager 
         title="Real Estate Property Search Demo | AI-Powered Property Assistant"
         description="Experience our AI-powered real estate property search tool. Get instant property recommendations, market insights, and personalized assistance for buying or selling homes."
         keywords="real estate AI, property search, AI assistant, real estate demo, property recommendations"

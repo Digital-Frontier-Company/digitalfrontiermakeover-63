@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { SEOOptimizer } from "@/components/seo/SEOOptimizer";
+import { SEOManager } from "@/components/SEOManager";
 import { InternalLinkOptimizer } from "@/components/seo/InternalLinkOptimizer";
 import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -78,15 +78,13 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
   return (
     <>
-      <SEOOptimizer 
-        path={currentPath}
+      <SEOManager 
         title={title}
         description={subtitle || routeConfig?.description || ''}
         keywords={routeConfig?.keywords}
         pageType={routeConfig?.pageType || (pageType === 'article' ? 'article' : pageType === 'service' ? 'service' : 'website')}
         publishedDate={publishedDate}
         modifiedDate={modifiedDate}
-        breadcrumbs={breadcrumbs}
       />
       <SEOAdvanced 
         enableWebVitals={true}
