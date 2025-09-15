@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   baseUrl: 'https://digitalfrontier.app',
   siteName: 'Digital Frontier Company',
   defaultTitle: 'Memphis AI Marketing Agency | Stop Guessing, Start Growing with AI-Powered Marketing | Digital Frontier',
-  defaultDescription: 'Leading Memphis AI marketing agency specializing in Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and AI-powered content strategies for B2B companies in Collierville, Germantown, and Greater Memphis area.',
+  defaultDescription: 'Digital marketing agency providing comprehensive SEO, content strategy, and business growth solutions for B2B companies across Tennessee and beyond.',
   defaultKeywords: 'AI content marketing, SEO agency, B2B marketing, answer engine optimization, content strategy',
   logoUrl: '/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png',
   socialUrls: [
@@ -39,7 +39,7 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
   {
     path: '/',
     title: 'AI Marketing Memphis | Digital Frontier Company Solutions',
-    description: 'Memphis AI marketing agency specializing in Answer Engine Optimization (AEO) and AI-powered content strategies. Get results-driven marketing solutions today.',
+    description: 'Digital marketing agency providing SEO, content strategy, and business growth solutions. Transform your online presence with data-driven marketing strategies.',
     keywords: 'AI marketing, Memphis, digital marketing, AEO, content strategy, business growth',
     priority: 1.0,
     changeFreq: 'weekly',
