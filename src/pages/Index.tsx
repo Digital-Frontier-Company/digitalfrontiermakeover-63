@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, Suspense, lazy } from "react";
 import useFaqToggle from "@/hooks/useFaqToggle";
 import SEOSchema from "@/components/SEOSchema";
 import { LazyImage } from "@/components/LazyImage";
+import HomePageHTML from "@/components/HomePageHTML";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield } from 'lucide-react';
@@ -182,9 +183,21 @@ const Index = () => {
       }
     });
   }, [marqueeControls]);
+  // Check if user agent indicates a bot/crawler for HTML-first rendering
+  const isBot = typeof navigator !== 'undefined' && /bot|crawler|spider|crawling/i.test(navigator.userAgent);
+  
+  // For bots and initial load, serve HTML-first version
+  if (isBot || typeof window === 'undefined') {
+    return <HomePageHTML />;
+  }
+
   return <>
       <SEOSchema />
       
+      {/* HTML content for progressive enhancement - hidden but available to search engines */}
+      <div className="sr-only">
+        <HomePageHTML />
+      </div>
       
       {/* HERO SECTION - Original Style with New Copy */}
       <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
