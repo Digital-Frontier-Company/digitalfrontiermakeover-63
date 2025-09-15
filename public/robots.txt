@@ -1,20 +1,50 @@
 User-agent: *
 Allow: /
-# Explicitly allow critical resources for rendering
-Allow: /assets/
-Allow: /lovable-uploads/
+
+# Critical resources for page rendering - MUST be accessible
+Allow: /assets/*
+Allow: /lovable-uploads/*
+Allow: /src/assets/*
+Allow: /_app/*
+Allow: /static/*
+Allow: /public/*
+
+# Critical file types for rendering
 Allow: /*.css$
 Allow: /*.js$
+Allow: /*.mjs$
+Allow: /*.ts$
+Allow: /*.tsx$
+Allow: /*.json$
+
+# Images and media
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.webp$
 Allow: /*.svg$
+Allow: /*.gif$
+Allow: /*.ico$
+Allow: /*.avif$
+
+# Fonts
 Allow: /*.woff$
 Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.otf$
+Allow: /*.eot$
+
+# Critical configuration files
 Allow: /site.webmanifest
+Allow: /manifest.json
 Allow: /sitemap.xml
+Allow: /robots.txt
 Allow: /6cpbp6aehtedmpa2rxcg5t2vugg5hkse.txt
+
+# Vite/build specific resources
+Allow: /@vite/*
+Allow: /node_modules/*
+Allow: /.vite/*
 Disallow: /admin/
 Disallow: /api/
 Disallow: /*.pdf$
