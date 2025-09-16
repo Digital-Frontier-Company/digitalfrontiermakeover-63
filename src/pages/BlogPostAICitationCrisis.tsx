@@ -1,63 +1,25 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, Search, BookOpen, ExternalLink, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const BlogPostAICitationCrisis = () => {
+  const location = useLocation();
+
   return (
     <>
-      <Helmet>
-        <title>AI Citation Crisis: Why Sources Matter More Than Ever | Digital Frontier</title>
-        <meta name="description" content="Explore the growing AI citation crisis and learn why verifiable sources are critical in our AI-powered information landscape. Expert analysis on AI reliability and fact-checking." />
-        <meta name="keywords" content="AI citation crisis, AI sources, AI fact checking, AI reliability, artificial intelligence verification, AI misinformation" />
-        <meta property="og:title" content="AI Citation Crisis: Why Sources Matter More Than Ever" />
-        <meta property="og:description" content="Explore the growing AI citation crisis and learn why verifiable sources are critical in our AI-powered information landscape." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://digitalfrontier.ai/blog/ai-citation-crisis" />
-        <meta property="article:author" content="Digital Frontier Company" />
-        <meta property="article:published_time" content="2025-09-05T00:00:00Z" />
-        <meta property="article:section" content="AI Research" />
-        <meta property="article:tag" content="AI Citations" />
-        <meta property="article:tag" content="AI Verification" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Citation Crisis: Why Sources Matter More Than Ever" />
-        <meta name="twitter:description" content="Explore the growing AI citation crisis and learn why verifiable sources are critical." />
-        <link rel="canonical" href="https://digitalfrontier.ai/blog/ai-citation-crisis" />
-        
-        {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "AI Citation Crisis: Why Sources Matter More Than Ever",
-            "description": "Explore the growing AI citation crisis and learn why verifiable sources are critical in our AI-powered information landscape.",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier Company",
-              "url": "https://digitalfrontier.ai"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.ai/logo.png"
-              }
-            },
-            "datePublished": "2025-09-05",
-            "dateModified": "2025-09-05",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.ai/blog/ai-citation-crisis"
-            },
-            "articleSection": "AI Research",
-            "keywords": ["AI citation crisis", "AI sources", "AI fact checking", "AI reliability"]
-          })}
-        </script>
-      </Helmet>
-
+      <SEOManager 
+        title="AI Citation Crisis: Why Sources Matter More Than Ever"
+        description="Explore the growing AI citation crisis and learn why verifiable sources are critical in our AI-powered information landscape. Expert analysis on AI reliability and fact-checking."
+        keywords="AI citation crisis, AI sources, AI fact checking, AI reliability, artificial intelligence verification, AI misinformation"
+        pageType="article"
+        publishedDate="2025-09-05T00:00:00Z"
+        modifiedDate="2025-09-05T00:00:00Z"
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-destructive/10 via-background to-accent/5 py-24 px-4">

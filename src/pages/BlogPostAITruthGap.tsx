@@ -1,61 +1,23 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, CheckCircle, XCircle, Eye, Users, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 const BlogPostAITruthGap = () => {
-  return <>
-      <Helmet>
-        <title>The AI Truth Gap: Investigation into AI Reliability & Misinformation | Digital Frontier</title>
-        <meta name="description" content="Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications." />
-        <meta name="keywords" content="AI reliability, AI misinformation, AI fact-checking, AI citation crisis, AI truth gap, artificial intelligence safety, AI accountability" />
-        <meta property="og:title" content="The AI Truth Gap: Investigation into AI Reliability & Misinformation" />
-        <meta property="og:description" content="Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://digitalfrontier.ai/blog/ai-truth-gap" />
-        <meta property="article:author" content="Digital Frontier Company" />
-        <meta property="article:published_time" content="2025-09-04T00:00:00Z" />
-        <meta property="article:section" content="AI Research" />
-        <meta property="article:tag" content="AI Reliability" />
-        <meta property="article:tag" content="AI Misinformation" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="The AI Truth Gap: Investigation into AI Reliability & Misinformation" />
-        <meta name="twitter:description" content="Our 2025 investigation reveals a shocking truth gap in AI reliability." />
-        <link rel="canonical" href="https://digitalfrontier.ai/blog/ai-truth-gap" />
-        
-        {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "The AI Truth Gap: Investigation into AI Reliability & Misinformation",
-          "description": "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
-          "author": {
-            "@type": "Organization",
-            "name": "Digital Frontier Company",
-            "url": "https://digitalfrontier.ai"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Digital Frontier",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://digitalfrontier.ai/logo.png"
-            }
-          },
-          "datePublished": "2025-09-04",
-          "dateModified": "2025-09-04",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://digitalfrontier.ai/blog/ai-truth-gap"
-          },
-          "articleSection": "AI Research",
-          "keywords": ["AI reliability", "AI misinformation", "AI fact-checking", "artificial intelligence safety"]
-        })}
-        </script>
-      </Helmet>
+  const location = useLocation();
 
+  return <>
+      <SEOManager 
+        title="The AI Truth Gap: Investigation into AI Reliability & Misinformation"
+        description="Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications."
+        keywords="AI reliability, AI misinformation, AI fact-checking, AI citation crisis, AI truth gap, artificial intelligence safety, AI accountability"
+        pageType="article"
+        publishedDate="2025-09-04T00:00:00Z"
+        modifiedDate="2025-09-04T00:00:00Z"
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/5 py-24 px-4">

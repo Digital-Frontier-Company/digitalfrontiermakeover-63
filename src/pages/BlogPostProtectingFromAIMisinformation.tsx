@@ -1,63 +1,25 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, CheckCircle, XCircle, AlertTriangle, Users, Eye, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const BlogPostProtectingFromAIMisinformation = () => {
+  const location = useLocation();
+
   return (
     <>
-      <Helmet>
-        <title>Protecting Yourself from AI Misinformation: A Practical Guide | Digital Frontier</title>
-        <meta name="description" content="Learn essential strategies to identify and protect yourself from AI-generated misinformation. Practical tips for individuals, businesses, and organizations." />
-        <meta name="keywords" content="AI misinformation protection, AI fact checking, AI verification, artificial intelligence safety, AI reliability guide" />
-        <meta property="og:title" content="Protecting Yourself from AI Misinformation: A Practical Guide" />
-        <meta property="og:description" content="Learn essential strategies to identify and protect yourself from AI-generated misinformation." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://digitalfrontier.ai/blog/protecting-from-ai-misinformation" />
-        <meta property="article:author" content="Digital Frontier Company" />
-        <meta property="article:published_time" content="2025-09-05T00:00:00Z" />
-        <meta property="article:section" content="AI Safety" />
-        <meta property="article:tag" content="AI Safety" />
-        <meta property="article:tag" content="Misinformation" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Protecting Yourself from AI Misinformation: A Practical Guide" />
-        <meta name="twitter:description" content="Learn essential strategies to identify and protect yourself from AI-generated misinformation." />
-        <link rel="canonical" href="https://digitalfrontier.ai/blog/protecting-from-ai-misinformation" />
-        
-        {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Protecting Yourself from AI Misinformation: A Practical Guide",
-            "description": "Learn essential strategies to identify and protect yourself from AI-generated misinformation.",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier Company",
-              "url": "https://digitalfrontier.ai"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.ai/logo.png"
-              }
-            },
-            "datePublished": "2025-09-05",
-            "dateModified": "2025-09-05",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.ai/blog/protecting-from-ai-misinformation"
-            },
-            "articleSection": "AI Safety",
-            "keywords": ["AI misinformation protection", "AI fact checking", "AI verification"]
-          })}
-        </script>
-      </Helmet>
-
+      <SEOManager 
+        title="Protecting Yourself from AI Misinformation: A Practical Guide"
+        description="Learn essential strategies to identify and protect yourself from AI-generated misinformation. Practical tips for individuals, businesses, and organizations."
+        keywords="AI misinformation protection, AI fact checking, AI verification, artificial intelligence safety, AI reliability guide"
+        pageType="article"
+        publishedDate="2025-09-05T00:00:00Z"
+        modifiedDate="2025-09-05T00:00:00Z"
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/5 py-24 px-4">

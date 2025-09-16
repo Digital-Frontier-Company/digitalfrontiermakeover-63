@@ -144,49 +144,6 @@ const AIAndDigitalMarketing = () => {
       subtitle="Master artificial intelligence in marketing with expert strategies, practical implementation guides, and proven techniques that drive measurable results"
       currentPath={location.pathname}
     >
-      <Helmet>
-        <title>AI & Digital Marketing Revolution | AI-Powered Marketing Solutions | Digital Frontier</title>
-        <meta name="keywords" content="AI marketing, artificial intelligence digital marketing, machine learning marketing, AI advertising, marketing automation, predictive analytics, recommender systems, Digital Frontier Company" />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="AI & Digital Marketing Revolution | Digital Frontier" />
-        <meta property="og:description" content="Transform your marketing strategy with AI-powered solutions. Expert insights on artificial intelligence in digital marketing from Digital Frontier Company." />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
-        
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI & Digital Marketing Revolution | Digital Frontier" />
-        <meta name="twitter:description" content="Transform your marketing strategy with AI-powered solutions. Expert insights from Digital Frontier Company." />
-        <meta name="twitter:image" content="https://digitalfrontier.app/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" />
-        
-        {/* Article Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
-        
-        {/* Breadcrumb Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-
-        {/* Organization Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
-        </script>
-
-        {/* WebPage Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify(webPageSchema)}
-        </script>
-      </Helmet>
       
       <div className="mb-8">
         <p className="text-slate-300 text-lg leading-relaxed">
