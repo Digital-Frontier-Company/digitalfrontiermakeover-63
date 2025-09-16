@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { SEOManager } from '@/components/SEOManager';
 import MainLayout from '@/components/layout/MainLayout';
 
 const RealEstateDemo: React.FC = () => {
@@ -37,12 +36,6 @@ const RealEstateDemo: React.FC = () => {
 
   return (
     <MainLayout>
-      <SEOManager 
-        title="Real Estate Property Search Demo | AI-Powered Property Assistant"
-        description="Experience our AI-powered real estate property search tool. Get instant property recommendations, market insights, and personalized assistance for buying or selling homes."
-        keywords="real estate AI, property search, AI assistant, real estate demo, property recommendations"
-        pageType="service"
-      />
       
       <div className="min-h-screen bg-gradient-to-br from-background to-accent/5">
         <div className="container mx-auto px-4 py-8">

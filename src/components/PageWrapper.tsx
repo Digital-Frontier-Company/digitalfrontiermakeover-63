@@ -1,5 +1,4 @@
 import React from 'react';
-import { SEOManager } from './SEOManager';
 
 interface PageWrapperProps {
   children: React.ReactNode;
@@ -30,7 +29,6 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
   
   return (
     <>
-      <SEOManager {...seo} />
       <div className={`min-h-screen ${className}`}>
         {/* Main content wrapper with semantic HTML */}
         <main role="main" id="main-content">

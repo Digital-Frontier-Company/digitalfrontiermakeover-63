@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, Suspense, lazy } from "react";
 import useFaqToggle from "@/hooks/useFaqToggle";
-import SEOSchema from "@/components/SEOSchema";
 import { LazyImage } from "@/components/LazyImage";
 import HomePageHTML from "@/components/HomePageHTML";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
@@ -192,7 +191,6 @@ const Index = () => {
   }
 
   return <>
-      <SEOSchema />
       
       {/* HTML content for progressive enhancement - hidden but available to search engines */}
       <div className="sr-only">

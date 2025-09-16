@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, Search, BookOpen, ExternalLink, Users } from "lucide-react";
@@ -11,14 +10,6 @@ const BlogPostAICitationCrisis = () => {
 
   return (
     <>
-      <SEOManager 
-        title="AI Citation Crisis: Why Sources Matter More Than Ever"
-        description="Explore the growing AI citation crisis and learn why verifiable sources are critical in our AI-powered information landscape. Expert analysis on AI reliability and fact-checking."
-        keywords="AI citation crisis, AI sources, AI fact checking, AI reliability, artificial intelligence verification, AI misinformation"
-        pageType="article"
-        publishedDate="2025-09-05T00:00:00Z"
-        modifiedDate="2025-09-05T00:00:00Z"
-      />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}

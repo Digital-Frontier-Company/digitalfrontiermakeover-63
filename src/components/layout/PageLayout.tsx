@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { SEOManager } from "@/components/SEOManager";
 import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
@@ -76,14 +75,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
   return (
     <>
-      <SEOManager 
-        title={title}
-        description={subtitle || routeConfig?.description || ''}
-        keywords={routeConfig?.keywords}
-        pageType={routeConfig?.pageType || (pageType === 'article' ? 'article' : pageType === 'service' ? 'service' : 'website')}
-        publishedDate={publishedDate}
-        modifiedDate={modifiedDate}
-      />
       
       {/* Enhanced SEO Breadcrumbs */}
       <div className="w-full px-4 pt-6">

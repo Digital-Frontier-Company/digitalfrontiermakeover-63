@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, CheckCircle, XCircle, AlertTriangle, Users, Eye, Zap } from "lucide-react";
@@ -11,14 +10,6 @@ const BlogPostProtectingFromAIMisinformation = () => {
 
   return (
     <>
-      <SEOManager 
-        title="Protecting Yourself from AI Misinformation: A Practical Guide"
-        description="Learn essential strategies to identify and protect yourself from AI-generated misinformation. Practical tips for individuals, businesses, and organizations."
-        keywords="AI misinformation protection, AI fact checking, AI verification, artificial intelligence safety, AI reliability guide"
-        pageType="article"
-        publishedDate="2025-09-05T00:00:00Z"
-        modifiedDate="2025-09-05T00:00:00Z"
-      />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}

@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { SEOManager } from "@/components/SEOManager";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, CheckCircle, XCircle, Eye, Users, TrendingUp } from "lucide-react";
@@ -9,14 +8,6 @@ const BlogPostAITruthGap = () => {
   const location = useLocation();
 
   return <>
-      <SEOManager 
-        title="The AI Truth Gap: Investigation into AI Reliability & Misinformation"
-        description="Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications."
-        keywords="AI reliability, AI misinformation, AI fact-checking, AI citation crisis, AI truth gap, artificial intelligence safety, AI accountability"
-        pageType="article"
-        publishedDate="2025-09-04T00:00:00Z"
-        modifiedDate="2025-09-04T00:00:00Z"
-      />
       
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Hero Section */}
