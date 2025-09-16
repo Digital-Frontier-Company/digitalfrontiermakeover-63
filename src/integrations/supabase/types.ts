@@ -7,103 +7,14 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.3 (519615d)"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
-      playbook_categories: {
-        Row: {
-          color: string | null
-          created_at: string
-          description: string | null
-          icon_name: string | null
-          id: string
-          name: string
-          sort_order: number | null
-        }
-        Insert: {
-          color?: string | null
-          created_at?: string
-          description?: string | null
-          icon_name?: string | null
-          id?: string
-          name: string
-          sort_order?: number | null
-        }
-        Update: {
-          color?: string | null
-          created_at?: string
-          description?: string | null
-          icon_name?: string | null
-          id?: string
-          name?: string
-          sort_order?: number | null
-        }
-        Relationships: []
-      }
-      playbooks: {
-        Row: {
-          author: string | null
-          category: string
-          content: string | null
-          created_at: string
-          description: string
-          difficulty_level: string | null
-          featured: boolean | null
-          id: string
-          image_url: string | null
-          published_date: string | null
-          read_time: string
-          slug: string
-          tags: string[] | null
-          title: string
-          updated_at: string
-          updated_date: string | null
-          view_count: number | null
-        }
-        Insert: {
-          author?: string | null
-          category: string
-          content?: string | null
-          created_at?: string
-          description: string
-          difficulty_level?: string | null
-          featured?: boolean | null
-          id?: string
-          image_url?: string | null
-          published_date?: string | null
-          read_time: string
-          slug: string
-          tags?: string[] | null
-          title: string
-          updated_at?: string
-          updated_date?: string | null
-          view_count?: number | null
-        }
-        Update: {
-          author?: string | null
-          category?: string
-          content?: string | null
-          created_at?: string
-          description?: string
-          difficulty_level?: string | null
-          featured?: boolean | null
-          id?: string
-          image_url?: string | null
-          published_date?: string | null
-          read_time?: string
-          slug?: string
-          tags?: string[] | null
-          title?: string
-          updated_at?: string
-          updated_date?: string | null
-          view_count?: number | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
