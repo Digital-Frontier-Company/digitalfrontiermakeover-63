@@ -6,11 +6,11 @@ import MainLayout from '@/components/layout/MainLayout';
 // Immediate load for homepage (critical path)
 import Index from '@/pages/Index';
 
-// Lazy load all other pages for code splitting
-const AdFunnelBlueprint = lazy(() => import('@/pages/AdFunnelBlueprint'));
-const GenerativeEngineOptimization = lazy(() => import('@/pages/GenerativeEngineOptimization'));
-const AnswerEngineOptimization = lazy(() => import('@/pages/AnswerEngineOptimization'));
-const SearchEngineOptimization = lazy(() => import('@/pages/SearchEngineOptimization'));
+// Import critical pages directly to avoid loading issues
+import AdFunnelBlueprint from '@/pages/AdFunnelBlueprint';
+import GenerativeEngineOptimization from '@/pages/GenerativeEngineOptimization';
+import AnswerEngineOptimization from '@/pages/AnswerEngineOptimization';
+import SearchEngineOptimization from '@/pages/SearchEngineOptimization';
 const CryptoMarketing = lazy(() => import('@/pages/CryptoMarketing'));
 const AboutUs = lazy(() => import('@/pages/AboutUs'));
 const Contact = lazy(() => import('@/pages/Contact'));
@@ -102,10 +102,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<MainLayout><Index /></MainLayout>} />
-            <Route path="/ad-funnel-blueprint" element={<MainLayout><Suspense fallback={<PageLoader />}><AdFunnelBlueprint /></Suspense></MainLayout>} />
-            <Route path="/generative-engine-optimization" element={<MainLayout><Suspense fallback={<PageLoader />}><GenerativeEngineOptimization /></Suspense></MainLayout>} />
-            <Route path="/answer-engine-optimization" element={<MainLayout><Suspense fallback={<PageLoader />}><AnswerEngineOptimization /></Suspense></MainLayout>} />
-            <Route path="/search-engine-optimization" element={<MainLayout><Suspense fallback={<PageLoader />}><SearchEngineOptimization /></Suspense></MainLayout>} />
+            <Route path="/ad-funnel-blueprint" element={<MainLayout><AdFunnelBlueprint /></MainLayout>} />
+            <Route path="/generative-engine-optimization" element={<MainLayout><GenerativeEngineOptimization /></MainLayout>} />
+            <Route path="/answer-engine-optimization" element={<MainLayout><AnswerEngineOptimization /></MainLayout>} />
+            <Route path="/search-engine-optimization" element={<MainLayout><SearchEngineOptimization /></MainLayout>} />
             <Route path="/crypto-marketing" element={<MainLayout><Suspense fallback={<PageLoader />}><CryptoMarketing /></Suspense></MainLayout>} />
             <Route path="/about-us" element={<MainLayout><Suspense fallback={<PageLoader />}><AboutUs /></Suspense></MainLayout>} />
             <Route path="/contact" element={<MainLayout><Suspense fallback={<PageLoader />}><Contact /></Suspense></MainLayout>} />
