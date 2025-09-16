@@ -5,7 +5,6 @@ import { SEOManager } from "@/components/SEOManager";
 import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
-import { SEOAdvanced } from "@/components/SEOAdvanced";
 import { SEOBreadcrumbs, RelatedLinks, CTASection } from "./InternalLinkEnhancer";
 import { getRouteConfig } from "@/utils/seo";
 
@@ -84,13 +83,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         pageType={routeConfig?.pageType || (pageType === 'article' ? 'article' : pageType === 'service' ? 'service' : 'website')}
         publishedDate={publishedDate}
         modifiedDate={modifiedDate}
-      />
-      <SEOAdvanced 
-        enableWebVitals={true}
-        enableCriticalCSS={true}
-        enablePreloadHints={true}
-        criticalImageUrls={["/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"]}
-        lcpImageUrl="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
       />
       
       {/* Enhanced SEO Breadcrumbs */}
