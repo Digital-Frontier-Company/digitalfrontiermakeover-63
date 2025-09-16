@@ -4,7 +4,7 @@
  */
 
 const SITE_CONFIG = {
-  baseUrl: 'https://digitalfrontier.app'
+  baseUrl: 'https://Digitalfrontier.app'
 };
 
 function getCanonicalUrl(path: string): string {
