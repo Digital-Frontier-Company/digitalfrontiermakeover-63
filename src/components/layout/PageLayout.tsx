@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SEOManager } from "@/components/SEOManager";
-import { InternalLinkOptimizer } from "@/components/seo/InternalLinkOptimizer";
 import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
@@ -139,14 +138,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
             <div className="space-y-8" itemProp="mainEntity">
               {children}
             </div>
-            
-            {/* Enhanced Internal Linking - SEO Optimized */}
-            <InternalLinkOptimizer 
-              currentPath={currentPath} 
-              variant="grid"
-              showTitle={true}
-              maxLinks={6}
-            />
             
             {/* Call-to-Action Section */}
             <CTASection variant={pageType === 'article' ? 'blog' : 'service'} />
