@@ -50,6 +50,8 @@ const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
 const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
 const Index = () => {
+  console.log('🏠 Index page component loaded');
+  
   // Use the FAQ toggle hook
   useFaqToggle();
 
