@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import { ROUTE_CONFIGS } from '@/utils/seo';
+import { ROUTE_CONFIGS } from '@/utils/routes';
 
 interface BreadcrumbItem {
   label: string;
@@ -62,28 +62,8 @@ export const Breadcrumbs: React.FC = () => {
 
   const breadcrumbs = getBreadcrumbs();
 
-  // Generate JSON-LD for breadcrumbs
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((breadcrumb, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": breadcrumb.label,
-      "item": `https://digitalfrontier.app${breadcrumb.href}`
-    }))
-  };
-
   return (
     <>
-      {/* JSON-LD Schema for Breadcrumbs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema)
-        }}
-      />
-      
       {/* Visual Breadcrumbs */}
       <nav 
         className="flex items-center space-x-2 text-sm text-muted-foreground mb-6 px-4 sm:px-6 lg:px-8"

@@ -1,13 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
-import SEOAuditHero from "@/components/seo-audit/SEOAuditHero";
-import InteractiveSEOChecklist from "@/components/seo-audit/InteractiveSEOChecklist";
-import PerformanceMonitor from "@/components/seo-audit/PerformanceMonitor";
-import ContentQualityAssessment from "@/components/seo-audit/ContentQualityAssessment";
-import EEATAnalysis from "@/components/seo-audit/EEATAnalysis";
-import CompetitorAnalysis from "@/components/seo-audit/CompetitorAnalysis";
-import SEOScoreCard from "@/components/seo-audit/SEOScoreCard";
 
 const DigitalMarketing = () => {
   const location = useLocation();
@@ -21,13 +14,12 @@ const DigitalMarketing = () => {
       publishedDate="2024-12-18"
       modifiedDate="2024-12-18"
     >
-      <SEOAuditHero />
-      <SEOScoreCard />
-      <InteractiveSEOChecklist />
-      <PerformanceMonitor />
-      <ContentQualityAssessment />
-      <EEATAnalysis />
-      <CompetitorAnalysis />
+      <div className="text-center py-16">
+        <h2 className="text-3xl font-bold text-white mb-4">Digital Marketing Services</h2>
+        <p className="text-slate-300 max-w-2xl mx-auto">
+          Complete digital marketing solutions to grow your business online with proven strategies and measurable results.
+        </p>
+      </div>
     </PageLayout>
   );
 };

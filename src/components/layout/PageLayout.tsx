@@ -5,7 +5,7 @@ import { handleClientRedirect } from "@/utils/redirect";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 import { SEOBreadcrumbs, RelatedLinks, CTASection } from "./InternalLinkEnhancer";
-import { getRouteConfig } from "@/utils/seo";
+import { getRouteConfig } from "@/utils/routes";
 
 type PageLayoutProps = {
   children: React.ReactNode;

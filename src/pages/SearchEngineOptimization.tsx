@@ -409,7 +409,6 @@ const SearchEngineOptimization: React.FC = () => {
         <FAQSection 
           title="Search Engine Optimization FAQs" 
           faqs={seoFaqs}
-          structured={true}
         />
       </div>
 

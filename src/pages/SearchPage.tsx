@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchIcon, FileTextIcon, BookOpenIcon, TrendingUpIcon } from "lucide-react";
-import { ROUTE_CONFIGS } from "@/utils/seo";
+import { ROUTE_CONFIGS } from "@/utils/routes";
 
 const SearchPage = () => {
   const location = useLocation();
@@ -31,7 +31,6 @@ const SearchPage = () => {
       return (
         route.title.toLowerCase().includes(searchText) ||
         route.description.toLowerCase().includes(searchText) ||
-        route.keywords?.toLowerCase().includes(searchText) ||
         route.path.toLowerCase().includes(searchText)
       );
     }).slice(0, 10);

@@ -1,9 +1,17 @@
 /**
  * URL Redirect Utilities
- * Handles 301 redirects for non-canonical URLs
+ * Handles basic URL redirects
  */
 
-import { getCanonicalUrl, SITE_CONFIG } from './seo';
+const SITE_CONFIG = {
+  baseUrl: 'https://digitalfrontier.app'
+};
+
+function getCanonicalUrl(path: string): string {
+  // Remove trailing slash except for root
+  const normalizedPath = path === '/' ? path : path.replace(/\/$/, '');
+  return `${SITE_CONFIG.baseUrl}${normalizedPath}`;
+}
 
 export interface RedirectRule {
   from: string | RegExp;

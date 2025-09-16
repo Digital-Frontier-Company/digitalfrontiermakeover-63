@@ -12,39 +12,15 @@ interface FAQSectionProps {
   title?: string;
   faqs: FAQItem[];
   className?: string;
-  structured?: boolean;
 }
 
 const FAQSection: React.FC<FAQSectionProps> = ({ 
-  title = "Frequently Asked Questions", 
+  title = "Frequently Asked Questions",
   faqs, 
-  className = "",
-  structured = true
+  className = ""
 }) => {
-  // Generate JSON-LD schema for FAQs
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-
   return (
     <section className={`py-12 ${className}`}>
-      {structured && (
-        <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify(faqSchema)}
-          </script>
-        </Helmet>
-      )}
-      
       <div className="container mx-auto px-4">
         {title && (
           <h2 className="text-3xl font-bold mb-8 text-center text-slate-100">{title}</h2>
