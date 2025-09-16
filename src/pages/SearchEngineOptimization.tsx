@@ -10,7 +10,6 @@ import FAQSection from "@/components/FAQSection";
 import { useLocation } from "react-router-dom";
 
 const SearchEngineOptimization: React.FC = () => {
-  console.log('🔍 SEO page component loaded');
   
   const location = useLocation();
   const typewriterRef = useRef<HTMLDivElement>(null);

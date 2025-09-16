@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChatBot from './ChatBot';
 import InteractiveHelp from './InteractiveHelp';
 import VoiceInterface from './VoiceInterface';
@@ -7,6 +7,7 @@ const ConversationManager: React.FC = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [showVoiceInterface, setShowVoiceInterface] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const handleVoiceTranscript = (transcript: string) => {
     // Process voice commands
@@ -27,6 +28,24 @@ const ConversationManager: React.FC = () => {
     setIsChatOpen(true);
   };
 
+  // Check if window is available and screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      if (typeof window !== 'undefined') {
+        setIsDesktop(window.innerWidth >= 768);
+      }
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', checkScreenSize);
+      }
+    };
+  }, []);
+
   return (
     <>
       {/* Chat Bot */}
@@ -43,7 +62,7 @@ const ConversationManager: React.FC = () => {
       />
 
       {/* Voice Interface - Only show on desktop for better UX */}
-      {window.innerWidth >= 768 && (
+      {isDesktop && (
         <VoiceInterface
           onTranscript={handleVoiceTranscript}
           autoSpeak={true}

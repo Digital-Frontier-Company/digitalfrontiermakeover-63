@@ -9,7 +9,6 @@ const MainLayout = ({
 }: {
   children: React.ReactNode;
 }) => {
-  console.log('MainLayout rendering with children:', !!children);
   useEffect(() => {
     // Load HubSpot tracking script with your specific portal ID
     const hubspotId = '48401342';
