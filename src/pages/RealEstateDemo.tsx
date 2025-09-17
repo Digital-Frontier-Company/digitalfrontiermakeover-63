@@ -1,39 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 
 const RealEstateDemo: React.FC = () => {
-  useEffect(() => {
-    // Load Voiceflow script for Real Estate demo
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.onload = function() {
-      if (window.voiceflow?.chat) {
-        window.voiceflow.chat.load({
-          verify: { projectID: '67ba2420c97c50a0c1d12c47' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          },
-          render: {
-            mode: 'embedded',
-            target: document.getElementById('real-estate-chat-container')
-          }
-        });
-      }
-    };
-    script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, []);
-
   return (
     <MainLayout>
       
@@ -44,7 +12,7 @@ const RealEstateDemo: React.FC = () => {
               Real Estate Property Search Demo
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Experience the future of property search with our AI-powered assistant. 
+              Experience the future of property search with our AI-powered solutions. 
               Get personalized property recommendations, market insights, and instant answers 
               to all your real estate questions.
             </p>
@@ -54,19 +22,24 @@ const RealEstateDemo: React.FC = () => {
             <div className="bg-card rounded-xl shadow-lg border border-border/50 overflow-hidden">
               <div className="bg-primary/10 border-b border-border/50 p-6">
                 <h2 className="text-2xl font-semibold text-foreground mb-2">
-                  AI Property Search Assistant
+                  AI Property Search Solutions
                 </h2>
                 <p className="text-muted-foreground">
-                  Ask about properties, neighborhoods, market trends, or get personalized recommendations
+                  Our AI-powered tools help you find properties, analyze neighborhoods, understand market trends, and get personalized recommendations
                 </p>
               </div>
               
               <div className="p-6">
-                <div 
-                  id="real-estate-chat-container" 
-                  className="w-full min-h-[600px] bg-background/50 rounded-lg border border-border/50"
-                >
-                  {/* Voiceflow chat will be embedded here */}
+                <div className="text-center py-12">
+                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                    Coming Soon: Advanced AI Property Assistant
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    We're building an intelligent property search assistant that will revolutionize how you find and evaluate real estate opportunities.
+                  </p>
+                  <button className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors">
+                    Get Notified When Available
+                  </button>
                 </div>
               </div>
             </div>

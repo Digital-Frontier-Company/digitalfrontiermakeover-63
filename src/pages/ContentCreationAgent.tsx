@@ -23,24 +23,7 @@ const ContentCreationAgent = () => {
           with your digital marketing strategy.
         </p>
 
-        {/* Voiceflow AI Assistant */}
-        <div className="mb-8 bg-slate-800/50 border border-slate-700 rounded-lg p-6">
-          <h3 className="text-xl font-bold mb-4 text-purple-300">🤖 AI Content Assistant</h3>
-          <p className="text-slate-300 mb-4">
-            Chat with our AI assistant to get instant help with content creation, SEO strategies, 
-            and marketing advice. Ask questions, get suggestions, or brainstorm ideas.
-          </p>
-          
-          <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
-            <div 
-              id="vf-chat" 
-              className="w-full rounded-md"
-              style={{ height: '400px', overflow: 'hidden' }}
-            />
-          </div>
-        </div>
-
-        {/* Additional AI Assistant */}
+        {/* AI Marketing Assistant */}
         <div className="mb-8 bg-slate-800/50 border border-slate-700 rounded-lg p-6">
           <h3 className="text-xl font-bold mb-4 text-green-300">🎯 Advanced AI Marketing Assistant</h3>
           <p className="text-slate-300 mb-4">
@@ -79,7 +62,7 @@ const ContentCreationAgent = () => {
           <h3 className="text-xl font-bold mb-4 text-cyan-300">How to Use These Tools</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold text-purple-300 mb-2">AI Content Assistant</h4>
+              <h4 className="font-semibold text-green-300 mb-2">AI Marketing Assistant</h4>
               <ol className="list-decimal pl-5 space-y-2 text-slate-300 text-sm">
                 <li>Start a conversation by typing your question</li>
                 <li>Ask for content ideas, SEO tips, or marketing strategies</li>
@@ -100,33 +83,6 @@ const ContentCreationAgent = () => {
           </div>
         </div>
       </section>
-
-      <Helmet>
-        <script type="text/javascript">
-          {`
-            (function(d, t) {
-                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                v.onload = function() {
-                  window.voiceflow.chat.load({
-                    verify: { projectID: '6719217d6b47c6d69c6218a0' },
-                    url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    voice: {
-                      url: "https://runtime-api.voiceflow.com"
-                    },
-                    render: {
-                      mode: "embedded",
-                      target: document.getElementById("vf-chat")
-                    }
-                  });
-                }
-                v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-                v.type = "text/javascript"; 
-                s.parentNode.insertBefore(v, s);
-            })(document, 'script');
-          `}
-        </script>
-      </Helmet>
     </PageLayout>
   );
 };
