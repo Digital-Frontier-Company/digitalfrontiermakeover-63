@@ -97,7 +97,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ErrorBoundary>
           <Toaster />
-          <Analytics />
+          {import.meta.env.PROD && <Analytics />}
           <Router>
           <Routes>
             <Route path="/" element={<MainLayout><Index /></MainLayout>} />
