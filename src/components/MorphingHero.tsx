@@ -52,6 +52,8 @@ const MorphingHero = () => {
       }
       
       rafId = requestAnimationFrame(() => {
+        if (typeof window === 'undefined') return;
+        
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.parallax-morph');
         parallaxElements.forEach((element, index) => {
@@ -64,9 +66,12 @@ const MorphingHero = () => {
 
     // Cache rect on mount and resize
     updateRect();
-    window.addEventListener('resize', updateRect, { passive: true });
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateRect, { passive: true });
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
 
     // Text cycling animation
     const textInterval = setInterval(() => {
@@ -79,9 +84,11 @@ const MorphingHero = () => {
     }, 2000);
 
     return () => {
-      window.removeEventListener('resize', updateRect);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateRect);
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('scroll', handleScroll);
+      }
       clearInterval(textInterval);
       clearInterval(orbInterval);
       if (rafId) {

@@ -17,7 +17,7 @@ export const PerformanceMonitor: React.FC = () => {
   useEffect(() => {
     // Only load in development or if ?debug=performance is in URL
     const showDebug = process.env.NODE_ENV === 'development' || 
-                     new URLSearchParams(window.location.search).has('debug');
+                     (typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('debug'));
     
     if (!showDebug) return;
 

@@ -16,7 +16,7 @@ export const LinkChecker: React.FC = () => {
 
   // Only run in development or when explicitly requested
   const shouldRun = process.env.NODE_ENV === 'development' || 
-                   new URLSearchParams(window.location.search).has('check-links');
+                   (typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('check-links'));
 
   useEffect(() => {
     if (!shouldRun) return;
@@ -43,7 +43,7 @@ export const LinkChecker: React.FC = () => {
         
         try {
           // For internal links, just mark as success (avoid CORS issues)
-          if (link.url.startsWith('/') || link.url.includes(window.location.hostname)) {
+          if (link.url.startsWith('/') || (typeof window !== 'undefined' && link.url.includes(window.location.hostname))) {
             setLinkChecks(prev => prev.map((check, index) => 
               index === i ? { ...check, status: 'success', statusCode: 200 } : check
             ));

@@ -31,6 +31,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
   // Only handle redirects in production or for specific cases
   useEffect(() => {
+    // Ensure window is available (SSR safety)
+    if (typeof window === 'undefined') return;
+    
     // Skip redirects in development/preview environments
     if (window.location.hostname.includes('lovable') || 
         window.location.hostname === 'localhost' ||
@@ -47,7 +50,12 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     
   // Effect to handle anchor link smooth scrolling
   useEffect(() => {
+    // Ensure window is available (SSR safety)
+    if (typeof window === 'undefined') return;
+    
     const handleHashChange = () => {
+      if (typeof window === 'undefined') return;
+      
       const hash = window.location.hash;
       if (hash) {
         const id = hash.replace('#', '');

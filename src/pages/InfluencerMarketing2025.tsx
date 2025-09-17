@@ -6,8 +6,10 @@ const InfluencerMarketing2025 = () => {
   useEffect(() => {
     // Add console logging to track component mounting
     console.log('InfluencerMarketing2025 component mounted successfully');
-    console.log('Current pathname:', window.location.pathname);
-    console.log('Current URL:', window.location.href);
+    if (typeof window !== 'undefined') {
+      console.log('Current pathname:', window.location.pathname);
+      console.log('Current URL:', window.location.href);
+    }
     // Smooth scrolling for navigation links
     const anchors = document.querySelectorAll('a[href^="#"]');
     const handlersMap = new Map();
