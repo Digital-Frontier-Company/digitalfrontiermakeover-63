@@ -184,15 +184,20 @@ const Index = () => {
     });
   }, [marqueeControls]);
   // Check if user agent indicates a bot/crawler for HTML-first rendering
+  // Only serve HTML version for actual bots, not during normal client-side hydration
   const isBot = typeof navigator !== 'undefined' && /bot|crawler|spider|crawling/i.test(navigator.userAgent);
   
-  // For bots and initial load, serve HTML-first version
-  if (isBot || typeof window === 'undefined') {
+  // Only serve HTML-first version for actual bots/crawlers
+  if (isBot) {
     return <HomePageHTML />;
   }
 
-  return <>
-      
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
+      </div>
+    }>
       {/* HTML content for progressive enhancement - hidden but available to search engines */}
       <div className="sr-only">
         <HomePageHTML />
@@ -1235,6 +1240,7 @@ const Index = () => {
         {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-t from-electric-azure/5 via-transparent to-transparent pointer-events-none"></div>
       </section>
-    </>;
+    </Suspense>
+  );
 };
 export default Index;

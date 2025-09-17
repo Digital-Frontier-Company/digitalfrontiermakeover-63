@@ -78,6 +78,7 @@ import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
 import SaaSAIAgentPackages from './pages/SaaSAIAgentPackages';
 import DigitalFrontierCryptoAIMarketing from './pages/DigitalFrontierCryptoAIMarketing';
 import RealEstateDemo from './pages/RealEstateDemo';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Loading component for lazy routes
 const PageLoader = () => (
@@ -94,9 +95,10 @@ function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <Toaster />
-        <Analytics />
-        <Router>
+        <ErrorBoundary>
+          <Toaster />
+          <Analytics />
+          <Router>
           <Routes>
             <Route path="/" element={<MainLayout><Index /></MainLayout>} />
             <Route path="/ad-funnel-blueprint" element={<MainLayout><AdFunnelBlueprint /></MainLayout>} />
@@ -169,6 +171,7 @@ function App() {
             <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
           </Routes>
         </Router>
+        </ErrorBoundary>
       </QueryClientProvider>
     </HelmetProvider>
   );
