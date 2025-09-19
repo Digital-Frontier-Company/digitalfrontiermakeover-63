@@ -183,14 +183,7 @@ const Index = () => {
       }
     });
   }, [marqueeControls]);
-  // Check if user agent indicates a bot/crawler for HTML-first rendering
-  // Only serve HTML version for actual bots, not during normal client-side hydration
-  const isBot = typeof navigator !== 'undefined' && /bot|crawler|spider|crawling/i.test(navigator.userAgent);
-  
-  // Only serve HTML-first version for actual bots/crawlers
-  if (isBot) {
-    return <HomePageHTML />;
-  }
+  // Removed bot detection logic to prevent rendering conflicts
 
   return (
     <Suspense fallback={
@@ -198,10 +191,7 @@ const Index = () => {
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
       </div>
     }>
-      {/* HTML content for progressive enhancement - hidden but available to search engines */}
-      <div className="sr-only">
-        <HomePageHTML />
-      </div>
+      {/* Removed dual rendering to prevent conflicts */}
       
       {/* HERO SECTION - Original Style with New Copy */}
       <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
