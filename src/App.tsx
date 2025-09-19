@@ -71,7 +71,6 @@ import CompleteAEOGuide from './pages/CompleteAEOGuide';
 import { Toaster } from 'react-hot-toast';
 import NotFound from '@/pages/NotFound';
 import ModernContactForm from '@/pages/ModernContactForm';
-import { Analytics } from '@vercel/analytics/react';
 import WebCreative from './pages/WebCreative';
 import DigitalMarketing from './pages/DigitalMarketing';
 import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
@@ -97,7 +96,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ErrorBoundary>
           <Toaster />
-          {import.meta.env.PROD && <Analytics />}
           <Router>
           <Routes>
             <Route path="/" element={<MainLayout><Index /></MainLayout>} />
