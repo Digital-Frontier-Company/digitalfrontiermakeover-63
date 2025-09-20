@@ -407,7 +407,7 @@ const Index = () => {
       </motion.section>
 
       {/* WEB3 PROJECT PROMOTION SECTION */}
-      <section className="py-16 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/10 rounded-full blur-3xl"></div>
         </div>
@@ -453,7 +453,7 @@ const Index = () => {
       </section>
 
       {/* GUMROAD PROMOTION SECTION */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-500/10 rounded-full blur-3xl"></div>
         </div>
@@ -763,7 +763,7 @@ const Index = () => {
       <BlogPromoBlock />
 
       {/* DIGITAL FRONTIER BLUEPRINT - Restructured with wireframe approach */}
-      <section className="py-20 relative overflow-hidden" aria-labelledby="blueprint-heading">
+      <section className="py-8 relative overflow-hidden" aria-labelledby="blueprint-heading">
         {/* Animated background with gradient waves */}
         <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-purple-900/20 to-electric-azure/10">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-electric-azure/5 to-transparent animate-pulse"></div>
@@ -1029,17 +1029,17 @@ const Index = () => {
       </div>
 
       {/* GENERATIVE SEARCH PRO SECTION */}
-      <Suspense fallback={<div className="py-20 bg-slate-900/50 animate-pulse"></div>}>
+      <Suspense fallback={<div className="py-4 bg-slate-900/50 animate-pulse"></div>}>
         <GenerativeSearchProSection />
       </Suspense>
 
       {/* CASE STUDY SLIDER - KPI-driven showcase */}
-      <Suspense fallback={<div className="py-20 bg-slate-900/50 animate-pulse"></div>}>
+      <Suspense fallback={<div className="py-4 bg-slate-900/50 animate-pulse"></div>}>
         <CaseStudySlider />
       </Suspense>
 
       {/* NEW SERVICE CARDS SECTION with Image Carousel */}
-      <section className="py-20 relative overflow-hidden animate-on-scroll">
+      <section className="py-8 relative overflow-hidden animate-on-scroll">
         {/* Image Carousel Background */}
         <div className="absolute inset-0">
           <div className="relative h-full w-full">
