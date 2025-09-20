@@ -8,6 +8,7 @@ import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
+import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
 
 // TypewriterText component with line break support
 const TypewriterText = ({
@@ -401,6 +402,52 @@ const Index = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* WEB3 PROJECT PROMOTION SECTION */}
+      <section className="py-16 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="flex-shrink-0">
+                  <img 
+                    src={cryptoShieldLogo} 
+                    alt="Digital Pioneer Collective Logo" 
+                    className="h-20 w-20 object-contain"
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Check out our web3 project being built
+                  </h3>
+                  <a 
+                    href="https://digitalpioneers.io" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
+                    style={{
+                      background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                      boxShadow: '0 0 20px rgba(78, 226, 236, 0.3)'
+                    }}
+                  >
+                    Visit Digital Pioneers →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* NATURAL LAW METAPHORS SECTION */}
       <section className="py-12 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden">
