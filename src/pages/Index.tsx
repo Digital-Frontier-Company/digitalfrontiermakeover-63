@@ -10,6 +10,7 @@ import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
 import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
+import digitalPioneerLogo from "@/assets/digital-pioneer-collective-logo.png";
 
 // TypewriterText component with line break support
 const TypewriterText = ({
@@ -655,6 +656,10 @@ const Index = () => {
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
               </a>
               
+              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" />
+              </a>
+              
               <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
               </div>
@@ -676,6 +681,10 @@ const Index = () => {
               
               <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
+              </a>
+              
+              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" />
               </a>
               
               <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
