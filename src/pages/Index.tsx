@@ -310,33 +310,36 @@ const Index = () => {
             What's the Simplest Way for a Small Business to Start with AI?
           </motion.h1>
 
-          {/* Typewriter Animation */}
-          <motion.div className="text-2xl md:text-3xl text-white mb-8 leading-relaxed font-semibold" initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }}>
-            <TypewriterText text="The Answer: Use a proven stack." delay={60} />
-          </motion.div>
+          {/* Main messaging container */}
+          <div className="max-w-6xl mx-auto px-6">
+            {/* Typewriter Animation */}
+            <motion.div className="text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-relaxed font-semibold text-center" initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.4
+          }}>
+              <TypewriterText text="The Answer: Use a proven stack." delay={60} />
+            </motion.div>
 
-          {/* Subtitle */}
-          <motion.p className="text-lg text-soft-white/80 mb-12 max-w-4xl mx-auto" initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.6
-        }}>
-            We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
-          </motion.p>
+            {/* Subtitle */}
+            <motion.p className="text-xl md:text-2xl text-soft-white/80 mb-12 max-w-5xl mx-auto text-center leading-relaxed" initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.8,
+            delay: 0.6
+          }}>
+              We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
+            </motion.p>
+          </div>
 
           {/* Stats Containers */}
           <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto" initial={{
