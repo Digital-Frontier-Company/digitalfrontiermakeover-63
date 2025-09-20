@@ -11,6 +11,7 @@ import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
 import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
 import digitalPioneerLogo from "@/assets/digital-pioneer-collective-logo.png";
+import gumroadLogo from "@/assets/gumroad-logo.png";
 
 // TypewriterText component with line break support
 const TypewriterText = ({
@@ -443,6 +444,59 @@ const Index = () => {
                     }}
                   >
                     Visit Digital Pioneers →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* GUMROAD PROMOTION SECTION */}
+      <section className="py-16 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-12 hover:border-pink-400/50 transition-all duration-300">
+              <div className="flex flex-col items-center justify-center gap-8">
+                <div className="flex-shrink-0">
+                  <a 
+                    href="https://digitalfrontier.gumroad.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block hover:scale-105 transition-transform duration-300"
+                  >
+                    <img 
+                      src={gumroadLogo} 
+                      alt="Gumroad - Digital Frontier Store" 
+                      className="h-16 w-auto object-contain"
+                    />
+                  </a>
+                </div>
+                <div className="text-center max-w-2xl">
+                  <p className="text-2xl font-bold text-white mb-8 leading-relaxed">
+                    You don't need a new tool. You need a clearer process. The listening SOP + audit checklist give you exactly that.
+                  </p>
+                  <a 
+                    href="https://digitalfrontier.gumroad.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-12 py-4 text-xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 transform"
+                    style={{
+                      background: 'linear-gradient(135deg, #FF6B9D 0%, #C44EFF 50%, #FF6B9D 100%)',
+                      boxShadow: '0 0 30px rgba(255, 107, 157, 0.4)'
+                    }}
+                  >
+                    Get Your Process Tools →
                   </a>
                 </div>
               </div>
