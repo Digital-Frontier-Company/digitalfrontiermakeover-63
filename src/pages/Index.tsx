@@ -307,7 +307,7 @@ const Index = () => {
         }} transition={{
           duration: 0.8
         }}>
-            Feeling Lost in AI?
+            What's the Simplest Way for a Small Business to Start with AI?
           </motion.h1>
 
           {/* Typewriter Animation */}
