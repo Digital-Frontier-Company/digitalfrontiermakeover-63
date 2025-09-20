@@ -321,7 +321,7 @@ const Index = () => {
           duration: 0.8,
           delay: 0.4
         }}>
-            <TypewriterText text="We spent $50K+ testing 100+ AI tools so you don't have to" delay={60} />
+            <TypewriterText text="The Answer: Use a proven stack." delay={60} />
           </motion.div>
 
           {/* Subtitle */}
@@ -335,7 +335,7 @@ const Index = () => {
           duration: 0.8,
           delay: 0.6
         }}>
-            Get only proven AI solutions that actually work for small businesses—not just hype.
+            We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
           </motion.p>
 
           {/* Stats Containers */}
