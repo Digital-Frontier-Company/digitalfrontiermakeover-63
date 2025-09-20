@@ -1175,7 +1175,6 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
         <FAQAccordion />
@@ -1197,7 +1196,7 @@ const Index = () => {
       </section>
 
       {/* AI CREW CHIEF PROMOTION SECTION */}
-      <section className="py-8 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
+      <section className="py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(78,226,236,0.1)_0%,rgba(143,179,29,0.1)_100%)]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -1263,9 +1262,8 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* LEARN MORE SECTION */}
-      <section className="py-8 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
+      <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-slate-100 mb-8">Explore Digital Frontier</h2>
           
@@ -1306,7 +1304,6 @@ const Index = () => {
           
         </div>
       </section>
-
 
       {/* MODERN CONTACT FORM SECTION */}
       <section className="relative py-12 bg-deep-navy border-t border-border">
