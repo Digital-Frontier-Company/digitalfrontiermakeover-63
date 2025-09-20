@@ -9,6 +9,7 @@ import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, Doll
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
+import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
 
 // TypewriterText component with line break support
 const TypewriterText = ({
@@ -646,6 +647,9 @@ const Index = () => {
             repeat: Infinity
           }}>
               {/* First set of logos */}
+              <a href="https://thedigitalfrontier.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" />
+              </a>
               
               <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
@@ -666,6 +670,9 @@ const Index = () => {
               
               
               {/* Duplicate set for seamless loop */}
+              <a href="https://thedigitalfrontier.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" />
+              </a>
               
               <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
