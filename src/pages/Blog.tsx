@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/utils";
+import { LazyImage } from "@/components/LazyImage";
 import "../styles/digitalFrontierServices.css";
 
 const Blog = () => {
@@ -25,7 +26,7 @@ const Blog = () => {
       readTime: "15 min read",
       date: "2025-09-11",
       slug: "marketing-agencies-essential-business-growth-2025",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png",
       badge: "MARKETING",
       featured: true
     },
@@ -49,7 +50,7 @@ const Blog = () => {
       readTime: "10 min read",
       date: "2025-07-22",
       slug: "digital-marketing-revolution-july-2025",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/78ed0175-99f6-4e35-bc1b-6193e2493053.png",
       badge: "MARKETING"
     },
     {
@@ -60,7 +61,7 @@ const Blog = () => {
       readTime: "12 min read",
       date: "2025-01-18",
       slug: "ai-driven-risk-management-business-resilience",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/5aa13ef4-6453-462e-b5bf-bd88c1b20988.png",
       badge: "RISK MANAGEMENT"
     },
     {
@@ -71,7 +72,7 @@ const Blog = () => {
       readTime: "12 min read",
       date: "2025-01-16",
       slug: "ai-revolution-digital-marketing-2025",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png",
       badge: "AI TRENDS"
     },
     {
@@ -82,7 +83,7 @@ const Blog = () => {
       readTime: "15 min read",
       date: "2025-01-13",
       slug: "tax-reduction-wealth-building-guide",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png",
       badge: "FINANCE"
     },
     {
@@ -93,7 +94,7 @@ const Blog = () => {
       readTime: "8 min read",
       date: "2025-01-10",
       slug: "aeo-crypto-marketing",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/7856abf2-126d-4fbb-87da-fe5143707423.png",
       badge: "AEO"
     },
     {
@@ -104,7 +105,7 @@ const Blog = () => {
       readTime: "8 min read",
       date: "2024-12-15",
       slug: "mastering-digital-marketing",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png",
       badge: "MARKETING"
     }
   ];
@@ -367,10 +368,15 @@ const Blog = () => {
                   
                   <div className="order-1 lg:order-2">
                     <div className="relative group overflow-hidden rounded-xl">
-                      <img 
+            <LazyImage 
                         src={blogPosts[0].image} 
                         alt={blogPosts[0].title} 
-                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105" 
+                        displayWidth={600}
+                        displayHeight={400}
+                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                        optimization={{ priority: true, format: 'webp', quality: 0.8 }}
+                        onError={() => console.error(`Failed to load featured image: ${blogPosts[0].image}`)}
+                        onLoad={() => console.log(`Successfully loaded featured image: ${blogPosts[0].image}`)}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -408,10 +414,15 @@ const Blog = () => {
                     </div>
                     
                     <div className="mb-4 rounded-lg overflow-hidden">
-                      <img 
+                      <LazyImage 
                         src={post.image} 
                         alt={post.title} 
-                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" 
+                        displayWidth={400}
+                        displayHeight={240}
+                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                        optimization={{ format: 'webp', quality: 0.8 }}
+                        onError={() => console.error(`Failed to load image: ${post.image} for post: ${post.title}`)}
+                        onLoad={() => console.log(`Successfully loaded image: ${post.image}`)}
                       />
                     </div>
                     
