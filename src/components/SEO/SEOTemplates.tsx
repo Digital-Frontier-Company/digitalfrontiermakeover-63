@@ -1,5 +1,5 @@
 import React from 'react';
-import SEOHead, { SEOHeadProps } from './SEOHead';
+import { SEOHead, SEOHeadProps } from './SEOHead';
 
 /**
  * Pre-configured SEO templates for different page types

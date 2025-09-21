@@ -5,7 +5,7 @@ import {
   generateResponsiveSrcSet, 
   getResponsiveSizes,
   getBrowserImageSupport,
-  type ImageOptimizationOptions 
+  ImageOptimizationOptions 
 } from '@/utils/imageOptimization';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
