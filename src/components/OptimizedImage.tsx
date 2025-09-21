@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { getImageDimensions } from '@/utils/imageOptimization';
-import { LazyImage } from './LazyImage';
+import { LazyImage } from '@/components/LazyImage';
 
 interface OptimizedImageProps {
   src: string;
