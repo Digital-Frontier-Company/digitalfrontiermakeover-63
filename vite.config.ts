@@ -12,8 +12,9 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'esnext',
-    minify: mode === 'production',
+    minify: mode === 'production' ? 'terser' : false,
     cssMinify: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -22,20 +23,47 @@ export default defineConfig(({ mode }) => ({
           ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', 'lucide-react'],
           utils: ['clsx', 'class-variance-authority', 'tailwind-merge'],
           animations: ['framer-motion'],
+          seo: ['react-helmet-async']
         },
-        assetFileNames: (assetInfo) => {
+        assetFileNames: (assetInfo: any) => {
           const info = assetInfo.name?.split('.') || ['', 'unknown'];
           const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+          
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif/i.test(ext)) {
             return `images/[name]-[hash][extname]`;
           }
           if (/woff2?|eot|ttf|otf/.test(ext)) {
             return `fonts/[name]-[hash][extname]`;
           }
+          if (/css/.test(ext)) {
+            return `styles/[name]-[hash][extname]`;
+          }
           return `assets/[name]-[hash][extname]`;
         },
+        chunkFileNames: (chunkInfo: any) => {
+          const name = chunkInfo.name || 'chunk';
+          return `js/${name}-[hash].js`;
+        }
       },
     },
+    ...(mode === 'production' && {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info', 'console.debug']
+        },
+        mangle: {
+          safari10: true
+        }
+      }
+    })
+  },
+  esbuild: {
+    ...(mode === 'production' && {
+      drop: ['console', 'debugger'],
+      legalComments: 'none'
+    })
   },
   preview: {
     port: 8080,
@@ -53,4 +81,14 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'lucide-react',
+      'framer-motion',
+      'react-helmet-async'
+    ]
+  }
 }));
