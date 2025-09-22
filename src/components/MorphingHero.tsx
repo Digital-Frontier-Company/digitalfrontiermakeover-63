@@ -20,10 +20,17 @@ const MorphingHero = () => {
     let rafId: number;
     let cachedRect: DOMRect | null = null;
     let lastTime = 0;
+    let isUpdatingRect = false;
     
     const updateRect = () => {
-      if (heroRef.current) {
-        cachedRect = heroRef.current.getBoundingClientRect();
+      if (heroRef.current && !isUpdatingRect) {
+        isUpdatingRect = true;
+        requestAnimationFrame(() => {
+          if (heroRef.current) {
+            cachedRect = heroRef.current.getBoundingClientRect();
+          }
+          isUpdatingRect = false;
+        });
       }
     };
     
@@ -37,7 +44,7 @@ const MorphingHero = () => {
       }
       
       rafId = requestAnimationFrame(() => {
-        if (heroRef.current && cachedRect) {
+        if (cachedRect) {
           setMousePosition({ 
             x: (e.clientX - cachedRect.left) / cachedRect.width, 
             y: (e.clientY - cachedRect.top) / cachedRect.height 
@@ -64,8 +71,8 @@ const MorphingHero = () => {
       });
     };
 
-    // Cache rect on mount and resize
-    updateRect();
+    // Cache rect on mount and resize with RAF
+    requestAnimationFrame(updateRect);
     
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', updateRect, { passive: true });

@@ -64,9 +64,11 @@ export const useMagneticEffect = () => {
     let rafId: number;
     let cachedRect: DOMRect | null = null;
     let lastTime = 0;
+    let isAnimating = false;
     
     const updateRect = () => {
-      if (element) {
+      // Only update rect when not animating to avoid forced reflows
+      if (!isAnimating && element) {
         cachedRect = element.getBoundingClientRect();
       }
     };
@@ -81,10 +83,12 @@ export const useMagneticEffect = () => {
       }
       
       rafId = requestAnimationFrame(() => {
-        if (cachedRect) {
+        if (cachedRect && element) {
+          isAnimating = true;
           const x = e.clientX - cachedRect.left - cachedRect.width / 2;
           const y = e.clientY - cachedRect.top - cachedRect.height / 2;
           element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+          isAnimating = false;
         }
       });
     };
@@ -93,28 +97,30 @@ export const useMagneticEffect = () => {
       if (rafId) {
         cancelAnimationFrame(rafId);
       }
-      element.style.transform = 'translate(0, 0)';
+      if (element) {
+        element.style.transform = 'translate(0, 0)';
+      }
+      isAnimating = false;
     };
 
-    // Cache rect on mount and resize
-    updateRect();
-    window.addEventListener('resize', updateRect, { passive: true });
+    // Cache rect on mount and resize only
+    requestAnimationFrame(updateRect);
+    
+    const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(updateRect);
+    });
+    
+    resizeObserver.observe(element);
     element.addEventListener('mousemove', handleMouseMove, { passive: true });
     element.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 
     return () => {
-      window.removeEventListener('resize', updateRect);
+      resizeObserver.disconnect();
       element.removeEventListener('mousemove', handleMouseMove);
       element.removeEventListener('mouseleave', handleMouseLeave);
       if (rafId) {
         cancelAnimationFrame(rafId);
       }
-    };
-    element.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      element.removeEventListener('mousemove', handleMouseMove);
-      element.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 

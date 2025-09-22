@@ -10,22 +10,25 @@ const useFaqToggle = () => {
       const question = event.currentTarget as HTMLElement;
       const answer = question.nextElementSibling as HTMLElement;
       
-      // Close other answers when one is opened
-      document.querySelectorAll('.df-faq-answer').forEach(el => {
-        if (el !== answer) {
-          (el as HTMLElement).style.display = 'none';
-          el.previousElementSibling?.classList.remove('active');
+      // Use RAF to batch DOM operations and avoid forced reflows
+      requestAnimationFrame(() => {
+        // Close other answers when one is opened
+        document.querySelectorAll('.df-faq-answer').forEach(el => {
+          if (el !== answer) {
+            (el as HTMLElement).style.display = 'none';
+            el.previousElementSibling?.classList.remove('active');
+          }
+        });
+        
+        // Toggle the current answer
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+          question.classList.remove('active');
+        } else {
+          answer.style.display = 'block';
+          question.classList.add('active');
         }
       });
-      
-      // Toggle the current answer
-      if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-        question.classList.remove('active');
-      } else {
-        answer.style.display = 'block';
-        question.classList.add('active');
-      }
     };
     
     questions.forEach(question => {
