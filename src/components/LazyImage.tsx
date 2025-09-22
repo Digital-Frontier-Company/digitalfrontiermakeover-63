@@ -90,5 +90,69 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   };
   const imageProps = getOptimizedSources();
   const shouldLoad = isInView || isLoaded || optimization.priority;
-  return;
+
+  return (
+    <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
+      {!shouldLoad && placeholder && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          {placeholder}
+        </div>
+      )}
+      
+      {lowQualitySrc && !isLoaded && shouldLoad && (
+        <img
+          src={lowQualitySrc}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover blur-sm transition-opacity duration-300"
+          aria-hidden="true"
+        />
+      )}
+      
+      {shouldLoad && (
+        <>
+          {imageProps.avifSrcSet || imageProps.webpSrcSet ? (
+            <picture>
+              {imageProps.avifSrcSet && (
+                <source srcSet={imageProps.avifSrcSet} type="image/avif" sizes={imageProps.sizes} />
+              )}
+              {imageProps.webpSrcSet && (
+                <source srcSet={imageProps.webpSrcSet} type="image/webp" sizes={imageProps.sizes} />
+              )}
+              <img
+                src={imageProps.src}
+                srcSet={imageProps.srcSet}
+                sizes={imageProps.sizes}
+                alt={alt}
+                width={width}
+                height={height}
+                onLoad={handleLoad}
+                onError={handleError}
+                className={cn(
+                  "w-full h-full object-cover transition-opacity duration-300",
+                  isLoaded ? "opacity-100" : "opacity-0"
+                )}
+                {...props}
+              />
+            </picture>
+          ) : (
+            <img
+              src={imageProps.src}
+              srcSet={imageProps.srcSet}
+              sizes={imageProps.sizes}
+              alt={alt}
+              width={width}
+              height={height}
+              onLoad={handleLoad}
+              onError={handleError}
+              className={cn(
+                "w-full h-full object-cover transition-opacity duration-300",
+                isLoaded ? "opacity-100" : "opacity-0"
+              )}
+              {...props}
+            />
+          )}
+        </>
+      )}
+    </div>
+  );
 };
