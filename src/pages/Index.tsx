@@ -199,10 +199,7 @@ const Index = () => {
       
       {/* HERO SECTION - Original Style with New Copy */}
       <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
-      backgroundImage: `url('/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png'), linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundBlendMode: 'overlay',
+      background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)',
       y: heroY
     }} data-lcp-element="true" initial={{
       opacity: 1
@@ -211,8 +208,18 @@ const Index = () => {
     }} transition={{
       duration: 0.1
     }}>
+        {/* LCP Hero Background Image - Immediately discoverable */}
+        <img 
+          src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+          fetchPriority="high"
+          loading="eager"
+          style={{ zIndex: 1 }}
+          aria-hidden="true"
+        />
         {/* Subtle Floating Orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
           {Array.from({
           length: 2
         }, (_, i) => <div key={i} className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
@@ -227,7 +234,7 @@ const Index = () => {
         </div>
 
         {/* Interactive Clickable Bubbles */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 2 }}>
           {bubbles.map(bubble => <div key={bubble.id} className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" style={{
           width: `${bubble.size}px`,
           height: `${bubble.size}px`,
@@ -241,7 +248,7 @@ const Index = () => {
         </div>
 
         {/* Animated Grid Pattern Background */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-30" style={{ zIndex: 2 }}>
           <div className="absolute inset-0" style={{
           backgroundImage: `
                 linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
@@ -263,7 +270,7 @@ const Index = () => {
       }} className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]" />
         
         {/* Main Content */}
-        <div className="relative z-10 mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen">
+        <div className="relative mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen" style={{ zIndex: 10 }}>
           
           {/* Logo with Scale Animation */}
           <motion.div className="relative flex justify-center mb-12" style={{
