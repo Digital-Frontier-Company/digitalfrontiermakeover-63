@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { getImageDimensions } from '@/utils/imageOptimization';
+import { getImageDimensions, getBrowserImageSupport } from '@/utils/imageOptimization';
 import { LazyImage } from '@/components/LazyImage';
 
 interface OptimizedImageProps {
@@ -31,9 +31,12 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [imageDimensions, setImageDimensions] = useState(() => 
     getImageDimensions(src, useCase)
   );
+  const [browserSupport, setBrowserSupport] = useState(() => getBrowserImageSupport());
 
-  // Automatically detect optimal dimensions if not using a preset
+  // Automatically detect optimal dimensions and browser support
   useEffect(() => {
+    setBrowserSupport(getBrowserImageSupport());
+    
     if (!src.includes('lovable-uploads')) return;
     
     const img = new Image();
@@ -61,8 +64,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       placeholder={placeholder}
       optimization={{
         priority,
-        format: 'webp',
-        quality: useCase === 'icon' || useCase === 'logo' ? 0.9 : 0.8
+        format: browserSupport.avif ? 'avif' : browserSupport.webp ? 'webp' : 'png',
+        quality: useCase === 'icon' || useCase === 'logo' ? 0.9 : 0.8,
+        sizes: imageDimensions.sizes
       }}
       onLoad={onLoad}
       onError={onError}

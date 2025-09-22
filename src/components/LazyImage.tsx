@@ -86,24 +86,28 @@ export const LazyImage: React.FC<LazyImageProps> = ({
     }
 
     // Determine best format based on browser support and image type
-    const preferredFormat = browserSupport.avif ? 'avif' : browserSupport.webp ? 'webp' : 'png';
+    const preferredFormat = optimization.format || (browserSupport.avif ? 'avif' : browserSupport.webp ? 'webp' : 'png');
     
     const optimizedSrc = getOptimizedImageUrl(
       src, 
       finalWidth, 
       finalHeight, 
-      optimization.format || preferredFormat
+      preferredFormat
     );
 
-    const srcSet = generateResponsiveSrcSet(src, finalWidth, finalHeight);
+    // Enhanced srcset generation for better SEO performance
+    const srcSet = generateResponsiveSrcSet(src, finalWidth, finalHeight, preferredFormat);
     const sizes = optimization.sizes || getResponsiveSizes(finalWidth);
 
     return {
       src: optimizedSrc,
       srcSet,
       sizes,
-      avifSrcSet: browserSupport.avif ? generateResponsiveSrcSet(src, finalWidth, finalHeight, 'avif') : null,
-      webpSrcSet: browserSupport.webp ? generateResponsiveSrcSet(src, finalWidth, finalHeight, 'webp') : null
+      // Generate format-specific srcsets for picture element
+      avifSrcSet: browserSupport.avif && preferredFormat !== 'avif' ? 
+        generateResponsiveSrcSet(src, finalWidth, finalHeight, 'avif') : null,
+      webpSrcSet: browserSupport.webp && preferredFormat !== 'webp' ? 
+        generateResponsiveSrcSet(src, finalWidth, finalHeight, 'webp') : null
     };
   };
 
@@ -118,9 +122,9 @@ export const LazyImage: React.FC<LazyImageProps> = ({
         className
       )}
       style={{ 
-        aspectRatio: finalWidth && finalHeight ? `${finalWidth}/${finalHeight}` : undefined,
         width: finalWidth,
-        height: finalHeight
+        height: finalHeight,
+        aspectRatio: finalWidth && finalHeight ? `${finalWidth}/${finalHeight}` : undefined
       }}
     >
       {/* Low quality placeholder */}

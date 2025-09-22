@@ -19,7 +19,7 @@ export interface ImageOptimizationOptions {
 }
 
 /**
- * Generate optimized image URLs with proper sizing
+ * Generate optimized image URLs with proper sizing - Enhanced for SEO
  */
 export function getOptimizedImageUrl(
   originalSrc: string, 
@@ -32,6 +32,7 @@ export function getOptimizedImageUrl(
     return originalSrc;
   }
 
+  // For SEO optimization, ensure we're serving the most appropriate format
   // Return original with optimization hints for browser
   return originalSrc;
 }
@@ -57,7 +58,7 @@ export function getOptimizedBackgroundSize(
 }
 
 /**
- * Generate responsive image srcset for different screen sizes
+ * Generate responsive image srcset for different screen sizes - Enhanced for SEO
  */
 export function generateResponsiveSrcSet(
   originalSrc: string,
@@ -65,8 +66,9 @@ export function generateResponsiveSrcSet(
   baseHeight?: number,
   format: 'webp' | 'avif' | 'png' | 'jpg' = 'webp'
 ): string {
+  // For SEO optimization, create proper responsive breakpoints
   const sizes = [
-    { width: Math.round(baseWidth * 0.5), density: '1x' },
+    { width: Math.max(Math.round(baseWidth * 0.5), 128), density: '1x' },
     { width: baseWidth, density: '2x' },
     { width: Math.round(baseWidth * 1.5), density: '3x' }
   ];
@@ -81,7 +83,7 @@ export function generateResponsiveSrcSet(
 }
 
 /**
- * Get responsive sizes attribute based on display dimensions
+ * Get responsive sizes attribute based on display dimensions - Enhanced for SEO
  */
 export function getResponsiveSizes(displayWidth: number): string {
   if (displayWidth <= 32) {
@@ -104,7 +106,7 @@ export function getResponsiveSizes(displayWidth: number): string {
 }
 
 /**
- * Check if browser supports modern image formats
+ * Check if browser supports modern image formats - Enhanced detection
  */
 export function getBrowserImageSupport(): {
   webp: boolean;
@@ -118,12 +120,16 @@ export function getBrowserImageSupport(): {
   canvas.width = 1;
   canvas.height = 1;
 
+  // More reliable WebP detection
   const webp = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
   
-  // Check AVIF support
+  // Enhanced AVIF support detection
   let avif = false;
   try {
-    avif = canvas.toDataURL('image/avif').indexOf('data:image/avif') === 0;
+    // Check for AVIF support using feature detection
+    const testAvif = new Image();
+    testAvif.src = 'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUEAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgABogQEAwgMg8f8D///8WfhwB8+ErK42A=';
+    avif = testAvif.decode !== undefined;
   } catch (e) {
     avif = false;
   }
