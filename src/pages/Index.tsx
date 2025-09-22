@@ -367,7 +367,7 @@ const Index = () => {
           </div>
 
           {/* Stats Containers */}
-          <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto" initial={{
+          <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto mt-16" initial={{
           opacity: 0,
           y: 30
         }} animate={{
