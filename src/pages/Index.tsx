@@ -966,35 +966,17 @@ const Index = () => {
         }}>
             <div className="col-lg-6">
               <div className="df-neon-border mt-3 mb-5 mb-lg-3">
-                <img alt="Digital Frontier Data Dashboard" className="img-fluid p-2 max-h-64 object-contain" style={{
-                borderRadius: "10px"
-              }} src="/lovable-uploads/8397f9b3-fc8b-4246-b8a6-166b26926970.png" />
+                
               </div>
             </div>
             <div className="col-lg-6">
-              <h2 style={{
-              fontSize: "28px",
-              fontWeight: 700,
-              marginBottom: "20px"
-            }}>Turn Your Brand into a Revenue Engine</h2>
+              
               <div className="imagine-text">
-                <p style={{
-                fontSize: "16px",
-                color: "#e0e0e0",
-                marginBottom: "15px"
-              }}>Imagine this: You wake up, check your dashboard, and sales are already climbing. Your ad spend? Low. Your return? Massive. And your brand? Getting noticed—on search, social, and beyond.</p>
+                
               </div>
               <div className="content-text">
-                <p style={{
-                fontSize: "14px",
-                color: "#cccccc",
-                marginBottom: "15px"
-              }}>This isn't a fantasy. It's what happens when businesses plug into Digital Frontier Marketing.</p>
-                <p style={{
-                fontSize: "14px",
-                color: "#cccccc",
-                marginBottom: 0
-              }}>Most companies waste thousands on broken funnels, low-converting traffic, and "meh" strategies. We don't do mediocre. We engineer performance. <span className="highlight">Real clicks. Real conversions. Real cash.</span></p>
+                
+                
               </div>
             </div>
           </div>
