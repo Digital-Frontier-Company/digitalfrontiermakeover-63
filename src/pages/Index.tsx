@@ -205,11 +205,11 @@ const Index = () => {
       backgroundBlendMode: 'overlay',
       y: heroY
     }} data-lcp-element="true" initial={{
-      opacity: 0
+      opacity: 1
     }} animate={{
       opacity: 1
     }} transition={{
-      duration: 1.2
+      duration: 0.1
     }}>
         {/* Subtle Floating Orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -269,13 +269,13 @@ const Index = () => {
           <motion.div className="relative flex justify-center mb-12" style={{
           scale: logoScale
         }} initial={{
-          opacity: 0,
-          y: -20
+          opacity: 1,
+          y: 0
         }} animate={{
           opacity: 1,
           y: 0
         }} transition={{
-          duration: 0.8
+          duration: 0.1
         }}>
             {/* Simplified geometric frame around logo */}
             <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
@@ -299,43 +299,41 @@ const Index = () => {
           lineHeight: '1.2',
           paddingBottom: '0.1em'
         }} initial={{
-          opacity: 0,
-          y: 30
+          opacity: 1,
+          y: 0
         }} animate={{
           opacity: 1,
           y: 0
         }} transition={{
-          duration: 0.8
+          duration: 0.1
         }}>
             What's the Simplest Way for a Small Business to Start with AI?
           </motion.h1>
 
           {/* Main messaging container */}
           <div className="max-w-6xl mx-auto px-6">
-            {/* Typewriter Animation */}
+            {/* Main text - no animation delay for LCP */}
             <motion.div className="text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-relaxed font-semibold text-center" initial={{
-            opacity: 0,
-            y: 20
+            opacity: 1,
+            y: 0
           }} animate={{
             opacity: 1,
             y: 0
           }} transition={{
-            duration: 0.8,
-            delay: 0.4
+            duration: 0.1
           }}>
-              <TypewriterText text="The Answer: Use a proven stack." delay={60} />
+              <div className="text-center">The Answer: Use a proven stack.</div>
             </motion.div>
 
             {/* Subtitle */}
             <motion.p className="text-xl md:text-2xl text-soft-white/80 mb-12 max-w-5xl mx-auto text-center leading-relaxed" initial={{
-            opacity: 0,
-            y: 20
+            opacity: 1,
+            y: 0
           }} animate={{
             opacity: 1,
             y: 0
           }} transition={{
-            duration: 0.8,
-            delay: 0.6
+            duration: 0.1
           }}>
               We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
             </motion.p>
