@@ -295,31 +295,31 @@ const Index = () => {
           }} />
           </motion.div>
 
-          {/* New Headlines */}
-          <motion.h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
-          background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
-          backgroundSize: '300% 300%',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          animation: 'gradientShift 4s ease-in-out infinite',
-          lineHeight: '1.2',
-          paddingBottom: '0.1em'
-        }} initial={{
-          opacity: 1,
-          y: 0
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.1
-        }}>
-            What's the Simplest Way for a Small Business to Start with AI?
-          </motion.h1>
-
           {/* Main messaging container with dark transparent background */}
           <div className="max-w-6xl mx-auto px-6">
             <div className="bg-slate-900/70 backdrop-blur-sm border border-slate-700/30 rounded-3xl p-8 md:p-12">
+              {/* Main Headlines */}
+              <motion.h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
+                background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+                backgroundSize: '300% 300%',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                animation: 'gradientShift 4s ease-in-out infinite',
+                lineHeight: '1.2',
+                paddingBottom: '0.1em'
+              }} initial={{
+                opacity: 1,
+                y: 0
+              }} animate={{
+                opacity: 1,
+                y: 0
+              }} transition={{
+                duration: 0.1
+              }}>
+                What's the Simplest Way for a Small Business to Start with AI?
+              </motion.h1>
+
               {/* Main text - no animation delay for LCP */}
               <motion.div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
                 style={{
