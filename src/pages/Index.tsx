@@ -69,15 +69,15 @@ const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showFullText, setShowFullText] = useState(false);
   const [bubbles, setBubbles] = useState(() => Array.from({
-    length: 3
+    length: 1
   }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: 20 + Math.random() * 40,
+    size: 30 + Math.random() * 20,
     speed: 0.1 + Math.random() * 0.2,
     direction: Math.random() * 360,
-    opacity: 0.3 + Math.random() * 0.4
+    opacity: 0.4 + Math.random() * 0.3
   })));
   // Handle bubble pop
   const handleBubblePop = (id: number) => {
@@ -218,19 +218,16 @@ const Index = () => {
           style={{ zIndex: 1 }}
           aria-hidden="true"
         />
-        {/* Subtle Floating Orbs */}
+        {/* Single Floating Orb */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
-          {Array.from({
-          length: 2
-        }, (_, i) => <div key={i} className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
-          width: `${60 + i * 20}px`,
-          height: `${60 + i * 20}px`,
-          left: `${20 + i * 30}%`,
-          top: `${20 + i * 25}%`,
-          animation: `float ${4 + i * 2}s ease-in-out infinite`,
-          animationDelay: `${i * 1.5}s`,
-          filter: 'blur(1px)'
-        }} />)}
+          <div className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
+            width: '80px',
+            height: '80px',
+            left: '25%',
+            top: '30%',
+            animation: 'float 6s ease-in-out infinite',
+            filter: 'blur(1px)'
+          }} />
         </div>
 
         {/* Interactive Clickable Bubbles */}
@@ -298,8 +295,8 @@ const Index = () => {
           {/* Main messaging container with dark transparent background */}
           <div className="max-w-6xl mx-auto px-6">
             <div className="bg-slate-900/70 backdrop-blur-sm border border-slate-700/30 rounded-3xl p-8 md:p-12">
-              {/* Main Headlines */}
-              <motion.h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
+          {/* Main Headlines */}
+              <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
                 background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
                 backgroundSize: '300% 300%',
                 WebkitBackgroundClip: 'text',
@@ -308,20 +305,12 @@ const Index = () => {
                 animation: 'gradientShift 4s ease-in-out infinite',
                 lineHeight: '1.2',
                 paddingBottom: '0.1em'
-              }} initial={{
-                opacity: 1,
-                y: 0
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.1
               }}>
                 What's the Simplest Way for a Small Business to Start with AI?
-              </motion.h1>
+              </h1>
 
               {/* Main text - no animation delay for LCP */}
-              <motion.div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
+              <div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
                 style={{
                   background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
                   backgroundSize: '200% 200%',
@@ -329,21 +318,12 @@ const Index = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   animation: 'gradientShift 3s ease-in-out infinite'
-                }}
-                initial={{
-                  opacity: 1,
-                  y: 0
-                }} animate={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.1
                 }}>
                 <div className="text-center">The Answer: Use a proven stack.</div>
-              </motion.div>
+              </div>
 
               {/* Subtitle */}
-              <motion.p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed"
+              <p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed"
                 style={{
                   background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
                   backgroundSize: '200% 200%',
@@ -351,18 +331,9 @@ const Index = () => {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   animation: 'gradientShift 4s ease-in-out infinite'
-                }}
-                initial={{
-                  opacity: 1,
-                  y: 0
-                }} animate={{
-                  opacity: 1,
-                  y: 0
-                }} transition={{
-                  duration: 0.1
                 }}>
                 We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
-              </motion.p>
+              </p>
             </div>
           </div>
 
@@ -425,7 +396,7 @@ const Index = () => {
               boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
               filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
             }}>
-                Get Your AI Crew Chief → TEST
+                Get Your AI Crew Chief →
               </Link>
             </motion.div>
             <div className="mt-6 text-lg text-slate-400">
@@ -757,31 +728,6 @@ const Index = () => {
               </a>
               
               
-              {/* Duplicate set for seamless loop */}
-              <a href="https://thedigitalfrontier.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" />
-              </a>
-              
-              <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
-              </a>
-              
-              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" />
-              </a>
-              
-              <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
-              </div>
-              
-              
-              <a href="https://generativesearch.pro" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/0f428751-35c5-4551-99a6-3eaf9cda8d4d.png" alt="GenerativeSearch.pro - Generative Engine Optimization" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
-              </a>
-              
-              <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-32 object-fill" />
-              </a>
               
             </motion.div>
           </div>
@@ -1029,21 +975,12 @@ const Index = () => {
             </p>
           </motion.div>
 
-          {/* Simplified floating particles */}
+          {/* Single floating particle */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({
-            length: 3
-          }).map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-electric-azure/40 rounded-full" style={{
-            left: `${20 + i * 30}%`,
-            top: `${20 + i * 25}%`
-          }} animate={{
-            y: [-20, -100, -20],
-            opacity: [0, 1, 0]
-          }} transition={{
-            duration: 6,
-            repeat: Infinity,
-            delay: i * 2
-          }} />)}
+            <div className="absolute w-2 h-2 bg-electric-azure/40 rounded-full animate-pulse" style={{
+              left: '50%',
+              top: '30%'
+            }} />
           </div>
         </div>
       </section>
