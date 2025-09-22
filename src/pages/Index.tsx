@@ -874,27 +874,7 @@ const Index = () => {
           </motion.div>
 
           {/* Risk Reversal / Trust Section */}
-          <motion.div className="bg-card/60 border border-border/50 p-8 rounded-2xl text-center" initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <div className="flex justify-center items-center gap-6 mb-4">
-              <Shield className="w-10 h-10 text-blue-400" />
-              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-105">
-                <LazyImage src="/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png" alt="Digital Pioneer Collective Partner" displayWidth={120} displayHeight={48} className="h-12 w-32 object-contain " />
-              </a>
-            </div>
-            <p className="text-lg text-soft-white/90 italic">
-              "No AI hype. Just measurable outcomes. If we don't deliver visible results in 90 days, we'll continue working at no extra cost until we do."
-            </p>
-          </motion.div>
+          
 
           {/* Single floating particle */}
           <div className="absolute inset-0 pointer-events-none">
@@ -946,32 +926,13 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* AI-Powered Marketing Card */}
-            <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
-              <div className="mb-6">
-                <LazyImage src="/lovable-uploads/e54d0fa9-0841-4307-be48-9729f84a20b3.png" alt="AI-Powered Marketing" className="w-full h-48 object-cover rounded-lg" displayWidth={307} displayHeight={192} />
-              </div>
-              <h3 className="mb-4 transition-colors font-extrabold text-xl text-cyan-300 text-center">
-                AI-Powered Marketing
-              </h3>
-              <p className="mb-6 leading-relaxed text-slate-100 font-bold">
-                Leverage cutting-edge artificial intelligence to automate and optimize your marketing campaigns for maximum impact.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {['Smart automation', 'Predictive analytics', 'Real-time optimization', 'ROI maximization'].map((feature, index) => <li key={index} className="flex items-center text-white rounded-tl-full rounded-full bg-[#074192]/0">
-                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>)}
-              </ul>
-              <Link to="/modern-contact-form" className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30">
-                Explore AI Solutions
-              </Link>
-            </div>
+            
 
             {/* Answer Engine Optimization Card - MIDDLE POSITION */}
             <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
               <div className="mb-6">
                 <a href="https://generativesearch.pro" target="_blank" rel="dofollow" className="block">
-                  <LazyImage src="/lovable-uploads/46440d18-7e50-459a-9423-09e65df49121.png" alt="Generative Engine Optimization" className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity" displayWidth={283} displayHeight={283} />
+                  
                 </a>
               </div>
               <h3 className="mb-4 transition-colors font-extrabold text-cyan-300 text-xl text-center">
@@ -992,29 +953,7 @@ const Index = () => {
             </div>
 
             {/* Data-Driven Insights Card */}
-            <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
-              <div className="mb-6">
-                <img alt="Data-Driven Insights" onError={e => {
-                console.error('Failed to load image:', e.currentTarget.src);
-                e.currentTarget.style.display = 'none';
-              }} onLoad={() => console.log('Image loaded successfully')} className="w-full h-48 rounded-lg object-cover" src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png" />
-              </div>
-              <h3 className="mb-4 transition-colors font-extrabold text-cyan-300 text-xl text-center">
-                Data-Driven Insights
-              </h3>
-              <p className="mb-6 leading-relaxed text-base font-semibold text-slate-100">
-                Transform raw data into actionable strategies that drive measurable business growth and competitive advantage.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {['Advanced analytics', 'Performance tracking', 'Custom reporting', 'Strategic insights'].map((feature, index) => <li key={index} className="flex items-center text-white rounded-full bg-[#074192]/0">
-                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>)}
-              </ul>
-              <Link to="/modern-contact-form" className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30">
-                See Our Analytics
-              </Link>
-            </div>
+            
           </div>
         </div>
       </section>
