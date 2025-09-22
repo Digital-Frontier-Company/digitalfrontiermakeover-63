@@ -234,7 +234,7 @@ const Index = () => {
 
           {/* Main messaging container with dark transparent background */}
           <div className="max-w-6xl mx-auto px-6">
-            <div className="backdrop-blur-sm border-2 border-blue-200 rounded-br-3xl top-8 md:p-12 bg-[#000a0e]/[0.49]">
+            <div className="backdrop-blur-sm border-2 border-blue-200 rounded-br-3xl top-8 md:p-12 bg-[#000a0e]/[0.49] rounded-2xl">
           {/* Main Headlines */}
               <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
               background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',

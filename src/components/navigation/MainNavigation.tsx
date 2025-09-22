@@ -3,20 +3,14 @@ import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { DigitalMarketingDropdown, ResourcesDropdown, CompanyDropdown, LocalSEODropdown } from "./NavigationDropdowns";
 import { LazyImage } from "@/components/LazyImage";
-
 const MainNavigation = () => {
   return <nav className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 rounded-none py-[15px] px-[6px] mx-[3px] my-[3px] animate-fade-in">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2 hover-scale">
-            <LazyImage
-              src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png"
-              alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo"
-              className="max-h-24 transition-transform duration-300"
-              displayWidth={96}
-              displayHeight={96}
-              optimization={{ priority: true }}
-            />
+            <LazyImage src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" displayWidth={96} displayHeight={96} optimization={{
+            priority: true
+          }} className="max-h-24 transition-transform duration-300" />
           </Link>
           
           <div className="flex items-center space-x-6">
@@ -43,10 +37,7 @@ const MainNavigation = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link 
-                    to="/digital-frontier-services"
-                    className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
-                  >
+                  <Link to="/digital-frontier-services" className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium">
                     Digital Frontier Services
                   </Link>
                 </NavigationMenuItem>
