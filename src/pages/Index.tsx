@@ -223,7 +223,7 @@ const Index = () => {
         }}>
             {/* Simplified geometric frame around logo */}
             <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
-              <div className="absolute inset-0 border border-cyan-400/50 animate-pulse rounded-full"></div>
+              <div className="absolute inset-3 border inset-3.5 animate-pulse rounded-full"></div>
             </div>
             
             {/* Main logo */}
