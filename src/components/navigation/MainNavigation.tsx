@@ -4,13 +4,13 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuT
 import { DigitalMarketingDropdown, ResourcesDropdown, CompanyDropdown, LocalSEODropdown } from "./NavigationDropdowns";
 import { LazyImage } from "@/components/LazyImage";
 const MainNavigation = () => {
-  return <nav className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 rounded-none py-[15px] px-[6px] mx-[3px] my-[3px] animate-fade-in">
+  return <nav className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 rounded-none px-[6px] animate-fade-in my-[6px] py-[16px] mx-[6px]">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2 hover-scale">
             <LazyImage src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" displayWidth={96} displayHeight={96} optimization={{
             priority: true
-          }} className="max-h-24 transition-transform duration-300-contain \n" />
+          }} className="max-h-18-contain-transition-transform duration-300\n" />
           </Link>
           
           <div className="flex items-center space-x-6">
