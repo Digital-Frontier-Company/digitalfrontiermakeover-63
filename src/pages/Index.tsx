@@ -199,7 +199,7 @@ const Index = () => {
       
       {/* HERO SECTION - Original Style with New Copy */}
       <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
-      background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)',
+      background: 'linear-gradient(135deg, #0a1828 0%, #1e3a8a 25%, #0ea5e9 45%, #ffffff 70%, #f0f9ff 100%)',
       y: heroY
     }} data-lcp-element="true" initial={{
       opacity: 1
@@ -297,7 +297,7 @@ const Index = () => {
 
           {/* New Headlines */}
           <motion.h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
-          background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+          background: 'linear-gradient(135deg, #00bfff 0%, #ffffff 50%, #0ea5e9 100%)',
           backgroundSize: '300% 300%',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
@@ -357,29 +357,25 @@ const Index = () => {
           duration: 0.8,
           delay: 0.8
         }}>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-cyan-400/50 transition-all duration-300">
               <div className="flex justify-center mb-3">
-                <DollarSign className="w-8 h-8 text-[#4EE2EC]" />
+                <DollarSign className="w-8 h-8 text-cyan-400" />
               </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#4EE2EC'
-            }}>$50,000+</div>
+              <div className="text-3xl font-bold mb-2 text-cyan-400">$50,000+</div>
               <div className="text-sm text-slate-300">Invested in AI testing</div>
             </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-blue-400/50 transition-all duration-300">
               <div className="flex justify-center mb-3">
-                <Zap className="w-8 h-8 text-[#8FB31D]" />
+                <Zap className="w-8 h-8 text-blue-400" />
               </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#8FB31D'
-            }}>15+ Hours</div>
+              <div className="text-3xl font-bold mb-2 text-blue-400">15+ Hours</div>
               <div className="text-sm text-slate-300">Saved weekly</div>
             </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-white/50 transition-all duration-300">
               <div className="flex justify-center mb-3">
-                <TrendingUp className="w-8 h-8 text-purple-400" />
+                <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl font-bold mb-2 text-purple-400">25%</div>
+              <div className="text-3xl font-bold mb-2 text-white">25%</div>
               <div className="text-sm text-slate-300">Average revenue boost</div>
             </div>
           </motion.div>
@@ -400,9 +396,9 @@ const Index = () => {
           }} whileTap={{
             scale: 0.95
           }}>
-              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl" style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-              boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
+              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-900 rounded-full transition-all duration-300 hover:shadow-xl" style={{
+              background: 'linear-gradient(135deg, #00bfff 0%, #ffffff 100%)',
+              boxShadow: '0 0 30px rgba(0, 191, 255, 0.5)'
             }}>
                 Get Your AI Crew Chief →
               </Link>
