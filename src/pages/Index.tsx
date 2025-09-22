@@ -317,51 +317,53 @@ const Index = () => {
             What's the Simplest Way for a Small Business to Start with AI?
           </motion.h1>
 
-          {/* Main messaging container */}
+          {/* Main messaging container with dark transparent background */}
           <div className="max-w-6xl mx-auto px-6">
-            {/* Main text - no animation delay for LCP */}
-            <motion.div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
-              style={{
-                background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
-                backgroundSize: '200% 200%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'gradientShift 3s ease-in-out infinite'
-              }}
-              initial={{
-                opacity: 1,
-                y: 0
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.1
-              }}>
-              <div className="text-center">The Answer: Use a proven stack.</div>
-            </motion.div>
+            <div className="bg-slate-900/70 backdrop-blur-sm border border-slate-700/30 rounded-3xl p-8 md:p-12">
+              {/* Main text - no animation delay for LCP */}
+              <motion.div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
+                style={{
+                  background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
+                  backgroundSize: '200% 200%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  animation: 'gradientShift 3s ease-in-out infinite'
+                }}
+                initial={{
+                  opacity: 1,
+                  y: 0
+                }} animate={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  duration: 0.1
+                }}>
+                <div className="text-center">The Answer: Use a proven stack.</div>
+              </motion.div>
 
-            {/* Subtitle */}
-            <motion.p className="text-xl md:text-2xl mb-12 max-w-5xl mx-auto text-center leading-relaxed"
-              style={{
-                background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
-                backgroundSize: '200% 200%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'gradientShift 4s ease-in-out infinite'
-              }}
-              initial={{
-                opacity: 1,
-                y: 0
-              }} animate={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.1
-              }}>
-              We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
-            </motion.p>
+              {/* Subtitle */}
+              <motion.p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed"
+                style={{
+                  background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
+                  backgroundSize: '200% 200%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  animation: 'gradientShift 4s ease-in-out infinite'
+                }}
+                initial={{
+                  opacity: 1,
+                  y: 0
+                }} animate={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  duration: 0.1
+                }}>
+                We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
+              </motion.p>
+            </div>
           </div>
 
           {/* Stats Containers */}
