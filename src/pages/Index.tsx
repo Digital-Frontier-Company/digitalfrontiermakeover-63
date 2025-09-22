@@ -420,14 +420,15 @@ const Index = () => {
           }} whileTap={{
             scale: 0.95
           }}>
-              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl" style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-              boxShadow: '0 0 30px rgba(78, 226, 236, 0.5)'
+              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-16 py-8 text-3xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl border-2 border-white" style={{
+              background: 'linear-gradient(135deg, #4EE2EC 0%, #FFD700 100%)',
+              boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
+              filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
             }}>
                 Get Your AI Crew Chief →
               </Link>
             </motion.div>
-            <div className="mt-4 text-sm text-slate-400">
+            <div className="mt-6 text-lg text-slate-400">
               Free 30-minute strategy session • No sales pitch
             </div>
           </motion.div>
