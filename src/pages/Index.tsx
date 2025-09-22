@@ -54,7 +54,6 @@ const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
 const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
 const Index = () => {
-  
   // Use the FAQ toggle hook
   useFaqToggle();
 
@@ -189,34 +188,26 @@ const Index = () => {
   }, [marqueeControls]);
   // Removed bot detection logic to prevent rendering conflicts
 
-  return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+  return <Suspense fallback={<div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
-      </div>
-    }>
+      </div>}>
       {/* Removed dual rendering to prevent conflicts */}
       
       {/* HERO SECTION - Optimized for LCP */}
       <section className="relative min-h-screen" style={{
-        background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)'
-      }} data-lcp-element="true">
+      background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)'
+    }} data-lcp-element="true">
         {/* LCP Hero Background Image - Optimized loading */}
-        <img 
-          src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-          style={{ zIndex: 1 }}
-          aria-hidden="true"
-        />
+        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" fetchPriority="high" loading="eager" decoding="async" style={{
+        zIndex: 1
+      }} aria-hidden="true" />
 
 
         
         {/* Main Content */}
-        <div className="relative mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen" style={{ zIndex: 10 }}>
+        <div className="relative mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen" style={{
+        zIndex: 10
+      }}>
           
           {/* Logo with Scale Animation */}
           <motion.div className="relative flex justify-center mb-12" style={{
@@ -243,44 +234,42 @@ const Index = () => {
 
           {/* Main messaging container with dark transparent background */}
           <div className="max-w-6xl mx-auto px-6">
-            <div className="bg-slate-900/70 backdrop-blur-sm border border-slate-700/30 rounded-3xl p-8 md:p-12">
+            <div className="backdrop-blur-sm border-2 border-blue-200 rounded-br-3xl top-8 md:p-12 bg-[#000a0e]/[0.49]">
           {/* Main Headlines */}
               <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight" style={{
-                background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
-                backgroundSize: '300% 300%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                animation: 'gradientShift 4s ease-in-out infinite',
-                lineHeight: '1.2',
-                paddingBottom: '0.1em'
-              }}>
+              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
+              backgroundSize: '300% 300%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'gradientShift 4s ease-in-out infinite',
+              lineHeight: '1.2',
+              paddingBottom: '0.1em'
+            }}>
                 What's the Simplest Way for a Small Business to Start with AI?
               </h1>
 
               {/* Main text - no animation delay for LCP */}
-              <div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" 
-                style={{
-                  background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
-                  backgroundSize: '200% 200%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  animation: 'gradientShift 3s ease-in-out infinite'
-                }}>
+              <div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" style={{
+              background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
+              backgroundSize: '200% 200%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'gradientShift 3s ease-in-out infinite'
+            }}>
                 <div className="text-center">The Answer: Use a proven stack.</div>
               </div>
 
               {/* Subtitle */}
-              <p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed"
-                style={{
-                  background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
-                  backgroundSize: '200% 200%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  animation: 'gradientShift 4s ease-in-out infinite'
-                }}>
+              <p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed" style={{
+              background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
+              backgroundSize: '200% 200%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              animation: 'gradientShift 4s ease-in-out infinite'
+            }}>
                 We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
               </p>
             </div>
@@ -362,36 +351,30 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="flex-shrink-0">
-                  <img 
-                    src={cryptoShieldLogo} 
-                    alt="Digital Pioneer Collective Logo" 
-                    className="h-20 w-20 object-contain"
-                  />
+                  <img src={cryptoShieldLogo} alt="Digital Pioneer Collective Logo" className="h-20 w-20 object-contain" />
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Check out our web3 project being built
                   </h3>
-                  <a 
-                    href="https://digitalpioneers.io" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105"
-                    style={{
-                      background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-                      boxShadow: '0 0 20px rgba(78, 226, 236, 0.3)'
-                    }}
-                  >
+                  <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105" style={{
+                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
+                  boxShadow: '0 0 20px rgba(78, 226, 236, 0.3)'
+                }}>
                     Visit Digital Pioneers →
                   </a>
                 </div>
@@ -408,43 +391,32 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <motion.div className="text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
             <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-12 hover:border-pink-400/50 transition-all duration-300">
               <div className="flex flex-col items-center justify-center gap-8">
                 <div className="flex-shrink-0">
-                  <a 
-                    href="https://digitalfrontier.gumroad.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block hover:scale-105 transition-transform duration-300"
-                  >
-                    <img 
-                      src={gumroadLogo} 
-                      alt="Gumroad - Digital Frontier Store" 
-                      className="h-16 w-auto object-contain"
-                    />
+                  <a href="https://digitalfrontier.gumroad.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+                    <img src={gumroadLogo} alt="Gumroad - Digital Frontier Store" className="h-16 w-auto object-contain" />
                   </a>
                 </div>
                 <div className="text-center max-w-2xl">
                   <p className="text-2xl font-bold text-white mb-8 leading-relaxed">
                     You don't need a new tool. You need a clearer process. The listening SOP + audit checklist give you exactly that.
                   </p>
-                  <a 
-                    href="https://digitalfrontier.gumroad.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-12 py-4 text-xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 transform"
-                    style={{
-                      background: 'linear-gradient(135deg, #FF6B9D 0%, #C44EFF 50%, #FF6B9D 100%)',
-                      boxShadow: '0 0 30px rgba(255, 107, 157, 0.4)'
-                    }}
-                  >
+                  <a href="https://digitalfrontier.gumroad.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-12 py-4 text-xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 transform" style={{
+                  background: 'linear-gradient(135deg, #FF6B9D 0%, #C44EFF 50%, #FF6B9D 100%)',
+                  boxShadow: '0 0 30px rgba(255, 107, 157, 0.4)'
+                }}>
                     Get Your Process Tools →
                   </a>
                 </div>
@@ -927,9 +899,9 @@ const Index = () => {
           {/* Single floating particle */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute w-2 h-2 bg-electric-azure/40 rounded-full animate-pulse" style={{
-              left: '50%',
-              top: '30%'
-            }} />
+            left: '50%',
+            top: '30%'
+          }} />
           </div>
         </div>
       </section>
@@ -1241,7 +1213,6 @@ const Index = () => {
         {/* Background decoration */}
         <div className="absolute inset-0 bg-gradient-to-t from-electric-azure/5 via-transparent to-transparent pointer-events-none"></div>
       </section>
-    </Suspense>
-  );
+    </Suspense>;
 };
 export default Index;
