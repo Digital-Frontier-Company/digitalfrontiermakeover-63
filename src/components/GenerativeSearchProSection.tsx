@@ -43,7 +43,7 @@ const GenerativeSearchProSection = () => {
               <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider">Revolutionary AI Search Tool</span>
             </div>
             
-            <LazyImage src="/lovable-uploads/30207d1d-92e1-4548-8dde-2caa5be7c00c.png" alt="GenerativeSearch.pro - AI-Powered Search Optimization" displayWidth={400} displayHeight={96} className="mx-auto mb-8 h-24 shadow-card-foreground " />
+            
             
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Generative Search Pro
