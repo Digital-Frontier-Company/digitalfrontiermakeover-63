@@ -197,74 +197,23 @@ const Index = () => {
     }>
       {/* Removed dual rendering to prevent conflicts */}
       
-      {/* HERO SECTION - Original Style with New Copy */}
-      <motion.section className="relative isolate overflow-hidden min-h-screen bg-deep-navy" style={{
-      background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)',
-      y: heroY
-    }} data-lcp-element="true" initial={{
-      opacity: 1
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      duration: 0.1
-    }}>
-        {/* LCP Hero Background Image - Immediately discoverable */}
+      {/* HERO SECTION - Optimized for LCP */}
+      <section className="relative min-h-screen" style={{
+        background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)'
+      }} data-lcp-element="true">
+        {/* LCP Hero Background Image - Optimized loading */}
         <img 
           src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
           fetchPriority="high"
           loading="eager"
+          decoding="async"
           style={{ zIndex: 1 }}
           aria-hidden="true"
         />
-        {/* Single Floating Orb */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 2 }}>
-          <div className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/10" style={{
-            width: '80px',
-            height: '80px',
-            left: '25%',
-            top: '30%',
-            animation: 'float 6s ease-in-out infinite',
-            filter: 'blur(1px)'
-          }} />
-        </div>
 
-        {/* Interactive Clickable Bubbles */}
-        <div className="absolute inset-0 overflow-hidden" style={{ zIndex: 2 }}>
-          {bubbles.map(bubble => <div key={bubble.id} className="absolute rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/20 cursor-pointer hover:scale-110 transition-all duration-300" style={{
-          width: `${bubble.size}px`,
-          height: `${bubble.size}px`,
-          left: `${bubble.x}%`,
-          top: `${bubble.y}%`,
-          opacity: bubble.opacity,
-          filter: 'drop-shadow(0 0 8px rgba(0, 255, 255, 0.4))',
-          animation: `float ${3 + bubble.id % 3}s ease-in-out infinite`,
-          animationDelay: `${bubble.id * 0.5}s`
-        }} onClick={() => handleBubblePop(bubble.id)} />)}
-        </div>
 
-        {/* Animated Grid Pattern Background */}
-        <div className="absolute inset-0 opacity-30" style={{ zIndex: 2 }}>
-          <div className="absolute inset-0" style={{
-          backgroundImage: `
-                linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
-              `,
-          backgroundSize: '50px 50px',
-          animation: 'grid-move 20s linear infinite',
-          filter: 'drop-shadow(0 0 2px cyan)'
-        }} />
-        </div>
-        
-        {/* Subtle gradient overlay for depth */}
-        <motion.div animate={{
-        background: ['linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)', 'linear-gradient(135deg, rgba(143,179,29,0.05) 0%, transparent 50%, rgba(47,128,255,0.05) 100%)', 'linear-gradient(135deg, rgba(47,128,255,0.05) 0%, transparent 50%, rgba(143,179,29,0.05) 100%)']
-      }} transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }} className="absolute inset-0 bg-gradient-to-br from-electric-azure/5 via-transparent to-ultraviolet/5 mx-[10px] my-[10px] px-[3px] py-[3px]" />
         
         {/* Main Content */}
         <div className="relative mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen" style={{ zIndex: 10 }}>
@@ -404,7 +353,7 @@ const Index = () => {
             </div>
           </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* WEB3 PROJECT PROMOTION SECTION */}
       <section className="py-8 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
