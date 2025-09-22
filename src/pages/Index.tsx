@@ -425,7 +425,7 @@ const Index = () => {
               boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
               filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
             }}>
-                Get Your AI Crew Chief →
+                Get Your AI Crew Chief → TEST
               </Link>
             </motion.div>
             <div className="mt-6 text-lg text-slate-400">
