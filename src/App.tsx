@@ -78,6 +78,7 @@ import ContactForDigitalMarketing from './pages/ContactForDigitalMarketing';
 import SaaSAIAgentPackages from './pages/SaaSAIAgentPackages';
 import DigitalFrontierCryptoAIMarketing from './pages/DigitalFrontierCryptoAIMarketing';
 import RealEstateDemo from './pages/RealEstateDemo';
+import BlogPostBlockchainAIRealEstate from './pages/BlogPostBlockchainAIRealEstate';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Loading component for lazy routes
@@ -166,6 +167,7 @@ function App() {
              <Route path="/saas-ai-agent-packages" element={<MainLayout><SaaSAIAgentPackages /></MainLayout>} />
              <Route path="/digital-frontier-where-crypto-ai-and-marketing-collide" element={<MainLayout><DigitalFrontierCryptoAIMarketing /></MainLayout>} />
              <Route path="/real-estate-demo" element={<MainLayout><RealEstateDemo /></MainLayout>} />
+             <Route path="/blog/blockchain-ai-real-estate-revolution" element={<MainLayout><BlogPostBlockchainAIRealEstate /></MainLayout>} />
              <Route path="/ai-plans" element={<MainLayout><Suspense fallback={<PageLoader />}><AIPlansLanding /></Suspense></MainLayout>} />
              <Route path="/modern-contact-form" element={<MainLayout><ModernContactForm /></MainLayout>} />
             <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
