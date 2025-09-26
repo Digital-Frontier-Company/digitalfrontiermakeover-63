@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, Suspense, lazy } from "react";
+import { Helmet } from "react-helmet-async";
 import useFaqToggle from "@/hooks/useFaqToggle";
 import { LazyImage } from "@/components/LazyImage";
 import HomePageHTML from "@/components/HomePageHTML";
@@ -191,6 +192,36 @@ const Index = () => {
   return <Suspense fallback={<div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
       </div>}>
+      {/* SEO Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://digitalfrontier.app"
+            },
+            "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
+            "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+            "author": {
+              "@type": "Organization",
+              "name": "Digital Frontier"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Digital Frontier",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
+              }
+            },
+            "datePublished": "2023-01-01",
+            "dateModified": "2023-01-01"
+          })}
+        </script>
+      </Helmet>
+      
       {/* Removed dual rendering to prevent conflicts */}
       
       {/* HERO SECTION - Optimized for LCP */}
