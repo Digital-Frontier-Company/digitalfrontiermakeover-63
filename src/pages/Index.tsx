@@ -194,6 +194,17 @@ const Index = () => {
       </div>}>
       {/* SEO Schema */}
       <Helmet>
+        {/* Digital Frontier Analytics Tracking */}
+        <script async src="https://digitalfrontier.agency/df-analytics.js"></script>
+        <script>
+          {`
+            window.dfAnalytics = window.dfAnalytics || [];
+            function dfa(){dfAnalytics.push(arguments);}
+            dfa('init', '1bf99e61-f4b8-4929-b14c-b13fc0affdb3');
+            dfa('track', 'pageview');
+          `}
+        </script>
+        
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
