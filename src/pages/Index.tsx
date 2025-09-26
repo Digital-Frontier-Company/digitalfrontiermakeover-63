@@ -220,6 +220,20 @@ const Index = () => {
             "dateModified": "2023-01-01"
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://digitalfrontier.app"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       
       {/* Removed dual rendering to prevent conflicts */}
