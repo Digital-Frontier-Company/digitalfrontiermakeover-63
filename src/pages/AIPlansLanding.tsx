@@ -493,6 +493,199 @@ const AIPlansLanding = () => {
           </div>
         </section>
 
+        {/* Digital Frontier Marketing Automation Section */}
+        <section className="py-32 bg-gradient-to-br from-violet-900/20 to-cyan-900/20">
+          <div className="container mx-auto px-5">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Digital Frontier: Social & Search Marketing Automation
+              </h2>
+              <p className="text-xl text-slate-300 max-w-4xl mx-auto">
+                Automate your ad operations across search and social. Launch faster, keep product data accurate everywhere, 
+                and get performance insights without the midnight spreadsheet circus.
+              </p>
+            </motion.div>
+
+            {/* Why It Matters */}
+            <motion.div 
+              className="mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-center mb-12 text-white">Why it matters</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    icon: <TrendingUp className="h-8 w-8 text-violet-400" />,
+                    title: "Improve performance",
+                    description: "Optimize spend and creative decisions with fresher reporting and consistent product feeds."
+                  },
+                  {
+                    icon: <Zap className="h-8 w-8 text-cyan-400" />,
+                    title: "Speed up launches", 
+                    description: "Push new products and promos live across channels in hours, not days."
+                  },
+                  {
+                    icon: <Target className="h-8 w-8 text-emerald-400" />,
+                    title: "Do more with less",
+                    description: "Automate listings, catalog updates, and campaign housekeeping so your team focuses on strategy."
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-8 text-center hover:border-violet-500/40 transition-all"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="mb-4">{item.icon}</div>
+                    <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
+                    <p className="text-slate-300">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* What It Does */}
+            <motion.div 
+              className="mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-center mb-12 text-white">What it does</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {[
+                  {
+                    title: "Unified campaign operations",
+                    description: "Centralize campaign setup and maintenance across major ad platforms. Sync budgets, audiences, and product data so every channel stays in lockstep."
+                  },
+                  {
+                    title: "Fast, trustworthy reporting",
+                    description: "Pipe campaign and conversion data into your analytics or warehouse to get a single source of truth for ROAS, CAC, LTV, and everything your CFO grills you about."
+                  },
+                  {
+                    title: "Product feed automation",
+                    description: "Keep titles, pricing, inventory, and availability up to date across ad channels to avoid disapprovals, wasted spend, and awkward \"out of stock\" clicks."
+                  },
+                  {
+                    title: "Omnichannel growth, simplified",
+                    description: "Expand to new ad surfaces without rebuilding your stack every time. Plug in, map once, and go."
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-6 hover:border-violet-500/40 transition-all"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <h4 className="text-xl font-bold text-violet-400 mb-3">{item.title}</h4>
+                    <p className="text-slate-300">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* How It Works */}
+            <motion.div 
+              className="mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-center mb-12 text-white">How it works</h3>
+              <div className="max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {[
+                    "Connect your ad, ecommerce, CRM, and analytics tools.",
+                    "Automate product feeds, campaign workflows, and error handling.",
+                    "Consolidate performance data into your BI or data warehouse.",
+                    "Optimize using reliable metrics that actually match what finance sees."
+                  ].map((step, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start space-x-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="bg-gradient-to-r from-violet-500 to-cyan-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        {index + 1}
+                      </div>
+                      <p className="text-slate-300">{step}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Results You Can Expect */}
+            <motion.div 
+              className="mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-center mb-12 text-white">Results you can expect</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  "Faster time to market across channels",
+                  "Fewer feed errors and disapprovals", 
+                  "Clear, cross-channel performance reporting your team actually trusts",
+                  "More hours back for creative, testing, and strategy"
+                ].map((result, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-6 text-center hover:border-violet-500/40 transition-all"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <CheckCircle className="h-8 w-8 text-emerald-400 mx-auto mb-4" />
+                    <p className="text-slate-300 font-medium">{result}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold mb-6 text-white">Get started</h3>
+              <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Ready to stop duct-taping dashboards and copy-pasting product data?
+              </p>
+              <a 
+                href="/modern-contact-form" 
+                className="inline-block bg-gradient-to-r from-violet-500 to-cyan-400 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:-translate-y-1 shadow-lg shadow-violet-500/40 hover:shadow-violet-500/60 no-underline"
+              >
+                Book a walkthrough <ArrowRight className="inline h-5 w-5 ml-2" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Proof Section */}
         <section className="py-32 bg-slate-900/50">
           <div className="container mx-auto px-5">

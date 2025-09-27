@@ -341,6 +341,133 @@ const AIImplementationConsulting = () => {
               </div>
             </div>
 
+            {/* Digital Frontier Marketing Automation Section */}
+            <div className="value-justification">
+              <h3 className="value-title">🚀 Digital Frontier: Social & Search Marketing Automation</h3>
+              
+              <div className="content-grid">
+                <div className="left-content">
+                  <div className="credibility-badge">
+                    <div className="credibility-number">⚡</div>
+                    <div className="credibility-text">Marketing Operations Revolution</div>
+                  </div>
+                  
+                  <p className="method-subtitle">
+                    Automate your ad operations across search and social. Launch faster, keep product data accurate everywhere, 
+                    and get performance insights without the midnight spreadsheet circus.
+                  </p>
+                  
+                  <ul className="pain-points">
+                    <li>Drowning in manual campaign management across multiple platforms</li>
+                    <li>Product feeds constantly out of sync causing ad disapprovals</li>
+                    <li>Spending hours creating reports that don't match what finance sees</li>
+                    <li>Losing competitive advantage with slow-to-market product launches</li>
+                  </ul>
+                </div>
+                
+                <div className="solution-preview">
+                  <h2 className="solution-title">Why Marketing Automation Matters</h2>
+                  <ul className="benefits-list">
+                    <li><strong>Improve performance:</strong> Optimize spend and creative decisions with fresher reporting</li>
+                    <li><strong>Speed up launches:</strong> Push new products live across channels in hours, not days</li>
+                    <li><strong>Do more with less:</strong> Automate listings and campaign housekeeping</li>
+                    <li><strong>Focus on strategy:</strong> Your team works on growth, not maintenance</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="justification-grid">
+                <div className="justification-card">
+                  <h4>🎯 Unified Campaign Operations</h4>
+                  <p>Centralize campaign setup and maintenance across major ad platforms. Sync budgets, audiences, and product data so every channel stays in lockstep.</p>
+                  <ul>
+                    <li>Cross-platform campaign management</li>
+                    <li>Automated budget allocation</li>
+                    <li>Audience synchronization</li>
+                    <li>Real-time performance monitoring</li>
+                  </ul>
+                </div>
+                
+                <div className="justification-card">
+                  <h4>📊 Fast, Trustworthy Reporting</h4>
+                  <p>Pipe campaign and conversion data into your analytics or warehouse to get a single source of truth for ROAS, CAC, LTV, and everything your CFO grills you about.</p>
+                  <ul>
+                    <li>Unified data warehouse integration</li>
+                    <li>Real-time performance dashboards</li>
+                    <li>Custom attribution modeling</li>
+                    <li>Executive-ready reporting</li>
+                  </ul>
+                </div>
+                
+                <div className="justification-card">
+                  <h4>🔄 Product Feed Automation</h4>
+                  <p>Keep titles, pricing, inventory, and availability up to date across ad channels to avoid disapprovals, wasted spend, and awkward "out of stock" clicks.</p>
+                  <ul>
+                    <li>Automated inventory sync</li>
+                    <li>Dynamic pricing updates</li>
+                    <li>Product availability tracking</li>
+                    <li>Feed optimization for each platform</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="implementation-strategy">
+                <h3 className="strategy-title">How Digital Frontier Marketing Automation Works</h3>
+                
+                <div className="strategy-phases">
+                  <div className="phase-card">
+                    <h4>Step 1: Connect Your Marketing Stack</h4>
+                    <p>Integrate your ad platforms, ecommerce system, CRM, and analytics tools into one unified system</p>
+                    <p><strong>Platforms:</strong> Google Ads, Facebook/Meta, Amazon, Shopify, Salesforce, HubSpot, GA4, and more</p>
+                  </div>
+
+                  <div className="phase-card">
+                    <h4>Step 2: Automate Campaign Workflows</h4>
+                    <p>Set up intelligent automation for product feeds, campaign creation, budget management, and error handling</p>
+                    <p><strong>Features:</strong> Auto-generated product ads, smart budget allocation, performance-based optimization</p>
+                  </div>
+
+                  <div className="phase-card">
+                    <h4>Step 3: Consolidate Performance Data</h4>
+                    <p>All campaign and conversion data flows into your business intelligence or data warehouse system</p>
+                    <p><strong>Integrations:</strong> Snowflake, BigQuery, Tableau, Power BI, or custom dashboards</p>
+                  </div>
+
+                  <div className="phase-card">
+                    <h4>Step 4: Optimize with Reliable Metrics</h4>
+                    <p>Use consistent, finance-approved metrics to make data-driven decisions about ad spend and creative</p>
+                    <p><strong>Metrics:</strong> True ROAS, customer LTV, blended CAC, channel attribution</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="content-grid">
+                <div className="left-content">
+                  <div className="credibility-badge">
+                    <div className="credibility-number">✅</div>
+                    <div className="credibility-text">Expected Results from Marketing Automation</div>
+                  </div>
+                  
+                  <ul className="pain-points">
+                    <li>Faster time to market across all advertising channels</li>
+                    <li>Dramatically fewer feed errors and ad disapprovals</li>
+                    <li>Clear, cross-channel performance reporting your team actually trusts</li>
+                    <li>15+ hours weekly returned to creative, testing, and strategy work</li>
+                  </ul>
+                </div>
+                
+                <div className="solution-preview">
+                  <h2 className="solution-title">Common Use Cases</h2>
+                  <ul className="benefits-list">
+                    <li><strong>Lead gen:</strong> Sync leads from ads to CRM with proper attribution</li>
+                    <li><strong>Ecommerce:</strong> Push clean product feeds and track true ROAS with refunds</li>
+                    <li><strong>Budget pacing:</strong> Monitor spend across networks and flag anomalies</li>
+                    <li><strong>Offline conversions:</strong> Tie phone orders and field sales back to campaigns</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* Industry Solutions */}
             <div className="social-proof">
               <div className="proof-item">
