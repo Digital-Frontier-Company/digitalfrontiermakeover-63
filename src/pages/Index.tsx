@@ -289,20 +289,26 @@ const Index = () => {
           {/* Main messaging container with improved contrast background */}
           <div className="max-w-4xl mx-auto px-6">
             <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 px-[33px] py-[66px] mx-0 my-[13px] bg-[#1e1e1e]/[0.43]">
-              {/* Main Headlines */}
-              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] bg-clip-text text-transparent font-extrabold md:text-7xl font-oswald uppercase tracking-wide animate-gradient" style={{
+              {/* Main Headlines with Typewriter Effect */}
+              <div className="text-4xl mb-6 leading-tight bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] bg-clip-text text-transparent font-extrabold md:text-7xl font-oswald uppercase tracking-wide animate-gradient" style={{
               textShadow: '0 0 15px rgba(78, 226, 236, 0.4), 0 0 30px rgba(78, 226, 236, 0.3), 0 0 45px rgba(78, 226, 236, 0.2)',
               WebkitTextStroke: '1px white',
               backgroundSize: '200% 200%',
               animation: 'gradientShift 3s ease infinite'
             }}>
-                The simplest way for a small business to start with AI
-              </h1>
+                <TypewriterText 
+                  text="The simplest way for a small business to start with AI" 
+                  delay={80}
+                />
+              </div>
 
-              {/* Subhead */}
-              <p className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
-                Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to.
-              </p>
+              {/* Subhead with Typewriter Effect */}
+              <div className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
+                <TypewriterText 
+                  text="Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to."
+                  delay={40}
+                />
+              </div>
 
               {/* Bullet Points */}
               <div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto">
