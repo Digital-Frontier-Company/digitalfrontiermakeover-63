@@ -6,11 +6,11 @@ import { LazyImage } from "@/components/LazyImage";
 const MainNavigation = () => {
   return <nav className="border-b border-slate-800/50 bg-slate-900/60 backdrop-blur-sm sticky top-0 z-50 px-6 py-4">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <LazyImage src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" displayWidth={100} displayHeight={100} optimization={{
+            <LazyImage src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" displayWidth={300} displayHeight={300} optimization={{
             priority: true
-          }} className="h-12 w-auto object-contain" />
+          }} className="h-36 w-auto object-contain" />
           </Link>
           
           <div className="flex items-center space-x-8">
