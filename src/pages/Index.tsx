@@ -342,20 +342,40 @@ const Index = () => {
               </div>
 
               {/* Bullet Points */}
-              <div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto">
-                <div className="flex items-start space-x-3">
+              <motion.div 
+                className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <motion.div 
+                  className="flex items-start space-x-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">Prebuilt workflows for leads, follow-ups, and reporting</span>
-                </div>
-                <div className="flex items-start space-x-3">
+                </motion.div>
+                <motion.div 
+                  className="flex items-start space-x-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                >
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">Click-to-connect with your CRM and site</span>
-                </div>
-                <div className="flex items-start space-x-3">
+                </motion.div>
+                <motion.div 
+                  className="flex items-start space-x-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                >
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">KPI dashboard your bookkeeper won't hate</span>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Dual CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
