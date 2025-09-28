@@ -26,14 +26,12 @@ const TypewriterText = ({
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  
   useEffect(() => {
     // Split text by | for line breaks
     const lines = text.split('|');
     const fullText = lines.join('\n');
     let i = 0;
     let isTyping = true;
-    
     const typeText = () => {
       const timer = setInterval(() => {
         if (isTyping) {
@@ -65,16 +63,13 @@ const TypewriterText = ({
           }
         }
       }, delay);
-      
       return () => clearInterval(timer);
     };
-    
     const cleanup = typeText();
     return cleanup;
   }, [text, delay, loop]);
-  
   return <div className="text-center">
-      {displayedText.split('\n').map((line, index) => <div key={index} className="block">
+      {displayedText.split('\n').map((line, index) => <div key={index} className="inline-block rounded-2xl">
           {line}
         </div>)}
       {showCursor && <span className="typewriter-cursor">|</span>}
@@ -334,44 +329,56 @@ const Index = () => {
 
               {/* Subhead */}
               <div className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
-                <TypewriterText 
-                  text="Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to." 
-                  delay={50} 
-                  loop={true}
-                />
+                <TypewriterText text="Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to." delay={50} loop={true} />
               </div>
 
               {/* Bullet Points */}
-              <motion.div 
-                className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <motion.div 
-                  className="flex items-start space-x-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                >
+              <motion.div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto" initial={{
+              opacity: 0,
+              y: 30
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 0.6
+            }}>
+                <motion.div className="flex items-start space-x-3" initial={{
+                opacity: 0,
+                x: -20
+              }} animate={{
+                opacity: 1,
+                x: 0
+              }} transition={{
+                duration: 0.6,
+                delay: 0.8
+              }}>
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">Prebuilt workflows for leads, follow-ups, and reporting</span>
                 </motion.div>
-                <motion.div 
-                  className="flex items-start space-x-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 1.0 }}
-                >
+                <motion.div className="flex items-start space-x-3" initial={{
+                opacity: 0,
+                x: -20
+              }} animate={{
+                opacity: 1,
+                x: 0
+              }} transition={{
+                duration: 0.6,
+                delay: 1.0
+              }}>
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">Click-to-connect with your CRM and site</span>
                 </motion.div>
-                <motion.div 
-                  className="flex items-start space-x-3"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                >
+                <motion.div className="flex items-start space-x-3" initial={{
+                opacity: 0,
+                x: -20
+              }} animate={{
+                opacity: 1,
+                x: 0
+              }} transition={{
+                duration: 0.6,
+                delay: 1.2
+              }}>
                   <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
                   <span className="text-lg text-slate-200">KPI dashboard your bookkeeper won't hate</span>
                 </motion.div>
