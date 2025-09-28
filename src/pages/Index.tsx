@@ -17,29 +17,62 @@ import gumroadLogo from "@/assets/gumroad-logo.png";
 // TypewriterText component with line break support
 const TypewriterText = ({
   text,
-  delay = 50
+  delay = 50,
+  loop = false
 }: {
   text: string;
   delay?: number;
+  loop?: boolean;
 }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  
   useEffect(() => {
     // Split text by | for line breaks
     const lines = text.split('|');
     const fullText = lines.join('\n');
     let i = 0;
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setDisplayedText(fullText.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(timer);
-        setTimeout(() => setShowCursor(false), 2000);
-      }
-    }, delay);
-    return () => clearInterval(timer);
-  }, [text, delay]);
+    let isTyping = true;
+    
+    const typeText = () => {
+      const timer = setInterval(() => {
+        if (isTyping) {
+          if (i < fullText.length) {
+            setDisplayedText(fullText.slice(0, i + 1));
+            i++;
+          } else {
+            // Text fully typed
+            if (loop) {
+              // Wait 2 seconds then start erasing
+              setTimeout(() => {
+                isTyping = false;
+              }, 2000);
+            } else {
+              clearInterval(timer);
+              setTimeout(() => setShowCursor(false), 2000);
+            }
+          }
+        } else {
+          // Erasing phase
+          if (i > 0) {
+            setDisplayedText(fullText.slice(0, i - 1));
+            i--;
+          } else {
+            // Text fully erased, restart typing
+            setTimeout(() => {
+              isTyping = true;
+            }, 500);
+          }
+        }
+      }, delay);
+      
+      return () => clearInterval(timer);
+    };
+    
+    const cleanup = typeText();
+    return cleanup;
+  }, [text, delay, loop]);
+  
   return <div className="text-center">
       {displayedText.split('\n').map((line, index) => <div key={index} className="block">
           {line}
@@ -300,9 +333,13 @@ const Index = () => {
               </h1>
 
               {/* Subhead */}
-              <p className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
-                Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to.
-              </p>
+              <div className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
+                <TypewriterText 
+                  text="Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to." 
+                  delay={50} 
+                  loop={true}
+                />
+              </div>
 
               {/* Bullet Points */}
               <div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto">
