@@ -207,43 +207,41 @@ const Index = () => {
         
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.app"
-            },
-            "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
-            "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
-              }
-            },
-            "datePublished": "2023-01-01",
-            "dateModified": "2023-01-01"
-          })}
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://digitalfrontier.app"
+          },
+          "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
+          "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+          "author": {
+            "@type": "Organization",
+            "name": "Digital Frontier"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Digital Frontier",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
+            }
+          },
+          "datePublished": "2023-01-01",
+          "dateModified": "2023-01-01"
+        })}
         </script>
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://digitalfrontier.app"
-              }
-            ]
-          })}
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://digitalfrontier.app"
+          }]
+        })}
         </script>
       </Helmet>
       
@@ -290,9 +288,9 @@ const Index = () => {
 
           {/* Main messaging container with improved contrast background */}
           <div className="max-w-4xl mx-auto px-6">
-            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 bg-white/10">
+            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 bg-white/10 px-[33px] py-[66px] mx-0 my-[13px]">
               {/* Main Headlines */}
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-[#06f6ae] font-extrabold md:text-7xl">
                 The simplest way for a small business to start with AI
               </h1>
 
@@ -319,16 +317,10 @@ const Index = () => {
 
               {/* Dual CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Link 
-                  to="/modern-contact-form" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105"
-                >
+                <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105">
                   Get the Starter Stack
                 </Link>
-                <Link 
-                  to="/ai-implementation-consulting" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50"
-                >
+                <Link to="/ai-implementation-consulting" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50">
                   Watch 2-min Demo
                 </Link>
               </div>
