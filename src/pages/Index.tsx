@@ -207,41 +207,43 @@ const Index = () => {
         
         <script type="application/ld+json">
           {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://digitalfrontier.app"
-          },
-          "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
-          "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
-          "author": {
-            "@type": "Organization",
-            "name": "Digital Frontier"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Digital Frontier",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
-            }
-          },
-          "datePublished": "2023-01-01",
-          "dateModified": "2023-01-01"
-        })}
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://digitalfrontier.app"
+            },
+            "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
+            "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
+            "author": {
+              "@type": "Organization",
+              "name": "Digital Frontier"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Digital Frontier",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
+              }
+            },
+            "datePublished": "2023-01-01",
+            "dateModified": "2023-01-01"
+          })}
         </script>
         <script type="application/ld+json">
           {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://digitalfrontier.app"
-          }]
-        })}
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://digitalfrontier.app"
+              }
+            ]
+          })}
         </script>
       </Helmet>
       
@@ -286,46 +288,63 @@ const Index = () => {
           }} />
           </motion.div>
 
-          {/* Main messaging container with dark transparent background */}
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="backdrop-blur-sm border-2 border-blue-200 rounded-br-3xl top-8 md:p-12 bg-[#000a0e]/[0.49] rounded-2xl">
-          {/* Main Headlines */}
-              <h1 style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 50%, #4EE2EC 100%)',
-              backgroundSize: '300% 300%',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'gradientShift 4s ease-in-out infinite',
-              lineHeight: '1.2',
-              paddingBottom: '0.1em'
-            }} className="text-5xl md:text-7xl mb-8 leading-tight font-extrabold">
-                What's the Simplest Way for a Small Business to Start with AI?
+          {/* Main messaging container with improved contrast background */}
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 bg-white/10">
+              {/* Main Headlines */}
+              <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
+                The simplest way for a small business to start with AI
               </h1>
 
-              {/* Main text - no animation delay for LCP */}
-              <div className="text-3xl md:text-4xl lg:text-5xl mb-8 leading-relaxed font-semibold text-center" style={{
-              background: 'linear-gradient(135deg, #00BFFF 0%, #FFFFFF 100%)',
-              backgroundSize: '200% 200%',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'gradientShift 3s ease-in-out infinite'
-            }}>
-                <div className="text-center">The Answer: Use a proven stack.</div>
+              {/* Subhead */}
+              <p className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
+                Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to.
+              </p>
+
+              {/* Bullet Points */}
+              <div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto">
+                <div className="flex items-start space-x-3">
+                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
+                  <span className="text-lg text-slate-200">Prebuilt workflows for leads, follow-ups, and reporting</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
+                  <span className="text-lg text-slate-200">Click-to-connect with your CRM and site</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
+                  <span className="text-lg text-slate-200">KPI dashboard your bookkeeper won't hate</span>
+                </div>
               </div>
 
-              {/* Subtitle */}
-              <p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto text-center leading-relaxed" style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #FFFFFF 100%)',
-              backgroundSize: '200% 200%',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              animation: 'gradientShift 4s ease-in-out infinite'
-            }}>
-                We spent $50K+ testing 100+ AI tools and kept only what works for small businesses. You get a short list, step-by-step SOPs, and a KPI tracker to prove ROI in weeks.
-              </p>
+              {/* Dual CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Link 
+                  to="/modern-contact-form" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105"
+                >
+                  Get the Starter Stack
+                </Link>
+                <Link 
+                  to="/ai-implementation-consulting" 
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50"
+                >
+                  Watch 2-min Demo
+                </Link>
+              </div>
+
+              {/* Trust Row */}
+              <div className="text-center pt-6 border-t border-white/20">
+                <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
+                <div className="flex justify-center items-center space-x-8 mb-4">
+                  <img src="/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                </div>
+                <blockquote className="text-slate-300 italic text-sm max-w-md mx-auto">
+                  "ROI was clear within 3 weeks. The automation freed up 10+ hours per week."
+                </blockquote>
+              </div>
             </div>
           </div>
 
