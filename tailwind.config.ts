@@ -74,7 +74,7 @@ export default {
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
-				'montserrat': ['Montserrat', 'sans-serif'],
+				'oswald': ['Oswald', 'sans-serif'],
 				'mono': ['IBM Plex Mono', 'monospace']
 			},
 			borderRadius: {
