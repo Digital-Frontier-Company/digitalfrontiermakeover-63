@@ -10,7 +10,7 @@ const MainNavigation = () => {
           <Link to="/" className="flex items-center space-x-2 hover-scale">
             <LazyImage src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png" alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" displayWidth={96} displayHeight={96} optimization={{
             priority: true
-          }} className="max-h-16-contain-transition-transform duration-300\n" />
+          }} className="max-h-14-contain-transition-transform duration-300\\n" />
           </Link>
           
           <div className="flex items-center space-x-6">
