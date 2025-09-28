@@ -290,7 +290,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto px-6">
             <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 bg-white/10 px-[33px] py-[66px] mx-0 my-[13px]">
               {/* Main Headlines */}
-              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-[#06f6ae] font-extrabold md:text-7xl" style={{ textShadow: '0 0 20px #4EE2EC, 0 0 40px #4EE2EC, 0 0 60px #4EE2EC, 0 0 80px #4EE2EC' }}>
+              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-[#06f6ae] font-extrabold md:text-7xl" style={{ textShadow: '0 0 20px #4EE2EC, 0 0 40px #4EE2EC, 0 0 60px #4EE2EC, 0 0 80px #4EE2EC', WebkitTextStroke: '1px black' }}>
                 The simplest way for a small business to start with AI
               </h1>
 
