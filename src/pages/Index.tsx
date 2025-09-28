@@ -288,14 +288,14 @@ const Index = () => {
 
           {/* Main messaging container with improved contrast background */}
           <div className="max-w-4xl mx-auto px-6">
-            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 bg-white/10 px-[33px] py-[66px] mx-0 my-[13px]">
+            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 px-[33px] py-[66px] mx-0 my-[13px] bg-[#1e1e1e]/[0.43]">
               {/* Main Headlines */}
-              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] bg-clip-text text-transparent font-extrabold md:text-7xl font-oswald uppercase tracking-wide animate-gradient" style={{ 
-                textShadow: '0 0 15px rgba(78, 226, 236, 0.4), 0 0 30px rgba(78, 226, 236, 0.3), 0 0 45px rgba(78, 226, 236, 0.2)', 
-                WebkitTextStroke: '1px white',
-                backgroundSize: '200% 200%',
-                animation: 'gradientShift 3s ease infinite'
-              }}>
+              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] bg-clip-text text-transparent font-extrabold md:text-7xl font-oswald uppercase tracking-wide animate-gradient" style={{
+              textShadow: '0 0 15px rgba(78, 226, 236, 0.4), 0 0 30px rgba(78, 226, 236, 0.3), 0 0 45px rgba(78, 226, 236, 0.2)',
+              WebkitTextStroke: '1px white',
+              backgroundSize: '200% 200%',
+              animation: 'gradientShift 3s ease infinite'
+            }}>
                 The simplest way for a small business to start with AI
               </h1>
 
