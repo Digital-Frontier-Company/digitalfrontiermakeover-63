@@ -402,8 +402,8 @@ const Index = () => {
                   <img src="/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                   <img src="/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                 </div>
-                <blockquote className="text-slate-300 italic text-sm max-w-md mx-auto">
-                  "ROI was clear within 3 weeks. The automation freed up 10+ hours per week."
+                <blockquote className="text-slate-300 italic text-sm max-w-2xl mx-auto">
+                  "It's fair to roll your eyes at "AI agencies." We don't sell vibes. We install a lead engine you can audit: recorded calls, annotated ad tests, and weekly scorecards. First 10 days we ship four proof assets you can reuse even if you fire us. If we don't lower CPL by week 4, you don't pay week 5."
                 </blockquote>
               </div>
             </div>
