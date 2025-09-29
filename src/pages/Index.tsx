@@ -6,7 +6,7 @@ import { LazyImage } from "@/components/LazyImage";
 import HomePageHTML from "@/components/HomePageHTML";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
-import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield } from 'lucide-react';
+import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
@@ -397,6 +397,16 @@ const Index = () => {
               {/* Trust Row */}
               <div className="text-center pt-6 border-t border-white/20">
                 <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
+                <div className="flex justify-center items-center space-x-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-current" style={{
+                      background: 'linear-gradient(to right, #4EE2EC, #8FB31D)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text'
+                    }} />
+                  ))}
+                </div>
                 <div className="flex justify-center items-center space-x-8 mb-4">
                   <img src="/lovable-uploads/LINDYT.jpeg" alt="Lindy AI - Certified Partner" className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                   <img src="/lovable-uploads/Clutch.png" alt="Clutch - Top Rated Agency" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
