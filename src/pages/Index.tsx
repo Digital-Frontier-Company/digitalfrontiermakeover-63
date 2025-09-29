@@ -398,7 +398,7 @@ const Index = () => {
               <div className="text-center pt-6 border-t border-white/20">
                 <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
                 <div className="flex justify-center items-center space-x-8 mb-4">
-                  <img src="/lovable-uploads/blockchain_network_logo.png" alt="Digital Pioneer Collective - Blockchain Network Partner" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/blockchain_network_logo.png" alt="Digital Pioneer Collective - Blockchain Network Partner" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                   <img src="/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                   <img src="/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png" alt="Client logo" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                 </div>
