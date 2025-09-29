@@ -399,12 +399,17 @@ const Index = () => {
                 <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
                 <div className="flex justify-center items-center space-x-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-current" style={{
-                      background: 'linear-gradient(to right, #4EE2EC, #8FB31D)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }} />
+                    <Star key={i} className="w-6 h-6" style={{
+                      fill: `url(#starGradient${i})`,
+                      filter: 'drop-shadow(0 0 4px rgba(78, 226, 236, 0.5))'
+                    }}>
+                      <defs>
+                        <linearGradient id={`starGradient${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style={{stopColor: '#4EE2EC', stopOpacity: 1}} />
+                          <stop offset="100%" style={{stopColor: '#8FB31D', stopOpacity: 1}} />
+                        </linearGradient>
+                      </defs>
+                    </Star>
                   ))}
                 </div>
                 <div className="flex justify-center items-center space-x-8 mb-4">
