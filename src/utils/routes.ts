@@ -14,58 +14,58 @@ export interface RouteConfig {
 export const ROUTE_CONFIGS: RouteConfig[] = [
   {
     path: '/',
-    title: 'AI Marketing Memphis | Digital Frontier Company Solutions',
-    description: 'Digital marketing agency providing SEO, content strategy, and business growth solutions.'
+    title: 'Premium AI Marketing Excellence | Boutique Digital Frontier Consultancy',
+    description: 'Experience sophisticated AI marketing strategies crafted exclusively for discerning brands. Our boutique consultancy delivers bespoke solutions with white-glove service and exceptional results.'
   },
   {
     path: '/about-us',
-    title: 'About Digital Frontier | AI Marketing Team & Mission Story',
-    description: 'Learn about Digital Frontier\'s mission to revolutionize content marketing with AI-powered solutions.'
+    title: 'About Digital Frontier | Boutique AI Marketing Excellence & Distinguished Expertise',
+    description: 'Discover Digital Frontier, the boutique consultancy redefining AI marketing with sophisticated strategies, personalized service, and exceptional results for discerning clients.'
   },
   {
     path: '/contact',
-    title: 'Contact Digital Frontier | Free Marketing Consultation Call',
-    description: 'Ready to scale your content marketing? Contact Digital Frontier for a free consultation.'
+    title: 'Contact Our Boutique Marketing Consultancy | Exclusive Private Consultation',
+    description: 'Schedule your private consultation with our boutique marketing experts. Experience white-glove service and bespoke strategies crafted exclusively for sophisticated brands.'
   },
   {
     path: '/blog',
-    title: 'Marketing Blog | AI Strategy Insights Digital Frontier Co',
-    description: 'Expert insights on AI-powered content marketing, SEO strategies, and digital marketing trends.'
+    title: 'Luxury Marketing Insights | Sophisticated Strategies & Premium Content',
+    description: 'Exclusive insights from our boutique marketing experts. Discover sophisticated strategies, premium approaches, and luxury marketing content for discerning brands.'
   },
   {
     path: '/faq',
-    title: 'FAQ | Digital Frontier Marketing Questions & Expert Answers',
-    description: 'Frequently asked questions about Digital Frontier\'s AI-powered content marketing services.'
+    title: 'FAQ | Boutique Marketing Consultancy Questions & Expert Answers',
+    description: 'Frequently asked questions about Digital Frontier\'s boutique AI marketing services, sophisticated strategies, and white-glove consultation process.'
   },
   {
     path: '/docs',
-    title: 'Documentation - Digital Frontier Service Guides',
-    description: 'Comprehensive documentation and guides for Digital Frontier\'s AI-powered content marketing services.'
+    title: 'Premium Service Guides | Boutique Marketing Documentation & Resources',
+    description: 'Comprehensive documentation and sophisticated guides for Digital Frontier\'s boutique AI marketing services and bespoke strategies.'
   },
   {
     path: '/newsletter',
-    title: 'Marketing Newsletter | AI Trends Digital Frontier Updates',
-    description: 'Subscribe to Digital Frontier\'s newsletter for the latest AI marketing insights.'
+    title: 'Exclusive Marketing Newsletter | Premium AI Insights & Luxury Trends',
+    description: 'Subscribe to Digital Frontier\'s exclusive newsletter for sophisticated AI marketing insights, luxury brand strategies, and premium industry trends.'
   },
   {
     path: '/site-map',
-    title: 'Site Map - Digital Frontier Navigation',
-    description: 'Complete site map of Digital Frontier\'s resources, services, and content marketing insights.'
+    title: 'Site Navigation | Digital Frontier Premium Resources & Services',
+    description: 'Complete site map of Digital Frontier\'s boutique resources, premium services, and sophisticated marketing insights for luxury brands.'
   },
   {
     path: '/insights',
-    title: 'Insights Hub - Marketing Intelligence & Analytics',
-    description: 'Access comprehensive marketing insights, analytics, and strategic resources.'
+    title: 'Exclusive Insights Hub | Premium Marketing Intelligence & Sophisticated Analytics',
+    description: 'Access exclusive marketing insights, sophisticated analytics, and premium strategic resources crafted for discerning business leaders.'
   },
   {
     path: '/browse-playbooks',
-    title: 'Marketing Playbooks - Proven Content Strategies',
-    description: 'Browse our collection of proven marketing playbooks and strategies.'
+    title: 'Premium Marketing Playbooks | Sophisticated Strategies & Luxury Brand Blueprints',
+    description: 'Browse our exclusive collection of premium marketing playbooks and sophisticated strategies designed for luxury brands and high-caliber businesses.'
   },
   {
     path: '/search',
-    title: 'Search - Find Digital Frontier Content',
-    description: 'Search through Digital Frontier\'s content, resources, and services.'
+    title: 'Search Premium Content | Find Digital Frontier Exclusive Resources',
+    description: 'Search through Digital Frontier\'s premium content, boutique resources, and sophisticated marketing services for luxury brands.'
   }
 ];
 
