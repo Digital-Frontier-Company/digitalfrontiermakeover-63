@@ -398,11 +398,11 @@ const Index = () => {
               <div className="text-center pt-6 border-t border-white/20">
                 <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
                 <div className="flex justify-center items-center space-x-8 mb-4">
-                  <img src="/lovable-uploads/LINDYT.jpeg" alt="Lindy AI - Certified Partner" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/Clutch.png" alt="Clutch - Top Rated Agency" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/Design_rush.png" alt="DesignRush - Best Digital Marketing Agencies" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/g2-seller-solutions.png" alt="G2 - Seller Solutions Partner" className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/blockchain_network_logo-2.png" alt="Digital Pioneer Collective - Blockchain Network" className="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/LINDYT.jpeg" alt="Lindy AI - Certified Partner" className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/Clutch.png" alt="Clutch - Top Rated Agency" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/Design_rush.png" alt="DesignRush - Best Digital Marketing Agencies" className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/g2-seller-solutions.png" alt="G2 - Seller Solutions Partner" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
+                  <img src="/lovable-uploads/blockchain_network_logo-2.png" alt="Digital Pioneer Collective - Blockchain Network" className="h-14 w-auto opacity-60 hover:opacity-100 transition-opacity" />
                 </div>
                 <blockquote className="text-slate-300 italic text-large max-w-2xl mx-auto">
                   "It's fair to roll your eyes at "AI agencies." We don't sell vibes. We install a lead engine you can audit: recorded calls, annotated ad tests, and weekly scorecards. First 10 days we ship four proof assets you can reuse even if you fire us. If we don't lower CPL by week 4, you don't pay week 5."
