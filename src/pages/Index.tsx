@@ -384,13 +384,10 @@ const Index = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Dual CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              {/* Primary CTA */}
+              <div className="flex justify-center mb-8">
                 <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105">
                   Get the Starter Stack
-                </Link>
-                <Link to="/ai-implementation-consulting" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50">
-                  Watch 2-min Demo
                 </Link>
               </div>
 
