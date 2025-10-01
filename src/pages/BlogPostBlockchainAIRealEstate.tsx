@@ -186,7 +186,7 @@ const BlogPostBlockchainAIRealEstate: React.FC = () => {
         {/* Regulation Image */}
         <section>
           <AspectRatio ratio={16 / 9}>
-            <img src="/lovable-uploads/b581e124-1502-44f8-98db-dc8aaaa10b89.png" alt="Real estate regulation and compliance in blockchain transactions" className="object-cover w-full h-full rounded-xl" />
+            
           </AspectRatio>
         </section>
 
