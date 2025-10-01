@@ -6,46 +6,28 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import FAQSection, { FAQItem } from "@/components/FAQSection";
 import { Helmet } from "react-helmet-async";
-
 const BlogPostBlockchainAIRealEstate: React.FC = () => {
   const location = useLocation();
-  
-  const blogPostFaqs: FAQItem[] = [
-    {
-      question: "How are blockchain and AI transforming real estate transactions?",
-      answer: "Blockchain and AI are revolutionizing real estate by enabling smart contracts, tokenized ownership, instant payments via cryptocurrency, and automated processes. AI agents can predict property values, detect fraud, and guide clients through transactions, while blockchain ensures secure, transparent, and faster deals."
-    },
-    {
-      question: "What are the benefits of using cryptocurrency for real estate payments?",
-      answer: "Cryptocurrency payments offer instant value transfer across borders, eliminate traditional banking delays and fees, enable 24/7 transactions, and can significantly reduce closing times from 30-45 days to under 10 days for luxury properties."
-    },
-    {
-      question: "How do smart contracts work in real estate deals?",
-      answer: "Smart contracts are automated agreements coded into blockchain software that execute when predetermined conditions are met. For example, when an inspection passes and mortgage is approved, funds are automatically released and title is transferred—eliminating manual processes and reducing fraud risk."
-    },
-    {
-      question: "What is real estate tokenization and how does it democratize property investment?",
-      answer: "Tokenization divides property ownership into digital tokens, allowing investors to buy fractional shares with smaller amounts of capital. This means someone with $5,000 can invest in luxury developments previously only accessible to millionaires, making real estate investment more inclusive and liquid."
-    },
-    {
-      question: "Are blockchain real estate transactions legally compliant?",
-      answer: "The regulatory landscape is evolving rapidly. The SEC treats tokenized properties as securities in the U.S., while countries like Sweden and Georgia are piloting blockchain-based land registries. Early adopters are working within current frameworks while regulations mature."
-    },
-    {
-      question: "How do Real-Estate AI agents enhance the buying process?",
-      answer: "Real-Estate AI agents can analyze thousands of data points including market trends, zoning changes, and satellite imagery to predict property values, identify investment opportunities, detect fraudulent activity, and provide 24/7 client support throughout the transaction process."
-    }
-  ];
-
-  return (
-    <PageLayout 
-      title="How Blockchain & AI in Real Estate Are Revolutionizing Property Deals | Real-Estate AI Agents & AI Integration" 
-      subtitle="Explore how blockchain and AI in real estate are transforming property transactions. From smart contracts to tokenization, Real-Estate AI agents, and AI implementation, learn how AI integration is shaping the future of real estate." 
-      currentPath={location.pathname}
-      pageType="article"
-      publishedDate="2024-12-23"
-      modifiedDate="2024-12-23"
-    >
+  const blogPostFaqs: FAQItem[] = [{
+    question: "How are blockchain and AI transforming real estate transactions?",
+    answer: "Blockchain and AI are revolutionizing real estate by enabling smart contracts, tokenized ownership, instant payments via cryptocurrency, and automated processes. AI agents can predict property values, detect fraud, and guide clients through transactions, while blockchain ensures secure, transparent, and faster deals."
+  }, {
+    question: "What are the benefits of using cryptocurrency for real estate payments?",
+    answer: "Cryptocurrency payments offer instant value transfer across borders, eliminate traditional banking delays and fees, enable 24/7 transactions, and can significantly reduce closing times from 30-45 days to under 10 days for luxury properties."
+  }, {
+    question: "How do smart contracts work in real estate deals?",
+    answer: "Smart contracts are automated agreements coded into blockchain software that execute when predetermined conditions are met. For example, when an inspection passes and mortgage is approved, funds are automatically released and title is transferred—eliminating manual processes and reducing fraud risk."
+  }, {
+    question: "What is real estate tokenization and how does it democratize property investment?",
+    answer: "Tokenization divides property ownership into digital tokens, allowing investors to buy fractional shares with smaller amounts of capital. This means someone with $5,000 can invest in luxury developments previously only accessible to millionaires, making real estate investment more inclusive and liquid."
+  }, {
+    question: "Are blockchain real estate transactions legally compliant?",
+    answer: "The regulatory landscape is evolving rapidly. The SEC treats tokenized properties as securities in the U.S., while countries like Sweden and Georgia are piloting blockchain-based land registries. Early adopters are working within current frameworks while regulations mature."
+  }, {
+    question: "How do Real-Estate AI agents enhance the buying process?",
+    answer: "Real-Estate AI agents can analyze thousands of data points including market trends, zoning changes, and satellite imagery to predict property values, identify investment opportunities, detect fraudulent activity, and provide 24/7 client support throughout the transaction process."
+  }];
+  return <PageLayout title="How Blockchain & AI in Real Estate Are Revolutionizing Property Deals | Real-Estate AI Agents & AI Integration" subtitle="Explore how blockchain and AI in real estate are transforming property transactions. From smart contracts to tokenization, Real-Estate AI agents, and AI implementation, learn how AI integration is shaping the future of real estate." currentPath={location.pathname} pageType="article" publishedDate="2024-12-23" modifiedDate="2024-12-23">
       <Helmet>
         <title>How Blockchain & AI in Real Estate Are Revolutionizing Property Deals | Real-Estate AI Agents & AI Integration</title>
         <meta name="description" content="Explore how blockchain and AI in real estate are transforming property transactions. From smart contracts to tokenization, Real-Estate AI agents, and AI implementation, learn how AI integration is shaping the future of real estate." />
@@ -66,29 +48,29 @@ const BlogPostBlockchainAIRealEstate: React.FC = () => {
         {/* JSON-LD Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "How Blockchain & AI in Real Estate Are Revolutionizing Property Deals",
-            "description": "Explore how blockchain and AI in real estate are transforming property transactions. From smart contracts to tokenization, Real-Estate AI agents, and AI implementation, learn how AI integration is shaping the future of real estate.",
-            "author": {
-              "@type": "Organization",
-              "name": "Digital Frontier"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Digital Frontier",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://digitalfrontier.app/digital-frontier-logo.png"
-              }
-            },
-            "datePublished": "2024-12-23",
-            "dateModified": "2024-12-23",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://digitalfrontier.app/blog/blockchain-ai-real-estate-revolution"
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "How Blockchain & AI in Real Estate Are Revolutionizing Property Deals",
+          "description": "Explore how blockchain and AI in real estate are transforming property transactions. From smart contracts to tokenization, Real-Estate AI agents, and AI implementation, learn how AI integration is shaping the future of real estate.",
+          "author": {
+            "@type": "Organization",
+            "name": "Digital Frontier"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Digital Frontier",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://digitalfrontier.app/digital-frontier-logo.png"
             }
-          })}
+          },
+          "datePublished": "2024-12-23",
+          "dateModified": "2024-12-23",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://digitalfrontier.app/blog/blockchain-ai-real-estate-revolution"
+          }
+        })}
         </script>
       </Helmet>
 
@@ -96,11 +78,7 @@ const BlogPostBlockchainAIRealEstate: React.FC = () => {
         {/* Hero Image */}
         <section>
           <AspectRatio ratio={16 / 9}>
-            <img 
-              src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" 
-              alt="Blockchain and AI revolutionizing real estate transactions" 
-              className="object-cover w-full h-full rounded-xl" 
-            />
+            
           </AspectRatio>
         </section>
 
@@ -208,11 +186,7 @@ const BlogPostBlockchainAIRealEstate: React.FC = () => {
         {/* Regulation Image */}
         <section>
           <AspectRatio ratio={16 / 9}>
-            <img 
-              src="/lovable-uploads/b581e124-1502-44f8-98db-dc8aaaa10b89.png" 
-              alt="Real estate regulation and compliance in blockchain transactions" 
-              className="object-cover w-full h-full rounded-xl" 
-            />
+            <img src="/lovable-uploads/b581e124-1502-44f8-98db-dc8aaaa10b89.png" alt="Real estate regulation and compliance in blockchain transactions" className="object-cover w-full h-full rounded-xl" />
           </AspectRatio>
         </section>
 
@@ -315,8 +289,6 @@ const BlogPostBlockchainAIRealEstate: React.FC = () => {
           </div>
         </div>
       </div>
-    </PageLayout>
-  );
+    </PageLayout>;
 };
-
 export default BlogPostBlockchainAIRealEstate;
