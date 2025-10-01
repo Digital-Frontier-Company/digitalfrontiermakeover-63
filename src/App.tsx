@@ -63,7 +63,6 @@ import GTMStrategyBlueprint from './pages/GTMStrategyBlueprint';
 
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import AuthorPage from './pages/AuthorPage';
 import SearchPage from './pages/SearchPage';
 import MemphisDigitalMarketing from './pages/MemphisDigitalMarketing';
 import ColliervilleSEO from './pages/ColliervilleSEO';
@@ -154,7 +153,7 @@ function App() {
             
             <Route path="/terms-of-service" element={<MainLayout><TermsOfService /></MainLayout>} />
             <Route path="/privacy-policy" element={<MainLayout><PrivacyPolicy /></MainLayout>} />
-            <Route path="/authors" element={<MainLayout><AuthorPage /></MainLayout>} />
+            <Route path="/authors" element={<MainLayout><Suspense fallback={<PageLoader />}><AboutUs /></Suspense></MainLayout>} />
             <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
             <Route path="/memphis-digital-marketing-agency" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
             <Route path="/memphis-digital-marketing" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />

@@ -141,6 +141,119 @@ const AboutUs = () => {
         </div>
       </div>
 
+      {/* Team Section */}
+      <div className="mt-16 pt-12 border-t border-slate-800">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-primary mb-4">Our Expert Team</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Meet the AI marketing specialists and digital strategists behind Digital Frontier Company's cutting-edge content and insights.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="text-center bg-slate-900/40 p-6 rounded-xl border border-slate-700/50">
+            <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/70 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+              DF
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-slate-100">Digital Frontier Team</h3>
+            <p className="text-muted-foreground mb-4">
+              Our team of AI marketing experts, data scientists, and digital strategists brings years of experience in cutting-edge marketing technologies.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">AI Marketing</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">AEO Strategy</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">Content Strategy</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">SEO</span>
+            </div>
+            <div className="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://x.com/DigitalFro14616" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://digitalfrontier.app" className="text-muted-foreground hover:text-primary transition-colors">
+                <Globe size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div className="text-center bg-slate-900/40 p-6 rounded-xl border border-slate-700/50">
+            <div className="w-24 h-24 bg-gradient-to-br from-secondary to-secondary/70 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+              AI
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-slate-100">AI Research Division</h3>
+            <p className="text-muted-foreground mb-4">
+              Specialists in Answer Engine Optimization, Generative Engine Optimization, and emerging AI marketing technologies.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">Answer Engine Optimization</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">GEO</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">AI Research</span>
+            </div>
+            <div className="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://digitalfrontier.app/docs" className="text-muted-foreground hover:text-primary transition-colors">
+                <Globe size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div className="text-center bg-slate-900/40 p-6 rounded-xl border border-slate-700/50">
+            <div className="w-24 h-24 bg-gradient-to-br from-accent to-accent/70 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+              CS
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-slate-100">Content Strategy Team</h3>
+            <p className="text-muted-foreground mb-4">
+              Expert content creators and strategists specializing in B2B tech company content engines and scalable content systems.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">Content Strategy</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">B2B Marketing</span>
+              <span className="inline-block bg-secondary/20 text-secondary-foreground px-3 py-1 rounded-full text-sm">Content Systems</span>
+            </div>
+            <div className="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://digitalfrontier.app/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                <Globe size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Expertise Section */}
+        <div className="bg-slate-900/40 p-8 rounded-xl border border-slate-700/50">
+          <h2 className="text-2xl font-semibold mb-4 text-slate-100">Our Expertise</h2>
+          <p className="text-muted-foreground mb-6">
+            Digital Frontier Company's team combines deep technical expertise with practical marketing experience. Our authors and consultants have:
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2 text-slate-100">Technical Credentials</h3>
+              <ul className="text-muted-foreground space-y-1">
+                <li>• Advanced AI and machine learning expertise</li>
+                <li>• SEO certifications and specializations</li>
+                <li>• Data science and analytics backgrounds</li>
+                <li>• Software engineering experience</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2 text-slate-100">Marketing Experience</h3>
+              <ul className="text-muted-foreground space-y-1">
+                <li>• 10+ years in digital marketing</li>
+                <li>• B2B SaaS marketing specialization</li>
+                <li>• Content strategy and creation</li>
+                <li>• Performance marketing and analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Social Links */}
       <div className="mt-12 pt-8 border-t border-slate-800">
         <h4 className="text-center text-lg font-bold mb-4 text-slate-100">Connect With Us</h4>
