@@ -477,7 +477,7 @@ const Index = () => {
           }} whileTap={{
             scale: 0.95
           }}>
-              <Link to="/ai-implementation-consulting" className="inline-flex items-center justify-center px-16 py-8 text-3xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl border-2 border-white" style={{
+              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center justify-center px-16 py-8 text-3xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl border-2 border-white" style={{
               background: 'linear-gradient(135deg, #4EE2EC 0%, #FFD700 100%)',
               boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
               filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
@@ -1199,7 +1199,7 @@ const Index = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/ai-implementation-consulting" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
+              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
                 <span>Get Your AI Crew Chief</span>
                 <span className="ml-2">→</span>
               </Link>
