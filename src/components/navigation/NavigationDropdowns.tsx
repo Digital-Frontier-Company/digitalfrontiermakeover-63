@@ -347,6 +347,16 @@ export const CompanyDropdown = () => (
           </Link>
         </NavigationMenuLink>
       </li>
+      <li>
+        <NavigationMenuLink asChild>
+          <Link to="/faq" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
+            <div className="text-sm font-medium leading-none text-slate-100">FAQ</div>
+            <p className="line-clamp-2 text-sm leading-snug text-slate-400">
+              Frequently asked questions
+            </p>
+          </Link>
+        </NavigationMenuLink>
+      </li>
     </ul>
   </NavigationMenuContent>
 );
