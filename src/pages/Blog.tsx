@@ -20,6 +20,18 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
+      title: "The Digital Marketing Revolution of 2025: AI, Privacy, and the New Era of Personalization",
+      excerpt: "Discover how AI-powered personalization, privacy-first strategies, and voice search optimization are reshaping digital marketing in 2025. Learn to dominate the new era while protecting your data.",
+      category: "Digital Marketing Strategy",
+      readTime: "18 min read",
+      date: "2025-01-18",
+      slug: "digital-marketing-revolution-2025-privacy",
+      image: "/lovable-uploads/78ed0175-99f6-4e35-bc1b-6193e2493053.png",
+      badge: "MARKETING",
+      featured: true
+    },
+    {
+      id: 2,
       title: "Why Marketing Agencies Are Essential for Business Growth in 2025",
       excerpt: "Businesses working with marketing agencies see an average return of $5 for every $1 invested in digital marketing. Discover why professional marketing support is crucial in today's competitive landscape.",
       category: "Marketing Strategy",
@@ -28,10 +40,10 @@ const Blog = () => {
       slug: "marketing-agencies-essential-business-growth-2025",
       image: "/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png",
       badge: "MARKETING",
-      featured: true
+      featured: false
     },
     {
-      id: 2,
+      id: 3,
       title: "The AI Truth Gap: What Happens When You Ask 5 Different AIs for Today's Narrative",
       excerpt: "Our 2025 investigation reveals a shocking truth gap in AI reliability. See how different AIs handle facts, citations, and misinformation, and learn how to protect yourself from dangerous fabrications.",
       category: "AI Investigation",
@@ -43,7 +55,7 @@ const Blog = () => {
       featured: false
     },
     {
-      id: 3,
+      id: 4,
       title: "The Digital Marketing Revolution of July 2025: AI Overviews, Algorithm Upheavals & the Future of Search",
       excerpt: "July 2025 recap: Google's huge core update, AI Overviews, social-media algorithm shifts, privacy rules & winning tactics for marketers.",
       category: "Digital Marketing Trends",
@@ -54,7 +66,7 @@ const Blog = () => {
       badge: "MARKETING"
     },
     {
-      id: 3,
+      id: 5,
       title: "Building Resilience in Businesses with AI-Driven Risk Management",
       excerpt: "Discover how AI-driven risk management strategies can transform reactive approaches into proactive defenses, helping businesses build resilience in an uncertain world.",
       category: "AI & Risk Management",
@@ -65,7 +77,7 @@ const Blog = () => {
       badge: "RISK MANAGEMENT"
     },
     {
-      id: 4,
+      id: 6,
       title: "The AI Revolution in Digital Marketing: 5 Game-Changing Trends Reshaping 2025",
       excerpt: "Discover the 5 game-changing AI trends revolutionizing digital marketing in 2025. From hyper-personalization to voice search optimization and quantum computing applications.",
       category: "AI Trends",
@@ -76,7 +88,7 @@ const Blog = () => {
       badge: "AI TRENDS"
     },
     {
-      id: 5,
+      id: 7,
       title: "Ultimate Guide to Tax Reduction & All-Weather Wealth-Building",
       excerpt: "Master advanced tax reduction tactics and build resilient wealth with proven strategies from financial experts.",
       category: "Financial Strategy",
@@ -87,7 +99,7 @@ const Blog = () => {
       badge: "FINANCE"
     },
     {
-      id: 6,
+      id: 8,
       title: "Answer Engine Optimization for Crypto Startups",
       excerpt: "Deep dive into AEO strategies specifically designed for cryptocurrency and blockchain startups to dominate AI-powered search results.",
       category: "AEO Strategy",
@@ -98,7 +110,7 @@ const Blog = () => {
       badge: "AEO"
     },
     {
-      id: 7,
+      id: 9,
       title: "Mastering Digital Marketing in 2024",
       excerpt: "Discover the latest strategies and trends that are shaping the digital marketing landscape this year.",
       category: "Digital Marketing",

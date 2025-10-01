@@ -50,6 +50,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TaxReductionGuide from "./pages/TaxReductionGuide";
 import InfluencerMarketing2025 from "./pages/InfluencerMarketing2025";
 import BlogPostDigitalMarketingRevolution2025 from './pages/BlogPostDigitalMarketingRevolution2025';
+import BlogPostDigitalMarketingRevolution2025Privacy from './pages/BlogPostDigitalMarketingRevolution2025Privacy';
 import BlogPostAEOCrypto from './pages/BlogPostAEOCrypto';
 import BlogPostAIRevolution2025 from './pages/BlogPostAIRevolution2025';
 import BlogPostAITruthGap from './pages/BlogPostAITruthGap';
@@ -141,6 +142,7 @@ function App() {
             <Route path="/insights" element={<MainLayout><InsightsHub /></MainLayout>} />
             <Route path="/browse-playbooks" element={<MainLayout><div className="pt-16"><BrowsePlaybooks /></div></MainLayout>} />
             <Route path="/blog/digital-marketing-revolution-july-2025" element={<MainLayout><BlogPostDigitalMarketingRevolution2025 /></MainLayout>} />
+            <Route path="/blog/digital-marketing-revolution-2025-privacy" element={<MainLayout><BlogPostDigitalMarketingRevolution2025Privacy /></MainLayout>} />
             <Route path="/blog/ai-revolution-digital-marketing-2025" element={<MainLayout><BlogPostAIRevolution2025 /></MainLayout>} />
             <Route path="/blog/ai-truth-gap" element={<MainLayout><BlogPostAITruthGap /></MainLayout>} />
             <Route path="/blog/marketing-agencies-essential-business-growth-2025" element={<MainLayout><BlogPostMarketingAgencies2025 /></MainLayout>} />
