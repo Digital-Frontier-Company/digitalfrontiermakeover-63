@@ -309,7 +309,7 @@ export const CompanyDropdown = () => (
       </li>
       <li>
         <NavigationMenuLink asChild>
-          <Link to="/services/digital-frontier-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
+          <Link to="/digital-frontier-services" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800 focus:bg-slate-800 text-slate-100 hover:text-white">
             <div className="text-sm font-medium leading-none text-slate-100">Services</div>
             <p className="line-clamp-2 text-sm leading-snug text-slate-400">
               Our full service offerings
