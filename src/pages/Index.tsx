@@ -6,7 +6,7 @@ import { LazyImage } from "@/components/LazyImage";
 import HomePageHTML from "@/components/HomePageHTML";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
-import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star, Sparkles, Brain, Mic, Search, BookOpen, Code, ArrowRight } from 'lucide-react';
+import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star, Sparkles, Brain, Mic, Search, BookOpen, Code, ArrowRight, AlertTriangle } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
@@ -1060,7 +1060,7 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-          {/* AI Revolution Section */}
+          {/* AI Revolution - Elephant in the Room Section */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -1071,102 +1071,119 @@ const Index = () => {
             <div className="flex items-center gap-4 mb-8">
               <Sparkles className="w-10 h-10 text-signal-lime" />
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-signal-lime via-electric-azure to-cyan-400 bg-clip-text text-transparent">
-                The AI Revolution: Beyond ChatGPT and Into Marketing Intelligence
+                The Elephant in the Room: Most "AI Marketing" Is Just Expensive Theater
               </h2>
             </div>
             
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-electric-azure/30 rounded-2xl p-8 mb-8">
-              <p className="text-slate-200 text-lg leading-relaxed mb-6">
-                The integration of AI in digital marketing has moved far beyond simple chatbots and content generation. According to recent data from{' '}
-                <a 
-                  href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-electric-azure hover:text-signal-lime transition-colors underline"
-                >
-                  Search Engine Journal
-                </a>
-                , generative AI isn't killing SEO—it's creating entirely new opportunities for marketers who understand how to leverage it effectively.
-              </p>
+            <div className="bg-gradient-to-br from-red-900/30 to-slate-900/60 backdrop-blur-sm border border-red-500/40 rounded-2xl p-8 mb-8">
+              <div className="bg-slate-900/80 border-l-4 border-signal-lime rounded-lg p-6 mb-8">
+                <p className="text-slate-100 text-xl font-semibold leading-relaxed mb-4">
+                  Let's talk about what nobody in the agency world wants to admit:
+                </p>
+                <p className="text-slate-200 text-lg leading-relaxed">
+                  95% of marketing agencies claiming to be "AI-powered" are just slapping ChatGPT output onto the same tired strategies from 2019. They're charging premium prices for prompting a chatbot and calling it "innovation." Meanwhile, according to{' '}
+                  <a 
+                    href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-electric-azure hover:text-signal-lime transition-colors underline font-semibold"
+                  >
+                    Search Engine Journal
+                  </a>
+                  , while everyone's distracted by AI content mills, the real opportunity—generative AI's impact on search behavior—is being completely ignored.
+                </p>
+              </div>
 
-              <h3 className="text-2xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
-                <TrendingUp className="w-7 h-7" />
-                Key AI Marketing Developments in 2025:
+              <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center gap-3">
+                <Shield className="w-7 h-7" />
+                The Harsh Truths About AI in Marketing (That Nobody Tells You):
               </h3>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div 
-                  className="bg-slate-900/50 border border-cyan-800/30 rounded-xl p-6 hover:border-cyan-600/50 transition-all duration-300"
+                  className="bg-slate-900/70 border border-red-800/50 rounded-xl p-6 hover:border-red-600/70 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="flex items-start gap-4">
-                    <Brain className="w-6 h-6 text-signal-lime flex-shrink-0 mt-1" />
+                    <AlertTriangle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-lg font-semibold text-soft-white mb-2">AI-Assisted Content Creation</h4>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">"AI Content" Isn't Strategy</h4>
                       <p className="text-slate-300 text-sm">
-                        Tools have evolved from basic text generation to sophisticated content optimization engines that understand context, brand voice, and SEO requirements
+                        Tools have evolved, but most agencies are still just pumping out generic blog posts. Real AI marketing means predictive analytics, behavioral modeling, and automated optimization—not blog spam.
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  className="bg-slate-900/50 border border-purple-800/30 rounded-xl p-6 hover:border-purple-600/50 transition-all duration-300"
+                  className="bg-slate-900/70 border border-orange-800/50 rounded-xl p-6 hover:border-orange-600/70 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="flex items-start gap-4">
-                    <BarChart3 className="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" />
+                    <TrendingDown className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-lg font-semibold text-soft-white mb-2">Predictive Analytics</h4>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">Traditional SEO Is Dying (Fast)</h4>
                       <p className="text-slate-300 text-sm">
-                        AI now accurately predicts customer behavior patterns with 85% accuracy, allowing for proactive campaign adjustments
+                        With 20%+ of searches now answered by AI Overviews, ranking #1 means nothing if AI never shows your link. But most agencies are still optimizing for 2015 Google.
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  className="bg-slate-900/50 border border-blue-800/30 rounded-xl p-6 hover:border-blue-600/50 transition-all duration-300"
+                  className="bg-slate-900/70 border border-yellow-800/50 rounded-xl p-6 hover:border-yellow-600/70 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="flex items-start gap-4">
-                    <Users className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
+                    <DollarSign className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-lg font-semibold text-soft-white mb-2">Automated Personalization</h4>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">You're Overpaying for Automation</h4>
                       <p className="text-slate-300 text-sm">
-                        Real-time content adaptation based on user behavior, increasing engagement rates by up to 40%
+                        That "personalized email campaign"? It's a template with [FIRST_NAME] tags. Real AI personalization adapts messaging in real-time based on behavior patterns—40% better engagement, but 2% of agencies actually do it.
                       </p>
                     </div>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  className="bg-slate-900/50 border border-green-800/30 rounded-xl p-6 hover:border-green-600/50 transition-all duration-300"
+                  className="bg-slate-900/70 border border-purple-800/50 rounded-xl p-6 hover:border-purple-600/70 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="flex items-start gap-4">
-                    <Mic className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                    <Brain className="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-lg font-semibold text-soft-white mb-2">Voice Search Optimization</h4>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">The "AI Skills Gap" Is an Excuse</h4>
                       <p className="text-slate-300 text-sm">
-                        With 50% of searches now voice-activated, AI helps optimize content for conversational queries
+                        Agencies blame "AI complexity" for their failures. The truth? They're afraid to admit they haven't evolved past Facebook ads and keyword research. Predictive analytics with 85% accuracy exists—they just don't know how to use it.
                       </p>
                     </div>
                   </div>
                 </motion.div>
               </div>
 
-              <div className="mt-8 bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/40 rounded-xl p-6">
-                <p className="text-slate-200 leading-relaxed">
-                  At The Digital Frontier AI, we've witnessed firsthand how implementing AI-driven strategies has helped our clients achieve that coveted 15-30% ROAS boost. Our 2025 Digital Marketing Playbook, available free at{' '}
-                  <Link 
-                    to="/" 
-                    className="text-signal-lime hover:text-electric-azure transition-colors font-semibold underline"
-                  >
-                    thedigitalfrontier.ai
-                  </Link>
-                  , details these strategies in depth.
+              <div className="mt-8 bg-gradient-to-r from-signal-lime/30 to-electric-azure/30 border-2 border-signal-lime/60 rounded-xl p-8">
+                <h4 className="text-2xl font-bold text-soft-white mb-4">Here's What Actually Works:</h4>
+                <p className="text-slate-200 leading-relaxed mb-6">
+                  At The Digital Frontier, we're not interested in AI theater. We build systems that combine Answer Engine Optimization (capturing AI search results), predictive behavioral modeling, and real-time campaign optimization. The result? 15-30% ROAS increases that are actually measurable—not vanity metrics on a dashboard.
                 </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    to="/answer-engine-optimization" 
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-signal-lime text-deep-navy font-semibold rounded-lg hover:bg-signal-lime/90 transition-all duration-300 hover:shadow-lg hover:shadow-signal-lime/50"
+                  >
+                    Learn Real AEO Strategy
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <a 
+                    href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 text-electric-azure border border-electric-azure/50 font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300"
+                  >
+                    Read the Research
+                    <BookOpen className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
