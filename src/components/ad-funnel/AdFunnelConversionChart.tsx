@@ -62,8 +62,8 @@ const AdFunnelConversionChart = () => {
   };
 
   return (
-    <Card className="border-slate-800 bg-slate-900/80 animate-fade-in mb-12">
-      <CardHeader className="pb-2">
+    <Card className="border-slate-800 bg-slate-900/80 animate-fade-in mb-16 relative">
+      <CardHeader className="pb-4">
         <CardTitle className="flex items-center gap-2 text-2xl">
           <span className="bg-purple-500/20 p-2 rounded-lg">
             <Filter className="w-6 h-6 text-purple-400" />

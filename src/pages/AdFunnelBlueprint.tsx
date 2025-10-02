@@ -65,7 +65,7 @@ const AdFunnelBlueprint = () => {
           <link rel="canonical" href="https://digitalfrontier.app/ad-funnel-blueprint" />
         </Helmet>
         
-        <div className="space-y-12 relative z-10">
+        <div className="space-y-16 relative z-10">
           <AdFunnelHeroSection />
           <AdFunnelPerformanceChart />
           <AdFunnelConversionChart />
