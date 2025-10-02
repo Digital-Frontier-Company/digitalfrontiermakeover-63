@@ -165,7 +165,7 @@ export const SEOTemplateManager: React.FC<SEOTemplateConfig> = ({
       "provider": {
         "@type": "Organization",
         "name": "Digital Frontier AI",
-        "url": "https://digitalfrontier.ai",
+        "url": "https://digitalfrontier.app",
         ...organizationInfo
       }
     };

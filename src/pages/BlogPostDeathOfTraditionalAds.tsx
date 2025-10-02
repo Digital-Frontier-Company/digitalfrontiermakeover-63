@@ -11,20 +11,20 @@ const BlogPostDeathOfTraditionalAds = () => {
         <title>The Death of Traditional Ads: Why Most Businesses Are Running Off a Cliff - Digital Frontier</title>
         <meta name="description" content="Discover why 98% of businesses are wasting ad spend on traditional marketing and how AI funnels are becoming the new kingmakers of internet marketing." />
         <meta name="keywords" content="traditional advertising, AI funnels, digital marketing, ad spend, conversion optimization, modern marketing, business growth" />
-        <link rel="canonical" href="https://digitalfrontier.ai/blog/death-of-traditional-ads" />
+        <link rel="canonical" href="https://digitalfrontier.app/blog/death-of-traditional-ads" />
         
         {/* Open Graph tags */}
         <meta property="og:title" content="The Death of Traditional Ads: Why Most Businesses Are Running Off a Cliff" />
         <meta property="og:description" content="Discover why 98% of businesses are wasting ad spend on traditional marketing and how AI funnels are becoming the new kingmakers of internet marketing." />
-        <meta property="og:image" content="https://digitalfrontier.ai/lovable-uploads/death-of-traditional-ads-hero.png" />
-        <meta property="og:url" content="https://digitalfrontier.ai/blog/death-of-traditional-ads" />
+        <meta property="og:image" content="https://digitalfrontier.app/lovable-uploads/death-of-traditional-ads-hero.png" />
+        <meta property="og:url" content="https://digitalfrontier.app/blog/death-of-traditional-ads" />
         <meta property="og:type" content="article" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Death of Traditional Ads: Why Most Businesses Are Running Off a Cliff" />
         <meta name="twitter:description" content="Discover why 98% of businesses are wasting ad spend on traditional marketing and how AI funnels are becoming the new kingmakers of internet marketing." />
-        <meta name="twitter:image" content="https://digitalfrontier.ai/lovable-uploads/death-of-traditional-ads-hero.png" />
+        <meta name="twitter:image" content="https://digitalfrontier.app/lovable-uploads/death-of-traditional-ads-hero.png" />
         
         {/* JSON-LD structured data */}
         <script type="application/ld+json">
@@ -33,7 +33,7 @@ const BlogPostDeathOfTraditionalAds = () => {
             "@type": "Article",
             "headline": "The Death of Traditional Ads: Why Most Businesses Are Running Off a Cliff",
             "description": "Discover why 98% of businesses are wasting ad spend on traditional marketing and how AI funnels are becoming the new kingmakers of internet marketing.",
-            "image": "https://digitalfrontier.ai/lovable-uploads/death-of-traditional-ads-hero.png",
+            "image": "https://digitalfrontier.app/lovable-uploads/death-of-traditional-ads-hero.png",
             "author": {
               "@type": "Organization",
               "name": "Digital Frontier"
@@ -43,14 +43,14 @@ const BlogPostDeathOfTraditionalAds = () => {
               "name": "Digital Frontier",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://digitalfrontier.ai/assets/digital-frontier-company-logo.png"
+                "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png"
               }
             },
             "datePublished": "2024-12-20",
             "dateModified": "2024-12-20",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://digitalfrontier.ai/blog/death-of-traditional-ads"
+              "@id": "https://digitalfrontier.app/blog/death-of-traditional-ads"
             }
           })}
         </script>
