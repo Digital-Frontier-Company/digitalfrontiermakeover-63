@@ -66,6 +66,11 @@ export const ROUTE_CONFIGS: RouteConfig[] = [
     path: '/search',
     title: 'Search Premium Content | Find Digital Frontier Exclusive Resources',
     description: 'Search through Digital Frontier\'s premium content, boutique resources, and sophisticated marketing services for luxury brands.'
+  },
+  {
+    path: '/ia-dashboard',
+    title: 'Information Architecture Dashboard | Advanced SEO Tools & IA Templates',
+    description: 'Comprehensive IA dashboard with user journey mapping, visual sitemaps, content organization, accessibility audits, and intelligent content loading for superior SEO.'
   }
 ];
 

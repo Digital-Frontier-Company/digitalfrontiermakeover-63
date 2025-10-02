@@ -45,6 +45,7 @@ import InsightsHub from '@/pages/InsightsHub';
 import SEOvsAEOvsGEO from '@/pages/SEOvsAEOvsGEO';
 import BrowsePlaybooks from '@/pages/BrowsePlaybooks';
 import DigitalFrontierServices from '@/pages/DigitalFrontierServices';
+import IADashboard from '@/pages/IADashboard';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import TaxReductionGuide from "./pages/TaxReductionGuide";
@@ -154,6 +155,7 @@ function App() {
             <Route path="/terms-of-service" element={<MainLayout><TermsOfService /></MainLayout>} />
             <Route path="/privacy-policy" element={<MainLayout><PrivacyPolicy /></MainLayout>} />
             <Route path="/authors" element={<MainLayout><Suspense fallback={<PageLoader />}><AboutUs /></Suspense></MainLayout>} />
+            <Route path="/ia-dashboard" element={<MainLayout><IADashboard /></MainLayout>} />
             <Route path="/search" element={<MainLayout><SearchPage /></MainLayout>} />
             <Route path="/memphis-digital-marketing-agency" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />
             <Route path="/memphis-digital-marketing" element={<MainLayout><MemphisDigitalMarketing /></MainLayout>} />

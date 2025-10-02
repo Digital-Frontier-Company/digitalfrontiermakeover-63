@@ -280,7 +280,7 @@ const Index = () => {
       background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)'
     }} data-lcp-element="true">
         {/* LCP Hero Background Image - Optimized loading */}
-        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" fetchPriority="high" loading="eager" decoding="async" style={{
+        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="AI Marketing Memphis - Digital Frontier Company transforming digital marketing with artificial intelligence and data-driven strategies" className="absolute inset-0 w-full h-full object-cover opacity-30" fetchPriority="high" loading="eager" decoding="async" style={{
         zIndex: 1
       }} aria-hidden="true" />
 
