@@ -772,7 +772,7 @@ const Index = () => {
           }}>
               {/* First set of logos */}
               <a href="https://thedigitalfrontier.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" />
+                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" width="192" height="128" />
               </a>
               
               <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
@@ -780,7 +780,7 @@ const Index = () => {
               </a>
               
               <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" />
+                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" width="192" height="128" />
               </a>
               
               <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">

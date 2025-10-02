@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running SEO validation checks..."
+
+# Run SEO audit
+echo "Running SEO audit..."
+node scripts/seo-audit.js
+
+# Check exit code
+if [ $? -ne 0 ]; then
+  echo "❌ SEO audit found issues. Please review and fix before committing."
+  echo "Run 'npm run seo:audit' to see detailed reports."
+  exit 1
+fi
+
+echo "✅ SEO validation passed!"
+exit 0
