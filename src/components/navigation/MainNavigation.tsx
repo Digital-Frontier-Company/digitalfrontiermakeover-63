@@ -55,7 +55,7 @@ const MainNavigation = () => {
                 <a href="https://www.instagram.com/digitalfrontierco" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="https://www.youtube.com/@digitalfrontiercompany" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
+                <a href="https://www.youtube.com/@Digital_FrontierCO" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Youtube className="h-5 w-5" />
                 </a>
                 <a href="https://www.tiktok.com/@digitalfrontierco" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">

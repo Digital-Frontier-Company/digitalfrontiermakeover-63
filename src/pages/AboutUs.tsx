@@ -270,7 +270,7 @@ const AboutUs = () => {
           <a href="https://twitter.com/digitalfrontierco" aria-label="Digital Frontier on Twitter" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Twitter size={24} />
           </a>
-          <a href="https://youtube.com/@digitalfrontiercompany" aria-label="Digital Frontier on YouTube" className="text-slate-300 hover:text-blue-400 transition-colors">
+          <a href="https://www.youtube.com/@Digital_FrontierCO" aria-label="Digital Frontier on YouTube" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Youtube size={24} />
           </a>
         </div>
