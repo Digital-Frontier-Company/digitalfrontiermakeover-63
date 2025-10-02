@@ -25,27 +25,28 @@ const AdFunnelPerformanceChart = () => {
         </CardTitle>
         <p className="text-slate-300 text-lg">Standard vs AI-Powered Ad Funnel Performance</p>
       </CardHeader>
-      <CardContent>
-        <div className="h-[400px] w-full">
-          <ChartContainer config={{
-            standard: { color: "#9F9EA1" },
-            aiOptimized: { color: "#8B5CF6" },
-          }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={performanceData}
-                margin={{ top: 30, right: 30, left: 20, bottom: 30 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                <XAxis dataKey="month" stroke="#9F9EA1" />
-                <YAxis stroke="#9F9EA1" />
-                <Tooltip content={<ChartTooltipContent />} />
-                <Legend wrapperStyle={{ paddingTop: "20px" }} />
-                <Bar dataKey="standard" fill="#9F9EA1" name="Standard Funnel" />
-                <Bar dataKey="aiOptimized" fill="#8B5CF6" name="AI-Powered Funnel" />
-              </BarChart>
-            </ResponsiveContainer>
-          </ChartContainer>
+      <CardContent className="pt-6">
+        <div className="h-[450px] w-full mb-8">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={performanceData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+              <XAxis dataKey="month" stroke="#9F9EA1" />
+              <YAxis stroke="#9F9EA1" />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: '#1e293b', 
+                  border: '1px solid #334155',
+                  borderRadius: '8px'
+                }} 
+              />
+              <Legend wrapperStyle={{ paddingTop: "20px" }} />
+              <Bar dataKey="standard" fill="#9F9EA1" name="Standard Funnel" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="aiOptimized" fill="#8B5CF6" name="AI-Powered Funnel" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
         
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
