@@ -85,6 +85,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/generative-engine-optimization" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  Generative Engine Optimization
+                </Link>
+              </li>
+              <li>
                 <Link to="/ai-and-digital-marketing" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
                   AI Marketing
                 </Link>
@@ -92,6 +97,11 @@ const Footer = () => {
               <li>
                 <Link to="/digital-marketing" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
                   Digital Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/web-creative" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  Web Design
                 </Link>
               </li>
               <li>
@@ -112,6 +122,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/team-expertise" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  Our Team
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
                   Contact
                 </Link>
@@ -122,8 +137,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/team-expertise" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
-                  Our Team
+                <Link to="/gtm-strategy-blueprint" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  GTM Strategy
+                </Link>
+              </li>
+              <li>
+                <Link to="/ai-prompt-templates" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  AI Prompts
+                </Link>
+              </li>
+              <li>
+                <Link to="/ia-dashboard" className="text-slate-400 hover:text-white text-sm transition-colors duration-200">
+                  IA Dashboard
                 </Link>
               </li>
               <li>

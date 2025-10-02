@@ -31,12 +31,22 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   currentPath = '/'
 }) => {
   const routeConfig = getRouteConfig(currentPath);
-  const siteUrl = 'https://digitalfrontier.ai';
+  const siteUrl = 'https://digitalfrontier.app';
   const canonicalUrl = customCanonical || `${siteUrl}${currentPath}`;
   
   // Use route config as fallback
-  const finalTitle = title || routeConfig?.title || 'Digital Frontier AI - Marketing Agency';
-  const finalDescription = description || routeConfig?.description || 'AI-powered digital marketing solutions';
+  const rawTitle = title || routeConfig?.title || 'Digital Frontier AI - Marketing Agency';
+  const rawDescription = description || routeConfig?.description || 'AI-powered digital marketing solutions';
+  
+  // Validate and truncate title (30-60 chars optimal)
+  const finalTitle = rawTitle.length > 60 
+    ? rawTitle.substring(0, 57) + '...' 
+    : rawTitle;
+  
+  // Validate and truncate description (120-155 chars optimal)
+  const finalDescription = rawDescription.length > 155 
+    ? rawDescription.substring(0, 152) + '...' 
+    : rawDescription;
   
   // Default social image
   const socialImage = imageUrl || `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`;
