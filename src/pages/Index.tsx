@@ -6,7 +6,7 @@ import { LazyImage } from "@/components/LazyImage";
 import HomePageHTML from "@/components/HomePageHTML";
 import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
 import Typed from 'typed.js';
-import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star } from 'lucide-react';
+import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star, Sparkles, Brain, Mic, Search, BookOpen, Code, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
@@ -1031,6 +1031,273 @@ const Index = () => {
             top: '30%'
           }} />
           </div>
+        </div>
+      </section>
+
+      {/* AI REVOLUTION & GOOGLE ALGORITHM EVOLUTION SECTION */}
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Animated background particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-electric-azure/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          {/* AI Revolution Section */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <Sparkles className="w-10 h-10 text-signal-lime" />
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-signal-lime via-electric-azure to-cyan-400 bg-clip-text text-transparent">
+                The AI Revolution: Beyond ChatGPT and Into Marketing Intelligence
+              </h2>
+            </div>
+            
+            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-electric-azure/30 rounded-2xl p-8 mb-8">
+              <p className="text-slate-200 text-lg leading-relaxed mb-6">
+                The integration of AI in digital marketing has moved far beyond simple chatbots and content generation. According to recent data from{' '}
+                <a 
+                  href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-electric-azure hover:text-signal-lime transition-colors underline"
+                >
+                  Search Engine Journal
+                </a>
+                , generative AI isn't killing SEO—it's creating entirely new opportunities for marketers who understand how to leverage it effectively.
+              </p>
+
+              <h3 className="text-2xl font-bold text-cyan-400 mb-6 flex items-center gap-3">
+                <TrendingUp className="w-7 h-7" />
+                Key AI Marketing Developments in 2025:
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div 
+                  className="bg-slate-900/50 border border-cyan-800/30 rounded-xl p-6 hover:border-cyan-600/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <Brain className="w-6 h-6 text-signal-lime flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">AI-Assisted Content Creation</h4>
+                      <p className="text-slate-300 text-sm">
+                        Tools have evolved from basic text generation to sophisticated content optimization engines that understand context, brand voice, and SEO requirements
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/50 border border-purple-800/30 rounded-xl p-6 hover:border-purple-600/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <BarChart3 className="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">Predictive Analytics</h4>
+                      <p className="text-slate-300 text-sm">
+                        AI now accurately predicts customer behavior patterns with 85% accuracy, allowing for proactive campaign adjustments
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/50 border border-blue-800/30 rounded-xl p-6 hover:border-blue-600/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <Users className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">Automated Personalization</h4>
+                      <p className="text-slate-300 text-sm">
+                        Real-time content adaptation based on user behavior, increasing engagement rates by up to 40%
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/50 border border-green-800/30 rounded-xl p-6 hover:border-green-600/50 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <Mic className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">Voice Search Optimization</h4>
+                      <p className="text-slate-300 text-sm">
+                        With 50% of searches now voice-activated, AI helps optimize content for conversational queries
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="mt-8 bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/40 rounded-xl p-6">
+                <p className="text-slate-200 leading-relaxed">
+                  At The Digital Frontier AI, we've witnessed firsthand how implementing AI-driven strategies has helped our clients achieve that coveted 15-30% ROAS boost. Our 2025 Digital Marketing Playbook, available free at{' '}
+                  <Link 
+                    to="/" 
+                    className="text-signal-lime hover:text-electric-azure transition-colors font-semibold underline"
+                  >
+                    thedigitalfrontier.ai
+                  </Link>
+                  , details these strategies in depth.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Google Algorithm Evolution Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <Search className="w-10 h-10 text-electric-azure" />
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-electric-azure via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Google's Algorithm Evolution: The AI Overviews Impact
+              </h2>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-purple-800/30 rounded-2xl p-8">
+              <p className="text-slate-200 text-lg leading-relaxed mb-6">
+                The June 2025 Google Core Update marked a seismic shift in search engine dynamics. According to{' '}
+                <a 
+                  href="https://searchengineland.com/data-providers-google-june-2025-core-update-was-a-big-update-459226" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-electric-azure hover:text-signal-lime transition-colors underline"
+                >
+                  Search Engine Land
+                </a>
+                , AI Overviews now appear in approximately 20% of search queries, fundamentally changing how users interact with search results.
+              </p>
+
+              <h3 className="text-2xl font-bold text-purple-400 mb-6 flex items-center gap-3">
+                <Target className="w-7 h-7" />
+                What This Means for Your SEO Strategy:
+              </h3>
+
+              <div className="space-y-6">
+                {/* Content Depth */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-blue-800/30 rounded-xl p-6 hover:border-blue-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-electric-azure mb-4 flex items-center gap-3">
+                    <BookOpen className="w-6 h-6" />
+                    1. Content Depth Matters More Than Ever
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Google's AI prioritizes comprehensive, authoritative content</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Long-form content (2,000+ words) sees 3x more featured snippet opportunities</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Topic clusters outperform individual keyword targeting</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* E-E-A-T */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-purple-800/30 rounded-xl p-6 hover:border-purple-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-3">
+                    <Shield className="w-6 h-6" />
+                    2. E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>First-hand experience signals are now crucial ranking factors</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>Author credentials and bio sections directly impact rankings</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>Case studies and real-world examples boost content authority</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* Structured Data */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-cyan-800/30 rounded-xl p-6 hover:border-cyan-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-cyan-400 mb-4 flex items-center gap-3">
+                    <Code className="w-6 h-6" />
+                    3. Structured Data Implementation
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>Schema markup is no longer optional—it's essential</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>FAQ and How-To schemas see 70% higher click-through rates</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>Product review schemas influence AI Overview selections</span>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+
+              <motion.div 
+                className="mt-8 bg-gradient-to-r from-electric-azure/20 to-purple-600/20 border border-electric-azure/40 rounded-xl p-6 text-center"
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-slate-200 mb-4 text-lg">
+                  Ready to adapt your strategy for the AI-powered search era?
+                </p>
+                <Link 
+                  to="/answer-engine-optimization" 
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-electric-azure to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-electric-azure/50 transition-all duration-300"
+                >
+                  Explore Answer Engine Optimization
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
