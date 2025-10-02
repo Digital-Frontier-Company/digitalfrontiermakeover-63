@@ -56,13 +56,6 @@ const AnswerEngineOptimization = () => {
       publishedDate="2024-11-15"
       modifiedDate="2024-12-18"
     >
-      <div className="w-full mb-8">
-        <img 
-          src="/lovable-uploads/a8bde719-1330-4c5c-b074-820b649fea92.png"
-          alt="Digital Frontier Company - Voice Search and AI Technology"
-          className="w-full h-auto object-cover rounded-lg"
-        />
-      </div>
       <AEOHeroSection />
       <AEOKeyTakeaways />
       <AEOFrameworkSection />
