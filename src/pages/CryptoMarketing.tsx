@@ -224,13 +224,17 @@ const CryptoMarketing = () => {
             {/* Hybrid Crypto-Creatives */}
             <Card className="interactive-card bg-gradient-to-br from-purple-900/20 to-purple-800/10 border-purple-500/30 hover:border-purple-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img src="/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png" alt="Digital Art Creator with Futuristic Elements" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/ai-crypto-marketing.png" alt="Ai and Crypto Marketing help" className="w-full h-full object-contain" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-400">
                     Hybrid Crypto-Creatives
                   </Badge>
                 </div>
+              </div>
+              
+              <div className="px-6 pt-4 pb-2">
+                <p className="text-sm text-purple-300 font-semibold">Ai and Cryptocurrency Marketing Experts</p>
               </div>
               
               <CardContent className="p-6">
