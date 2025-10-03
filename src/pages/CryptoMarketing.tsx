@@ -186,7 +186,7 @@ const CryptoMarketing = () => {
               </div>
               
               <div className="px-6 pt-4 pb-2">
-                <p className="text-sm text-blue-300 font-semibold">How to market my crypto project</p>
+                <p className="text-sm text-blue-300 font-semibold italic">How to market my crypto project</p>
               </div>
               
               <CardContent className="p-6">
@@ -234,7 +234,7 @@ const CryptoMarketing = () => {
               </div>
               
               <div className="px-6 pt-4 pb-2">
-                <p className="text-sm text-purple-300 font-semibold">Ai and Cryptocurrency Marketing Experts</p>
+                <p className="text-sm text-purple-300 font-semibold italic">Ai and Cryptocurrency Marketing Experts</p>
               </div>
               
               <CardContent className="p-6">
