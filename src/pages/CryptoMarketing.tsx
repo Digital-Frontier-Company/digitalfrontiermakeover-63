@@ -497,37 +497,41 @@ const CryptoMarketing = () => {
 
           {/* Team & Executive Photos */}
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
-              <div className="h-64">
-                <img src="/lovable-uploads/marketing-expert-with-bg.png" alt="Digital Frontier Marketing Expert" className="w-full-bg" />
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden relative h-96">
+              <div className="absolute inset-0">
+                <img src="/lovable-uploads/marketing-expert-with-bg.png" alt="Digital Frontier Marketing Expert" className="w-full h-full object-cover" />
               </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-white mb-2">Executive Leadership</h3>
-                <p className="text-slate-300 text-sm">Proven expertise in crypto marketing and growth strategies</p>
-              </CardContent>
+              <div className="absolute inset-0 flex items-end">
+                <div className="w-full bg-slate-900/70 backdrop-blur-sm p-6 text-center">
+                  <h3 className="font-bold text-white mb-2">Executive Leadership</h3>
+                  <p className="text-slate-300 text-sm">Proven expertise in crypto marketing and growth strategies</p>
+                </div>
+              </div>
             </Card>
 
-            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
-              <div className="h-64">
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden relative h-96">
+              <div className="absolute inset-0">
                 <img src="/lovable-uploads/crypto-team-collaboration.png" alt="Crypto expert marketing teams" className="w-full h-full object-cover" />
               </div>
-              <div className="px-6 pt-4 pb-2">
-                <p className="text-sm text-slate-300 font-semibold italic">this is how crypto experts market projects</p>
+              <div className="absolute inset-0 flex items-end">
+                <div className="w-full bg-slate-900/70 backdrop-blur-sm p-6 text-center">
+                  <p className="text-sm text-slate-300 font-semibold italic mb-2">this is how crypto experts market projects</p>
+                  <h3 className="font-bold text-white mb-2">Collaborative Approach</h3>
+                  <p className="text-slate-300 text-sm">Working closely with clients to ensure sustainable growth</p>
+                </div>
               </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-white mb-2">Collaborative Approach</h3>
-                <p className="text-slate-300 text-sm">Working closely with clients to ensure sustainable growth</p>
-              </CardContent>
             </Card>
 
-            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
-              <div className="h-64">
+            <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden relative h-96">
+              <div className="absolute inset-0">
                 <img src="/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png" alt="Performance Analytics Dashboard" className="w-full h-full object-cover" />
               </div>
-              <CardContent className="p-6 text-center">
-                <h3 className="font-bold text-white mb-2">Proven ROI Results</h3>
-                <p className="text-slate-300 text-sm">Real performance data showing measurable growth and success</p>
-              </CardContent>
+              <div className="absolute inset-0 flex items-end">
+                <div className="w-full bg-slate-900/70 backdrop-blur-sm p-6 text-center">
+                  <h3 className="font-bold text-white mb-2">Proven ROI Results</h3>
+                  <p className="text-slate-300 text-sm">Real performance data showing measurable growth and success</p>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
