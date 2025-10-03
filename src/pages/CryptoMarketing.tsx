@@ -543,7 +543,7 @@ const CryptoMarketing = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-6xl mb-6 text-center font-extrabold md:text-cyan-400">
                 Why AI-First Marketing Works
               </h2>
               <p className="text-xl text-slate-400 mb-6">
@@ -571,14 +571,9 @@ const CryptoMarketing = () => {
               </div>
             </div>
             <div className="flex flex-col gap-8">
-              <Carousel 
-                className="w-full max-w-lg mx-auto"
-                plugins={[
-                  Autoplay({
-                    delay: 2500,
-                  }),
-                ]}
-              >
+              <Carousel className="w-full max-w-lg mx-auto" plugins={[Autoplay({
+              delay: 2500
+            })]}>
                 <CarouselContent>
                   <CarouselItem>
                     <img src="/lovable-uploads/ai-search-traffic.jpeg" alt="Stop Losing Traffic to AI Search Results" className="w-full h-auto rounded-lg" />
