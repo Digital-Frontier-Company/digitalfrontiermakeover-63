@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3, FileText, Download } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import cryptoHeroOverlay from "@/assets/crypto-hero-overlay.webp";
 const CryptoMarketing = () => {
   const location = useLocation();
   const cryptoFAQs: FAQItem[] = [{
@@ -47,6 +48,11 @@ const CryptoMarketing = () => {
         {/* Background Image */}
         <div className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url('/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png')`
+      }} />
+        
+        {/* Crypto Overlay Image */}
+        <div className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat mix-blend-screen" style={{
+        backgroundImage: `url(${cryptoHeroOverlay})`
       }} />
         
         {/* Gradient Overlay */}
