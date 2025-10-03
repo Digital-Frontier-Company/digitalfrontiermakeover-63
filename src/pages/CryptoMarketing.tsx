@@ -62,34 +62,34 @@ const CryptoMarketing = () => {
           </div>
 
           
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-slate-300">
+          <h2 className="text-2xl mb-4 text-zinc-50 font-extrabold md:text-6xl">
             AI-First, ROI Guaranteed Growth Partner
           </h2>
           
-          <p className="text-xl md:text-2xl mb-8 text-slate-400 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed font-semibold text-lime-300">
             Stop renting attention. Start owning demand. For creators and crypto pioneers ready to scale beyond algorithmic dependency.
           </p>
 
           {/* Navigation Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button variant="outline" size="lg" className="hover-scale border-primary/50 hover:border-primary" onClick={() => document.getElementById('expertise')?.scrollIntoView({
+            <Button variant="outline" size="lg" onClick={() => document.getElementById('expertise')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="hover-scale border-primary/50 hover:border-primary rounded-full font-bold text-xl">
               Our Expertise
             </Button>
-            <Button variant="outline" size="lg" className="hover-scale border-secondary/50 hover:border-secondary" onClick={() => document.getElementById('service-pods')?.scrollIntoView({
+            <Button variant="outline" size="lg" onClick={() => document.getElementById('service-pods')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="hover-scale border-secondary/50 hover:border-secondary text-xl font-bold rounded-full">
               Service Pods
             </Button>
-            <Button variant="outline" size="lg" className="hover-scale border-accent/50 hover:border-accent" onClick={() => document.getElementById('ai-capabilities')?.scrollIntoView({
+            <Button variant="outline" size="lg" onClick={() => document.getElementById('ai-capabilities')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="hover-scale border-accent/50 hover:border-accent text-xl font-bold rounded-full">
               AI Capabilities
             </Button>
-            <Button size="lg" className="hover-scale bg-primary hover:bg-primary/90" onClick={() => document.getElementById('get-started')?.scrollIntoView({
+            <Button size="lg" onClick={() => document.getElementById('get-started')?.scrollIntoView({
             behavior: 'smooth'
-          })}>
+          })} className="hover-scale bg-primary hover:bg-primary/90 text-xl font-bold rounded-full">
               Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
