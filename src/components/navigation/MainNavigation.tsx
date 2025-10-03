@@ -46,13 +46,13 @@ const MainNavigation = () => {
                 <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="https://twitter.com/digitalfrontier" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
+                <a href="https://x.com/DigitalFro14616" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/digitalfrontiercompany" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=61572896248731" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/digitalfrontierco" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
+                <a href="https://www.instagram.com/digital_frontier_company/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a href="https://www.youtube.com/@Digital_FrontierCO" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#4EE2EC] transition-colors">

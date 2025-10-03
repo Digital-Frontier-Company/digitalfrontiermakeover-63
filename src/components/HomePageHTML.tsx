@@ -459,7 +459,7 @@ const HomePageHTML: React.FC = () => {
           },
           "sameAs": [
             "https://www.linkedin.com/company/digitalfrontiercompany",
-            "https://twitter.com/digitalfrontier"
+            "https://x.com/DigitalFro14616"
           ],
           "serviceArea": {
             "@type": "GeoCircle",

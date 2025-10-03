@@ -258,16 +258,16 @@ const AboutUs = () => {
       <div className="mt-12 pt-8 border-t border-slate-800">
         <h4 className="text-center text-lg font-bold mb-4 text-slate-100">Connect With Us</h4>
         <div className="flex justify-center space-x-6">
-          <a href="https://facebook.com/digitalfrontiercompany" aria-label="Digital Frontier on Facebook" className="text-slate-300 hover:text-blue-400 transition-colors">
+          <a href="https://www.facebook.com/profile.php?id=61572896248731" aria-label="Digital Frontier on Facebook" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Facebook size={24} />
           </a>
-          <a href="https://instagram.com/digitalfrontiercompany" aria-label="Digital Frontier on Instagram" className="text-slate-300 hover:text-blue-400 transition-colors">
+          <a href="https://www.instagram.com/digital_frontier_company/" aria-label="Digital Frontier on Instagram" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Instagram size={24} />
           </a>
           <a href="https://linkedin.com/company/digitalfrontiercompany" aria-label="Digital Frontier on LinkedIn" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Linkedin size={24} />
           </a>
-          <a href="https://twitter.com/digitalfrontierco" aria-label="Digital Frontier on Twitter" className="text-slate-300 hover:text-blue-400 transition-colors">
+          <a href="https://x.com/DigitalFro14616" aria-label="Digital Frontier on Twitter" className="text-slate-300 hover:text-blue-400 transition-colors">
             <Twitter size={24} />
           </a>
           <a href="https://www.youtube.com/@Digital_FrontierCO" aria-label="Digital Frontier on YouTube" className="text-slate-300 hover:text-blue-400 transition-colors">
