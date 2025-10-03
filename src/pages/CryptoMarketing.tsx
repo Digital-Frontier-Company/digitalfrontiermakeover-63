@@ -176,13 +176,17 @@ const CryptoMarketing = () => {
             {/* Crypto Visionaries */}
             <Card className="interactive-card bg-gradient-to-br from-blue-900/20 to-blue-800/10 border-blue-500/30 hover:border-blue-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img src="/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png" alt="Team Collaboration" className="w-full h-full object-cover" />
-                <div className="contain-bg-gradient-to-t from-slate-900/90 to-transparent" />
+                <img src="/lovable-uploads/crypto_icon.png" alt="Crypto marketing strategies" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-blue-500/20 text-blue-300 border-blue-400">
                     Crypto Visionaries
                   </Badge>
                 </div>
+              </div>
+              
+              <div className="px-6 pt-4 pb-2">
+                <p className="text-sm text-blue-300 font-semibold">How to market my crypto project</p>
               </div>
               
               <CardContent className="p-6">
