@@ -513,7 +513,7 @@ const CryptoMarketing = () => {
               <div className="absolute inset-0">
                 <img src="/lovable-uploads/team-collaboration-meeting.png" alt="Crypto expert marketing teams" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute inset-0 flex items-end">
+              <div className="absolute -inset-y-1.5 flex items-end ">
                 <div className="w-full bg-slate-900/70 backdrop-blur-sm p-6 text-center">
                   <h3 className="font-bold text-white mb-2">Collaborative Approach</h3>
                   <p className="text-slate-300 text-sm">Working closely with clients to ensure sustainable growth</p>
