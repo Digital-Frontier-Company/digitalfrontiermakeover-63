@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#f8f9fa"/>
+      <stop offset="1" stop-color="#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#4361ee"/>
+      <stop offset="1" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <circle id="icon-circle" r="25" fill="url(#primary-gradient)"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4361ee"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="900" height="650" fill="url(#bg-gradient)" rx="10" ry="10" y="39.486" x="8.17"/>
+  <text x="450" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">
+    AI-Powered SEO Process
+  </text>
+  <text x="450" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#4361ee" style="white-space: pre;">
+    A data-driven approach to search engine optimization
+  </text>
+  <circle cx="450" cy="340" r="220" fill="none" stroke="#e9ecef" stroke-width="70" stroke-opacity="0.5"/>
+  <circle cx="450" cy="340" r="80" fill="url(#primary-gradient)" opacity="0.9" filter="url(#glow)"/>
+  <text x="450" y="340" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="white" style="white-space: pre;">AI</text>
+  <text x="450" y="370" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white" style="white-space: pre;">Analytics</text>
+  <g transform="translate(450, 120)">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">1</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Site Analysis</text>
+    <line x1="0" y1="35" x2="-1.362" y2="175.401" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g transform="translate(623, 165)">
+    <circle r="39.085" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">2</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Competitor Research</text>
+    <line x1="-23.147" y1="28.192" x2="-138.57" y2="133.124" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g transform="matrix(1.17513, 0, 0, 1.09663, 698.399, 350.19)" style="">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">3</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Strategic Planning</text>
+  </g>
+  <g transform="translate(623, 515)">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">4</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Technical SEO</text>
+    <line x1="-25.87" y1="-26.27" x2="-139.93" y2="-138.566" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 454.085, 553.192)">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">5</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Content Strategy</text>
+    <line x1="1.362" y1="-35.802" x2="0" y2="-161.785" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g transform="translate(277, 515)">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">6</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Authority Building</text>
+    <line x1="32.678" y1="-28.994" x2="138.57" y2="-135.847" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 208.362, 338.638)">
+    <circle r="35" fill="white" stroke="#4361ee" stroke-width="3" filter="url(#shadow)"/>
+    <text x="0" y="7" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#4361ee" style="white-space: pre;">7</text>
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre;">Monitoring &amp; Refinement</text>
+    <line x1="38.124" y1="0.961" x2="202.486" y2="2.723" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  </g>
+  <g/>
+  <path d="M 485 109.108 C 497.394 104.967 538.23 105.267 590.322 138.192" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 655.277 199.977 C 695.822 239.716 703.188 268.767 706.146 302.746" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 697.979 390.869 C 692.401 426.909 674.495 460.118 649.808 486.831" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)" style=""/>
+  <path d="M 592.107 534.085 C 553.891 547.021 539.772 551.243 496.339 555.446" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 415.915 563.616 C 345.074 562.198 351.475 561.453 309.254 535.446" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)" style=""/>
+  <path d="M 247.469 492.278 C 216.142 468.209 203.417 440.854 203.384 381.34" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="452.723" y="669.017" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#3a0ca3" style="white-space: pre; font-size: 18px;">
+    Our continuous improvement cycle ensures your SEO strategy evolves with search trends
+  </text>
+  <line x1="653.4" y1="345.794" x2="486.237" y2="343.162" stroke="#4361ee" stroke-width="2" stroke-dasharray="5,3"/>
+  <path d="M 212.166 304.438 C 229.91 180.526 290.472 109.034 415.521 107.502" fill="none" stroke="#4361ee" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

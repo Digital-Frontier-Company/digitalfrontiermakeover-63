@@ -5,7 +5,8 @@ import FAQSection, { FAQItem } from "@/components/FAQSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3 } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3, FileText, Download } from "lucide-react";
 const CryptoMarketing = () => {
   const location = useLocation();
   const cryptoFAQs: FAQItem[] = [{
@@ -568,8 +569,40 @@ const CryptoMarketing = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center">
-              <img src="/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png" alt="Artificial Intelligence Brain Network" className="max-w-lg w-full" />
+            <div className="flex flex-col gap-8">
+              <Carousel className="w-full max-w-lg mx-auto">
+                <CarouselContent>
+                  <CarouselItem>
+                    <img src="/lovable-uploads/ai-search-traffic.jpeg" alt="Stop Losing Traffic to AI Search Results" className="w-full h-auto rounded-lg" />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img src="/lovable-uploads/analytics-dashboard.jpg" alt="AI-Powered Analytics Dashboard" className="w-full h-auto rounded-lg" />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img src="/lovable-uploads/seo-flow-diagram.svg" alt="AI-Powered SEO Process Flow" className="w-full h-auto rounded-lg" />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img src="/lovable-uploads/content-audit-ai.png" alt="AI Content Audit and Optimization" className="w-full h-auto rounded-lg" />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+
+              <Card className="interactive-card bg-slate-800/50 border-primary/30 hover:border-primary/50 max-w-lg mx-auto w-full">
+                <CardContent className="p-6">
+                  <a href="/lovable-uploads/Technology_Shifts_Transforming_How_We_Make_Money.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                    <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                      <FileText className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-primary transition-colors">Technology Shifts Transforming How We Make Money</h4>
+                      <p className="text-sm text-slate-400">Download our comprehensive guide</p>
+                    </div>
+                    <Download className="w-5 h-5 text-slate-400 group-hover:text-primary transition-colors" />
+                  </a>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
