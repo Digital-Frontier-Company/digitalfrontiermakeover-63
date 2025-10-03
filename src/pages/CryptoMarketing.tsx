@@ -523,7 +523,7 @@ const CryptoMarketing = () => {
 
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden relative h-96">
               <div className="absolute inset-0">
-                <img src="/lovable-uploads/72af43ac-c761-4297-8265-6fc81826e793.png" alt="Performance Analytics Dashboard" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/ROI_hype.png" alt="ROI in Crypto marketing" className="w-full h-full object-cover" />
               </div>
               <div className="absolute inset-0 flex items-end">
                 <div className="w-full bg-slate-900/70 backdrop-blur-sm p-6 text-center">
