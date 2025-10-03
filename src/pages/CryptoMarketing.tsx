@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3, FileText, Download } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 const CryptoMarketing = () => {
   const location = useLocation();
   const cryptoFAQs: FAQItem[] = [{
@@ -570,7 +571,14 @@ const CryptoMarketing = () => {
               </div>
             </div>
             <div className="flex flex-col gap-8">
-              <Carousel className="w-full max-w-lg mx-auto">
+              <Carousel 
+                className="w-full max-w-lg mx-auto"
+                plugins={[
+                  Autoplay({
+                    delay: 2500,
+                  }),
+                ]}
+              >
                 <CarouselContent>
                   <CarouselItem>
                     <img src="/lovable-uploads/ai-search-traffic.jpeg" alt="Stop Losing Traffic to AI Search Results" className="w-full h-auto rounded-lg" />
