@@ -686,6 +686,96 @@ const AIPlansLanding = () => {
           </div>
         </section>
 
+        {/* AI Industry Statistics Section */}
+        <section className="py-24 bg-gradient-to-br from-violet-900/30 via-slate-900/50 to-cyan-900/30">
+          <div className="container mx-auto px-5">
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-black mb-6 bg-gradient-to-r from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                The AI Revolution in Numbers
+              </h2>
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                Industry-leading research shows AI isn't just the future—it's transforming businesses today
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  stat: "84%",
+                  label: "of employees believe AI will make their jobs easier and more efficient",
+                  source: "Salesforce Survey",
+                  icon: <Users className="h-8 w-8" />
+                },
+                {
+                  stat: "70%",
+                  label: "reduction in call, chat, and email inquiries with AI customer service",
+                  source: "Accenture Report",
+                  icon: <Bot className="h-8 w-8" />
+                },
+                {
+                  stat: "35%",
+                  label: "of businesses use AI for customer service (top use case)",
+                  source: "Salesforce Survey",
+                  icon: <Target className="h-8 w-8" />
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-xl border border-violet-500/20 rounded-3xl p-8 text-center hover:border-violet-500/50 hover:-translate-y-2 transition-all"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex justify-center mb-4 text-violet-400">
+                    {item.icon}
+                  </div>
+                  <div className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                    {item.stat}
+                  </div>
+                  <p className="text-slate-300 mb-3 text-lg leading-relaxed">
+                    {item.label}
+                  </p>
+                  <p className="text-slate-500 text-sm italic">
+                    — {item.source}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              className="bg-gradient-to-r from-violet-500/10 to-cyan-400/10 border border-violet-500/30 rounded-2xl p-8 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">Top AI Use Cases in Business</h3>
+              <div className="flex flex-wrap justify-center gap-6 text-slate-300">
+                <div className="flex items-center gap-2">
+                  <span className="text-violet-400 font-bold text-xl">35%</span>
+                  <span>Customer Service</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-cyan-400 font-bold text-xl">20%</span>
+                  <span>Sales</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-emerald-400 font-bold text-xl">18%</span>
+                  <span>Marketing</span>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm mt-4 italic">— Salesforce Survey</p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Proof Section */}
         <section className="py-32 bg-slate-900/50">
           <div className="container mx-auto px-5">

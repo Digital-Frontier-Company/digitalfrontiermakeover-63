@@ -547,6 +547,92 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AI INDUSTRY STATISTICS SECTION */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-violet-900/20 via-slate-900 to-cyan-900/20">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              The AI Advantage
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Leading research proves AI is transforming how businesses operate and compete
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                stat: "84%",
+                label: "of employees believe AI makes their jobs easier and more efficient",
+                source: "Salesforce",
+                gradient: "from-violet-500 to-purple-500"
+              },
+              {
+                stat: "70%",
+                label: "reduction in customer service inquiries with AI automation",
+                source: "Accenture",
+                gradient: "from-cyan-500 to-blue-500"
+              },
+              {
+                stat: "35%",
+                label: "of businesses prioritize AI for customer service (top use case)",
+                source: "Salesforce",
+                gradient: "from-indigo-500 to-violet-500"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-slate-800/40 backdrop-blur-sm border border-violet-500/20 rounded-2xl p-8 text-center hover:border-violet-500/40 hover:-translate-y-2 transition-all"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                viewport={{ once: true }}
+              >
+                <div className={`text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                  {item.stat}
+                </div>
+                <p className="text-slate-200 mb-3 leading-relaxed">
+                  {item.label}
+                </p>
+                <p className="text-slate-500 text-sm italic">
+                  — {item.source}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            className="bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-violet-500/30 rounded-xl p-6 max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold text-white mb-4">How Businesses Use AI Today</h3>
+            <div className="flex flex-wrap justify-center gap-6 text-slate-300">
+              <div className="flex items-center gap-2">
+                <span className="text-violet-400 font-bold text-lg">35%</span>
+                <span>Customer Service</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400 font-bold text-lg">20%</span>
+                <span>Sales</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400 font-bold text-lg">18%</span>
+                <span>Marketing</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* WEB3 PROJECT PROMOTION SECTION */}
       <section className="py-8 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
