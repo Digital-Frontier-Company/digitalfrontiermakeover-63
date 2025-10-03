@@ -471,7 +471,7 @@ const CryptoMarketing = () => {
       <section className="py-24 bg-slate-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Proven Results</h2>
+            <h2 className="text-4xl md:text-5xl mb-6 text-cyan-300 font-extrabold">Proven Results</h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
               Real growth, real clients, real outcomes. Here's what we've achieved together.
             </p>
