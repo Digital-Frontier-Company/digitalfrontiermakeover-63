@@ -51,7 +51,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   // Default social image
   const socialImage = imageUrl || `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`;
   
-  // Generate structured data based on page type
+  // Generate enhanced structured data with complete @graph
   const generateStructuredData = () => {
     const baseData = {
       "@context": "https://schema.org",
@@ -59,20 +59,34 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         {
           "@type": "Organization",
           "@id": `${siteUrl}/#organization`,
-          "name": "Digital Frontier AI",
+          "name": "Digital Frontier Company",
+          "alternateName": "Digital Frontier AI",
           "url": siteUrl,
           "logo": {
             "@type": "ImageObject",
-            "url": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`
+            "url": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+            "width": "512",
+            "height": "512"
           },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-901-337-9915",
-            "contactType": "customer service",
-            "availableLanguage": "English"
+          "image": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+          "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization, SEO, and innovative marketing strategies",
+          "telephone": "+1-901-337-9915",
+          "email": "contact@digitalfrontier.app",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "8135 Walnut Grove Rd",
+            "addressLocality": "Memphis",
+            "addressRegion": "TN",
+            "postalCode": "38125",
+            "addressCountry": "US"
           },
           "sameAs": [
-            "https://www.linkedin.com/company/digital-frontier-ai"
+            "https://www.facebook.com/profile.php?id=61572896248731",
+            "https://x.com/DigitalFro14616",
+            "https://www.youtube.com/@Digital_FrontierCO",
+            "https://www.tiktok.com/@digital_frontier_company",
+            "https://www.instagram.com/digital_frontier_company/",
+            "https://www.linkedin.com/company/digital-frontier-company"
           ]
         },
         {
@@ -80,9 +94,34 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           "@id": `${siteUrl}/#website`,
           "url": siteUrl,
           "name": "Digital Frontier AI",
+          "description": "AI-powered digital marketing solutions",
           "publisher": {
             "@id": `${siteUrl}/#organization`
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${siteUrl}/search?q={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
           }
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+          "url": canonicalUrl,
+          "name": finalTitle,
+          "description": finalDescription,
+          "isPartOf": {
+            "@id": `${siteUrl}/#website`
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": socialImage
+          },
+          "datePublished": publishedDate || new Date().toISOString(),
+          "dateModified": modifiedDate || publishedDate || new Date().toISOString()
         }
       ]
     };
@@ -92,7 +131,12 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         "@type": "Article",
         "headline": finalTitle,
         "description": finalDescription,
-        "image": socialImage,
+        "image": {
+          "@type": "ImageObject",
+          "url": socialImage,
+          "width": "1200",
+          "height": "630"
+        },
         "author": {
           "@type": "Organization",
           "@id": `${siteUrl}/#organization`
@@ -102,7 +146,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         },
         "datePublished": publishedDate || new Date().toISOString(),
         "dateModified": modifiedDate || publishedDate || new Date().toISOString(),
-        "url": canonicalUrl
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        }
       });
     }
 
@@ -115,6 +162,10 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           "@id": `${siteUrl}/#organization`
         },
         "serviceType": "Digital Marketing",
+        "areaServed": {
+          "@type": "State",
+          "name": "Tennessee"
+        },
         "url": canonicalUrl
       });
     }

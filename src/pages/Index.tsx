@@ -233,43 +233,98 @@ const Index = () => {
           `}
         </script>
         
+        {/* Enhanced Structured Data with @graph */}
         <script type="application/ld+json">
           {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://digitalfrontier.app"
-          },
-          "headline": "AI Marketing Memphis | Digital Frontier Company Solutions",
-          "image": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png",
-          "author": {
-            "@type": "Organization",
-            "name": "Digital Frontier"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Digital Frontier",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://digitalfrontier.app/lovable-uploads/c5fced4b-35a7-421b-bdf8-12f09b2accdf.png"
-            }
-          },
-          "datePublished": "2023-01-01",
-          "dateModified": "2023-01-01"
-        })}
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://digitalfrontier.app/#organization",
+                "name": "Digital Frontier Company",
+                "alternateName": "Digital Frontier AI",
+                "url": "https://digitalfrontier.app",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                  "width": "512",
+                  "height": "512"
+                },
+                "image": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization (AEO), SEO, and innovative marketing strategies",
+                "telephone": "+1-901-337-9915",
+                "email": "contact@digitalfrontier.app",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "8135 Walnut Grove Rd",
+                  "addressLocality": "Memphis",
+                  "addressRegion": "TN",
+                  "postalCode": "38125",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "35.1495",
+                  "longitude": "-90.0490"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/profile.php?id=61572896248731",
+                  "https://x.com/DigitalFro14616",
+                  "https://www.youtube.com/@Digital_FrontierCO",
+                  "https://www.tiktok.com/@digital_frontier_company",
+                  "https://www.instagram.com/digital_frontier_company/",
+                  "https://www.linkedin.com/company/digital-frontier-company"
+                ],
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "bestRating": "5",
+                  "reviewCount": "200"
+                }
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://digitalfrontier.app/#website",
+                "url": "https://digitalfrontier.app",
+                "name": "Digital Frontier AI",
+                "description": "AI-powered digital marketing solutions",
+                "publisher": {
+                  "@id": "https://digitalfrontier.app/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://digitalfrontier.app/search?q={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://digitalfrontier.app",
+                "url": "https://digitalfrontier.app",
+                "name": "AI Marketing Memphis | Digital Frontier Company Solutions",
+                "description": "Transform your business with AI-powered digital marketing. Get vetted AI tools, automated workflows, and measurable ROI in weeks.",
+                "isPartOf": {
+                  "@id": "https://digitalfrontier.app/#website"
+                }
+              }
+            ]
+          })}
         </script>
+        
         <script type="application/ld+json">
           {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://digitalfrontier.app"
-          }]
-        })}
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalfrontier.app"
+            }]
+          })}
         </script>
       </Helmet>
       

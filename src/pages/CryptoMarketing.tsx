@@ -29,17 +29,98 @@ const CryptoMarketing = () => {
         <title>Digital Frontier Crypto Marketing: ROI-Guaranteed Growth | Digital Frontier</title>
         <meta name="description" content="Stop renting attention. Start owning demand. AI-first growth partner for creators & crypto pioneers. ROI guaranteed or fee credits back. 200+ success stories." />
         <link rel="canonical" href="https://digitalfrontier.app/crypto-marketing" />
+        
+        {/* Enhanced Structured Data with @graph */}
         <script type="application/ld+json">
-        {`
-          {
+          {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Digital Frontier",
-            "description": "AI-first growth partner for creators and crypto pioneers",
-            "url": "https://digitalfrontier.app",
-            "@id": "https://digitalfrontier.app/#organization"
-          }
-        `}
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://digitalfrontier.app/#organization",
+                "name": "Digital Frontier Company",
+                "alternateName": "Digital Frontier AI",
+                "url": "https://digitalfrontier.app",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                  "width": "512",
+                  "height": "512"
+                },
+                "description": "AI-powered digital marketing agency specializing in crypto marketing, Web3 strategies, and creator economy solutions",
+                "telephone": "+1-901-337-9915",
+                "email": "contact@digitalfrontier.app",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "8135 Walnut Grove Rd",
+                  "addressLocality": "Memphis",
+                  "addressRegion": "TN",
+                  "postalCode": "38125",
+                  "addressCountry": "US"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/profile.php?id=61572896248731",
+                  "https://x.com/DigitalFro14616",
+                  "https://www.youtube.com/@Digital_FrontierCO",
+                  "https://www.tiktok.com/@digital_frontier_company",
+                  "https://www.instagram.com/digital_frontier_company/",
+                  "https://www.linkedin.com/company/digital-frontier-company"
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "Crypto & Web3 Marketing Services",
+                "description": "ROI-guaranteed crypto marketing and Web3 growth strategies for creators and blockchain projects",
+                "provider": {
+                  "@id": "https://digitalfrontier.app/#organization"
+                },
+                "serviceType": "Cryptocurrency Marketing",
+                "url": "https://digitalfrontier.app/crypto-marketing",
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "United States"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "priceRange": "$$",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://digitalfrontier.app/crypto-marketing",
+                "url": "https://digitalfrontier.app/crypto-marketing",
+                "name": "Crypto Marketing Services - Digital Frontier",
+                "description": "AI-first growth partner for creators and crypto pioneers with ROI guarantees",
+                "isPartOf": {
+                  "@id": "https://digitalfrontier.app/#website"
+                }
+              }
+            ]
+          })}
+        </script>
+        
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://digitalfrontier.app"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Crypto Marketing",
+                "item": "https://digitalfrontier.app/crypto-marketing"
+              }
+            ]
+          })}
         </script>
       </Helmet>
 
