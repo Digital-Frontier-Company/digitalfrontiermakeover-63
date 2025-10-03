@@ -256,6 +256,9 @@ const SEOvsAEOvsGEO = () => {
         {/* Detailed Strategy Tabs */}
         <section>
           <h2 className="text-3xl font-bold text-center mb-8">Detailed Strategy Breakdown</h2>
+          <h3 className="text-xl font-semibold text-center text-muted-foreground mb-8">
+            Deep dive into each optimization approach with actionable insights
+          </h3>
           <Tabs defaultValue="seo" className="w-full">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="seo">SEO Strategy</TabsTrigger>
@@ -480,8 +483,11 @@ const SEOvsAEOvsGEO = () => {
         {/* Budget Allocation */}
         <section>
           <h2 className="text-3xl font-bold text-center mb-4">How Should You Allocate Resources?</h2>
+          <h3 className="text-xl font-semibold text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Resource allocation depends on your business model, audience behavior, and growth stage
+          </h3>
           <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Resource allocation depends on your business model, audience behavior, and growth stage. Here are data-driven recommendations based on 200+ client implementations.
+            Here are data-driven recommendations based on 200+ client implementations.
           </p>
           <Card>
             <CardHeader>
@@ -492,7 +498,7 @@ const SEOvsAEOvsGEO = () => {
               <div className="space-y-6">
                 {budgetRecommendations.map((rec, index) => <div key={index} className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <h4 className="font-semibold">{rec.type}</h4>
+                      <h3 className="font-semibold text-lg">{rec.type}</h3>
                       <div className="flex gap-2">
                         <Badge variant="outline">SEO: {rec.seo}%</Badge>
                         <Badge variant="outline">AEO: {rec.aeo}%</Badge>
@@ -563,13 +569,15 @@ const SEOvsAEOvsGEO = () => {
         {/* Enhanced FAQ Section */}
         <section>
           <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
-          <p className="text-center text-muted-foreground mb-8">
-            Common questions from 200+ businesses we've helped optimize for modern search landscapes.
-          </p>
+          <h3 className="text-xl font-semibold text-center text-muted-foreground mb-8">
+            Common questions from 200+ businesses we've helped optimize for modern search landscapes
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Should I focus on one strategy or integrate all three?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>Should I focus on one strategy or integrate all three?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -583,7 +591,9 @@ const SEOvsAEOvsGEO = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How do I know which strategy to prioritize first?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>How do I know which strategy to prioritize first?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -597,7 +607,9 @@ const SEOvsAEOvsGEO = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Can these strategies conflict with each other?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>Can these strategies conflict with each other?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -611,7 +623,9 @@ const SEOvsAEOvsGEO = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">What's the biggest mistake businesses make?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>What's the biggest mistake businesses make?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -625,7 +639,9 @@ const SEOvsAEOvsGEO = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How long before I see results from each strategy?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>How long before I see results from each strategy?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -639,7 +655,9 @@ const SEOvsAEOvsGEO = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Do I need different content for each strategy?</CardTitle>
+                <CardTitle className="text-lg">
+                  <h3>Do I need different content for each strategy?</h3>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">

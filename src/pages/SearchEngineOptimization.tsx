@@ -232,7 +232,8 @@ const SearchEngineOptimization: React.FC = () => {
 
         {/* Interactive Timeline */}
         <section className="py-8">
-          <h2 className="text-3xl font-bold mb-12 text-center text-cyan-400 text-shadow-lg">The Evolution of SEO</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center text-cyan-400 text-shadow-lg">The Evolution of SEO</h2>
+          <h3 className="text-xl font-semibold mb-12 text-center text-slate-300">From Keywords to AI-Powered Understanding</h3>
           
           <div className="relative h-64 my-12 max-w-6xl mx-auto">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-cyan-400/30 transform -translate-y-1/2"></div>
@@ -297,7 +298,8 @@ const SearchEngineOptimization: React.FC = () => {
 
         {/* AI Tools Showcase */}
         <section className="py-8">
-          <h2 className="text-3xl font-bold mb-12 text-center text-cyan-400">AI Tools Transforming SEO</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center text-cyan-400">AI Tools Transforming SEO</h2>
+          <h3 className="text-xl font-semibold mb-12 text-center text-slate-300">How Modern AI Powers Search Optimization</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="border-slate-800 bg-slate-900/80 hover:bg-slate-800/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-900/20 hover:-translate-y-1 h-full">
@@ -344,6 +346,8 @@ const SearchEngineOptimization: React.FC = () => {
 
         {/* Original Content Section */}
         <section>
+          <h2 className="text-3xl font-bold mb-4 text-cyan-400">How SEO Has Transformed with AI</h2>
+          <h3 className="text-xl font-semibold mb-4 text-slate-200">From Keywords to Semantic Understanding</h3>
           <div className="flex items-center space-x-2 mb-4">
             <Badge variant="outline" className="bg-blue-900/30 text-cyan-400 border-cyan-500 px-3 py-1">
               SEO Evolution  
@@ -356,6 +360,8 @@ const SearchEngineOptimization: React.FC = () => {
             understanding the intent and context of user queries. This shift has led to significant changes in SEO strategies, as 
             algorithms now take into account factors like synonyms, user history, and geographical context to deliver more relevant search results.
           </p>
+
+          <h3 className="text-2xl font-semibold mb-6 text-slate-200">Our AI-Powered SEO Services</h3>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 backdrop-blur-sm">
@@ -384,7 +390,7 @@ const SearchEngineOptimization: React.FC = () => {
           </div>
           
           <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 p-8 rounded-xl border border-blue-800/30 backdrop-blur-sm text-center">
-            <h2 className="text-2xl font-bold mb-4 text-cyan-400">Content Optimization at Scale</h2>
+            <h3 className="text-2xl font-semibold mb-4 text-cyan-400">Content Optimization at Scale</h3>
             <p className="text-slate-300 max-w-3xl mx-auto">
               Using advanced Natural Language Processing, we optimize existing content and develop new material that satisfies both 
               search algorithms and user needs, driving both rankings and engagement.

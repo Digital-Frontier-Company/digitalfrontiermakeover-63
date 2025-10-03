@@ -19,7 +19,8 @@ const AEOHeroSection = () => {
         </p>
       </div>
 
-      <h2 className="text-2xl font-bold mb-8 text-slate-100">What is Answer Engine Optimization?</h2>
+      <h2 className="text-3xl font-bold mb-4 text-slate-100">What is Answer Engine Optimization?</h2>
+      <h3 className="text-xl font-semibold mb-8 text-slate-200">The Future of AI-Powered Search</h3>
       <p className="text-slate-300 text-lg mb-6">
         Answer Engine Optimization is a cutting-edge digital marketing strategy that positions your content 
         as the authoritative source for AI-powered search engines. While traditional SEO targets Google's web results, 
@@ -27,6 +28,7 @@ const AEOHeroSection = () => {
         find their answers without clicking through to websites.
       </p>
       
+      <h3 className="text-xl font-semibold mb-4 text-slate-200">AEO Services for Memphis Businesses</h3>
       <p className="text-slate-300 text-lg mb-6">
         Our Answer Engine Optimization services help Memphis businesses capture visibility in Perplexity AI, 
         Google's Search Generative Experience (SGE), and voice assistants. Through strategic schema markup, 
@@ -34,6 +36,7 @@ const AEOHeroSection = () => {
         potential customers ask AI systems about your industry.
       </p>
       
+      <h3 className="text-xl font-semibold mb-4 text-slate-200">Why AEO Matters Now</h3>
       <p className="text-slate-300 text-lg">
         The future of search is conversational, and Answer Engine Optimization positions your business 
         to thrive in this AI-driven landscape. From ChatGPT SEO to voice search optimization, our AEO methodology 

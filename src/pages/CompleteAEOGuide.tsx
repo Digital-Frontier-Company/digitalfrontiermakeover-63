@@ -298,16 +298,14 @@ const CompleteAEOGuide = () => {
 
       {/* Implementation Checklist */}
       <section className="mb-16">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          AEO Implementation Checklist
+        </h2>
         <Card className="bg-slate-800/40 border-slate-700">
-          <CardHeader>
-            <CardTitle className="text-2xl text-white text-center">
-              AEO Implementation Checklist
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-4">Technical Setup</h3>
+                <h3 className="text-xl font-semibold text-blue-400 mb-4">Technical Setup</h3>
                 <ul className="space-y-2">
                   {[
                     "Implement FAQ schema markup",
@@ -324,7 +322,7 @@ const CompleteAEOGuide = () => {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-purple-400 mb-4">Content Optimization</h3>
+                <h3 className="text-xl font-semibold text-purple-400 mb-4">Content Optimization</h3>
                 <ul className="space-y-2">
                   {[
                     "Research AI-friendly keywords",

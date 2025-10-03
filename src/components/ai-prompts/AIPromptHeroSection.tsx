@@ -47,13 +47,15 @@ const AIPromptHeroSection = () => {
         </Card>
       </div>
 
-      <h2 className="text-2xl font-bold mb-8 text-slate-100">Memphis Marketing AI Prompt Templates</h2>
+      <h2 className="text-3xl font-bold mb-4 text-slate-100">Memphis Marketing AI Prompt Templates</h2>
+      <h3 className="text-xl font-semibold mb-8 text-slate-200">AI-Powered Tools for Local Business Success</h3>
       <p className="text-slate-300 text-lg mb-6">
         These AI prompt templates are specifically designed for Memphis businesses looking to leverage ChatGPT 
         and other AI tools for marketing success. Each prompt has been tested and optimized to provide 
         actionable results for local businesses in the Memphis market.
       </p>
       
+      <h3 className="text-xl font-semibold mb-4 text-slate-200">Tailored for Memphis Market Conditions</h3>
       <p className="text-slate-300 text-lg mb-6">
         Whether you're running a restaurant in Beale Street, a medical practice in Germantown, or a 
         tech startup in downtown Memphis, these ChatGPT prompts will help you create better marketing 

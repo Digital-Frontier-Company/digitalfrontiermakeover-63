@@ -123,13 +123,17 @@ const GenerativeEngineOptimization = () => {
           alt="SEO-AEO-GEO Blog Optimizer" 
           className="w-full max-w-3xl mx-auto rounded-lg shadow-xl mb-12" 
         />
-        <h2 className="text-2xl font-bold mb-8 text-slate-100">Understanding GEO: The Next Frontier</h2>
+        <h2 className="text-3xl font-bold mb-8 text-slate-100">Understanding GEO: The Next Frontier</h2>
+        
+        <h3 className="text-2xl font-semibold mb-4 text-slate-200">What is Generative Engine Optimization?</h3>
         <p className="text-slate-300 text-lg mb-6">
           Generative Engine Optimization (GEO) is the emerging practice of optimizing content 
           to be prominently featured in AI-generated responses. As large language models increasingly 
           mediate information access, appearing in AI responses is becoming as crucial as ranking 
           in traditional search engines.
         </p>
+        
+        <h3 className="text-2xl font-semibold mb-4 text-slate-200">Our Data-Driven Approach</h3>
         <p className="text-slate-300 text-lg">
           Our data-driven approach ensures your content isn't just found—it's quoted, referenced, and 
           prioritized by leading AI engines, driving visibility in this new paradigm of content discovery.
@@ -147,7 +151,7 @@ const GenerativeEngineOptimization = () => {
           />
           <div className="space-y-6">
             <div className="bg-slate-800/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-400 flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-purple-400 flex items-center gap-2">
                 <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">1</span>
                 Entity Audit
               </h3>
@@ -155,7 +159,7 @@ const GenerativeEngineOptimization = () => {
             </div>
             
             <div className="bg-slate-800/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-400 flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-purple-400 flex items-center gap-2">
                 <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">2</span>
                 RAG-Ready Content
               </h3>
@@ -163,7 +167,7 @@ const GenerativeEngineOptimization = () => {
             </div>
             
             <div className="bg-slate-800/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-400 flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-purple-400 flex items-center gap-2">
                 <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">3</span>
                 Vector Friendliness
               </h3>
@@ -171,7 +175,7 @@ const GenerativeEngineOptimization = () => {
             </div>
             
             <div className="bg-slate-800/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-400 flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-purple-400 flex items-center gap-2">
                 <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">4</span>
                 LLM Sentiment Tracking
               </h3>
@@ -179,7 +183,7 @@ const GenerativeEngineOptimization = () => {
             </div>
             
             <div className="bg-slate-800/40 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-purple-400 flex items-center gap-2">
+              <h3 className="text-2xl font-semibold text-purple-400 flex items-center gap-2">
                 <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center">5</span>
                 Zero-Click KPI Loop
               </h3>
