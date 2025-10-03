@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight, Target, Users, TrendingUp, Brain, Eye, Zap, Shield, MessageSquare, BarChart3, FileText, Download } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import cryptoHeroOverlay from "@/assets/crypto-hero-overlay.webp";
+import cryptoHeroOverlay from "@/assets/crypto-overlay-coins.png";
 const CryptoMarketing = () => {
   const location = useLocation();
   const cryptoFAQs: FAQItem[] = [{
