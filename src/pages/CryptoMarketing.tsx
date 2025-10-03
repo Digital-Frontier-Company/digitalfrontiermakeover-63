@@ -498,11 +498,11 @@ const CryptoMarketing = () => {
           {/* Team & Executive Photos */}
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="interactive-card bg-slate-900/50 border-slate-700 overflow-hidden">
+              <div className="px-6 pt-4 pb-2 text-center">
+                <p className="text-sm text-slate-300 font-semibold italic">No one knows how to market Crypto and Ai like us</p>
+              </div>
               <div className="h-64">
                 <img src="/lovable-uploads/marketing-expert-with-bg.png" alt="Digital Frontier Marketing Expert" className="w-full h-full object-cover" />
-              </div>
-              <div className="px-6 pt-4 pb-2">
-                <p className="text-sm text-slate-300 font-semibold italic">No one knows how to market Crypto and Ai like us</p>
               </div>
               <CardContent className="p-6 text-center">
                 <h3 className="font-bold text-white mb-2">Executive Leadership</h3>
