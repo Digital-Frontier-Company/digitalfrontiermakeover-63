@@ -51,8 +51,9 @@ const CryptoMarketing = () => {
       }} />
         
         {/* Crypto Overlay Image */}
-        <div className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat mix-blend-screen" style={{
-        backgroundImage: `url(${cryptoHeroOverlay})`
+        <div className="absolute inset-0 opacity-25 bg-contain bg-center bg-no-repeat mix-blend-screen" style={{
+        backgroundImage: `url(${cryptoHeroOverlay})`,
+        backgroundSize: '70%'
       }} />
         
         {/* Gradient Overlay */}
