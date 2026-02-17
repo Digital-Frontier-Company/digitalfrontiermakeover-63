@@ -1,11 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import PageLayout from "@/components/layout/PageLayout";
-import { ChevronDown } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
 
 const EmotionalMarketingPlaybook = () => {
   const [activeTab, setActiveTab] = useState('all');
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   // Strategy data
   const strategies = [
@@ -275,30 +274,10 @@ const EmotionalMarketingPlaybook = () => {
 
           {/* FAQ Section */}
           <section className="mb-12 scroll-animate">
-            <h2 className="text-3xl font-bold text-center mb-8 text-cyan-400">Frequently Asked Questions</h2>
-            
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {faqItems.map((item, index) => (
-                <div key={index} className="border border-slate-700 rounded-lg overflow-hidden scroll-animate">
-                  <button
-                    onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
-                    className="w-full flex justify-between items-center p-6 bg-slate-800/30 hover:bg-slate-800/50 transition text-left"
-                  >
-                    <h3 className="font-bold text-white">{item.question}</h3>
-                    <ChevronDown 
-                      className={`h-5 w-5 text-slate-400 transition-transform ${
-                        openAccordion === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  {openAccordion === index && (
-                    <div className="bg-slate-800/20 p-6 text-slate-300">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <FAQSection 
+              title="Frequently Asked Questions" 
+              faqs={faqItems}
+            />
           </section>
 
           {/* CTA Section */}
