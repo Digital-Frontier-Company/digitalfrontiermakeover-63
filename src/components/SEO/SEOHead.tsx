@@ -84,9 +84,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
             "https://www.facebook.com/profile.php?id=61572896248731",
             "https://x.com/DigitalFro14616",
             "https://www.youtube.com/@Digital_FrontierCO",
-            "https://www.tiktok.com/@digital_frontier_company",
+            "https://www.tiktok.com/@digitalfrontierco",
             "https://www.instagram.com/digital_frontier_company/",
-            "https://www.linkedin.com/company/digital-frontier-company"
+            "https://www.linkedin.com/company/digital-frontier-company/"
           ]
         },
         {
