@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import FAQSection from "@/components/FAQSection";
-import { ChevronDown } from "lucide-react";
 
 const PsychologicalDigitalMarketingInsights = () => {
-  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
   useEffect(() => {
     // Intersection Observer for Scroll Animations
@@ -549,37 +547,10 @@ const PsychologicalDigitalMarketingInsights = () => {
 
           {/* FAQ Section */}
           <section className="mb-12 scroll-animate">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-cyan-400 border-b border-slate-700 pb-2">
-              <i className="fas fa-question-circle mr-2"></i> FAQ: Psychological Marketing Questions Answered
-            </h2>
-            <div className="space-y-4">
-              {faqItems.map((item, index) => (
-                <div key={index} className="border border-slate-700 rounded-lg overflow-hidden scroll-animate">
-                  <button
-                    onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
-                    className="w-full flex justify-between items-center p-4 bg-slate-800/30 hover:bg-slate-800/50 transition text-left"
-                  >
-                    <h3 className="font-bold">{item.question}</h3>
-                    <ChevronDown 
-                      className={`h-5 w-5 text-slate-400 transition-transform ${
-                        openAccordion === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  {openAccordion === index && (
-                    <div className="bg-slate-800/20 p-4 text-sm">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-6 scroll-animate">
-              <a href="#" className="inline-flex items-center px-6 py-3 border border-cyan-400 hover:bg-cyan-400/10 text-cyan-400 font-medium rounded-lg transition">
-                <i className="fas fa-question-circle mr-2"></i> View All FAQs
-              </a>
-            </div>
+            <FAQSection 
+              title="FAQ: Psychological Marketing Questions Answered" 
+              faqs={faqItems}
+            />
           </section>
 
           {/* Conclusion Section */}
