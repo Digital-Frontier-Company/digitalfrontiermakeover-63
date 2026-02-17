@@ -146,7 +146,7 @@ const SEOvsAEOvsGEO = () => {
         </section>
 
         {/* Key Takeaways Alert */}
-        <Alert className="border-l-4 border-l-yellow-500 bg-pink-600 rounded-lg">
+        <Alert className="border-l-4 border-l-yellow-500 bg-yellow-500/10 rounded-lg">
           <Lightbulb className="h-4 w-4 text-yellow-600" />
           <AlertDescription>
             <strong>2025 Reality Check:</strong> 65% of searches now end without a click. For digital creators and businesses, optimizing for AI citations (GEO) and voice answers (AEO) is no longer optional—it's essential for staying visible in the attention economy.

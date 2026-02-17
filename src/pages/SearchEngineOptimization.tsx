@@ -5,7 +5,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingCart, ChevronDown, Bot, Search, TrendingUp, FileText } from "lucide-react";
+import { ShoppingCart, Bot, Search, TrendingUp, FileText } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
 import { useLocation } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const SearchEngineOptimization: React.FC = () => {
   const [typewriterText, setTypewriterText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  
   
   const typewriterMessages = [
     "SEO has evolved remarkably from its early reliance on keyword stuffing and backlink accumulation.",
@@ -34,65 +34,30 @@ const SearchEngineOptimization: React.FC = () => {
     { year: "2023", position: "85%", title: "AI Dominance", description: "Multimodal AI understands across languages and media types." }
   ];
 
-  // Interactive FAQ data
+  // Consolidated FAQ data
   const interactiveFaqs = [
     {
       question: "How has SEO evolved beyond simply using keywords?",
-      answer: "In the early days of SEO, ranking highly involved tactics like keyword stuffing and accumulating backlinks. However, search engines like Google have evolved significantly, moving towards semantic search. This means they now focus on understanding the meaning and context behind user queries, rather than just matching exact keywords. Updates like Google's Hummingbird aimed to interpret the intent behind searches, considering factors like synonyms, user history, and location to deliver more relevant results. Today, SEO is about creating comprehensive content that addresses user intent and covers topics in depth, rather than just repeating specific keywords."
+      answer: "Search engines have evolved significantly, moving towards semantic search that prioritizes understanding the meaning and context behind user queries. Updates like Hummingbird interpret intent using synonyms, user history, and location. Today, SEO is about creating comprehensive content that addresses user intent and covers topics in depth."
     },
     {
-      question: "What is semantic search and why is it important for modern SEO?",
-      answer: "Semantic search is the ability of search engines to understand the meaning and intent behind user queries, going beyond literal keyword matching. It analyzes the context of the search, user behavior, location, and related terms to determine what the user is truly looking for. This is crucial for modern SEO because search engines now prioritize content that thoroughly answers a user's question and satisfies their intent (informational, navigational, commercial, or transactional). To succeed, SEO strategies must focus on creating content that addresses the breadth and depth of a topic, utilizing related terms and answering common questions."
+      question: "What is semantic search and why is it important?",
+      answer: "Semantic search is the ability of search engines to understand the meaning and intent behind user queries, going beyond literal keyword matching. It analyzes the context of the search, user behavior, location, and related terms. This is crucial because search engines now prioritize content that thoroughly answers a user's question and satisfies their intent."
     },
     {
-      question: "How are AI and machine learning reshaping how search engines work?",
-      answer: "AI and machine learning are fundamental to the evolution of search engines. Google has integrated AI systems like RankBrain, which interprets the meaning of queries by relating them to concepts, and neural matching, which understands synonyms and related terms. BERT (Bidirectional Encoder Representations from Transformers) significantly improved the understanding of language context by considering all words in a query, including short, often overlooked words. The latest advancement, MUM (Multitask Unified Model), is even more powerful, understanding multiple languages and modalities (text and images) to answer complex, multi-part questions. These AI advancements enable search engines to learn from vast amounts of data, adapt to new queries (15% of which are new daily), and continuously improve the relevance of search results."
+      question: "How are AI and machine learning reshaping search engines?",
+      answer: "Google has integrated AI systems like RankBrain, BERT, and MUM that interpret query meaning, understand language context, and process multiple languages and modalities. These advancements enable search engines to adapt to new queries (15% of which are new daily) and continuously improve result relevance."
     },
     {
-      question: "What is Natural Language Processing (NLP) and how does it impact SEO?",
-      answer: "Natural Language Processing (NLP) is the field of AI that focuses on enabling computers to understand and process human language. Search engines use NLP to both understand the meaning of user queries and to analyze the content of web pages. NLP helps search engines grasp context, identify entities and their relationships within text, and assess the topical relevance of content. For SEO, this means that content should be written naturally and clearly, prioritizing the language of the target audience. Focusing on thoroughly covering user intent, using synonyms and related phrases, and answering questions directly aligns with how NLP helps search engines understand and value content."
+      question: "What is NLP and how does it impact SEO?",
+      answer: "Natural Language Processing helps search engines understand both user queries and web page content. NLP grasps context, identifies entities, and assesses topical relevance. For SEO, content should be written naturally, using synonyms and related phrases, and answering questions directly."
     },
     {
-      question: "How is voice search changing the landscape of SEO, particularly for local businesses?",
-      answer: "Voice search is rapidly growing, with over half of users now employing it to find local businesses. Voice queries tend to be longer and more conversational than typed searches (e.g., 'What's the weather in New York City this weekend?' vs. 'weather NYC'). This shift necessitates optimizing for long-tail, conversational keywords and frequently asked questions (FAQs). Local businesses need to ensure their Google Business Profile (GBP) (formerly Google My Business) is fully up-to-date and accurate, as voice searches often pull information from these listings. Using schema markup for local business details and FAQs can also help voice assistants retrieve and deliver the correct information."
+      question: "How is voice search changing SEO for local businesses?",
+      answer: "Voice search is rapidly growing, with over half of users employing it to find local businesses. Voice queries are longer and more conversational. Local businesses should optimize for long-tail conversational keywords, keep their Google Business Profile accurate, and implement FAQ schema markup."
     }
   ];
 
-  // Original FAQ items for the existing section
-  const seoFaqs = [
-    {
-      question: "How has SEO evolved beyond simply using keywords?",
-      answer: "In the early days of SEO, ranking highly involved tactics like keyword stuffing and accumulating backlinks. However, search engines like Google have evolved significantly, moving towards semantic search. This means they now focus on understanding the meaning and context behind user queries, rather than just matching exact keywords."
-    },
-    {
-      question: "What is semantic search and why is it important for modern SEO?",
-      answer: "Semantic search is the ability of search engines to understand the meaning and intent behind user queries, going beyond literal keyword matching. It analyzes the context of the search, user behavior, location, and related terms to determine what the user is truly looking for. This is crucial for modern SEO because search engines now prioritize content that thoroughly answers a user's question and satisfies their intent."
-    },
-    {
-      question: "How are artificial intelligence (AI) and machine learning reshaping how search engines work?",
-      answer: "AI and machine learning are fundamental to the evolution of search engines. Google has integrated AI systems like RankBrain, which interprets the meaning of queries by relating them to concepts, and neural matching, which understands synonyms and related terms. BERT and MUM advancements enable search engines to learn from vast amounts of data, adapt to new queries, and continuously improve the relevance of search results."
-    },
-    {
-      question: "What is Natural Language Processing (NLP) and how does it impact SEO?",
-      answer: "Natural Language Processing (NLP) is the field of AI that focuses on enabling computers to understand and process human language. Search engines use NLP to both understand the meaning of user queries and to analyze the content of web pages. NLP helps search engines grasp context, identify entities and their relationships within text, and assess the topical relevance of content."
-    },
-    {
-      question: "How is voice search changing the landscape of SEO, particularly for local businesses?",
-      answer: "Voice search is rapidly growing, with over half of users now employing it to find local businesses. Voice queries tend to be longer and more conversational than typed searches. This shift necessitates optimizing for long-tail, conversational keywords and frequently asked questions (FAQs). Local businesses need to ensure their Google Business Profile is fully up-to-date and accurate."
-    },
-    {
-      question: "What are some practical ways businesses can leverage AI for content optimization and SEO?",
-      answer: "AI offers numerous tools and strategies for content optimization and SEO. AI content optimization tools can analyze top-ranking pages to identify subtopics, keywords, content length, and gaps to inform content creation. Content clustering, organizing content around pillar pages and supporting articles, can be aided by AI in identifying missing pieces and relevant connections."
-    },
-    {
-      question: "Can you describe some real-world examples of businesses successfully using AI and semantic strategies for SEO gains?",
-      answer: "Several case studies demonstrate the power of AI and semantic SEO. Bankrate used AI to generate articles reviewed by human experts, resulting in significant organic traffic. Rocky Brands utilized an AI-powered SEO platform to identify high-value keywords and optimize product pages, leading to increased search revenue. STACK Media employed AI for competitor analysis, restructuring content and achieving significant rise in website visits."
-    },
-    {
-      question: "What are some actionable steps local businesses can take immediately to leverage semantic search and AI in their SEO efforts?",
-      answer: "Local businesses can conduct an SEO audit using AI tools, optimize their Google Business Profile, implement local schema markup, create topic clusters around main services, leverage AI for content and keyword research, enhance site experience by improving page speed and mobile usability, focus on building E-A-T (Expertise, Authoritativeness, Trustworthiness), and monitor, measure, and iterate on their SEO efforts."
-    }
-  ];
 
   // Typewriter effect
   useEffect(() => {
@@ -267,34 +232,6 @@ const SearchEngineOptimization: React.FC = () => {
           </div>
         </section>
 
-        {/* Interactive FAQ Section */}
-        <section className="py-8">
-          <h2 className="text-3xl font-bold mb-12 text-center text-cyan-400">Key Questions About AI & Semantic SEO</h2>
-          
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {interactiveFaqs.map((faq, index) => (
-              <div 
-                key={index}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 cursor-pointer hover:border-cyan-600/50 transition-all duration-300"
-                onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-              >
-                <div className="p-6 flex justify-between items-center">
-                  <h3 className="text-xl font-semibold text-cyan-300">{faq.question}</h3>
-                  <ChevronDown 
-                    className={`text-cyan-400 text-2xl transition-transform duration-300 ${
-                      expandedFaq === index ? 'rotate-180' : ''
-                    }`} 
-                  />
-                </div>
-                {expandedFaq === index && (
-                  <div className="px-6 pb-6 -mt-4">
-                    <p className="text-slate-300 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
 
         {/* AI Tools Showcase */}
         <section className="py-8">
@@ -410,24 +347,13 @@ const SearchEngineOptimization: React.FC = () => {
           </Button>
         </section>
       </div>
-        
+
       {/* FAQ Section */}
       <div className="mt-16">
         <FAQSection 
           title="Search Engine Optimization FAQs" 
-          faqs={seoFaqs}
+          faqs={interactiveFaqs}
         />
-      </div>
-
-      {/* Floating AI Element */}
-      <div className="fixed bottom-8 right-8">
-        <div className="w-16 h-16 rounded-full bg-cyan-600/20 animate-pulse flex items-center justify-center cursor-pointer hover:bg-cyan-600/30 transition-colors duration-300">
-          <div className="w-10 h-10 rounded-full bg-cyan-600/30 animate-pulse flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full bg-cyan-600/50 flex items-center justify-center">
-              <span className="text-cyan-300 text-xs font-bold">AI</span>
-            </div>
-          </div>
-        </div>
       </div>
     </PageLayout>
   );
