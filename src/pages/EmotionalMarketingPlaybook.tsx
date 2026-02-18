@@ -2,6 +2,22 @@
 import React, { useState, useEffect } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import FAQSection from "@/components/FAQSection";
+import { 
+  ClipboardList, LayoutGrid, Waves, TrendingUp, Target, Magnet, 
+  Leaf, PenTool, UserCheck, ArrowRight, CalendarDays
+} from "lucide-react";
+
+const faToLucide: Record<string, React.ElementType> = {
+  "fas fa-clipboard-list": ClipboardList,
+  "fas fa-chess-board": LayoutGrid,
+  "fas fa-water": Waves,
+  "fas fa-chart-line": TrendingUp,
+  "fas fa-bullseye": Target,
+  "fas fa-magnet": Magnet,
+  "fas fa-leaf": Leaf,
+  "fas fa-pen-fancy": PenTool,
+  "fas fa-user-tie": UserCheck,
+};
 
 const EmotionalMarketingPlaybook = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -205,9 +221,9 @@ const EmotionalMarketingPlaybook = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredStrategies.map((strategy) => (
                 <div key={strategy.id} className="strategy-card bg-slate-800/30 rounded-lg p-6 flex flex-col h-full scroll-animate">
-                  <div className="flex items-center mb-4">
+                    <div className="flex items-center mb-4">
                     <div className={`w-12 h-12 rounded-full ${strategy.color} flex items-center justify-center mr-4`}>
-                      <i className={`${strategy.icon} text-xl`}></i>
+                      {(() => { const Icon = faToLucide[strategy.icon] || Target; return <Icon className="h-5 w-5" />; })()}
                     </div>
                     <h3 className="text-xl font-bold text-white">{strategy.title}</h3>
                   </div>
@@ -216,8 +232,8 @@ const EmotionalMarketingPlaybook = () => {
                     <span className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-xs font-medium capitalize">
                       {strategy.category}
                     </span>
-                    <button className="text-cyan-400 font-medium hover:text-cyan-300 transition">
-                      Learn More <i className="fas fa-arrow-right ml-1"></i>
+                    <button className="text-cyan-400 font-medium hover:text-cyan-300 transition inline-flex items-center gap-1">
+                      Learn More <ArrowRight className="h-4 w-4" />
                     </button>
                   </div>
                 </div>
@@ -291,8 +307,8 @@ const EmotionalMarketingPlaybook = () => {
                 <button className="bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white px-8 py-3 rounded-full font-semibold transition">
                   Get Started Now
                 </button>
-                <button className="border-2 border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-semibold hover:bg-cyan-400/10 transition">
-                  <i className="fas fa-calendar-alt mr-2"></i> Book a Consultation
+                <button className="border-2 border-cyan-400 text-cyan-400 px-8 py-3 rounded-full font-semibold hover:bg-cyan-400/10 transition inline-flex items-center gap-2">
+                  <CalendarDays className="h-4 w-4" /> Book a Consultation
                 </button>
               </div>
             </div>
@@ -300,8 +316,7 @@ const EmotionalMarketingPlaybook = () => {
         </article>
       </div>
 
-      {/* Font Awesome Icons */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     </PageLayout>
   );
 };

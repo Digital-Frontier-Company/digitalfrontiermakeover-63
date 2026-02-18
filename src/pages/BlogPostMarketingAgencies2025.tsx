@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/utils";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import "../styles/blogPost.css";
 
 const BlogPostMarketingAgencies2025 = () => {
@@ -116,7 +117,7 @@ const BlogPostMarketingAgencies2025 = () => {
           <div className="md:w-2/3 lg:w-1/2">
             <div className="flex items-center mb-4">
               <Link to="/blog" className="text-cyan-400 hover:text-cyan-300 flex items-center">
-                <i className="fa-solid fa-arrow-left mr-2"></i>
+                <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Blog
               </Link>
             </div>
@@ -129,11 +130,11 @@ const BlogPostMarketingAgencies2025 = () => {
             </p>
             <div className="flex items-center text-sm text-gray-400 mb-8 blog-slide-up" style={{animationDelay: '0.4s'}}>
               <span className="flex items-center gap-2 mr-6">
-                <i className="fa-solid fa-calendar"></i>
+                <Calendar className="h-4 w-4" />
                 {new Date(postData.publishedDate).toLocaleDateString()}
               </span>
               <span className="flex items-center gap-2">
-                <i className="fa-solid fa-clock"></i>
+                <Clock className="h-4 w-4" />
                 {postData.readTime}
               </span>
             </div>
@@ -370,17 +371,9 @@ const BlogPostMarketingAgencies2025 = () => {
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-gray-700">
           <Link to="/blog" className="text-cyan-400 hover:text-cyan-300 flex items-center">
-            <i className="fa-solid fa-arrow-left mr-2"></i>
+            <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Blog
           </Link>
-          <div className="flex space-x-4">
-            <button className="text-cyan-400 hover:text-cyan-300" title="Share on Twitter">
-              <i className="fab fa-twitter text-xl"></i>
-            </button>
-            <button className="text-cyan-400 hover:text-cyan-300" title="Share on LinkedIn">
-              <i className="fab fa-linkedin text-xl"></i>
-            </button>
-          </div>
         </div>
       </main>
     </div>
