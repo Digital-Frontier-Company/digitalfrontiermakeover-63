@@ -1173,7 +1173,6 @@ const Index = () => {
       {/* AI REVOLUTION & GOOGLE ALGORITHM EVOLUTION SECTION */}
       <section className="py-20 relative overflow-hidden">
 
-        </div>
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
           {/* AI Revolution - Elephant in the Room Section */}
