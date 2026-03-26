@@ -328,14 +328,15 @@ const Index = () => {
       
       {/* Removed dual rendering to prevent conflicts */}
       
+      {/* FIXED BACKGROUND - stays in place while content scrolls */}
+      <div className="fixed inset-0" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 bg-[#0a0e1a]" />
+        <img src="/images/hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" fetchPriority="high" loading="eager" decoding="async" style={{ filter: 'blur(2px) saturate(1.4)' }} aria-hidden="true" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.85) 70%, rgba(10,14,26,0.95) 100%)' }} aria-hidden="true" />
+      </div>
+
       {/* HERO SECTION */}
-      <section className="relative min-h-screen overflow-hidden" style={{
-        background: '#0a0e1a'
-      }}>
-        {/* Background image */}
-        <img src="/images/hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" fetchPriority="high" loading="eager" decoding="async" style={{ zIndex: 1, filter: 'blur(2px) saturate(1.4)' }} aria-hidden="true" />
-        {/* Dark overlay for legibility */}
-        <div className="absolute inset-0" style={{ zIndex: 2, background: 'radial-gradient(ellipse at center, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.85) 70%, rgba(10,14,26,0.95) 100%)' }} aria-hidden="true" />
+      <section className="relative min-h-screen overflow-hidden" style={{ zIndex: 1 }}>
 
         <div className="relative mx-auto max-w-5xl px-6 flex flex-col justify-center min-h-screen" style={{ zIndex: 10, paddingTop: '120px', paddingBottom: '80px' }}>
           {/* Eyebrow */}
@@ -384,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* LANE STATS BAR */}
-      <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+      <div className="relative z-[1] border-t bg-[#0a0e1a]" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
         <div className="max-w-5xl mx-auto px-6 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {/* Lane 1 */}
@@ -412,7 +413,7 @@ const Index = () => {
       </div>
 
       {/* PROBLEM SECTION */}
-      <section id="problem" className="py-20 relative" style={{ backgroundColor: '#112236' }}>
+      <section id="problem" className="py-20 relative z-[1]" style={{ backgroundColor: '#112236' }}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* LEFT COLUMN */}
