@@ -8,7 +8,10 @@ const AIPlansLanding = () => {
   const [showLeadPopup, setShowLeadPopup] = useState(false);
   const [isLeadFormLoading, setIsLeadFormLoading] = useState(false);
   const [isContactFormLoading, setIsContactFormLoading] = useState(false);
-
+  const {
+    toast
+  } = useToast();
+  useEffect(() => {
     // Show popup after 30 seconds
     const timer = setTimeout(() => {
       setShowLeadPopup(true);
