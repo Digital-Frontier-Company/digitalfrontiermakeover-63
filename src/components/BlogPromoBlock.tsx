@@ -15,12 +15,8 @@ const BlogPromoBlock = () => {
 
   return (
     <section className="py-16 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-red-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-1000" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent" />
-      </div>
+
+
 
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         <motion.div

@@ -108,13 +108,8 @@ const ModernContactForm = () => {
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-electric-azure rounded-full animate-pulse opacity-60"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-electric-azure rounded-full animate-pulse opacity-40"></div>
-        <div className="absolute bottom-1/4 left-2/3 w-3 h-3 bg-electric-azure rounded-full animate-pulse opacity-50"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-electric-azure rounded-full animate-pulse opacity-30"></div>
-      </div>
+
+
 
       <Card className="relative backdrop-blur-sm border-electric-azure/20 bg-card/90 overflow-hidden">
         {/* Neon top border */}
