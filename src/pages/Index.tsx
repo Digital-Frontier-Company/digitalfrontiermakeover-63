@@ -440,11 +440,14 @@ const Index = () => {
               </motion.div>
 
               {/* Primary CTA */}
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mb-4">
                 <Link to="/ai-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105">
                   Get the Starter Stack
                 </Link>
               </div>
+              <p className="text-sm text-slate-400 text-center">
+                Free 30-minute strategy session · No sales pitch
+              </p>
 
               {/* Trust Row */}
               <div className="text-center pt-6 border-t border-white/20">
@@ -478,72 +481,8 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Stats Containers */}
-          <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto mt-16" initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.8
-        }}>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <DollarSign className="w-8 h-8 text-[#4EE2EC]" />
-              </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#4EE2EC'
-            }}>$50,000+</div>
-              <div className="text-sm text-slate-300">Invested in AI testing</div>
-            </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <Zap className="w-8 h-8 text-[#8FB31D]" />
-              </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#8FB31D'
-            }}>15+ Hours</div>
-              <div className="text-sm text-slate-300">Saved weekly</div>
-            </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <TrendingUp className="w-8 h-8 text-purple-400" />
-              </div>
-              <div className="text-3xl font-bold mb-2 text-purple-400">25%</div>
-              <div className="text-sm text-slate-300">Average revenue boost</div>
-            </div>
-          </motion.div>
 
-          {/* CTA Button */}
-          <motion.div className="mb-16" initial={{
-          opacity: 0,
-          scale: 0.9
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.6,
-          delay: 1.0
-        }}>
-            <motion.div whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }}>
-              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center justify-center px-16 py-8 text-3xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl border-2 border-white" style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #FFD700 100%)',
-              boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
-              filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
-            }}>
-                Get Your AI Crew Chief →
-              </Link>
-            </motion.div>
-            <div className="mt-6 text-lg text-slate-400">
-              Free 30-minute strategy session • No sales pitch
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
