@@ -813,226 +813,97 @@ const Index = () => {
       {/* BLOG PROMOTION BLOCK */}
       <BlogPromoBlock />
 
-      {/* DIGITAL FRONTIER BLUEPRINT - Restructured with wireframe approach */}
-      <section className="py-8 relative overflow-hidden" aria-labelledby="blueprint-heading">
-        {/* Animated background with gradient waves */}
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-navy via-purple-900/20 to-electric-azure/10">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-electric-azure/5 to-transparent animate-pulse"></div>
-          <div className="absolute top-0 left-0 w-full h-full opacity-20">
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-electric-azure/20 rounded-full blur-2xl"></div>
-          </div>
-        </div>
-
+      {/* SERVICES SECTION */}
+      <section id="services" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div className="mx-auto max-w-6xl px-6 relative z-10">
-          {/* Answer-First Boxes */}
-          <motion.div className="text-center mb-16" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <motion.h2 id="blueprint-heading" className="font-poppins font-bold text-soft-white mb-4 bg-gradient-to-r from-electric-azure via-soft-white to-ultraviolet bg-clip-text text-transparent" style={{
-            fontSize: 'clamp(32px, 5vw, 48px)'
-          }}>
-              AI That Works Both Ways
-            </motion.h2>
-            <motion.p className="font-inter text-xl text-soft-white/80 max-w-2xl mx-auto mb-12">
-              Get found online. Run smarter inside. Digital Frontier delivers visibility + efficiency with AI systems built for growth.
-            </motion.p>
-          </motion.div>
-
-          {/* Answer-First Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {[{
-            title: "What is it?",
-            answer: "A digital strategy firm helping businesses grow in the AI era.",
-            icon: <Rocket className="w-8 h-8" />
-          }, {
-            title: "Who is it for?",
-            answer: "Companies that want both more customers and better efficiency.",
-            icon: <Target className="w-8 h-8" />
-          }, {
-            title: "How it works:",
-            answer: "• AI visibility: dominate generative + search results\n• AI backend: streamline operations with automation\n• End-to-end: visibility + efficiency in one system",
-            icon: <Settings className="w-8 h-8" />
-          }, {
-            title: "Cost:",
-            answer: "Pilots start from $2,500–$7,500 depending on scope.",
-            icon: <DollarSign className="w-8 h-8" />
-          }].map((item, index) => <motion.div key={index} className="bg-card/80 backdrop-blur-sm border border-border/50 p-6 rounded-2xl hover:border-electric-azure/50 transition-all duration-300" initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.6,
-            delay: index * 0.1
-          }} viewport={{
-            once: true
-          }}>
-                <div className="flex justify-center mb-3 text-electric-azure">{item.icon}</div>
-                <h3 className="font-semibold text-electric-azure mb-2">{item.title}</h3>
-                <p className="text-soft-white/80 text-sm whitespace-pre-line">{item.answer}</p>
-              </motion.div>)}
-          </div>
-
-          {/* Pain → Agitate → Solution Section */}
-          <motion.div className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border border-red-800/30 p-8 rounded-2xl mb-20" initial={{
-          opacity: 0,
-          scale: 0.95
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-3xl font-bold text-soft-white mb-6 text-center">The Internet Changed. Most Businesses Didn't.</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-red-400 mb-3">The Pain</h3>
-                <p className="text-soft-white/80">Customers now ask ChatGPT and Google AI for answers—not just search engines. If you're not showing up, you don't exist.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-orange-400 mb-3">The Reality</h3>
-                <p className="text-soft-white/80">Meanwhile, competitors are using AI to automate their backend, cutting costs and scaling faster while you stay stuck.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-signal-lime mb-3">The Solution</h3>
-                <p className="text-soft-white/80">Digital Frontier builds end-to-end AI systems so you win on both fronts—visible outside, efficient inside.</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Proof Section */}
-          <motion.div className="mb-20" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Proven Results</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[{
-              metric: "32% lower",
-              description: "ad costs with AI-optimized funnels",
-              icon: <TrendingDown className="w-10 h-10" />
-            }, {
-              metric: "3x more",
-              description: "leads from GEO visibility strategies",
-              icon: <BarChart3 className="w-10 h-10" />
-            }, {
-              metric: "15 hours/week",
-              description: "saved with backend AI automation",
-              icon: <Clock className="w-10 h-10" />
-            }].map((proof, index) => <motion.div key={index} className="text-center bg-card/60 p-6 rounded-2xl border border-electric-azure/30" whileHover={{
-              scale: 1.05,
-              y: -5
-            }} transition={{
-              duration: 0.3
-            }}>
-                  <div className="flex justify-center mb-3 text-signal-lime">{proof.icon}</div>
-                  <div className="text-2xl font-bold text-signal-lime mb-2">{proof.metric}</div>
-                  <p className="text-soft-white/80">{proof.description}</p>
-                </motion.div>)}
-            </div>
-          </motion.div>
-
-          {/* Mechanism Section (How It Works) */}
-          <motion.div className="mb-20" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-3xl font-bold text-soft-white mb-12 text-center">Our Two-Sided AI Framework</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 border border-cyan-800/30 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-6">Visibility (Front-End)</h3>
-                <ul className="space-y-4 text-soft-white/80">
-                  <li className="flex items-start">
-                    <span className="text-cyan-400 mr-3">•</span>
-                    Generative Engine Optimization (GEO)
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-400 mr-3">•</span>
-                    Answer Engine Optimization (AEO)
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-cyan-400 mr-3">•</span>
-                    Conversion funnels + omnichannel campaigns
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/40 border border-purple-800/30 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-purple-400 mb-6">Efficiency (Backend)</h3>
-                <ul className="space-y-4 text-soft-white/80">
-                  <li className="flex items-start">
-                    <span className="text-purple-400 mr-3">•</span>
-                    AI workflows & automation
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-400 mr-3">•</span>
-                    Data-driven ops intelligence
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-400 mr-3">•</span>
-                    Cost-cutting + scaling systems
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Offer Section */}
-          <motion.div className="bg-gradient-to-r from-signal-lime/20 to-electric-azure/20 border border-signal-lime/50 p-8 rounded-2xl mb-20 text-center" initial={{
-          opacity: 0,
-          scale: 0.95
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-3xl font-bold text-soft-white mb-4">One Partner. Two Wins.</h2>
-            <p className="text-xl text-soft-white/80 mb-8 max-w-2xl mx-auto">
-              Most agencies give you ads or SEO. We build systems. Visibility + efficiency, wrapped into one growth engine.
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Two things. Done right.
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We don't try to do everything. We're focused on two lanes — each one built around a real outcome, not a deliverable list.
             </p>
-            <motion.div whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }}>
-              <Link to="/modern-contact-form" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-deep-navy bg-gradient-to-r from-signal-lime to-electric-azure rounded-full transition-all duration-300 hover:shadow-xl">
-                Launch AI Visibility + Efficiency Today →
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* CARD 1 — AI Marketing */}
+            <motion.div
+              className="p-8 flex flex-col"
+              style={{ backgroundColor: 'rgba(26,86,219,0.12)', border: '1px solid rgba(26,86,219,0.3)', borderRadius: '20px' }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Lane 1 — Service</span>
+              <h3 className="text-2xl font-bold text-foreground mb-3">AI Marketing for Local Businesses</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                You run a real business. You need more customers, better visibility, and marketing that doesn't disappear the moment you stop paying. We build AI-powered systems that work while you work.
+              </p>
+              <div className="space-y-3 mb-8 flex-grow">
+                {[
+                  "Local SEO + AEO optimization",
+                  "Landing page + conversion system",
+                  "AI-powered ad funnel setup",
+                  "Google Business Profile + citation authority",
+                  "Monthly reporting with real numbers"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <Check size={16} className="flex-shrink-0 text-secondary" />
+                    <span className="text-slate-300 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/modern-contact-form"
+                className="block w-full text-center py-3 rounded-lg font-semibold text-white bg-primary hover:opacity-90 transition-opacity"
+              >
+                Get Started →
               </Link>
             </motion.div>
-          </motion.div>
 
-          {/* Risk Reversal / Trust Section */}
-          
-
-
-
+            {/* CARD 2 — Newsletter */}
+            <motion.div
+              className="p-8 flex flex-col"
+              style={{ backgroundColor: 'rgba(14,159,159,0.12)', border: '1px solid rgba(14,159,159,0.3)', borderRadius: '20px' }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs uppercase tracking-widest text-secondary font-semibold mb-4">Lane 2 — Intelligence</span>
+              <h3 className="text-2xl font-bold text-foreground mb-3">The Digital Frontier Market Newsletter</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Every two weeks, we translate the macro forces that move markets — global liquidity cycles, Bitcoin on-chain data, AI industry shifts — into plain language. No noise. No hype. Just the signal.
+              </p>
+              <div className="space-y-3 mb-8 flex-grow">
+                {[
+                  "Bitcoin & crypto market analysis",
+                  "Global liquidity cycle tracking",
+                  "AI industry shifts affecting your business",
+                  "Macro context for smarter business timing",
+                  "Available as PDF + audio format"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-secondary flex-shrink-0">◆</span>
+                    <span className="text-slate-300 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/newsletter"
+                className="block w-full text-center py-3 rounded-lg font-semibold text-white bg-secondary hover:opacity-90 transition-opacity"
+              >
+                Subscribe Free →
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
