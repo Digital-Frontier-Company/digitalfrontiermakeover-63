@@ -514,6 +514,65 @@ const Index = () => {
         </div>
       </div>
 
+      {/* PROBLEM SECTION */}
+      <section id="problem" className="py-20 relative" style={{ backgroundColor: '#112236' }}>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* LEFT COLUMN */}
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest text-slate-300 bg-white/10 mb-6">
+                The Problem
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-8">
+                Most agencies sell you activity.
+                <br />
+                <span className="text-primary">We sell you outcomes.</span>
+              </h2>
+              <div className="space-y-6">
+                {[
+                  "You're paying for ads that stop the moment you stop paying — no compounding, no system, no asset built.",
+                  "Your content doesn't appear in AI search tools like ChatGPT, Perplexity, or Google's AI Overview — where your next customer is actually looking.",
+                  "You're making growth decisions without understanding the macro forces that actually drive your industry."
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="mt-1 flex-shrink-0 text-lg" style={{ color: '#F87171' }}>✕</span>
+                    <p className="text-slate-300 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div className="space-y-6">
+              {/* Quote card */}
+              <div className="rounded-xl p-6 border-l-4" style={{ backgroundColor: 'rgba(26,86,219,0.1)', borderLeftColor: '#1A56DB' }}>
+                <p className="italic text-white/90 leading-relaxed mb-4">
+                  "If you're still obsessing over single keywords like it's 2010, you're playing yesterday's game. The future of search is about context, intent, and smart algorithms that understand language almost like a human."
+                </p>
+                <p className="text-slate-400 text-sm">— Digital Frontier Research, 2025</p>
+              </div>
+
+              {/* What we do instead card */}
+              <div className="rounded-xl p-6" style={{ backgroundColor: 'rgba(14,159,159,0.1)' }}>
+                <h3 className="text-lg font-semibold text-white mb-4">What we do instead</h3>
+                <div className="space-y-4">
+                  {[
+                    "Build AI-powered growth systems — not one-off campaigns",
+                    "Optimize for Answer Engines (AEO/GEO) so you appear where AI searches happen",
+                    "Deliver real market intelligence so your strategy matches the moment"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <Check className="mt-1 flex-shrink-0" size={18} style={{ color: '#0E9F9F' }} />
+                      <p className="text-slate-300 leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AI INDUSTRY STATISTICS SECTION */}
       <section className="py-24 relative overflow-hidden bg-gradient-to-br from-violet-900/20 via-slate-900 to-cyan-900/20">
         <div className="container mx-auto px-4 relative z-10">
