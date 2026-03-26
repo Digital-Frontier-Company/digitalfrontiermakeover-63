@@ -330,159 +330,55 @@ const Index = () => {
       
       {/* Removed dual rendering to prevent conflicts */}
       
-      {/* HERO SECTION - Optimized for LCP */}
+      {/* HERO SECTION */}
       <section className="relative min-h-screen" style={{
-      background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #8FB31D 45%, #2d3748 70%, #1a202c 100%)'
-    }} data-lcp-element="true">
-        {/* LCP Hero Background Image - Optimized loading */}
-        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="AI Marketing Memphis - Digital Frontier Company transforming digital marketing with artificial intelligence and data-driven strategies" className="absolute inset-0 w-full h-full object-cover opacity-30" fetchPriority="high" loading="eager" decoding="async" style={{
-        zIndex: 1
-      }} aria-hidden="true" />
-
-
-        
-        {/* Main Content */}
-        <div className="relative mx-auto max-w-5xl px-6 py-24 lg:px-8 text-center flex flex-col justify-center min-h-screen" style={{
-        zIndex: 10
+        background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #0D1128 60%, #1a202c 100%)'
       }}>
-          
-          {/* Logo with Scale Animation */}
-          <motion.div className="relative flex justify-center mb-12" style={{
-          scale: logoScale
-        }} initial={{
-          opacity: 1,
-          y: 0
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.1
-        }}>
-            {/* Simplified geometric frame around logo */}
-            <div className="absolute inset-0 -top-6 -bottom-6 -left-6 -right-6">
-              <div className="absolute inset-3 border inset-3.5 animate-pulse rounded-full bg-[#000a0e]/[0.56]"></div>
-            </div>
-            
-            {/* Main logo */}
-            <LazyImage src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png" alt="Digital Frontier Company - Leading Memphis Digital Marketing Agency" className="h-80 w-auto relative z-10 object-cover logo-interactive animate-logo-strobe" displayWidth={480} displayHeight={320} optimization={{
-            priority: true
-          }} />
-          </motion.div>
+        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="AI Marketing Memphis - Digital Frontier" className="absolute inset-0 w-full h-full object-cover opacity-20" fetchPriority="high" loading="eager" decoding="async" style={{ zIndex: 1 }} aria-hidden="true" />
 
-          {/* Main messaging container with improved contrast background */}
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 px-[33px] py-[66px] mx-0 my-[13px] bg-[#1e1e1e]/[0.43]">
-              {/* Main Headlines */}
-              <h1 className="text-4xl mb-6 leading-tight bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] bg-clip-text text-transparent font-extrabold md:text-7xl font-oswald uppercase tracking-wide animate-gradient" style={{
-              textShadow: '0 0 15px rgba(78, 226, 236, 0.4), 0 0 30px rgba(78, 226, 236, 0.3), 0 0 45px rgba(78, 226, 236, 0.2)',
-              WebkitTextStroke: '1px white',
-              backgroundSize: '200% 200%',
-              animation: 'gradientShift 3s ease infinite'
-            }}>
-                The simplest way for a small business to start with AI
-              </h1>
-
-              {/* Subhead */}
-              <div className="text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
-                <TypewriterText text="Launch a vetted AI stack in days and track ROI in weeks. We tested 100+ tools so you don't have to." delay={50} loop={true} />
-              </div>
-
-              {/* Bullet Points */}
-              <motion.div className="grid md:grid-cols-1 gap-4 mb-8 text-left max-w-2xl mx-auto" initial={{
-              opacity: 0,
-              y: 30
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.8,
-              delay: 0.6
-            }}>
-                <motion.div className="flex items-start space-x-3" initial={{
-                opacity: 0,
-                x: -20
-              }} animate={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.6,
-                delay: 0.8
-              }}>
-                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
-                  <span className="text-lg text-slate-200">Prebuilt workflows for leads, follow-ups, and reporting</span>
-                </motion.div>
-                <motion.div className="flex items-start space-x-3" initial={{
-                opacity: 0,
-                x: -20
-              }} animate={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.6,
-                delay: 1.0
-              }}>
-                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
-                  <span className="text-lg text-slate-200">Click-to-connect with your CRM and site</span>
-                </motion.div>
-                <motion.div className="flex items-start space-x-3" initial={{
-                opacity: 0,
-                x: -20
-              }} animate={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.6,
-                delay: 1.2
-              }}>
-                  <Check className="w-6 h-6 text-[#4EE2EC] flex-shrink-0 mt-1" />
-                  <span className="text-lg text-slate-200">KPI dashboard your bookkeeper won't hate</span>
-                </motion.div>
-              </motion.div>
-
-              {/* Primary CTA */}
-              <div className="flex justify-center mb-4">
-                <Link to="/ai-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105">
-                  Get the Starter Stack
-                </Link>
-              </div>
-              <p className="text-sm text-slate-400 text-center">
-                Free 30-minute strategy session · No sales pitch
-              </p>
-
-              {/* Trust Row */}
-              <div className="text-center pt-6 border-t border-white/20">
-                <p className="text-slate-300 mb-4">Used by 120+ local businesses</p>
-                <div className="flex justify-center items-center space-x-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6" style={{
-                      fill: `url(#starGradient${i})`,
-                      filter: 'drop-shadow(0 0 4px rgba(78, 226, 236, 0.5))'
-                    }}>
-                      <defs>
-                        <linearGradient id={`starGradient${i}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" style={{stopColor: '#4EE2EC', stopOpacity: 1}} />
-                          <stop offset="100%" style={{stopColor: '#8FB31D', stopOpacity: 1}} />
-                        </linearGradient>
-                      </defs>
-                    </Star>
-                  ))}
-                </div>
-                <div className="flex justify-center items-center space-x-8 mb-4">
-                  <img src="/lovable-uploads/LINDYT.jpeg" alt="Lindy AI - Certified Partner" className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/Clutch.png" alt="Clutch - Top Rated Agency" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/Design_rush.png" alt="DesignRush - Best Digital Marketing Agencies" className="h-16 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/g2-seller-solutions.png" alt="G2 - Seller Solutions Partner" className="h-12 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                  <img src="/lovable-uploads/blockchain_network_logo-2.png" alt="Digital Pioneer Collective - Blockchain Network" className="h-14 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-                </div>
-                <blockquote className="text-slate-300 italic text-large max-w-2xl mx-auto">
-                  "It's fair to roll your eyes at "AI agencies." We don't sell vibes. We install a lead engine you can audit: recorded calls, annotated ad tests, and weekly scorecards. First 10 days we ship four proof assets you can reuse even if you fire us. If we don't lower CPL by week 4, you don't pay week 5."
-                </blockquote>
-              </div>
-            </div>
+        <div className="relative mx-auto max-w-5xl px-6 flex flex-col justify-center min-h-screen" style={{ zIndex: 10, paddingTop: '120px', paddingBottom: '80px' }}>
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-6">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-secondary uppercase tracking-widest" style={{ fontSize: '0.8rem' }}>
+              AI-Native Growth Systems · Memphis, TN
+            </span>
           </div>
 
+          {/* Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground mb-6" style={{ fontFamily: "'Poppins', sans-serif" }}>
+            We don't run ads.
+            <br />
+            We build <em className="not-italic" style={{ color: '#60A5FA', fontStyle: 'italic' }}>systems</em> that make
+            <br />
+            your competitors irrelevant.
+          </h1>
 
+          {/* Subheadline */}
+          <p className="max-w-xl mb-10 leading-relaxed" style={{ color: '#C9D5E8' }}>
+            Digital Frontier is the AI-native growth partner for local and service businesses ready to stop guessing and start compounding. We combine intelligent marketing, Answer Engine Optimization, and real-world market intelligence — so you don't just grow, you grow with a plan.
+          </p>
 
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 mb-4">
+            <Link
+              to="/modern-contact-form"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg bg-primary transition-all duration-300 hover:opacity-90"
+              style={{ boxShadow: '0 0 20px rgba(26,86,219,0.4)' }}
+            >
+              See How It Works →
+            </Link>
+            <Link
+              to="/newsletter"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:bg-white/5"
+              style={{ color: '#94A3B8', border: '1px solid rgba(255,255,255,0.15)', background: 'transparent' }}
+            >
+              Read the Market Newsletter
+            </Link>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Free 30-minute strategy session · No sales pitch
+          </p>
         </div>
       </section>
 
