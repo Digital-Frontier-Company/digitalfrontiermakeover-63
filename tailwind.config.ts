@@ -73,6 +73,7 @@ export default {
 				'mid-gradient-end': 'hsl(var(--mid-gradient-end))'
 			},
 			fontFamily: {
+				'heading': ['Oxanium', 'sans-serif'],
 				'poppins': ['Poppins', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 				'oswald': ['Oswald', 'sans-serif'],
