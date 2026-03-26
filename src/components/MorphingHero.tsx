@@ -139,21 +139,8 @@ const MorphingHero = () => {
         />
       </div>
 
-      {/* Interactive Particle Field */}
-      <div className="absolute inset-0">
-        {[...Array(12)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400/40 rounded-full animate-pulse transition-all duration-500"
-            style={{
-              left: `${10 + (i * 7)}%`,
-              top: `${15 + (i * 6)}%`,
-              animationDelay: `${i * 0.3}s`,
-              transform: `translate(${mousePosition.x * (20 + i * 5)}px, ${mousePosition.y * (15 + i * 3)}px)`
-            }}
-          />
-        ))}
-      </div>
+
+
 
       {/* Main Content Container */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4">

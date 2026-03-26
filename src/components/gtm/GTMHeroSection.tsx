@@ -60,9 +60,8 @@ export function GTMHeroSection() {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+
+
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -165,10 +164,8 @@ export function GTMHeroSection() {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-accent/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
+
+
     </section>
   );
 }

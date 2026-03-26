@@ -65,6 +65,7 @@ export default {
 				// New Digital Frontier Color System
 				'deep-navy': 'hsl(var(--deep-navy))',
 				'electric-azure': 'hsl(var(--electric-azure))',
+				'teal-accent': 'hsl(var(--teal-accent))',
 				'ultraviolet': 'hsl(var(--ultraviolet))',
 				'signal-lime': 'hsl(var(--signal-lime))',
 				'soft-white': 'hsl(var(--soft-white))',

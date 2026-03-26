@@ -134,43 +134,8 @@ const Blog = () => {
         }
       });
 
-  // Create particles effect
-  useEffect(() => {
-    const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
 
-    // Clear existing particles
-    particlesContainer.innerHTML = '';
-    
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      
-      // Random position
-      const posX = Math.random() * 100;
-      const posY = Math.random() * 100;
-      
-      // Random size
-      const size = Math.random() * 4 + 1;
-      
-      // Random animation duration
-      const duration = Math.random() * 20 + 10;
-      
-      // Random delay
-      const delay = Math.random() * 10;
-      
-      particle.style.left = `${posX}%`;
-      particle.style.top = `${posY}%`;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.animationDuration = `${duration}s`;
-      particle.style.animationDelay = `${delay}s`;
-      
-      particlesContainer.appendChild(particle);
-    }
-  }, []);
+
 
   // Blog listing page schema
   const blogSchema = {
@@ -235,11 +200,8 @@ const Blog = () => {
       </Helmet>
 
       <div className="text-white font-sans min-h-screen relative" style={{ fontFamily: 'Inter, sans-serif' }}>
-        {/* Animated Mesh Gradient Background */}
-        <div className="animated-mesh-bg"></div>
-        
-        {/* Particles Background */}
-        <div id="particles" className="particles"></div>
+
+
 
         {/* Main Content */}
         <main className="relative z-10">

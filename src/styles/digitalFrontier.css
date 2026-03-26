@@ -1,11 +1,11 @@
 
 :root {
-  /* Brand palette */
-  --df-dark-blue: #000033;
-  --df-black-blue: #000014;
-  --df-blue: #0066FF;
-  --df-bright-blue: #00BFFF;
-  --df-light-blue: #00BFFF;
+  /* Brand palette - updated to match design tokens */
+  --df-dark-blue: #0D1128;
+  --df-black-blue: #0D1128;
+  --df-blue: #1A56DB;
+  --df-bright-blue: #1A56DB;
+  --df-light-blue: #1A56DB;
 }
 
 /* ===== Layout wrappers ===== */

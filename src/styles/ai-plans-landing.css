@@ -1,14 +1,7 @@
 /* AI Plans Landing Page Custom Styles */
 
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #8b5cf6;
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-  opacity: 0.6;
-}
+/* Particles removed for clean design */
+
 
 @keyframes float {
   0%, 100% { 

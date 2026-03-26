@@ -175,13 +175,8 @@ const ModernContactForm = () => {
           <div className="grid-line w-px h-full left-2/3 top-0"></div>
         </div>
         
-        {/* Floating particles */}
-        <div className="particles absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-neon-cyan rounded-full animate-pulse"></div>
-          <div className="absolute bottom-1/4 left-2/3 w-3 h-3 bg-neon-cyan rounded-full animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-neon-cyan rounded-full animate-pulse"></div>
-        </div>
+
+
         
         <div className="container mx-auto px-4 py-12 flex-grow flex items-center justify-center">
           <div className="w-full max-w-2xl">

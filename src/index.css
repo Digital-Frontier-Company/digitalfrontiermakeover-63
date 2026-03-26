@@ -42,8 +42,9 @@
     --deep-navy: 224 47% 9%;           /* #0D1128 - Base background */
     --mid-gradient-start: 223 35% 20%; /* #1F2A4D - Gradient start */
     --mid-gradient-end: 223 40% 16%;   /* #151C3B - Gradient end */
-    --electric-azure: 215 100% 59%;    /* #2F80FF - Primary CTA, links */
-    --ultraviolet: 267 100% 67%;       /* #9750FF - Secondary CTA, innovation */
+    --electric-azure: 220 78% 48%;     /* #1A56DB - Primary CTA, links */
+    --teal-accent: 180 83% 34%;        /* #0E9F9F - Secondary accent */
+    --ultraviolet: 267 100% 67%;       /* #9750FF - Tertiary */
     --signal-lime: 81 100% 67%;        /* #B7FF5B - Success state, progress */
     --soft-white: 218 33% 97%;         /* #F7F9FC - Text on dark */
 
@@ -60,14 +61,14 @@
     --primary: var(--electric-azure);
     --primary-foreground: var(--deep-navy);
 
-    --secondary: var(--ultraviolet);
+    --secondary: var(--teal-accent);
     --secondary-foreground: var(--soft-white);
 
     --muted: 224 35% 15%;
     --muted-foreground: 218 20% 70%;
 
-    --accent: var(--signal-lime);
-    --accent-foreground: var(--deep-navy);
+    --accent: var(--teal-accent);
+    --accent-foreground: var(--soft-white);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: var(--soft-white);
@@ -198,7 +199,34 @@
   
   /* Progress Bar */
   .progress-bar {
-    background: linear-gradient(90deg, hsl(var(--electric-azure)), hsl(var(--ultraviolet)));
+    background: linear-gradient(90deg, hsl(var(--electric-azure)), hsl(var(--teal-accent)));
+  }
+
+  /* Subtle site-wide background */
+  .site-bg {
+    background-color: hsl(var(--deep-navy));
+    position: relative;
+  }
+  .site-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, hsl(var(--electric-azure) / 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 85% 90%, hsl(var(--teal-accent) / 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .site-bg::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(hsl(var(--soft-white) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--soft-white) / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
   }
 }
 

@@ -1165,40 +1165,14 @@ const Index = () => {
           {/* Risk Reversal / Trust Section */}
           
 
-          {/* Single floating particle */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute w-2 h-2 bg-electric-azure/40 rounded-full animate-pulse" style={{
-            left: '50%',
-            top: '30%'
-          }} />
-          </div>
+
+
         </div>
       </section>
 
       {/* AI REVOLUTION & GOOGLE ALGORITHM EVOLUTION SECTION */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Animated background particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-electric-azure/30 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.2, 0.5, 0.2],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
+      <section className="py-20 relative overflow-hidden">
+
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
           {/* AI Revolution - Elephant in the Room Section */}
@@ -1635,12 +1609,8 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Floating particles for visual appeal */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-green-400 rounded-full animate-pulse opacity-40"></div>
-          <div className="absolute bottom-1/4 left-2/3 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-50"></div>
-        </div>
+
+
       </section>
 
       {/* LEARN MORE SECTION */}

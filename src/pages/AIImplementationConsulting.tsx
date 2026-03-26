@@ -11,19 +11,8 @@ const AIImplementationConsulting = () => {
       currentPath="/services/ai-implementation-consulting"
     >
       <section className="ai-integration-section">
-        {/* Floating Particles */}
-        <div className="floating-particles">
-          {[...Array(9)].map((_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                left: `${(i + 1) * 10}%`,
-                animationDelay: i % 2 === 0 ? `${-i * 2}s` : `${-i}s`
-              }}
-            />
-          ))}
-        </div>
+
+
         
         <div className="ai-container">
           {/* Header */}

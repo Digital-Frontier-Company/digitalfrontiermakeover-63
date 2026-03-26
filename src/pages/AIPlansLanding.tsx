@@ -5,13 +5,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { Target, Bot, TrendingUp, Search, Zap, Shield, CheckCircle, Star, Users, Award, ArrowRight, Calendar, Phone, Mail } from "lucide-react";
 const AIPlansLanding = () => {
-  const [particles, setParticles] = useState<Array<{
-    id: number;
-    left: string;
-    top: string;
-    delay: string;
-    duration: string;
-  }>>([]);
   const [showLeadPopup, setShowLeadPopup] = useState(false);
   const [isLeadFormLoading, setIsLeadFormLoading] = useState(false);
   const [isContactFormLoading, setIsContactFormLoading] = useState(false);
@@ -19,19 +12,6 @@ const AIPlansLanding = () => {
     toast
   } = useToast();
   useEffect(() => {
-    // Create particles
-    const particleArray = [];
-    for (let i = 0; i < 50; i++) {
-      particleArray.push({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 6}s`,
-        duration: `${6 + Math.random() * 4}s`
-      });
-    }
-    setParticles(particleArray);
-
     // Show popup after 30 seconds
     const timer = setTimeout(() => {
       setShowLeadPopup(true);
@@ -128,18 +108,8 @@ const AIPlansLanding = () => {
   };
   return <>
       
-      {/* Animated Background */}
-      <div className="fixed inset-0 bg-gradient-radial from-indigo-900/20 via-slate-900 to-slate-950 -z-20"></div>
-      
-      {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        {particles.map(particle => <div key={particle.id} className="particle absolute w-0.5 h-0.5 bg-violet-500 rounded-full opacity-60" style={{
-        left: particle.left,
-        top: particle.top,
-        animationDelay: particle.delay,
-        animationDuration: particle.duration
-      }} />)}
-      </div>
+
+
 
       {/* Lead Magnet Popup */}
       {showLeadPopup && <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
@@ -186,13 +156,7 @@ const AIPlansLanding = () => {
 
         {/* Hero Section */}
         <section className="min-h-screen flex items-center relative pt-24 overflow-hidden">
-          {/* Animated background with central light */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/15 rounded-full blur-2xl animate-pulse delay-2000"></div>
-          </div>
+          <div className="absolute inset-0"></div>
 
           <div className="container mx-auto px-5 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
