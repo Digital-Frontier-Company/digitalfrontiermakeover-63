@@ -1406,6 +1406,41 @@ const Index = () => {
         </div>
       </section>
 
+      {/* NEWSLETTER SIGNUP SECTION */}
+      <section id="newsletter" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0D1128 0%, #112236 50%, #0D1128 100%)' }}>
+        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(26,86,219,0.3) 0%, transparent 70%)' }} />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: '#0E9F9F', backgroundColor: 'rgba(14,159,159,0.12)', border: '1px solid rgba(14,159,159,0.2)' }}>
+              Weekly Intel
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '-0.02em' }}>
+              The Market Newsletter
+            </h2>
+            <p className="text-slate-400 mb-8 leading-relaxed max-w-lg mx-auto">
+              AI trends, local growth plays, and market intelligence — delivered weekly. No fluff. Just the signals that matter for your business.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+              <input
+                type="email"
+                placeholder="you@company.com"
+                className="flex-1 px-4 py-3 rounded-lg text-sm border bg-white/5 text-foreground placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                style={{ borderColor: 'rgba(255,255,255,0.1)' }}
+              />
+              <Link
+                to="/newsletter"
+                className="px-6 py-3 rounded-lg text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-colors whitespace-nowrap"
+                style={{ boxShadow: '0 0 16px rgba(26,86,219,0.3)' }}
+              >
+                Subscribe →
+              </Link>
+            </div>
+            <p className="text-xs text-slate-500">Join 500+ founders and operators. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </section>
+
       {/* MODERN CONTACT FORM SECTION */}
       <section className="relative py-12 bg-deep-navy border-t border-border">
         <div className="mx-auto max-w-4xl px-6 relative z-10">
