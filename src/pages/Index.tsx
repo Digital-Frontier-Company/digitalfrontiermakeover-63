@@ -555,45 +555,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WEB3 PROJECT PROMOTION SECTION */}
-      <section className="py-8 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative z-10 mx-auto max-w-4xl px-6">
-          <motion.div className="text-center" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div className="flex-shrink-0">
-                  <img src={cryptoShieldLogo} alt="Digital Pioneer Collective Logo" className="h-20 w-20 object-contain" />
-                </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    Check out our web3 project being built
-                  </h3>
-                  <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105" style={{
-                  background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-                  boxShadow: '0 0 20px rgba(78, 226, 236, 0.3)'
-                }}>
-                    Visit Digital Pioneers →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* GUMROAD PROMOTION SECTION */}
       <section className="py-8 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
@@ -682,9 +643,8 @@ const Index = () => {
                 <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
               </a>
               
-              <a href="https://digitalpioneers.io" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <img src={digitalPioneerLogo} alt="Digital Pioneer Collective - Web3 Innovation" className="h-32 w-48 object-contain" width="192" height="128" />
-              </a>
+
+
               
               <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
                 <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
@@ -1255,30 +1215,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* REVENUE ENGINE SECTION */}
-      <section className="df-revenue-engine animate-on-scroll">
-        <div className="container">
-          <div className="row" style={{
-          alignItems: "center"
-        }}>
-            <div className="col-lg-6">
-              <div className="df-neon-border mt-3 mb-5 mb-lg-3">
-                
-              </div>
-            </div>
-            <div className="col-lg-6">
-              
-              <div className="imagine-text">
-                
-              </div>
-              <div className="content-text">
-                
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
