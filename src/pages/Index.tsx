@@ -346,10 +346,10 @@ const Index = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '-0.03em' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase leading-[1.05] text-foreground mb-6" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: '-0.02em' }}>
             We don't run ads.
             <br />
-            We build <em className="not-italic" style={{ color: '#60A5FA', fontStyle: 'italic', fontFamily: "'Playfair Display', serif" }}>systems</em> that make
+            We build <em className="not-italic" style={{ color: '#60A5FA', fontStyle: 'italic' }}>systems</em> that make
             <br />
             your competitors irrelevant.
           </h1>

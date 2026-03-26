@@ -19,40 +19,42 @@ import {
 
 const MainNavigation = () => {
   return (
-    <nav className="border-b border-border/50 bg-background/60 backdrop-blur-sm sticky top-0 z-50 px-6 py-4">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between h-24">
-          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+    <nav className="border-b border-border/50 bg-background/60 backdrop-blur-sm sticky top-0 z-50">
+      <div className="w-full max-w-[1600px] mx-auto px-4 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo — fixed size, no shrink */}
+          <Link to="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
             <LazyImage
               src="/lovable-uploads/7223877a-0a55-4ae4-9fbe-ad1c46acae0f.png"
               alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo"
               displayWidth={300}
               displayHeight={300}
               optimization={{ priority: true }}
-              className="h-36 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
-          <div className="flex items-center space-x-8">
+          {/* Nav links */}
+          <div className="flex items-center gap-2 lg:gap-4">
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="gap-0">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Digital Marketing</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-xs lg:text-sm px-2 lg:px-3">Digital Marketing</NavigationMenuTrigger>
                   <DigitalMarketingDropdown />
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Local SEO</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-xs lg:text-sm px-2 lg:px-3">Local SEO</NavigationMenuTrigger>
                   <LocalSEODropdown />
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-xs lg:text-sm px-2 lg:px-3">Resources</NavigationMenuTrigger>
                   <ResourcesDropdown />
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-xs lg:text-sm px-2 lg:px-3">Company</NavigationMenuTrigger>
                   <CompanyDropdown />
                 </NavigationMenuItem>
 
@@ -60,7 +62,7 @@ const MainNavigation = () => {
                   <NavigationMenuLink asChild>
                     <Link
                       to="/newsletter"
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-2 lg:px-3 py-2 text-xs lg:text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
                     >
                       Newsletter
                     </Link>
@@ -69,38 +71,39 @@ const MainNavigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="flex items-center gap-6">
-              {/* Social Links */}
-              <div className="flex items-center gap-3">
-                <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a href="https://x.com/DigitalFro14616" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61572896248731" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="https://www.instagram.com/digital_frontier_company/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a href="https://www.youtube.com/@Digital_FrontierCO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Youtube className="h-5 w-5" />
-                </a>
-                <a href="https://www.tiktok.com/@digitalfrontierco" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <SiTiktok className="h-5 w-5" />
-                </a>
-              </div>
+            {/* Social icons */}
+            <div className="hidden xl:flex items-center gap-2 ml-2">
+              <a href="https://www.linkedin.com/company/digital-frontier-company" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="https://x.com/DigitalFro14616" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Twitter className="h-4 w-4" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61572896248731" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a href="https://www.instagram.com/digital_frontier_company/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://www.youtube.com/@Digital_FrontierCO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Youtube className="h-4 w-4" />
+              </a>
+              <a href="https://www.tiktok.com/@digitalfrontierco" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <SiTiktok className="h-4 w-4" />
+              </a>
+            </div>
 
+            {/* CTA buttons */}
+            <div className="flex items-center gap-2 ml-2">
               <Link
                 to="/modern-contact-form"
-                className="px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                className="whitespace-nowrap px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors text-xs lg:text-sm"
               >
                 Book a Call →
               </Link>
               <Link
                 to="/newsletter"
-                className="px-5 py-2.5 border border-primary/30 text-primary rounded-lg font-medium hover:bg-primary/10 transition-colors text-sm"
+                className="whitespace-nowrap px-4 py-2 border border-primary/30 text-primary rounded-lg font-medium hover:bg-primary/10 transition-colors text-xs lg:text-sm"
               >
                 Subscribe
               </Link>
