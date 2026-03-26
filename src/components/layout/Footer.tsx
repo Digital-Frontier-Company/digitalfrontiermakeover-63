@@ -5,7 +5,7 @@ import { LazyImage } from "@/components/LazyImage";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900/95 backdrop-blur-sm border-t border-slate-700/50 mt-16">
+    <footer className="relative z-[1] bg-slate-950/95 backdrop-blur-md border-t border-slate-700/50">
       <div className="container mx-auto px-4 py-10">
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
