@@ -1155,10 +1155,8 @@ const Index = () => {
         <GenerativeSearchProSection />
       </Suspense>
 
-      {/* CASE STUDY SLIDER - KPI-driven showcase */}
-      <Suspense fallback={<div className="py-4 bg-slate-900/50 animate-pulse"></div>}>
-        <CaseStudySlider />
-      </Suspense>
+
+
 
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
