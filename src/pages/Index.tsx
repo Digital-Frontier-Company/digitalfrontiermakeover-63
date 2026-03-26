@@ -79,7 +79,7 @@ const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"
 const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
 const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
 const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
-const GenerativeSearchProSection = lazy(() => import("@/components/GenerativeSearchProSection"));
+
 const Index = () => {
   // Use the FAQ toggle hook
   useFaqToggle();
