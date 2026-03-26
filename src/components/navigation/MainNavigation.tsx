@@ -30,7 +30,7 @@ const MainNavigation = () => {
               displayWidth={300}
               displayHeight={300}
               optimization={{ priority: true }}
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </Link>
 
