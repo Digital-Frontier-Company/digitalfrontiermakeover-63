@@ -329,10 +329,13 @@ const Index = () => {
       {/* Removed dual rendering to prevent conflicts */}
       
       {/* HERO SECTION */}
-      <section className="relative min-h-screen" style={{
-        background: 'linear-gradient(135deg, #0f1629 0%, #1a237e 25%, #0D1128 60%, #1a202c 100%)'
+      <section className="relative min-h-screen overflow-hidden" style={{
+        background: '#0a0e1a'
       }}>
-        <img src="/lovable-uploads/437eedfa-5c80-4a7d-9af4-21878ea732d7.png" alt="AI Marketing Memphis - Digital Frontier" className="absolute inset-0 w-full h-full object-cover opacity-20" fetchPriority="high" loading="eager" decoding="async" style={{ zIndex: 1 }} aria-hidden="true" />
+        {/* Background image */}
+        <img src="/images/hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" fetchPriority="high" loading="eager" decoding="async" style={{ zIndex: 1, filter: 'blur(2px) saturate(1.4)' }} aria-hidden="true" />
+        {/* Dark overlay for legibility */}
+        <div className="absolute inset-0" style={{ zIndex: 2, background: 'radial-gradient(ellipse at center, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.85) 70%, rgba(10,14,26,0.95) 100%)' }} aria-hidden="true" />
 
         <div className="relative mx-auto max-w-5xl px-6 flex flex-col justify-center min-h-screen" style={{ zIndex: 10, paddingTop: '120px', paddingBottom: '80px' }}>
           {/* Eyebrow */}
