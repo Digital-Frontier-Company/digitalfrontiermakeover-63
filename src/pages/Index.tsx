@@ -385,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* LANE STATS BAR */}
-      <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+      <div className="relative z-[1] border-t bg-[#0a0e1a]" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
         <div className="max-w-5xl mx-auto px-6 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {/* Lane 1 */}
@@ -413,7 +413,7 @@ const Index = () => {
       </div>
 
       {/* PROBLEM SECTION */}
-      <section id="problem" className="py-20 relative" style={{ backgroundColor: '#112236' }}>
+      <section id="problem" className="py-20 relative z-[1]" style={{ backgroundColor: '#112236' }}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* LEFT COLUMN */}
