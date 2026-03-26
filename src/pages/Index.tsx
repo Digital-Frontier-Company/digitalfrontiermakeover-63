@@ -1163,20 +1163,7 @@ const Index = () => {
         <FAQAccordion />
       </Suspense>
 
-      {/* FINAL CTA */}
-      <section className="df-final-cta animate-on-scroll">
-        <div className="container">
-          <div className="text-center mb-4">
-            <img src="/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png" alt="Digital Frontier Company Logo - Contact Us" width="80" height="80" className="mb-4" loading="lazy" />
-          </div>
-          <h2>Ready to Own Your Digital Space?</h2>
-          <p>If you're ready to dominate your market and make your competitors irrelevant, let's talk. Click below, and let's build something legendary.</p>
-          <div className="text-center">
-            <Link to="/modern-contact-form" className="df-yellow-cta-button">Join Now</Link>
-          </div>
-          <p className="tagline mt-4">Digital Frontier—Marketing That Actually Works.</p>
-        </div>
-      </section>
+
 
       {/* AI CREW CHIEF PROMOTION SECTION */}
       <section className="py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
