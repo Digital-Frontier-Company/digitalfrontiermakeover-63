@@ -1,8 +1,8 @@
 /* Digital Frontier Services Color Variables */
 :root {
-  --df-cyan: #00EEFF;
-  --df-bright-blue: #00A3FF;
-  --df-dark-blue: #0A192F;
+  --df-cyan: #0E9F9F;
+  --df-bright-blue: #1A56DB;
+  --df-dark-blue: #0D1128;
   --df-glass-bg: rgba(5, 20, 30, 0.7);
 }
 
