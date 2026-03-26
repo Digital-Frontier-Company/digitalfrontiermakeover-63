@@ -55,11 +55,11 @@ const MainLayout = ({
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen site-bg text-foreground">
       <MainNavigation />
       
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-[1]">
         {children}
       </main>
 
