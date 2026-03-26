@@ -340,16 +340,16 @@ const Index = () => {
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-6">
             <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-secondary uppercase tracking-widest" style={{ fontSize: '0.8rem' }}>
+            <span className="uppercase tracking-[0.22em]" style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: '#00E5FF' }}>
               AI-Native Growth Systems · Memphis, TN
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase leading-[1.05] text-foreground mb-6" style={{ fontFamily: "'Syne', sans-serif", letterSpacing: '-0.02em' }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-foreground mb-6" style={{ fontFamily: "'Oxanium', sans-serif", letterSpacing: '-0.03em' }}>
             We don't run ads.
             <br />
-            We build <em className="not-italic" style={{ color: '#60A5FA', fontStyle: 'italic' }}>systems</em> that make
+            We build <em className="not-italic" style={{ background: 'linear-gradient(90deg, #1478FF, #00E5FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>systems</em> that make
             <br />
             your competitors irrelevant.
           </h1>
