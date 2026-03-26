@@ -5,32 +5,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { Target, Bot, TrendingUp, Search, Zap, Shield, CheckCircle, Star, Users, Award, ArrowRight, Calendar, Phone, Mail } from "lucide-react";
 const AIPlansLanding = () => {
-  const [particles, setParticles] = useState<Array<{
-    id: number;
-    left: string;
-    top: string;
-    delay: string;
-    duration: string;
-  }>>([]);
   const [showLeadPopup, setShowLeadPopup] = useState(false);
   const [isLeadFormLoading, setIsLeadFormLoading] = useState(false);
   const [isContactFormLoading, setIsContactFormLoading] = useState(false);
-  const {
-    toast
-  } = useToast();
-  useEffect(() => {
-    // Create particles
-    const particleArray = [];
-    for (let i = 0; i < 50; i++) {
-      particleArray.push({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 6}s`,
-        duration: `${6 + Math.random() * 4}s`
-      });
-    }
-    setParticles(particleArray);
 
     // Show popup after 30 seconds
     const timer = setTimeout(() => {
