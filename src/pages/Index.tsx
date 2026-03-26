@@ -11,7 +11,6 @@ import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
 import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
 import gumroadLogo from "@/assets/gumroad-logo.png";
-import gumroadLogo from "@/assets/gumroad-logo.png";
 
 // TypewriterText component with line break support
 const TypewriterText = ({
