@@ -753,7 +753,80 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
+      {/* CASE STUDY SECTION */}
+      <section id="case-study" className="py-20 relative" style={{ backgroundColor: '#0D1128' }}>
+        <div className="mx-auto max-w-5xl px-6 relative z-10">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest font-semibold mb-6" style={{ backgroundColor: 'rgba(212,168,67,0.15)', color: '#D4A843' }}>
+              Proof of Concept
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              From zero online presence to a live, converting website.
+            </h2>
+          </div>
+
+          {/* Main Card */}
+          <div className="rounded-3xl p-8 md:p-10" style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            {/* Tag Chips */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {["Client: Memphis Earth Movers", "Industry: Construction / Excavation", "Location: Memphis, TN"].map((tag, i) => (
+                <span key={i} className="px-3 py-1 rounded-full text-xs text-muted-foreground" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-10">
+              {/* LEFT */}
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-3">The Situation</h3>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Memphis Earth Movers is a local excavation and dump truck company. They had the crews and equipment but zero digital presence. No website. No way for new customers to find them.
+                </p>
+
+                <h3 className="text-lg font-semibold text-foreground mb-4">What We Built</h3>
+                <div className="space-y-3">
+                  {[
+                    "Full landing page with local SEO",
+                    "AEO-structured content for excavation queries",
+                    "Quote request conversion funnel",
+                    "Mobile-first responsive design"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <Check size={16} className="flex-shrink-0 text-secondary" />
+                      <span className="text-slate-300 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { value: "Live", color: '#0E9F9F', label: "Deployed Website" },
+                    { value: "Local", color: '#1A56DB', label: "SEO Optimized" },
+                    { value: "AEO", color: '#D4A843', label: "Answer-Structured" },
+                    { value: "0→1", color: '#F7F9FC', label: "Zero to discoverable" }
+                  ].map((stat, i) => (
+                    <div key={i} className="rounded-xl p-4 text-center" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                      <div className="text-xl font-bold mb-1" style={{ color: stat.color }}>{stat.value}</div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="rounded-xl p-5" style={{ backgroundColor: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.2)' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#D4A843' }}>
+                    <span className="font-semibold">The Memphis Model</span> — This is our repeatable template: audit → architecture → AEO content → conversion path. It works in any service industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
         <div className="mx-auto max-w-6xl px-6 relative z-10">
           <motion.div
