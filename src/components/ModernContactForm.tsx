@@ -244,29 +244,6 @@ const ModernContactForm = () => {
               )}
             </div>
 
-            {/* Marketing Needs */}
-            <div className="relative">
-              <Label htmlFor="marketing-needs" className="block text-sm font-medium text-electric-azure/90 mb-2 flex items-center">
-                <ChartLine className="w-4 h-4 mr-2" />
-                What are your Marketing needs and budget?
-              </Label>
-              <Select value={formData.marketingNeeds} onValueChange={(value) => handleInputChange('marketingNeeds', value)}>
-                <SelectTrigger className="bg-deep-navy border-electric-azure/30 text-white focus:border-electric-azure focus:ring-electric-azure/50">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent className="bg-deep-navy border-electric-azure/30">
-                  <SelectItem value="full stack marketing plan ( need to perform a review to price )">
-                    Full service we do it all
-                  </SelectItem>
-                  <SelectItem value="$89 / Hour">
-                    Hourly Basis (mostly for smaller individual type tasks)
-                  </SelectItem>
-                  <SelectItem value="Pricing starts At $899">
-                    Specific Task i.e Web design, SEO, Local SEO, AI
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
 
             {/* Rate Limit Warning */}
             {isRateLimited && (
