@@ -94,9 +94,15 @@ const MainNavigation = () => {
 
               <Link
                 to="/modern-contact-form"
-                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors text-sm"
+                className="px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors text-sm"
               >
                 Book a Call →
+              </Link>
+              <Link
+                to="/newsletter"
+                className="px-5 py-2.5 border border-primary/30 text-primary rounded-lg font-medium hover:bg-primary/10 transition-colors text-sm"
+              >
+                Subscribe
               </Link>
             </div>
           </div>
