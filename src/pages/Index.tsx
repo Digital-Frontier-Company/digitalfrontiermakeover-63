@@ -9,9 +9,8 @@ import Typed from 'typed.js';
 import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star, Sparkles, Brain, Mic, Search, BookOpen, Code, ArrowRight, AlertTriangle } from 'lucide-react';
 import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
 import BlogPromoBlock from "@/components/BlogPromoBlock";
-import cryptoShieldLogo from "@/assets/crypto_shield_logo.png";
 import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
-import digitalPioneerLogo from "@/assets/digital-pioneer-collective-logo.png";
+import gumroadLogo from "@/assets/gumroad-logo.png";
 import gumroadLogo from "@/assets/gumroad-logo.png";
 
 // TypewriterText component with line break support
