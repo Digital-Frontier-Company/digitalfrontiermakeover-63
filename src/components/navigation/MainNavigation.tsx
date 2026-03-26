@@ -1,31 +1,23 @@
 import React from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LazyImage } from "@/components/LazyImage";
 import { Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
-
-const navLinks = [
-  { label: "Services", hash: "#services" },
-  { label: "Our Edge", hash: "#our-edge" },
-  { label: "Case Study", hash: "#case-study" },
-  { label: "Newsletter", hash: "#newsletter" },
-];
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+import {
+  DigitalMarketingDropdown,
+  LocalSEODropdown,
+  ResourcesDropdown,
+  CompanyDropdown,
+} from "./NavigationDropdowns";
 
 const MainNavigation = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleNavClick = (hash: string) => {
-    if (location.pathname !== "/") {
-      navigate("/" + hash);
-    } else {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
   return (
     <nav className="border-b border-border/50 bg-background/60 backdrop-blur-sm sticky top-0 z-50 px-6 py-4">
       <div className="container mx-auto">
@@ -42,19 +34,40 @@ const MainNavigation = () => {
           </Link>
 
           <div className="flex items-center space-x-8">
-            {/* Nav Links */}
-            <ul className="flex items-center space-x-6 list-none">
-              {navLinks.map((link) => (
-                <li key={link.hash}>
-                  <button
-                    onClick={() => handleNavClick(link.hash)}
-                    className="bg-transparent border-none text-foreground/80 hover:text-primary font-medium transition-colors cursor-pointer text-sm"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Digital Marketing</NavigationMenuTrigger>
+                  <DigitalMarketingDropdown />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Local SEO</NavigationMenuTrigger>
+                  <LocalSEODropdown />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                  <ResourcesDropdown />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+                  <CompanyDropdown />
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      to="/newsletter"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none"
+                    >
+                      Newsletter
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             <div className="flex items-center gap-6">
               {/* Social Links */}
