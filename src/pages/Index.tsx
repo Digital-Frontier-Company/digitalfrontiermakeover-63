@@ -1160,61 +1160,6 @@ const Index = () => {
         <CaseStudySlider />
       </Suspense>
 
-      {/* NEW SERVICE CARDS SECTION with Image Carousel */}
-      <section className="py-8 relative overflow-hidden animate-on-scroll">
-        {/* Image Carousel Background */}
-        <div className="absolute inset-0">
-          <div className="relative h-full w-full">
-            {["/lovable-uploads/a2ac7ae8-1bc5-411f-9ef9-ff10d8fdd4a7.png", "/lovable-uploads/0d2360a9-25e2-44f5-be84-ff6da9ee399d.png", "/lovable-uploads/bc4175bf-e990-48ba-b6c6-bf010230dd00.png", "/lovable-uploads/4a58c6fe-4743-4bee-adf3-2753ea2a7a37.png", "/lovable-uploads/f0c22956-3fff-4d3e-9b62-c0f4058243d7.png"].map((image, index) => <div key={index} className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${index === currentSlide % 5 ? 'opacity-30' : 'opacity-0'}`} style={{
-            backgroundImage: `url('${image}')`,
-            filter: 'blur(1px)'
-          }} />)}
-          </div>
-        </div>
-        
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/80 to-slate-900/80 animate-gradient-x"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-purple-600/30 to-cyan-600/30 animate-gradient-x"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* AI-Powered Marketing Card */}
-            
-
-            {/* Answer Engine Optimization Card - MIDDLE POSITION */}
-            <div className="group backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 bg-slate-950/80">
-              <div className="mb-6">
-                <a href="https://generativesearch.pro" target="_blank" rel="dofollow" className="block">
-                  
-                </a>
-              </div>
-              <h3 className="mb-4 transition-colors font-extrabold text-cyan-300 text-xl text-center">
-                Answer Engine Optimization
-              </h3>
-              <p className="mb-6 leading-relaxed font-bold text-slate-100">
-                Dominate AI-powered search results and voice assistants to capture high-intent traffic before your competition.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {['AI search optimization', 'Voice search ready', 'Featured snippets', 'Future-proof SEO'].map((feature, index) => <li key={index} className="flex items-center text-white">
-                    <Check className="w-5 h-5 text-white mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>)}
-              </ul>
-              <a href="https://generativesearch.pro" target="_blank" rel="dofollow" className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30">
-                Visit GenerativeSearch.pro →
-              </a>
-            </div>
-
-            {/* Data-Driven Insights Card */}
-            
-          </div>
-        </div>
-      </section>
-
-
-
       {/* FAQ ACCORDION - Radix UI powered */}
       <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
         <FAQAccordion />
