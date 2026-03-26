@@ -385,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* LANE STATS BAR */}
-      <div className="relative z-[1] border-t bg-[#0a0e1a]" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+      <div className="relative z-[1] border-t bg-[#0a0e1a]/80 backdrop-blur-sm" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
         <div className="max-w-5xl mx-auto px-6 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {/* Lane 1 */}
@@ -413,7 +413,7 @@ const Index = () => {
       </div>
 
       {/* PROBLEM SECTION */}
-      <section id="problem" className="py-20 relative z-[1]" style={{ backgroundColor: '#112236' }}>
+      <section id="problem" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(17,34,54,0.80)' }}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* LEFT COLUMN */}
@@ -472,7 +472,7 @@ const Index = () => {
       </section>
 
       {/* AI INDUSTRY STATISTICS SECTION */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-violet-900/20 via-slate-900 to-cyan-900/20">
+      <section className="py-24 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(76,29,149,0.15), rgba(15,23,42,0.75), rgba(22,78,99,0.15))' }}>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="text-center mb-16"
@@ -559,7 +559,7 @@ const Index = () => {
 
 
       {/* GUMROAD PROMOTION SECTION */}
-      <section className="py-8 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 relative overflow-hidden">
+      <section className="py-8 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.75), rgba(88,28,135,0.15), rgba(15,23,42,0.75))' }}>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-500/10 rounded-full blur-3xl"></div>
         </div>
@@ -603,7 +603,7 @@ const Index = () => {
 
 
           {/* TRUST BAR - Animated Particle Background */}
-      <section className="relative -bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
+      <section className="relative z-[1] -bottom-1 bg-[#040b29]/80 backdrop-blur-sm mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
         {/* Animated Particle Network Background */}
         <div className="absolute inset-0 opacity-30" style={{
         backgroundImage: `url('/lovable-uploads/058e28c2-a5a3-4668-97f4-3e1867fb94df.png')`,
@@ -669,7 +669,7 @@ const Index = () => {
       </section>
 
       {/* AEO SECTION */}
-      <section id="aeo" className="py-20 relative" style={{ backgroundColor: '#112236' }}>
+      <section id="aeo" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(17,34,54,0.80)' }}>
         <div className="mx-auto max-w-5xl px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-14">
@@ -716,7 +716,7 @@ const Index = () => {
       </section>
 
       {/* CASE STUDY SECTION */}
-      <section id="case-study" className="py-20 relative" style={{ backgroundColor: '#0D1128' }}>
+      <section id="case-study" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.80)' }}>
         <div className="mx-auto max-w-5xl px-6 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest font-semibold mb-6" style={{ backgroundColor: 'rgba(212,168,67,0.15)', color: '#D4A843' }}>
@@ -789,7 +789,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
+      <section id="services" className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.80)' }}>
         <div className="mx-auto max-w-6xl px-6 relative z-10">
           <motion.div
             className="text-center mb-16"
@@ -883,7 +883,7 @@ const Index = () => {
       </section>
 
       {/* AI REVOLUTION & GOOGLE ALGORITHM EVOLUTION SECTION */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.75)' }}>
 
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -1154,10 +1154,6 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 h-1 bg-signal-lime w-1/3 transition-all duration-300"></div>
       </div>
 
-      {/* GENERATIVE SEARCH PRO SECTION */}
-      <Suspense fallback={<div className="py-4 bg-slate-900/50 animate-pulse"></div>}>
-        <GenerativeSearchProSection />
-      </Suspense>
 
 
 
@@ -1170,7 +1166,7 @@ const Index = () => {
 
 
       {/* AI CREW CHIEF PROMOTION SECTION */}
-      <section className="py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 animate-on-scroll relative overflow-hidden">
+      <section className="py-12 relative z-[1] backdrop-blur-sm animate-on-scroll overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(49,46,129,0.75), rgba(88,28,135,0.75), rgba(15,23,42,0.75))' }}>
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(78,226,236,0.1)_0%,rgba(143,179,29,0.1)_100%)]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -1233,7 +1229,7 @@ const Index = () => {
       </section>
 
       {/* LEARN MORE SECTION */}
-      <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 animate-on-scroll">
+      <section className="py-12 relative z-[1] backdrop-blur-sm animate-on-scroll" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.80), rgba(30,41,59,0.80))' }}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-slate-100 mb-8">Explore Digital Frontier</h2>
           
@@ -1276,7 +1272,7 @@ const Index = () => {
       </section>
 
       {/* NEWSLETTER SIGNUP SECTION */}
-      <section id="newsletter" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0D1128 0%, #112236 50%, #0D1128 100%)' }}>
+      <section id="newsletter" className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(13,17,40,0.80) 0%, rgba(17,34,54,0.80) 50%, rgba(13,17,40,0.80) 100%)' }}>
         <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(26,86,219,0.3) 0%, transparent 70%)' }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
@@ -1311,7 +1307,7 @@ const Index = () => {
       </section>
 
       {/* MODERN CONTACT FORM SECTION */}
-      <section className="relative py-12 bg-deep-navy border-t border-border">
+      <section className="relative z-[1] py-12 bg-deep-navy/80 backdrop-blur-sm border-t border-border">
         <div className="mx-auto max-w-4xl px-6 relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-poppins font-medium text-soft-white mb-4" style={{
