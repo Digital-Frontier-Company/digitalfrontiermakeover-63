@@ -706,8 +706,52 @@ const Index = () => {
         </div>
       </section>
 
-      {/* BLOG PROMOTION BLOCK */}
-      <BlogPromoBlock />
+      {/* AEO SECTION */}
+      <section id="aeo" className="py-20 relative" style={{ backgroundColor: '#112236' }}>
+        <div className="mx-auto max-w-5xl px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest text-primary bg-primary/15 font-semibold mb-6">
+              Our Unfair Advantage
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Search just changed.
+              <br />
+              <span className="text-primary">Most agencies haven't noticed.</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              People aren't just Googling anymore — they're asking ChatGPT, Perplexity, and Google's AI Overview for direct answers. We build for where search is going, not where it's been.
+            </p>
+          </div>
+
+          {/* 3-Column Comparison */}
+          <div className="grid md:grid-cols-3 rounded-2xl overflow-hidden border" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            {/* Column 1 — SEO */}
+            <div className="p-8 text-center" style={{ borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ backgroundColor: 'rgba(248,113,113,0.15)', color: '#F87171' }}>2010–2022</span>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#F87171' }}>Old Game</p>
+              <h3 className="text-2xl font-bold text-foreground mb-3">SEO</h3>
+              <p className="text-sm text-muted-foreground">Keyword stuffing. Rank on page 1. Hope someone clicks.</p>
+            </div>
+
+            {/* Column 2 — AEO (highlighted) */}
+            <div className="p-8 text-center" style={{ backgroundColor: 'rgba(26,86,219,0.1)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 bg-primary/20 text-primary">2023–Now</span>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#60A5FA' }}>What We Build</p>
+              <h3 className="text-2xl font-bold text-primary mb-3">AEO</h3>
+              <p className="text-sm text-muted-foreground">Answer Engine Optimization. Structure content so AI systems cite you as the authority.</p>
+            </div>
+
+            {/* Column 3 — GEO */}
+            <div className="p-8 text-center">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ backgroundColor: 'rgba(14,159,159,0.15)', color: '#0E9F9F' }}>The Near Future</span>
+              <p className="text-xs uppercase tracking-widest mb-2 text-secondary">We're Ready</p>
+              <h3 className="text-2xl font-bold text-secondary mb-3">GEO</h3>
+              <p className="text-sm text-muted-foreground">Generative Engine Optimization. Your brand in the AI citation network — not just ranked.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES SECTION */}
       <section id="services" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0D1128' }}>
