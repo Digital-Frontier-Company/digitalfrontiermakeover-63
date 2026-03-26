@@ -440,11 +440,14 @@ const Index = () => {
               </motion.div>
 
               {/* Primary CTA */}
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mb-4">
                 <Link to="/ai-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-300 hover:shadow-xl bg-gradient-to-r from-[#4EE2EC] to-[#8FB31D] hover:scale-105">
                   Get the Starter Stack
                 </Link>
               </div>
+              <p className="text-sm text-slate-400 text-center">
+                Free 30-minute strategy session · No sales pitch
+              </p>
 
               {/* Trust Row */}
               <div className="text-center pt-6 border-t border-white/20">
@@ -478,74 +481,38 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Stats Containers */}
-          <motion.div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto mt-16" initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.8
-        }}>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#4EE2EC]/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <DollarSign className="w-8 h-8 text-[#4EE2EC]" />
-              </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#4EE2EC'
-            }}>$50,000+</div>
-              <div className="text-sm text-slate-300">Invested in AI testing</div>
-            </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-[#8FB31D]/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <Zap className="w-8 h-8 text-[#8FB31D]" />
-              </div>
-              <div className="text-3xl font-bold mb-2" style={{
-              color: '#8FB31D'
-            }}>15+ Hours</div>
-              <div className="text-sm text-slate-300">Saved weekly</div>
-            </div>
-            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center group hover:border-purple-400/50 transition-all duration-300">
-              <div className="flex justify-center mb-3">
-                <TrendingUp className="w-8 h-8 text-purple-400" />
-              </div>
-              <div className="text-3xl font-bold mb-2 text-purple-400">25%</div>
-              <div className="text-sm text-slate-300">Average revenue boost</div>
-            </div>
-          </motion.div>
 
-          {/* CTA Button */}
-          <motion.div className="mb-16" initial={{
-          opacity: 0,
-          scale: 0.9
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.6,
-          delay: 1.0
-        }}>
-            <motion.div whileHover={{
-            scale: 1.05
-          }} whileTap={{
-            scale: 0.95
-          }}>
-              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center justify-center px-16 py-8 text-3xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl border-2 border-white" style={{
-              background: 'linear-gradient(135deg, #4EE2EC 0%, #FFD700 100%)',
-              boxShadow: '0 0 60px rgba(255, 215, 0, 0.8), 0 0 100px rgba(255, 215, 0, 0.4)',
-              filter: 'drop-shadow(0 0 20px rgba(255, 215, 0, 0.6))'
-            }}>
-                Get Your AI Crew Chief →
-              </Link>
-            </motion.div>
-            <div className="mt-6 text-lg text-slate-400">
-              Free 30-minute strategy session • No sales pitch
-            </div>
-          </motion.div>
+
         </div>
       </section>
+
+      {/* LANE STATS BAR */}
+      <div className="border-t" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+            {/* Lane 1 */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold text-teal-accent">Lane 1</span>
+              <span className="text-xs text-muted-foreground mt-1">AI Marketing · Local Businesses</span>
+            </div>
+            {/* Lane 2 */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold text-primary">Lane 2</span>
+              <span className="text-xs text-muted-foreground mt-1">Macro · Crypto · Market Intel</span>
+            </div>
+            {/* Live */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold" style={{ color: '#D4A843' }}>Live</span>
+              <span className="text-xs text-muted-foreground mt-1">Memphis Earth Movers ✓</span>
+            </div>
+            {/* SEO→AEO */}
+            <div className="flex flex-col items-center text-center px-4 py-2">
+              <span className="text-lg font-bold text-foreground">SEO→AEO</span>
+              <span className="text-xs text-muted-foreground mt-1">Future-proof search strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* AI INDUSTRY STATISTICS SECTION */}
       <section className="py-24 relative overflow-hidden bg-gradient-to-br from-violet-900/20 via-slate-900 to-cyan-900/20">
@@ -715,167 +682,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* NATURAL LAW METAPHORS SECTION */}
-      <section className="py-12 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-cyan-400/30 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-green-400/20 to-transparent rounded-full blur-3xl"></div>
-        </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <motion.div className="text-center mb-16" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8
-        }} viewport={{
-          once: true
-        }}>
-            <h2 className="text-4xl mb-6 md:text-xl font-extrabold">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent text-3xl">
-                AI Evolution Follows Nature's Laws
-              </span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Just as gravity shapes planets and seasons dictate growth, AI follows predictable patterns. 
-              We've decoded the natural laws of digital transformation.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Seed to Tree */}
-            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-green-400/50 transition-all duration-300" initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.1
-          }} viewport={{
-            once: true
-          }}>
-              <div className="flex justify-center mb-4">
-                <Sprout className="w-12 h-12 text-green-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-green-400 mb-4">From Seed to Giant Oak</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Your business AI transformation starts as a small seed. With the right conditions—proper tools, 
-                expert guidance, and consistent nurturing—it grows into a powerful revenue engine that towers above competition.
-              </p>
-            </motion.div>
-
-            {/* Rocket Escaping Gravity */}
-            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-cyan-400/50 transition-all duration-300" initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.2
-          }} viewport={{
-            once: true
-          }}>
-              <div className="flex justify-center mb-4">
-                <Rocket className="w-12 h-12 text-cyan-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-cyan-400 mb-4">Breaking Free from Gravity</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Traditional marketing feels heavy, expensive, and limiting—like Earth's gravity holding you down. 
-                AI gives you the escape velocity to reach new heights of efficiency and profitability.
-              </p>
-            </motion.div>
-
-            {/* Seasons of Growth */}
-            <motion.div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 group hover:border-blue-400/50 transition-all duration-300" initial={{
-            opacity: 0,
-            y: 30
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.8,
-            delay: 0.3
-          }} viewport={{
-            once: true
-          }}>
-              <div className="flex justify-center mb-4">
-                <RotateCcw className="w-12 h-12 text-blue-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">Natural Growth Cycles</h3>
-              <p className="text-slate-300 leading-relaxed">
-                Like seasons that bring renewal, AI creates cycles of optimization. Each iteration harvests better 
-                results while planting seeds for the next level of growth and discovery.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Central Metaphor */}
-          <motion.div className="bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-sm border border-slate-600/50 rounded-3xl p-12 text-center mb-12" initial={{
-          opacity: 0,
-          scale: 0.95
-        }} whileInView={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }} viewport={{
-          once: true
-        }}>
-            <div className="flex justify-center mb-6">
-              <Gem className="w-16 h-16 text-yellow-400" />
-            </div>
-            <h3 className="text-3xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                From Coal to Diamond
-              </span>
-            </h3>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              Your business data is like coal—valuable but unrealized potential. Under the right pressure and heat 
-              (strategic AI implementation), it transforms into diamonds of insight that shine brilliantly and 
-              create lasting value.
-            </p>
-            <div className="text-sm text-slate-400 italic">
-              "The same carbon atoms, but completely transformed through natural forces."
-            </div>
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div className="text-center" initial={{
-          opacity: 0,
-          y: 30
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.5
-        }} viewport={{
-          once: true
-        }}>
-            <h3 className="text-2xl font-bold text-white mb-6">
-              Ready to Harness These Natural Laws for Your Business?
-            </h3>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-              Discover the proven AI strategies that follow nature's patterns for sustainable, organic growth.
-            </p>
-            <Link to="/ai-plans" className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105" style={{
-            background: 'linear-gradient(135deg, #4EE2EC 0%, #8FB31D 100%)',
-            boxShadow: '0 0 30px rgba(78, 226, 236, 0.3)'
-          }}>
-              Explore AI Evolution Plans →
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
           {/* TRUST BAR - Animated Particle Background */}
       <section className="relative -bottom-1 bg-[#040b29] mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
