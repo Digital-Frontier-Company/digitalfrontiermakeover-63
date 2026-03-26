@@ -14,26 +14,6 @@
 
 
 
-
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #4EE2EC;
-  border-radius: 50%;
-  animation: floatUp 10s infinite linear;
-  opacity: 0;
-  box-shadow: 0 0 10px #4EE2EC;
-}
-
-.particle:nth-child(2n) { 
-  background: #8FB31D; 
-  box-shadow: 0 0 10px #8FB31D;
-  animation-delay: -2s; 
-}
-.particle:nth-child(3n) { animation-delay: -4s; }
-.particle:nth-child(4n) { animation-delay: -6s; }
-.particle:nth-child(5n) { animation-delay: -1s; }
-
 @keyframes floatUp {
   0% {
     opacity: 0;
