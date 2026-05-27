@@ -67,7 +67,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://digitalfrontier.app/digital-marketing-strategy</loc>
+    <loc>https://digitalfrontier.app/services/digital-marketing-strategy</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -163,19 +163,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://digitalfrontier.app/ai-implementation-consulting</loc>
+    <loc>https://digitalfrontier.app/services/ai-implementation-consulting</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://digitalfrontier.app/content-creation-agent</loc>
+    <loc>https://digitalfrontier.app/resources/content-creation-agent</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://digitalfrontier.app/predictive-analytics-agent</loc>
+    <loc>https://digitalfrontier.app/services/predictive-analytics-agent</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -253,10 +253,22 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://digitalfrontier.app/blog/ai-citation-crisis</loc>
+    <loc>https://digitalfrontier.app/blog/ai-driven-risk-management-business-resilience</loc>
     <lastmod>2025-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfrontier.app/blog/mastering-digital-marketing</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://digitalfrontier.app/sitemap</loc>
+    <lastmod>2025-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://digitalfrontier.app/blog/ai-accountability-future</loc>
