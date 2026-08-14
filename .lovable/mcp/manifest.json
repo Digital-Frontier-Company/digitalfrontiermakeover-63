@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.1",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "digital-frontier-mcp",
+      "version": "0.2.1",
+      "title": "Digital Frontier MCP"
+    },
+    "tools": [
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List the digital marketing and AI services offered by Digital Frontier.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contact_info",
+        "title": "Get contact info",
+        "description": "Get Digital Frontier's contact information and primary URLs.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_content",
+        "title": "Search site content",
+        "description": "Search Digital Frontier's site index by keyword and return matching pages.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20,
+              "default": 5
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
