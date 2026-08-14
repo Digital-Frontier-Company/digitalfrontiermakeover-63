@@ -1,1 +1,8 @@
 project_id = "uplseuoqgcwxpsylrirr"
+
+[functions.send-contact-email]
+verify_jwt = true
+
+# This endpoint is intentionally public and strictly read-only.
+[functions.mcp]
+verify_jwt = false
