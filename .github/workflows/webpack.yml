@@ -35,7 +35,7 @@ jobs:
 
       - name: Generate semver-compatible audit fixes
         run: |
-          npm audit fix --package-lock-only --ignore-scripts
+          npm audit fix --package-lock-only --ignore-scripts || true
           echo "LOCKFILE_BASE64_START"
           base64 -w0 package-lock.json
           echo
