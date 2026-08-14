@@ -52,7 +52,7 @@ npx supabase@2.114.0 db start
 npx supabase@2.114.0 test db supabase/tests/database
 ```
 
-The GitHub database workflow performs this replay on every pull request that changes `supabase/`.
+The GitHub database workflow performs this replay on every pull request and every push to `main`.
 
 ## Security model
 

@@ -1,16 +1,16 @@
 # Security validation: MCP, public leads, and database helpers
 
-Validated 2026-08-14 against the local `codex/production-readiness` worktree based on commit `4bae3b040fa98fb2bfecaa3a544af8615e27f064`. This is a repository validation, not a production attestation: the worktree was dirty and included untracked release artifacts at validation time.
+Validated 2026-08-14 against merged GitHub `main` at `d50163ad1cb5eef7f93f615a0458953659d7b8f7`, GitHub Actions, and the production Supabase project. The frontend deployment remains a separate release gate because the installed Lovable connection cannot publish without `projects:write`.
 
 ## Conclusion
 
 | Candidate | Repository result | Production result |
 | --- | --- | --- |
-| SEC-VAL-01 — unauthenticated MCP playbook writes | **Pass.** No write tool, database client, service-role secret, or alternate playbook mutation path was found in the MCP implementation. A database migration also removes service-role write privileges. | **Not proven.** The MCP function/manifest must be redeployed and the privilege migration applied before the original P0 can be called closed in production. |
-| SEC-VAL-02 — public lead abuse | **Pass with bounded residual abuse.** Requests fail closed on missing secrets, strict request checks, required Turnstile, and three atomic server-side limits before either side effect. | **Not proven.** Secrets, gateway JWT enforcement, Turnstile settings, trusted client-IP headers, migration state, and the deployed function version were not inspected. |
-| SEC-VAL-03 — helper ACLs and migration safety | **Static pass; runtime proof deferred.** Role objects now precede their uses, privileged helpers have explicit search paths/ACLs, the public role helper is removed, and pgTAP assertions cover the primary ACLs. | **Not proven.** A clean database replay and pgTAP run could not be performed locally, and the live schema/ACLs were not queried. |
+| SEC-VAL-01 — unauthenticated MCP playbook writes | **Pass.** No write tool, database client, service-role secret, or alternate playbook mutation path exists; database grants also deny service-role writes. | **Pass.** MCP v14 exposes exactly five read-only tools. Live `search`/`fetch` passed, and `create_playbook` returns “Tool not found.” |
+| SEC-VAL-02 — public lead abuse | **Pass with bounded residual abuse.** Requests fail closed on missing secrets, strict request checks, required Turnstile, and three atomic server-side limits before either side effect. | **Fail-closed, operationally incomplete.** v26 requires JWT and returns 401 without it. An authenticated invalid-origin probe returns 500 before the handler, proving at least one required production variable is absent. The hardened frontend is not published. |
+| SEC-VAL-03 — helper ACLs and migration safety | **Pass.** Migration ordering, helper search paths/ACLs, the private role helper, and pgTAP coverage are committed. | **Pass.** Clean migration replay and 13 pgTAP assertions passed in GitHub; the migration is applied and live catalog checks confirm the expected helpers. |
 
-No repository-reachable path from the three reviewed attacker sources to their protected mutation sinks survived static tracing and the available local tests. Production closure still requires the deployment checks listed below.
+No repository-reachable path from the three reviewed attacker sources to their protected mutation sinks survived tracing and tests. MCP and database closure are live-proven. Lead intake remains intentionally unavailable until its production variables and frontend deployment are completed.
 
 ## Validation rubric
 
@@ -24,7 +24,7 @@ Each candidate was evaluated against five criteria:
 
 ## SEC-VAL-01 — unauthenticated MCP playbook writes
 
-**Disposition:** repository closure validated; production closure pending. **Confidence:** high for the local worktree, low for the live endpoint.
+**Disposition:** repository and current production closure validated. **Confidence:** high.
 
 - **Attacker source and boundary:** an unauthenticated JSON-RPC caller can reach `/functions/v1/mcp`; the manifest intentionally retains `auth.type = "none"` (`.lovable/mcp/manifest.json:4-7`) and the Edge Function retains `verify_jwt = false` (`supabase/config.toml:6-8`). These settings are acceptable only while the server remains strictly read-only.
 - **Data flow:** public MCP request -> MCP tool router/explicit tool allowlist -> static marketing-page registry -> JSON response. There is no database branch in the handler.
@@ -32,11 +32,11 @@ Each candidate was evaluated against five criteria:
 - **Protected sinks:** mutation of `public.playbooks` or `public.playbook_categories`, previously reachable through `create_playbook`, `update_playbook`, and `delete_playbook` using `SUPABASE_SERVICE_ROLE_KEY`.
 - **Alternate-path check:** a repository search found no application/Edge Function playbook mutation call or privileged RPC; the only remaining playbook inserts/updates are historical migration seed statements.
 - **Focused proof:** `src/lib/security-contracts.test.ts:7-91` asserts the exact manifest tool list and annotations, and rejects the three write-tool names, `SUPABASE_SERVICE_ROLE_KEY`, and `createClient(` in the MCP source. The focused Vitest run passed.
-- **Counterevidence/gap:** `readOnlyHint` is descriptive metadata, not enforcement. Closure comes from the actual allowlist and absence of a mutation client, with the table ACL as a second boundary. An old deployed function would remain vulnerable even though the repository is safe.
+- **Runtime proof and residual risk:** live MCP v14 returned only the five reviewed tools; `search` and `fetch` returned correct stable IDs/URLs; and a former write-tool name returned “Tool not found.” The superseded Lovable project still shares this backend and must be quarantined so it cannot redeploy obsolete function source.
 
 ## SEC-VAL-02 — public lead abuse
 
-**Disposition:** repository controls materially close unrestricted submissions; production closure pending. **Confidence:** high for control ordering and fail-closed behavior in source, medium for end-to-end behavior until deployed smoke tests run.
+**Disposition:** repository controls pass; production is safely fail-closed but not operationally complete. **Confidence:** high for control ordering and gateway enforcement, medium for end-to-end behavior until secrets and frontend deployment are completed.
 
 - **Attacker source and boundary:** an Internet client can POST to `send-contact-email`. `verify_jwt = true` is configured at `supabase/config.toml:3-4`, but the browser uses the public Supabase anon credential; this gateway check must not be treated as user authentication or the primary anti-abuse control.
 - **Data flow:** HTTP request -> origin/method/content checks -> strict schema -> required HMAC-backed IP limit -> Turnstile verification -> HMAC-backed email and global limits -> `leads` insert -> Resend notification.
@@ -49,37 +49,39 @@ Each candidate was evaluated against five criteria:
 
 ## SEC-VAL-03 — database helper ACLs and migration safety
 
-**Disposition:** static migration ordering and final-state controls pass; clean replay and live ACL validation deferred. **Confidence:** medium-high.
+**Disposition:** migration ordering, clean replay, pgTAP, applied ledger, and live helper state pass. **Confidence:** high.
 
 - **Attacker sources and boundaries:** anonymous/authenticated PostgREST/RPC calls, attempts to tamper with the rate-limit table, and untrusted objects resolved through a privileged function's search path. A separate reliability source is a clean database applying migrations in timestamp order.
 - **Protected sinks:** role escalation through `user_roles`, lead/playbook mutation, direct rate-limit manipulation, and privileged maintenance functions that can alter RLS or broadcast database changes.
 - **Reproducibility control:** `app_role`, `user_roles`, and the original role helper are created in `20260511230648_create_roles_and_admin_policies.sql:1-26`, before later migrations reference them. The historical hardening migration now guards maintenance-function ACL changes when those production-only objects are absent (`20260814152241_harden_public_api_and_rls.sql:1-20`). `20260814185510_restore_platform_maintenance_functions.sql:1-78` then defines the two maintenance helpers for clean builds and removes the obsolete public `has_role` wrapper.
 - **Helper controls:** `private.has_role` is placed in a locked schema, uses an explicit `pg_catalog` search path, and grants execution only where RLS evaluation needs it (`20260814153403_move_rls_role_check_to_private_schema.sql:1-26`). All reviewed privileged public helpers have fixed search paths and explicit revokes/grants: the contact limiter (`20260814152459...:15-67`), owner-admin trigger (`20260814152241...:19-20`, after its definition), and maintenance functions (`20260814185510...:6-74`). The final migration drops `public.has_role` (`20260814185510...:76-78`).
 - **Table controls:** RLS is enabled on `leads`, `user_roles`, and `contact_rate_limits`; anonymous reads of the two sensitive business tables are revoked; direct rate-limit access is denied; and service-role playbook writes are revoked.
-- **Available proof:** `supabase/tests/database/security.test.sql:1-79` contains 13 pgTAP assertions for helper presence/absence, function ACLs, RLS, anonymous table privileges, and denial of service-role playbook mutation. `.github/workflows/database.yml:23-42` is configured to replay all migrations on a clean local Supabase database and then run those tests.
-- **Proof gap:** neither the clean replay nor pgTAP suite was executed in this validation because Docker is unavailable to this WSL environment. The Vitest migration contract passed, but it proves filename/guard invariants, not PostgreSQL execution. The reconciliation migration, database workflow, and pgTAP directory were untracked in this worktree at validation time; they provide no CI or deployment protection until added and committed. The pgTAP suite checks DML denial on both playbook tables.
-- **Deployment risk:** a production-only dependency on `public.has_role`, an unexpected owner on an existing maintenance function, or a non-default PostgREST exposed-schema configuration could change migration/runtime behavior. Apply the migration in staging first and inspect the final ACLs rather than inferring them from SQL text.
+- **Runtime proof:** `supabase/tests/database/security.test.sql:1-86` contains 13 pgTAP assertions for helper presence/absence, function ACLs, RLS, anonymous table privileges, and denial of service-role playbook mutation. Both pull-request and merged-main Database workflows replayed all migrations and passed all assertions. The production ledger includes `20260814185510_restore_platform_maintenance_functions`.
+- **Live catalog proof:** `public.has_role(uuid, app_role)` is absent; `private.has_role(uuid, app_role)`, `public.broadcast_content_changes()`, and `public.rls_auto_enable()` are present.
+- **Residual risk:** future direct dashboard edits or a deployment from the legacy Lovable project could create source drift. GitHub `main`, required migration checks, and legacy-project quarantine are the controls.
 
-## Local proof executed
+## Proof executed
 
 ```text
-npm test -- src/lib/security-contracts.test.ts src/lib/lead-security-contracts.test.ts src/lib/contact-leads.test.ts
-Result: PASS — 3 files, 29 tests
+npm ci
+Result: PASS — 473 locked packages, 0 vulnerabilities
 
-npm run typecheck
-Result: PASS
+npm run check
+Result: PASS — zero-warning lint, typecheck, 6 files / 41 tests, production build
 
-Docker/Supabase local-runtime check
-Result: Docker unavailable in this WSL distro; database replay and pgTAP not run
+GitHub Database / migration-reset
+Result: PASS — clean migration replay and 13 pgTAP assertions on PR and merged main
+
+Production Supabase probes
+Result: PASS for MCP and helper state; contact v26 correctly fail-closed pending configuration
 ```
 
-No production endpoint was called, no production database was queried, and no external system was mutated.
+Production mutations were limited to the reviewed migration and Edge Function deployments. No MCP write was attempted and no lead/email side effect was triggered.
 
-## Required production closure checks
+## Remaining production closure checks
 
-1. Commit the complete migration/test/workflow set, obtain green `CI / validate` and `Database / migration-reset` checks, and record the immutable Git SHA.
-2. Apply migrations in staging, then verify with catalog queries that anon/authenticated cannot execute privileged public helpers, `public.has_role` is absent, and `service_role` cannot mutate either playbook table.
-3. Deploy the exact MCP function and manifest; unauthenticated `tools/list` must return only the five reviewed tools, and all former write-tool calls must return “unknown tool” without a database change.
-4. Configure `TURNSTILE_SECRET_KEY`, `RATE_LIMIT_HMAC_KEY`, `RESEND_API_KEY`, `LEADS_NOTIFICATION_EMAIL`, and the browser site key; deploy `send-contact-email`; confirm the Edge gateway is enforcing JWT verification.
-5. From an uncached test client, prove that wrong/missing origin, invalid JWT, absent/reused/wrong-action Turnstile tokens, oversized/unknown fields, and each exceeded limit produce no lead and no email. Confirm the trusted proxy supplies a non-spoofable client address to the function.
-6. Record the deployed Git SHA, Supabase migration ledger, Edge Function versions, test evidence, and rollback point. Only then mark the original P0 and public-lead finding closed in production.
+1. Re-authorize Lovable with `projects:write`, quarantine the legacy project, and publish authoritative commit `d50163ad1cb5eef7f93f615a0458953659d7b8f7`.
+2. Configure `TURNSTILE_SECRET_KEY`, dedicated `RATE_LIMIT_HMAC_KEY`, `RESEND_API_KEY`, `LEADS_NOTIFICATION_EMAIL`, and `VITE_TURNSTILE_SITE_KEY`.
+3. Run the full negative contact matrix plus one designated valid end-to-end lead/email test.
+4. Refresh the installed app MCP catalog and verify the three obsolete write schemas disappear.
+5. Capture the Lovable deployment ID, final contact evidence, and rollback point in the Notion production runbook.
