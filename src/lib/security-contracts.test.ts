@@ -138,7 +138,7 @@ describe("Supabase migration history", () => {
       "20260814153403",
       "20260814153427",
       "20260814155034",
-      "20260814170000",
+      "20260814185510",
     ];
 
     for (const version of expectedVersions) {
