@@ -58,7 +58,13 @@ const escapeHtml = (value: string) =>
     .replace(/'/g, "&#039;");
 
 const normalizeText = (value: string) =>
-  value.replace(/[\u0000-\u001F\u007F]/g, " ").trim();
+  Array.from(value)
+    .map((character) => {
+      const code = character.charCodeAt(0);
+      return code <= 31 || code === 127 ? " " : character;
+    })
+    .join("")
+    .trim();
 
 function corsHeaders(origin: string): Record<string, string> {
   return {
