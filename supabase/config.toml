@@ -6,3 +6,7 @@ verify_jwt = true
 # This endpoint is intentionally public and strictly read-only.
 [functions.mcp]
 verify_jwt = false
+
+# Lovable hosting provides prerendering; the legacy proxy is retired.
+[functions.prerender-ssr]
+verify_jwt = true
