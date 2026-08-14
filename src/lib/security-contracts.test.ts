@@ -39,6 +39,19 @@ describe("deployed-function source contracts", () => {
     expect(source).toContain("https://digitalfrontier.app/contact");
   });
 
+  it("keeps the retired prerender proxy closed", () => {
+    const config = read("supabase/config.toml");
+    const source = read("supabase/functions/prerender-ssr/index.ts");
+
+    expect(config).toMatch(
+      /\\[functions\\.prerender-ssr\\]\\s+verify_jwt = true/,
+    );
+    expect(source).toContain("legacy prerender proxy has been retired");
+    expect(source).not.toContain("PRERENDER_IO_TOKEN");
+    expect(source).not.toContain("fetch(");
+    expect(source).not.toContain("Access-Control-Allow-Origin");
+  });
+
   it("keeps the contact endpoint authenticated and abuse-resistant", () => {
     const config = read("supabase/config.toml");
     const source = read("supabase/functions/send-contact-email/index.ts");
