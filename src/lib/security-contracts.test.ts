@@ -86,11 +86,20 @@ describe("Supabase migration history", () => {
       "20260814152459",
       "20260814153403",
       "20260814153427",
+      "20260814155034",
     ];
 
     for (const version of expectedVersions) {
       expect(files.filter((file) => file.startsWith(version))).toHaveLength(1);
     }
+
+    const serviceRoleGuard = read(
+      "supabase/migrations/20260814155034_deny_service_role_playbook_writes.sql",
+    );
+    expect(serviceRoleGuard).toContain(
+      "ON TABLE public.playbooks, public.playbook_categories",
+    );
+    expect(serviceRoleGuard).toContain("FROM service_role");
 
     expect(files.some((file) => file.startsWith("20250922061536"))).toBe(false);
     expect(new Set(files.map((file) => file.slice(0, 14))).size).toBe(
