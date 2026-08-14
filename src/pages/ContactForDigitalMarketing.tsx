@@ -4,6 +4,9 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
+import { useTurnstile } from "@/hooks/useTurnstile";
+import { submitLead } from "@/lib/contact-leads";
 import { 
   User, Mail, Link2, TrendingUp, ChevronDown, Send, 
   Shield, Zap, Cloud, HelpCircle
@@ -13,37 +16,46 @@ const ContactForDigitalMarketing = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitMessage('');
+
+    if (!turnstileToken) {
+      setSubmitMessage('Please complete the human verification before submitting.');
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const formData = new FormData(e.currentTarget);
-      const contactData = {
-        name: formData.get('text-1752650679296-0') as string,
-        email: formData.get('text-1752650807996-0') as string,
-        message: `Social Link: ${formData.get('text-1752650925101-0') as string}\nMarketing Needs: ${formData.get('select-1752651040594-0') as string}`,
-        form_type: 'Digital Marketing Contact Form',
-      };
+      const rawSocialLink = String(formData.get('text-1752650925101-0') ?? '');
+      const socialLink = /^https?:\/\//i.test(rawSocialLink)
+        ? rawSocialLink
+        : `https://${rawSocialLink}`;
 
-      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contactData),
+      await submitLead({
+        name: String(formData.get('text-1752650679296-0') ?? ''),
+        email: String(formData.get('text-1752650807996-0') ?? ''),
+        socialLink,
+        message: `Marketing Needs: ${String(formData.get('select-1752651040594-0') ?? '')}`,
+        form_type: 'digital-marketing',
+        turnstile_token: turnstileToken,
       });
 
-      if (response.ok) {
-        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
-        formRef.current?.reset();
-      } else {
-        throw new Error('Failed to submit form to webhook');
-      }
-    } catch (error: any) {
-      console.error('Form submission error:', error);
-      setSubmitMessage(error.message || 'Sorry, there was an error sending your message. Please try again.');
+      setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
+      formRef.current?.reset();
+    } catch {
+      setSubmitMessage('Sorry, there was an error sending your message. Please try again.');
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   };
@@ -118,7 +130,7 @@ const ContactForDigitalMarketing = () => {
                 </Label>
                 <div className="relative">
                   <Input 
-                    type="text" id="social" name="text-1752650925101-0" required
+                    type="url" id="social" name="text-1752650925101-0" required
                     className="bg-slate-900 border-slate-600 text-white focus:border-cyan-400 pr-10"
                   />
                   <Link2 className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-cyan-400" />
@@ -145,10 +157,16 @@ const ContactForDigitalMarketing = () => {
                 </div>
               </div>
               
+              <TurnstileWidget
+                onTokenChange={setTurnstileToken}
+                resetSignal={turnstileReset}
+                className="flex justify-center text-sm text-red-300"
+              />
+
               {/* Submit */}
               <div className="pt-4">
                 <Button 
-                  type="submit" disabled={isSubmitting}
+                  type="submit" disabled={isSubmitting || !turnstileToken}
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-900 font-bold py-6 text-lg"
                 >
                   <Send className="h-5 w-5 mr-2" />
@@ -170,7 +188,7 @@ const ContactForDigitalMarketing = () => {
           </div>
           
           <div className="p-4 text-center text-cyan-300 text-sm border-t border-slate-700">
-            <p>Your data is encrypted and securely transmitted</p>
+            <p>Protected by Turnstile and server-side abuse controls</p>
           </div>
         </div>
         
@@ -178,7 +196,7 @@ const ContactForDigitalMarketing = () => {
         <div className="flex justify-center mt-8 space-x-6 text-slate-300">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm">256-bit Encryption</span>
+            <span className="text-sm">Human Verification</span>
           </div>
           <div className="flex items-center gap-2">
             <Zap className="h-4 w-4 text-cyan-400" />

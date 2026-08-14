@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { TrendingUp, Users, Target, Zap, Building, Shield, Rocket, ShoppingCart, Factory, ArrowRight } from 'lucide-react';
+import { TrendingUp, Users, Target, Zap, Building, Shield, Rocket, ShoppingCart, Factory, ArrowRight, type LucideIcon } from 'lucide-react';
 
 interface MarketSegment {
   id: string;
   title: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: LucideIcon;
   color: string;
   marketSize: string;
   growthRate: string;

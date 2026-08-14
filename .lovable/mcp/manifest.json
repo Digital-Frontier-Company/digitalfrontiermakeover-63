@@ -8,16 +8,71 @@
   "mcp": {
     "server": {
       "name": "digital-frontier-mcp",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "title": "Digital Frontier MCP"
     },
     "tools": [
       {
-        "name": "list_services",
-        "title": "List services",
-        "description": "List the digital marketing and AI services offered by Digital Frontier.",
+        "name": "search",
+        "title": "Search Digital Frontier",
+        "description": "Use this when you need to find relevant Digital Frontier pages by a natural-language query before fetching a page.",
         "annotations": {
           "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "fetch",
+        "title": "Fetch a Digital Frontier page",
+        "description": "Use this when you have a page ID from search and need its canonical URL and readable page summary.",
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "List Digital Frontier services",
+        "description": "Use this when you need a concise list of Digital Frontier service and local-service pages.",
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
           "idempotentHint": true,
           "openWorldHint": false
         },
@@ -31,10 +86,11 @@
       },
       {
         "name": "get_contact_info",
-        "title": "Get contact info",
-        "description": "Get Digital Frontier's contact information and primary URLs.",
+        "title": "Get Digital Frontier contact information",
+        "description": "Use this when you need Digital Frontier's canonical website, contact, newsletter, or pricing URL.",
         "annotations": {
           "readOnlyHint": true,
+          "destructiveHint": false,
           "idempotentHint": true,
           "openWorldHint": false
         },
@@ -48,10 +104,11 @@
       },
       {
         "name": "search_content",
-        "title": "Search site content",
-        "description": "Search Digital Frontier's site index by keyword and return matching pages.",
+        "title": "Search site content with a result limit",
+        "description": "Use this when you need keyword search with an explicit result limit; prefer the standard search tool for ChatGPT discovery.",
         "annotations": {
           "readOnlyHint": true,
+          "destructiveHint": false,
           "idempotentHint": true,
           "openWorldHint": false
         },

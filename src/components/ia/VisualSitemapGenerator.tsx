@@ -36,7 +36,7 @@ const sampleSitemap: PageNode[] = [
       {
         id: 'services',
         title: 'Services',
-        url: '/services',
+        url: '/digital-frontier-services',
         level: 1,
         seoScore: 88,
         metadata: {
@@ -48,7 +48,7 @@ const sampleSitemap: PageNode[] = [
           {
             id: 'seo',
             title: 'SEO',
-            url: '/seo',
+            url: '/search-engine-optimization',
             level: 2,
             seoScore: 92,
             metadata: {
@@ -61,7 +61,7 @@ const sampleSitemap: PageNode[] = [
           {
             id: 'aeo',
             title: 'AEO',
-            url: '/aeo',
+            url: '/answer-engine-optimization',
             level: 2,
             seoScore: 90,
             metadata: {

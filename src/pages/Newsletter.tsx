@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import PageLayout from "@/components/layout/PageLayout";
 import { useLocation } from "react-router-dom";
-import { submitToHubSpot, initHubSpotTracking } from "@/utils/hubspot";
+import { initHubSpotTracking } from "@/utils/hubspot";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { useToast } from "@/hooks/use-toast";
+import { useTurnstile } from "@/hooks/useTurnstile";
+import { submitLead } from "@/lib/contact-leads";
 
 const Newsletter = () => {
   const location = useLocation();
@@ -16,6 +19,12 @@ const Newsletter = () => {
     subscribeToMarketing: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
 
   // Initialize HubSpot tracking when component mounts
   useEffect(() => {
@@ -44,45 +53,47 @@ const Newsletter = () => {
       return;
     }
     
+    if (!turnstileToken) {
+      toast({
+        title: "Verification required",
+        description: "Please complete the human verification before subscribing.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors', // Add this to handle CORS
-        body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`.trim(),
-          email: formData.email,
-          message: `Newsletter subscription. Marketing consent: ${formData.subscribeToMarketing ? 'Yes' : 'No'}`,
-          form_type: 'Newsletter Subscription'
-        }),
+      const subscriberName = `${formData.firstName} ${formData.lastName}`.trim();
+
+      await submitLead({
+        name: subscriberName || "Newsletter subscriber",
+        email: formData.email,
+        message: `Newsletter subscription. Marketing consent: ${formData.subscribeToMarketing ? 'Yes' : 'No'}`,
+        form_type: "newsletter",
+        turnstile_token: turnstileToken,
       });
 
-      // Since we're using no-cors, we won't get proper response status
       toast({
         title: "Subscribed!",
         description: "Thank you for subscribing to our newsletter!",
       });
-      
-      // Reset form after successful submission
+
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
         subscribeToMarketing: false
       });
-      
-    } catch (error) {
-      console.error('Form submission error:', error);
+    } catch {
       toast({
         title: "Subscription Error",
         description: "There was a problem with your subscription. Please try again or contact us at contact@digitalfrontier.app",
         variant: "destructive",
       });
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   };
@@ -175,10 +186,16 @@ const Newsletter = () => {
                 </label>
               </div>
               
+              <TurnstileWidget
+                onTokenChange={setTurnstileToken}
+                resetSignal={turnstileReset}
+                className="flex justify-start text-sm text-red-300"
+              />
+
               <button 
                 type="submit" 
                 className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium rounded-md hover:from-blue-700 hover:to-blue-500 transition-colors disabled:opacity-70"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !turnstileToken}
               >
                 {isSubmitting ? "Subscribing..." : "Subscribe Now"}
               </button>

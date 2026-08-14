@@ -230,7 +230,7 @@ export const SEOTemplateBuilder: React.FC<SEOBuilderConfig> = (config) => {
   
   // Select appropriate luxury template based on page type
   switch (config.pageType) {
-    case 'service':
+    case 'service': {
       const serviceTier = config.brandTier === 'bespoke' ? 'luxury' : 
                          config.brandTier === 'elite' ? 'white-glove' as const : 
                          config.brandTier;
@@ -243,6 +243,7 @@ export const SEOTemplateBuilder: React.FC<SEOBuilderConfig> = (config) => {
           currentPath={config.currentPath}
         />
       );
+    }
     
     case 'about':
       return (
@@ -285,7 +286,7 @@ export const SEOTemplateBuilder: React.FC<SEOBuilderConfig> = (config) => {
         />
       );
     
-    default:
+    default: {
       // Fallback to custom luxury brand SEO
       const brandTier = config.brandTier === 'boutique' ? 'premium' as const : 
                        config.brandTier === 'elite' ? 'elite' as const : 
@@ -303,53 +304,9 @@ export const SEOTemplateBuilder: React.FC<SEOBuilderConfig> = (config) => {
           currentPath={config.currentPath}
         />
       );
+    }
   }
 };
 
-/**
- * Quick Setup Templates for Common Configurations
- */
-export const LuxuryTemplatePresets = {
-  // Boutique Marketing Agency
-  boutiqueMarketing: (currentPath: string, location?: string): SEOBuilderConfig => ({
-    pageType: 'home',
-    currentPath,
-    brandTier: 'boutique',
-    serviceCategory: 'marketing',
-    clientType: 'luxury-brands',
-    location
-  }),
-  
-  // Premium Consulting Firm
-  premiumConsulting: (currentPath: string, location?: string): SEOBuilderConfig => ({
-    pageType: 'home',
-    currentPath,
-    brandTier: 'premium',
-    serviceCategory: 'consulting',
-    clientType: 'enterprise',
-    location
-  }),
-  
-  // Luxury Brand Agency
-  luxuryBrandAgency: (currentPath: string, industry: keyof typeof INDUSTRY_LUXURY_TERMS, location?: string): SEOBuilderConfig => ({
-    pageType: 'home',
-    currentPath,
-    brandTier: 'luxury',
-    serviceCategory: 'marketing',
-    clientType: 'luxury-brands',
-    industry,
-    location
-  }),
-  
-  // Elite Strategy Consultancy
-  eliteStrategy: (currentPath: string, location?: string): SEOBuilderConfig => ({
-    pageType: 'home',
-    currentPath,
-    brandTier: 'elite',
-    serviceCategory: 'strategy',
-    clientType: 'high-net-worth',
-    location
-  })
-};
 
 export default SEOTemplateBuilder;

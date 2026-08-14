@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, TrendingUp, Users, Target } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, Users, Target, type LucideIcon } from 'lucide-react';
 interface CaseStudy {
   id: number;
   client: string;
@@ -9,17 +9,17 @@ interface CaseStudy {
     kpi1: {
       label: string;
       value: string;
-      icon: any;
+      icon: LucideIcon;
     };
     kpi2: {
       label: string;
       value: string;
-      icon: any;
+      icon: LucideIcon;
     };
     kpi3: {
       label: string;
       value: string;
-      icon: any;
+      icon: LucideIcon;
     };
   };
   description: string;
@@ -28,7 +28,7 @@ const caseStudies: CaseStudy[] = [{
   id: 1,
   client: "Memphis Coffee Co.",
   industry: "Local Business",
-  image: "/lovable-uploads/5c0de3ce-56aa-4bfa-875d-da66db91d1b0.png",
+  image: "/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png",
   metrics: {
     kpi1: {
       label: "Traffic Growth",
@@ -51,7 +51,7 @@ const caseStudies: CaseStudy[] = [{
   id: 2,
   client: "Patriot Plunges",
   industry: "Local Services", 
-  image: "/lovable-uploads/cdbb5e53-2796-4c33-95db-6f79c692958b.png",
+  image: "/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png",
   metrics: {
     kpi1: {
       label: "Local Search",
@@ -74,7 +74,7 @@ const caseStudies: CaseStudy[] = [{
   id: 3,
   client: "Memphis Earth Movers",
   industry: "Construction",
-  image: "/lovable-uploads/5e7e88e1-49a1-4ebc-a098-0f23603a69e8.png",
+  image: "/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png",
   metrics: {
     kpi1: {
       label: "Project Bids",
@@ -120,7 +120,7 @@ const CaseStudySlider = () => {
         <div 
           className="absolute inset-0 bg-center opacity-55 rounded-2xl"
           style={{ 
-            backgroundImage: 'url(/lovable-uploads/e2736a71-e8bc-41fe-90a7-2be50512ed78.png)',
+            backgroundImage: 'url(/lovable-uploads/27a4ca3c-8937-4c3d-b392-ed55289c7152.png)',
             backgroundSize: '100% 100%'
           }}
         ></div>

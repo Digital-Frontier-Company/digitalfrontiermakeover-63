@@ -10,7 +10,7 @@ import { PageWrapper } from '@/components/PageWrapper';
 const AIVoiceAssistants = () => {
   return (
     <MainLayout>
-      <PageWrapper 
+      <PageWrapper
         seo={{
           title: "AI Voice Assistants - Custom Voice AI That Converts Leads",
           description: "Deploy AI voice assistants that make calls, answer 24/7, slash support costs, and convert more leads. Your brand with a voice that sells.",
@@ -155,30 +155,30 @@ const AIVoiceAssistants = () => {
           </div>
         </section>
 
-        <InternalLinkEnhancer 
+        <InternalLinkEnhancer
           currentPage="AI Voice Assistants"
           relatedLinks={[
-            { 
-              href: "/ai-implementation-consulting", 
-              title: "AI Implementation Consulting", 
+            {
+              href: "/services/ai-implementation-consulting",
+              title: "AI Implementation Consulting",
               description: "Expert guidance for implementing AI solutions in your business",
               category: "strategy" as const
             },
-            { 
-              href: "/ai-and-digital-marketing", 
-              title: "AI & Digital Marketing", 
+            {
+              href: "/ai-and-digital-marketing",
+              title: "AI & Digital Marketing",
               description: "Leverage AI to enhance your digital marketing strategies",
               category: "strategy" as const
             },
-            { 
-              href: "/content-creation-agent", 
-              title: "Content Creation Agent", 
+            {
+              href: "/resources/content-creation-agent",
+              title: "Content Creation Agent",
               description: "Automated content generation with AI-powered tools",
               category: "technical" as const
             },
-            { 
-              href: "/predictive-analytics-agent", 
-              title: "Predictive Analytics Agent", 
+            {
+              href: "/services/predictive-analytics-agent",
+              title: "Predictive Analytics Agent",
               description: "Harness predictive analytics for business insights",
               category: "technical" as const
             }

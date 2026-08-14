@@ -36,23 +36,26 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Automatically detect optimal dimensions and browser support
   useEffect(() => {
     setBrowserSupport(getBrowserImageSupport());
-    
+
+    const dimensions = getImageDimensions(src, useCase);
+    setImageDimensions(dimensions);
+
     if (!src.includes('lovable-uploads')) return;
-    
+
     const img = new Image();
     img.onload = () => {
       // Update dimensions based on actual image aspect ratio
       const aspectRatio = img.naturalWidth / img.naturalHeight;
-      const baseWidth = imageDimensions.width;
+      const baseWidth = dimensions.width;
       const calculatedHeight = Math.round(baseWidth / aspectRatio);
-      
-      setImageDimensions({
-        ...imageDimensions,
+
+      setImageDimensions(currentDimensions => ({
+        ...currentDimensions,
         height: calculatedHeight
-      });
+      }));
     };
     img.src = src;
-  }, [src, imageDimensions.width]);
+  }, [src, useCase]);
 
   return (
     <LazyImage

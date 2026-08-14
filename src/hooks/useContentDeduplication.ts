@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DuplicationIssue } from '@/components/SEO/ContentDeduplicationTools';
+import type { DuplicationIssue } from '@/components/SEO/content-duplication-data';
 
 /**
  * Hook for managing content deduplication analysis
@@ -25,7 +25,7 @@ export const useContentDeduplication = () => {
           severity: 'high',
           pages: [
             { url: '/answer-engine-optimization', title: 'Answer Engine Optimization', similarity: 95 },
-            { url: '/complete-aeo-guide', title: 'Complete AEO Guide', similarity: 95 }
+            { url: '/complete-aeo-guide-2025', title: 'Complete AEO Guide', similarity: 95 }
           ],
           description: 'These pages contain nearly identical content about Answer Engine Optimization.',
           recommendation: 'Consolidate content into a single comprehensive guide and redirect the other page.',
@@ -70,7 +70,7 @@ export const useContentDeduplication = () => {
     // In production, this would analyze which pages are competing for the same keyword
     const competingPages = [
       '/answer-engine-optimization',
-      '/complete-aeo-guide',
+      '/complete-aeo-guide-2025',
       '/seo-vs-aeo-vs-geo'
     ];
     

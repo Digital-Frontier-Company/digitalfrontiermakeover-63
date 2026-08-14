@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Badge, type BadgeProps } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -75,7 +75,7 @@ export const AccessibilityDashboard: React.FC = () => {
     }
   };
 
-  const getSeverityColor = (severity: string) => {
+  const getSeverityColor = (severity: AccessibilityIssue['severity']): NonNullable<BadgeProps['variant']> => {
     switch (severity) {
       case 'critical':
         return 'destructive';
@@ -185,7 +185,7 @@ export const AccessibilityDashboard: React.FC = () => {
                       <div className="flex items-center justify-between">
                         <AlertDescription className="font-semibold">{issue.issue}</AlertDescription>
                         <div className="flex items-center gap-2">
-                          <Badge variant={getSeverityColor(issue.severity) as any}>
+                          <Badge variant={getSeverityColor(issue.severity)}>
                             {issue.severity}
                           </Badge>
                           <Badge variant="outline">WCAG {issue.wcagLevel}</Badge>

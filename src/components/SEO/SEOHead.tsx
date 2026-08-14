@@ -49,11 +49,14 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     : rawDescription;
   
   // Default social image
-  const socialImage = imageUrl || `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`;
+  const socialImage = imageUrl || `${siteUrl}/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png`;
   
   // Generate enhanced structured data with complete @graph
   const generateStructuredData = () => {
-    const baseData = {
+    const baseData: {
+      "@context": string;
+      "@graph": Array<Record<string, unknown>>;
+    } = {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -64,11 +67,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
           "url": siteUrl,
           "logo": {
             "@type": "ImageObject",
-            "url": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+            "url": `${siteUrl}/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png`,
             "width": "512",
             "height": "512"
           },
-          "image": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+          "image": `${siteUrl}/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png`,
           "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization, SEO, and innovative marketing strategies",
           "telephone": "+1-901-337-9915",
           "email": "contact@digitalfrontier.app",
@@ -127,7 +130,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     };
 
     if (pageType === 'article') {
-      (baseData["@graph"] as any[]).push({
+      baseData["@graph"].push({
         "@type": "Article",
         "headline": finalTitle,
         "description": finalDescription,
@@ -154,7 +157,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     }
 
     if (pageType === 'service') {
-      (baseData["@graph"] as any[]).push({
+      baseData["@graph"].push({
         "@type": "Service",
         "name": finalTitle,
         "description": finalDescription,

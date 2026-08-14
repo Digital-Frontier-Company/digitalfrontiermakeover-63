@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="space-y-5 lg:col-span-1">
             <div className="flex items-center gap-3">
               <LazyImage
-                src="/lovable-uploads/6a6a7a60-bc25-4bd4-af32-b53f83a8c0a4.png"
+                src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
                 alt="Digital Frontier Company"
                 className="h-10 w-auto"
                 displayWidth={40}
@@ -136,7 +136,7 @@ const Footer = () => {
             <Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground text-xs transition-colors duration-200">
               Terms of Service
             </Link>
-            <Link to="/sitemap" className="text-muted-foreground hover:text-foreground text-xs transition-colors duration-200">
+            <Link to="/site-map" className="text-muted-foreground hover:text-foreground text-xs transition-colors duration-200">
               Sitemap
             </Link>
           </div>

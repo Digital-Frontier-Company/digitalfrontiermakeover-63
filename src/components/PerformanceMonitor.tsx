@@ -10,6 +10,15 @@ interface CoreWebVitals {
   ttfb?: number;
 }
 
+interface LayoutShiftPerformanceEntry extends PerformanceEntry {
+  hadRecentInput: boolean;
+  value: number;
+}
+
+interface FirstInputPerformanceEntry extends PerformanceEntry {
+  processingStart: number;
+}
+
 export const PerformanceMonitor: React.FC = () => {
   const [vitals, setVitals] = useState<CoreWebVitals>({});
   const [isVisible, setIsVisible] = useState(false);
@@ -45,8 +54,9 @@ export const PerformanceMonitor: React.FC = () => {
           const clsObserver = new PerformanceObserver((list) => {
             let clsValue = 0;
             for (const entry of list.getEntries()) {
-              if (!(entry as any).hadRecentInput) {
-                clsValue += (entry as any).value;
+              const layoutShift = entry as LayoutShiftPerformanceEntry;
+              if (!layoutShift.hadRecentInput) {
+                clsValue += layoutShift.value;
               }
             }
             setVitals(prev => ({ ...prev, cls: clsValue }));
@@ -56,7 +66,8 @@ export const PerformanceMonitor: React.FC = () => {
           // First Input Delay (deprecated in favor of INP)
           const fidObserver = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
-              setVitals(prev => ({ ...prev, fid: (entry as any).processingStart - entry.startTime }));
+              const firstInput = entry as FirstInputPerformanceEntry;
+              setVitals(prev => ({ ...prev, fid: firstInput.processingStart - firstInput.startTime }));
             }
           });
           fidObserver.observe({ type: 'first-input', buffered: true });

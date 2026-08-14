@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import { Input } from "@/components/ui/input";
@@ -12,17 +12,19 @@ const SearchPage = () => {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('q') || '');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<(typeof ROUTE_CONFIGS)[number][]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
-  const handleSearch = (searchQuery: string) => {
+  const handleSearch = useCallback((searchQuery: string) => {
     setIsSearching(true);
     
     // Update URL with search query
-    if (searchQuery) {
-      setSearchParams({ q: searchQuery });
-    } else {
-      setSearchParams({});
+    if (searchParams.get('q') !== searchQuery) {
+      if (searchQuery) {
+        setSearchParams({ q: searchQuery });
+      } else {
+        setSearchParams({});
+      }
     }
 
     // Filter routes based on search query
@@ -40,7 +42,7 @@ const SearchPage = () => {
       setResults(filteredResults);
       setIsSearching(false);
     }, 300);
-  };
+  }, [searchParams, setSearchParams]);
 
   useEffect(() => {
     const queryParam = searchParams.get('q');
@@ -48,7 +50,7 @@ const SearchPage = () => {
       setQuery(queryParam);
       handleSearch(queryParam);
     }
-  }, [searchParams]);
+  }, [handleSearch, searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -141,15 +143,6 @@ const SearchPage = () => {
                   <p className="text-muted-foreground mb-3">
                     {result.description}
                   </p>
-                  {result.keywords && (
-                    <div className="flex flex-wrap gap-1">
-                      {result.keywords.split(', ').slice(0, 4).map((keyword: string, i: number) => (
-                        <Badge key={i} variant="outline" className="text-xs">
-                          {keyword.trim()}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             ))}

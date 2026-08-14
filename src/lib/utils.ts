@@ -123,7 +123,7 @@ export function generateLocalBusinessSchema(
   priceRange?: string,
   operatingHours?: object
 ) {
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `https://digitalfrontier.app/#localbusiness-${city.toLowerCase()}`,
@@ -159,7 +159,7 @@ export function generateLocalBusinessSchema(
   };
 
   if (address) {
-    schema.address.streetAddress = address;
+    (schema.address as Record<string, unknown>).streetAddress = address;
   }
 
   if (latitude && longitude) {
@@ -200,7 +200,7 @@ export function generateServiceSchema(
   areaServed: string = "Worldwide",
   offers?: Array<{name: string, description: string, price?: string}>
 ) {
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": serviceName,
@@ -222,7 +222,7 @@ export function generateServiceSchema(
       "@type": "OfferCatalog",
       "name": `${serviceName} Packages`,
       "itemListElement": offers.map(offer => {
-        const offerSchema: any = {
+        const offerSchema: Record<string, unknown> = {
           "@type": "Offer",
           "name": offer.name,
           "description": offer.description
@@ -285,7 +285,7 @@ export function generateHowToSchema(
   totalTime?: string,
   estimatedCost?: string
 ) {
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": name,
@@ -372,7 +372,7 @@ export function generateReviewAggregateSchema(
     datePublished?: string;
   }>
 ) {
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": itemName,

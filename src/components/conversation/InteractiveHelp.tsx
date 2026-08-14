@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -48,7 +48,7 @@ const InteractiveHelp: React.FC<InteractiveHelpProps> = ({
     { id: 'contact', label: 'Contact', icon: <Phone className="h-4 w-4" /> },
   ];
 
-  const allHelpItems: HelpItem[] = [
+  const allHelpItems = useMemo<HelpItem[]>(() => ([
     {
       id: 'find-services',
       title: 'Find Our Services',
@@ -97,7 +97,7 @@ const InteractiveHelp: React.FC<InteractiveHelpProps> = ({
       category: 'tools',
       action: () => window.location.href = '/ai-prompt-templates'
     }
-  ];
+  ]), []);
 
   useEffect(() => {
     // Generate contextual help based on current page
@@ -135,7 +135,7 @@ const InteractiveHelp: React.FC<InteractiveHelpProps> = ({
     };
 
     getContextualHelp();
-  }, [location.pathname]);
+  }, [allHelpItems, location.pathname]);
 
   const filteredItems = selectedCategory 
     ? allHelpItems.filter(item => item.category === selectedCategory)

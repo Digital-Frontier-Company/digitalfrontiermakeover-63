@@ -201,7 +201,7 @@ const Index = () => {
   const logoScale = useTransform(scrollY, [0, 300], [1, 1.1]);
   const marqueeControls = useAnimation();
   const trustedLogos = ["/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png", "/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png", "/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png", "/lovable-uploads/dd9a50a2-11ff-45a3-bdef-97597bd967b7.png", "/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png", "/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png", "/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png"];
-  const extraTrustedImages = ["/lovable-uploads/3c96b100-6325-4881-925d-941fa1d28582.png", "/lovable-uploads/a8a47af6-c1fb-4ef5-9186-0149566a84ae.png", "/lovable-uploads/605b3988-ccd7-4c5d-9c40-fe5ea991729b.png", "/lovable-uploads/06143896-3705-4777-8c31-5f139371be88.png", "/lovable-uploads/eb7443f0-3f7a-4b83-9d12-c669af95a5d8.png", "/lovable-uploads/51cb98d5-156b-4bca-8c82-34d3ec317ca3.png"];
+  const extraTrustedImages = ["/lovable-uploads/3c96b100-6325-4881-925d-941fa1d28582.png", "/lovable-uploads/77a7a6e8-ba24-4511-808d-e7ce4724f3d3.png", "/lovable-uploads/7cb44db8-2a71-4927-bc07-e05c54261377.png", "/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png", "/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png", "/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"];
   const marqueeItems = [...trustedLogos, "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png", ...extraTrustedImages];
   useEffect(() => {
     marqueeControls.start({
@@ -244,11 +244,11 @@ const Index = () => {
                 "url": "https://digitalfrontier.app",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                  "url": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
                   "width": "512",
                   "height": "512"
                 },
-                "image": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                "image": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
                 "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization (AEO), SEO, and innovative marketing strategies",
                 "telephone": "+1-901-337-9915",
                 "email": "contact@digitalfrontier.app",
@@ -649,7 +649,7 @@ const Index = () => {
 
               
               <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
-                <LazyImage src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
+                <LazyImage src="/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
               </div>
               
               

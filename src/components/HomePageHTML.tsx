@@ -38,7 +38,7 @@ const HomePageHTML: React.FC = () => {
     description: "Memphis AI marketing agency that spent $50K+ testing 100+ AI tools. Get proven AI solutions for visibility & efficiency. Answer Engine Optimization, automation & more.",
     keywords: "AI marketing agency Memphis, Answer Engine Optimization, AI automation, digital marketing Memphis, AI solutions small business",
     pageType: "website" as const,
-    imageUrl: "/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png"
+    imageUrl: "/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
   };
 
   return (
@@ -48,9 +48,9 @@ const HomePageHTML: React.FC = () => {
         <div className="container mx-auto px-6 py-24 text-center">
           {/* Company Logo and Branding */}
           <header className="mb-12">
-            <img 
-              src="/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png" 
-              alt="Digital Frontier Company - Leading Memphis AI Marketing Agency" 
+            <img
+              src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
+              alt="Digital Frontier Company - Leading Memphis AI Marketing Agency"
               className="h-80 w-auto mx-auto mb-8"
               width="480"
               height="320"
@@ -90,8 +90,8 @@ const HomePageHTML: React.FC = () => {
 
           {/* Primary Call-to-Action */}
           <div className="mb-16">
-            <Link 
-              to="/modern-contact-form" 
+            <Link
+              to="/modern-contact-form"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-green-500 hover:shadow-xl transition-all duration-300"
             >
               Get Your AI Crew Chief →
@@ -111,7 +111,7 @@ const HomePageHTML: React.FC = () => {
               AI Evolution Follows Nature's Laws
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Just as gravity shapes planets and seasons dictate growth, AI follows predictable patterns. 
+              Just as gravity shapes planets and seasons dictate growth, AI follows predictable patterns.
               We've decoded the natural laws of digital transformation.
             </p>
           </header>
@@ -120,7 +120,7 @@ const HomePageHTML: React.FC = () => {
             <article className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-green-400 mb-4">From Seed to Giant Oak</h3>
               <p className="text-slate-300">
-                Your business AI transformation starts as a small seed. With the right conditions—proper tools, 
+                Your business AI transformation starts as a small seed. With the right conditions—proper tools,
                 expert guidance, and consistent nurturing—it grows into a powerful revenue engine that towers above competition.
               </p>
             </article>
@@ -128,7 +128,7 @@ const HomePageHTML: React.FC = () => {
             <article className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-cyan-400 mb-4">Breaking Free from Gravity</h3>
               <p className="text-slate-300">
-                Traditional marketing feels heavy, expensive, and limiting—like Earth's gravity holding you down. 
+                Traditional marketing feels heavy, expensive, and limiting—like Earth's gravity holding you down.
                 AI gives you the escape velocity to reach new heights of efficiency and profitability.
               </p>
             </article>
@@ -136,15 +136,15 @@ const HomePageHTML: React.FC = () => {
             <article className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Natural Growth Cycles</h3>
               <p className="text-slate-300">
-                Like seasons that bring renewal, AI creates cycles of optimization. Each iteration harvests better 
+                Like seasons that bring renewal, AI creates cycles of optimization. Each iteration harvests better
                 results while planting seeds for the next level of growth and discovery.
               </p>
             </article>
           </div>
 
           <div className="text-center">
-            <Link 
-              to="/ai-plans" 
+            <Link
+              to="/ai-plans"
               className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-green-500 hover:shadow-xl transition-all duration-300"
             >
               Explore AI Evolution Plans →
@@ -157,11 +157,11 @@ const HomePageHTML: React.FC = () => {
       <section className="py-16 bg-slate-800">
         <div className="container mx-auto px-6">
           <h2 className="text-center mb-16 text-cyan-300 font-bold text-xl">Trusted by Industry Leaders</h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80">
             <img src="/lovable-uploads/c9b27200-e1d4-4fa8-a9d1-6e929aba1499.png" alt="Beat AI Search Partner" className="h-16 object-contain" />
             <img src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner" className="h-16 object-contain" />
-            <img src="/lovable-uploads/f14ede69-5062-48c3-9a6a-491161c2646d.png" alt="Memphis Earth Movers" className="h-16 object-contain" />
+            <img src="/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png" alt="Memphis Earth Movers" className="h-16 object-contain" />
             <img src="/lovable-uploads/a4d4b0f1-79a6-4e7c-a6f2-5da73456b7e3.png" alt="MakeMentors.io Platform" className="h-16 object-contain" />
           </div>
         </div>
@@ -185,17 +185,17 @@ const HomePageHTML: React.FC = () => {
               <h3 className="font-semibold text-cyan-400 mb-2">What is it?</h3>
               <p className="text-slate-300 text-sm">A digital strategy firm helping businesses grow in the AI era.</p>
             </article>
-            
+
             <article className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl text-center">
               <h3 className="font-semibold text-cyan-400 mb-2">Who is it for?</h3>
               <p className="text-slate-300 text-sm">Companies that want both more customers and better efficiency.</p>
             </article>
-            
+
             <article className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl text-center">
               <h3 className="font-semibold text-cyan-400 mb-2">How it works:</h3>
               <p className="text-slate-300 text-sm">AI visibility: dominate search results<br/>AI backend: streamline operations<br/>End-to-end integrated system</p>
             </article>
-            
+
             <article className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl text-center">
               <h3 className="font-semibold text-cyan-400 mb-2">Investment:</h3>
               <p className="text-slate-300 text-sm">Pilots start from $2,500–$7,500 depending on scope.</p>
@@ -231,7 +231,7 @@ const HomePageHTML: React.FC = () => {
                 <li>• Conversion funnels + omnichannel campaigns</li>
               </ul>
             </article>
-            
+
             <article className="bg-gradient-to-br from-purple-900/40 to-violet-900/40 border border-purple-800/30 p-8 rounded-2xl">
               <h3 className="text-2xl font-bold text-purple-400 mb-6">Efficiency (Backend)</h3>
               <ul className="space-y-4 text-slate-300">
@@ -254,9 +254,9 @@ const HomePageHTML: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <article className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8">
-              <img 
-                src="/lovable-uploads/e54d0fa9-0841-4307-be48-9729f84a20b3.png" 
-                alt="AI-Powered Marketing Solutions" 
+              <img
+                src="/lovable-uploads/e54d0fa9-0841-4307-be48-9729f84a20b3.png"
+                alt="AI-Powered Marketing Solutions"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
               <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">AI-Powered Marketing</h3>
@@ -269,8 +269,8 @@ const HomePageHTML: React.FC = () => {
                 <li>✓ Real-time optimization</li>
                 <li>✓ ROI maximization</li>
               </ul>
-              <Link 
-                to="/modern-contact-form" 
+              <Link
+                to="/modern-contact-form"
                 className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300"
               >
                 Explore AI Solutions
@@ -278,9 +278,9 @@ const HomePageHTML: React.FC = () => {
             </article>
 
             <article className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8">
-              <img 
-                src="/lovable-uploads/46440d18-7e50-459a-9423-09e65df49121.png" 
-                alt="Answer Engine Optimization AEO" 
+              <img
+                src="/lovable-uploads/46440d18-7e50-459a-9423-09e65df49121.png"
+                alt="Answer Engine Optimization AEO"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
               <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">Answer Engine Optimization</h3>
@@ -293,8 +293,8 @@ const HomePageHTML: React.FC = () => {
                 <li>✓ Featured snippets</li>
                 <li>✓ Future-proof SEO</li>
               </ul>
-              <Link 
-                to="/answer-engine-optimization" 
+              <Link
+                to="/answer-engine-optimization"
                 className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300"
               >
                 Learn About AEO
@@ -302,9 +302,9 @@ const HomePageHTML: React.FC = () => {
             </article>
 
             <article className="bg-slate-800/60 border border-slate-700 rounded-2xl p-8">
-              <img 
-                src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png" 
-                alt="Data-Driven Marketing Insights" 
+              <img
+                src="/lovable-uploads/72dd30ec-d978-4ba9-baad-aba941aa15c4.png"
+                alt="Data-Driven Marketing Insights"
                 className="w-full h-48 object-cover rounded-lg mb-6"
               />
               <h3 className="text-xl font-bold text-cyan-400 mb-4 text-center">Data-Driven Insights</h3>
@@ -317,8 +317,8 @@ const HomePageHTML: React.FC = () => {
                 <li>✓ Custom reporting</li>
                 <li>✓ Strategic insights</li>
               </ul>
-              <Link 
-                to="/modern-contact-form" 
+              <Link
+                to="/modern-contact-form"
                 className="block w-full text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-emerald-700 transition-all duration-300"
               >
                 See Our Analytics
@@ -396,8 +396,8 @@ const HomePageHTML: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <FAQSection 
-        title="Frequently Asked Questions" 
+      <FAQSection
+        title="Frequently Asked Questions"
         faqs={faqData}
         className="py-20 bg-slate-900"
       />
@@ -405,30 +405,30 @@ const HomePageHTML: React.FC = () => {
       {/* Final CTA Section */}
       <section className="py-20 bg-slate-800 text-center">
         <div className="container mx-auto px-6">
-          <img 
-            src="/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png" 
-            alt="Digital Frontier Company Logo" 
-            width="80" 
-            height="80" 
+          <img
+            src="/lovable-uploads/a057b6bc-52ff-4437-92a0-6951b11267fe.png"
+            alt="Digital Frontier Company Logo"
+            width="80"
+            height="80"
             className="mx-auto mb-8"
           />
-          
+
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Own Your Digital Space?
           </h2>
-          
+
           <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-            If you're ready to dominate your market and make your competitors irrelevant, let's talk. 
+            If you're ready to dominate your market and make your competitors irrelevant, let's talk.
             Click below, and let's build something legendary.
           </p>
-          
-          <Link 
-            to="/modern-contact-form" 
+
+          <Link
+            to="/modern-contact-form"
             className="inline-flex items-center justify-center px-12 py-4 text-xl font-bold text-slate-900 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             Start Your AI Transformation
           </Link>
-          
+
           <p className="mt-6 text-slate-400 font-semibold">
             Digital Frontier—Marketing That Actually Works.
           </p>
@@ -442,7 +442,7 @@ const HomePageHTML: React.FC = () => {
           "@type": "Organization",
           "name": "Digital Frontier Company",
           "url": "https://digitalfrontier.app",
-          "logo": "https://digitalfrontier.app/lovable-uploads/0a290708-5a9c-4d58-8a79-88d6ed6a5e66.png",
+          "logo": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
           "description": "AI marketing agency in Memphis specializing in Answer Engine Optimization, AI automation, and data-driven digital marketing solutions for small businesses.",
           "address": {
             "@type": "PostalAddress",
@@ -483,7 +483,7 @@ const HomePageHTML: React.FC = () => {
                 }
               },
               {
-                "@type": "Offer", 
+                "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
                   "name": "AI Marketing Automation",

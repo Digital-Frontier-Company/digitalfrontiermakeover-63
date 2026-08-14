@@ -1,39 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { LazyImage } from "@/components/LazyImage";
 import { ArrowRight, Zap, Target, TrendingUp, Search, Brain, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { removeBackground, loadImageFromSrc } from "@/utils/backgroundRemoval";
 import geoLogoSrc from "@/assets/geo-logo.png";
 const GenerativeSearchProSection = () => {
-  const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        setIsProcessing(true);
-        const imageElement = await loadImageFromSrc(geoLogoSrc);
-        const processedBlob = await removeBackground(imageElement);
-        const processedUrl = URL.createObjectURL(processedBlob);
-        setProcessedImageUrl(processedUrl);
-      } catch (error) {
-        console.error('Failed to process image:', error);
-        // Fallback to original image
-        setProcessedImageUrl(geoLogoSrc);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    processImage();
-
-    return () => {
-      if (processedImageUrl) {
-        URL.revokeObjectURL(processedImageUrl);
-      }
-    };
-  }, []);
 
   return <section className="py-20 bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 relative overflow-hidden">
       {/* Background Effects */}
@@ -77,25 +48,20 @@ const GenerativeSearchProSection = () => {
             
             
             <div className="flex items-center justify-center gap-4 mb-6">
-              {processedImageUrl && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                  className="relative"
-                >
-                  <img 
-                    src={processedImageUrl} 
-                    alt="GEO Logo" 
-                    className="w-16 h-16 md:w-20 md:h-20 object-contain"
-                  />
-                  {isProcessing && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-900/50 rounded-lg">
-                      <div className="w-6 h-6 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
-                    </div>
-                  )}
-                </motion.div>
-              )}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
+                <img
+                  src={geoLogoSrc}
+                  alt="Generative Search Pro GEO logo"
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                  width={80}
+                  height={80}
+                />
+              </motion.div>
               <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 Generative Search Pro
               </h2>

@@ -156,7 +156,7 @@ export const SEOTemplateManager: React.FC<SEOTemplateConfig> = ({
 
   // Generate enhanced structured data
   const generateEnhancedSchema = () => {
-    const baseSchema = {
+    const baseSchema: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": schemaType || "WebPage",
       "name": generateTitle(),
@@ -176,7 +176,7 @@ export const SEOTemplateManager: React.FC<SEOTemplateConfig> = ({
       const childContent = duplicationConfig.relatedContent.filter(c => c.relationship === 'child');
       
       if (parentContent) {
-        (baseSchema as any).isPartOf = {
+        baseSchema.isPartOf = {
           "@type": "WebPage",
           "name": parentContent.title,
           "url": `https://digitalfrontier.ai${parentContent.path}`
@@ -184,7 +184,7 @@ export const SEOTemplateManager: React.FC<SEOTemplateConfig> = ({
       }
 
       if (childContent.length) {
-        (baseSchema as any).hasPart = childContent.map(child => ({
+        baseSchema.hasPart = childContent.map(child => ({
           "@type": "WebPage",
           "name": child.title,
           "url": `https://digitalfrontier.ai${child.path}`

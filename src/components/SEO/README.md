@@ -63,7 +63,7 @@ import { SEOTemplateBuilder } from '@/components/SEO/SEOTemplateBuilder';
 
 ### Quick Preset Usage
 ```tsx
-import { LuxuryTemplatePresets } from '@/components/SEO/SEOTemplateBuilder';
+import { LuxuryTemplatePresets } from '@/components/SEO/SEOTemplatePresets';
 
 const config = LuxuryTemplatePresets.luxuryBrandAgency(
   "/luxury-fashion-marketing",

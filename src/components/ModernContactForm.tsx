@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
-import { Satellite, User, Mail, Link2, ChartLine, Send, Shield, Zap, Cloud, HelpCircle, AlertTriangle } from 'lucide-react';
+import { TurnstileWidget } from '@/components/TurnstileWidget';
+import { Satellite, User, Mail, Link2, Send, Shield, Zap, Cloud, HelpCircle } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useToast } from '@/hooks/use-toast';
-import { useFormSecurity } from '@/hooks/useFormSecurity';
+import { useTurnstile } from '@/hooks/useTurnstile';
+import { submitLead } from '@/lib/contact-leads';
 
 const ModernContactForm = () => {
   const { toast } = useToast();
-  const { 
-    validationErrors, 
-    isRateLimited, 
-    rateLimitTimeRemaining, 
-    secureFormSubmit 
-  } = useFormSecurity();
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -33,60 +34,51 @@ const ModernContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (isRateLimited) {
+
+    if (!turnstileToken) {
       toast({
-        title: "Too Many Attempts",
-        description: `Please wait ${rateLimitTimeRemaining} seconds before trying again.`,
+        title: "Verification required",
+        description: "Please complete the human verification before submitting.",
         variant: "destructive",
       });
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      const success = await secureFormSubmit(formData, async (sanitizedData, csrfToken) => {
-        const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': csrfToken,
-          },
-          mode: 'no-cors',
-          body: JSON.stringify({
-            name: sanitizedData.name,
-            email: sanitizedData.email,
-            message: `Social Link: ${sanitizedData.socialLink}\nMarketing Needs: ${sanitizedData.marketingNeeds}`,
-            form_type: 'Modern Contact Form - Security Enhanced',
-            csrf_token: csrfToken
-          }),
-        });
+      const socialLink = /^https?:\/\//i.test(formData.socialLink)
+        ? formData.socialLink
+        : `https://${formData.socialLink}`;
+
+      await submitLead({
+        name: formData.name,
+        email: formData.email,
+        socialLink,
+        message: `Marketing Needs: ${formData.marketingNeeds}`,
+        form_type: 'modern-contact',
+        turnstile_token: turnstileToken,
       });
 
-      if (success) {
-        toast({
-          title: "Message Sent!",
-          description: "Your message has been submitted successfully. We'll get back to you within 24 hours.",
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          socialLink: '',
-          marketingNeeds: 'Pricing starts At $899'
-        });
-      }
-      
-    } catch (error) {
-      console.error('Form submission error:', error);
       toast({
-        title: "Submission Error", 
+        title: "Message Sent!",
+        description: "Your message has been submitted successfully. We'll get back to you within 24 hours.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        socialLink: '',
+        marketingNeeds: 'Pricing starts At $899'
+      });
+    } catch {
+      toast({
+        title: "Submission Error",
         description: "There was a problem sending your message. Please try again or contact us directly at contact@digitalfrontier.app",
         variant: "destructive",
       });
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   };
@@ -156,18 +148,12 @@ const ModernContactForm = () => {
                   onBlur={() => setFocusedField(null)}
                   className={`bg-deep-navy border-electric-azure/30 text-white focus:border-electric-azure focus:ring-electric-azure/50 transition-all duration-300 ${
                     focusedField === 'name' ? 'shadow-neon' : ''
-                  } ${validationErrors.name ? 'border-red-500' : ''}`}
+                  }`}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                   <User className="w-4 h-4 text-electric-azure/60" />
                 </div>
               </div>
-              {validationErrors.name && (
-                <p className="text-red-400 text-sm mt-1 flex items-center">
-                  <AlertTriangle className="w-4 h-4 mr-1" />
-                  {validationErrors.name}
-                </p>
-              )}
             </div>
 
             {/* Email Field */}
@@ -188,18 +174,12 @@ const ModernContactForm = () => {
                   onBlur={() => setFocusedField(null)}
                   className={`bg-deep-navy border-electric-azure/30 text-white focus:border-electric-azure focus:ring-electric-azure/50 transition-all duration-300 ${
                     focusedField === 'email' ? 'shadow-neon' : ''
-                  } ${validationErrors.email ? 'border-red-500' : ''}`}
+                  }`}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                   <Mail className="w-4 h-4 text-electric-azure/60" />
                 </div>
               </div>
-              {validationErrors.email && (
-                <p className="text-red-400 text-sm mt-1 flex items-center">
-                  <AlertTriangle className="w-4 h-4 mr-1" />
-                  {validationErrors.email}
-                </p>
-              )}
             </div>
 
             {/* Social Link Field */}
@@ -220,7 +200,7 @@ const ModernContactForm = () => {
               </Label>
               <div className="relative">
                 <Input
-                  type="text"
+                  type="url"
                   id="social"
                   value={formData.socialLink}
                   onChange={(e) => handleInputChange('socialLink', e.target.value)}
@@ -230,40 +210,30 @@ const ModernContactForm = () => {
                   onBlur={() => setFocusedField(null)}
                   className={`bg-deep-navy border-electric-azure/30 text-white focus:border-electric-azure focus:ring-electric-azure/50 transition-all duration-300 ${
                     focusedField === 'social' ? 'shadow-neon' : ''
-                  } ${validationErrors.socialLink ? 'border-red-500' : ''}`}
+                  }`}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                   <Link2 className="w-4 h-4 text-electric-azure/60" />
                 </div>
               </div>
-              {validationErrors.socialLink && (
-                <p className="text-red-400 text-sm mt-1 flex items-center">
-                  <AlertTriangle className="w-4 h-4 mr-1" />
-                  {validationErrors.socialLink}
-                </p>
-              )}
             </div>
 
 
-            {/* Rate Limit Warning */}
-            {isRateLimited && (
-              <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-4">
-                <div className="flex items-center text-red-300">
-                  <AlertTriangle className="w-5 h-5 mr-2" />
-                  <span>Too many attempts. Please wait {rateLimitTimeRemaining} seconds.</span>
-                </div>
-              </div>
-            )}
+            <TurnstileWidget
+              onTokenChange={setTurnstileToken}
+              resetSignal={turnstileReset}
+              className="flex justify-center text-sm text-red-300"
+            />
 
             {/* Submit Button */}
             <div className="pt-4">
               <Button
                 type="submit"
-                disabled={isSubmitting || isRateLimited}
+                disabled={isSubmitting || !turnstileToken}
                 className="w-full bg-gradient-to-r from-electric-azure to-electric-purple hover:from-electric-azure/90 hover:to-electric-purple/90 text-white font-bold py-4 px-6 rounded-lg text-lg tracking-wider uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-neon hover:shadow-neon-lg disabled:opacity-50"
               >
                 <Send className="w-5 h-5 mr-2" />
-                {isSubmitting ? 'Sending...' : isRateLimited ? `Wait ${rateLimitTimeRemaining}s` : 'Submit Request'}
+                {isSubmitting ? 'Sending...' : 'Submit Request'}
               </Button>
             </div>
           </form>
@@ -271,7 +241,7 @@ const ModernContactForm = () => {
 
         {/* Footer note */}
         <div className="p-4 text-center text-electric-azure/80 text-sm border-t border-electric-azure/20">
-          <p>🔒 Your data is sanitized, validated, and securely transmitted with CSRF protection</p>
+          <p>Protected by Turnstile and server-side abuse controls</p>
         </div>
       </Card>
 
@@ -279,7 +249,7 @@ const ModernContactForm = () => {
       <div className="flex justify-center mt-8 space-x-6 text-sm text-electric-azure/80">
         <div className="flex items-center">
           <Shield className="w-4 h-4 mr-2" />
-          <span>256-bit Encryption</span>
+          <span>Human Verification</span>
         </div>
         <div className="flex items-center">
           <Zap className="w-4 h-4 mr-2" />

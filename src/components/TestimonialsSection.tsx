@@ -84,10 +84,10 @@ const TestimonialsSection = () => {
 
         <div className="df-certifications">
           <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="df-certification-badge">
-            <img src="/lovable-uploads/d376fcd6-50df-40c9-b62e-adf836bcee74.png" alt="Read our reviews at DesignRush.com" />
+            <img src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Read our reviews at DesignRush.com" />
           </a>
           <div className="df-certification-badge">
-            <img src="/lovable-uploads/b581e124-1502-44f8-98db-dc8aaaa10b89.png" alt="Lindy Certified Partner" />
+            <img src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="Lindy Certified Partner" />
           </div>
         </div>
       </div>

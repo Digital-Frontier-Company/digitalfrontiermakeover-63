@@ -6,10 +6,18 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.4";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") ?? "";
+const LEADS_NOTIFICATION_EMAIL = Deno.env.get("LEADS_NOTIFICATION_EMAIL") ?? "";
 const TURNSTILE_SECRET_KEY = Deno.env.get("TURNSTILE_SECRET_KEY") ?? "";
-const RATE_LIMIT_HMAC_KEY = Deno.env.get("RATE_LIMIT_HMAC_KEY") ?? SERVICE_ROLE_KEY;
+const RATE_LIMIT_HMAC_KEY = Deno.env.get("RATE_LIMIT_HMAC_KEY") ?? "";
 
-if (!SUPABASE_URL || !SERVICE_ROLE_KEY || !RESEND_API_KEY || !RATE_LIMIT_HMAC_KEY) {
+if (
+  !SUPABASE_URL ||
+  !SERVICE_ROLE_KEY ||
+  !RESEND_API_KEY ||
+  !LEADS_NOTIFICATION_EMAIL ||
+  !TURNSTILE_SECRET_KEY ||
+  !RATE_LIMIT_HMAC_KEY
+) {
   throw new Error("Required service configuration is missing");
 }
 
@@ -21,27 +29,27 @@ const resend = new Resend(RESEND_API_KEY);
 const ALLOWED_ORIGINS = new Set([
   "https://digitalfrontier.app",
   "https://www.digitalfrontier.app",
-  "https://digitalfrontiermakeover.lovable.app",
+  "https://digitalfrontiermakeover-63.lovable.app",
 ]);
 const ALLOWED_HOSTNAMES = new Set([
   "digitalfrontier.app",
   "www.digitalfrontier.app",
-  "digitalfrontiermakeover.lovable.app",
+  "digitalfrontiermakeover-63.lovable.app",
 ]);
-const ALLOWED_FORM_TYPES = new Set([
-  "Main Contact Form",
-  "Modern Contact Form",
-  "Book a Demand System Call",
-]);
+const FORM_LABELS: Record<string, string> = {
+  "contact": "Contact",
+  "modern-contact": "Modern Contact",
+  "digital-marketing": "Digital Marketing",
+  "newsletter": "Newsletter",
+};
+const ALLOWED_FORM_TYPES = new Set(Object.keys(FORM_LABELS));
 const ALLOWED_FIELDS = new Set([
   "name",
   "email",
   "form_type",
   "message",
-  "marketingNeeds",
   "socialLink",
   "turnstile_token",
-  "captcha_token",
   "_gotcha",
 ]);
 const MAX_BODY_BYTES = 16_384;
@@ -178,7 +186,6 @@ async function verifyTurnstile(
   token: string,
   remoteip: string,
 ): Promise<boolean> {
-  if (!TURNSTILE_SECRET_KEY) return true;
   if (!token) return false;
 
   try {
@@ -290,9 +297,7 @@ serve(async (req: Request): Promise<Response> => {
       throw new ValidationError("Unsupported form type");
     }
 
-    const directMessage = readString(formData, "message", 4_000);
-    const marketingNeeds = readString(formData, "marketingNeeds", 4_000);
-    const message = marketingNeeds || directMessage;
+    const message = readString(formData, "message", 4_000);
     const socialLink = readString(formData, "socialLink", 2_048);
     if (socialLink) {
       let socialUrl: URL;
@@ -306,9 +311,12 @@ serve(async (req: Request): Promise<Response> => {
       }
     }
 
-    const turnstileToken =
-      readString(formData, "turnstile_token", 2_048) ||
-      readString(formData, "captcha_token", 2_048);
+    const turnstileToken = readString(
+      formData,
+      "turnstile_token",
+      2_048,
+      true,
+    );
     const address = clientAddress(req);
 
     const ipAllowed = await consumeRateLimit("ip", address, 600, 5);
@@ -372,9 +380,10 @@ serve(async (req: Request): Promise<Response> => {
       );
     }
 
+    const formLabel = FORM_LABELS[formType];
     const html =
       '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px">' +
-      "<h2>New Lead: " + escapeHtml(formType) + "</h2>" +
+      "<h2>New Lead: " + escapeHtml(formLabel) + "</h2>" +
       '<div style="background:#f8f9fa;padding:20px;border-radius:8px;margin-bottom:16px">' +
       "<p><strong>Name:</strong> " + escapeHtml(name) + "</p>" +
       "<p><strong>Email:</strong> " + escapeHtml(email) + "</p>" +
@@ -391,9 +400,9 @@ serve(async (req: Request): Promise<Response> => {
 
     const emailResult = await resend.emails.send({
       from: "Digital Frontier Leads <leads@digitalfrontier.app>",
-      to: ["dcthompson89@gmail.com"],
+      to: [LEADS_NOTIFICATION_EMAIL],
       reply_to: email,
-      subject: "New Lead (" + formType + ") — " + name,
+      subject: "New Lead (" + formLabel + ") — " + name,
       html,
     });
 

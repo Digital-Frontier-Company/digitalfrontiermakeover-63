@@ -25,6 +25,13 @@ export interface IATemplate {
   };
 }
 
+export interface IASchemaPageData {
+  breadcrumbs?: unknown[];
+  faqs?: unknown[];
+  title?: string;
+  description?: string;
+}
+
 export const IA_SEO_TEMPLATES: Record<string, IATemplate> = {
   'user-journey-optimized': {
     name: 'User Journey Optimized',
@@ -156,8 +163,11 @@ export function generateInternalLinkingSuggestions(
 /**
  * Generate schema markup based on IA template
  */
-export function generateIASchema(template: IATemplate, pageData: any): Record<string, any>[] {
-  const schemas: Record<string, any>[] = [];
+export function generateIASchema(
+  template: IATemplate,
+  pageData: IASchemaPageData
+): Array<Record<string, unknown>> {
+  const schemas: Array<Record<string, unknown>> = [];
   
   template.seo.schema.forEach(schemaType => {
     switch (schemaType) {

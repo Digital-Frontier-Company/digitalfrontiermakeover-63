@@ -28,11 +28,11 @@ export const OrganizationSchema: React.FC<OrganizationSchemaProps> = ({
     "url": siteUrl,
     "logo": {
       "@type": "ImageObject",
-      "url": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+      "url": `${siteUrl}/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png`,
       "width": "512",
       "height": "512"
     },
-    "image": `${siteUrl}/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png`,
+    "image": `${siteUrl}/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png`,
     "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization (AEO), Search Engine Optimization (SEO), and innovative marketing strategies for businesses seeking to thrive in the AI-driven digital landscape.",
     
     "telephone": "+1-901-337-9915",

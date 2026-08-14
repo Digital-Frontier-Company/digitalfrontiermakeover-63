@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { TurnstileWidget } from '@/components/TurnstileWidget';
 import { useToast } from '@/hooks/use-toast';
+import { useTurnstile } from '@/hooks/useTurnstile';
+import { submitLead } from '@/lib/contact-leads';
 import "../styles/digitalFrontierServices.css";
 
 const InsightsHub = () => {
@@ -8,6 +11,12 @@ const InsightsHub = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
 
   const articles = [
     {
@@ -27,7 +36,7 @@ const InsightsHub = () => {
       category: "CONSULTING",
       author: "AI Consultants",
       date: "Dec 10, 2024",
-      image: "/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png",
+      image: "/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
       link: "/services/ai-implementation-consulting"
     },
     {
@@ -47,7 +56,7 @@ const InsightsHub = () => {
       category: "MARKETING",
       author: "Content Specialists",
       date: "Dec 5, 2024",
-      image: "/lovable-uploads/4de436ae-e779-4610-9ed3-7a0000c1890d.png",
+      image: "/lovable-uploads/creator_icon.png",
       link: "/resources/content-creation-agent"
     },
     {
@@ -95,7 +104,7 @@ const InsightsHub = () => {
   // Handle newsletter subscription
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Error",
@@ -104,46 +113,47 @@ const InsightsHub = () => {
       });
       return;
     }
-    
+
+    if (!turnstileToken) {
+      toast({
+        title: "Verification required",
+        description: "Please complete the human verification before subscribing.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
-    
+
     try {
-      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors', // Add this to handle CORS
-        body: JSON.stringify({
-          name: '',
-          email: email,
-          message: 'Newsletter subscription from Insights Hub',
-          form_type: 'Newsletter Subscription - Insights Hub'
-        }),
+      await submitLead({
+        name: "Newsletter subscriber",
+        email,
+        message: "Newsletter subscription from Insights Hub",
+        form_type: "newsletter",
+        turnstile_token: turnstileToken,
       });
 
-      // Since we're using no-cors, we won't get proper response status
       toast({
         title: "Subscribed!",
         description: "Thank you for subscribing to our newsletter!",
       });
       setEmail('');
-      
-    } catch (error) {
-      console.error('Newsletter subscription error:', error);
+    } catch {
       toast({
         title: "Subscription Error",
         description: "Failed to subscribe. Please try again or contact us at contact@digitalfrontier.app",
         variant: "destructive",
       });
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   };
 
   const filteredArticles = activeFilter === 'all'
-    ? articles 
-    : articles.filter(article => 
+    ? articles
+    : articles.filter(article =>
         article.category.toLowerCase().includes(activeFilter === 'ai' ? 'technology' : activeFilter)
       );
 
@@ -154,24 +164,24 @@ const InsightsHub = () => {
 
     particlesContainer.innerHTML = '';
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
-      
+
       const posX = Math.random() * 100;
       const posY = Math.random() * 100;
       const size = Math.random() * 4 + 1;
       const duration = Math.random() * 20 + 10;
       const delay = Math.random() * 10;
-      
+
       particle.style.left = `${posX}%`;
       particle.style.top = `${posY}%`;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.animationDuration = `${duration}s`;
       particle.style.animationDelay = `${delay}s`;
-      
+
       particlesContainer.appendChild(particle);
     }
   }, []);
@@ -182,11 +192,11 @@ const InsightsHub = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-      
+
       <div className="text-white font-sans min-h-screen relative" style={{ fontFamily: 'Inter, sans-serif' }}>
         {/* Animated Mesh Gradient Background */}
         <div className="animated-mesh-bg"></div>
-        
+
         {/* Particles Background */}
         <div id="particles" className="particles"></div>
 
@@ -194,9 +204,9 @@ const InsightsHub = () => {
         <header className="py-6 px-4 md:px-12 relative z-10">
           <div className="container mx-auto flex justify-center">
             <div className="w-48">
-              <img 
-                className="w-full" 
-                src="/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png" 
+              <img
+                className="w-full"
+                src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
                 alt="Digital Frontier Company logo with mountain peak design in cyan blue"
               />
             </div>
@@ -229,14 +239,14 @@ const InsightsHub = () => {
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12">
                 Stay ahead of the curve with our expert analysis on AI, marketing strategies, and industry consulting trends.
               </p>
-              
+
               {/* Filter Buttons */}
               <div className="flex flex-wrap justify-center gap-4">
-                <button 
+                <button
                   onClick={() => setActiveFilter('all')}
                   className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    activeFilter === 'all' 
-                      ? 'text-white' 
+                    activeFilter === 'all'
+                      ? 'text-white'
                       : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                   }`}
                   style={{
@@ -246,11 +256,11 @@ const InsightsHub = () => {
                 >
                   All Topics
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveFilter('ai')}
                   className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    activeFilter === 'ai' 
-                      ? 'text-white' 
+                    activeFilter === 'ai'
+                      ? 'text-white'
                       : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                   }`}
                   style={{
@@ -260,11 +270,11 @@ const InsightsHub = () => {
                 >
                   AI Technology
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveFilter('marketing')}
                   className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    activeFilter === 'marketing' 
-                      ? 'text-white' 
+                    activeFilter === 'marketing'
+                      ? 'text-white'
                       : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                   }`}
                   style={{
@@ -274,11 +284,11 @@ const InsightsHub = () => {
                 >
                   Marketing
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveFilter('consulting')}
                   className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    activeFilter === 'consulting' 
-                      ? 'text-white' 
+                    activeFilter === 'consulting'
+                      ? 'text-white'
                       : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                   }`}
                   style={{
@@ -298,9 +308,9 @@ const InsightsHub = () => {
               <div className="glass-card rounded-xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div className="p-8 md:p-12 flex flex-col justify-center">
-                    <span 
+                    <span
                       className="text-xs px-3 py-1 rounded-full inline-block mb-4"
-                      style={{ 
+                      style={{
                         backgroundColor: 'rgba(0, 238, 255, 0.2)',
                         color: 'var(--df-cyan)'
                       }}
@@ -320,10 +330,10 @@ const InsightsHub = () => {
                         <p className="text-gray-400 text-sm">AI Implementation Experts • Dec 18, 2024</p>
                       </div>
                     </div>
-                    <Link 
+                    <Link
                       to="/services/ai-implementation-consulting"
                       className="py-2 px-6 rounded-lg transition-all inline-block w-max border"
-                      style={{ 
+                      style={{
                         borderColor: 'var(--df-cyan)',
                         color: 'var(--df-cyan)'
                       }}
@@ -338,9 +348,9 @@ const InsightsHub = () => {
                     </Link>
                   </div>
                   <div className="h-[400px] relative">
-                    <img 
-                      className="absolute inset-0 w-full h-full object-cover" 
-                      src="/lovable-uploads/9dacc93a-c522-4265-915c-d671659c64a3.png" 
+                    <img
+                      className="absolute inset-0 w-full h-full object-cover"
+                      src="/lovable-uploads/9dacc93a-c522-4265-915c-d671659c64a3.png"
                       alt="AI optimization workflow diagram showing content creation, citation management, audit processes, and optimization strategies with colorful data visualization elements"
                     />
                   </div>
@@ -355,15 +365,15 @@ const InsightsHub = () => {
               <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--df-bright-blue)' }}>
                 Latest Insights
               </h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {filteredArticles.map((article) => (
                   <Link key={article.id} to={article.link} className="glass-card rounded-xl p-6 transition-all duration-300 hover:transform hover:scale-105 block">
                     <div className="mb-4 h-48 rounded-lg overflow-hidden relative">
                       <img className="w-full h-full object-contain" src={article.image} alt={article.title} />
-                      <span 
+                      <span
                         className="absolute top-3 left-3 text-xs px-3 py-1 rounded-full"
-                        style={{ 
+                        style={{
                           backgroundColor: 'rgba(0, 238, 255, 0.2)',
                           color: 'var(--df-cyan)'
                         }}
@@ -382,7 +392,7 @@ const InsightsHub = () => {
                       </div>
                       <p className="text-gray-400 text-xs">{article.date}</p>
                     </div>
-                    <span 
+                    <span
                       className="text-gray-300 text-sm mt-4 inline-block cursor-pointer hover:text-cyan transition-colors"
                     >
                       Read More <i className="fa-solid fa-arrow-right ml-1"></i>
@@ -390,12 +400,12 @@ const InsightsHub = () => {
                   </Link>
                 ))}
               </div>
-              
+
               {/* Load More Button */}
               <div className="text-center mt-12">
-                <button 
+                <button
                   className="py-3 px-8 rounded-lg transition-all border"
-                  style={{ 
+                  style={{
                     borderColor: 'var(--df-cyan)',
                     color: 'var(--df-cyan)'
                   }}
@@ -421,7 +431,7 @@ const InsightsHub = () => {
               <p className="text-gray-300 text-center mb-12 max-w-4xl mx-auto">
                 See how different industries are adopting AI marketing technologies and the projected growth over the next five years.
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
                   <div className="text-4xl font-bold mb-2" style={{ color: 'var(--df-cyan)' }}>78%</div>
@@ -449,24 +459,29 @@ const InsightsHub = () => {
                 <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                   Get the latest insights on AI marketing and consulting delivered directly to your inbox. No spam, just valuable content to keep you ahead of the curve.
                 </p>
-                
+                <TurnstileWidget
+                  onTokenChange={setTurnstileToken}
+                  resetSignal={turnstileReset}
+                  className="flex justify-center mb-4 text-sm text-red-300"
+                />
+
                 <form onSubmit={handleNewsletterSubmit} className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
-                  <input 
-                    type="email" 
-                    placeholder="Your email address" 
+                  <input
+                    type="email"
+                    placeholder="Your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     className="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 border"
-                    style={{ 
+                    style={{
                       backgroundColor: 'var(--df-glass-bg)',
                       borderColor: 'var(--df-cyan)',
                       color: 'white'
                     }}
                   />
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || !turnstileToken}
                     className="px-6 py-3 rounded-lg text-white font-medium transition-all hover:bg-opacity-80 disabled:opacity-50"
                     style={{ backgroundColor: 'var(--df-bright-blue)' }}
                   >
@@ -484,9 +499,9 @@ const InsightsHub = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
                 <div className="w-32 mx-auto md:mx-0">
-                  <img 
-                    className="w-full" 
-                    src="/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png" 
+                  <img
+                    className="w-full"
+                    src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
                     alt="Digital Frontier Company logo"
                   />
                 </div>
@@ -499,19 +514,19 @@ const InsightsHub = () => {
                 <Link to="/contact" className="text-gray-400 hover:text-cyan transition-colors">Contact</Link>
               </div>
               <div className="mt-6 md:mt-0 flex gap-4">
-                <span 
+                <span
                   className="p-3 rounded-full hover:bg-opacity-20 transition-all cursor-pointer"
                   style={{ backgroundColor: 'var(--df-glass-bg)' }}
                 >
                   <i className="fa-brands fa-linkedin-in" style={{ color: 'var(--df-cyan)' }}></i>
                 </span>
-                <span 
+                <span
                   className="p-3 rounded-full hover:bg-opacity-20 transition-all cursor-pointer"
                   style={{ backgroundColor: 'var(--df-glass-bg)' }}
                 >
                   <i className="fa-brands fa-twitter" style={{ color: 'var(--df-cyan)' }}></i>
                 </span>
-                <span 
+                <span
                   className="p-3 rounded-full hover:bg-opacity-20 transition-all cursor-pointer"
                   style={{ backgroundColor: 'var(--df-glass-bg)' }}
                 >

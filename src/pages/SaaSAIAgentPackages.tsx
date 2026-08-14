@@ -78,8 +78,8 @@ const SaaSAIAgentPackages = () => {
     }
   ];
 
-  const filteredServices = activeFilter === 'all' 
-    ? services 
+  const filteredServices = activeFilter === 'all'
+    ? services
     : services.filter(service => service.category === activeFilter);
 
   // Create particles effect
@@ -89,33 +89,33 @@ const SaaSAIAgentPackages = () => {
 
     // Clear existing particles
     particlesContainer.innerHTML = '';
-    
+
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
-      
+
       // Random position
       const posX = Math.random() * 100;
       const posY = Math.random() * 100;
-      
+
       // Random size
       const size = Math.random() * 4 + 1;
-      
+
       // Random animation duration
       const duration = Math.random() * 20 + 10;
-      
+
       // Random delay
       const delay = Math.random() * 10;
-      
+
       particle.style.left = `${posX}%`;
       particle.style.top = `${posY}%`;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
       particle.style.animationDuration = `${duration}s`;
       particle.style.animationDelay = `${delay}s`;
-      
+
       particlesContainer.appendChild(particle);
     }
   }, []);
@@ -126,11 +126,11 @@ const SaaSAIAgentPackages = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&display=swap" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
-      
+
       <div className="text-white font-sans min-h-screen relative" style={{ fontFamily: 'Inter, sans-serif' }}>
         {/* Animated Mesh Gradient Background */}
         <div className="animated-mesh-bg"></div>
-        
+
         {/* Particles Background */}
         <div id="particles" className="particles"></div>
 
@@ -140,68 +140,68 @@ const SaaSAIAgentPackages = () => {
             <div className="container mx-auto px-4">
               <div className="flex items-center justify-between h-16">
                 <Link to="/" className="flex items-center space-x-2 hover-scale">
-                  <img 
-                    alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo" 
-                    className="max-h-24 transition-transform duration-300" 
-                    src="/lovable-uploads/82ac39f2-c264-42ef-bb92-fa6731db497e.png" 
-                    width="96" 
-                    height="96" 
-                    loading="eager" 
+                  <img
+                    alt="Digital Frontier Company - Memphis Digital Marketing Agency Logo"
+                    className="max-h-24 transition-transform duration-300"
+                    src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
+                    width="96"
+                    height="96"
+                    loading="eager"
                   />
                 </Link>
-                
+
                 <div className="flex items-center space-x-6">
                   <div className="flex items-center space-x-4">
-                    <Link 
+                    <Link
                       to="/answer-engine-optimization"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       AEO
                     </Link>
-                    <Link 
+                    <Link
                       to="/generative-engine-optimization"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       GEO
                     </Link>
-                    <Link 
+                    <Link
                       to="/search-engine-optimization"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       SEO
                     </Link>
-                    <Link 
+                    <Link
                       to="/ad-funnel-blueprint"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       AI Funnel Ads
                     </Link>
-                    <Link 
+                    <Link
                       to="/crypto-marketing"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       Crypto Marketing
                     </Link>
-                    <Link 
+                    <Link
                       to="/insights"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       Insights
                     </Link>
-                    <Link 
+                    <Link
                       to="/about-us"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       About
                     </Link>
-                    <Link 
+                    <Link
                       to="/contact"
                       className="bg-slate-950 hover:bg-slate-800 text-cyan-400 transition-all duration-300 hover:scale-110 inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium"
                     >
                       Contact
                     </Link>
                   </div>
-                  
+
                   {/* Social Icons */}
                   <div className="flex items-center space-x-3 pl-6 border-l border-slate-700">
                     <a href="https://www.facebook.com/profile.php?id=61572896248731" className="text-slate-400 hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:rotate-12" target="_blank" rel="noopener noreferrer">
@@ -251,14 +251,14 @@ const SaaSAIAgentPackages = () => {
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12">
               AI-Powered SaaS Solutions for Market Domination. From custom AI agents to strategic marketing, we engineer your path to digital supremacy with cutting-edge technology and proven strategies.
             </p>
-            
+
             {/* Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <button 
+              <button
                 onClick={() => setActiveFilter('all')}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  activeFilter === 'all' 
-                    ? 'text-white' 
+                  activeFilter === 'all'
+                    ? 'text-white'
                     : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                 }`}
                 style={{
@@ -268,11 +268,11 @@ const SaaSAIAgentPackages = () => {
               >
                 All Packages
               </button>
-              <button 
+              <button
                 onClick={() => setActiveFilter('ai')}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  activeFilter === 'ai' 
-                    ? 'text-white' 
+                  activeFilter === 'ai'
+                    ? 'text-white'
                     : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                 }`}
                 style={{
@@ -282,11 +282,11 @@ const SaaSAIAgentPackages = () => {
               >
                 AI Agents
               </button>
-              <button 
+              <button
                 onClick={() => setActiveFilter('marketing')}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  activeFilter === 'marketing' 
-                    ? 'text-white' 
+                  activeFilter === 'marketing'
+                    ? 'text-white'
                     : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                 }`}
                 style={{
@@ -296,11 +296,11 @@ const SaaSAIAgentPackages = () => {
               >
                 Marketing
               </button>
-              <button 
+              <button
                 onClick={() => setActiveFilter('consulting')}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  activeFilter === 'consulting' 
-                    ? 'text-white' 
+                  activeFilter === 'consulting'
+                    ? 'text-white'
                     : 'border text-white hover:bg-opacity-80 hover:border-blue-400'
                 }`}
                 style={{
@@ -328,7 +328,7 @@ const SaaSAIAgentPackages = () => {
                   >
                     {/* Badge */}
                     <div className="absolute top-4 right-4">
-                      <span 
+                      <span
                         className="inline-block px-3 py-1 text-xs font-bold rounded-full"
                         style={{
                           backgroundColor: service.badge === 'AI AGENT' ? 'var(--df-bright-blue)' :
@@ -343,7 +343,7 @@ const SaaSAIAgentPackages = () => {
 
                     {/* Icon */}
                     <div className="mb-6">
-                      <div 
+                      <div
                         className="inline-flex h-16 w-16 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
                         style={{ backgroundColor: 'var(--df-bright-blue)' }}
                       >
@@ -405,7 +405,7 @@ const SaaSAIAgentPackages = () => {
                 <Link
                   to="/pricing"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-bold border-2 text-white transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 hover:-translate-y-1"
-                  style={{ 
+                  style={{
                     borderColor: 'var(--df-cyan)',
                     backgroundColor: 'transparent'
                   }}

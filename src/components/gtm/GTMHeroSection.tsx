@@ -49,7 +49,7 @@ export function GTMHeroSection() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [valueProps.length]);
 
   const stats = [
     { icon: TrendingUp, value: 47, suffix: 'B', label: 'AI Marketing Industry Value (2025)', color: 'text-primary' },

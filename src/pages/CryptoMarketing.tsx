@@ -43,7 +43,7 @@ const CryptoMarketing = () => {
                 "url": "https://digitalfrontier.app",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png",
+                  "url": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
                   "width": "512",
                   "height": "512"
                 },
@@ -145,7 +145,7 @@ const CryptoMarketing = () => {
           {/* Logo with Shimmer Effect */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <img src="/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png" alt="Digital Frontier Logo" className="h-32 w-auto" />
+              <img src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png" alt="Digital Frontier Logo" className="h-32 w-auto" />
             </div>
           </div>
 
@@ -664,7 +664,7 @@ const CryptoMarketing = () => {
             })]}>
                 <CarouselContent>
                   <CarouselItem>
-                    <img src="/lovable-uploads/ai-search-traffic.jpeg" alt="Stop Losing Traffic to AI Search Results" className="w-full h-auto rounded-lg" />
+                    <img src="/lovable-uploads/fc7766a1-d8c1-4e01-b409-72d965448fd0.png" alt="Stop Losing Traffic to AI Search Results" className="w-full h-auto rounded-lg" />
                   </CarouselItem>
                   <CarouselItem>
                     <img src="/lovable-uploads/analytics-dashboard.jpg" alt="AI-Powered Analytics Dashboard" className="w-full h-auto rounded-lg" />
