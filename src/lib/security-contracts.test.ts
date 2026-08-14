@@ -43,9 +43,9 @@ describe("deployed-function source contracts", () => {
     const config = read("supabase/config.toml");
     const source = read("supabase/functions/prerender-ssr/index.ts");
 
-    expect(config).toContain(
-      "[functions.prerender-ssr]\\nverify_jwt = true",
-    );
+    const prerenderConfig = config.split("[functions.prerender-ssr]")[1];
+    expect(prerenderConfig).toBeDefined();
+    expect(prerenderConfig.split("[")[0]).toContain("verify_jwt = true");
     expect(source).toContain("legacy prerender proxy has been retired");
     expect(source).not.toContain("PRERENDER_IO_TOKEN");
     expect(source).not.toContain("fetch(");
