@@ -80,7 +80,7 @@ Production mutations were limited to the reviewed migration and Edge Function de
 
 ## Remaining production closure checks
 
-1. Re-authorize Lovable with `projects:write`, quarantine the legacy project, and publish authoritative commit `d50163ad1cb5eef7f93f615a0458953659d7b8f7`.
+1. Re-authorize Lovable with `projects:write`, quarantine the legacy project, and publish the latest green GitHub `main` revision containing functional release `d50163ad1cb5eef7f93f615a0458953659d7b8f7`.
 2. Configure `TURNSTILE_SECRET_KEY`, dedicated `RATE_LIMIT_HMAC_KEY`, `RESEND_API_KEY`, `LEADS_NOTIFICATION_EMAIL`, and `VITE_TURNSTILE_SITE_KEY`.
 3. Run the full negative contact matrix plus one designated valid end-to-end lead/email test.
 4. Refresh the installed app MCP catalog and verify the three obsolete write schemas disappear.
