@@ -1,4 +1,3 @@
-
 -- 1. Roles enum + user_roles table
 CREATE TYPE public.app_role AS ENUM ('admin', 'moderator', 'user');
 
@@ -71,3 +70,4 @@ CREATE POLICY "Admins can delete playbook categories"
   ON public.playbook_categories FOR DELETE
   TO authenticated
   USING (public.has_role(auth.uid(), 'admin'));
+
