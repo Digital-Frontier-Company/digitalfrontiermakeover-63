@@ -33,6 +33,10 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
+      - name: Capture dependency audit evidence
+        continue-on-error: true
+        run: npm audit --json
+
       - name: Lint
         run: npm run lint
 
