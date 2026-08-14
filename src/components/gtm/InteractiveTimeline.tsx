@@ -3,14 +3,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Circle, ArrowRight, Target, Users, Rocket, TrendingUp, BarChart } from 'lucide-react';
+import { CheckCircle, Circle, ArrowRight, Target, Users, Rocket, TrendingUp, BarChart, type LucideIcon } from 'lucide-react';
 
 interface TimelinePhase {
   id: number;
   title: string;
   description: string;
   duration: string;
-  icon: React.ComponentType<any>;
+  icon: LucideIcon;
   color: string;
   tasks: string[];
   deliverables: string[];

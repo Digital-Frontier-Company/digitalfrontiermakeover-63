@@ -1,49 +1,52 @@
 import { useState, useRef } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { TurnstileWidget } from '@/components/TurnstileWidget';
+import { useTurnstile } from '@/hooks/useTurnstile';
+import { submitLead } from '@/lib/contact-leads';
 
 const ModernContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setSubmitMessage('');
+
+    if (!turnstileToken) {
+      setSubmitMessage('Please complete the human verification before submitting.');
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const formData = new FormData(e.currentTarget);
-      const contactData = {
-        name: formData.get('text-1752650679296-0') as string,
-        email: formData.get('text-1752650807996-0') as string,
-        message: `Social Link: ${formData.get('text-1752650925101-0') as string}\nMarketing Needs: ${formData.get('select-1752651040594-0') as string}`,
-        form_type: 'Modern Contact Page Form',
-      };
+      const rawSocialLink = String(formData.get('text-1752650925101-0') ?? '');
+      const socialLink = /^https?:\/\//i.test(rawSocialLink)
+        ? rawSocialLink
+        : `https://${rawSocialLink}`;
 
-      console.log('Submitting to Lindy webhook:', contactData);
-
-      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(contactData),
+      await submitLead({
+        name: String(formData.get('text-1752650679296-0') ?? ''),
+        email: String(formData.get('text-1752650807996-0') ?? ''),
+        socialLink,
+        message: `Marketing Needs: ${String(formData.get('select-1752651040594-0') ?? '')}`,
+        form_type: 'modern-contact',
+        turnstile_token: turnstileToken,
       });
 
-      if (response.ok) {
-        console.log('Webhook response successful');
-        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
-        
-        // Reset form
-        formRef.current?.reset();
-      } else {
-        throw new Error('Failed to submit form to webhook');
-      }
-      
-    } catch (error: any) {
-      console.error('Form submission error:', error);
-      setSubmitMessage(error.message || 'Sorry, there was an error sending your message. Please try again.');
+      setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.');
+      formRef.current?.reset();
+    } catch {
+      setSubmitMessage('Sorry, there was an error sending your message. Please try again.');
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   };
@@ -269,11 +272,17 @@ const ModernContactForm = () => {
                   </div>
                   
                   
+                  <TurnstileWidget
+                    onTokenChange={setTurnstileToken}
+                    resetSignal={turnstileReset}
+                    className="flex justify-center text-sm text-red-300"
+                  />
+
                   {/* Submit Button */}
                   <div className="pt-4">
                     <button 
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || !turnstileToken}
                       className="w-full py-4 px-6 neon-btn text-dark-bg font-bold rounded-lg text-lg tracking-wider uppercase transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <i className="fas fa-paper-plane mr-2"></i>
@@ -296,7 +305,7 @@ const ModernContactForm = () => {
               
               {/* Footer note */}
               <div className="p-4 text-center text-cyan-300 text-sm border-t border-cyan-900">
-                <p>Your data is encrypted and securely transmitted</p>
+                <p>Protected by Turnstile and server-side abuse controls</p>
               </div>
             </div>
             
@@ -304,7 +313,7 @@ const ModernContactForm = () => {
             <div className="flex justify-center mt-8 space-x-6">
               <div className="flex items-center">
                 <i className="fas fa-shield-alt text-cyan-400 mr-2"></i>
-                <span className="text-sm">256-bit Encryption</span>
+                <span className="text-sm">Human Verification</span>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-bolt text-cyan-400 mr-2"></i>

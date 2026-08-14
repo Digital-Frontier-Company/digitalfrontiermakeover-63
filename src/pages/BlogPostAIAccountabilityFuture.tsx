@@ -17,7 +17,7 @@ const BlogPostAIAccountabilityFuture = () => {
           pageType: "article",
           publishedDate: "2025-09-05T00:00:00Z",
           customCanonical: "https://digitalfrontier.app/blog/ai-accountability-future",
-          imageUrl: "https://digitalfrontier.app/lovable-uploads/06143896-3705-4777-8c31-5f139371be88.png"
+          imageUrl: "https://digitalfrontier.app/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png"
         }}
       >
         {/* Hero Section */}

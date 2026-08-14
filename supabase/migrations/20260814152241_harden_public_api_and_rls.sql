@@ -1,10 +1,23 @@
 -- Prevent public/API callers from invoking privileged maintenance functions.
-REVOKE ALL ON FUNCTION public.broadcast_content_changes() FROM PUBLIC, anon, authenticated;
+-- Two platform maintenance functions pre-date the captured migration ledger.
+-- Guard those ACL changes so a clean local reset can reach the reconciliation
+-- migration that restores their definitions below the historical ledger.
+DO $block$
+BEGIN
+  IF to_regprocedure('public.broadcast_content_changes()') IS NOT NULL THEN
+    REVOKE ALL ON FUNCTION public.broadcast_content_changes() FROM PUBLIC, anon, authenticated;
+    GRANT EXECUTE ON FUNCTION public.broadcast_content_changes() TO service_role;
+  END IF;
+
+  IF to_regprocedure('public.rls_auto_enable()') IS NOT NULL THEN
+    REVOKE ALL ON FUNCTION public.rls_auto_enable() FROM PUBLIC, anon, authenticated;
+    GRANT EXECUTE ON FUNCTION public.rls_auto_enable() TO service_role;
+  END IF;
+END
+$block$;
+
 REVOKE ALL ON FUNCTION public.grant_admin_for_verified_owner() FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.rls_auto_enable() FROM PUBLIC, anon, authenticated;
-GRANT EXECUTE ON FUNCTION public.broadcast_content_changes() TO service_role;
 GRANT EXECUTE ON FUNCTION public.grant_admin_for_verified_owner() TO service_role;
-GRANT EXECUTE ON FUNCTION public.rls_auto_enable() TO service_role;
 
 -- has_role is deliberately available only to signed-in callers and the service role.
 REVOKE ALL ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, anon;

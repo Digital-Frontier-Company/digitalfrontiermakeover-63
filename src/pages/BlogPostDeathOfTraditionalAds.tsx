@@ -43,7 +43,7 @@ const BlogPostDeathOfTraditionalAds = () => {
               "name": "Digital Frontier",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://digitalfrontier.app/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png"
+                "url": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png"
               }
             },
             "datePublished": "2024-12-20",

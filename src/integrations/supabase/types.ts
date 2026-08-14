@@ -14,6 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_rate_limits: {
+        Row: {
+          key_hash: string
+          request_count: number
+          updated_at: string
+          window_started_at: string
+        }
+        Insert: {
+          key_hash: string
+          request_count: number
+          updated_at: string
+          window_started_at: string
+        }
+        Update: {
+          key_hash?: string
+          request_count?: number
+          updated_at?: string
+          window_started_at?: string
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          created_at: string
+          email: string
+          form_type: string | null
+          id: string
+          message: string | null
+          name: string | null
+          payload: Json
+          source_url: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          form_type?: string | null
+          id?: string
+          message?: string | null
+          name?: string | null
+          payload?: Json
+          source_url?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          form_type?: string | null
+          id?: string
+          message?: string | null
+          name?: string | null
+          payload?: Json
+          source_url?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       playbook_categories: {
         Row: {
           color: string | null
@@ -130,10 +187,11 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
+      consume_contact_rate_limit: {
         Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
+          p_key_hash: string
+          p_max_requests: number
+          p_window_seconds: number
         }
         Returns: boolean
       }

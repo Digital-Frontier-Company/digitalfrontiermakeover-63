@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# Digital Frontier
 
-## Project info
+Digital Frontier's production marketing platform for AI visibility, answer-engine optimization, generative-engine optimization, and digital marketing services.
 
-**URL**: https://lovable.dev/projects/1db82747-ed75-4fb3-8187-a171129da250
+- Production: https://digitalfrontier.app
+- Source of truth: https://github.com/Digital-Frontier-Company/digitalfrontiermakeover-63
+- Lovable project: https://lovable.dev/projects/fe32ed26-5837-4605-8222-0d59d2ebc19a
+- Operations: [docs/deployment.md](docs/deployment.md)
 
-## How can I edit this code?
+## Architecture
 
-There are several ways of editing your application.
+| Layer | Technology |
+| --- | --- |
+| Web application | React 18, TypeScript, Vite, React Router |
+| UI | Tailwind CSS, shadcn/ui, Radix UI |
+| Data and auth | Supabase Postgres, RLS, Auth |
+| Server functions | Supabase Edge Functions |
+| Production hosting | Lovable |
+| DNS | Hostinger |
+| CI and review | GitHub Actions |
 
-**Use Lovable**
+GitHub `main` is authoritative. Lovable receives the merged GitHub revision and publishes that exact revision. Vercel is not a production target for this repository.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1db82747-ed75-4fb3-8187-a171129da250) and start prompting.
+## Local development
 
-Changes made via Lovable will be committed automatically to this repo.
+Requirements:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+- Node.js 22.22.x
+- npm 11.13.x
+- Docker only when running the local Supabase stack
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Fill the public browser values in `.env.local`. Edge Function secrets belong in Supabase and must never be stored in the repository.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Validation
 
-**Use GitHub Codespaces**
+```sh
+npm run check
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This runs lint, TypeScript checks, tests, and the production Vite build.
 
-## What technologies are used for this project?
+For a clean database replay:
 
-This project is built with:
+```sh
+npx supabase@2.114.0 db start
+npx supabase@2.114.0 test db supabase/tests/database
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The GitHub database workflow performs this replay on every pull request that changes `supabase/`.
 
-## How can I deploy this project?
+## Security model
 
-Simply open [Lovable](https://lovable.dev/projects/1db82747-ed75-4fb3-8187-a171129da250) and click on Share -> Publish.
+- The public MCP endpoint is strictly read-only and exposes standard `search` and `fetch` tools plus documented read-only helpers.
+- Contact submissions go through `send-contact-email`; browsers never call a public third-party webhook directly.
+- Contact requests require JWT verification, strict origin and schema validation, Cloudflare Turnstile, and atomic database rate limits.
+- Service-role credentials are server-only. Database authorization is enforced with grants and RLS.
+- Database changes are forward-only migrations and must pass a clean reset before merge.
 
-## Can I connect a custom domain to my Lovable project?
+See [SECURITY.md](SECURITY.md) for private vulnerability reporting and the maintained trust boundaries.
 
-Yes, you can!
+## Release
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+All production changes use a pull request with green application and database checks. After merge, confirm Lovable synchronized the exact SHA, apply pending Supabase migrations and Edge Functions, publish, and execute the smoke-test matrix in [docs/deployment.md](docs/deployment.md).
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Do not edit production schema directly or deploy an unreviewed Lovable revision.

@@ -11,7 +11,7 @@ interface FAQItem {
   isOpen?: boolean;
 }
 
-const FAQ = () => {
+const FaqPage = () => {
   const [faqs, setFaqs] = useState<FAQItem[]>([
     {
       question: "What is AI-powered marketing and why are ethics important?",
@@ -201,4 +201,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FaqPage;

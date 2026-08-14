@@ -1,137 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import PageLayout from "@/components/layout/PageLayout";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import PageLayout from "@/components/layout/PageLayout";
+import {
+  INDEXABLE_MARKETING_PAGES,
+  SITE_ORIGIN,
+  type MarketingCategory,
+} from "@/content/marketingPages";
+
+const CATEGORY_ORDER: MarketingCategory[] = [
+  "Main pages",
+  "Services",
+  "Local services",
+  "Guides and playbooks",
+  "Blog and insights",
+  "Research and topics",
+  "Tools and resources",
+  "Legal",
+];
 
 const SiteMap = () => {
   const location = useLocation();
-  
-  // Organize site structure
-  const mainPages = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about-us" },
-    { name: "Contact", path: "/contact" },
-    { name: "Blog", path: "/blog" },
-    { name: "Pricing", path: "/answer-engine-optimization-and-digital-marketing-services" },
-    { name: "Newsletter", path: "/newsletter" },
-    { name: "FAQ", path: "/faq" },
-  ];
-  
-  const servicePages = [
-    { name: "AI-Powered Ad Funnel Blueprint", path: "/ad-funnel-blueprint" },
-    { name: "Generative Engine Optimization", path: "/generative-engine-optimization" },
-    { name: "Answer Engine Optimization", path: "/answer-engine-optimization" },
-    { name: "AI and Digital Marketing", path: "/ai-and-digital-marketing" },
-    { name: "Search Engine Optimization", path: "/search-engine-optimization" },
-    { name: "Crypto Marketing", path: "/crypto-marketing" },
-  ];
-  
-  const resourcePages = [
-    { name: "Content Creation Agent", path: "/resources/content-creation-agent" },
-    { name: "AI Bias in Advertising", path: "/ai-bias-in-advertising" },
-  ];
-  
-  const knowledgePages = [
-    { name: "Technical Aspects", path: "/technical" },
-    { name: "Evolution", path: "/evolution" },
-    { name: "Regulations", path: "/regulations" },
-    { name: "Industry Sectors", path: "/sectors" },
-    { name: "Future Trends", path: "/future" },
-    { name: "KPIs and Analytics", path: "/kpis" },
-  ];
-  
-  const blogPosts = [
-    { name: "Mastering Digital Marketing", path: "/blog/mastering-digital-marketing" },
-  ];
 
   return (
-    <PageLayout 
-      title="Site Map" 
-      subtitle="Navigate through all of our pages" 
+    <PageLayout
+      title="Site Map"
+      subtitle="Navigate Digital Frontier's public pages"
       currentPath={location.pathname}
     >
       <Helmet>
         <title>Site Map | Digital Frontier</title>
-        <link rel="canonical" href="https://digitalfrontier.app/site-map" />
+        <meta
+          name="description"
+          content="Browse Digital Frontier services, guides, articles, tools, and company information."
+        />
+        <link rel="canonical" href={`${SITE_ORIGIN}/site-map`} />
         <meta name="robots" content="index, follow" />
       </Helmet>
-      
+
       <div className="space-y-12">
-        <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-100">Main Pages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {mainPages.map((page) => (
-              <Link 
-                key={page.path}
-                to={page.path}
-                className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
+        {CATEGORY_ORDER.map((category) => {
+          const pages = INDEXABLE_MARKETING_PAGES.filter(
+            (page) => page.category === category,
+          );
+
+          if (pages.length === 0) {
+            return null;
+          }
+
+          return (
+            <section key={category} aria-labelledby={`sitemap-${category.replace(/ /g, "-").toLowerCase()}`}>
+              <h2
+                id={`sitemap-${category.replace(/ /g, "-").toLowerCase()}`}
+                className="text-2xl font-bold mb-6 text-slate-100"
               >
-                {page.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-        
-        <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-100">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {servicePages.map((page) => (
-              <Link 
-                key={page.path}
-                to={page.path}
-                className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
-              >
-                {page.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-        
-        <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-100">Resources</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {resourcePages.map((page) => (
-              <Link 
-                key={page.path}
-                to={page.path}
-                className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
-              >
-                {page.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-        
-        <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-100">Knowledge Base</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {knowledgePages.map((page) => (
-              <Link 
-                key={page.path}
-                to={page.path}
-                className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
-              >
-                {page.name}
-              </Link>
-            ))}
-          </div>
-        </section>
-        
-        <section>
-          <h2 className="text-2xl font-bold mb-6 text-slate-100">Blog Posts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {blogPosts.map((page) => (
-              <Link 
-                key={page.path}
-                to={page.path}
-                className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
-              >
-                {page.name}
-              </Link>
-            ))}
-          </div>
-        </section>
+                {category}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {pages.map((page) => (
+                  <Link
+                    key={page.path}
+                    to={page.path}
+                    className="p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-500 hover:bg-slate-800 transition-all"
+                  >
+                    <span className="block font-medium text-slate-100">{page.title}</span>
+                    <span className="mt-2 block text-sm text-slate-300">{page.description}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </PageLayout>
   );

@@ -4,39 +4,90 @@ import { describe, expect, it } from "vitest";
 const read = (path: string) => readFileSync(path, "utf8");
 
 describe("deployed-function source contracts", () => {
-  it("keeps the public MCP server strictly read-only", () => {
+  it("keeps the public MCP server strictly read-only and ChatGPT-compatible", () => {
     const source = read("supabase/functions/mcp/index.ts");
     const manifest = JSON.parse(read(".lovable/mcp/manifest.json"));
+    const registry = JSON.parse(
+      read("supabase/functions/_shared/marketing-pages.json"),
+    );
+    const tools = manifest.mcp.tools as Array<{
+      name: string;
+      annotations: {
+        readOnlyHint: boolean;
+        destructiveHint: boolean;
+        idempotentHint: boolean;
+        openWorldHint: boolean;
+      };
+      inputSchema: {
+        properties: Record<string, unknown>;
+        required?: string[];
+        additionalProperties: boolean;
+      };
+    }>;
 
     expect(manifest.auth).toEqual({ type: "none" });
-    expect(manifest.mcp.tools.map((tool: { name: string }) => tool.name)).toEqual([
+    expect(manifest.mcp.server.version).toBe("0.3.0");
+    expect(tools.map((tool) => tool.name)).toEqual([
+      "search",
+      "fetch",
       "list_services",
       "get_contact_info",
       "search_content",
     ]);
     expect(
-      manifest.mcp.tools.every(
-        (tool: { annotations: { readOnlyHint: boolean } }) =>
-          tool.annotations.readOnlyHint,
+      tools.every(
+        (tool) =>
+          tool.annotations.readOnlyHint
+          && !tool.annotations.destructiveHint
+          && tool.annotations.idempotentHint
+          && !tool.annotations.openWorldHint,
       ),
     ).toBe(true);
+
+    const search = tools.find((tool) => tool.name === "search");
+    const fetch = tools.find((tool) => tool.name === "fetch");
+    expect(search?.inputSchema.properties).toEqual({
+      query: { type: "string", minLength: 1, maxLength: 200 },
+    });
+    expect(search?.inputSchema.required).toEqual(["query"]);
+    expect(fetch?.inputSchema.properties).toEqual({
+      id: { type: "string", minLength: 1, maxLength: 300 },
+    });
+    expect(fetch?.inputSchema.required).toEqual(["id"]);
+    expect(search?.inputSchema.additionalProperties).toBe(false);
+    expect(fetch?.inputSchema.additionalProperties).toBe(false);
 
     for (const forbidden of [
       "create_playbook",
       "update_playbook",
       "delete_playbook",
       "SUPABASE_SERVICE_ROLE_KEY",
+      "createClient(",
     ]) {
       expect(source).not.toContain(forbidden);
     }
 
-    expect(source).toContain(
-      "https://digitalfrontier.app/services/ai-implementation-consulting",
+    expect(source).toContain('name: "search"');
+    expect(source).toContain('name: "fetch"');
+    expect(source).toContain("JSON.stringify({ results })");
+    expect(source).toContain("JSON.stringify(document)");
+    expect(source).toContain("content: [{ type: \"text\"");
+
+    const paths = new Set(
+      registry.pages.map((page: { path: string }) => page.path),
     );
-    expect(source).toContain(
-      "https://digitalfrontier.app/services/digital-marketing-strategy",
-    );
-    expect(source).toContain("https://digitalfrontier.app/contact");
+    for (const requiredPath of [
+      "/services/ai-implementation-consulting",
+      "/services/digital-marketing-strategy",
+      "/contact",
+    ]) {
+      expect(paths.has(requiredPath)).toBe(true);
+    }
+    expect(
+      registry.pages
+        .filter((page: { mcp: boolean }) => page.mcp)
+        .every((page: { indexable: boolean }) => page.indexable),
+    ).toBe(true);
   });
 
   it("keeps the retired prerender proxy closed", () => {
@@ -87,6 +138,7 @@ describe("Supabase migration history", () => {
       "20260814153403",
       "20260814153427",
       "20260814155034",
+      "20260814170000",
     ];
 
     for (const version of expectedVersions) {

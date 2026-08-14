@@ -7,7 +7,7 @@ import { Shield, AlertTriangle, CheckCircle, Activity, Eye, EyeOff } from 'lucid
 interface SecurityEvent {
   id: string;
   event: string;
-  details: any;
+  details: unknown;
   timestamp: number;
   severity: 'info' | 'warning' | 'error';
 }

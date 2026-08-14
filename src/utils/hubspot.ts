@@ -9,7 +9,7 @@ export const submitToHubSpot = async (formData: {
   firstName?: string;
   lastName?: string;
   email: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | null | undefined;
 }) => {
   // Validate required fields
   if (!formData.email) {

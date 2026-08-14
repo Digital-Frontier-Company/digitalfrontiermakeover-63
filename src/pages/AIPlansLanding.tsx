@@ -183,7 +183,7 @@ const AIPlansLanding = () => {
                 bounce: 0.3
               }}>
                   <div className="relative">
-                    <motion.img src="/lovable-uploads/58631511-c231-437e-a70b-e41404dade2d.png" alt="Digital Frontier Company Logo" className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl" animate={{
+                    <motion.img src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png" alt="Digital Frontier Company Logo" className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl" animate={{
                     rotateY: [0, 360],
                     scale: [1, 1.05, 1]
                   }} transition={{
@@ -213,7 +213,7 @@ const AIPlansLanding = () => {
                   AI That Works Both Ways
                 </h1>
                 
-                <p className="text-xl text-slate-400 leading-relaxed font-normal mb-8">Our AI-powered marketing systems get you found by Chat GPT, Perplexity, and Google AI so you can capture customers who never even visit traditional search engines, while our automation handles your operations so you can focus on growing your business instead of managing it.</p>
+                <p className="text-xl text-slate-400 leading-relaxed font-normal mb-8">Our AI-powered marketing systems get you found by Chat GPT, Perplexity, and Google AI so you can capture customers who never even visit traditional search engines, while our automation handles your operations so you can focus on growing your business instead of managing it.</p>
                 
                 <div className="flex gap-8 mb-10">
                   <div className="text-center">
@@ -266,7 +266,7 @@ const AIPlansLanding = () => {
                 animation: 'floatCard1 4s ease-in-out infinite'
               }}>
                   <div className="flex items-center mb-2">
-                    <img src="/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png" alt="GEO Optimization" className="h-8 w-8 mr-3" />
+                    <img src="/lovable-uploads/4ccc7a08-05c5-4500-9fba-149c0ec813cd.png" alt="GEO Optimization" className="h-8 w-8 mr-3" />
                     <h3 className="text-lg font-bold bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
                       GEO Optimization
                     </h3>
@@ -355,7 +355,7 @@ const AIPlansLanding = () => {
                 title: "KPI Framework",
                 desc: "Track what matters in GEO"
               }, {
-                icon: "/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png",
+                icon: "/lovable-uploads/4ccc7a08-05c5-4500-9fba-149c0ec813cd.png",
                 title: "Content Strategy",
                 desc: "Win AI recommendation engines"
               }, {
@@ -395,7 +395,7 @@ const AIPlansLanding = () => {
             
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {[{
-              icon: "/lovable-uploads/34614363-e6df-493f-95e6-69042d3126bd.png",
+              icon: "/lovable-uploads/4ccc7a08-05c5-4500-9fba-149c0ec813cd.png",
               title: "Generative Engine Optimization (GEO)",
               description: "Own ChatGPT, Perplexity, and Google AI results. Our proven GEO strategies get your business recommended by AI engines.",
               features: ["AI-first content optimization", "Prompt engineering for visibility", "Cross-platform AI presence", "Performance tracking & analytics"]
@@ -405,7 +405,7 @@ const AIPlansLanding = () => {
               description: "Custom AI assistants that work 24/7. From Basic to Enterprise - we have an AI solution for every business need.",
               features: ["Customer service automation", "Content creation & marketing", "Lead qualification & nurturing", "Industry-specific training"]
             }, {
-              icon: "/lovable-uploads/b1196f95-2bb3-4bc0-84c0-600c14144107.png",
+              icon: "/lovable-uploads/creator_icon.png",
               title: "AI Voice Assistants",
               description: "Human-like voice technology that learns and sells. Transform customer experience with cutting-edge voice AI.",
               features: ["Natural conversation flow", "Sales & support automation", "Multi-language support", "CRM integration"]
@@ -420,7 +420,7 @@ const AIPlansLanding = () => {
               description: "Complete marketing automation powered by AI. Predictive analytics, personalization, and intelligent campaigns.",
               features: ["Predictive lead scoring", "Automated content creation", "Dynamic personalization", "ROI optimization"]
             }, {
-              icon: "/lovable-uploads/a4e6279b-bb9d-49f3-b9c3-030e567619e2.png",
+              icon: "/lovable-uploads/crypto_icon.png",
               title: "Enterprise AI Solutions",
               description: "Complete digital transformation for B2B, finance, real estate, and crypto sectors. Custom AI systems that scale.",
               features: ["Custom AI development", "Integration & training", "Ongoing optimization", "Dedicated support team"]

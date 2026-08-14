@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import PageLayout from '@/components/layout/PageLayout';
-import { ContentDeduplicationAnalysis, SAMPLE_DUPLICATION_ISSUES } from '@/components/SEO/ContentDeduplicationTools';
+import { ContentDeduplicationAnalysis } from '@/components/SEO/ContentDeduplicationTools';
+import { SAMPLE_DUPLICATION_ISSUES } from '@/components/SEO/content-duplication-data';
 import useContentDeduplication from '@/hooks/useContentDeduplication';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

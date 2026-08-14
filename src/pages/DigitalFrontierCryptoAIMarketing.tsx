@@ -57,7 +57,7 @@ const DigitalFrontierCryptoAIMarketing = () => {
           {/* Logo with Shimmer Effect */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <img src="/lovable-uploads/e7cef708-2992-4277-8f17-0afefe3d7144.png" alt="Digital Frontier Logo" className="h-32 w-auto" />
+              <img src="/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png" alt="Digital Frontier Logo" className="h-32 w-auto" />
             </div>
           </div>
 
@@ -134,7 +134,7 @@ const DigitalFrontierCryptoAIMarketing = () => {
             {/* Independent Creators */}
             <Card className="interactive-card bg-gradient-to-br from-cyan-900/20 to-cyan-800/10 border-cyan-500/30 hover:border-cyan-400/50 overflow-hidden">
               <div className="relative h-64">
-                <img src="/lovable-uploads/108a6190-a689-4e67-8494-edae10aa78d2.jpg" alt="Female Content Creator in Home Studio" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/783ff8d4-b039-4c59-bf19-1ecdb0b9fb9a.png" alt="Female Content Creator in Home Studio" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <Badge variant="secondary" className="bg-cyan-500/20 text-cyan-300 border-cyan-400">

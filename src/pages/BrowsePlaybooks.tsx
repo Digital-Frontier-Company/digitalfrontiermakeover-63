@@ -60,10 +60,6 @@ const BrowsePlaybooks = () => {
     fetchCategories();
   }, []);
 
-  useEffect(() => {
-    filterPlaybooks();
-  }, [searchTerm, selectedCategory, selectedDifficulty, sortBy]);
-
   const fetchPlaybooks = async () => {
     try {
       const { data, error } = await supabase

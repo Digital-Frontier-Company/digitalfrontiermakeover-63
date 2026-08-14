@@ -12,8 +12,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { useToast } from "@/hooks/use-toast";
-import { submitToHubSpot } from "@/utils/hubspot";
+import { useTurnstile } from "@/hooks/useTurnstile";
+import { submitLead } from "@/lib/contact-leads";
 import { motion } from 'framer-motion';
 
 // Define form validation schema
@@ -42,6 +44,12 @@ const Contact = () => {
     toast
   } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const {
+    turnstileToken,
+    setTurnstileToken,
+    turnstileReset,
+    resetTurnstile,
+  } = useTurnstile();
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0
@@ -74,38 +82,38 @@ const Contact = () => {
 
   // Form submission handler
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (!turnstileToken) {
+      toast({
+        title: "Verification required",
+        description: "Please complete the human verification before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://public.lindy.ai/api/v1/webhooks/lindy/26e30680-521e-45e0-a00b-0ed2ac52aeef', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: values.name,
-          email: values.email,
-          message: `Phone: ${values.phone || 'Not provided'}\nCompany: ${values.company || 'Not provided'}\nService Interest: ${values.service}\nMessage: ${values.message}\nConsent: ${values.consent}`,
-          form_type: 'Main Contact Form'
-        }),
+      await submitLead({
+        name: values.name,
+        email: values.email,
+        message: `Phone: ${values.phone || 'Not provided'}\nCompany: ${values.company || 'Not provided'}\nService Interest: ${values.service}\nMessage: ${values.message}\nConsent: ${values.consent}`,
+        form_type: "contact",
+        turnstile_token: turnstileToken,
       });
 
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "Your message has been sent. We'll get back to you within 24 hours."
-        });
-        form.reset();
-      } else {
-        throw new Error('Failed to submit form');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+      toast({
+        title: "Message sent successfully!",
+        description: "Your message has been sent. We'll get back to you within 24 hours."
+      });
+      form.reset();
+    } catch {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or contact us directly.",
         variant: "destructive"
       });
     } finally {
+      resetTurnstile();
       setIsSubmitting(false);
     }
   }
@@ -392,9 +400,15 @@ const Contact = () => {
                             </div>
                           </FormItem>} />
                       
+                      <TurnstileWidget
+                        onTokenChange={setTurnstileToken}
+                        resetSignal={turnstileReset}
+                        className="flex justify-center text-sm text-red-300"
+                      />
+
                       {/* Submit button */}
                       <div className="pt-4">
-                        <Button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-electric-azure to-electric-purple hover:from-electric-azure/90 hover:to-electric-purple/90 text-white font-bold py-4 px-6 rounded-lg text-lg tracking-wider uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-neon hover:shadow-neon-lg">
+                        <Button type="submit" disabled={isSubmitting || !turnstileToken} className="w-full bg-gradient-to-r from-electric-azure to-electric-purple hover:from-electric-azure/90 hover:to-electric-purple/90 text-white font-bold py-4 px-6 rounded-lg text-lg tracking-wider uppercase transition-all duration-300 transform hover:scale-[1.02] shadow-neon hover:shadow-neon-lg">
                           <Send className="w-5 h-5 mr-2" />
                           {isSubmitting ? "Sending..." : "Submit Request"}
                         </Button>
@@ -404,7 +418,7 @@ const Contact = () => {
 
                   {/* Footer note */}
                   <div className="pt-4 text-center text-electric-azure/80 text-sm border-t border-electric-azure/20 mt-6">
-                    <p>Your data is encrypted and securely transmitted</p>
+                    <p>Protected by Turnstile and server-side abuse controls</p>
                   </div>
                 </CardContent>
               </Card>

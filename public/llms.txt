@@ -1,84 +1,95 @@
 # Digital Frontier
 
-> Memphis-based AI marketing agency helping small and mid-market businesses with Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), SEO, and AI-driven digital marketing. We've tested 100+ AI tools so you get proven solutions that work.
+> Memphis-based AI marketing consultancy helping businesses with AEO, GEO, SEO, AI implementation, and digital growth strategy.
 
-Digital Frontier specializes in helping businesses get found in the AI search era — across Google, ChatGPT, Perplexity, voice assistants, and other answer engines. Services span AEO, GEO, traditional SEO, paid funnels, go-to-market strategy, and AI implementation consulting.
+## Main pages
 
-## Pages
-
-- [Home](/): Memphis AI marketing agency overview and proven AI solutions.
-- [About Us](/about-us): Agency story, team, and the Memphis Model methodology.
-- [Pricing](/pricing): Service tiers and plans.
-- [Contact](/contact): Get in touch for a consultation.
-- [Team Expertise](/team-expertise): Backgrounds and specialties of the team.
-- [FAQ](/faq): Common questions about AI marketing, AEO, and our services.
+- [Digital Frontier | AI Marketing Agency in Memphis](/): AI-native marketing systems for Memphis and Mid-South businesses, spanning AEO, GEO, SEO, automation, and digital growth strategy.
+- [About Digital Frontier](/about-us): Meet the Digital Frontier team and learn how its Memphis-based consultancy builds practical AI and marketing systems.
+- [Contact Digital Frontier](/contact): Start a conversation with Digital Frontier about AI implementation, search visibility, or digital marketing strategy.
+- [Digital Frontier Pricing](/pricing): Review Digital Frontier service tiers and engagement options for AI-powered marketing and growth systems.
+- [Digital Frontier Team Expertise](/team-expertise): Explore the strategy, marketing, AI, and execution experience behind Digital Frontier's client work.
+- [Digital Frontier FAQ](/faq): Answers to common questions about AEO, GEO, SEO, AI implementation, and Digital Frontier engagements.
+- [Digital Frontier Newsletter](/newsletter): Subscribe for practical intelligence about AI, search, digital marketing, and business growth.
+- [Digital Frontier Site Map](/site-map): Browse Digital Frontier's public services, guides, articles, tools, and company pages.
 
 ## Services
 
-- [Digital Frontier Services](/digital-frontier-services): Full overview of agency services.
-- [Digital Marketing](/digital-marketing): Strategy and performance marketing.
-- [Answer Engine Optimization](/answer-engine-optimization): Get cited by AI search engines and chatbots.
-- [Generative Engine Optimization](/generative-engine-optimization): Optimize for generative AI answers.
-- [Search Engine Optimization](/search-engine-optimization): Traditional SEO services.
-- [AI and Digital Marketing](/ai-and-digital-marketing): How AI integrates with modern marketing.
-- [Crypto Marketing](/crypto-marketing): Marketing for crypto and Web3 projects.
-- [AI Voice Assistants](/ai-voice-assistants): Voice search optimization.
-- [Web Creative](/web-creative): Creative and brand design services.
-- [SaaS AI Agent Packages](/saas-ai-agent-packages): Pre-built AI agent offerings for SaaS.
-- [AI Implementation Consulting](/services/ai-implementation-consulting): Strategy for adopting AI in business.
-- [Digital Marketing Strategy](/services/digital-marketing-strategy): Custom marketing strategy engagements.
-- [Predictive Analytics Agent](/services/predictive-analytics-agent): AI-driven forecasting services.
-- [Content Creation Agent](/resources/content-creation-agent): AI-assisted content production.
+- [Digital Frontier Services](/digital-frontier-services): An overview of Digital Frontier's AI implementation, answer-engine, search, and digital marketing services.
+- [Digital Marketing Services](/digital-marketing): Digital marketing strategy and performance systems designed to turn attention into measurable business growth.
+- [Answer Engine Optimization Services](/answer-engine-optimization): AEO services that structure useful, authoritative content for AI answers, assistants, and conversational search.
+- [Generative Engine Optimization Services](/generative-engine-optimization): GEO strategy that improves a brand's discoverability and citation readiness across generative search experiences.
+- [Search Engine Optimization Services](/search-engine-optimization): Technical and content SEO services focused on sustainable organic visibility and qualified demand.
+- [AI and Digital Marketing](/ai-and-digital-marketing): A practical guide to combining AI capabilities with modern digital marketing workflows and measurement.
+- [Crypto Marketing Services](/crypto-marketing): Digital strategy for crypto and Web3 organizations navigating trust, community, and fast-changing markets.
+- [AI Voice Assistants](/ai-voice-assistants): Learn how conversational interfaces and voice assistants affect customer discovery and service design.
+- [Web Creative Services](/web-creative): Creative web and brand experiences aligned to digital strategy, usability, and measurable conversion goals.
+- [SaaS AI Agent Packages](/saas-ai-agent-packages): Packaged AI-agent offerings for SaaS teams that need practical automation and customer-facing workflows.
+- [AI Implementation Consulting](/services/ai-implementation-consulting): Strategy and implementation support for selecting, integrating, governing, and measuring business AI systems.
+- [Digital Marketing Strategy](/services/digital-marketing-strategy): Custom digital marketing strategy engagements built around customer journeys, channel economics, and execution priorities.
+- [Predictive Analytics Agent](/services/predictive-analytics-agent): An AI-driven forecasting service for turning operational and marketing data into forward-looking decisions.
+- [Content Creation Agent](/resources/content-creation-agent): An AI-assisted workflow for producing useful, on-brand content with human review and strategic direction.
+- [AI Service Plans](/ai-plans): Compare Digital Frontier plans for introducing AI systems into marketing and business operations.
+- [Contact Digital Frontier for Digital Marketing](/contact-for-digital-marketing): Discuss a digital marketing engagement with Digital Frontier's Memphis-based strategy team.
 
-## Local
+## Local services
 
-- [Memphis Digital Marketing](/memphis-digital-marketing): Memphis, TN marketing services.
-- [Germantown Digital Marketing](/germantown-digital-marketing): Germantown, TN services.
-- [Collierville SEO Services](/collierville-seo-services): Collierville, TN SEO.
+- [Memphis Digital Marketing Agency](/memphis-digital-marketing): AI-powered digital marketing, AEO, GEO, and SEO services for businesses in Memphis, Tennessee.
+- [Germantown Digital Marketing](/germantown-digital-marketing): Digital marketing and search visibility services for businesses in Germantown, Tennessee.
+- [Collierville SEO Services](/collierville-seo-services): Local SEO and AI-search visibility services for organizations in Collierville, Tennessee.
 
-## Guides & Playbooks
+## Guides and playbooks
 
-- [Complete AEO Guide 2025](/complete-aeo-guide-2025): Comprehensive Answer Engine Optimization guide.
-- [SEO vs AEO vs GEO](/seo-vs-aeo-vs-geo): Comparison of search optimization disciplines.
-- [GTM Strategy Blueprint](/gtm-strategy-blueprint): Go-to-market planning framework.
-- [Ad Funnel Blueprint](/ad-funnel-blueprint): Paid advertising funnel design.
-- [Emotional Marketing Playbook](/emotional-marketing-playbook): Psychology-driven marketing tactics.
-- [AI Prompt Templates](/ai-prompt-templates): 50+ ChatGPT templates for marketers.
-- [Information Architecture Prompts](/information-architecture-prompts): IA prompts library.
-- [User Experience Prompts](/user-experience-prompts): UX prompts library.
-- [Browse Playbooks](/browse-playbooks): Full library of marketing playbooks.
-- [Influencer Marketing 2025](/influencer-marketing-2025): Influencer strategy guide.
+- [AI-Powered Ad Funnel Blueprint](/ad-funnel-blueprint): A practical framework for designing paid acquisition funnels from audience and offer through measurement and iteration.
+- [Go-to-Market Strategy Blueprint](/gtm-strategy-blueprint): A structured go-to-market planning framework covering positioning, channels, execution, and feedback loops.
+- [Complete Answer Engine Optimization Guide](/complete-aeo-guide-2025): A comprehensive guide to structuring content and authority for answer engines and AI-powered discovery.
+- [SEO vs AEO vs GEO](/seo-vs-aeo-vs-geo): A clear comparison of search engine optimization, answer engine optimization, and generative engine optimization.
+- [Emotional Marketing Playbook](/emotional-marketing-playbook): A psychology-informed playbook for building relevant messages without sacrificing clarity or customer trust.
+- [AI Prompt Templates for Marketing](/ai-prompt-templates): Reusable prompt templates and prompt-engineering patterns for practical marketing work.
+- [Information Architecture Prompts](/information-architecture-prompts): Prompt templates for planning site structure, content relationships, navigation, and user pathways.
+- [User Experience Prompts](/user-experience-prompts): Prompt templates for customer research, journey design, usability, and experience improvement.
+- [Influencer Marketing Guide](/influencer-marketing-2025): A guide to creator partnerships, audience fit, campaign structure, and influencer measurement.
+- [Browse Digital Frontier Playbooks](/browse-playbooks): Browse Digital Frontier's library of practical marketing frameworks and strategic playbooks.
 
-## Blog & Insights
+## Blog and insights
 
-- [Blog](/blog): Articles on AI, marketing, and SEO.
-- [Insights Hub](/insights): Industry insights and analysis.
-- [Newsletter](/newsletter): Subscribe for updates.
-- [Death of Traditional Ads](/blog/death-of-traditional-ads): Why old-school ads are dying.
-- [AEO + Crypto Marketing](/blog/aeo-crypto-marketing): Answer engines meet Web3.
-- [AI Revolution in Digital Marketing 2025](/blog/ai-revolution-digital-marketing-2025): Annual outlook.
-- [AI Truth Gap](/blog/ai-truth-gap): Trust and accuracy in AI content.
-- [AI Accountability Future](/blog/ai-accountability-future): Where AI accountability is heading.
-- [Protecting From AI Misinformation](/blog/protecting-from-ai-misinformation): Defense tactics.
-- [Blockchain + AI in Real Estate](/blog/blockchain-ai-real-estate-revolution): Industry case study.
-- [Digital Marketing Revolution 2025 — Privacy](/blog/digital-marketing-revolution-2025-privacy): Privacy-first marketing.
-- [Marketing Agencies Essential 2025](/blog/marketing-agencies-essential-business-growth-2025): Agency value in 2025.
-- [AI-Driven Risk Management](/blog/ai-driven-risk-management-business-resilience): AI for business resilience.
-- [Mastering Digital Marketing](/blog/mastering-digital-marketing): Fundamentals deep-dive.
-- [Tax Reduction & Wealth Building Guide](/blog/tax-reduction-wealth-building-guide): Financial guide.
+- [Digital Frontier Blog](/blog): Articles and analysis about AI, marketing, search visibility, growth strategy, and technology.
+- [Digital Frontier Insights Hub](/insights): Research, analysis, and practical intelligence for leaders working across AI, marketing, and growth.
+- [The Death of Traditional Ads](/blog/death-of-traditional-ads): Why traditional advertising models are losing effectiveness and how modern demand systems respond.
+- [AEO and Crypto Marketing](/blog/aeo-crypto-marketing): How answer-engine visibility can help crypto organizations communicate with clarity and authority.
+- [Digital Marketing Revolution 2025](/blog/digital-marketing-revolution-july-2025): An analysis of the AI, search, measurement, and customer-experience shifts reshaping digital marketing.
+- [Privacy and the Digital Marketing Revolution](/blog/digital-marketing-revolution-2025-privacy): How privacy expectations and data constraints are changing digital marketing strategy and execution.
+- [The AI Revolution in Digital Marketing](/blog/ai-revolution-digital-marketing-2025): A practical look at how artificial intelligence is changing digital marketing work and customer expectations.
+- [The AI Truth Gap](/blog/ai-truth-gap): An examination of trust, evidence, and accuracy challenges in AI-mediated information environments.
+- [The AI Citation Crisis](/blog/ai-citation-crisis): Why verifiable sources and transparent attribution matter in AI-generated and AI-mediated information.
+- [Protecting Yourself from AI Misinformation](/blog/protecting-from-ai-misinformation): A practical guide to source verification, digital literacy, and organizational safeguards for AI-mediated information.
+- [The Future of AI Accountability](/blog/ai-accountability-future): How technology, governance, and social expectations can shape more responsible and accountable AI systems.
+- [Why Marketing Agencies Remain Essential](/blog/marketing-agencies-essential-business-growth-2025): How focused strategy, specialist execution, and accountable measurement support business growth.
+- [AI-Driven Risk Management and Business Resilience](/blog/ai-driven-risk-management-business-resilience): Ways organizations can apply AI to risk sensing, scenario planning, and operational resilience.
+- [Mastering Digital Marketing](/blog/mastering-digital-marketing): A guide to the strategy, channels, measurement, and iteration behind effective digital marketing.
+- [Tax Reduction and Wealth Building Guide](/blog/tax-reduction-wealth-building-guide): Educational material about tax-aware planning and long-term wealth-building considerations.
+- [Blockchain and AI in Real Estate](/blog/blockchain-ai-real-estate-revolution): An exploration of how blockchain and AI may reshape real-estate operations and customer experiences.
 
-## Research & Topics
+## Research and topics
 
-- [Psychological Digital Marketing Insights](/psychological-digital-marketing-insights): Behavioral science in marketing.
-- [AI Bias in Advertising](/ai-bias-in-advertising): Bias risks in AI ad systems.
-- [Recommender Systems](/recommender-system): How recommendation engines work.
-- [Recommender System Generalization](/recommender-system-generalization): Cross-domain recommenders.
-- [KPIs](/kpis): Marketing KPIs that matter.
-- [Crypto + AI + Marketing](/digital-frontier-where-crypto-ai-and-marketing-collide): Intersection of three disciplines.
+- [Psychological Digital Marketing Insights](/psychological-digital-marketing-insights): Behavioral-science principles for creating relevant, ethical, and effective digital marketing experiences.
+- [AI Bias in Advertising](/ai-bias-in-advertising): An overview of bias risks, governance responsibilities, and mitigation practices in AI-assisted advertising.
+- [Recommender Systems](/recommender-system): An interactive explanation of recommendation systems, ranking signals, feedback, and business applications.
+- [Recommender System Generalization](/recommender-system-generalization): A deeper look at how recommendation systems transfer learning and performance across domains and audiences.
+- [Where Crypto, AI, and Marketing Collide](/digital-frontier-where-crypto-ai-and-marketing-collide): Research and commentary at the intersection of crypto markets, artificial intelligence, and digital marketing.
+- [Marketing KPIs](/kpis): A practical reference for selecting, interpreting, and connecting marketing KPIs to business outcomes.
+- [Technical Foundations](/technical): Technical background and concepts supporting modern AI, digital platforms, and marketing systems.
+- [The Evolution of Digital Technology](/evolution): A view of the technological and market shifts shaping today's digital frontier.
+- [AI and Digital Regulations](/regulations): An educational overview of regulatory considerations affecting AI and digital business systems.
+- [Industry Sectors](/sectors): Examples of how AI and digital strategy affect different industries and operating models.
+- [The Future of AI and Digital Business](/future): Scenarios and trends shaping the next phase of AI, marketing, technology, and customer experience.
 
-## Optional
+## Tools and resources
 
-- [Docs](/docs): Technical documentation.
-- [Sitemap](/sitemap): All pages on the site.
-- [Terms of Service](/terms-of-service)
-- [Privacy Policy](/privacy-policy)
+- [Digital Frontier Documentation](/docs): Technical documentation and supporting resources for Digital Frontier tools and services.
+- [Information Architecture Dashboard](/ia-dashboard): Tools for journey mapping, site structure, accessibility review, metadata, and information architecture planning.
+
+## Legal
+
+- [Terms of Service](/terms-of-service): The terms governing use of Digital Frontier's website and services.
+- [Privacy Policy](/privacy-policy): How Digital Frontier handles personal information and website data.

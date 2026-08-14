@@ -9,6 +9,12 @@ import { ShoppingCart, Bot, Search, TrendingUp, FileText } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
 import { useLocation } from "react-router-dom";
 
+const TYPEWRITER_MESSAGES = [
+  "SEO has evolved remarkably from its early reliance on keyword stuffing and backlink accumulation.",
+  "Modern search engines now use AI to understand the intent and context of user queries.",
+  "Digital Frontier helps businesses navigate this new era of semantic search through AI-powered SEO strategies."
+];
+
 const SearchEngineOptimization: React.FC = () => {
   
   const location = useLocation();
@@ -17,13 +23,6 @@ const SearchEngineOptimization: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   
-  
-  const typewriterMessages = [
-    "SEO has evolved remarkably from its early reliance on keyword stuffing and backlink accumulation.",
-    "Modern search engines now use AI to understand the intent and context of user queries.",
-    "Digital Frontier helps businesses navigate this new era of semantic search through AI-powered SEO strategies."
-  ];
-
   // Timeline data
   const timelineEvents = [
     { year: "2000", position: "10%", title: "Keywords Rule", description: "Early SEO focused on repeating keywords and optimizing meta tags." },
@@ -68,7 +67,7 @@ const SearchEngineOptimization: React.FC = () => {
     let timeout: NodeJS.Timeout;
 
     const typeText = () => {
-      const fullText = typewriterMessages[currentIndex];
+      const fullText = TYPEWRITER_MESSAGES[currentIndex];
       
       if (isTyping) {
         if (typewriterText.length < fullText.length) {
@@ -85,7 +84,7 @@ const SearchEngineOptimization: React.FC = () => {
           setTypewriterText(typewriterText.slice(0, -1));
           timeout = setTimeout(typeText, deleteSpeed);
         } else {
-          setCurrentIndex((prev) => (prev + 1) % typewriterMessages.length);
+          setCurrentIndex((prev) => (prev + 1) % TYPEWRITER_MESSAGES.length);
           setIsTyping(true);
           timeout = setTimeout(typeText, typeSpeed);
         }
@@ -120,7 +119,7 @@ const SearchEngineOptimization: React.FC = () => {
               "name": "Digital Frontier Company",
               "logo": {
                 "@type": "ImageObject",
-                "url": "/lovable-uploads/c9d38052-a83f-47d4-ab89-a00c237a6ff9.png"
+                "url": "/lovable-uploads/3b45382c-8b9c-4724-b6ed-845a2bf3de3a.png"
               }
             },
             "datePublished": "2025-05-03T12:00:00+00:00"

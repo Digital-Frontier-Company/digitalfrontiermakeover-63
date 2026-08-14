@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import react from "@vitejs/plugin-react";
+import { fileURLToPath } from "node:url";
 import { componentTagger } from "lovable-tagger";
-import { marketingSSG } from "./vite-plugin-marketing-ssg";
+import { marketingPrerender } from "./vite-plugin-marketing-prerender.ts";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -17,15 +17,49 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', 'lucide-react'],
-          utils: ['clsx', 'class-variance-authority', 'tailwind-merge'],
-          animations: ['framer-motion'],
-          seo: ['react-helmet-async']
+        manualChunks(id) {
+          if (!id.includes("node_modules")) {
+            return undefined;
+          }
+          if (id.includes("/react/") || id.includes("react-dom") || id.includes("/scheduler/")) {
+            return "react";
+          }
+          if (id.includes("@supabase")) {
+            return "supabase";
+          }
+          if (id.includes("@radix-ui") || id.includes("lucide-react")) {
+            return "ui";
+          }
+          if (id.includes("framer-motion")) {
+            return "motion";
+          }
+          if (id.includes("recharts")) {
+            return "charts";
+          }
+          if (id.includes("/d3-") || id.includes("victory-vendor")) {
+            return "chart-utils";
+          }
+          if (id.includes("react-router")) {
+            return "router";
+          }
+          if (id.includes("@tanstack")) {
+            return "query";
+          }
+          if (id.includes("react-hook-form") || id.includes("@hookform") || id.includes("/zod/")) {
+            return "forms";
+          }
+          if (id.includes("react-icons")) {
+            return "icons";
+          }
+          if (id.includes("date-fns") || id.includes("react-day-picker")) {
+            return "calendar";
+          }
+          if (id.includes("embla-carousel")) {
+            return "carousel";
+          }
+          return "vendor";
         },
-        assetFileNames: (assetInfo: any) => {
+        assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.') || ['', 'unknown'];
           const ext = info[info.length - 1];
           
@@ -40,7 +74,7 @@ export default defineConfig(({ mode }) => ({
           }
           return `assets/[name]-[hash][extname]`;
         },
-        chunkFileNames: (chunkInfo: any) => {
+        chunkFileNames: (chunkInfo) => {
           const name = chunkInfo.name || 'chunk';
           return `js/${name}-[hash].js`;
         }
@@ -55,14 +89,11 @@ export default defineConfig(({ mode }) => ({
         },
         mangle: {
           safari10: true
+        },
+        format: {
+          comments: false
         }
       }
-    })
-  },
-  esbuild: {
-    ...(mode === 'production' && {
-      drop: ['console', 'debugger'],
-      legalComments: 'none'
     })
   },
   preview: {
@@ -72,13 +103,11 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     ...(mode === 'development' ? [componentTagger()] : []),
-    ...(mode === 'production' ? [marketingSSG({
-      generateSitemap: true,
-    })] : []),
+    ...(mode === 'production' ? [marketingPrerender()] : []),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp', '**/*.avif'],

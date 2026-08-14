@@ -16,6 +16,15 @@ interface PerformanceTrackerProps {
   trackingEnabled?: boolean;
 }
 
+interface FirstInputPerformanceEntry extends PerformanceEntry {
+  processingStart: number;
+}
+
+interface LayoutShiftPerformanceEntry extends PerformanceEntry {
+  hadRecentInput: boolean;
+  value: number;
+}
+
 /**
  * Performance tracking component that monitors Core Web Vitals
  */
@@ -69,7 +78,8 @@ export const PerformanceTracker: React.FC<PerformanceTrackerProps> = ({
         const entries = list.getEntries();
         entries.forEach(entry => {
           if (entry.name === 'first-input') {
-            const fidValue = (entry as any).processingStart - entry.startTime;
+            const firstInput = entry as FirstInputPerformanceEntry;
+            const fidValue = firstInput.processingStart - firstInput.startTime;
             setMetrics(prev => ({ ...prev, fid: fidValue }));
           }
         });
@@ -80,8 +90,9 @@ export const PerformanceTracker: React.FC<PerformanceTrackerProps> = ({
         let clsValue = 0;
         const entries = list.getEntries();
         entries.forEach(entry => {
-          if (!(entry as any).hadRecentInput) {
-            clsValue += (entry as any).value;
+          const layoutShift = entry as LayoutShiftPerformanceEntry;
+          if (!layoutShift.hadRecentInput) {
+            clsValue += layoutShift.value;
           }
         });
         setMetrics(prev => ({ ...prev, cls: clsValue }));

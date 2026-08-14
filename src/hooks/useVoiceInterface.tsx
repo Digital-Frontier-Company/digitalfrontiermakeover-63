@@ -7,9 +7,8 @@ interface VoiceInterfaceState {
   confidence: number;
 }
 
-// Simple type assertion to avoid conflicts
-const getSpeechRecognition = () => {
-  return (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+const getSpeechRecognition = (): (new () => SpeechRecognition) | undefined => {
+  return window.SpeechRecognition ?? window.webkitSpeechRecognition;
 };
 
 export const useVoiceInterface = () => {
@@ -20,8 +19,8 @@ export const useVoiceInterface = () => {
     confidence: 0
   });
 
-  const recognitionRef = useRef<any>(null);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     // Check for speech recognition support
@@ -38,7 +37,7 @@ export const useVoiceInterface = () => {
         setState(prev => ({ ...prev, isListening: true }));
       };
 
-      recognition.onresult = (event: any) => {
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
         const results = event.results;
         const lastResult = results[results.length - 1];
         
@@ -54,7 +53,7 @@ export const useVoiceInterface = () => {
         }
       };
 
-      recognition.onerror = (event: any) => {
+      recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
         console.error('Speech recognition error:', event.error);
         setState(prev => ({ 
           ...prev, 

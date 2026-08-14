@@ -52,7 +52,7 @@ const BlogPostAEOCrypto: React.FC = () => {
 
         <section>
           <AspectRatio ratio={16 / 9}>
-            <img alt="Answer Engine Optimization - Dominate the AI Answer" src="/lovable-uploads/108a6190-a689-4e67-8494-edae10aa78d2.jpg" className="w-full h-full rounded-xl object-contain" />
+            <img alt="Answer Engine Optimization - Dominate the AI Answer" src="/lovable-uploads/783ff8d4-b039-4c59-bf19-1ecdb0b9fb9a.png" className="w-full h-full rounded-xl object-contain" />
           </AspectRatio>
         </section>
 

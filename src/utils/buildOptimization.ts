@@ -3,6 +3,7 @@
  */
 
 import type { Plugin } from 'vite';
+import type { OutputBundle, PreRenderedAsset, PreRenderedChunk } from 'rollup';
 
 /**
  * Image compression plugin for Vite build process
@@ -51,7 +52,7 @@ export function getPerformanceConfig() {
             animations: ['framer-motion'],
             seo: ['react-helmet-async']
           },
-          assetFileNames: (assetInfo: any) => {
+          assetFileNames: (assetInfo: PreRenderedAsset) => {
             const info = assetInfo.name?.split('.') || ['', 'unknown'];
             const ext = info[info.length - 1];
             
@@ -67,7 +68,7 @@ export function getPerformanceConfig() {
             }
             return `assets/[name]-[hash][extname]`;
           },
-          chunkFileNames: (chunkInfo: any) => {
+          chunkFileNames: (chunkInfo: PreRenderedChunk) => {
             // Create predictable chunk names for better caching
             const name = chunkInfo.name || 'chunk';
             return `js/${name}-[hash].js`;
@@ -169,7 +170,7 @@ export function generatePreloadTags(criticalResources: string[]) {
 /**
  * Bundle analysis utilities
  */
-export function analyzeBundleSize(bundle: Record<string, any>) {
+export function analyzeBundleSize(bundle: OutputBundle) {
   const analysis = {
     totalSize: 0,
     chunks: [] as Array<{ name: string; size: number; type: 'js' | 'css' | 'asset' }>,
