@@ -349,16 +349,12 @@ const Index = () => {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-foreground mb-6" style={{ fontFamily: "'Oxanium', sans-serif", letterSpacing: '-0.03em' }}>
-            We don't run ads.
-            <br />
-            We build <em className="not-italic" style={{ background: 'linear-gradient(90deg, #1478FF, #00E5FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>systems</em> that make
-            <br />
-            your competitors irrelevant.
+            Make your local business easier to <em className="not-italic" style={{ background: 'linear-gradient(90deg, #1478FF, #00E5FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>find, trust, and choose.</em>
           </h1>
 
           {/* Subheadline */}
           <p className="max-w-xl mb-10 leading-relaxed" style={{ color: '#C9D5E8' }}>
-            Digital Frontier is the AI-native growth partner for local and service businesses ready to stop guessing and start compounding. We combine intelligent marketing, Answer Engine Optimization, and real-world market intelligence — so you don't just grow, you grow with a plan.
+            We check what customers can find about your business on Google and in AI search. You get a clear plan for what to fix first, and hands-on help if you want us to make the changes.
           </p>
 
           {/* CTA Buttons */}
@@ -368,7 +364,7 @@ const Index = () => {
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg bg-primary transition-all duration-300 hover:opacity-90"
               style={{ boxShadow: '0 0 20px rgba(26,86,219,0.4)' }}
             >
-              See How It Works →
+              Ask about the Local AI Visibility Audit →
             </Link>
             <Link
               to="/newsletter"
