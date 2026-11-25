@@ -1,0 +1,1328 @@
+import { Link } from "react-router-dom";
+import { useEffect, useRef, useState, Suspense, lazy } from "react";
+import { Helmet } from "react-helmet-async";
+import useFaqToggle from "@/hooks/useFaqToggle";
+import { LazyImage } from "@/components/LazyImage";
+import HomePageHTML from "@/components/HomePageHTML";
+import { IMAGE_SIZES, getImageDimensions } from "@/utils/imageOptimization";
+import Typed from 'typed.js';
+import { ChevronDown, Zap, Target, Rocket, TrendingUp, Users, Award, Check, DollarSign, BarChart3, Sprout, RotateCcw, Gem, Settings, TrendingDown, Clock, Shield, Star, Sparkles, Brain, Mic, Search, BookOpen, Code, ArrowRight, AlertTriangle } from 'lucide-react';
+import { motion, useScroll, useTransform, useAnimation } from 'framer-motion';
+import BlogPromoBlock from "@/components/BlogPromoBlock";
+import digitalFrontierLogo from "@/assets/digital-frontier-company-logo.png";
+import gumroadLogo from "@/assets/gumroad-logo.png";
+
+// TypewriterText component with line break support
+const TypewriterText = ({
+  text,
+  delay = 50,
+  loop = false
+}: {
+  text: string;
+  delay?: number;
+  loop?: boolean;
+}) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  useEffect(() => {
+    // Split text by | for line breaks
+    const lines = text.split('|');
+    const fullText = lines.join('\n');
+    let i = 0;
+    let isTyping = true;
+    const typeText = () => {
+      const timer = setInterval(() => {
+        if (isTyping) {
+          if (i < fullText.length) {
+            setDisplayedText(fullText.slice(0, i + 1));
+            i++;
+          } else {
+            // Text fully typed
+            if (loop) {
+              // Wait 2 seconds then start erasing
+              setTimeout(() => {
+                isTyping = false;
+              }, 2000);
+            } else {
+              clearInterval(timer);
+              setTimeout(() => setShowCursor(false), 2000);
+            }
+          }
+        } else {
+          // Erasing phase
+          if (i > 0) {
+            setDisplayedText(fullText.slice(0, i - 1));
+            i--;
+          } else {
+            // Text fully erased, restart typing
+            setTimeout(() => {
+              isTyping = true;
+            }, 500);
+          }
+        }
+      }, delay);
+      return () => clearInterval(timer);
+    };
+    const cleanup = typeText();
+    return cleanup;
+  }, [text, delay, loop]);
+  return <div className="text-center">
+      {displayedText.split('\n').map((line, index) => <div key={index} className="inline-block rounded-2xl">
+          {line}
+        </div>)}
+      {showCursor && <span className="typewriter-cursor">|</span>}
+    </div>;
+};
+
+// Lazy load below-the-fold components for performance
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const CaseStudySlider = lazy(() => import("@/components/CaseStudySlider"));
+const FAQAccordion = lazy(() => import("@/components/FAQAccordion"));
+const ModernContactForm = lazy(() => import("@/components/ModernContactForm"));
+
+const Index = () => {
+  // Use the FAQ toggle hook
+  useFaqToggle();
+
+  // Reference for Typed.js element
+  const typedElement = useRef(null);
+  const typed = useRef(null);
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [showFullText, setShowFullText] = useState(false);
+  const [bubbles, setBubbles] = useState(() => Array.from({
+    length: 1
+  }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: 30 + Math.random() * 20,
+    speed: 0.1 + Math.random() * 0.2,
+    direction: Math.random() * 360,
+    opacity: 0.4 + Math.random() * 0.3
+  })));
+  // Handle bubble pop
+  const handleBubblePop = (id: number) => {
+    setBubbles(prevBubbles => prevBubbles.map(bubble => bubble.id === id ? {
+      ...bubble,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: 20 + Math.random() * 40,
+      speed: 0.1 + Math.random() * 0.2,
+      direction: Math.random() * 360,
+      opacity: 0.3 + Math.random() * 0.4
+    } : bubble));
+  };
+
+  // Bubble movement animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBubbles(prevBubbles => prevBubbles.map(bubble => ({
+        ...bubble,
+        x: (bubble.x + Math.cos(bubble.direction) * bubble.speed + 100) % 100,
+        y: (bubble.y + Math.sin(bubble.direction) * bubble.speed + 100) % 100
+      })));
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Track mouse movement for interactive effects - Optimized for performance
+  useEffect(() => {
+    let rafId: number;
+    let lastTime = 0;
+    const handleMouseMove = (e: MouseEvent) => {
+      const now = performance.now();
+      if (now - lastTime < 16) return; // Throttle to ~60fps
+      lastTime = now;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(() => {
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY
+        });
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove, {
+      passive: true
+    });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, []);
+
+  // Intersection observer for animations - Optimized
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    sections.forEach(section => observer.observe(section));
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, []);
+
+  // Load HubSpot form script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://js.hsforms.net/forms/embed/48401342.js';
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      // Cleanup script on component unmount
+      const existingScript = document.querySelector('script[src="https://js.hsforms.net/forms/embed/48401342.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  // Parallax scroll effects
+  const {
+    scrollY
+  } = useScroll();
+  const heroY = useTransform(scrollY, [0, 500], [0, -150]);
+  const logoScale = useTransform(scrollY, [0, 300], [1, 1.1]);
+  const marqueeControls = useAnimation();
+  const trustedLogos = ["/lovable-uploads/2486421b-6ca3-4c32-b686-a49ac0da182b.png", "/lovable-uploads/998924f0-2fc2-41d7-98d1-5b927c64c09e.png", "/lovable-uploads/914a27cb-e153-438e-8c3b-3937b1598283.png", "/lovable-uploads/dd9a50a2-11ff-45a3-bdef-97597bd967b7.png", "/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png", "/lovable-uploads/966b64a4-e3f7-488f-b15e-0d2d8e61d442.png", "/lovable-uploads/1ee99e39-aa6f-42eb-ad36-cd370652c1d7.png"];
+  const extraTrustedImages = ["/lovable-uploads/3c96b100-6325-4881-925d-941fa1d28582.png", "/lovable-uploads/77a7a6e8-ba24-4511-808d-e7ce4724f3d3.png", "/lovable-uploads/7cb44db8-2a71-4927-bc07-e05c54261377.png", "/lovable-uploads/4a25c6e7-d446-42a7-b9be-e55739bc1e58.png", "/lovable-uploads/05e5d28b-90bc-4666-9f8c-eb24aa8f2db4.png", "/lovable-uploads/34b9c76a-de0d-438b-aa2c-82b92aac2a9f.png"];
+  const marqueeItems = [...trustedLogos, "/lovable-uploads/4883064e-c62b-46fc-88e4-ccb90130e07e.png", ...extraTrustedImages];
+  useEffect(() => {
+    marqueeControls.start({
+      x: ["0%", "-50%"],
+      transition: {
+        duration: 30,
+        ease: "linear",
+        repeat: Infinity
+      }
+    });
+  }, [marqueeControls]);
+  // Removed bot detection logic to prevent rendering conflicts
+
+  return <Suspense fallback={<div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
+      </div>}>
+      {/* SEO Schema */}
+      <Helmet>
+        {/* Digital Frontier Analytics Tracking */}
+        <script async src="https://digitalfrontier.agency/df-analytics.js"></script>
+        <script>
+          {`
+            window.dfAnalytics = window.dfAnalytics || [];
+            function dfa(){dfAnalytics.push(arguments);}
+            dfa('init', '1bf99e61-f4b8-4929-b14c-b13fc0affdb3');
+            dfa('track', 'pageview');
+          `}
+        </script>
+        
+        {/* Enhanced Structured Data with @graph */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://digitalfrontier.app/#organization",
+                "name": "Digital Frontier Company",
+                "alternateName": "Digital Frontier AI",
+                "url": "https://digitalfrontier.app",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
+                  "width": "512",
+                  "height": "512"
+                },
+                "image": "https://digitalfrontier.app/lovable-uploads/43aabc4a-e0b6-4c96-a4ff-115865e74fbb.png",
+                "description": "AI-powered digital marketing agency specializing in Answer Engine Optimization (AEO), SEO, and innovative marketing strategies",
+                "telephone": "+1-901-337-9915",
+                "email": "contact@digitalfrontier.app",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "8135 Walnut Grove Rd",
+                  "addressLocality": "Memphis",
+                  "addressRegion": "TN",
+                  "postalCode": "38125",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "35.1495",
+                  "longitude": "-90.0490"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/profile.php?id=61572896248731",
+                  "https://x.com/DigitalFro14616",
+                  "https://www.youtube.com/@Digital_FrontierCO",
+                  "https://www.tiktok.com/@digital_frontier_company",
+                  "https://www.instagram.com/digital_frontier_company/",
+                  "https://www.linkedin.com/company/digital-frontier-company"
+                ],
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "bestRating": "5",
+                  "reviewCount": "200"
+                }
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://digitalfrontier.app/#website",
+                "url": "https://digitalfrontier.app",
+                "name": "Digital Frontier AI",
+                "description": "AI-powered digital marketing solutions",
+                "publisher": {
+                  "@id": "https://digitalfrontier.app/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://digitalfrontier.app/search?q={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://digitalfrontier.app",
+                "url": "https://digitalfrontier.app",
+                "name": "AI Marketing Memphis | Digital Frontier Company Solutions",
+                "description": "Transform your business with AI-powered digital marketing. Get vetted AI tools, automated workflows, and measurable ROI in weeks.",
+                "isPartOf": {
+                  "@id": "https://digitalfrontier.app/#website"
+                }
+              }
+            ]
+          })}
+        </script>
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://digitalfrontier.app"
+            }]
+          })}
+        </script>
+      </Helmet>
+      
+      {/* Removed dual rendering to prevent conflicts */}
+      
+      {/* FIXED BACKGROUND - stays in place while content scrolls */}
+      <div className="fixed inset-0" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 bg-[#0a0e1a]" />
+        <img src="/images/hero-bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.18]" fetchPriority="high" loading="eager" decoding="async" style={{ filter: 'blur(2px) saturate(1.4)' }} aria-hidden="true" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.85) 70%, rgba(10,14,26,0.95) 100%)' }} aria-hidden="true" />
+      </div>
+
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen overflow-hidden" style={{ zIndex: 1 }}>
+
+        <div className="relative mx-auto max-w-5xl px-6 flex flex-col justify-center min-h-screen" style={{ zIndex: 10, paddingTop: '120px', paddingBottom: '80px' }}>
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-6">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="uppercase tracking-[0.22em]" style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', color: '#00E5FF' }}>
+              AI-Native Growth Systems · Memphis, TN
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-foreground mb-6" style={{ fontFamily: "'Oxanium', sans-serif", letterSpacing: '-0.03em' }}>
+            Make your local business easier to <em className="not-italic" style={{ background: 'linear-gradient(90deg, #1478FF, #00E5FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>find, trust, and choose.</em>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="max-w-xl mb-10 leading-relaxed" style={{ color: '#C9D5E8' }}>
+            We check what customers can find about your business on Google and in AI search. You get a clear plan for what to fix first, and hands-on help if you want us to make the changes.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 mb-4">
+            <Link
+              to="/modern-contact-form"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-lg bg-primary transition-all duration-300 hover:opacity-90"
+              style={{ boxShadow: '0 0 20px rgba(26,86,219,0.4)' }}
+            >
+              Ask about the Local AI Visibility Audit →
+            </Link>
+            <Link
+              to="/newsletter"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 hover:bg-white/5"
+              style={{ color: '#94A3B8', border: '1px solid rgba(255,255,255,0.15)', background: 'transparent' }}
+            >
+              Read the Market Newsletter
+            </Link>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Free 30-minute strategy session · No sales pitch
+          </p>
+        </div>
+      </section>
+
+      {/* LANE STATS BAR */}
+      <div className="relative z-[1] border-t bg-[#0a0e1a]/80 backdrop-blur-sm" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+            {/* Lane 1 */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold text-teal-accent">Lane 1</span>
+              <span className="text-xs text-muted-foreground mt-1">AI Marketing · Local Businesses</span>
+            </div>
+            {/* Lane 2 */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold text-primary">Lane 2</span>
+              <span className="text-xs text-muted-foreground mt-1">Macro · Crypto · Market Intel</span>
+            </div>
+            {/* Live */}
+            <div className="flex flex-col items-center text-center px-4 py-2 border-r" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+              <span className="text-lg font-bold" style={{ color: '#D4A843' }}>Live</span>
+              <span className="text-xs text-muted-foreground mt-1">Memphis Earth Movers ✓</span>
+            </div>
+            {/* SEO→AEO */}
+            <div className="flex flex-col items-center text-center px-4 py-2">
+              <span className="text-lg font-bold text-foreground">SEO→AEO</span>
+              <span className="text-xs text-muted-foreground mt-1">Future-proof search strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PROBLEM SECTION */}
+      <section id="problem" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(17,34,54,0.80)' }}>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* LEFT COLUMN */}
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest text-slate-300 bg-white/10 mb-6">
+                The Problem
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-8">
+                Most agencies sell you activity.
+                <br />
+                <span className="text-primary">We sell you outcomes.</span>
+              </h2>
+              <div className="space-y-6">
+                {[
+                  "You're paying for ads that stop the moment you stop paying — no compounding, no system, no asset built.",
+                  "Your content doesn't appear in AI search tools like ChatGPT, Perplexity, or Google's AI Overview — where your next customer is actually looking.",
+                  "You're making growth decisions without understanding the macro forces that actually drive your industry."
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="mt-1 flex-shrink-0 text-lg" style={{ color: '#F87171' }}>✕</span>
+                    <p className="text-slate-300 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN */}
+            <div className="space-y-6">
+              {/* Quote card */}
+              <div className="rounded-xl p-6 border-l-4" style={{ backgroundColor: 'rgba(26,86,219,0.1)', borderLeftColor: '#1A56DB' }}>
+                <p className="italic text-white/90 leading-relaxed mb-4">
+                  "If you're still obsessing over single keywords like it's 2010, you're playing yesterday's game. The future of search is about context, intent, and smart algorithms that understand language almost like a human."
+                </p>
+                <p className="text-slate-400 text-sm">— Digital Frontier Research, 2025</p>
+              </div>
+
+              {/* What we do instead card */}
+              <div className="rounded-xl p-6" style={{ backgroundColor: 'rgba(14,159,159,0.1)' }}>
+                <h3 className="text-lg font-semibold text-white mb-4">What we do instead</h3>
+                <div className="space-y-4">
+                  {[
+                    "Build AI-powered growth systems — not one-off campaigns",
+                    "Optimize for Answer Engines (AEO/GEO) so you appear where AI searches happen",
+                    "Deliver real market intelligence so your strategy matches the moment"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <Check className="mt-1 flex-shrink-0" size={18} style={{ color: '#0E9F9F' }} />
+                      <p className="text-slate-300 leading-relaxed">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI INDUSTRY STATISTICS SECTION */}
+      <section className="py-24 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(76,29,149,0.15), rgba(15,23,42,0.75), rgba(22,78,99,0.15))' }}>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              The AI Advantage
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Leading research proves AI is transforming how businesses operate and compete
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                stat: "84%",
+                label: "of employees believe AI makes their jobs easier and more efficient",
+                source: "Salesforce",
+                gradient: "from-violet-500 to-purple-500"
+              },
+              {
+                stat: "70%",
+                label: "reduction in customer service inquiries with AI automation",
+                source: "Accenture",
+                gradient: "from-cyan-500 to-blue-500"
+              },
+              {
+                stat: "35%",
+                label: "of businesses prioritize AI for customer service (top use case)",
+                source: "Salesforce",
+                gradient: "from-indigo-500 to-violet-500"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-slate-800/40 backdrop-blur-sm border border-violet-500/20 rounded-2xl p-8 text-center hover:border-violet-500/40 hover:-translate-y-2 transition-all"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                viewport={{ once: true }}
+              >
+                <div className={`text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                  {item.stat}
+                </div>
+                <p className="text-slate-200 mb-3 leading-relaxed">
+                  {item.label}
+                </p>
+                <p className="text-slate-500 text-sm italic">
+                  — {item.source}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            className="bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-violet-500/30 rounded-xl p-6 max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold text-white mb-4">How Businesses Use AI Today</h3>
+            <div className="flex flex-wrap justify-center gap-6 text-slate-300">
+              <div className="flex items-center gap-2">
+                <span className="text-violet-400 font-bold text-lg">35%</span>
+                <span>Customer Service</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400 font-bold text-lg">20%</span>
+                <span>Sales</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400 font-bold text-lg">18%</span>
+                <span>Marketing</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
+      {/* GUMROAD PROMOTION SECTION */}
+      <section className="py-8 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.75), rgba(88,28,135,0.15), rgba(15,23,42,0.75))' }}>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative z-10 mx-auto max-w-4xl px-6">
+          <motion.div className="text-center" initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.8
+        }} viewport={{
+          once: true
+        }}>
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-12 hover:border-pink-400/50 transition-all duration-300">
+              <div className="flex flex-col items-center justify-center gap-8">
+                <div className="flex-shrink-0">
+                  <a href="https://digitalfrontier.gumroad.com/" target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+                    <img src={gumroadLogo} alt="Gumroad - Digital Frontier Store" className="h-16 w-auto object-contain" />
+                  </a>
+                </div>
+                <div className="text-center max-w-2xl">
+                  <p className="text-2xl font-bold text-white mb-8 leading-relaxed">
+                    You don't need a new tool. You need a clearer process. The listening SOP + audit checklist give you exactly that.
+                  </p>
+                  <a href="https://digitalfrontier.gumroad.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-12 py-4 text-xl font-bold text-white rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 transform" style={{
+                  background: 'linear-gradient(135deg, #FF6B9D 0%, #C44EFF 50%, #FF6B9D 100%)',
+                  boxShadow: '0 0 30px rgba(255, 107, 157, 0.4)'
+                }}>
+                    Get Your Process Tools →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
+
+          {/* TRUST BAR - Animated Particle Background */}
+      <section className="relative z-[1] -bottom-1 bg-[#040b29]/80 backdrop-blur-sm mx-[32px] my-[32px] py-[32px] px-[32px] rounded-xl overflow-hidden">
+        {/* Animated Particle Network Background */}
+        <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `url('/lovable-uploads/058e28c2-a5a3-4668-97f4-3e1867fb94df.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        animation: 'particleFloat 20s linear infinite'
+      }} />
+        
+        {/* Animated connecting lines overlay */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+          backgroundImage: `
+                   linear-gradient(rgba(78, 226, 236, 0.4) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(78, 226, 236, 0.4) 1px, transparent 1px)
+                 `,
+          backgroundSize: '60px 60px',
+          animation: 'networkPulse 8s ease-in-out infinite'
+        }} />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
+          <h2 className="text-center mb-16 text-cyan-300 font-extrabold text-base">Trusted by Industry Leaders</h2>
+          
+          {/* Scrolling marquee container */}
+          <div className="overflow-hidden relative">
+            <motion.div className="flex items-center justify-center gap-20 whitespace-nowrap" animate={{
+            x: [0, -1000]
+          }} transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity
+          }}>
+              {/* First set of logos */}
+              <a href="https://thedigitalfrontier.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <img src={digitalFrontierLogo} alt="Digital Frontier Company - AI Innovation Leader" className="h-32 w-48 object-contain" width="192" height="128" />
+              </a>
+              
+              <a href="https://lindy.ai" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/8a3a4ac6-afc9-40fa-b252-4f574c36292e.png" alt="Lindy Certified Partner - AI Automation Excellence" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
+              </a>
+              
+
+
+              
+              <div className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/006c1b20-0f5a-4e81-804c-dac4a28eb855.png" alt="Memphis Earth Movers - Trusted Transportation Partner" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
+              </div>
+              
+              
+              <a href="https://generativesearch.pro" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/0f428751-35c5-4551-99a6-3eaf9cda8d4d.png" alt="GenerativeSearch.pro - Generative Engine Optimization" displayWidth={240} displayHeight={128} className="h-32 w-48 object-fill" />
+              </a>
+              
+              <a href="https://designrush.com" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110 transform flex-shrink-0">
+                <LazyImage src="/lovable-uploads/11d4191c-6402-4a54-bb45-9f2a67acf667.png" alt="DesignRush Reviews - Top Rated Agency" displayWidth={160} displayHeight={48} className="h-16 w-32 object-fill" />
+              </a>
+              
+              
+              
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO SECTION */}
+      <section id="aeo" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(17,34,54,0.80)' }}>
+        <div className="mx-auto max-w-5xl px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest text-primary bg-primary/15 font-semibold mb-6">
+              Our Unfair Advantage
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Search just changed.
+              <br />
+              <span className="text-primary">Most agencies haven't noticed.</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              People aren't just Googling anymore — they're asking ChatGPT, Perplexity, and Google's AI Overview for direct answers. We build for where search is going, not where it's been.
+            </p>
+          </div>
+
+          {/* 3-Column Comparison */}
+          <div className="grid md:grid-cols-3 rounded-2xl overflow-hidden border" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            {/* Column 1 — SEO */}
+            <div className="p-8 text-center" style={{ borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ backgroundColor: 'rgba(248,113,113,0.15)', color: '#F87171' }}>2010–2022</span>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#F87171' }}>Old Game</p>
+              <h3 className="text-2xl font-bold text-foreground mb-3">SEO</h3>
+              <p className="text-sm text-muted-foreground">Keyword stuffing. Rank on page 1. Hope someone clicks.</p>
+            </div>
+
+            {/* Column 2 — AEO (highlighted) */}
+            <div className="p-8 text-center" style={{ backgroundColor: 'rgba(26,86,219,0.1)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 bg-primary/20 text-primary">2023–Now</span>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#60A5FA' }}>What We Build</p>
+              <h3 className="text-2xl font-bold text-primary mb-3">AEO</h3>
+              <p className="text-sm text-muted-foreground">Answer Engine Optimization. Structure content so AI systems cite you as the authority.</p>
+            </div>
+
+            {/* Column 3 — GEO */}
+            <div className="p-8 text-center">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3" style={{ backgroundColor: 'rgba(14,159,159,0.15)', color: '#0E9F9F' }}>The Near Future</span>
+              <p className="text-xs uppercase tracking-widest mb-2 text-secondary">We're Ready</p>
+              <h3 className="text-2xl font-bold text-secondary mb-3">GEO</h3>
+              <p className="text-sm text-muted-foreground">Generative Engine Optimization. Your brand in the AI citation network — not just ranked.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY SECTION */}
+      <section id="case-study" className="py-20 relative z-[1] backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.80)' }}>
+        <div className="mx-auto max-w-5xl px-6 relative z-10">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 rounded-full text-xs uppercase tracking-widest font-semibold mb-6" style={{ backgroundColor: 'rgba(212,168,67,0.15)', color: '#D4A843' }}>
+              Proof of Concept
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              From zero online presence to a live, converting website.
+            </h2>
+          </div>
+
+          {/* Main Card */}
+          <div className="rounded-3xl p-8 md:p-10" style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            {/* Tag Chips */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              {["Client: Memphis Earth Movers", "Industry: Construction / Excavation", "Location: Memphis, TN"].map((tag, i) => (
+                <span key={i} className="px-3 py-1 rounded-full text-xs text-muted-foreground" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-10">
+              {/* LEFT */}
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-3">The Situation</h3>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  Memphis Earth Movers is a local excavation and dump truck company. They had the crews and equipment but zero digital presence. No website. No way for new customers to find them.
+                </p>
+
+                <h3 className="text-lg font-semibold text-foreground mb-4">What We Built</h3>
+                <div className="space-y-3">
+                  {[
+                    "Full landing page with local SEO",
+                    "AEO-structured content for excavation queries",
+                    "Quote request conversion funnel",
+                    "Mobile-first responsive design"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <Check size={16} className="flex-shrink-0 text-secondary" />
+                      <span className="text-slate-300 text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { value: "Live", color: '#0E9F9F', label: "Deployed Website" },
+                    { value: "Local", color: '#1A56DB', label: "SEO Optimized" },
+                    { value: "AEO", color: '#D4A843', label: "Answer-Structured" },
+                    { value: "0→1", color: '#F7F9FC', label: "Zero to discoverable" }
+                  ].map((stat, i) => (
+                    <div key={i} className="rounded-xl p-4 text-center" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+                      <div className="text-xl font-bold mb-1" style={{ color: stat.color }}>{stat.value}</div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="rounded-xl p-5" style={{ backgroundColor: 'rgba(212,168,67,0.08)', border: '1px solid rgba(212,168,67,0.2)' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#D4A843' }}>
+                    <span className="font-semibold">The Memphis Model</span> — This is our repeatable template: audit → architecture → AEO content → conversion path. It works in any service industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.80)' }}>
+        <div className="mx-auto max-w-6xl px-6 relative z-10">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Two things. Done right.
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We don't try to do everything. We're focused on two lanes — each one built around a real outcome, not a deliverable list.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* CARD 1 — AI Marketing */}
+            <motion.div
+              className="p-8 flex flex-col"
+              style={{ backgroundColor: 'rgba(26,86,219,0.12)', border: '1px solid rgba(26,86,219,0.3)', borderRadius: '20px' }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs uppercase tracking-widest text-primary font-semibold mb-4">Lane 1 — Service</span>
+              <h3 className="text-2xl font-bold text-foreground mb-3">AI Marketing for Local Businesses</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                You run a real business. You need more customers, better visibility, and marketing that doesn't disappear the moment you stop paying. We build AI-powered systems that work while you work.
+              </p>
+              <div className="space-y-3 mb-8 flex-grow">
+                {[
+                  "Local SEO + AEO optimization",
+                  "Landing page + conversion system",
+                  "AI-powered ad funnel setup",
+                  "Google Business Profile + citation authority",
+                  "Monthly reporting with real numbers"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <Check size={16} className="flex-shrink-0 text-secondary" />
+                    <span className="text-slate-300 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/modern-contact-form"
+                className="block w-full text-center py-3 rounded-lg font-semibold text-white bg-primary hover:opacity-90 transition-opacity"
+              >
+                Get Started →
+              </Link>
+            </motion.div>
+
+            {/* CARD 2 — Newsletter */}
+            <motion.div
+              className="p-8 flex flex-col"
+              style={{ backgroundColor: 'rgba(14,159,159,0.12)', border: '1px solid rgba(14,159,159,0.3)', borderRadius: '20px' }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-xs uppercase tracking-widest text-secondary font-semibold mb-4">Lane 2 — Intelligence</span>
+              <h3 className="text-2xl font-bold text-foreground mb-3">The Digital Frontier Market Newsletter</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Every two weeks, we translate the macro forces that move markets — global liquidity cycles, Bitcoin on-chain data, AI industry shifts — into plain language. No noise. No hype. Just the signal.
+              </p>
+              <div className="space-y-3 mb-8 flex-grow">
+                {[
+                  "Bitcoin & crypto market analysis",
+                  "Global liquidity cycle tracking",
+                  "AI industry shifts affecting your business",
+                  "Macro context for smarter business timing",
+                  "Available as PDF + audio format"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-secondary flex-shrink-0">◆</span>
+                    <span className="text-slate-300 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/newsletter"
+                className="block w-full text-center py-3 rounded-lg font-semibold text-white bg-secondary hover:opacity-90 transition-opacity"
+              >
+                Subscribe Free →
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI REVOLUTION & GOOGLE ALGORITHM EVOLUTION SECTION */}
+      <section className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ backgroundColor: 'rgba(13,17,40,0.75)' }}>
+
+
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          {/* AI Revolution - Elephant in the Room Section */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <Sparkles className="w-10 h-10 text-signal-lime" />
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-signal-lime via-electric-azure to-cyan-400 bg-clip-text text-transparent">
+                The Elephant in the Room: Most "AI Marketing" Is Just Expensive Theater
+              </h2>
+            </div>
+            
+            <div className="bg-gradient-to-br from-red-900/30 to-slate-900/60 backdrop-blur-sm border border-red-500/40 rounded-2xl p-8 mb-8">
+              <div className="bg-slate-900/80 border-l-4 border-signal-lime rounded-lg p-6 mb-8">
+                <p className="text-slate-100 text-xl font-semibold leading-relaxed mb-4">
+                  Let's talk about what nobody in the agency world wants to admit:
+                </p>
+                <p className="text-slate-200 text-lg leading-relaxed">
+                  95% of marketing agencies claiming to be "AI-powered" are just slapping ChatGPT output onto the same tired strategies from 2019. They're charging premium prices for prompting a chatbot and calling it "innovation." Meanwhile, according to{' '}
+                  <a 
+                    href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-electric-azure hover:text-signal-lime transition-colors underline font-semibold"
+                  >
+                    Search Engine Journal
+                  </a>
+                  , while everyone's distracted by AI content mills, the real opportunity—generative AI's impact on search behavior—is being completely ignored.
+                </p>
+              </div>
+
+              <h3 className="text-2xl font-bold text-red-400 mb-6 flex items-center gap-3">
+                <Shield className="w-7 h-7" />
+                The Harsh Truths About AI in Marketing (That Nobody Tells You):
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div 
+                  className="bg-slate-900/70 border border-red-800/50 rounded-xl p-6 hover:border-red-600/70 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <AlertTriangle className="w-6 h-6 text-red-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">"AI Content" Isn't Strategy</h4>
+                      <p className="text-slate-300 text-sm">
+                        Tools have evolved, but most agencies are still just pumping out generic blog posts. Real AI marketing means predictive analytics, behavioral modeling, and automated optimization—not blog spam.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/70 border border-orange-800/50 rounded-xl p-6 hover:border-orange-600/70 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <TrendingDown className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">Traditional SEO Is Dying (Fast)</h4>
+                      <p className="text-slate-300 text-sm">
+                        With 20%+ of searches now answered by AI Overviews, ranking #1 means nothing if AI never shows your link. But most agencies are still optimizing for 2015 Google.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/70 border border-yellow-800/50 rounded-xl p-6 hover:border-yellow-600/70 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <DollarSign className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">You're Overpaying for Automation</h4>
+                      <p className="text-slate-300 text-sm">
+                        That "personalized email campaign"? It's a template with [FIRST_NAME] tags. Real AI personalization adapts messaging in real-time based on behavior patterns—40% better engagement, but 2% of agencies actually do it.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="bg-slate-900/70 border border-purple-800/50 rounded-xl p-6 hover:border-purple-600/70 transition-all duration-300"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <Brain className="w-6 h-6 text-purple-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-soft-white mb-2">The "AI Skills Gap" Is an Excuse</h4>
+                      <p className="text-slate-300 text-sm">
+                        Agencies blame "AI complexity" for their failures. The truth? They're afraid to admit they haven't evolved past Facebook ads and keyword research. Predictive analytics with 85% accuracy exists—they just don't know how to use it.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="mt-8 bg-gradient-to-r from-signal-lime/30 to-electric-azure/30 border-2 border-signal-lime/60 rounded-xl p-8">
+                <h4 className="text-2xl font-bold text-soft-white mb-4">Here's What Actually Works:</h4>
+                <p className="text-slate-200 leading-relaxed mb-6">
+                  At The Digital Frontier, we're not interested in AI theater. We build systems that combine Answer Engine Optimization (capturing AI search results), predictive behavioral modeling, and real-time campaign optimization. The result? 15-30% ROAS increases that are actually measurable—not vanity metrics on a dashboard.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    to="/answer-engine-optimization" 
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-signal-lime text-deep-navy font-semibold rounded-lg hover:bg-signal-lime/90 transition-all duration-300 hover:shadow-lg hover:shadow-signal-lime/50"
+                  >
+                    Learn Real AEO Strategy
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <a 
+                    href="https://www.searchenginejournal.com/why-generative-ai-isnt-killing-seo-its-creating-new-opportunities/549678/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 text-electric-azure border border-electric-azure/50 font-semibold rounded-lg hover:bg-slate-700 transition-all duration-300"
+                  >
+                    Read the Research
+                    <BookOpen className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Google Algorithm Evolution Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <Search className="w-10 h-10 text-electric-azure" />
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-electric-azure via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Google's Algorithm Evolution: The AI Overviews Impact
+              </h2>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-purple-800/30 rounded-2xl p-8">
+              <p className="text-slate-200 text-lg leading-relaxed mb-6">
+                The June 2025 Google Core Update marked a seismic shift in search engine dynamics. According to{' '}
+                <a 
+                  href="https://searchengineland.com/data-providers-google-june-2025-core-update-was-a-big-update-459226" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-electric-azure hover:text-signal-lime transition-colors underline"
+                >
+                  Search Engine Land
+                </a>
+                , AI Overviews now appear in approximately 20% of search queries, fundamentally changing how users interact with search results.
+              </p>
+
+              <h3 className="text-2xl font-bold text-purple-400 mb-6 flex items-center gap-3">
+                <Target className="w-7 h-7" />
+                What This Means for Your SEO Strategy:
+              </h3>
+
+              <div className="space-y-6">
+                {/* Content Depth */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-blue-800/30 rounded-xl p-6 hover:border-blue-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-electric-azure mb-4 flex items-center gap-3">
+                    <BookOpen className="w-6 h-6" />
+                    1. Content Depth Matters More Than Ever
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Google's AI prioritizes comprehensive, authoritative content</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Long-form content (2,000+ words) sees 3x more featured snippet opportunities</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-signal-lime mt-1">•</span>
+                      <span>Topic clusters outperform individual keyword targeting</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* E-E-A-T */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-purple-800/30 rounded-xl p-6 hover:border-purple-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-3">
+                    <Shield className="w-6 h-6" />
+                    2. E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>First-hand experience signals are now crucial ranking factors</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>Author credentials and bio sections directly impact rankings</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-electric-azure mt-1">•</span>
+                      <span>Case studies and real-world examples boost content authority</span>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* Structured Data */}
+                <motion.div 
+                  className="bg-slate-900/50 border border-cyan-800/30 rounded-xl p-6 hover:border-cyan-600/50 transition-all duration-300"
+                  whileHover={{ x: 5 }}
+                >
+                  <h4 className="text-xl font-bold text-cyan-400 mb-4 flex items-center gap-3">
+                    <Code className="w-6 h-6" />
+                    3. Structured Data Implementation
+                  </h4>
+                  <ul className="space-y-3 text-slate-300">
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>Schema markup is no longer optional—it's essential</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>FAQ and How-To schemas see 70% higher click-through rates</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-purple-400 mt-1">•</span>
+                      <span>Product review schemas influence AI Overview selections</span>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+
+              <motion.div 
+                className="mt-8 bg-gradient-to-r from-electric-azure/20 to-purple-600/20 border border-electric-azure/40 rounded-xl p-6 text-center"
+                whileHover={{ scale: 1.02 }}
+              >
+                <p className="text-slate-200 mb-4 text-lg">
+                  Ready to adapt your strategy for the AI-powered search era?
+                </p>
+                <Link 
+                  to="/answer-engine-optimization" 
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-electric-azure to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-electric-azure/50 transition-all duration-300"
+                >
+                  Explore Answer Engine Optimization
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* STICKY MOBILE FOOTER CTA */}
+      <div className="sticky-cta fixed bottom-0 left-0 right-0 z-50 md:hidden bg-electric-azure text-deep-navy text-center py-4 font-semibold shadow-lg">
+        <Link to="/modern-contact-form" className="block">
+          Ready to Transform? Talk to an Expert
+        </Link>
+        {/* Progress bar */}
+        <div className="absolute bottom-0 left-0 h-1 bg-signal-lime w-1/3 transition-all duration-300"></div>
+      </div>
+
+
+
+
+
+      {/* FAQ ACCORDION - Radix UI powered */}
+      <Suspense fallback={<div className="py-12 bg-slate-900/50 animate-pulse"></div>}>
+        <FAQAccordion />
+      </Suspense>
+
+
+
+      {/* AI CREW CHIEF PROMOTION SECTION */}
+      <section className="py-12 relative z-[1] backdrop-blur-sm animate-on-scroll overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(49,46,129,0.75), rgba(88,28,135,0.75), rgba(15,23,42,0.75))' }}>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(78,226,236,0.1)_0%,rgba(143,179,29,0.1)_100%)]"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center bg-gradient-to-r from-cyan-500/20 to-green-500/20 px-6 py-2 rounded-full border border-cyan-500/30 mb-6">
+                <span className="text-cyan-300 font-semibold text-sm uppercase tracking-wider flex items-center gap-2">
+                  <Rocket className="w-4 h-4" />
+                  New Launch
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-green-400 bg-clip-text text-transparent">
+                Feeling Lost in AI?
+              </h2>
+              <p className="text-xl text-slate-300 mb-4">
+                We spent $50K+ testing 100+ AI tools so you don't have to
+              </p>
+              <p className="text-lg text-slate-400 mb-8">
+                Get only proven AI solutions that actually work for small businesses—not just hype.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/20">
+                <div className="flex justify-center mb-3">
+                  <DollarSign className="w-8 h-8 text-cyan-400" />
+                </div>
+                <div className="text-2xl font-bold text-cyan-400">$50,000+</div>
+                <p className="text-sm text-slate-300">Invested in AI testing</p>
+              </div>
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/20">
+                <div className="flex justify-center mb-3">
+                  <Zap className="w-8 h-8 text-green-400" />
+                </div>
+                <div className="text-2xl font-bold text-green-400">15+ Hours</div>
+                <p className="text-sm text-slate-300">Saved weekly</p>
+              </div>
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-purple-500/20">
+                <div className="flex justify-center mb-3">
+                  <TrendingUp className="w-8 h-8 text-purple-400" />
+                </div>
+                <div className="text-2xl font-bold text-purple-400">25%</div>
+                <p className="text-sm text-slate-300">Average revenue boost</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/services/ai-implementation-consulting" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-green-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-cyan-500/25">
+                <span>Get Your AI Crew Chief</span>
+                <span className="ml-2">→</span>
+              </Link>
+              <p className="text-sm text-slate-400">
+                Free 30-minute strategy session • No sales pitch
+              </p>
+            </div>
+          </div>
+        </div>
+        
+
+
+      </section>
+
+      {/* LEARN MORE SECTION */}
+      <section className="py-12 relative z-[1] backdrop-blur-sm animate-on-scroll" style={{ background: 'linear-gradient(135deg, rgba(15,23,42,0.80), rgba(30,41,59,0.80))' }}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-slate-100 mb-8">Explore Digital Frontier</h2>
+          
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Key Services - Enhanced with more internal links */}
+            <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">AI Marketing Solutions</h3>
+              <div className="space-y-3 text-slate-300">
+                <Link to="/ad-funnel-blueprint" className="block hover:text-blue-400 transition-colors">Ad Funnel Blueprint</Link>
+                <Link to="/answer-engine-optimization" className="block hover:text-blue-400 transition-colors">Answer Engine Optimization</Link>
+                <Link to="/generative-engine-optimization" className="block hover:text-blue-400 transition-colors">Generative Engine Optimization</Link>
+                <Link to="/ai-and-digital-marketing" className="block hover:text-blue-400 transition-colors">AI Marketing Guide</Link>
+                <Link to="/psychological-digital-marketing-insights" className="block hover:text-blue-400 transition-colors">Psychology Insights</Link>
+              </div>
+            </div>
+            
+            <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Local Services</h3>
+              <div className="space-y-3 text-slate-300">
+                <Link to="/memphis-digital-marketing" className="block hover:text-blue-400 transition-colors">Memphis Marketing</Link>
+                <Link to="/collierville-seo-services" className="block hover:text-blue-400 transition-colors">Collierville SEO</Link>
+                <Link to="/germantown-digital-marketing" className="block hover:text-blue-400 transition-colors">Germantown Marketing</Link>
+                <Link to="/team-expertise" className="block hover:text-blue-400 transition-colors">Our Team</Link>
+              </div>
+            </div>
+            
+            <div className="bg-slate-800/30 p-6 rounded-lg border border-slate-700">
+              <h3 className="text-xl font-bold text-blue-400 mb-4">Resources & Tools</h3>
+              <div className="space-y-3 text-slate-300">
+                <Link to="/ai-prompt-templates" className="block hover:text-blue-400 transition-colors">AI Prompt Templates</Link>
+                <Link to="/user-experience-prompts" className="block hover:text-blue-400 transition-colors">UX Prompts</Link>
+                <Link to="/emotional-marketing-playbook" className="block hover:text-blue-400 transition-colors">Emotional Marketing</Link>
+                <Link to="/ai-bias-in-advertising" className="block hover:text-blue-400 transition-colors">AI Bias Guide</Link>
+                <Link to="/blog" className="block hover:text-blue-400 transition-colors">Marketing Blog</Link>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* NEWSLETTER SIGNUP SECTION */}
+      <section id="newsletter" className="py-20 relative z-[1] overflow-hidden backdrop-blur-sm" style={{ background: 'linear-gradient(135deg, rgba(13,17,40,0.80) 0%, rgba(17,34,54,0.80) 50%, rgba(13,17,40,0.80) 100%)' }}>
+        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(26,86,219,0.3) 0%, transparent 70%)' }} />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: '#0E9F9F', backgroundColor: 'rgba(14,159,159,0.12)', border: '1px solid rgba(14,159,159,0.2)' }}>
+              Weekly Intel
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '-0.02em' }}>
+              The Market Newsletter
+            </h2>
+            <p className="text-slate-400 mb-8 leading-relaxed max-w-lg mx-auto">
+              AI trends, local growth plays, and market intelligence — delivered weekly. No fluff. Just the signals that matter for your business.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+              <input
+                type="email"
+                placeholder="you@company.com"
+                className="flex-1 px-4 py-3 rounded-lg text-sm border bg-white/5 text-foreground placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                style={{ borderColor: 'rgba(255,255,255,0.1)' }}
+              />
+              <Link
+                to="/newsletter"
+                className="px-6 py-3 rounded-lg text-sm font-bold text-white bg-primary hover:bg-primary/90 transition-colors whitespace-nowrap"
+                style={{ boxShadow: '0 0 16px rgba(26,86,219,0.3)' }}
+              >
+                Subscribe →
+              </Link>
+            </div>
+            <p className="text-xs text-slate-500">Join 500+ founders and operators. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* MODERN CONTACT FORM SECTION */}
+      <section className="relative z-[1] py-12 bg-deep-navy/80 backdrop-blur-sm border-t border-border">
+        <div className="mx-auto max-w-4xl px-6 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="font-poppins font-medium text-soft-white mb-4" style={{
+            fontSize: 'clamp(28px, 4vw, 40px)'
+          }}>
+              Ready to Transform Your Marketing?
+            </h2>
+            <p className="font-inter text-lg text-soft-white/70 max-w-2xl mx-auto">
+              Get your free AI marketing audit and strategy session. Let's discuss your growth goals.
+            </p>
+          </div>
+          <Suspense fallback={<div className="py-8 bg-slate-900/30 animate-pulse rounded-lg"></div>}>
+            <ModernContactForm />
+          </Suspense>
+        </div>
+        
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-t from-electric-azure/5 via-transparent to-transparent pointer-events-none"></div>
+      </section>
+    </Suspense>;
+};
+export default Index;
